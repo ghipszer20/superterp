@@ -33,7 +33,7 @@ describe("Math + CS double major", () => {
     // CS may take either STAT course (a tie); whichever it takes also counts for Math.
     const csStat = cs!.requirements.find((r) => r.id === "stat4xx")!.assigned;
     expect(csStat).toHaveLength(1);
-    expect(["STAT410", "STAT400"]).toContain(csStat[0]);
+    expect([...mathAssigned("stat410"), ...mathAssigned("stat4xx")]).toContain(csStat[0]);
   });
 
   it("shows exactly which requirement breaks when a shared course is missing", async () => {
