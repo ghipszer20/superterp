@@ -76,6 +76,45 @@ describe("close to another major", () => {
     const two = await programNotices(without(ownerPlan(), "CMSC330", "CMSC351"), catalog, candidates);
     expect(two.map((n) => n.message)).toEqual(["You're 2 courses from the Computer Science Major: CMSC330 and CMSC351."]);
   });
+
+  // A course set with a filter member, like Math Applied's Sequence Twelve: AOSC200, AOSC201 and
+  // any two 400-level AOSC courses.
+  describe("a course set with an 'any N from a filter' member", () => {
+    const sequence: Program = {
+      id: "z-major",
+      name: "Z Major",
+      requirements: [
+        {
+          kind: "sets",
+          id: "twelve",
+          name: "Sequence Twelve",
+          options: [["AOSC200", "AOSC201", { count: 2, from: { departments: ["AOSC"], minNumber: 400, maxNumber: 499 } }]],
+        },
+      ],
+    };
+    const declared: Program = { id: "home", name: "Home Major", requirements: [] };
+    const planWith = (...ids: string[]): Plan => ({ terms: [{ name: "Fall 2026", courses: ids.map((id) => ({ id, credits: 3 })) }] });
+    const notices = (plan: Plan) =>
+      programNotices(plan, catalog, [
+        { program: declared, declared: true },
+        { program: sequence, declared: false },
+      ]).then((n) => of(n, "close-to-major"));
+
+    it("names a missing fixed course", async () => {
+      expect((await notices(planWith("AOSC200", "AOSC431", "AOSC432"))).map((n) => n.message)).toEqual([
+        "You're 1 course from the Z Major: AOSC201.",
+      ]);
+    });
+
+    it("counts a filter member that's one course short", async () => {
+      const [notice] = await notices(planWith("AOSC200", "AOSC201", "AOSC431"));
+      expect(notice).toMatchObject({ coursesShort: 1, missing: ["1 more for Sequence Twelve"] });
+    });
+
+    it("gives no notice once the set is complete", async () => {
+      expect(await notices(planWith("AOSC200", "AOSC201", "AOSC431", "AOSC432"))).toEqual([]);
+    });
+  });
 });
 
 describe("dual degree", () => {
