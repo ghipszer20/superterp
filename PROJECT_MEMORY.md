@@ -262,6 +262,9 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
 - Commit and push often to feature branches (never main). Keep the status log (section 14) current so nothing is lost if context is summarized.
 
 ## 17. Owner rulings (2026-09-25 morning)
-- **Never rebuild working code unless absolutely necessary; fix it first.** (Superpowers TDD's "delete and restart" rule does NOT override this. Add tests to existing code instead.) The SOC course parser is kept as is.
+- **Superpowers TDD applies strictly from now on**, including its rule to delete code written before a failing test and redo it test-first (owner, 2026-09-25). The one exception: code written before the superpowers plugin was installed (e.g. the SOC course parser) is kept; fix it rather than rebuild it.
+- Outside that TDD rule, don't rebuild working code unless absolutely necessary; fix it first.
 - **CMSC141 counts for CMSC131, and CMSC142 counts for CMSC132** (confirmed by owner).
 - **CS gateway rule confirmed:** students who matriculated Fall 2024 or later need B- or better in gateway courses and a 3.0 cumulative GPA to apply to the CS LEP; earlier students need C- and 2.7.
+- **Schedule builder: all-combinations browser (owner idea, 2026-09-25).** When a student picks courses for a term, SuperTerp generates every conflict-free combination of sections and lets them scroll through all of them; building a schedule by hand stays available too.
+  - Engine notes (Claude): combinations can explode (5 courses × 20 sections = 3.2M), so generate lazily with backtracking that prunes conflicts. Group combinations with identical meeting times, so the student scrolls distinct weekly layouts, with the section choices inside each. Show the total count. Filters and sorting (no 8ams, days off, open seats, professor rating) narrow the list. Scrolling must stay instant.
