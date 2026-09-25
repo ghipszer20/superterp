@@ -40,8 +40,11 @@ describe("AP chart", () => {
     for (const e of AP_EXAMS) checkBands(e.name, e.rows);
   });
 
-  it("copies every equivalency cell word for word from the chart", () => {
-    for (const { label, row } of apRows) expect(text.includes(squash(row.text)), `${label}: "${row.text}"`).toBe(true);
+  it("copies every row (scores, credits, equivalency) word for word from the chart", () => {
+    for (const { label, row } of apRows) {
+      const printed = squash(`${row.scores.join(",")} ${row.credits} ${row.text}`);
+      expect(text.includes(printed), `${label}: "${printed}"`).toBe(true);
+    }
   });
 
   it("never gives two exams the same name", () => {
@@ -61,6 +64,20 @@ describe("IB chart", () => {
 
   it("copies every equivalency cell word for word from the chart", () => {
     for (const { label, row } of ibRows) expect(text.includes(squash(row.text)), `${label}: "${row.text}"`).toBe(true);
+  });
+
+  // Single-course rows print on one line as "Standard 5, 6, 7 GEOG100 3 DSHS"; the level word is
+  // missing where one level cell spans several rows. Multi-course rows can only be checked by eye.
+  it("prints each single-course row's scores, course and credits in the chart", () => {
+    const single = IB_EXAMS.flatMap((e) =>
+      Object.entries(e.levels).flatMap(([level, rows]) => rows.filter((r) => r.parts.length === 1).map((r) => ({ e, level, r }))),
+    );
+    for (const { e, level, r } of single) {
+      const printed = squash(`${r.scores.join(",")} ${r.text.startsWith("L1") ? "L1" : r.text} ${r.credits}`);
+      const word = level === "SL" ? "Standard" : "Higher";
+      expect(text.includes(word + printed) || text.includes(printed), `${e.name} ${level}: "${printed}"`).toBe(true);
+    }
+    expect(single.length).toBeGreaterThan(70);
   });
 
   it("never gives two exams the same name", () => {

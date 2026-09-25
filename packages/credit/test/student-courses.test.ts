@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { auditProgram, type Program } from "@superterp/audit";
-import { creditForAp, creditForIb, CreditError, toStudentCourses } from "../src/index.ts";
+import {
+  creditForAp,
+  creditForIb,
+  CreditError,
+  dualEnrollmentToStudentCourses,
+  mergeCreditCourses,
+  toStudentCourses,
+} from "../src/index.ts";
 
 describe("toStudentCourses", () => {
   it("turns AP Calculus BC 5 into two completed courses with no grade", () => {
@@ -10,6 +17,7 @@ describe("toStudentCourses", () => {
         { id: "MATH141", credits: 4, status: "completed", genEd: [], source: "AP Calculus BC (5)" },
       ],
       needsChoice: [],
+      notCounted: [],
     });
   });
 
@@ -40,6 +48,7 @@ describe("toStudentCourses", () => {
     expect(toStudentCourses([history])).toEqual({
       courses: [],
       needsChoice: [{ source: "AP United States History (4)", credits: 3, options: ["HIST200", "HIST201"] }],
+      notCounted: [],
     });
     expect(toStudentCourses([history], { "AP United States History (4)": "HIST201" }).courses).toEqual([
       { id: "HIST201", credits: 3, status: "completed", genEd: ["DSHS", "DSHU", "DVUP"], source: "AP United States History (4)" },
@@ -53,6 +62,59 @@ describe("toStudentCourses", () => {
   it("counts a course once when two exams award it", () => {
     const { courses } = toStudentCourses([creditForAp("Calculus AB", 5), creditForAp("Calculus BC", 5)]);
     expect(courses.map((c) => c.id)).toEqual(["MATH140", "MATH141"]);
+  });
+});
+
+// The chart: "Credit is granted for Calculus AB or BC, not both", and a BC score of 3 or below
+// has its AB subscore processed as the AB exam.
+describe("Calculus AB or BC, not both", () => {
+  it("counts only the AB subscore when the BC score is 3", () => {
+    const result = toStudentCourses([creditForAp("Calculus BC", 3), creditForAp("Calculus BC AB Subscore", 5)]);
+    expect(result.courses.map((c) => [c.id, c.credits])).toEqual([["MATH140", 4]]);
+    expect(result.notCounted).toEqual([
+      { source: "AP Calculus BC (3)", reason: "UMD grants credit for Calculus AB or BC, not both; AP Calculus BC AB Subscore (5) counts instead." },
+    ]);
+  });
+
+  it("counts only BC when BC earns more than AB", () => {
+    const result = toStudentCourses([creditForAp("Calculus AB", 5), creditForAp("Calculus BC", 4)]);
+    expect(result.courses.map((c) => c.id)).toEqual(["MATH140", "MATH141"]);
+    expect(result.courses.every((c) => c.source === "AP Calculus BC (4)")).toBe(true);
+    expect(result.notCounted.map((n) => n.source)).toEqual(["AP Calculus AB (5)"]);
+  });
+
+  it("gives one elective, not two, for AB 3 and BC 3", () => {
+    const { courses } = toStudentCourses([creditForAp("Calculus AB", 3), creditForAp("Calculus BC", 3)]);
+    expect(courses.map((c) => c.id)).toEqual(["L1:AP Calculus BC"]);
+  });
+
+  it("leaves a lone calculus award alone", () => {
+    expect(toStudentCourses([creditForAp("Calculus AB", 3)]).notCounted).toEqual([]);
+  });
+});
+
+describe("mergeCreditCourses", () => {
+  const ap = toStudentCourses([creditForAp("Calculus AB", 5)]).courses;
+  const mc = dualEnrollmentToStudentCourses([
+    { institution: "Montgomery College", course: "MATH181", credits: 4, umdEquivalent: [{ id: "MATH140" }] },
+    { institution: "Montgomery College", course: "ENGL101", credits: 3, umdEquivalent: [{ id: "ENGL101", genEd: ["FSAW"] }] },
+  ]);
+
+  it("keeps the first copy of a course that AP and dual enrollment both award", () => {
+    const { courses, notCounted } = mergeCreditCourses(ap, mc);
+    expect(courses.map((c) => [c.id, c.source])).toEqual([
+      ["MATH140", "AP Calculus AB (5)"],
+      ["ENGL101", "Montgomery College ENGL101"],
+    ]);
+    expect(notCounted).toEqual([{ source: "Montgomery College MATH181", reason: "MATH140 already comes from AP Calculus AB (5)." }]);
+  });
+
+  it("keeps every placeholder, since each is its own credit", () => {
+    const electives = dualEnrollmentToStudentCourses([
+      { institution: "Montgomery College", course: "ART100", credits: 3, umdEquivalent: "elective credit" },
+    ]);
+    const exam = toStudentCourses([creditForAp("Computer Science A", 4)]).courses;
+    expect(mergeCreditCourses(exam, electives).courses.map((c) => c.id)).toEqual(["L1:AP Computer Science A", "L1:Montgomery College ART100"]);
   });
 });
 

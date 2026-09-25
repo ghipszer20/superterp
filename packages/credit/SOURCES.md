@@ -1,6 +1,6 @@
 # Sources for `@superterp/credit`
 
-Every page was fetched once on 2026-09-25 with SuperTerp's User-Agent. No code in this package touches the network.
+Fetched on 2026-09-25 with SuperTerp's User-Agent. The Registrar page, the catalog page, the current AP and IB charts, and the unlinked 2024 AP chart were each downloaded once (plus one HEAD request per PDF for its `Last-Modified` date). The Transfer Course Database took five requests: the start page, the search page, the institution search twice (the first used `countryCode=USA` and returned nothing), and one institution page. The older charts and the database help page were only found as links and never fetched. No code in this package touches the network.
 
 ## Where UMD publishes it
 
@@ -18,8 +18,8 @@ Older charts are linked from the Registrar page but not transcribed: AP May 2021
 
 Both charts are PDFs, so the data was **transcribed by hand into typed files**; there is no parser.
 
-- **AP**: `src/ap-2023-2026.ts`, transcribed from the PDF's text (`pdftotext -raw`). That text is saved as `test/fixtures/ap-chart-may2023-may2026.txt`. `test/charts.test.ts` checks that every row's equivalency text appears word for word in that file, ignoring whitespace; that each course id appears in its own row's text; that the credits of a row's parts add up to the chart's Credits column; and that score bands don't overlap. To check a row by hand, open the PDF next to the file: the rows are in chart order.
-- **IB**: `src/ib-2023-2026.ts`. The PDF's extracted text separates exam titles from their rows, so the rows were **read from the rendered page images**. The extracted text is saved as `test/fixtures/ib-chart-nov2023-may2026.txt`, and the tests check every row's text and course ids against it and check that credits add up. The tests **cannot** check which score band or level a row belongs to, because the extracted text loses that link. Check those against the PDF: exams are in chart order, and "Standard" is `SL`, "Higher" is `HL`.
+- **AP**: `src/ap-2023-2026.ts`, transcribed from the PDF's text (`pdftotext -raw`). That text is saved as `test/fixtures/ap-chart-may2023-may2026.txt`. `test/charts.test.ts` checks that every row, meaning its scores, credits and equivalency text, appears word for word in that file, ignoring whitespace; that each course id appears in its own row's text; that the credits of a row's parts add up to the chart's Credits column; and that score bands don't overlap. To check a row by hand, open the PDF next to the file: the rows are in chart order.
+- **IB**: `src/ib-2023-2026.ts`. The PDF's extracted text separates exam titles from their rows, so the rows were **read from the rendered page images**. The extracted text is saved as `test/fixtures/ib-chart-nov2023-may2026.txt`, The tests check every row's text and course ids against that file, and check that credits add up. For rows with a single course, the extracted text keeps the row on one line (scores, course, credits, and usually the level word), so the tests check the scores and credits of those rows too. Rows with several courses and the exam each row belongs to **cannot** be checked mechanically, because the extracted text loses that link. Check those against the PDF: exams are in chart order, and "Standard" is `SL`, "Higher" is `HL`.
 - Exam names: `name` is College Board's current name for AP and the chart's exam title for IB. The chart's own spelling is kept as an alias, and lookups ignore case, punctuation, "&"/"and" and an "AP "/"IB " prefix. An IB "(All Exam Types)" language also matches its A, B and ab initio exams (e.g. "Spanish B").
 
 ### Choices made while transcribing (owner: please confirm)
@@ -63,3 +63,8 @@ Sample rows (Montgomery College, fetched 2026-09-25):
 | BIOL150 | PRINCIPLES OF BIOLOGY I | Accepted BSCI170 / Accepted BSCI171 | DSNL / – | Fall 2022 – Summer II 2031 |
 
 For now the student types in what they found (`DualEnrollmentEntry`), and `dualEnrollmentToStudentCourses` converts it. The database gives no per-course credits when one course maps to several UMD courses, so the student supplies the split, and the converter checks that it adds up.
+
+## Overlapping credit (owner: please confirm)
+
+- **Calculus AB or BC, not both.** `toStudentCourses` keeps only the calculus award (AB, BC, or BC's AB subscore) worth the most credits; on a tie it prefers BC, then the subscore, then AB. So BC 3 with AB subscore 5 counts only MATH140 (4 credits), matching the chart's "If Calculus BC score is 3 or below, the subscore is processed as the AB exam". The dropped award is returned in `notCounted` with the reason.
+- **The same course from two places.** `mergeCreditCourses(examCourses, dualEnrollmentCourses)` keeps the first copy of a UMD course that more than one source awards (e.g. MATH140 from AP and from Montgomery College MATH181) and lists the rest in `notCounted`. Pass exam credit first to have it win. Elective and Gen Ed-only placeholders are each their own credit and are never merged.
