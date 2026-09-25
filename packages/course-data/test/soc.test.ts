@@ -1,0 +1,93 @@
+// Parsers tested against trimmed snapshots of real Testudo pages (test/fixtures).
+
+import { readFileSync } from "node:fs";
+import { describe, expect, it } from "vitest";
+import { SourceError } from "@superterp/campus-data/http";
+import { parseClock, parseCourses, parseDays, parseDepartments, parseSections, parseTerms } from "../src/soc.ts";
+
+const fixture = (name: string) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), "utf8");
+
+describe("landing page", () => {
+  const html = fixture("soc-home.html");
+
+  it("lists terms and marks the current one", () => {
+    const terms = parseTerms(html);
+    expect(terms.map((t) => t.id)).toEqual(["202605", "202608", "202612", "202701"]);
+    expect(terms.find((t) => t.current)).toMatchObject({ id: "202701", name: "Spring 2027" });
+  });
+
+  it("lists departments by code and name", () => {
+    expect(parseDepartments(html)[0]).toEqual({ code: "AAAS", name: "African American and Africana Studies" });
+  });
+
+  it("fails loudly when the layout changes", () => {
+    expect(() => parseDepartments("<html></html>")).toThrow(SourceError);
+  });
+});
+
+describe("department page", () => {
+  const cmsc = parseCourses(fixture("soc-cmsc.html"), "CMSC");
+  const hist = parseCourses(fixture("soc-hist.html"), "HIST");
+
+  it("reads course basics", () => {
+    expect(cmsc.map((c) => c.id)).toEqual(["CMSC131", "CMSC351"]);
+    expect(cmsc[1]).toMatchObject({
+      id: "CMSC351",
+      department: "CMSC",
+      title: "Algorithms",
+      credits: { min: 3, max: 3 },
+      permissionRequired: true,
+    });
+  });
+
+  it("separates prerequisite, restriction and description text", () => {
+    const algo = cmsc[1]!;
+    expect(algo.texts.prerequisite).toBe("Minimum grade of C- in CMSC250 and CMSC216.");
+    expect(algo.texts.restriction).toMatch(/^Must be in a major within the CMNS-Computer Science department/);
+    expect(algo.description).toMatch(/^A systematic study of the complexity/);
+    expect(algo.description).not.toMatch(/Prerequisite/);
+  });
+
+  it("reads Gen Ed codes and keeps Testudo's wording", () => {
+    expect(hist[0]).toMatchObject({ id: "HIST111", genEd: ["DSHS", "DVUP"], genEdText: "DSHS, DVUP" });
+    expect(hist[1]!.genEd).toEqual(["DSHU", "SCIS"]);
+  });
+
+  it("reads variable credits", () => {
+    expect(hist.find((c) => c.id === "HIST299")!.credits).toEqual({ min: 1, max: 3 });
+  });
+});
+
+describe("sections", () => {
+  const sections = parseSections(fixture("soc-sections.html"));
+
+  it("reads sections per course", () => {
+    expect(sections.map((s) => `${s.courseId}-${s.id}`)).toEqual(["CMSC216-0101", "CMSC216-0102", "ENGL101-0001"]);
+  });
+
+  it("reads instructors, seats and meetings, including discussions", () => {
+    expect(sections[0]).toEqual({
+      id: "0101",
+      courseId: "CMSC216",
+      instructors: ["Christopher Kauffman"],
+      seats: { total: 28, open: 0, waitlist: 0, holdfile: 0 },
+      delivery: "f2f",
+      meetings: [
+        { days: ["Tu", "Th"], start: 570, end: 645, building: "CSI", room: "1115", type: "Lecture" },
+        { days: ["M", "W"], start: 660, end: 710, building: "CSI", room: "1121", type: "Discussion" },
+      ],
+    });
+  });
+});
+
+describe("helpers", () => {
+  it("parses clock times and day codes", () => {
+    expect(parseClock("1:00pm")).toBe(780);
+    expect(parseClock("12:30pm")).toBe(750);
+    expect(parseClock("12:00am")).toBe(0);
+    expect(parseClock("TBA")).toBeNull();
+    expect(parseDays("MWF")).toEqual(["M", "W", "F"]);
+    expect(parseDays("TuTh")).toEqual(["Tu", "Th"]);
+    expect(parseDays("SaSu")).toEqual(["Sa", "Su"]);
+  });
+});

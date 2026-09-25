@@ -244,3 +244,9 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
 - **Never kill processes by image name** (`taskkill /IM node.exe` kills every Node process on the owner's PC). Kill only by PID, e.g. from `netstat -ano | grep :PORT`.
 - Headless Edge `--screenshot` can't go below ~500px wide and fires before streamed content arrives. Use `apps/web/scripts/ui-check.mjs` (true mobile emulation, waits for JS).
 - Next 16 ships its docs in `node_modules/next/dist/docs/`. Read them before using new APIs (Cache Components, `use cache`, `cacheLife`, `connection()`).
+
+## 16. Standing work mode (owner, 2026-09-24)
+- **Continuous build mode:** the owner leaves Claude running overnight (and repeatedly, day and night) until the project is complete. Keep building; never stop on your own. Stop only when the owner sends a message. The morning message will be **"progress report"**: answer it with a concise report of everything done since the last report, open decisions, and anything needing approval.
+- While the owner is away: do data, engine, tests and infrastructure work freely. **Major UI changes still need owner approval.** Build them on a separate branch or PR as proposals, capture screenshots with `npm run ui-check`, and list them in the progress report. Don't block on anything; note assumptions and keep going.
+- Use superpowers skills (TDD etc.) and mattpocock domain-modeling per CLAUDE.md. Brainstorming questions for the owner go into the progress report instead of blocking.
+- Commit and push often to feature branches (never main). Keep PROJECT_MEMORY.md's status log current so nothing is lost if context is summarized.

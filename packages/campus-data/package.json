@@ -10,7 +10,8 @@
   "exports": {
     ".": "./src/index.ts",
     "./dates": "./src/dates.ts",
-    "./hours": "./src/hours.ts"
+    "./hours": "./src/hours.ts",
+    "./http": "./src/http.ts"
   },
   "scripts": {
     "test": "vitest run",
