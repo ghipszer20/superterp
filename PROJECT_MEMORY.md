@@ -268,3 +268,9 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
 - **CS gateway rule confirmed:** students who matriculated Fall 2024 or later need B- or better in gateway courses and a 3.0 cumulative GPA to apply to the CS LEP; earlier students need C- and 2.7.
 - **Schedule builder: all-combinations browser (owner idea, 2026-09-25).** When a student picks courses for a term, SuperTerp generates every conflict-free combination of sections and lets them scroll through all of them; building a schedule by hand stays available too.
   - Engine notes (Claude): combinations can explode (5 courses × 20 sections = 3.2M), so generate lazily with backtracking that prunes conflicts. Group combinations with identical meeting times, so the student scrolls distinct weekly layouts, with the section choices inside each. Show the total count. Filters and sorting (no 8ams, days off, open seats, professor rating) narrow the list. Scrolling must stay instant.
+- **Pre-warmed campus data (owner idea + Claude refinements, 2026-09-25).** No student should ever wait on a cold fetch.
+  - A scheduled job (~5am daily) gathers stable data: room catalog, all dining menus, library and gym hours, bus schedule. It writes snapshots to a durable shared store (Supabase or the host's shared data cache, not per-instance memory). Pages read only from snapshots.
+  - Fast-changing data is refreshed in the background on top: room availability every ~5 min, menus re-checked every ~30 min. Students always get the latest snapshot instantly (stale-while-revalidate).
+  - Scheduler: GitHub Actions cron (free, frequent) calling a protected warm endpoint. Check Vercel cron free-tier limits before relying on it.
+  - Dining payload: send only the hall and meal being viewed (currently ~490 KB for all three halls); load others on tap. Pre-warming keeps taps instant.
+  - Build this together with deployment (Vercel + Supabase accounts needed from the owner).

@@ -33,7 +33,9 @@ export type Requirement =
       minNumber: number;
       maxNumber: number;
       excludeDepartments?: string[];
-    };
+    }
+  /** Every course of one set, e.g. Math's depth sequence "MATH410 & MATH411 or MATH403 & MATH404". */
+  | { kind: "sets"; id: string; name: string; options: string[][] };
 
 export type Program = {
   id: string;
@@ -99,12 +101,14 @@ function need(req: Requirement): number {
   if (req.kind === "course") return 1;
   if (req.kind === "distribution") return req.count;
   if (req.kind === "concentration") return req.credits;
+  if (req.kind === "sets") return Math.min(...req.options.map((o) => o.length));
   return req.credits ?? req.count ?? 0;
 }
 
 /**
- * One way a course could count toward a requirement: through an area (distributions)
- * or within a department (concentrations).
+ * One way a course could count toward a requirement: through an area (distributions),
+ * as part of one option (sets; `area` holds the option index), or within a
+ * department (concentrations).
  */
 type Pair = {
   p: number;
@@ -127,6 +131,11 @@ function pairsFor(req: Requirement, p: number, r: number, course: StudentCourse,
     const n = Number(m[2]);
     if (n < req.minNumber || n > req.maxNumber) return [];
     return [{ p, c, r, area: null, department: m[1]!, name: base, weight: course.credits }];
+  }
+  if (req.kind === "sets") {
+    return req.options.flatMap((option, k) =>
+      option.includes(course.id) ? [{ p, c, r, area: k, department: null, name: `${base}_${k}`, weight: 1 }] : [],
+    );
   }
   return req.areas.flatMap((area, a) =>
     area.courses.includes(course.id)
@@ -196,6 +205,26 @@ export async function auditPrograms(
       const id = `${p}_${r}`;
       if (mine.length === 0) {
         constraints.push(` sat_${id}: ${y(p, r)} <= 0`);
+        return;
+      }
+      if (req.kind === "sets") {
+        // o[k]: option k is the one being pursued; w[k]: option k is complete.
+        const picked: string[] = [];
+        const complete: string[] = [];
+        req.options.forEach((option, k) => {
+          const inOption = mine.filter((q) => q.area === k);
+          if (inOption.length === 0) return;
+          const o = `o_${id}_${k}`;
+          const w = `w_${id}_${k}`;
+          binaries.push(o, w);
+          picked.push(o);
+          complete.push(w);
+          inOption.forEach((q, i) => constraints.push(` pick_${id}_${k}_${i}: ${q.name} - ${o} <= 0`));
+          constraints.push(` done_${id}_${k}: ${sum(inOption)} - ${option.length} ${w} >= 0`);
+          constraints.push(` doneonly_${id}_${k}: ${w} - ${o} <= 0`);
+        });
+        constraints.push(` onepick_${id}: ${picked.join(" + ")} <= 1`);
+        constraints.push(` sat_${id}: ${y(p, r)} - ${complete.join(" - ")} <= 0`);
         return;
       }
       // A credit requirement may overshoot by less than one course (e.g. 4 credits toward the last 3).

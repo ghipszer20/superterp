@@ -140,6 +140,35 @@ describe("auditProgram", () => {
     });
   });
 
+  describe("pick one set (Math: a depth sequence, or a supporting sequence)", () => {
+    const program: Program = {
+      id: "math",
+      name: "Math",
+      requirements: [
+        {
+          kind: "sets",
+          id: "depth",
+          name: "Depth sequence",
+          options: [
+            ["MATH410", "MATH411"],
+            ["MATH403", "MATH404"],
+          ],
+        },
+      ],
+    };
+
+    it("is satisfied when every course in one set is done", async () => {
+      const r = await auditProgram(program, took("MATH403", "MATH404"));
+      expect(r.requirements[0]).toMatchObject({ status: "satisfied", assigned: ["MATH403", "MATH404"] });
+    });
+
+    it("is partial with half of a set, and doesn't mix courses from two sets", async () => {
+      const r = await auditProgram(program, took("MATH410", "MATH404"));
+      expect(r.requirements[0]!.status).toBe("partial");
+      expect(r.requirements[0]!.assigned).toHaveLength(1);
+    });
+  });
+
   describe("several programs at once (double major)", () => {
     const math: Program = {
       id: "math",
