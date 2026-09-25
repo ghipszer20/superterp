@@ -106,6 +106,40 @@ describe("auditProgram", () => {
     expect(result.unused).toEqual(["CMSC330"]);
   });
 
+  describe("concentration (CS: 12 credits of 300–400 level courses from one discipline outside CMSC)", () => {
+    const program: Program = {
+      id: "cs",
+      name: "CS",
+      requirements: [
+        {
+          kind: "concentration",
+          id: "conc",
+          name: "Upper-level concentration",
+          credits: 12,
+          minNumber: 300,
+          maxNumber: 499,
+          excludeDepartments: ["CMSC"],
+        },
+      ],
+    };
+
+    it("is satisfied by 12 credits in one department", async () => {
+      const r = await auditProgram(program, took("MATH401", "MATH403", "MATH410", "MATH411"));
+      expect(r.requirements[0]).toMatchObject({ status: "satisfied" });
+    });
+
+    it("isn't satisfied by 12 credits split across two departments", async () => {
+      const r = await auditProgram(program, took("MATH401", "MATH403", "STAT400", "STAT401"));
+      expect(r.requirements[0]).toMatchObject({ status: "partial" });
+      expect(r.requirements[0]!.assigned).toHaveLength(2);
+    });
+
+    it("ignores the excluded department and lower-level courses", async () => {
+      const r = await auditProgram(program, took("CMSC420", "CMSC421", "CMSC422", "CMSC423", "MATH141"));
+      expect(r.requirements[0]).toMatchObject({ status: "missing" });
+    });
+  });
+
   describe("several programs at once (double major)", () => {
     const math: Program = {
       id: "math",

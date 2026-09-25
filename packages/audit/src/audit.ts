@@ -23,7 +23,17 @@ export type Requirement =
   /** N courses, or N credits, matching a filter, e.g. "12 credits of 400-level CMSC". */
   | { kind: "choose"; id: string; name: string; count?: number; credits?: number; from: CourseFilter }
   /** N courses spread over areas, e.g. "five courses from at least three areas, at most three per area". */
-  | { kind: "distribution"; id: string; name: string; count: number; minAreas: number; maxPerArea: number; areas: Area[] };
+  | { kind: "distribution"; id: string; name: string; count: number; minAreas: number; maxPerArea: number; areas: Area[] }
+  /** N credits in a number range, all from ONE department, e.g. CS's "12 credits of 300–400 level courses from one discipline outside CMSC". */
+  | {
+      kind: "concentration";
+      id: string;
+      name: string;
+      credits: number;
+      minNumber: number;
+      maxNumber: number;
+      excludeDepartments?: string[];
+    };
 
 export type Program = {
   id: string;
@@ -80,24 +90,40 @@ export function matchesFilter(filter: CourseFilter, courseId: string): boolean {
 function need(req: Requirement): number {
   if (req.kind === "course") return 1;
   if (req.kind === "distribution") return req.count;
+  if (req.kind === "concentration") return req.credits;
   return req.credits ?? req.count ?? 0;
 }
 
-
-/** One way a course could count toward a requirement (for distributions: through one area). */
-type Pair = { p: number; c: number; r: number; area: number | null; name: string; weight: number };
+/**
+ * One way a course could count toward a requirement: through an area (distributions)
+ * or within a department (concentrations).
+ */
+type Pair = {
+  p: number;
+  c: number;
+  r: number;
+  area: number | null;
+  department: string | null;
+  name: string;
+  weight: number;
+};
 
 function pairsFor(req: Requirement, p: number, r: number, course: StudentCourse, c: number): Pair[] {
   const base = `x_${p}_${c}_${r}`;
-  if (req.kind === "course") {
-    return req.options.includes(course.id) ? [{ p, c, r, area: null, name: base, weight: 1 }] : [];
-  }
-  if (req.kind === "choose") {
-    if (!matchesFilter(req.from, course.id)) return [];
-    return [{ p, c, r, area: null, name: base, weight: req.credits ? course.credits : 1 }];
+  const plain = (weight: number): Pair[] => [{ p, c, r, area: null, department: null, name: base, weight }];
+  if (req.kind === "course") return req.options.includes(course.id) ? plain(1) : [];
+  if (req.kind === "choose") return matchesFilter(req.from, course.id) ? plain(req.credits ? course.credits : 1) : [];
+  if (req.kind === "concentration") {
+    const m = COURSE_ID.exec(course.id);
+    if (!m || req.excludeDepartments?.includes(m[1]!)) return [];
+    const n = Number(m[2]);
+    if (n < req.minNumber || n > req.maxNumber) return [];
+    return [{ p, c, r, area: null, department: m[1]!, name: base, weight: course.credits }];
   }
   return req.areas.flatMap((area, a) =>
-    area.courses.includes(course.id) ? [{ p, c, r, area: a, name: `${base}_${a}`, weight: 1 }] : [],
+    area.courses.includes(course.id)
+      ? [{ p, c, r, area: a, department: null, name: `${base}_${a}`, weight: 1 }]
+      : [],
   );
 }
 
@@ -181,6 +207,19 @@ export async function auditPrograms(
           constraints.push(` used_${id}_${a}: ${sum(inArea)} - ${z} >= 0`);
         });
         constraints.push(` areas_${id}: ${[...used, `- ${req.minAreas} ${y(p, r)}`].join(" + ").replace("+ -", "-")} >= 0`);
+      }
+
+      if (req.kind === "concentration") {
+        // Pick one department; only its courses count.
+        const departments = [...new Set(mine.map((q) => q.department!))];
+        const d = (dept: string) => `d_${id}_${dept}`;
+        departments.forEach((dept) => {
+          binaries.push(d(dept));
+          mine
+            .filter((q) => q.department === dept)
+            .forEach((q, i) => constraints.push(` dept_${id}_${dept}_${i}: ${q.name} - ${d(dept)} <= 0`));
+        });
+        constraints.push(` onedept_${id}: ${departments.map(d).join(" + ")} <= 1`);
       }
     }),
   );
