@@ -78,6 +78,24 @@ describe("sections", () => {
       ],
     });
   });
+
+  it('reports a section with no instructor as "TBA", without Testudo\'s "Instructor:" label', () => {
+    const html = `<!doctype html><html><body>
+<div id="MATH140" class="course-sections"><div class="sections-container"><div class="sections sixteen colgrid">
+  <div class="section delivery-f2f">
+    <div class="section-info-container"><div class="row">
+      <div class="section-id-container two columns"><span class="section-id"> 0111 </span></div>
+      <div class="section-instructors-container five columns">
+        <span class="section-instructors">
+          <span class="section-instructor">Instructor: TBA</span>
+        </span>
+      </div>
+    </div></div>
+  </div>
+</div></div></div>
+</body></html>`;
+    expect(parseSections(html)[0]!.instructors).toEqual(["TBA"]);
+  });
 });
 
 describe("helpers", () => {
