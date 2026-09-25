@@ -6,6 +6,14 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   // The shared data package ships TypeScript source; let Next compile it.
   transpilePackages: ["@superterp/campus-data"],
+  // Keep old links working after the tab restructure.
+  async redirects() {
+    return [
+      { source: "/campus/buses", destination: "/campus/transit", permanent: true },
+      { source: "/plan", destination: "/advisor", permanent: true },
+      { source: "/explore", destination: "/schedule", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

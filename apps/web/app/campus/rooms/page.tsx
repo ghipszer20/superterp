@@ -13,7 +13,7 @@ const EXCLUDED_CATEGORY = /equipment|faculty/i;
 
 export default function RoomsPage() {
   return (
-    <Page title="Study Rooms" subtitle="Campus">
+    <Page title="Study Rooms" subtitle="Libraries">
       <Suspense fallback={<SkeletonCard rows={8} />}>
         <Rooms />
       </Suspense>

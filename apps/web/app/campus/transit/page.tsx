@@ -6,11 +6,11 @@ import { Notice, Page, SkeletonCard, SourceError } from "@/components/ui";
 import { getBusStops, getRoutesOn, safe } from "@/lib/campus";
 import { BusBoard } from "./BusBoard";
 
-export const metadata: Metadata = { title: "Buses" };
+export const metadata: Metadata = { title: "Transit" };
 
-export default function BusesPage() {
+export default function TransitPage() {
   return (
-    <Page title="Buses" subtitle="Shuttle-UM">
+    <Page title="Transit" subtitle="Shuttle-UM">
       <Suspense fallback={<SkeletonCard rows={6} />}>
         <Board />
       </Suspense>

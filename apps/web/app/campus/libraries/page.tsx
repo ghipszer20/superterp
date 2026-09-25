@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Suspense } from "react";
 import { connection } from "next/server";
 import { campusDate, campusMinutes } from "@superterp/campus-data";
 import { LiveStatus } from "@/components/LiveStatus";
-import { Card, Notice, Page, Row, Section, SkeletonCard, SourceError } from "@/components/ui";
+import { RoomIcon } from "@/components/icons";
+import { Card, IconTile, Notice, Page, Row, Section, SkeletonCard, SourceError } from "@/components/ui";
 import { getLibraryHours, safe } from "@/lib/campus";
 
 export const metadata: Metadata = { title: "Libraries" };
@@ -12,11 +12,23 @@ export const metadata: Metadata = { title: "Libraries" };
 export default function LibrariesPage() {
   return (
     <Page title="Libraries" subtitle="Campus">
+      <Card>
+        <Row
+          href="/campus/rooms"
+          leading={
+            <IconTile>
+              <RoomIcon />
+            </IconTile>
+          }
+          title="Study rooms"
+          subtitle="Find an open room at any library and book it"
+        />
+      </Card>
       <Suspense fallback={<SkeletonCard rows={6} />}>
         <LibraryList />
       </Suspense>
       <Notice>
-        Hours from UMD Libraries. Need a room? <Link href="/campus/rooms">Find an open study room</Link>.
+        Hours from UMD Libraries.
       </Notice>
     </Page>
   );

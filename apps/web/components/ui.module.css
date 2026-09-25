@@ -1,7 +1,7 @@
 .page {
   max-width: var(--content);
   margin: 0 auto;
-  padding: calc(20px + env(safe-area-inset-top)) var(--gutter) calc(96px + env(safe-area-inset-bottom));
+  padding: 16px var(--gutter) calc(96px + env(safe-area-inset-bottom));
 }
 
 @media (min-width: 900px) {

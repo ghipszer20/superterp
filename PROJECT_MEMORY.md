@@ -148,7 +148,12 @@ Scale: about 200–300+ programs, roughly 200–300 hours of owner review. Launc
 
 ## 8. UI / design
 - **Principles:** show the answer, not the data; one main action per screen; plain language (e.g. "Humanities (DSHU)"); color only when it means something (white and gray, one accent, a pastel for each requirement category); an instant feel (cached data, skeleton loading, springs, haptics); accessibility (Dynamic Type, VoiceOver, dark mode, AA contrast).
-- **Tabs (built in PR #1, PENDING owner approval):** Today · Campus · Schedule · Plan · Explore. Profile moves to a top-right avatar button once accounts exist. (Original plan was Today · Schedule · Plan · Explore · Profile.)
+- **Navigation (owner decision, 2026-09-24):** THREE main tabs: **Campus · Schedule · Advisor**.
+  - **Campus** has a sub-nav: Dining · Transit (Shuttle-UM) · Libraries (hours + study rooms) · Gyms.
+  - **Schedule**: the schedule builder, plus course and professor info (replaces the old Explore idea).
+  - **Advisor**: the 4-year plan / degree audit plus LLM advising.
+  - **Today** summary is the home page (`/`), reached from the SuperTerp logo; it's not a tab.
+  - **Accent red #BA0C2F approved** by the owner.
 - **Onboarding** in under 60 seconds: major and year → transcript → audit.
 - Don't use Testudo or UMD logos. Logo idea: abstract hexagon or shell plates.
 - The website gets a desktop layout, not a stretched phone app.
@@ -215,7 +220,7 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
 - **Repo:** private at `ghipszer20/superterp` until launch, then public. License **Apache-2.0**.
 - **Hosting:** free tiers only. Vercel (web), Supabase (DB and auth), GitHub Actions (scheduled scrapers). The owner creates the accounts when deployment needs them.
 - **Workflow (updated 2026-09-24):** NO PR reviews. Claude works autonomously on long-running branches with draft PRs; the owner merges whenever they like, without reviewing (Claude can never push or merge to main). Check in with the owner ONLY for: (1) any **major UI change**, which the owner must approve (show screenshots or a local preview first); (2) design or functionality changes the owner wants; (3) problems or blockers; (4) something turning out infeasible; (5) a good new idea. Everything else: decide, note the assumption, keep going. PRs still explain web-specific choices, since the owner knows Python and less web.
-- **Design:** Claude drafts an Apple-style design system; the owner reviews visually and approves. Accent color: **(PRODUCT)RED iPhone red, `#BA0C2F`** (owner asked for "the red iPhone 4" red; no red iPhone 4 existed, so this is the (PRODUCT)RED iPhone red, pending owner confirmation). Full strength only on buttons, active tabs and highlights; pale tints for backgrounds; a brighter variant in dark mode for contrast. Soft whites and grays, light and dark mode.
+- **Design:** Claude drafts an Apple-style design system; the owner reviews visually and approves. Accent color: **(PRODUCT)RED iPhone red, `#BA0C2F`** (owner approved 2026-09-24). Full strength only on buttons, active tabs and highlights; pale tints for backgrounds; a brighter variant in dark mode for contrast. Soft whites and grays, light and dark mode.
 - **Owner profile:** Math major, CS minor, adding a CS dual degree. **First verification target: Math + CS double major.** Also build a Math + CS double-degree test student.
 - **Transcript:** the owner will provide their unofficial transcript during the Phase 2 parser work. It stays local only and is never committed (gitignored).
 - **Tooling on the owner's PC:** git, gh (logged in as ghipszer20), Node 24, npm, Python 3.13 via `py` (no `python` or `python3` on PATH), no Docker (so use hosted Supabase, not local).
@@ -224,7 +229,8 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
 - **2026-09-24, PR #1 (`feat/campus-foundation`, draft):** repo foundation + Campus tab.
   - `packages/campus-data`: dining, libraries (LibCal JSON feed `api_hours_grid.php?iid=1504`), RecWell sheet, study rooms (LibCal catalog + grid), Shuttle-UM GTFS. 38 fixture tests; `npm run smoke` checks the live sites (all 5 passed 2026-09-24).
   - `apps/web` (Next.js 16, Cache Components): Today, Campus hub, Dining, Study Rooms, Buses, Libraries, Gyms & Rec, plus placeholder Schedule/Plan/Explore. `next build`, `tsc` and ESLint are clean; `npm run ui-check` (headless Edge over DevTools at iPhone size) shows 0 console errors on all 8 pages.
-  - **Waiting on owner:** approval of the Campus UI (first major UI; screenshots in `apps/web/.ui-check/`, or run `npm run dev`).
+  - Owner approved the red and set the navigation (Campus · Schedule · Advisor, with Today at `/`). Implemented 2026-09-24: Campus sub-nav, Dining · Transit · Libraries (+ study rooms) · Gyms; redirects from /plan, /explore, /campus/buses.
+  - **Waiting on owner:** a final look at the restructured navigation (screenshots in `apps/web/.ui-check/`).
   - **Review to-dos (not blocking PR 1):**
     - The GTFS feed ends 2026-12-24. `validUntil` is parsed but not shown, so after it expires the app would say "No Shuttle-UM service". Warn in the UI and in a scheduled check before that date.
     - Before public launch, check the GTFS feed's license (Interline/actionfigure) for republishing schedules.

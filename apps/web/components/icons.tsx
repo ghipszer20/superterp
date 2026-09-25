@@ -118,3 +118,11 @@ export const LocationIcon = (p: IconProps) => (
     <circle cx="12" cy="10" r="2.3" />
   </Icon>
 );
+
+export const AdvisorIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <path d="M3 9.5 12 5l9 4.5-9 4.5z" />
+    <path d="M7 11.6V16c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5v-4.4" />
+    <path d="M21 9.5V15" />
+  </Icon>
+);

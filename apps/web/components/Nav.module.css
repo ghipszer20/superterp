@@ -1,4 +1,20 @@
-/* Phone: frosted bottom tab bar. Desktop (≥ 900px): sidebar. */
+/* Phone: wordmark at the top + frosted bottom tab bar. Desktop (≥ 900px): sidebar. */
+
+.topBar {
+  padding: calc(10px + env(safe-area-inset-top)) var(--gutter) 0;
+}
+
+.wordmark,
+.brand {
+  font: 700 20px/1 var(--font-rounded);
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.wordmark span,
+.brand span {
+  color: var(--accent);
+}
 
 .nav {
   position: fixed;
@@ -12,14 +28,15 @@
 }
 
 .brand,
-.fine {
+.fine,
+.nav .todayLink {
   display: none;
 }
 
 .tabs {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  max-width: 560px;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 420px;
   margin: 0 auto;
   padding: 0;
   list-style: none;
@@ -50,6 +67,10 @@
 }
 
 @media (min-width: 900px) {
+  .topBar {
+    display: none;
+  }
+
   .nav {
     inset: 0 auto 0 0;
     width: 232px;
@@ -63,12 +84,12 @@
   .brand {
     display: block;
     padding: 0 12px 24px;
-    font: 700 22px/1 var(--font-rounded);
-    letter-spacing: -0.02em;
+    font-size: 22px;
   }
 
-  .brand span {
-    color: var(--accent);
+  .nav .todayLink {
+    display: flex;
+    margin-bottom: 2px;
   }
 
   .tabs {
@@ -111,6 +132,7 @@
     }
     .tab[data-active="true"]:hover {
       background: var(--accent-tint);
+      color: var(--accent);
     }
   }
 
