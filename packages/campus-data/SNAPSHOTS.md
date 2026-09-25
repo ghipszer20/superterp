@@ -1,0 +1,58 @@
+# Campus data snapshots
+
+Pages never scrape UMD sites per request. Two jobs fetch the data ahead of time and write JSON snapshots. The web app reads those snapshots and fetches live only when a snapshot doesn't exist yet (for example, a fresh checkout).
+
+## Jobs
+
+| Job | Schedule | What it refreshes |
+| --- | --- | --- |
+| `buildSnapshots` (`daily`) | once a day, ~5:00am campus time | room catalog, today's room availability, today's menus for every hall, library hours (2 weeks), RecWell hours (14 days from today), Shuttle-UM GTFS feed |
+| `refreshFast` (`fast`) | every 5 minutes | room availability for today; each hall's menu once its snapshot is 30+ minutes old (so menus are re-checked every ~30 min), or right away when the date rolls over |
+
+Run them with the CLI (from `packages/campus-data`):
+
+```sh
+npm run snapshots -- daily          # the 5am build
+npm run snapshots -- fast           # the 5-minute refresh
+npm run snapshots -- fast --dir D:/snaps
+```
+
+The CLI prints one line per snapshot and exits 1 if any source failed, so a scheduler flags the run.
+
+**Scheduling (not set up yet):** when we deploy, a GitHub Actions cron will run the two jobs: `0 9 * * *` UTC (5am EDT, 4am EST) for `daily` and `*/5 * * * *` for `fast`. The workflow will call a protected warm endpoint, or run the CLI against the durable store. GitHub may delay or skip scheduled runs under load, which is fine because pages keep serving the last snapshot. Check Vercel's cron limits before using it instead.
+
+## Failure behavior
+
+- A source that throws never overwrites its last good snapshot. The error is written to `status/<key>` as `{ lastAttemptAt, lastSuccessAt, error }`, and the snapshot's `updatedAt` keeps meaning "when this data was fetched".
+- Each dining hall and each room category is a separate key, so one failing hall or category doesn't affect the others.
+- A GTFS feed that doesn't parse, or an empty room catalog, counts as a failure.
+- A hall that posted no menu is valid data (an empty menu), not a failure.
+- If the catalog fetch fails, the daily build computes availability from the last good catalog. `refreshFast` never scrapes the catalog; with no catalog snapshot, it reports an error.
+- Pages serve a snapshot however old it is, and fetch live only when none exists.
+
+## Store
+
+```ts
+interface SnapshotStore {
+  get<T>(key: string): Promise<{ updatedAt: string; data: T } | null>;
+  put<T>(key: string, snapshot: { updatedAt: string; data: T }): Promise<void>;
+}
+```
+
+`FileSnapshotStore` stores each key as a JSON file: `dining/2026-09-25/19` is saved as `<dir>/dining/2026-09-25/19.json`. Each file is wrapped in `{ schema, key, updatedAt, data }`. Writes go to a temp file first and are then renamed into place. A file with a different `schema` number, or one that won't parse, reads as missing. Bump `SNAPSHOT_SCHEMA` whenever a data shape changes.
+
+The directory is `$SUPERTERP_SNAPSHOT_DIR`, or `<repo root>/.cache/snapshots` by default. That folder is gitignored, and the CLI and `next dev`/`next start` both resolve to it. A durable store (Supabase, or the host's data cache) will implement the same two methods when we deploy.
+
+Keys:
+
+| Key | Data |
+| --- | --- |
+| `rooms/catalog` | `{ locations, rooms }` |
+| `rooms/<date>/<locationId>-<categoryId>` | `RoomAvailability[]` for one study category |
+| `dining/<date>/<hallId>` | `DiningMenu` |
+| `libraries/hours` | `LibraryHours[]` |
+| `recwell/areas` | `RecWellArea[]` (14-day window) |
+| `buses/gtfs` | unzipped GTFS text files (about 7 MB); the web parses them once per server instance |
+| `status/<key>` | the last refresh attempt for `<key>` |
+
+Dated keys aren't cleaned up yet. They add about 12 small files a day.

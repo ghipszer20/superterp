@@ -11,12 +11,14 @@
     ".": "./src/index.ts",
     "./dates": "./src/dates.ts",
     "./hours": "./src/hours.ts",
-    "./http": "./src/http.ts"
+    "./http": "./src/http.ts",
+    "./snapshots": "./src/snapshots/index.ts"
   },
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "smoke": "node scripts/smoke.ts"
+    "smoke": "node scripts/smoke.ts",
+    "snapshots": "node scripts/build-snapshots.ts"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

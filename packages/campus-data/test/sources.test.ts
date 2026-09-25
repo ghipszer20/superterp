@@ -5,8 +5,14 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { parseDiningMenu } from "../src/dining.ts";
 import { parseLibCalHours, type LibCalHoursFeed } from "../src/libraries.ts";
-import { parseRecWellTab, recWellOnDate } from "../src/recwell.ts";
-import { applyAvailability, parseRoomCategories, parseRoomLocations, parseRooms } from "../src/rooms.ts";
+import { parseRecWellTab, recWellOnDate, recWellWindow } from "../src/recwell.ts";
+import {
+  applyAvailability,
+  parseRoomCategories,
+  parseRoomLocations,
+  parseRooms,
+  studyRoomCategories,
+} from "../src/rooms.ts";
 import { SourceError } from "../src/http.ts";
 
 const fixture = (name: string) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), "utf8");
@@ -135,5 +141,42 @@ describe("study rooms", () => {
       { start: "2026-09-25 10:30:00", end: "2026-09-25 14:00:00" },
     ]);
     expect(chatelet!.open).toEqual([{ start: "2026-09-25 08:00:00", end: "2026-09-25 14:00:00" }]);
+  });
+});
+
+describe("study room categories", () => {
+  const room = (id: number, locationId: number, categoryId: number, categoryName: string) => ({
+    id,
+    name: String(id),
+    capacity: 4,
+    locationId,
+    categoryId,
+    categoryName,
+    bookingUrl: "",
+  });
+
+  it("lists each bookable study category once, skipping equipment and faculty spaces", () => {
+    const rooms = [
+      room(1, 10, 100, "Group Study Rooms"),
+      room(2, 10, 100, "Group Study Rooms"),
+      room(3, 10, 101, "Equipment Loans"),
+      room(4, 20, 200, "Faculty Offices"),
+      room(5, 20, 201, "Individual Study"),
+    ];
+    expect(studyRoomCategories(rooms)).toEqual([
+      { locationId: 10, categoryId: 100 },
+      { locationId: 20, categoryId: 201 },
+    ]);
+  });
+});
+
+describe("RecWell date window", () => {
+  const areas = parseRecWellTab(fixture("recwell-eppley.csv"), "indoor");
+
+  it("keeps only the dates from the start date through the given number of days", () => {
+    const trimmed = recWellWindow(areas, "2026-01-05", 2);
+    expect(Object.keys(trimmed[0]!.hoursByDate)).toEqual(["2026-01-05", "2026-01-06"]);
+    expect(recWellOnDate(trimmed, "2026-01-05")[0]!.hours).toMatchObject({ kind: "ranges" });
+    expect(recWellOnDate(trimmed, "2026-01-07")).toEqual([]);
   });
 });

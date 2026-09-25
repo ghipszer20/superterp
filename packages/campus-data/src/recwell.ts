@@ -3,7 +3,7 @@
 // column per date for the whole year. We read the same sheet as CSV.
 
 import { parseCsv } from "./csv.ts";
-import { fromUsDate } from "./dates.ts";
+import { addDays, fromUsDate } from "./dates.ts";
 import { parseHours, type DayHours } from "./hours.ts";
 import { fetchText, SourceError } from "./http.ts";
 
@@ -90,4 +90,13 @@ export function recWellOnDate(areas: RecWellArea[], isoDate: string): RecWellAre
     const raw = hoursByDate[isoDate];
     return raw === undefined ? [] : [{ ...area, hours: parseHours(raw) }];
   });
+}
+
+/** The areas with hours for `days` days starting at `startIsoDate` (the sheet covers a whole year). */
+export function recWellWindow(areas: RecWellArea[], startIsoDate: string, days: number): RecWellArea[] {
+  const dates = new Set(Array.from({ length: days }, (_, i) => addDays(startIsoDate, i)));
+  return areas.map((a) => ({
+    ...a,
+    hoursByDate: Object.fromEntries(Object.entries(a.hoursByDate).filter(([d]) => dates.has(d))),
+  }));
 }

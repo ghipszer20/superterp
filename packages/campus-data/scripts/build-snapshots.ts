@@ -1,0 +1,31 @@
+// Runs a snapshot job against the live UMD sites (see ../SNAPSHOTS.md).
+//
+//   node scripts/build-snapshots.ts daily   # ~5am: everything
+//   node scripts/build-snapshots.ts fast    # every 5 min: rooms; menus once 30 min old
+//   ... [--dir <path>]                       # default: $SUPERTERP_SNAPSHOT_DIR or <repo>/.cache/snapshots
+//
+// Exits 1 if any source failed (its last good snapshot is kept), so a
+// scheduler marks the run as failed and someone notices.
+
+import { buildSnapshots, defaultSnapshotDir, FileSnapshotStore, refreshFast } from "../src/snapshots/index.ts";
+
+const args = process.argv.slice(2);
+const job = args[0];
+const dirFlag = args.indexOf("--dir");
+const dir = dirFlag >= 0 ? args[dirFlag + 1] : defaultSnapshotDir();
+
+if ((job !== "daily" && job !== "fast") || !dir) {
+  console.error("Usage: node scripts/build-snapshots.ts <daily|fast> [--dir <path>]");
+  process.exit(2);
+}
+
+const store = new FileSnapshotStore(dir);
+const started = performance.now();
+const report = await (job === "daily" ? buildSnapshots : refreshFast)(store, new Date());
+
+for (const r of report.results) console.log(`${r.ok ? "✓" : "✗"} ${r.key}${r.ok ? "" : `  ${r.error}`}`);
+const failed = report.results.filter((r) => !r.ok).length;
+console.log(
+  `${job}: ${report.results.length - failed} ok, ${failed} failed in ${Math.round(performance.now() - started)} ms → ${dir}`,
+);
+process.exit(report.ok ? 0 : 1);
