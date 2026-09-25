@@ -244,7 +244,8 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
   - Tests: 96 passing across 4 packages.
   - 2026-09-25 day: schedule generator (all combinations, grouped into distinct layouts; freshman example 190,688 schedules → 17,936 layouts in 26 ms); audit gained 'sets' and overlay requirements; **Math major Traditional Track encoded** (`programs/math-major-2026-27.ts`, unverified, 8 review notes); **Math + CS double-major golden test passes**.
   - **Open question for owner:** which Math track are they in? (Traditional encoded as the default.)
-  - **Next:** Gen Ed + university rules (120 credits, upper-level credits), then the schedule builder UI (design needs owner approval), then deployment + pre-warmed data.
+  - Gen Ed + university rules encoded (`programs/gen-ed-2026-27.ts`, unverified): FS with FSAW C-, DS one-category-per-course, DSNL/second lab, Big Question and Diversity as overlays; 120-credit total. Engine gained Gen Ed filters, any-course filter, per-requirement minimum grades. Tests: 126 passing.
+  - **Next:** the schedule builder UI (design needs owner approval), transcript import, then deployment + pre-warmed data.
   - **Next up (per plan):** Phase 1 schedule builder on the shared plan model; deploy to Vercel once the owner creates an account.
 
 ## 15. Working notes for Claude
