@@ -1,0 +1,56 @@
+<!doctype html><html><body>
+<select class="form-control" name="lid" id="lid" aria-label="Location">
+                                        
+                                                                                    <option value="2552">McKeldin Library</option>
+
+                                                                                                                                <option value="14005">Art Library in Art Sociology Building</option>
+
+                                                                                                                                <option value="14006">Michelle Smith Performing Arts Library</option>
+
+                                                                                                                                <option value="6745" selected="selected">STEM Library in William E. Kirwan Hall</option>
+
+                                                                                    
+                                                                                    <option value="0">
+                                                View All Locations
+                                            </option>
+                                                                            </select>
+<select class="form-control" name="gid" id="gid" aria-label="Category">
+                                                                                    <option value="23066" selected="selected">STEM Library Group Study Rooms</option>
+                                                                                    <option value="31707">STEM Library Makerspace Equipment</option>
+                                        
+                                                                                    <option value="0">Show All</option>
+                                                                            </select>
+<script>
+var resources = [];
+resources.push({
+    id: "eid_86400",
+    title: "Carver\u0020Room\u00203403\u0020G (Capacity 10)",
+    url: "/space/86400",
+    eid: 86400,
+    gid: 23066,
+    lid: 6745,
+    grouping: "STEM\u0020Library\u0020Group\u0020Study\u0020Rooms",
+    gtype: 2,
+    gBookingSelectableTime: false,
+    capacity: 10,
+    hasInfo: true,
+    thumbnail: "https://libapps.s3.amazonaws.com/accounts/180605/images/carver.jpg",
+    filterIds: [5065,5066],
+});
+resources.push({
+    id: "eid_86401",
+    title: "Chatelet\u0020Room\u00203403\u0020F (Capacity 6)",
+    url: "/space/86401",
+    eid: 86401,
+    gid: 23066,
+    lid: 6745,
+    grouping: "STEM\u0020Library\u0020Group\u0020Study\u0020Rooms",
+    gtype: 2,
+    gBookingSelectableTime: false,
+    capacity: 6,
+    hasInfo: true,
+    thumbnail: "https://libapps.s3.amazonaws.com/accounts/180605/images/chatelet.jpg",
+    filterIds: [5065,5066],
+});
+</script>
+</body></html>

@@ -112,6 +112,8 @@ What sets it apart from Jupiterp, Coursicle and PlanetTerp is the **degree audit
 | Grades/profs/reviews | PlanetTerp API, api.planetterp.com/v1 | No auth; endpoints: courses, professors, grades, search. Credit them, and ask before heavy use |
 | Reddit | Reddit Data API | Free only for non-commercial use, needs manual approval (2–4 weeks); optional or dropped |
 | Dining | nutrition.umd.edu `longmenu.aspx` | Hall/date/meal/station; items link to `label.aspx?RecNumAndPort=…`. No update feed, so poll every ~30 min and push only when a content hash changes |
+| Dining (confirmed 2026-09-24) | `GET https://nutrition.umd.edu/?locationNum={16 South Campus, 19 Yahentamitsi, 51 251 North}&dtdate={M/D/YYYY}` | Meals are tab panes `#pane-1/2/3` (Breakfast/Lunch/Dinner; titles from `.nav-link`). Stations are `.card` with `h3.card-title`. Items are `.menu-item-row` → `a.menu-item-name` (href `label.aspx?RecNumAndPort=…`) plus `img.nutri-icon` alt text (e.g. "Contains pork"). The date dropdown is filled by JS, so generate dates yourself |
+| Room availability (confirmed 2026-09-24) | `POST https://umd.libcal.com/spaces/availability/grid`, form `lid, gid, eid=-1, seat=0, seatId=0, zone=0, start=YYYY-MM-DD, end=YYYY-MM-DD, pageIndex=0, pageSize=18`, header `Referer` = the category page | Returns `{slots:[{start,end,itemId,checksum,className?}]}`. A `className` of `s-lc-eq-checkout` means booked; no className means open. Room metadata is embedded in the category page HTML (e.g. `/reserve/mckeldin/carrels-4hr`) as JS objects: `title` ("7209 (Capacity 2)"), `url` `/space/{eid}` (the booking deep link), `eid`, `gid`, `lid`, `grouping`, `capacity`. Undocumented endpoint: read-only, cache it, keep request rates low |
 | Library hours | umd.libcal.com/hours (LibCal) | 10 locations, weeks of hours ahead |
 | Study rooms | umd.libcal.com/reserve | Booking needs a UMD email, not a password. Location ids: McKeldin 2552, Art 14005, Performing Arts 14006, STEM 6745. McKeldin categories: TLC Group Study 23065, Carrels 23067, Family Room 23082, Faculty Office 23071, Podcasting Lab 30085, Conversation Room 40070 |
 | RecWell hours | Public Google Sheet `1y3-5AE7FBNL0JFi4LW459WaBQzYVOdWMvtOVr0DZCmM` | CSV via `/export?format=csv&gid=…`. Indoor gids: 1320933735, 1321604209, 354755843, 83449240, 1348172338, 883167948, 628324683, 180872438. Outdoor gids: 1601669223, 1656075107, 849246933, 836576797. One row per facility or area, one column per date for the whole year. Needs a layout check that alerts the owner when it breaks |
@@ -169,7 +171,7 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
 
 ## 10. Open to-dos and questions
 - [ ] Optional: a courtesy heads-up email to UMD Trademarks & Licensing (not a blocker). Required only if the project starts making money.
-- [ ] Get a lawyer to review the liability agreement, terms and privacy policy (try UMD Student Legal Aid); ask about under-18 users, and whether an LLC is truly *necessary* (the owner's default is no LLC).
+- [x] No lawyer review (owner decision, 2026-09-24): a disclaimer is enough. Claude drafts plain-language disclaimer, terms and privacy text.
 - [ ] Email UMD Libraries requesting LibCal API credentials.
 - [ ] Email UMD DOTS requesting Shuttle-UM real-time data access (a Swiftly GTFS-RT key).
 - [ ] Claim a domain (superterp.app or getsuperterp.com), the App Store name and social handles.
@@ -195,7 +197,7 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
     - Every audit result cites its catalog rule and catalog year.
     - "Verify with your advisor" prompts at high-stakes moments: committing a program change or dropping a course that delays graduation.
     - Exported PDFs carry a disclaimer footer and are laid out to take to an advisor.
-  - **Next steps for the owner:** have a lawyer review the terms and privacy policy (UMD's Student Legal Aid Office may help free of charge; confirm). Ask the lawyer only whether an LLC is *absolutely necessary* (the owner's default is no LLC), and how to handle 17-year-old freshmen (contracts with minors can be voided). A signature reduces risk but doesn't remove it, especially for negligence. **Accuracy plus the owner's verification pass is the real protection.**
+  - **No lawyer review and no LLC** (owner decision, 2026-09-24): the disclaimer is enough. Assumption: the typed-name agreement stays, since it is the disclaimer in its strongest form; confirm with the owner if in doubt. Claude writes the wording. A signature reduces risk but doesn't remove it, especially for negligence. **Accuracy plus the owner's verification pass is the real protection.**
 - Show a "not official advising" disclaimer and the catalog year used.
 - No UMD marks: no Testudo, no official logos, no official color scheme that suggests affiliation. Show "Not affiliated with the University of Maryland" in the app, on the website and in the App Store listing.
 - Never ask for or store Testudo credentials, and never auto-register students.
@@ -213,7 +215,7 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
 - **Repo:** private at `ghipszer20/superterp` until launch, then public. License **Apache-2.0**.
 - **Hosting:** free tiers only. Vercel (web), Supabase (DB and auth), GitHub Actions (scheduled scrapers). The owner creates the accounts when deployment needs them.
 - **Workflow:** "whatever is fastest." Claude never pushes to main. Each milestone gets a branch and a PR, each built on the previous one, and Claude keeps working without waiting. The owner merges in batches. PRs explain web-specific choices, since the owner knows Python and less web.
-- **Design:** Claude drafts an Apple-style design system; the owner reviews visually and approves. Accent color: **soft terp red** (a lighter coral-red, not UMD's official red). Soft whites and grays, light and dark mode.
+- **Design:** Claude drafts an Apple-style design system; the owner reviews visually and approves. Accent color: **(PRODUCT)RED iPhone red, `#BA0C2F`** (owner asked for "the red iPhone 4" red; no red iPhone 4 existed, so this is the (PRODUCT)RED iPhone red, pending owner confirmation). Full strength only on buttons, active tabs and highlights; pale tints for backgrounds; a brighter variant in dark mode for contrast. Soft whites and grays, light and dark mode.
 - **Owner profile:** Math major, CS minor, adding a CS dual degree. **First verification target: Math + CS double major.** Also build a Math + CS double-degree test student.
 - **Transcript:** the owner will provide their unofficial transcript during the Phase 2 parser work. It stays local only and is never committed (gitignored).
 - **Tooling on the owner's PC:** git, gh (logged in as ghipszer20), Node 24, npm, Python 3.13 via `py` (no `python` or `python3` on PATH), no Docker (so use hosted Supabase, not local).
