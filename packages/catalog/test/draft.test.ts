@@ -261,6 +261,7 @@ describe("draftProgram", () => {
         text: 'Row "Select one 3xx-level ARTT elective" (3 credits) was not converted.',
         list: null,
         rows: 1,
+        at: [0],
       });
     });
 
@@ -331,6 +332,7 @@ describe("draftProgram", () => {
           text: 'Footnote 1 (on cmsc131, cmsc132): "Students may pass proficiency exams instead."',
           list: null,
           rows: 0,
+          at: [0, 1],
         },
       ]);
     });
@@ -480,5 +482,55 @@ describe("row accounting on the real pages", () => {
       expect(converted + review + structural).toBe(d.rowCount);
     }
     expect(draftPrograms(p, meta).reduce((a, d) => a + d.rowCount, 0)).toBe(p.lists.reduce((a, l) => a + l.rows.length, 0));
+  });
+});
+
+// The review tool highlights the catalog rows behind each drafted requirement and review item.
+describe("row links", () => {
+  it("links a review item to the table rows it sent to review", () => {
+    const { review } = draftProgram(page([c("MATH140"), t("Select one 3xx-level ARTT elective"), c("ARTT301"), c("ARTT302")]), meta);
+    expect(review.find((r) => r.reason === "unrecognized-rule")!.at).toEqual([1, 2, 3]);
+  });
+
+  it("links a footnote item to every row that carries its marker", () => {
+    const { review } = draftProgram(page([h("Core", ["2"]), c("MATH140"), c("MATH141", { fn: ["2"] })], { "2": "Note." }), meta);
+    expect(review.find((r) => r.reason === "footnote")!.at).toEqual([0, 2]);
+  });
+
+  it("links a 'multiple tables' item to no rows", () => {
+    const two: ProgramPage = {
+      name: "Two",
+      lists: [
+        { heading: "A", rows: [c("MATH140")], total: null, footnotes: {} },
+        { heading: "B", rows: [c("MATH141")], total: null, footnotes: {} },
+      ],
+    };
+    expect(draftPrograms(two, meta)[0]!.review[0]).toMatchObject({ reason: "multiple-lists", at: [] });
+  });
+
+  it("links a distribution's flattened-alternatives note to the distribution's rows", () => {
+    const rows = [
+      t("Select two courses from at least two of the following areas"),
+      t("Area 1"),
+      c("CMSC411"),
+      c("CMSC412", { or: true }),
+      t("Area 2"),
+      c("CMSC420"),
+    ];
+    const { review } = draftProgram(page(rows), meta);
+    expect(review.find((r) => r.reason === "alternatives-flattened")!.at).toEqual([0, 1, 2, 3, 4, 5]);
+  });
+
+  it("maps each drafted requirement to its rows, including the rule row above a group", () => {
+    const { sources } = draftProgram(
+      page([c("MATH140"), c("AMSC460"), c("AMSC466", { or: true }), t("Select two of the following:"), c("CMSC411"), c("CMSC412"), c("CMSC414")]),
+      meta,
+    );
+    expect(sources).toEqual({ math140: [0], amsc460: [1, 2], "two-of-cmsc411": [3, 4, 5, 6] });
+  });
+
+  it("maps each course of an 'A and B' row to that row", () => {
+    const { sources } = draftProgram(page([c(["PHYS161", "PHYS261"])]), meta);
+    expect(sources).toEqual({ phys161: [0], phys261: [0] });
   });
 });

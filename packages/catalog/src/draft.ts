@@ -59,6 +59,8 @@ export type ReviewItem = {
   list: string | null;
   /** How many table rows this item sent to review instead of drafting. */
   rows: number;
+  /** Indexes of the table rows it concerns (sent to review, carrying the footnote, or drafted into the flagged requirement). */
+  at: number[];
 };
 
 export type Draft = {
@@ -67,6 +69,8 @@ export type Draft = {
   /** Every row of the table is exactly one of these. structural: a plain header. */
   rows: { converted: number; review: number; structural: number };
   rowCount: number;
+  /** Requirement id -> indexes of the table rows it was drafted from. */
+  sources: Record<string, number[]>;
   /** The table's total credits as printed; informational, not encoded (it's the sum of the rows). */
   total: string | null;
 };
@@ -166,6 +170,9 @@ class ListDrafter {
   private readonly ids = new Map<string, number>();
   /** Footnote marker -> where it's cited, in order of first citation. */
   private readonly footnoteUses = new Map<string, string[]>();
+  /** Footnote marker -> the rows carrying it. */
+  private readonly footnoteRows = new Map<string, number[]>();
+  private readonly sources: Record<string, number[]> = {};
   private section: string | null = null;
 
   private readonly list: CourseList;
@@ -198,18 +205,22 @@ class ListDrafter {
         const uses = this.footnoteUses.get(marker) ?? [];
         if (!uses.includes(where)) uses.push(where);
         this.footnoteUses.set(marker, uses);
+        const at = this.footnoteRows.get(marker) ?? [];
+        if (!at.includes(i)) at.push(i);
+        this.footnoteRows.set(marker, at);
       }
     }
   }
 
   private add(req: Requirement, rows: number[]) {
     this.requirements.push(req);
+    this.sources[req.id] = [...rows];
     this.mark(rows, "converted");
     this.cite(rows, req.id);
   }
 
   private sendToReview(reason: ReviewReason, rows: number[], text: string, confidence: Confidence = "manual") {
-    this.review.push({ confidence, reason, text, list: this.list.heading, rows: rows.length });
+    this.review.push({ confidence, reason, text, list: this.list.heading, rows: rows.length, at: [...rows] });
     this.mark(rows, "review");
     for (const i of rows) {
       const r = this.row(i);
@@ -299,7 +310,11 @@ class ListDrafter {
   private plainSlot(slot: Slot) {
     const [first] = slot.alts;
     if (slot.alts.length === 1 && first!.length > 1) {
-      for (const code of first!) this.add({ kind: "course", id: this.id(code.toLowerCase()), name: slot.title, options: [code] }, []);
+      for (const code of first!) {
+        const req: Requirement = { kind: "course", id: this.id(code.toLowerCase()), name: slot.title, options: [code] };
+        this.requirements.push(req);
+        this.sources[req.id] = [...slot.rows];
+      }
       this.mark(slot.rows, "converted");
       this.cite(slot.rows, first!.map((c) => c.toLowerCase()).join(", "));
       return;
@@ -442,6 +457,7 @@ class ListDrafter {
           text: `${id}: "or" alternatives inside an area are each listed in the area (${flattened.join("; ")}); taking both could count twice.`,
           list: this.list.heading,
           rows: 0,
+          at: [i, ...body],
         });
       }
       return i + 1 + body.length;
@@ -519,6 +535,7 @@ class ListDrafter {
         text: `Footnote ${marker} (on ${uses.join(", ")}): ${note ? `"${note}"` : "(no footnote text on the page)"}`,
         list: this.list.heading,
         rows: 0,
+        at: [...(this.footnoteRows.get(marker) ?? [])].sort((a, b) => a - b),
       });
     }
     const count = (as: string) => this.disposition.filter((d) => d === as).length;
@@ -528,6 +545,7 @@ class ListDrafter {
       review: this.review,
       rows: { converted: count("converted"), review: count("review"), structural: count("structural") },
       rowCount: rows.length,
+      sources: this.sources,
     };
   }
 }
@@ -554,6 +572,7 @@ export function draftPrograms(page: ProgramPage, meta: DraftMeta): Draft[] {
         text: `This page has ${page.lists.length} requirement tables (${headings.join("; ")}); this draft is table ${n + 1}. Decide whether they are alternative tracks, add-on specializations or parts of one program.`,
         list: list.heading,
         rows: 0,
+        at: [],
       });
     }
     const program: Program = {
@@ -565,7 +584,7 @@ export function draftPrograms(page: ProgramPage, meta: DraftMeta): Draft[] {
       reviewNotes: review.map(reviewNote),
       requirements: drafted.requirements,
     };
-    return { program, review, rows: drafted.rows, rowCount: drafted.rowCount, total: list.total };
+    return { program, review, rows: drafted.rows, rowCount: drafted.rowCount, sources: drafted.sources, total: list.total };
   });
 }
 
