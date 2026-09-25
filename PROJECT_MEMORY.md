@@ -255,11 +255,13 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
 - Headless Edge `--screenshot` can't go below ~500px wide and fires before streamed content arrives. Use `apps/web/scripts/ui-check.mjs` (true mobile emulation, waits for JS).
 - Next 16 ships its docs in `node_modules/next/dist/docs/`. Read them before using new APIs (Cache Components, `use cache`, `cacheLife`, `connection()`).
 
-## 16. Overnight mode (owner, 2026-09-24/25)
-- **Never ask the owner for permission** for anything until the owner's next message. Nothing may stop work: no approval requests, no clarifying questions, no waiting.
-- **The only thing that ends overnight mode is the project being finished.** Otherwise keep building continuously until the owner sends a message. The morning message will be **"progress report"**: answer with a concise report of everything done since the last report, decisions made (with assumptions), and items for the owner to review.
-- This repeats every day and night until the project is complete.
-- **UI changes:** the owner normally approves major UI changes. In overnight mode, build them anyway (on a separate branch/PR when practical, with `npm run ui-check` screenshots) and list them in the progress report for approval after the fact. Never block on approval.
+## 16. Overtime mode (owner, 2026-09-24/25; renamed from "overnight mode" 2026-09-25)
+- **Activation:** only when the owner says to turn on overtime mode, at any time of day or night. It ends when the owner sends their next message (usually "progress report") or the project is finished. When it's off, work normally and check in as usual.
+- The rules below apply whenever overtime mode is active.
+- **Never ask the owner for permission** for anything while overtime mode is active. Nothing may stop work: no approval requests, no clarifying questions, no waiting.
+- **Nothing but the owner's next message or the project being finished ends overtime mode.** Keep building continuously. The owner's return message is usually **"progress report"**: answer with a concise report of everything done since the last report, decisions made (with assumptions), and items for the owner to review.
+- The owner will turn it on repeatedly (days and nights) until the project is complete.
+- **UI changes:** the owner normally approves major UI changes. In overtime mode, build them anyway (on a separate branch/PR when practical, with `npm run ui-check` screenshots) and list them in the progress report for approval after the fact. Never block on approval.
 - Unclear choices: pick the most reasonable option, record the assumption in this file, keep going. Brainstorming questions go into the progress report.
 - Use superpowers skills (TDD etc.) and mattpocock domain-modeling per CLAUDE.md.
 - Commit and push often to feature branches (never main). Keep the status log (section 14) current so nothing is lost if context is summarized.
