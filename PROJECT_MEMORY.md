@@ -28,101 +28,10 @@ What sets it apart from Jupiterp, Coursicle and PlanetTerp is the **degree audit
 - Must handle switching majors, grad courses as an undergrad, double majors, double degrees, and adding or dropping majors and minors (see module 1).
 
 ## 3. Feature modules
-1. **Degree audit and 4-year planner.**
-   - Layered rules: University → Gen Ed → College → Major → Specialization → Minor, second major and special programs.
-   - Matching-based assignment that respects double-count rules. Flags missing requirements (with courses that satisfy them), prerequisite and ordering errors, overshoot, and credit caps.
-   - Manual ☐ items for things it can't check (thesis, auditions).
-   - Catalog-year versioning. Handles AP/transfer credit and the CS limited-enrollment gateway.
-   - **Program changes (owner requirement):** switching majors, grad courses as an undergrad, double majors, double degrees, adding and dropping majors and minors.
-     - **Data model:** a Student holds Degrees, and each Degree holds Programs (major, minor, certificate, LLP, and so on). Each Program has its own catalog year and a status (declared / planned / what-if / dropped). Gen Ed and university rules apply once; college rules apply per degree.
-     - **Double major:** 1 degree, 2 majors, 120-credit minimum. Courses may count toward both majors unless a program's rules limit sharing.
-     - **Double degree:** 2 degrees, **150-credit minimum**, and **at least 18 credits in each degree not used for the other**. Satisfies both degrees' requirements in full, including college rules.
-     - **Declaration deadline:** a double major or double degree must be declared at least 1 full academic year before graduation. The app warns ahead of it.
-     - **Sharing limits** between programs are part of the rule format (e.g. `max_shared_with`). The matching step (ILP) enforces them across every program at once.
-     - **Switching majors:** always run it as a what-if first. Show how existing credits apply to the new major (count / become electives / unused), the change in graduation date, the catalog year for the new major, and the internal-transfer requirements (gateway courses and GPA) for limited-enrollment majors. Then commit, with undo.
-     - **Adding or dropping a program:** re-run matching. Show freed credits ("drop the minor → graduate a semester early?") and courses that now count toward nothing.
-     - **Grad courses as an undergrad:**
-       - 600–897 (not 799) are allowed, subject to the offering department's rules.
-       - Each grad course is tagged by how its credit counts: undergrad credit / graduate-only (max 9 credits, a petition can add up to 3) / double-counted in a combined BS/MS.
-       - A combined BS/MS double-counts up to 35% of the master's credits, only 600+ courses with a grade of B- or better.
-       - Grad courses get a badge on the plan grid. Permission-only prerequisites become manual ☐ items.
-     - The owner's hand-built test students must include: a major switch in sophomore year, a double major, a double degree, a BS/MS student, and a dropped minor.
-   - **Pre-professional tracks (owner requirement):** pre-med (MD/DO), pre-dental, pre-PA, pre-vet, pre-pharmacy, pre-optometry, pre-PT, pre-OT, pre-nursing, pre-law, and others. They're a separate layer type called a "track": prerequisites for applying to a professional school, **not** degree requirements. Tracks can be added to any major, and what-if audits cover them.
-     - **Course categories map to UMD courses.** HPAO's medicine list: 8 cr general chem + lab, 8 cr organic chem + lab, biochem, 8–12 cr bio + lab, calculus, statistics, 8 cr physics + lab, 6 cr English. HPAO publishes categories, not UMD codes, so the owner builds the category → UMD course mapping from 4yearplans.umd.edu pre-health plans and HPAO pages, then verifies it.
-     - **Optional target-school layer:** add specific schools with their own extra requirements (e.g. a PA school that needs anatomy and physiology; pharmacy from AACP's school table). A later addition; the generic HPAO list comes first.
-     - **Transfer tracks** (pre-nursing = 2 years at UMD, then apply to a BSN program elsewhere) get requirements from the UMD catalog's Pre-Health Professions page.
-     - **Pre-law:** there are no required courses. The track shows milestones (LSAT timing, application cycle), suggested skill-building courses, and **GPA protection**: it warns when a planned semester's predicted grades could hurt GPA.
-     - **Things that aren't courses** become milestone ☐ items on the plan timeline: MCAT/DAT/OAT/GRE/LSAT, clinical, shadowing, research and volunteer hours, and the HPAO committee letter and application cycle. Use HPAO's timeline and dates, verified by the owner.
-     - **Timing:** the optimizer gets a deadline rule, e.g. finish MCAT content courses before the planned MCAT term. Gap-year plans are supported.
-     - **GPA:** compute overall and **science GPA (BCPM: biology, chemistry, physics, math, AMCAS-style)** from the transcript.
-     - **Warnings:** AP credit or pass/fail used for a professional-school prerequisite (many schools won't accept these), and grades below the usual C minimum.
-     - Disclaimer: "Confirm with HPAO and each target school."
-2. **Prerequisite graph.**
-   - Prose from Testudo parsed into AND/OR trees, with corequisites kept separate.
-   - A hand-edited overrides file.
-   - Which terms each course is offered.
-3. **Schedule builder (Coursicle-style).**
-   - Week grid, section switching, conflict and gap detection, walking time between buildings.
-   - Auto-generator with filters (no 8am classes, days off), ranked by professor rating, GPA or open seats.
-   - Plan A/B/C, .ics export, sharing.
-   - **Two-way sync with the 4-year plan (owner requirement).** There is one plan model. The builder for a term is a view of that term in the 4-year plan, plus the chosen sections, so there are no copies to keep in sync.
-     - **Plan → builder:** a term's planned courses pre-load in the builder with their sections.
-     - **Builder → plan:** adding, removing or swapping a course edits that term in the plan immediately.
-     - Only the **active** schedule (A/B/C) writes to the plan. The alternatives are sandboxes, and switching the active one applies the difference.
-     - Every change re-runs the audit and the prerequisite check for later terms. If something breaks (e.g. dropping CMSC351 breaks 3 later courses), show one-tap fixes from the optimizer (move to summer, shift later courses). Show a change summary ("Plan updated · audit still ✅") and allow undo.
-     - Each course in the builder shows what it counts toward (e.g. "DSHU") and what happens to the audit if it's swapped. If a planned course has no sections this term, or they're all full, suggest alternatives that satisfy the same requirement.
-     - Past terms are locked (from the transcript). The current term is marked "registered" by the student, since there's no Testudo login. Section-level building works only for terms whose Schedule of Classes is published; later terms are course-level only.
-4. **Advising.**
-   - 4-year level: what-if audits (minor, major switch, graduate early, abroad), timeline warnings, optimizer.
-   - Semester level: which courses to take, which sections, a registration-day priority plan, workload check.
-   - Rule: **the rules engine is the source of truth, and the LLM only explains** (via tool use).
-5. **Grades and personalization.**
-   - Import from the unofficial transcript PDF, pasted Testudo text, or manual entry, with a confirmation screen.
-   - Imported grades auto-fill the audit and are checked against minimum-grade and GPA rules.
-   - Strength profile = grade relative to the course's PlanetTerp average, grouped by skill area. Grade predictions are shown as ranges. Difficulty scores are personalized.
-   - LLM feedback: encouraging tone and honest about how little data it's based on.
-   - Privacy: stored on the device by default, explicit consent before anything goes to the LLM, no name or UID sent, one-tap delete.
-6. **Difficulty and professors.**
-   - Course score from PlanetTerp average GPA, W/F rate and review sentiment. Semester score from total difficulty and credit load.
-   - LLM professor summaries cached each term and linked to the current Schedule of Classes.
-7. **Reviews (student-written).**
-   - Sign-in limited to umd.edu/terpmail addresses; reviews displayed anonymously.
-   - One review per course, professor and term for each account.
-   - LLM pre-screen, report, block and contact options, as Apple Guideline 1.2 requires.
-   - Terms of service covering defamation.
-8. **Campus tab.**
-   - Dining menus, library hours, RecWell hours and fitness classes.
-   - A study-room availability grid covering every library and room type.
-9. **Buses (Shuttle-UM, Transit-app style).**
-   - Opens to nearby stops, with large countdowns and a clear "live" vs "scheduled" label.
-   - Favorite routes, service alerts, and route colors and shapes drawn on the map.
-   - Event routes (football, Maryland Day, Commencement) appear only on the days they run.
-   - **Class-aware "leave by" times:** "Leave by 9:42 to make CMSC351 in IRB."
-   - iOS Live Activity and Dynamic Island countdown for the next bus, plus a widget. Link out to Transit for extras.
-10. **Seat and waitlist (spike).**
-   - Monitor tracked sections during one registration window.
-   - Ship waitlist check-in reminders regardless of the spike's outcome.
+Moved to `docs/project/feature-modules.md`. Read it before designing or building any feature.
 
 ## 4. Verified data sources (checked 2026-09-24)
-| Data | Source | Notes |
-|---|---|---|
-| Courses/sections/seats | Testudo Schedule of Classes (app.testudo.umd.edu/soc) | Primary source; umd.io (student-run) is the fallback only |
-| Requirements | academiccatalog.umd.edu, 2026–27 catalog | Structured HTML course lists, "select N" groups, footnotes, Graduation Plans tab |
-| Sample plans | 4yearplans.umd.edu | Used as golden tests: each official plan must pass |
-| Grades/profs/reviews | PlanetTerp API, api.planetterp.com/v1 | No auth; endpoints: courses, professors, grades, search. Credit them, and ask before heavy use |
-| Reddit | Reddit Data API | Free only for non-commercial use, needs manual approval (2–4 weeks); optional or dropped |
-| Dining | nutrition.umd.edu `longmenu.aspx` | Hall/date/meal/station; items link to `label.aspx?RecNumAndPort=…`. No update feed, so poll every ~30 min and push only when a content hash changes |
-| Dining (confirmed 2026-09-24) | `GET https://nutrition.umd.edu/?locationNum={16 South Campus, 19 Yahentamitsi, 51 251 North}&dtdate={M/D/YYYY}` | Meals are tab panes `#pane-1/2/3` (Breakfast/Lunch/Dinner; titles from `.nav-link`). Stations are `.card` with `h3.card-title`. Items are `.menu-item-row` → `a.menu-item-name` (href `label.aspx?RecNumAndPort=…`) plus `img.nutri-icon` alt text (e.g. "Contains pork"). The date dropdown is filled by JS, so generate dates yourself |
-| Room availability (confirmed 2026-09-24) | `POST https://umd.libcal.com/spaces/availability/grid`, form `lid, gid, eid=-1, seat=0, seatId=0, zone=0, start=YYYY-MM-DD, end=YYYY-MM-DD, pageIndex=0, pageSize=18`, header `Referer` = the category page | Returns `{slots:[{start,end,itemId,checksum,className?}]}`. A `className` of `s-lc-eq-checkout` means booked; no className means open. Room metadata is embedded in the category page HTML (e.g. `/reserve/mckeldin/carrels-4hr`) as JS objects: `title` ("7209 (Capacity 2)"), `url` `/space/{eid}` (the booking deep link), `eid`, `gid`, `lid`, `grouping`, `capacity`. Undocumented endpoint: read-only, cache it, keep request rates low |
-| Library hours | umd.libcal.com/hours (LibCal) | 10 locations, weeks of hours ahead |
-| Study rooms | umd.libcal.com/reserve | Booking needs a UMD email, not a password. Location ids: McKeldin 2552, Art 14005, Performing Arts 14006, STEM 6745. McKeldin categories: TLC Group Study 23065, Carrels 23067, Family Room 23082, Faculty Office 23071, Podcasting Lab 30085, Conversation Room 40070 |
-| RecWell hours | Public Google Sheet `1y3-5AE7FBNL0JFi4LW459WaBQzYVOdWMvtOVr0DZCmM` | CSV via `/export?format=csv&gid=…`. Indoor gids: 1320933735, 1321604209, 354755843, 83449240, 1348172338, 883167948, 628324683, 180872438. Outdoor gids: 1601669223, 1656075107, 849246933, 836576797. One row per facility or area, one column per date for the whole year. Needs a layout check that alerts the owner when it breaks |
-| Group fitness | Semester PDF on recwell.umd.edu | Extract once per semester, then owner review |
-| Gym occupancy | Not found publicly | Don't plan on it |
-| Bus schedules (static) | Shuttle-UM GTFS `https://feed.actionfigure.ai/university-of-maryland-shuttle-um.zip` (Transitland `f-shuttleum~md~us`) | Downloaded 2026-09-24: 37 routes (including event routes), 361 stops, ~3,050 trips, with shapes. Valid 2026-05-19 to 2026-12-24, so re-fetch every day and alert if the feed nears expiry. Transitland/Interline license |
-| Bus real-time | Not public. DOTS uses Swiftly, which powers the official Transit app | Ask DOTS for a Swiftly GTFS-RT key (non-commercial student app). Until then, show scheduled times plus a link out to Transit |
-| Metro/regional | WMATA developer API (free key); Metrobus/TheBus GTFS | Optional: College Park Metro connections |
-| Waitlist rules | registrar.umd.edu waitlist-hold-file | Opened seats go to the waitlist automatically; daily check-in is mandatory or you lose your spot |
+Moved to `docs/project/data-sources.md`. Read it before touching a scraper or data source.
 
 ## 5. Study-room booking plan
 - **Level 1 (no permission needed):** a unified availability grid plus smart search. Each slot deep-links to the exact room and date on LibCal.
@@ -139,12 +48,8 @@ What sets it apart from Jupiterp, Coursicle and PlanetTerp is the **degree audit
 
 Scale: about 200–300+ programs, roughly 200–300 hours of owner review. Launching in waves by college is an open option.
 
-## 7. Tech stack (current recommendation)
-- TypeScript monorepo with a shared rules-engine package.
-- **Expo** (react-native-web) for iOS and web, using native iOS parts: native tabs, SF Symbols, sheets, haptics, the glass look.
-- Alternative: SwiftUI + Next.js, decided after the design-phase prototype.
-- Supabase (Postgres + Auth, umd.edu email magic links) and Python scrapers on a schedule.
-- Claude for LLM features. OR-Tools CP-SAT for the optimizer.
+## 7. Tech stack
+See the package.json files: Next.js web app (apps/web), TypeScript packages, HiGHS for the audit. Decisions behind the stack are in section 13.
 
 ## 8. UI / design
 - **Principles:** show the answer, not the data; one main action per screen; plain language (e.g. "Humanities (DSHU)"); color only when it means something (white and gray, one accent, a pastel for each requirement category); an instant feel (cached data, skeleton loading, springs, haptics); accessibility (Dynamic Type, VoiceOver, dark mode, AA contrast).
