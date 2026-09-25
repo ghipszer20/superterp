@@ -1,0 +1,23 @@
+{
+  "name": "@superterp/audit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Degree audit: checks a student's courses against program requirements, assigning courses by optimization (ADR 0001). Framework-free.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "highs": "1.15.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.1"
+  }
+}
