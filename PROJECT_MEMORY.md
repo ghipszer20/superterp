@@ -279,3 +279,4 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
   - Scheduler: GitHub Actions cron (free, frequent) calling a protected warm endpoint. Check Vercel cron free-tier limits before relying on it.
   - Dining payload: send only the hall and meal being viewed (currently ~490 KB for all three halls); load others on tap. Pre-warming keeps taps instant.
   - Build this together with deployment (Vercel + Supabase accounts needed from the owner).
+- **Math rulings (owner, 2026-09-25):** Traditional is the right default track. **The owner is in the Applied Mathematics track**, so the verification target is Math (Applied) + CS; the Applied track needs encoding. **C- minimum for Math major courses is confirmed.** **CMSC131 may count for both** the programming requirement and supporting Sequence Four.

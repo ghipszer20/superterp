@@ -13,17 +13,16 @@ export const mathMajorTraditional: Program = {
   name: "Mathematics Major (Traditional Track)",
   catalogYear: "2026-27",
   source: "UMD Academic Catalog 2026–27, Mathematics Major, Traditional Track",
+  // Owner-confirmed 2026-09-25: C- minimum; CMSC131 may count for programming and Sequence Four.
   minGrade: "C-",
   verified: false,
   reviewNotes: [
-    "Minimum grade C- for major courses is ASSUMED (common UMD rule); the Math catalog page doesn't state it. Confirm.",
     "Honors sequence (footnote 1): 'MATH340 satisfies MATH241; MATH340–MATH341 satisfies MATH240–MATH241–MATH246.' Approximated: MATH340 counts for MATH240 (overlay) and MATH241; MATH341 counts for the MATH246/436/462 slot. MATH340 alone would wrongly satisfy MATH240 too.",
     "Eight 400-level MATH/AMSC/STAT courses: encoded as an overlay count of 8 that the specific requirements (MATH410, algebra, AMSC, STAT, depth) also count toward. Footnote 4's exclusions (MATH461, 478, 480–484, STAT464) are applied to all eight, not only the electives.",
     "The depth sequence is an overlay: its courses may also be MATH410 / the algebra course.",
-    "Supporting sequence is an overlay so CMSC131 can count for both the programming requirement and Sequence Four. Confirm that double use is allowed.",
+    "Applied Mathematics Track (the owner's track) is not encoded yet.",
     "Programming requirement also accepts CMSC141/CMSC142 (owner confirmed these substitute for CMSC131/132 in CS; assumed here too).",
     "Footnote 2 (at least four of the 400-level courses taken at College Park) and footnote 3 (outside substitutions with Undergraduate Office approval) are not enforced.",
-    "Only the Traditional Track is encoded; the owner's track is not yet confirmed.",
   ],
   requirements: [
     // Introductory sequence (footnote 1: honors MATH340–341)
