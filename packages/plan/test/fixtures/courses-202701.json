@@ -1,0 +1,1104 @@
+{
+ "term": "202701",
+ "fetchedAt": "2026-09-25T04:06:01.236Z",
+ "note": "Courses trimmed from the full Spring 2027 Schedule of Classes snapshot (packages/course-data/.cache/soc-202701.json) for the plan checker tests.",
+ "courses": [
+  {
+   "id": "MATH115",
+   "department": "MATH",
+   "title": "Precalculus",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "FSMA"
+   ],
+   "genEdText": "FSMA",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "Must have math eligibility of MATH115 or higher; and math eligibility is based on the Math Placement Exam or the successful completion of MATH003 with appropriate eligibility. Or MATH113.",
+    "corequisite": null,
+    "restriction": "Must not have completed MATH140 with a grade of C- or better; and must not have completed any MATH or STAT course with a prerequisite of MATH140 or MATH141.",
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Preparation for MATH120, MATH135 or MATH140. Elementary functions and graphs: polynomials, rational functions, exponential and logarithmic functions, trigonometric functions. Algebraic techniques preparatory for calculus.\n\nPreparation for MATH220 or MATH140. If purchasing used books additional software may be required."
+  },
+  {
+   "id": "MATH140",
+   "department": "MATH",
+   "title": "Calculus I",
+   "credits": {
+    "min": 4,
+    "max": 4
+   },
+   "genEd": [
+    "FSAR",
+    "FSMA"
+   ],
+   "genEdText": "FSAR, FSMA",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in MATH115; or must have math eligibility of MATH140; and math eligibility is based on the Math Placement Test.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Introduction to calculus, including functions, limits, continuity, derivatives and applications of the derivative, sketching of graphs of functions, definite and indefinite integrals, and calculation of area. The course is especially recommended for science, engineering and mathematics majors.\n\nGraphing calculators, or computers, etc., with software appropriate for graphing non-trivial functions and doing non-trivial calculations, will be needed."
+  },
+  {
+   "id": "MATH141",
+   "department": "MATH",
+   "title": "Calculus II",
+   "credits": {
+    "min": 4,
+    "max": 4
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in MATH140.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Continuation of MATH140, including techniques of integration, improper integrals, applications of integration (such as volumes, work, arc length, moments), inverse functions, exponential and logarithmic functions, sequences and series.\n\nGraphing calculators, or computers, etc., with software appropriate for graphing non-trivial functions and doing non-trivial calculations, will be needed."
+  },
+  {
+   "id": "MATH240",
+   "department": "MATH",
+   "title": "Introduction to Linear Algebra",
+   "credits": {
+    "min": 4,
+    "max": 4
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "1 course with a minimum grade of C- from MATH141.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": "MATH240, MATH341, or MATH461.",
+    "other": {}
+   },
+   "description": "Basic concepts of linear algebra: vector spaces, applications to line and plane geometry, linear equations and matrices, similar matrices, linear transformations, eigenvalues, determinants and quadratic forms.\n\nAll Sections will use MATLAB."
+  },
+  {
+   "id": "MATH241",
+   "department": "MATH",
+   "title": "Calculus III",
+   "credits": {
+    "min": 4,
+    "max": 4
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in MATH141.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": "MATH241 or MATH340.",
+    "other": {}
+   },
+   "description": "Introduction to multivariable calculus, including vectors and vector-valued functions, partial derivatives and applications of partial derivatives (such as tangent planes and Lagrange multipliers), multiple integrals, volume, surface area, and the classical theorems of Green, Stokes and Gauss.\n\nAll sections will use MATLAB."
+  },
+  {
+   "id": "MATH246",
+   "department": "MATH",
+   "title": "Differential Equations for Scientists and Engineers",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in MATH141.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": "MATH246 or MATH341.",
+    "other": {}
+   },
+   "description": "An introduction to the basic methods of solving ordinary differential equations. Equations of first and second order, linear differential equations, Laplace transforms, numerical methods and the qualitative theory of differential equations.\n\nAll sections will use MATLAB."
+  },
+  {
+   "id": "MATH310",
+   "department": "MATH",
+   "title": "Introduction to Mathematical Proof",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in MATH141; and must have completed or be concurrently enrolled in MATH240, MATH341, or MATH461; and must have completed or be concurrently enrolled in MATH241 or MATH340.",
+    "corequisite": null,
+    "restriction": "Must be in a major within the CMNS-Mathematics department; or must be in the Mathematics minor within the CMNS-Mathematics department; or permission of the CMNS-Mathematics department.",
+    "creditOnlyGrantedFor": null,
+    "other": {
+     "Additional information": "Math majors may not use this course to satisfy an upper-level requirement."
+    }
+   },
+   "description": "To develop the students' ability to construct a rigorous proof of a mathematical claim. Students will also be made aware of mathematical results that are of interest to those wishing to analyze a particular mathematical model. Topics will be drawn from logic, set theory, structure of the number line, elementary topology, metric spaces, functions, sequences and continuity."
+  },
+  {
+   "id": "MATH401",
+   "department": "MATH",
+   "title": "Applications of Linear Algebra",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "1 course with a minimum grade of C- from (MATH461, MATH240, MATH341).",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Various applications of linear algebra: theory of finite games, linear programming, matrix methods as applied to finite Markov chains, random walk, incidence matrices, graphs and directed graphs, networks and transportation problems."
+  },
+  {
+   "id": "MATH410",
+   "department": "MATH",
+   "title": "Advanced Calculus I",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "1 course with a minimum grade of C- from (MATH240, MATH461, MATH341); and 1 course with a minimum grade of C- from (MATH340, MATH241); and minimum grade of C- in MATH310; and permission of CMNS-Mathematics department.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Subjects covered: sequences and series of numbers, continuity and differentiability of real-valued functions of one variable, the Riemann integral, sequences of functions and power series."
+  },
+  {
+   "id": "MATH411",
+   "department": "MATH",
+   "title": "Advanced Calculus II",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in MATH410.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Continuation of MATH410. Topics include: The topology of sets in Rn, the derivative matrix, the general chain rule, inverse and implicit function theorems with applications, smooth curves and surfaces in R3, Lagrange multipliers. Additional topics may include: Metric spaces, the contraction principle, the existence and uniqueness theorem for nonlinear first order differential equations, the Riemann integral of Rn, introduction to integration on curves and surfaces, Green's theorem."
+  },
+  {
+   "id": "MATH420",
+   "department": "MATH",
+   "title": "Mathematical Modeling",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "1 course with a minimum grade of C- from (MATH240, MATH461, MATH341, ENEE290, MATH243); and 1 course with a minimum grade of C- from (MATH241, MATH340); and 1 course with a minimum grade of C- from (MATH246, MATH341, ENEE290, MATH243); and 1 course with a minimum grade of C- from (STAT400, STAT410); and 1 course with a minimum grade C- from (CMSC106, CMSC131).",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": "AMSC420 or MATH420.",
+    "other": {
+     "Recommended": "AMSC460 or AMSC466.",
+     "Cross-listed with": "AMSC420."
+    }
+   },
+   "description": "The course will develop skills in data-driven mathematical modeling through individual and group projects. Emphasis will be placed on both analytical and computational methods, and on effective oral and written presentation of results."
+  },
+  {
+   "id": "MATH462",
+   "department": "MATH",
+   "title": "Partial Differential Equations",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "1 course with a minimum grade of C- from (MATH241, MATH340); and 1 course with a minimum grade of C- from (MATH246, MATH341, ENEE290, MATH243).",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Linear spaces and operators, orthogonality, Sturm-Liouville problems and eigenfunction expansions for ordinary differential equations. Introduction to partial differential equations, including the heat equation, wave equation and Laplace's equation. Boundary value problems, initial value problems and initial-boundary value problems."
+  },
+  {
+   "id": "STAT400",
+   "department": "STAT",
+   "title": "Applied Probability and Statistics I",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "1 course with a minimum grade of C- from MATH141; or students who have taken courses with comparable content may contact the department.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": "DATA400, ENEE324, or STAT400.",
+    "other": {
+     "Cross-listed with": "DATA400.",
+     "Additional information": "Not acceptable toward graduate degrees in MATH/STAT/AMSC."
+    }
+   },
+   "description": "Random variables, standard distributions, moments, law of large numbers and central limit theorem. Sampling methods, estimation of parameters, testing of hypotheses."
+  },
+  {
+   "id": "STAT401",
+   "department": "STAT",
+   "title": "Applied Probability and Statistics II",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "1 course with a minimum grade of C- from (STAT400, STAT410).",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {
+     "Additional information": "Not acceptable toward graduate degrees in MATH/STAT/AMSC."
+    }
+   },
+   "description": "Point estimation - unbiased and consistent estimators. Interval estimation. Minimum variance and maximum likelihood estimators. Testing of hypotheses. Regression, correlation and analysis of variance. Sampling distributions. Elements of non-parametric methods."
+  },
+  {
+   "id": "STAT410",
+   "department": "STAT",
+   "title": "Introduction to Probability Theory",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "1 course with a minimum grade of C- from (MATH240, MATH461, MATH341); and 1 course with a minimum grade of C- from (MATH340, MATH241).",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": "STAT410 or SURV410.",
+    "other": {
+     "Cross-listed with": "SURV410."
+    }
+   },
+   "description": "Probability and its properties. Random variables and distribution functions in one and several dimensions. Moments. Characteristic functions. Limit theorems."
+  },
+  {
+   "id": "AMSC460",
+   "department": "AMSC",
+   "title": "Computational Methods",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "1 course with a minimum grade of C- from (MATH240, MATH341, MATH461, ENEE290, MATH243); and 1 course with a minimum grade of C- from (MATH241, MATH340); and 1 course with a minimum grade of C- from (CMSC106, CMSC131); and 1 course with a minimum grade of C- from (MATH246, MATH341, ENEE290, MATH243).",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": "AMSC460, AMSC466, CMSC460, or CMSC466.",
+    "other": {
+     "Cross-listed with": "CMSC460."
+    }
+   },
+   "description": "Basic computational methods for interpolation, least squares, approximation, numerical quadrature, numerical solution of polynomial and transcendental equations, systems of linear equations and initial value problems for ordinary differential equations. Emphasis on methods and their computational properties rather than their analytic aspects. Intended primarily for students in the physical and engineering sciences."
+  },
+  {
+   "id": "CMSC131",
+   "department": "CMSC",
+   "title": "Object-Oriented Programming I",
+   "credits": {
+    "min": 4,
+    "max": 4
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": "MATH140.",
+    "restriction": null,
+    "creditOnlyGrantedFor": "CMSC131, CMSC133 or CMSC141.",
+    "other": {}
+   },
+   "description": "Introduction to programming and computer science. Emphasizes understanding and implementation of applications using object-oriented techniques. Develops skills such as program design and testing as well as implementation of programs using a graphical IDE. Programming done in Java."
+  },
+  {
+   "id": "CMSC132",
+   "department": "CMSC",
+   "title": "Object-Oriented Programming II",
+   "credits": {
+    "min": 4,
+    "max": 4
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in CMSC131 or CMSC133; or must have earned a score of 5 on the A Java AP exam; or must have earned a satisfactory score on the departmental placement exam; and minimum grade of C- in MATH140.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": "CMSC132 or CMSC142.",
+    "other": {}
+   },
+   "description": "Introduction to use of computers to solve problems using software engineering principles. Design, build, test, and debug medium -size software systems and learn to use relevant tools. Use object-oriented methods to create effective and efficient problem solutions. Use and implement application programming interfaces (APIs). Programming done in Java."
+  },
+  {
+   "id": "CMSC216",
+   "department": "CMSC",
+   "title": "Introduction to Computer Systems",
+   "credits": {
+    "min": 4,
+    "max": 4
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in CMSC132; and minimum grade of C- in MATH141.",
+    "corequisite": null,
+    "restriction": "Must be in a major within the CMNS-Computer Science department; or must be in Engineering: Computer program; or must be in the Computer Science Minor program; and Permission of CMSC - Computer Science department.",
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Introduction to the interaction between user programs and the operating system/hardware. Major topics include C programming, introductory systems programming, and assembly language. Other concepts covered include UNIX, machine data representation, thread management, optimization, and virtual memory. Programming is done in the Linux Environment."
+  },
+  {
+   "id": "CMSC250",
+   "department": "CMSC",
+   "title": "Discrete Structures",
+   "credits": {
+    "min": 4,
+    "max": 4
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "",
+    "corequisite": null,
+    "restriction": "",
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Fundamental mathematical concepts related to computer science, including finite and infinite sets, relations, functions, and propositional logic. Introduction to other techniques, modeling and solving problems in computer science. Introduction to permutations, combinations, graphs, and trees with selected applications."
+  },
+  {
+   "id": "CMSC320",
+   "department": "CMSC",
+   "title": "Introduction to Data Science",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in CMSC216 and CMSC250.",
+    "corequisite": null,
+    "restriction": "Permission of CMNS-Computer Science department.",
+    "creditOnlyGrantedFor": "CMSC320, DATA320 or STAT426.",
+    "other": {}
+   },
+   "description": "An introduction to the data science pipeline, i.e., the end-to-end process of going from unstructured, messy data to knowledge and actionable insights. Provides a broad overview of several topics including statistical data analysis, basic data mining and machine learning algorithms, large-scale data management, cloud computing, and information visualization."
+  },
+  {
+   "id": "CMSC330",
+   "department": "CMSC",
+   "title": "Organization of Programming Languages",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in CMSC250 and CMSC216.",
+    "corequisite": null,
+    "restriction": "Must be in a major within the CMNS-Computer Science department; or must be in the Computer Science Minor program; or must be in Engineering: Computer program; and Permission of CMSC - Computer Science department.",
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "A study of programming languages, including their syntax, semantics, and implementation. Several different models of languages are discussed, including dynamic, scripting (e.g., Ruby, Python) functional (e.g., OCaml, Haskell, Scheme), and memory safe systems programming (e.g., Rust). Explores language features such as formal syntax, scoping and binding of variables, higher-order programming, typing, and type polymorphism. Introduces finite automata, context free grammar, parsing, lambda calculus, and basics of security attacks and software security."
+  },
+  {
+   "id": "CMSC335",
+   "department": "CMSC",
+   "title": "Web Application Development with JavaScript",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in CMSC216 and CMSC250.",
+    "corequisite": null,
+    "restriction": "Permission of CMNS-Computer Science Department.",
+    "creditOnlyGrantedFor": "CMSC389N or CMSC335.",
+    "other": {
+     "Formerly": "CMSC389N."
+    }
+   },
+   "description": "Provides an introduction to modern ways of developing Web Applications/Services using JavaScript for both front-end and back-end. The course covers topics on fundamental JavaScript language constructs, server-side JavaScript, back-end data persistence, and client-side JavaScript to build Web Applications that interact with Web services and back-end databases."
+  },
+  {
+   "id": "CMSC351",
+   "department": "CMSC",
+   "title": "Algorithms",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in CMSC250 and CMSC216.",
+    "corequisite": null,
+    "restriction": "Must be in a major within the CMNS-Computer Science department; or must be in Engineering: Computer program; or must be in the Computer Science Minor program; and Permission from the CMSC - Computer Science department.",
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "A systematic study of the complexity of some elementary algorithms related to sorting, graphs and trees, and combinatorics. Algorithms are analyzed using mathematical techniques to solve recurrences and summations."
+  },
+  {
+   "id": "CMSC412",
+   "department": "CMSC",
+   "title": "Operating Systems",
+   "credits": {
+    "min": 4,
+    "max": 4
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in CMSC330 and CMSC351; and 1 course with a minimum grade of C- from (CMSC414, CMSC417, CMSC420, CMSC430, CMSC433, CMSC435, ENEE440, ENEE457).",
+    "corequisite": null,
+    "restriction": "Permission of CMNS-Computer Science department; or must be in one of the following programs (Computer Science (Master's); Computer Science (Doctoral)).",
+    "creditOnlyGrantedFor": "CMSC412 or ENEE447.",
+    "other": {}
+   },
+   "description": "A hands-on introduction to operating systems, including topics in: multiprogramming, communication and synchronization, memory management, IO subsystems, and resource scheduling polices. The laboratory component consists of constructing a small kernel, including functions for device IO, multi-tasking, and memory management."
+  },
+  {
+   "id": "CMSC414",
+   "department": "CMSC",
+   "title": "Computer and Network Security",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in CMSC330 and CMSC351; or must be in the (Computer Science (Doctoral), Computer Science (Master's)) program.",
+    "corequisite": null,
+    "restriction": "Permission of CMNS-Computer Science department.",
+    "creditOnlyGrantedFor": "CMSC414 or ENEE457.",
+    "other": {}
+   },
+   "description": "An introduction to the topic of security in the context of computer systems and networks. Identify, analyze, and solve network-related security problems in computer systems. Fundamentals of number theory, authentication, and encryption technologies, as well as the practical problems that have to be solved in order to make those technologies workable in a networked environment, particularly in the wide-area Internet environment."
+  },
+  {
+   "id": "CMSC420",
+   "department": "CMSC",
+   "title": "Advanced Data Structures",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in CMSC351 and CMSC330; and permission of CMNS-Computer Science department. Or must be in the (Computer Science (Doctoral), Computer Science (Master's)) program.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Description, properties, and storage allocation functions of data structures including balanced binary trees, B-Trees, hash tables, skiplists, tries, KD-Trees and Quadtrees. Algorithms for manipulating structures. Applications from areas such as String Processing, Computer Graphics, Information Retrieval, Computer Networks, Computer Vision, and Operating Systems."
+  },
+  {
+   "id": "CMSC421",
+   "department": "CMSC",
+   "title": "Introduction to Artificial Intelligence",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in CMSC351 and CMSC330; and permission of CMNS-Computer Science department. Or must be in the (Computer Science (Doctoral), Computer Science (Master's)) program.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Introduces a range of ideas and methods in AI, varying semester to semester but chosen largely from: automated heuristic search, planning, games, knowledge representation, logical and statistical inference, learning, natural language processing, vision, robotics, cognitive modeling, and intelligent agents. Programming projects will help students obtain a hands-on feel for various topics."
+  },
+  {
+   "id": "CMSC451",
+   "department": "CMSC",
+   "title": "Design and Analysis of Computer Algorithms",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": "Minimum grade of C- in CMSC351; and permission of CMNS-Computer Science department. Or must be in the (Computer Science (Doctoral), Computer Science (Master's)) program.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Fundamental techniques for designing efficient computer algorithms, proving their correctness, and analyzing their complexity. General topics include graph algorithms, basic algorithm design paradigms (such as greedy algorithms, divide-and-conquer, and dynamic programming), network flows, NP-completeness, and other selected topics in algorithms."
+  },
+  {
+   "id": "ENGL101",
+   "department": "ENGL",
+   "title": "Academic Writing",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "FSAW"
+   ],
+   "genEdText": "FSAW",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {
+     "Additional information": ""
+    }
+   },
+   "description": "An introductory course in expository writing.\n\nStudents with a TSWE score of 33 or below must take ENGL 101A in place of ENGL 101. Students for whom English is a second language should consider taking ENGL 101X in place of ENGL 101."
+  },
+  {
+   "id": "ENGL394",
+   "department": "ENGL",
+   "title": "Business Writing",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "FSPW"
+   ],
+   "genEdText": "FSPW",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "Must have fulfilled the Academic Writing (FSAW) requirement.",
+    "corequisite": null,
+    "restriction": "Must have earned a minimum of 60 credits.",
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Intensive practice in the forms of written communication common in the business world: letters, memos, short reports, and proposals. Focus on the principles of rhetoric and effective style.\n\nClick here for more information on professional writing courses."
+  },
+  {
+   "id": "COMM107",
+   "department": "COMM",
+   "title": "Oral Communication: Principles and Practices",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "FSOC"
+   ],
+   "genEdText": "FSOC",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": "",
+    "other": {}
+   },
+   "description": "A study of and practice in oral communication, including principles of interviewing, group discussion, listening, informative briefings, and persuasive speeches."
+  },
+  {
+   "id": "HIST200",
+   "department": "HIST",
+   "title": "Interpreting American History: Beginnings to 1877",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "DSHS",
+    "DSHU"
+   ],
+   "genEdText": "DSHS, DSHU",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": "HIST156 or HIST200.",
+    "other": {
+     "Formerly": "HIST156."
+    }
+   },
+   "description": "The United States from colonial times to the end of the Civil War. Establishment and development of American institutions."
+  },
+  {
+   "id": "PHIL140",
+   "department": "PHIL",
+   "title": "Contemporary Moral Issues",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "DSHU"
+   ],
+   "genEdText": "DSHU",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "The uses of philosophical analysis in thinking clearly about such widely debated moral issues as abortion, euthanasia, homosexuality, pornography, reverse discrimination, the death penalty, business ethics, sexual equality, and economic justice."
+  },
+  {
+   "id": "ARTH200",
+   "department": "ARTH",
+   "title": "Art and Society in Ancient and Medieval Europe and the Mediterranean",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "DSHU",
+    "DVUP"
+   ],
+   "genEdText": "DSHU, DVUP",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Examines the material culture and visual expressions of Mediterranean and European societies from early times until ca. 1300 CE, emphasizing the political, social, and religious context of the works studied, the relationships of the works to the societies that created them, and the interrelationship of these societies."
+  },
+  {
+   "id": "AAAS100",
+   "department": "AAAS",
+   "title": "Introduction to African American and Africana Studies",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "DSHS",
+    "DVUP"
+   ],
+   "genEdText": "DSHS, DVUP",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": "",
+    "other": {
+     "Formerly": ""
+    }
+   },
+   "description": "Significant aspects of the history of African Americans with particular emphasis on the evolution and development of black communities from slavery to the present. Interdisciplinary introduction to social, political, legal and economic roots of contemporary problems faced by blacks in the United States with applications to the lives of other racial and ethnic minorities in the Americas and in other societies."
+  },
+  {
+   "id": "ECON200",
+   "department": "ECON",
+   "title": "Principles of Microeconomics",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "DSHS"
+   ],
+   "genEdText": "DSHS",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "MATH107; or must have math eligibility of MATH113 or higher.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {
+     "Additional information": "It is recommended that students complete ECON200 before taking ECON201."
+    }
+   },
+   "description": "Introduces economic models used to analyze economic behavior by individuals and firms and consequent market outcomes. Applies conceptual analysis to several policy issues and surveys a variety of specific topics within the broad scope of microeconomics."
+  },
+  {
+   "id": "UNIV100",
+   "department": "UNIV",
+   "title": "The Student in the University",
+   "credits": {
+    "min": 1,
+    "max": 1
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": "EDCP108O or UNIV100.",
+    "other": {
+     "Formerly": "EDCP108O."
+    }
+   },
+   "description": "Introduces students to University life. In a small classroom setting, students will explore how to successfully bridge the gap between high school and college. Study skills, career decision-making, and student development processes will be explored."
+  },
+  {
+   "id": "CHEM131",
+   "department": "CHEM",
+   "title": "Chemistry I - Fundamentals of General Chemistry",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "DSNL",
+    "DSNS"
+   ],
+   "genEdText": "DSNL (if taken with CHEM132), DSNS",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "Must have math eligibility of MATH120 or higher.",
+    "corequisite": "CHEM132.",
+    "restriction": null,
+    "creditOnlyGrantedFor": "CHEM103, CHEM131, CHEM135, CHEM153 or CHEM146.",
+    "other": {
+     "Recommended": "For Science majors.",
+     "Formerly": "CHEM103."
+    }
+   },
+   "description": "An overview of the Periodic Table, inorganic substances, ionic and covalent bonding, bulk properties of materials, chemical equilibrium, and quantitative chemistry. CHEM131 is the first course in a four-semester sequence for students majoring in the sciences, other than Chemistry and Biochemistry majors."
+  },
+  {
+   "id": "CHEM132",
+   "department": "CHEM",
+   "title": "General Chemistry I Laboratory",
+   "credits": {
+    "min": 1,
+    "max": 1
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "Must have math eligibility of MATH120 or higher.",
+    "corequisite": "CHEM131.",
+    "restriction": null,
+    "creditOnlyGrantedFor": "CHEM103, CHEM132, CHEM136, CHEM143, CHEM147 or CHEM177.",
+    "other": {
+     "Formerly": "CHEM103."
+    }
+   },
+   "description": "Introduction to the quantification of chemical substances, including the concept of the mole and chemical stoichiometry. Additional work involves the synthesis of ionic substances and their qualitative characterization. Must be taken concurrently with CHEM131.\n\nLaboratory sessions will begin after the first lecture. Students must pay a $70.00 lab materials fee."
+  },
+  {
+   "id": "PHYS161",
+   "department": "PHYS",
+   "title": "General Physics: Mechanics and Particle Dynamics",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "DSNL",
+    "DSNS"
+   ],
+   "genEdText": "DSNL (if taken with PHYS275), DSNS",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "Must have completed or be concurrently enrolled in MATH141.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": "PHYS141, PHYS161, or PHYS171.",
+    "other": {
+     "Additional information": "General Education Natural Sciences Lab (DSNL) Course only when taken concurrently with PHYS275."
+    }
+   },
+   "description": "First semester of a three-semester calculus-based general physics course. Laws of motion, force, and energy; principles of mechanics, collisions, linear momentum, rotation, and gravitation.\n\nPhysics Clinic, PHY 1214, MTWHF 11, 1, 2. If purchasing used books additional software may be required."
+  },
+  {
+   "id": "PHYS260",
+   "department": "PHYS",
+   "title": "General Physics: Electricity, Magnetism and Thermodynamics",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "DSNL"
+   ],
+   "genEdText": "DSNL (if taken with PHYS261)",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "PHYS161 and MATH141.",
+    "corequisite": "PHYS261.",
+    "restriction": null,
+    "creditOnlyGrantedFor": "PHYS142, PHYS260, or PHYS272.",
+    "other": {}
+   },
+   "description": "Second semester of a three-semester calculus-based general physics course. Electrostatics, magnetism, induction, DC and AC circuits; Maxwell's Equations, heat, and thermodynamics.\n\nIf purchasing used books additional software may be required."
+  },
+  {
+   "id": "PHYS261",
+   "department": "PHYS",
+   "title": "General Physics: Mechanics, Vibrations, Waves, Heat (Laboratory)",
+   "credits": {
+    "min": 1,
+    "max": 1
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": "PHYS161.",
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Lab includes experiments on mechanics, vibrations, waves, and heat. Engineering majors are expected to take PHYS260 and PHYS261 in the same semester.\n\nStudents must pay a $50.00 lab materials fee."
+  },
+  {
+   "id": "ENGL388T",
+   "department": "ENGL",
+   "title": "Writing, Research, and Media Internships; Digital Humanities Research Assistantship",
+   "credits": {
+    "min": 1,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": true,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Cross-listed with MITH388. Credit only granted for MITH388 or ENGL388T. Prerequisite: permission of department. Repeatable to 12 credits."
+  },
+  {
+   "id": "MATH003",
+   "department": "MATH",
+   "title": "Developmental Mathematics",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "A review of Intermediate High School Algebra intended for students preparing for one of the credit bearing Fundamental Studies Math Courses. It is taught in special computer labs using a self-paced computer program. The curriculum will be geared toward the student's level of algebra skills and eventual goals. There is a special fee for the course that may be applied in addition to the regular tuition charge. Students should refer to the schedule of classes for details on fees as they apply to a particular semester. The course does not carry any credit toward any degree at the University. The course is repeatable. Topics will be chosen from exponents, polynomials, linear equations, quadratic equations as well as polynomial, rational, exponential and logarithm functions and elementary probability or statistics, depending on the student.\n\nStudents must pay a special math fee."
+  },
+  {
+   "id": "ECON418A",
+   "department": "ECON",
+   "title": "Economic Development of Selected Areas; Africa",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Prerequisites: 1 course with a minimum grade of C- from (ECON306, ECON326); and 1 course with a minimum grade of C- from (ECON230, BMGT230, ECON321, STAT401). Restriction: Must be in one of the following programs (Economics Bachelor of Arts; Economics minor; Social Data Science-Economics). Students may repeat \"ECON418 Economics Development of Selected Areas\" for a maximum of 6 credits. Analyzes problems of political economy and economic development in Africa, with a focus on Sub-Saharan Africa. Students will use economic theory and applied statistics to study questions related to long-run economic growth, institutions, colonialism, and human development."
+  },
+  {
+   "id": "GVPT390",
+   "department": "GVPT",
+   "title": "Game Theory",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [],
+   "genEdText": "",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": "Must not have completed ECON414.",
+    "creditOnlyGrantedFor": "GVPT399A, GVPT390, CMSC474 or ECON414.",
+    "other": {
+     "Formerly": "GVPT399A."
+    }
+   },
+   "description": "Introduction to game theory with applications to political science, economics and sociology. Topics include preference theory, expected utility theory, Nash equilibria, subgame perfection, repeated games, folk theorems, and evolutionary stability."
+  },
+  {
+   "id": "PSYC100",
+   "department": "PSYC",
+   "title": "Introduction to Psychology",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "DSHS",
+    "DSNS"
+   ],
+   "genEdText": "DSHS, DSNS",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "A basic introductory course intended to bring the student into contact with the major problems confronting psychology and the more important attempts at their solution.\n\nDiscussion sections do not meet until after first lecture. Research requirement: may involve participation in research.\n\nClick here for course syllabus."
+  },
+  {
+   "id": "SOCY100",
+   "department": "SOCY",
+   "title": "Introduction to Sociology",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "DSHS"
+   ],
+   "genEdText": "DSHS",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Introduces fundamental concepts and theories of sociology. Guided by C. Wright Mills' \"sociological imagination,\" the course promotes critical thinking; challenges conventional assumptions about culture politics, history, and psychology; and equips students with theoretical approaches and research methods to analyze various sociological topics, including family, work, education, religion, social movements, and issues related to class, gender, race, and ethnic inequalities."
+  },
+  {
+   "id": "ANTH260",
+   "department": "ANTH",
+   "title": "Introduction to Sociocultural Anthropology and Linguistics",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "DSHS",
+    "DVUP"
+   ],
+   "genEdText": "DSHS, DVUP",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "Culture and social relationships in a wide variety of settings from small-scale to complex societies. An overview of how anthropology analyzes human behavior. Particular attention to the relationship between language and culture."
+  },
+  {
+   "id": "THET110",
+   "department": "THET",
+   "title": "Introduction to the Theatre",
+   "credits": {
+    "min": 3,
+    "max": 3
+   },
+   "genEd": [
+    "DSHU"
+   ],
+   "genEdText": "DSHU",
+   "permissionRequired": false,
+   "texts": {
+    "prerequisite": null,
+    "corequisite": null,
+    "restriction": null,
+    "creditOnlyGrantedFor": null,
+    "other": {}
+   },
+   "description": "In the age of pop music and blockbuster films, of memes and viral videos, we often forget that theatre was one of the original forms of popular entertainment. We will focus on theatre practitioners including actors, directors, designers and backstage personnel to understand how theatre is produced. We will also consider popular entertainment in Europe and America, with a particular focus on musical theatre and Broadway to explore how theatre communicates, resonates, and remains relevant to all audiences."
+  }
+ ]
+}
