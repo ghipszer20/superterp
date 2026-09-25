@@ -193,6 +193,21 @@ describe("auditProgram", () => {
     ]);
   });
 
+  it("matches courses by their Gen Ed codes", async () => {
+    const program: Program = {
+      id: "gened",
+      name: "Gen Ed",
+      requirements: [{ kind: "choose", id: "dshu", name: "Humanities", count: 2, from: { genEd: ["DSHU"] } }],
+    };
+    const courses: StudentCourse[] = [
+      { id: "HIST110", credits: 3, status: "completed", genEd: ["DSHU"] },
+      { id: "HIST111", credits: 3, status: "completed", genEd: ["DSHS", "DVUP"] },
+      { id: "PHIL100", credits: 3, status: "planned", genEd: ["DSHU"] },
+    ];
+    const r = await auditProgram(program, courses);
+    expect(r.requirements[0]).toMatchObject({ status: "satisfied", assigned: ["HIST110", "PHIL100"] });
+  });
+
   describe("several programs at once (double major)", () => {
     const math: Program = {
       id: "math",

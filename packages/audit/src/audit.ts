@@ -13,6 +13,8 @@ export type CourseFilter = {
   minNumber?: number;
   maxNumber?: number;
   exclude?: string[];
+  /** Courses carrying any of these Gen Ed codes, e.g. ["DSHU"]. */
+  genEd?: string[];
 };
 
 export type Area = { name: string; courses: string[] };
@@ -61,7 +63,14 @@ export type Program = {
   reviewNotes?: string[];
 };
 
-export type StudentCourse = { id: string; credits: number; status: "completed" | "planned"; grade?: string };
+export type StudentCourse = {
+  id: string;
+  credits: number;
+  status: "completed" | "planned";
+  grade?: string;
+  /** Gen Ed codes the course carries (from the Schedule of Classes). */
+  genEd?: string[];
+};
 
 // UMD letter grades, lowest to highest.
 const GRADE_ORDER = ["F", "D-", "D", "D+", "C-", "C", "C+", "B-", "B", "B+", "A-", "A", "A+"];
@@ -93,9 +102,11 @@ const getSolver = () => (solver ??= loadHighs());
 
 const COURSE_ID = /^([A-Z]{4})(\d{3})[A-Z]?$/;
 
-export function matchesFilter(filter: CourseFilter, courseId: string): boolean {
+export function matchesFilter(filter: CourseFilter, course: Pick<StudentCourse, "id" | "genEd">): boolean {
+  const courseId = course.id;
   if (filter.exclude?.includes(courseId)) return false;
   if (filter.courses?.includes(courseId)) return true;
+  if (filter.genEd) return filter.genEd.some((code) => course.genEd?.includes(code));
   const m = COURSE_ID.exec(courseId);
   if (!m) return false;
   if (!filter.departments) return false;
@@ -132,7 +143,7 @@ function pairsFor(req: Requirement, p: number, r: number, course: StudentCourse,
   const base = `x_${p}_${c}_${r}`;
   const plain = (weight: number): Pair[] => [{ p, c, r, area: null, department: null, name: base, weight }];
   if (req.kind === "course") return req.options.includes(course.id) ? plain(1) : [];
-  if (req.kind === "choose") return matchesFilter(req.from, course.id) ? plain(req.credits ? course.credits : 1) : [];
+  if (req.kind === "choose") return matchesFilter(req.from, course) ? plain(req.credits ? course.credits : 1) : [];
   if (req.kind === "concentration") {
     const m = COURSE_ID.exec(course.id);
     if (!m || req.excludeDepartments?.includes(m[1]!)) return [];
