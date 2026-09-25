@@ -242,7 +242,9 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
   - `packages/audit`: HiGHS-based audit (course, choose N/credits, distribution, concentration, min grade, multi-program sharing limit); CS major 2026–27 encoded (`programs/cmsc-major-2026-27.ts`, unverified, with review notes) and golden-tested.
   - `CONTEXT.md` glossary, `docs/adr/0001`, `0002`.
   - Tests: 96 passing across 4 packages.
-  - **Next:** Math major, then audit Math + CS double major, Gen Ed and university rules, then the schedule builder (design needs owner approval).
+  - 2026-09-25 day: schedule generator (all combinations, grouped into distinct layouts; freshman example 190,688 schedules → 17,936 layouts in 26 ms); audit gained 'sets' and overlay requirements; **Math major Traditional Track encoded** (`programs/math-major-2026-27.ts`, unverified, 8 review notes); **Math + CS double-major golden test passes**.
+  - **Open question for owner:** which Math track are they in? (Traditional encoded as the default.)
+  - **Next:** Gen Ed + university rules (120 credits, upper-level credits), then the schedule builder UI (design needs owner approval), then deployment + pre-warmed data.
   - **Next up (per plan):** Phase 1 schedule builder on the shared plan model; deploy to Vercel once the owner creates an account.
 
 ## 15. Working notes for Claude
