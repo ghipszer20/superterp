@@ -4,7 +4,7 @@ Moved out of PROJECT_MEMORY.md (section 3) so it loads only when needed. Update 
 
 1. **Degree audit and 4-year planner.**
    - Layered rules: University → Gen Ed → College → Major → Specialization → Minor, second major and special programs.
-   - Matching-based assignment that respects double-count rules. Flags missing requirements (with courses that satisfy them), prerequisite and ordering errors, overshoot, and credit caps.
+   - Matching-based assignment that respects double-count rules. Flags missing requirements (with courses that satisfy them), prerequisite and ordering errors, and credit caps. (Total credits beyond the degree minimum are NOT flagged; owner ruling 2026-09-25.)
    - Manual ☐ items for things it can't check (thesis, auditions).
    - Catalog-year versioning. Handles AP/transfer credit and the CS limited-enrollment gateway.
    - **Program changes (owner requirement):** switching majors, grad courses as an undergrad, double majors, double degrees, adding and dropping majors and minors.
