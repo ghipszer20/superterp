@@ -101,3 +101,15 @@ export function defaultSnapshotDir(
     dir = parent;
   }
 }
+
+/** Data plus when it was fetched (null when it was just fetched live, with no snapshot). */
+export type Fresh<T> = { data: T; updatedAt: string | null };
+
+/**
+ * Serve the snapshot if there is one, however old (the jobs keep it fresh);
+ * fetch live only when no snapshot exists yet.
+ */
+export async function snapshotOrLive<T>(snapshot: Snapshot<T> | null, live: () => Promise<T>): Promise<Fresh<T>> {
+  if (snapshot) return { data: snapshot.data, updatedAt: snapshot.updatedAt };
+  return { data: await live(), updatedAt: null };
+}

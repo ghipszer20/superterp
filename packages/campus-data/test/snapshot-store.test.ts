@@ -4,7 +4,7 @@ import { mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSyn
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { defaultSnapshotDir, FileSnapshotStore, SNAPSHOT_SCHEMA } from "../src/snapshots/store.ts";
+import { defaultSnapshotDir, FileSnapshotStore, SNAPSHOT_SCHEMA, snapshotOrLive } from "../src/snapshots/store.ts";
 
 let dir: string;
 beforeEach(() => {
@@ -77,5 +77,25 @@ describe("defaultSnapshotDir", () => {
     const expected = join(dir, ".cache", "snapshots");
     expect(defaultSnapshotDir(join(dir, "apps", "web"), {})).toBe(expected);
     expect(defaultSnapshotDir(join(dir, "packages", "campus-data"), {})).toBe(expected);
+  });
+});
+
+describe("snapshotOrLive", () => {
+  const live = () => {
+    const calls = { n: 0 };
+    return { calls, load: async () => (calls.n++, "live data") };
+  };
+
+  it("serves a snapshot, however old, without fetching live", async () => {
+    const l = live();
+    const got = await snapshotOrLive({ updatedAt: "2026-01-01T00:00:00.000Z", data: "snap" }, l.load);
+    expect(got).toEqual({ data: "snap", updatedAt: "2026-01-01T00:00:00.000Z" });
+    expect(l.calls.n).toBe(0);
+  });
+
+  it("fetches live only when there is no snapshot, with no updatedAt", async () => {
+    const l = live();
+    expect(await snapshotOrLive(null, l.load)).toEqual({ data: "live data", updatedAt: null });
+    expect(l.calls.n).toBe(1);
   });
 });
