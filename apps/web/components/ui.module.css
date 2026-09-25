@@ -1,0 +1,245 @@
+.page {
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: calc(20px + env(safe-area-inset-top)) var(--gutter) calc(96px + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 900px) {
+  .page {
+    padding: 44px 40px 64px;
+  }
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.largeTitle {
+  font: var(--t-large);
+  letter-spacing: -0.02em;
+}
+
+.section {
+  margin-top: 28px;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 4px 10px;
+}
+
+.sectionTitle {
+  font: var(--t-title);
+  letter-spacing: -0.01em;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 11px 16px;
+  position: relative;
+}
+
+.row + .row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 16px;
+  border-top: 0.5px solid var(--separator);
+}
+
+.rowLink {
+  transition: background var(--fast) ease;
+}
+
+.rowLink:active {
+  background: var(--surface-pressed);
+}
+
+@media (hover: hover) {
+  .rowLink:hover {
+    background: var(--surface-2);
+  }
+}
+
+.leading {
+  flex: none;
+  display: flex;
+}
+
+.rowText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rowTitle {
+  font: var(--t-body);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rowSub {
+  color: var(--text-2);
+  font: var(--t-sub);
+}
+
+.trailing {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-2);
+  font: var(--t-sub);
+  text-align: right;
+}
+
+.chevron {
+  flex: none;
+  color: var(--text-3);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  font: var(--t-caption);
+  white-space: nowrap;
+}
+
+.pill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.pill[data-status="open"] {
+  color: var(--open);
+  background: var(--open-tint);
+}
+
+.pill[data-status="soon"] {
+  color: var(--soon);
+  background: var(--soon-tint);
+}
+
+.pill[data-status="closed"],
+.pill[data-status="unknown"] {
+  color: var(--text-2);
+  background: var(--closed-tint);
+}
+
+.iconTile {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.iconTile[data-tone="accent"] {
+  color: var(--accent);
+  background: var(--accent-tint);
+}
+
+.iconTile[data-tone="neutral"] {
+  color: var(--text-2);
+  background: var(--surface-2);
+}
+
+.iconTile svg {
+  width: 20px;
+  height: 20px;
+}
+
+.notice {
+  margin: 10px 4px 0;
+  color: var(--text-2);
+  font: var(--t-foot);
+}
+
+.notice a {
+  color: var(--accent);
+}
+
+.empty {
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.emptyTitle {
+  font: var(--t-headline);
+}
+
+.emptyBody {
+  margin-top: 4px;
+  color: var(--text-2);
+  font: var(--t-sub);
+}
+
+.skeletonRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+.skeletonBlock,
+.skeletonLine {
+  background: var(--surface-2);
+  border-radius: 8px;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.skeletonBlock {
+  width: 36px;
+  height: 36px;
+  flex: none;
+}
+
+.skeletonLine {
+  height: 14px;
+  width: 60%;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.55;
+  }
+}
+
+/* Inline status: Apple Maps style colored text under a title. */
+.pill[data-inline] {
+  padding: 0;
+  background: none;
+  font: var(--t-sub);
+  font-weight: 500;
+}

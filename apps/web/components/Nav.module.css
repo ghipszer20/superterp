@@ -1,0 +1,124 @@
+/* Phone: frosted bottom tab bar. Desktop (≥ 900px): sidebar. */
+
+.nav {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 50;
+  padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+  background: var(--material);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-top: 0.5px solid var(--separator);
+}
+
+.brand,
+.fine {
+  display: none;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 0;
+  color: var(--text-3);
+  font: 500 10.5px/1.2 var(--font);
+  transition: color var(--fast) ease;
+}
+
+.tab[data-active="true"] {
+  color: var(--accent);
+}
+
+@media (hover: hover) {
+  .tab:hover {
+    color: var(--text-2);
+  }
+  .tab[data-active="true"]:hover {
+    color: var(--accent);
+  }
+}
+
+@media (min-width: 900px) {
+  .nav {
+    inset: 0 auto 0 0;
+    width: 232px;
+    padding: 28px 14px;
+    display: flex;
+    flex-direction: column;
+    border-top: 0;
+    border-right: 0.5px solid var(--separator);
+  }
+
+  .brand {
+    display: block;
+    padding: 0 12px 24px;
+    font: 700 22px/1 var(--font-rounded);
+    letter-spacing: -0.02em;
+  }
+
+  .brand span {
+    color: var(--accent);
+  }
+
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-width: none;
+    margin: 0;
+  }
+
+  .tab {
+    flex-direction: row;
+    gap: 12px;
+    padding: 9px 12px;
+    border-radius: var(--r-sm);
+    color: var(--text);
+    font: var(--t-sub);
+    font-weight: 500;
+  }
+
+  .tab svg {
+    width: 20px;
+    height: 20px;
+    color: var(--text-2);
+  }
+
+  .tab[data-active="true"] {
+    background: var(--accent-tint);
+    color: var(--accent);
+  }
+
+  .tab[data-active="true"] svg {
+    color: var(--accent);
+  }
+
+  @media (hover: hover) {
+    .tab:hover {
+      background: var(--surface-2);
+      color: var(--text);
+    }
+    .tab[data-active="true"]:hover {
+      background: var(--accent-tint);
+    }
+  }
+
+  .fine {
+    display: block;
+    margin-top: auto;
+    padding: 0 12px;
+    color: var(--text-3);
+    font: var(--t-foot);
+  }
+}
