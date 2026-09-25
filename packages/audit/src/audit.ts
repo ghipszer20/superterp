@@ -41,6 +41,14 @@ export type Program = {
   requirements: Requirement[];
   /** Lowest grade a completed course needs to count toward this program, e.g. "C-". */
   minGrade?: string;
+  /** Catalog edition these rules come from, e.g. "2026-27". */
+  catalogYear?: string;
+  /** Where the rules came from. */
+  source?: string;
+  /** True only after the owner has reviewed and signed off (a Verified Program). */
+  verified?: boolean;
+  /** Interpretations the owner must check before verifying. */
+  reviewNotes?: string[];
 };
 
 export type StudentCourse = { id: string; credits: number; status: "completed" | "planned"; grade?: string };

@@ -236,6 +236,13 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
     - Before public launch, check the GTFS feed's license (Interline/actionfigure) for republishing schedules.
     - Add GitHub Actions CI (test, lint, build). Web `tsc --noEmit` fails on a fresh clone until Next generates `LayoutProps` (run `next typegen` or build first).
     - If a source is down, show the last good data (needs a database).
+- **2026-09-24/25 overnight, PR #2 (`feat/course-data`, draft, stacked on #1):**
+  - `packages/course-data`: Testudo SOC parser (Spring 2027 snapshot: 4,375 courses, 7,221 sections, gitignored `.cache/`); prerequisite parser (100% course-code retention over 1,363 prerequisites) and `checkRequirement` (met/unmet/confirm).
+  - `packages/catalog`: catalog requirement-table parser (CS and Math fixtures).
+  - `packages/audit`: HiGHS-based audit (course, choose N/credits, distribution, concentration, min grade, multi-program sharing limit); CS major 2026–27 encoded (`programs/cmsc-major-2026-27.ts`, unverified, with review notes) and golden-tested.
+  - `CONTEXT.md` glossary, `docs/adr/0001`, `0002`.
+  - Tests: 96 passing across 4 packages.
+  - **Next:** Math major, then audit Math + CS double major, Gen Ed and university rules, then the schedule builder (design needs owner approval).
   - **Next up (per plan):** Phase 1 schedule builder on the shared plan model; deploy to Vercel once the owner creates an account.
 
 ## 15. Working notes for Claude
@@ -253,3 +260,8 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
 - Unclear choices: pick the most reasonable option, record the assumption in this file, keep going. Brainstorming questions go into the progress report.
 - Use superpowers skills (TDD etc.) and mattpocock domain-modeling per CLAUDE.md.
 - Commit and push often to feature branches (never main). Keep the status log (section 14) current so nothing is lost if context is summarized.
+
+## 17. Owner rulings (2026-09-25 morning)
+- **Never rebuild working code unless absolutely necessary; fix it first.** (Superpowers TDD's "delete and restart" rule does NOT override this. Add tests to existing code instead.) The SOC course parser is kept as is.
+- **CMSC141 counts for CMSC131, and CMSC142 counts for CMSC132** (confirmed by owner).
+- **CS gateway rule confirmed:** students who matriculated Fall 2024 or later need B- or better in gateway courses and a 3.0 cumulative GPA to apply to the CS LEP; earlier students need C- and 2.7.
