@@ -2,7 +2,9 @@
 // after client JavaScript has run: collects console errors and page text,
 // and saves phone-sized screenshots. Windows-only helper for local checks.
 //
-//   node scripts/ui-check.mjs http://localhost:3000 /campus/buses /campus/dining
+//   node scripts/ui-check.mjs http://localhost:3000 /campus/buses /campus/dining [--dark] [--desktop] [--full]
+//   --dark: prefers-color-scheme: dark   --desktop: 1280×820 instead of iPhone
+//   --full: capture the whole page (the fixed tab bar then appears mid-page)
 //
 // Screenshots go to ./.ui-check/ (gitignored).
 
@@ -11,7 +13,12 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
-const [base = "http://localhost:3000", ...paths] = process.argv.slice(2);
+const args = process.argv.slice(2);
+const dark = args.includes("--dark");
+const desktop = args.includes("--desktop");
+const full = args.includes("--full");
+const [base = "http://localhost:3000", ...paths] = args.filter((a) => !a.startsWith("--"));
+const suffix = `${desktop ? "-desktop" : ""}${dark ? "-dark" : ""}`;
 const EDGE = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
 const PORT = 9333;
 const OUT = ".ui-check";
@@ -65,8 +72,15 @@ const send = (method, params = {}) =>
 
 await send("Runtime.enable");
 await send("Page.enable");
-// iPhone 15-ish viewport.
-await send("Emulation.setDeviceMetricsOverride", { width: 393, height: 852, deviceScaleFactor: 2, mobile: true });
+await send(
+  "Emulation.setDeviceMetricsOverride",
+  desktop
+    ? { width: 1280, height: 820, deviceScaleFactor: 1, mobile: false }
+    : { width: 393, height: 852, deviceScaleFactor: 2, mobile: true }, // iPhone 15-ish
+);
+await send("Emulation.setEmulatedMedia", {
+  features: [{ name: "prefers-color-scheme", value: dark ? "dark" : "light" }],
+});
 
 for (const path of paths.length ? paths : ["/"]) {
   errors.length = 0;
@@ -77,8 +91,9 @@ for (const path of paths.length ? paths : ["/"]) {
     returnByValue: true,
   });
   const text = String(result?.result?.value ?? "").replace(/\n+/g, " | ");
-  const shot = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: true });
-  const file = join(OUT, `${path.replace(/\W+/g, "_") || "root"}.png`);
+  const shot = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: full });
+  const name = path.replace(/\W+/g, "_").replace(/^_|_$/g, "") || "today";
+  const file = join(OUT, `${name}${suffix}.png`);
   writeFileSync(file, Buffer.from(shot.result.data, "base64"));
   console.log(`\n=== ${path}  (${file})`);
   console.log(`errors: ${errors.length ? errors.join("\n  ") : "none"}`);

@@ -11,6 +11,7 @@ export function Page({ title, subtitle, children }: { title: string; subtitle?: 
         <h1 className={styles.largeTitle}>{title}</h1>
       </header>
       {children}
+      <p className={styles.disclaimer}>Unofficial. Not affiliated with the University of Maryland.</p>
     </main>
   );
 }

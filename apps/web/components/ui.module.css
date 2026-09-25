@@ -243,3 +243,17 @@
   font: var(--t-sub);
   font-weight: 500;
 }
+
+.disclaimer {
+  margin: 32px 4px 0;
+  color: var(--text-3);
+  font: var(--t-foot);
+  text-align: center;
+}
+
+/* Desktop shows this in the sidebar instead. */
+@media (min-width: 900px) {
+  .disclaimer {
+    display: none;
+  }
+}

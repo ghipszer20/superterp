@@ -92,7 +92,7 @@ async function Dining({ today, minutes }: { today: string; minutes: number }) {
 
 async function Libraries({ today, minutes }: { today: string; minutes: number }) {
   const res = await safe(getLibraryHours);
-  const libs = res.ok ? res.data.filter((l) => l.kind === "library").slice(0, 3) : [];
+  const libs = res.ok ? pickMain(res.data.filter((l) => l.kind === "library"), MAIN_LIBRARIES, (l) => l.name) : [];
   return (
     <Card>
       {libs.map((lib) => (
@@ -124,11 +124,8 @@ async function Libraries({ today, minutes }: { today: string; minutes: number })
 
 async function Gyms({ today, minutes }: { today: string; minutes: number }) {
   const res = await safe(getRecWellAreas);
-  // The building-level row for each facility (its name matches its group).
   const buildings = res.ok
-    ? recWellOnDate(res.data, today)
-        .filter((a) => a.name === a.group)
-        .slice(0, 3)
+    ? pickMain(recWellOnDate(res.data, today), MAIN_GYMS, (a) => `${a.group} | ${a.name}`)
     : [];
   return (
     <Card>
@@ -137,14 +134,14 @@ async function Gyms({ today, minutes }: { today: string; minutes: number }) {
       ) : (
         buildings.map((b) => (
           <Row
-            key={b.group}
+            key={`${b.group}-${b.name}`}
             href="/campus/gym"
             leading={
               <IconTile tone="neutral">
                 <GymIcon />
               </IconTile>
             }
-            title={b.name}
+            title={b.name === b.group ? b.name : `${b.group} ${b.name}`}
             subtitle={<LiveStatus hours={b.hours} initialMinutes={minutes} inline />}
           />
         ))
@@ -170,4 +167,19 @@ async function Buses({ today }: { today: string }) {
       />
     </Card>
   );
+}
+
+// The places most students mean by "the library" and "the gym". Falls back
+// to feed order if UMD renames them.
+const MAIN_LIBRARIES = [/^McKeldin/i, /^STEM/i, /^Hornbake/i];
+// Matched against "<facility> | <area>".
+const MAIN_GYMS = [
+  /^Eppley Recreation Center \| Eppley Recreation Center$/i,
+  /^Ritchie Coliseum \| Ritchie Coliseum$/i,
+  /^School of Public Health \| Fitness Center$/i,
+];
+
+function pickMain<T>(items: T[], patterns: RegExp[], key: (item: T) => string, count = 3): T[] {
+  const picked = patterns.flatMap((p) => items.filter((i) => p.test(key(i))).slice(0, 1));
+  return picked.length > 0 ? picked.slice(0, count) : items.slice(0, count);
 }

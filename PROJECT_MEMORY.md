@@ -148,7 +148,7 @@ Scale: about 200–300+ programs, roughly 200–300 hours of owner review. Launc
 
 ## 8. UI / design
 - **Principles:** show the answer, not the data; one main action per screen; plain language (e.g. "Humanities (DSHU)"); color only when it means something (white and gray, one accent, a pastel for each requirement category); an instant feel (cached data, skeleton loading, springs, haptics); accessibility (Dynamic Type, VoiceOver, dark mode, AA contrast).
-- **Tabs:** Today · Schedule · Plan · Explore · Profile.
+- **Tabs (built in PR #1, PENDING owner approval):** Today · Campus · Schedule · Plan · Explore. Profile moves to a top-right avatar button once accounts exist. (Original plan was Today · Schedule · Plan · Explore · Profile.)
 - **Onboarding** in under 60 seconds: major and year → transcript → audit.
 - Don't use Testudo or UMD logos. Logo idea: abstract hexagon or shell plates.
 - The website gets a desktop layout, not a stretched phone app.
@@ -225,6 +225,11 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
   - `packages/campus-data`: dining, libraries (LibCal JSON feed `api_hours_grid.php?iid=1504`), RecWell sheet, study rooms (LibCal catalog + grid), Shuttle-UM GTFS. 38 fixture tests; `npm run smoke` checks the live sites (all 5 passed 2026-09-24).
   - `apps/web` (Next.js 16, Cache Components): Today, Campus hub, Dining, Study Rooms, Buses, Libraries, Gyms & Rec, plus placeholder Schedule/Plan/Explore. `next build`, `tsc` and ESLint are clean; `npm run ui-check` (headless Edge over DevTools at iPhone size) shows 0 console errors on all 8 pages.
   - **Waiting on owner:** approval of the Campus UI (first major UI; screenshots in `apps/web/.ui-check/`, or run `npm run dev`).
+  - **Review to-dos (not blocking PR 1):**
+    - The GTFS feed ends 2026-12-24. `validUntil` is parsed but not shown, so after it expires the app would say "No Shuttle-UM service". Warn in the UI and in a scheduled check before that date.
+    - Before public launch, check the GTFS feed's license (Interline/actionfigure) for republishing schedules.
+    - Add GitHub Actions CI (test, lint, build). Web `tsc --noEmit` fails on a fresh clone until Next generates `LayoutProps` (run `next typegen` or build first).
+    - If a source is down, show the last good data (needs a database).
   - **Next up (per plan):** Phase 1 schedule builder on the shared plan model; deploy to Vercel once the owner creates an account.
 
 ## 15. Working notes for Claude
