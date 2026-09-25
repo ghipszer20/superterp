@@ -215,6 +215,11 @@ export async function fetchCourse(id: string): Promise<Course | null> {
   return data === null ? null : parseCourse(data);
 }
 
+/** A course's unparsed /grades body; not-found becomes {"error": "course not found"}. Other failures throw. */
+export async function fetchGradesRaw(course: string): Promise<unknown> {
+  return (await getOrNull(`${API}/grades?course=${q(course)}`)) ?? { error: "course not found" };
+}
+
 export async function fetchGrades(course: string, professor?: string): Promise<GradeRow[]> {
   const url = `${API}/grades?course=${q(course)}${professor ? `&professor=${q(professor)}` : ""}`;
   const data = await getOrNull(url);

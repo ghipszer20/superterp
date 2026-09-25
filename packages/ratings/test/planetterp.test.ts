@@ -7,6 +7,7 @@ import { SourceError } from "@superterp/campus-data/http";
 import {
   fetchCourse,
   fetchGrades,
+  fetchGradesRaw,
   fetchProfessor,
   parseCourse,
   parseGrades,
@@ -205,5 +206,23 @@ describe("fetchers", () => {
     expect(calls2).toEqual(["https://planetterp.com/api/v1/grades?course=STAT400"]);
     stub({ error: "course not found" }, 400);
     expect(await fetchGrades("ZZZZ999")).toEqual([]);
+  });
+
+  it("fetchGradesRaw returns the unparsed body, for caching", async () => {
+    const calls = stub(fixture("grades-cmsc351.json"));
+    expect(await fetchGradesRaw("CMSC351")).toEqual(fixture("grades-cmsc351.json"));
+    expect(calls).toEqual(["https://planetterp.com/api/v1/grades?course=CMSC351"]);
+  });
+
+  it("fetchGradesRaw turns a 400 not-found into PlanetTerp's error object, which parses to no rows", async () => {
+    stub({ error: "course not found" }, 400);
+    const raw = await fetchGradesRaw("AIME100");
+    expect(raw).toEqual({ error: "course not found" });
+    expect(parseGrades(raw)).toEqual([]);
+  });
+
+  it("fetchGradesRaw still fails loudly on server errors (so they are not cached)", async () => {
+    stub({}, 503);
+    await expect(fetchGradesRaw("CMSC351")).rejects.toThrow(SourceError);
   });
 });
