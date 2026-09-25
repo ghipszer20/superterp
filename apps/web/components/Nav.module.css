@@ -1,6 +1,10 @@
 /* Phone: wordmark at the top + frosted bottom tab bar. Desktop (≥ 900px): sidebar. */
 
 .topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding: calc(10px + env(safe-area-inset-top)) var(--gutter) 0;
 }
 
@@ -29,6 +33,7 @@
 
 .brand,
 .fine,
+.appearance,
 .nav .todayLink {
   display: none;
 }
@@ -136,9 +141,14 @@
     }
   }
 
-  .fine {
+  .appearance {
     display: block;
     margin-top: auto;
+    padding: 0 12px 14px;
+  }
+
+  .fine {
+    display: block;
     padding: 0 12px;
     color: var(--text-3);
     font: var(--t-foot);
