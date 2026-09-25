@@ -97,7 +97,7 @@ for (const path of paths.length ? paths : ["/"]) {
   writeFileSync(file, Buffer.from(shot.result.data, "base64"));
   console.log(`\n=== ${path}  (${file})`);
   console.log(`errors: ${errors.length ? errors.join("\n  ") : "none"}`);
-  console.log(`text: ${text.slice(0, 600)}`);
+  console.log(`text: ${text.slice(0, Number(process.env.TEXT_LIMIT ?? 600))}`);
 }
 
 ws.close();

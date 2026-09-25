@@ -286,3 +286,8 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
   - Web first; sections for the current registration term.
   - **Only course changes update the 4-year plan; section-number changes never do.**
 - **Scale requirement (owner, 2026-09-25): the site must support thousands of simultaneous users.** Heavy work (schedule generation) runs in the student's browser; campus and course data are served as pre-built, CDN-cached snapshots; servers do no per-request scraping.
+- **Schedule builder design decisions (owner, 2026-09-25, brainstorming):**
+  - Approach A: a vertical gallery of mini week-calendars, one per distinct layout. **No text summary line.**
+  - Filters: **days off (any weekday, multi-select)**, No 8ams, Open seats only. **Sort** (Best first, …).
+  - **Teacher info: option B**, a compact strip under each mini-calendar listing each course's professor and PlanetTerp rating, color-matched to the course's blocks; blocks show course number only.
+  - Found with real data: CMSC351 + STAT400 + ENGL394 has 494 layouts and none with Fridays off, so an empty state for over-filtering is needed.
