@@ -107,6 +107,12 @@ describe("parseGrades", () => {
     expect(parseGrades({ error: "course not found" })).toEqual([]);
   });
 
+  it("keeps rows whose professor PlanetTerp leaves null (real MATH140 data has them)", () => {
+    const rows = parseGrades(fixture("grades-math140-w.json"));
+    expect(rows).toHaveLength(4);
+    expect(rows[3]).toMatchObject({ course: "MATH140", professor: null, semester: "201201" });
+  });
+
   it("fails loudly when the shape changes", () => {
     expect(() => parseGrades([{ course: "STAT400" }])).toThrow(SourceError);
   });
