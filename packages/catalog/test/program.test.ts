@@ -86,11 +86,38 @@ describe("parseProgramPage footnotes", () => {
     expect(math.lists[4]!.footnotes).toEqual({});
   });
 
-  it("attaches footnotes to the nearest table above them, even when an earlier table has none", () => {
-    const page = parseProgramPage(`<h1 class="page-title">X Minor</h1>
-      <table class="sc_courselist"><tr><td class="codecol"><a class="code">ABCD100</a></td><td>A</td><td class="hourscol">3</td></tr></table>
-      <table class="sc_courselist"><tr><td class="codecol"><a class="code">ABCD200</a><sup>1</sup></td><td>B</td><td class="hourscol">3</td></tr></table>
-      <dl class="sc_footnotes"><dt><sup> 1 </sup></dt><dd><p>Only in fall.</p></dd></dl>`);
-    expect(page.lists.map((l) => l.footnotes)).toEqual([{}, { "1": "Only in fall." }]);
+  it("shares one footnote block among every table since the previous block", () => {
+    // Shaped like the Astronomy Major page: four tables, then one block
+    // defining the markers all four cite; then a table with no block.
+    const page = parseProgramPage(`<h1 class="page-title">X Major</h1>
+      <table class="sc_courselist"><tr><td class="codecol"><a class="code">ABCD100</a></td><td>A <sup>1</sup></td><td class="hourscol">3</td></tr></table>
+      <table class="sc_courselist"><tr><td class="codecol"><a class="code">ABCD200</a></td><td>B <sup>2</sup></td><td class="hourscol">3</td></tr></table>
+      <dl class="sc_footnotes"><dt><sup> 1 </sup></dt><dd><p>Only in fall.</p></dd><dt><sup> 2 </sup></dt><dd><p>Lab.</p></dd></dl>
+      <table class="sc_courselist"><tr><td class="codecol"><a class="code">ABCD300</a></td><td>C</td><td class="hourscol">3</td></tr></table>`);
+    const both = { "1": "Only in fall.", "2": "Lab." };
+    expect(page.lists.map((l) => l.footnotes)).toEqual([both, both, {}]);
+  });
+
+  it("keeps a <sup> that holds words (not a marker) as part of the title", () => {
+    // From the Agricultural and Resource Economics Major page.
+    const page = parseProgramPage(`<table class="sc_courselist"><tr><td class="codecol"><a class="code">AREC445</a></td>
+      <td>Agricultural Development <sup>Course may not double count toward upper level specialization requirements</sup></td><td class="hourscol"></td></tr></table>`);
+    expect(page.lists[0]!.rows[0]).toMatchObject({
+      title: "Agricultural Development Course may not double count toward upper level specialization requirements",
+      footnotes: [],
+    });
+  });
+
+  it("reads an unlinked course code in the code column as a course, not text", () => {
+    // Real rows: <td class="codecol">PLSC235</td>, and "or PLSC275" on an or-row.
+    const page = parseProgramPage(`<table class="sc_courselist">
+      <tr><td class="codecol">PLSC235</td><td></td><td class="hourscol">3</td></tr>
+      <tr class="orclass"><td class="codecol orclass">or PLSC275<sup>1</sup></td><td>Some Title</td><td class="hourscol"></td></tr>
+      <tr><td class="codecol">STAT4xx</td><td></td><td class="hourscol">3</td></tr></table>`);
+    expect(page.lists[0]!.rows).toEqual([
+      { kind: "course", codes: ["PLSC235"], title: "", credits: "3", alternative: false, footnotes: [] },
+      { kind: "course", codes: ["PLSC275"], title: "Some Title", credits: null, alternative: true, footnotes: ["1"] },
+      { kind: "text", text: "STAT4xx", credits: "3", footnotes: [] },
+    ]);
   });
 });
