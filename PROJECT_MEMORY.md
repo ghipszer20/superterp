@@ -176,9 +176,10 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
 - [ ] Decide whether to reuse or partner with Jupiterp (open source; check license).
 - [ ] Confirm UMD's per-semester credit cap and Expo's native-component support.
 - [ ] Decide: launch everything at once, or in waves by college.
-- [ ] Decide: Expo vs SwiftUI + Next.js after the prototype.
-- [ ] Unknowns: team size, timeline and monetization. Charging money changes the Reddit and PlanetTerp situation.
-- [ ] Create the repo. The planning conversation happened inside the unrelated Sports_Betting_Bot repo.
+- [x] ~~Expo vs SwiftUI~~: decided website-first with Next.js (section 13); iOS later.
+- [x] Monetization: never (section 2). Team: solo owner + Claude.
+- [x] Repo created: github.com/ghipszer20/superterp (private, Apache-2.0), local at C:\Users\24GHi\Code\SuperTerp. Git uses HTTPS with the gh credential helper (SSH host key isn't set up in this shell).
+- [ ] Before making the repo public: scrub personal details from PROJECT_MEMORY.md (owner's program plans, personal notes) and review git history.
 
 ## 11. Legal and trust notes
 - **Required liability agreement for the 4-year plan / audit (owner requirement, 2026-09-24).**
