@@ -218,4 +218,5 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
 
 ## 18. How work is split (owner rule, 2026-09-25)
 - **Every implementation task goes to a subagent** (superpowers subagent-driven-development / dispatching-parallel-agents), each in its own git worktree and branch, test-first, pushing to its branch.
-- **The main session only talks with the owner, reviews, and merges.** Review = read the diff, re-run tests/typecheck/lint/build independently (verification-before-completion), check screenshots for UI work, then merge into the working branch and push. The main session does not write feature code itself.
+- **The main session only talks with the owner, reviews, and merges.** Review = read the diff, check screenshots for UI work, then merge into the working branch and push. The main session does not write feature code itself unless the owner says so for a specific task (e.g. the credit-package fixes, 2026-09-25).
+- **Trimmed verification (owner rule, 2026-09-25):** one local test run (tests, typecheck, lint, build) plus CI on GitHub. Don't re-run the suite after merging; CI on the merged branch covers it.
