@@ -8,13 +8,14 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
-    "ui-check": "node scripts/ui-check.mjs"
+    "ui-check": "node scripts/ui-check.mjs",
+    "test": "vitest run"
   },
   "dependencies": {
+    "@superterp/campus-data": "*",
     "next": "16.3.6",
     "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "@superterp/campus-data": "*"
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -22,6 +23,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.6",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^5.0.1"
   }
 }
