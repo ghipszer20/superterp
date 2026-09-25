@@ -18,6 +18,8 @@ export type CourseList = {
   heading: string | null;
   rows: CatalogRow[];
   total: string | null;
+  /** The list's footnotes, marker ("1") to text, from the dl.sc_footnotes after its table. */
+  footnotes: Record<string, string>;
 };
 
 export type ProgramPage = { name: string; lists: CourseList[] };
@@ -58,26 +60,48 @@ function parseRow($: cheerio.CheerioAPI, tr: AnyNode): CatalogRow | null {
   return { kind: "text", text: comment.text, credits, footnotes: comment.footnotes };
 }
 
+/** One dl.sc_footnotes: each <dt><sup> 1 </sup></dt> followed by its <dd>. */
+function parseFootnotes($: cheerio.CheerioAPI, dl: AnyNode): Record<string, string> {
+  const notes: Record<string, string> = {};
+  $(dl)
+    .find("dt")
+    .each((_, dt) => {
+      const marker = text($(dt).text());
+      if (marker) notes[marker] = text($(dt).next("dd").text());
+    });
+  return notes;
+}
+
+function parseTable($: cheerio.CheerioAPI, table: AnyNode): CourseList {
+  const heading = text($(table).prevAll("h2, h3, h4").first().text());
+  let total: string | null = null;
+  const rows: CatalogRow[] = [];
+  $(table)
+    .find("tr")
+    .each((_, tr) => {
+      if ($(tr).hasClass("listsum")) {
+        total = text($(tr).find("td.hourscol").text()) || null;
+        return;
+      }
+      const row = parseRow($, tr);
+      if (row) rows.push(row);
+    });
+  return { heading: heading || null, rows, total, footnotes: {} };
+}
+
 export function parseProgramPage(html: string): ProgramPage {
   const $ = cheerio.load(html);
   const name = text($("h1.page-title").first().text()) || text($("title").text()).split("|")[0]!.trim();
-  const lists = $("table.sc_courselist")
-    .toArray()
-    .map((table): CourseList => {
-      const heading = text($(table).prevAll("h2, h3, h4").first().text());
-      let total: string | null = null;
-      const rows: CatalogRow[] = [];
-      $(table)
-        .find("tr")
-        .each((_, tr) => {
-          if ($(tr).hasClass("listsum")) {
-            total = text($(tr).find("td.hourscol").text()) || null;
-            return;
-          }
-          const row = parseRow($, tr);
-          if (row) rows.push(row);
-        });
-      return { heading: heading || null, rows, total };
-    });
+  const lists: CourseList[] = [];
+  // In document order, so each footnote block goes to the nearest table above
+  // it (a table without footnotes must not take the next table's).
+  $("table.sc_courselist, dl.sc_footnotes").each((_, el) => {
+    if (!$(el).is("dl")) {
+      lists.push(parseTable($, el));
+      return;
+    }
+    const list = lists.at(-1);
+    if (list) Object.assign(list.footnotes, parseFootnotes($, el));
+  });
   return { name, lists };
 }
