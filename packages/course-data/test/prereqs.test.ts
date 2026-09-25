@@ -146,6 +146,42 @@ describe("parsePrerequisite", () => {
     });
   });
 
+  it("requires every sentence when a new sentence has no connector, and keeps semicolons inside parentheses together", () => {
+    expect(
+      parsePrerequisite(
+        "Must have completed the Communication gateway requirements (COMM250; and one of STAT100 or BMGT230). Must have completed or be concurrently enrolled in COMM130.",
+      ),
+    ).toEqual({
+      kind: "all",
+      of: [
+        {
+          kind: "all",
+          of: [
+            { kind: "course", course: "COMM250" },
+            {
+              kind: "any",
+              of: [
+                { kind: "course", course: "STAT100" },
+                { kind: "course", course: "BMGT230" },
+              ],
+            },
+          ],
+        },
+        { kind: "course", course: "COMM130", concurrentOk: true },
+      ],
+    });
+  });
+
+  it("keeps 'or equivalent' as a route the student confirms", () => {
+    expect(parsePrerequisite("MATH140 or equivalent.")).toEqual({
+      kind: "any",
+      of: [
+        { kind: "course", course: "MATH140" },
+        { kind: "manual", text: "equivalent" },
+      ],
+    });
+  });
+
   it("keeps a permission requirement that shares a clause with a course", () => {
     expect(parsePrerequisite("Minimum grade of C- in MATH340 and permission of CMNS-Mathematics department.")).toEqual({
       kind: "all",

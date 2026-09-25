@@ -245,8 +245,11 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
 - Headless Edge `--screenshot` can't go below ~500px wide and fires before streamed content arrives. Use `apps/web/scripts/ui-check.mjs` (true mobile emulation, waits for JS).
 - Next 16 ships its docs in `node_modules/next/dist/docs/`. Read them before using new APIs (Cache Components, `use cache`, `cacheLife`, `connection()`).
 
-## 16. Standing work mode (owner, 2026-09-24)
-- **Continuous build mode:** the owner leaves Claude running overnight (and repeatedly, day and night) until the project is complete. Keep building; never stop on your own. Stop only when the owner sends a message. The morning message will be **"progress report"**: answer it with a concise report of everything done since the last report, open decisions, and anything needing approval.
-- While the owner is away: do data, engine, tests and infrastructure work freely. **Major UI changes still need owner approval.** Build them on a separate branch or PR as proposals, capture screenshots with `npm run ui-check`, and list them in the progress report. Don't block on anything; note assumptions and keep going.
-- Use superpowers skills (TDD etc.) and mattpocock domain-modeling per CLAUDE.md. Brainstorming questions for the owner go into the progress report instead of blocking.
-- Commit and push often to feature branches (never main). Keep PROJECT_MEMORY.md's status log current so nothing is lost if context is summarized.
+## 16. Overnight mode (owner, 2026-09-24/25)
+- **Never ask the owner for permission** for anything until the owner's next message. Nothing may stop work: no approval requests, no clarifying questions, no waiting.
+- **The only thing that ends overnight mode is the project being finished.** Otherwise keep building continuously until the owner sends a message. The morning message will be **"progress report"**: answer with a concise report of everything done since the last report, decisions made (with assumptions), and items for the owner to review.
+- This repeats every day and night until the project is complete.
+- **UI changes:** the owner normally approves major UI changes. In overnight mode, build them anyway (on a separate branch/PR when practical, with `npm run ui-check` screenshots) and list them in the progress report for approval after the fact. Never block on approval.
+- Unclear choices: pick the most reasonable option, record the assumption in this file, keep going. Brainstorming questions go into the progress report.
+- Use superpowers skills (TDD etc.) and mattpocock domain-modeling per CLAUDE.md.
+- Commit and push often to feature branches (never main). Keep the status log (section 14) current so nothing is lost if context is summarized.
