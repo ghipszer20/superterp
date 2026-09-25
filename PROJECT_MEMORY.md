@@ -280,3 +280,9 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
   - Dining payload: send only the hall and meal being viewed (currently ~490 KB for all three halls); load others on tap. Pre-warming keeps taps instant.
   - Build this together with deployment (Vercel + Supabase accounts needed from the owner).
 - **Math rulings (owner, 2026-09-25):** Traditional is the right default track. **The owner is in the Applied Mathematics track**, so the verification target is Math (Applied) + CS; the Applied track needs encoding. **C- minimum for Math major courses is confirmed.** **CMSC131 may count for both** the programming requirement and supporting Sequence Four.
+- **Schedule builder brief (owner-confirmed 2026-09-25):**
+  - For a student before registration who wants a schedule they like in minutes. E.g. "CMSC351, STAT400, ENGL394, no 8ams, Fridays off" should lead quickly to a short list of layouts they like.
+  - Filters and best-first sort lead; scrolling browses what's left. Seats, PlanetTerp ratings and walking distance appear on sections; reviews come later.
+  - Web first; sections for the current registration term.
+  - **Only course changes update the 4-year plan; section-number changes never do.**
+- **Scale requirement (owner, 2026-09-25): the site must support thousands of simultaneous users.** Heavy work (schedule generation) runs in the student's browser; campus and course data are served as pre-built, CDN-cached snapshots; servers do no per-request scraping.
