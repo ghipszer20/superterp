@@ -3,7 +3,10 @@ import { renderDraftsReport, summarizeDrafts, type DraftPageResult } from "../sc
 import { draftPrograms } from "../src/draft.ts";
 import type { CatalogRow, ProgramPage } from "../src/program.ts";
 
-const c = (code: string, alternative = false): CatalogRow => ({ kind: "course", codes: [code], title: code, credits: null, alternative, footnotes: [] });
+const c = (code: string | string[], alternative = false): CatalogRow => {
+  const codes = Array.isArray(code) ? code : [code];
+  return { kind: "course", codes, title: codes.join("+"), credits: null, alternative, footnotes: [] };
+};
 const t = (text: string): CatalogRow => ({ kind: "text", text, credits: null, footnotes: [] });
 const h = (text: string): CatalogRow => ({ kind: "header", text, footnotes: [] });
 const page = (name: string, rows: CatalogRow[]): ProgramPage => ({ name, lists: [{ heading: null, rows, total: "12", footnotes: {} }] });
@@ -19,8 +22,8 @@ const results: DraftPageResult[] = [
   result("Alpha", [h("Core"), c("MATH140"), c("MATH141"), t("Select two of the following:"), c("CMSC411"), c("CMSC412"), c("CMSC414")]),
   // 1 converted, 4 to review (the pattern; the unrecognized rule and the 2 course rows under it)
   result("Beta", [c("HIST200"), t("STAT4xx"), t("Select one 3xx-level ARTT elective"), c("ARTT301"), c("ARTT302")], "minor"),
-  // engine gap
-  result("Gamma", [t("Select two of the following:"), c("CMSC426"), c("CMSC460"), c("CMSC466", true)]),
+  // engine gap: "or" alternatives between sets in a choice of two
+  result("Gamma", [t("Select two of the following:"), c(["CMSC426", "CMSC427"]), c("CMSC460", true), c("CMSC466")]),
   // no tables
   result("Delta", null),
 ];
@@ -42,12 +45,12 @@ describe("summarizeDrafts", () => {
   });
 
   it("ranks review reasons by rows sent to review, marking engine gaps", () => {
-    expect(s.reasons[0]).toMatchObject({ reason: "exclusive-alternatives", items: 1, rows: 4, engineGap: true });
+    expect(s.reasons[0]).toMatchObject({ reason: "sets-with-alternatives", items: 1, rows: 4, engineGap: true });
     expect(s.reasons).toContainEqual(expect.objectContaining({ reason: "course-pattern", items: 1, rows: 1, engineGap: false }));
   });
 
   it("lists engine gaps with counts", () => {
-    expect(s.engineGaps).toEqual([expect.objectContaining({ reason: "exclusive-alternatives", items: 1, rows: 4, programs: ["Gamma"] })]);
+    expect(s.engineGaps).toEqual([expect.objectContaining({ reason: "sets-with-alternatives", items: 1, rows: 4, programs: ["Gamma"] })]);
   });
 
   it("gives one line per drafted table", () => {
@@ -72,6 +75,11 @@ describe("renderDraftsReport", () => {
 
   it("has a per-program table and an engine-gap section", () => {
     expect(md).toContain("| Alpha | major | 3 | 0 | 0 | 6/6 (100%) |");
-    expect(md).toMatch(/## Engine gaps[\s\S]*exclusive-alternatives[\s\S]*\| 1 \| 4 \|/);
+    expect(md).toMatch(/## Engine gaps[\s\S]*sets-with-alternatives[\s\S]*\| 1 \| 4 \|/);
+  });
+
+  it("says a set with a filter part (Sequence Twelve) is expressible, though the drafter leaves it to review", () => {
+    expect(md).not.toContain("also beyond the engine");
+    expect(md).toContain("sets option mixing fixed courses with 'any N from a filter'");
   });
 });

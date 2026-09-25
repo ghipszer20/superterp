@@ -7,8 +7,10 @@
 //   plain course row                      -> course (an "or" row, or an "OR" text row, adds options)
 //   "A and B" row                         -> one course per code; with "or" choices, a sets requirement
 //   "Select one of the following:" group  -> course with every option (sets if a member is "A and B")
-//   "Select two/N of the following:"      -> choose { count } over the group's courses
-//   "N credits from/of the following"     -> choose { credits } over the group's courses
+//   "Select two/N of the following:"      -> choose { count } over the group's courses; "or" rows
+//                                            (and cross-listings) become alternatives; over "A and B"
+//                                            rows, sets { count }
+//   "N credits from/of the following"     -> choose { credits } over the group's courses (with alternatives)
 //   "Select N … from at least M of the following areas …" + area labels -> distribution
 //   "Select one of N sequences" + "Sequence …" labels -> sets ("or" choices expanded)
 // A group is the course rows after the rule, up to the next header or text row.
@@ -35,8 +37,7 @@ export type ReviewReason =
   | "must-include"
   | "empty-group"
   | "group-boundary"
-  | "choose-of-sets"
-  | "exclusive-alternatives"
+  | "sets-with-alternatives"
   | "sequence-with-rule"
   | "alternatives-flattened"
   | "ambiguous-code"
@@ -45,9 +46,8 @@ export type ReviewReason =
 
 /** Review reasons that are rule shapes the audit engine can't express at all, even by hand. */
 export const ENGINE_GAPS: Partial<Record<ReviewReason, string>> = {
-  "choose-of-sets": "N (more than one) of several course sets, e.g. 'Select two of: STAT400 & STAT401, STAT410 & STAT420, …'",
-  "exclusive-alternatives":
-    "A count of N courses where some listed courses are 'or' alternatives of each other (only one of them may count), e.g. 'Select two of: CMSC426, CMSC460 or CMSC466 or MATH401, …'",
+  "sets-with-alternatives":
+    "A choice of more than one course set where some sets are 'or' alternatives of each other, or a credit count over sets, e.g. 'Select two of: STAT400 & STAT401 or STAT410, STAT430, …'",
 };
 
 export type ReviewItem = {
@@ -373,22 +373,22 @@ class ListDrafter {
       return next;
     }
     if (slots.some((s) => s.alts.some((a) => a.length > 1))) {
-      this.sendToReview("choose-of-sets", all, this.notConverted(i, group, "Engine gap: choosing more than one of several course sets."));
+      if (rule.kind === "credits" || slots.some((s) => s.alts.length > 1)) {
+        const why = rule.kind === "credits" ? "a credit count over course sets" : `"or" alternatives between course sets in a choice of several`;
+        this.sendToReview("sets-with-alternatives", all, this.notConverted(i, group, `Engine gap: ${why}.`));
+        return next;
+      }
+      this.add({ kind: "sets", id: this.id(`${idNumber(rule.count)}-of-${firstCode}`), name, count: rule.count, options: slots.map((s) => s.alts[0]!) }, all);
       return next;
     }
-    if (slots.some((s) => s.alts.length > 1)) {
-      this.sendToReview(
-        "exclusive-alternatives",
-        all,
-        this.notConverted(i, group, `Engine gap: "or" alternatives inside a choice of several (only one of each "or" group may count).`),
-      );
-      return next;
-    }
-    const courses = slots.map((s) => s.alts[0]![0]!);
+    // Each slot's "or" alternatives (and cross-listings): only one of them may count.
+    const courses = slots.flatMap((s) => s.alts.map((a) => a[0]!));
+    const groups = slots.filter((s) => s.alts.length > 1).map((s) => s.alts.map((a) => a[0]!));
+    const alternatives = groups.length > 0 ? { alternatives: groups } : {};
     const req: Requirement =
       rule.kind === "count"
-        ? { kind: "choose", id: this.id(`${idNumber(rule.count)}-of-${firstCode}`), name, count: rule.count, from: { courses } }
-        : { kind: "choose", id: this.id(`${rule.credits}-credits-of-${firstCode}`), name, credits: rule.credits, from: { courses } };
+        ? { kind: "choose", id: this.id(`${idNumber(rule.count)}-of-${firstCode}`), name, count: rule.count, from: { courses }, ...alternatives }
+        : { kind: "choose", id: this.id(`${rule.credits}-credits-of-${firstCode}`), name, credits: rule.credits, from: { courses }, ...alternatives };
     this.add(req, all);
     return next;
   }

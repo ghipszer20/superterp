@@ -17,6 +17,8 @@ const BIO_LABS = [["BSCI180"], ["BSCI171", "BSCI161"]];
 const GEN_CHEM = [["CHEM131", "CHEM132"], ["CHEM146", "CHEM177"]];
 // Sequence Eleven: GEOL100–GEOL110 plus two of these.
 const GEOL_UPPER = ["GEOL322", "GEOL340", "GEOL341", "GEOL375"];
+// Sequence Twelve: AOSC200–AOSC201 plus two additional 400-level AOSC courses.
+const AOSC_400_TWO = { count: 2, from: { departments: ["AOSC"], minNumber: 400, maxNumber: 499 } };
 
 export const mathMajorApplied: Program = {
   id: "math-major-applied",
@@ -39,7 +41,7 @@ export const mathMajorApplied: Program = {
     "Sequence Seven (ECON200, ECON201, ECON305 or 306, OR ECON325 or 326) is expanded into four three-course sets.",
     "Sequence Nine (BSCI170, BSCI160, BSCI180, CHEM131–132 or CHEM146–177; 'BSCI171 and BSCI161 may count for BSCI180') is expanded into four sets, all courses required.",
     "Sequence Eleven (GEOL100–GEOL110 plus two of GEOL322/340/341/375) is expanded into six sets.",
-    "Sequence Twelve (AOSC200–AOSC201 plus two additional 400-level AOSC courses) is NOT encoded: a 'sets' requirement can't mix a fixed set with 'any two 400-level AOSC', and there's no AOSC course list in the repo to enumerate. A student on Sequence Twelve will see the supporting sequence as unsatisfied and must confirm it manually.",
+    "Sequence Twelve (AOSC200–AOSC201 plus two additional 400-level AOSC courses) is encoded as a set with a filter part: AOSC200, AOSC201 and any two AOSC courses numbered 400–499. 'Additional' is read as two courses other than AOSC200/201 (automatic, since those are 200-level); 500+ graduate AOSC courses don't count.",
     "Footnote 2 (at least four of the 400-level courses taken at College Park) and footnote 4 (other sequences approved by the Undergraduate Office) are not enforced.",
     "Footnote 5 (ASTR121 restricted to Astronomy majors) is cited by no row of the Applied table; ASTR121 is not in any Applied sequence. Ignored.",
   ],
@@ -112,7 +114,8 @@ export const mathMajorApplied: Program = {
         ["ASTR130", "ASTR131", "ASTR232"],
         // Eleven
         ...GEOL_UPPER.flatMap((a, i) => GEOL_UPPER.slice(i + 1).map((b) => ["GEOL100", "GEOL110", a, b])),
-        // Twelve (AOSC200–AOSC201 + two 400-level AOSC) can't be expressed as sets; see reviewNotes.
+        // Twelve
+        ["AOSC200", "AOSC201", AOSC_400_TWO],
       ],
     },
   ],

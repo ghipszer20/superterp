@@ -21,6 +21,9 @@ export type CourseFilter = {
 
 export type Area = { name: string; courses: string[] };
 
+/** One member of a course set: a specific course, or `count` courses matching a filter ("two 400-level AOSC courses"). */
+export type SetMember = string | { count: number; from: CourseFilter };
+
 export type Requirement = RequirementRule & {
   /**
    * An overlay counts courses without using them up, e.g. Math's "eight 400-level
@@ -34,8 +37,12 @@ export type Requirement = RequirementRule & {
 export type RequirementRule =
   /** One course from a short list (usually just one), e.g. "CMSC351". */
   | { kind: "course"; id: string; name: string; options: string[] }
-  /** N courses, or N credits, matching a filter, e.g. "12 credits of 400-level CMSC". */
-  | { kind: "choose"; id: string; name: string; count?: number; credits?: number; from: CourseFilter }
+  /**
+   * N courses, or N credits, matching a filter, e.g. "12 credits of 400-level CMSC".
+   * Alternatives are "or" groups among the courses: at most one course of each group
+   * counts, e.g. "Select two of: CMSC426, CMSC460 or CMSC466, …" has [["CMSC460", "CMSC466"]].
+   */
+  | { kind: "choose"; id: string; name: string; count?: number; credits?: number; from: CourseFilter; alternatives?: string[][] }
   /** N courses spread over areas, e.g. "five courses from at least three areas, at most three per area". */
   | { kind: "distribution"; id: string; name: string; count: number; minAreas: number; maxPerArea: number; areas: Area[] }
   /** N credits in a number range, all from ONE department, e.g. CS's "12 credits of 300–400 level courses from one discipline outside CMSC". */
@@ -48,8 +55,13 @@ export type RequirementRule =
       maxNumber: number;
       excludeDepartments?: string[];
     }
-  /** Every course of one set, e.g. Math's depth sequence "MATH410 & MATH411 or MATH403 & MATH404". */
-  | { kind: "sets"; id: string; name: string; options: string[][] };
+  /**
+   * Every course of one set, e.g. Math's depth sequence "MATH410 & MATH411 or MATH403 & MATH404";
+   * or of `count` different sets (default 1), e.g. "Select two of: ENST301 & ENST302 & ENST303, ENST415, ENST423".
+   * A member may be a filter part, e.g. ["AOSC200", "AOSC201", { count: 2, from: 400-level AOSC }].
+   * A course counts toward one set, and one member of it, only.
+   */
+  | { kind: "sets"; id: string; name: string; options: SetMember[][]; count?: number };
 
 export type Program = {
   id: string;
@@ -120,25 +132,32 @@ export function matchesFilter(filter: CourseFilter, course: Pick<StudentCourse, 
   return n >= (filter.minNumber ?? 0) && n <= (filter.maxNumber ?? 999);
 }
 
+/** How many courses completing a set takes. */
+const setSize = (option: SetMember[]) => option.reduce((t, m) => t + (typeof m === "string" ? 1 : m.count), 0);
+
 /** How much a requirement needs: courses, or credits for credit requirements. */
 function need(req: Requirement): number {
   if (req.kind === "course") return 1;
   if (req.kind === "distribution") return req.count;
   if (req.kind === "concentration") return req.credits;
-  if (req.kind === "sets") return Math.min(...req.options.map((o) => o.length));
+  if (req.kind === "sets") {
+    const sizes = req.options.map(setSize).sort((a, b) => a - b);
+    return sizes.slice(0, req.count ?? 1).reduce((t, n) => t + n, 0);
+  }
   return req.credits ?? req.count ?? 0;
 }
 
 /**
  * One way a course could count toward a requirement: through an area (distributions),
- * as part of one option (sets; `area` holds the option index), or within a
- * department (concentrations).
+ * as one member of one option (sets; `area` holds the option index, `member` the member's),
+ * or within a department (concentrations).
  */
 type Pair = {
   p: number;
   c: number;
   r: number;
   area: number | null;
+  member?: number;
   department: string | null;
   name: string;
   weight: number;
@@ -158,7 +177,10 @@ function pairsFor(req: Requirement, p: number, r: number, course: StudentCourse,
   }
   if (req.kind === "sets") {
     return req.options.flatMap((option, k) =>
-      option.includes(course.id) ? [{ p, c, r, area: k, department: null, name: `${base}_${k}`, weight: 1 }] : [],
+      option.flatMap((m, j): Pair[] => {
+        if (typeof m === "string") return m === course.id ? [{ p, c, r, area: k, member: j, department: null, name: `${base}_${k}`, weight: 1 }] : [];
+        return matchesFilter(m.from, course) ? [{ p, c, r, area: k, member: j, department: null, name: `${base}_${k}_f${j}`, weight: 1 }] : [];
+      }),
     );
   }
   return req.areas.flatMap((area, a) =>
@@ -184,6 +206,9 @@ export type AuditOptions = {
  *   within a program each course counts once; across programs, sharing is limited;
  *   each requirement takes at most what it needs, and is satisfied only with enough;
  *   distributions cap each area and need enough areas to be satisfied;
+ *   o[p,r,k] / w[p,r,k] = 1 when set k of a sets requirement is pursued / complete: at most `count`
+ *   are pursued, `count` must be complete, each course fills one member of one set, and a filter
+ *   part takes at most its count; a choose's "or" group contributes at most one course;
  *   maximize satisfied requirements first, then total progress.
  */
 export async function auditPrograms(
@@ -250,17 +275,46 @@ export async function auditPrograms(
           picked.push(o);
           complete.push(w);
           inOption.forEach((q, i) => constraints.push(` pick_${id}_${k}_${i}: ${q.name} - ${o} <= 0`));
-          constraints.push(` done_${id}_${k}: ${sum(inOption)} - ${option.length} ${w} >= 0`);
+          if (option.every((m) => typeof m === "string")) {
+            constraints.push(` done_${id}_${k}: ${sum(inOption)} - ${option.length} ${w} >= 0`);
+          } else {
+            // With a filter part, each member is filled on its own: a fixed course once, a filter part up to its count.
+            option.forEach((m, j) => {
+              const n = typeof m === "string" ? 1 : m.count;
+              const inMember = inOption.filter((q) => q.member === j);
+              if (inMember.length === 0) {
+                constraints.push(` done_${id}_${k}_${j}: ${w} <= 0`);
+                return;
+              }
+              constraints.push(` fill_${id}_${k}_${j}: ${sum(inMember)} <= ${n}`);
+              constraints.push(` done_${id}_${k}_${j}: ${sum(inMember)} - ${n} ${w} >= 0`);
+            });
+          }
           constraints.push(` doneonly_${id}_${k}: ${w} - ${o} <= 0`);
         });
-        constraints.push(` onepick_${id}: ${picked.join(" + ")} <= 1`);
-        constraints.push(` sat_${id}: ${y(p, r)} - ${complete.join(" - ")} <= 0`);
+        const count = req.count ?? 1;
+        constraints.push(` onepick_${id}: ${picked.join(" + ")} <= ${count}`);
+        constraints.push(` sat_${id}: ${count} ${y(p, r)} - ${complete.join(" - ")} <= 0`);
+        // A course counts toward one set and one member only. Implied when one set of plain courses is
+        // picked; needed for several sets or a filter part, overlay or not.
+        courses.forEach((_, c) => {
+          const uses = mine.filter((q) => q.c === c);
+          if (uses.length > 1 && (count > 1 || uses.some((q) => typeof req.options[q.area!]![q.member!] !== "string"))) constraints.push(` oneset_${id}_${c}: ${uses.map((q) => q.name).join(" + ")} <= 1`);
+        });
         return;
       }
       // A credit requirement may overshoot by less than one course (e.g. 4 credits toward the last 3).
       const slack = Math.max(0, ...mine.map((q) => q.weight)) - 1;
       constraints.push(` cap_${id}: ${sum(mine)} <= ${n + slack}`);
       constraints.push(` sat_${id}: ${sum(mine)} - ${n} ${y(p, r)} >= 0`);
+
+      if (req.kind === "choose") {
+        // At most one course of each "or" group counts.
+        req.alternatives?.forEach((group, g) => {
+          const inGroup = mine.filter((q) => group.includes(courses[q.c]!.id));
+          if (inGroup.length > 1) constraints.push(` alt_${id}_${g}: ${inGroup.map((q) => q.name).join(" + ")} <= 1`);
+        });
+      }
 
       if (req.kind === "distribution") {
         const used: string[] = [];

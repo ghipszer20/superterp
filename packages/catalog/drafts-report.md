@@ -7,9 +7,9 @@ they are not committed. This report is what the deterministic drafter converts a
 ## Overall
 
 - Programs: **270**, with at least one requirement table: **252**; drafted tables: **467**
-- Converted automatically: **5582 of 8660** rule rows (**64.5%**); sent to review: 3078. Plain section headers (753) are not counted.
-- Requirements drafted: **3454** (course 3321, choose 90, sets 42, distribution 1)
-- Review items: **1186** manual (not drafted), **453** check (drafted, confirm)
+- Converted automatically: **5726 of 8660** rule rows (**66.1%**); sent to review: 2934. Plain section headers (753) are not counted.
+- Requirements drafted: **3466** (course 3321, choose 99, sets 45, distribution 1)
+- Review items: **1174** manual (not drafted), **453** check (drafted, confirm)
 
 ## Why rows went to review
 
@@ -19,8 +19,6 @@ Ranked by rows sent to review. Check items send no rows; they flag drafted requi
 | --- | --- | --- | --- | --- |
 | unrecognized-rule | A text or header rule the drafter doesn't parse (prose), with the course rows under it | 823 | 2667 |  |
 | empty-group | A 'Select …' rule followed by labelled groups rather than courses (options, tracks) | 17 | 177 |  |
-| exclusive-alternatives | A choice of several with 'or' alternatives inside | 9 | 85 | yes |
-| choose-of-sets | More than one of several 'A and B' sets | 3 | 59 | yes |
 | course-pattern | An unlinked course pattern such as STAT4xx (a filter is suggested) | 32 | 33 |  |
 | ambiguous-code | A code like PLSC110/111 (cross-listing or pair?) | 5 | 22 |  |
 | group-boundary | A 'Select …' group whose end is unclear (member credits differ) | 2 | 17 |  |
@@ -38,11 +36,10 @@ encoded with the existing requirement kinds once someone reads the prose.
 
 | Reason | Shape | Items | Rows | Programs |
 | --- | --- | --- | --- | --- |
-| exclusive-alternatives | A count of N courses where some listed courses are 'or' alternatives of each other (only one of them may count), e.g. 'Select two of: CMSC426, CMSC460 or CMSC466 or MATH401, …' | 9 | 85 | Agricultural and Resource Economics Major, Computer Science Major, Earth Material Properties Minor, French Studies Minor, Hydrology Minor, Physics Minor, Surficial Geology Minor |
-| choose-of-sets | N (more than one) of several course sets, e.g. 'Select two of: STAT400 & STAT401, STAT410 & STAT420, …' | 3 | 59 | Agricultural Science and Technology Major, Anthropology Major, Environmental Science and Policy Major |
+| none | | | | |
 
-Not counted above but also beyond the engine: a sets option mixing fixed courses with 'any N from a filter' (Math Applied Sequence Twelve,
-AOSC200–201 plus two 400-level AOSC), which shows up under sequence-with-rule.
+A sets option mixing fixed courses with 'any N from a filter' (Math Applied Sequence Twelve, AOSC200–201 plus two 400-level AOSC)
+is expressible (a set member with a filter and a count), but the drafter leaves it to review under sequence-with-rule.
 
 ## Top 30 unrecognized phrasings
 
@@ -106,14 +103,14 @@ One line per requirement table. Converted: rule rows drafted automatically, of a
 | Agricultural and Resource Economics Major (Advanced Degree Preparation) | major | 1 | 2 | 0 | 12/13 (92%) |
 | Agricultural and Resource Economics Major (Agricultural, Food and Natural Resource Systems) | major | 1 | 1 | 0 | 12/12 (100%) |
 | Agricultural and Resource Economics Major (Business Management) | major | 1 | 1 | 1 | 5/5 (100%) |
-| Agricultural and Resource Economics Major (Agricultural Management and Entrepreneurship) | major | 0 | 2 | 0 | 0/11 (0%) |
-| Agricultural and Resource Economics Major (Global Hunger, Poverty and Sustainable Development) | major | 0 | 2 | 0 | 0/10 (0%) |
-| Agricultural and Resource Economics Major (Environmental Data Science) | major | 0 | 2 | 0 | 0/10 (0%) |
+| Agricultural and Resource Economics Major (Agricultural Management and Entrepreneurship) | major | 1 | 1 | 0 | 11/11 (100%) |
+| Agricultural and Resource Economics Major (Global Hunger, Poverty and Sustainable Development) | major | 1 | 1 | 0 | 10/10 (100%) |
+| Agricultural and Resource Economics Major (Environmental Data Science) | major | 1 | 1 | 0 | 10/10 (100%) |
 | Agricultural and Resource Economics Major (Environmental and Resource Management and Policy) | major | 8 | 1 | 0 | 9/9 (100%) |
 | Agricultural and Resource Economics Major (Student Designed Field) | major | 0 | 2 | 1 | 0/1 (0%) |
 | Agricultural Science and Technology Major | major | 9 | 2 | 0 | 12/16 (75%) |
 | Agricultural Science and Technology Major (Agronomy) | major | 13 | 8 | 6 | 19/26 (73%) |
-| Agricultural Science and Technology Major (Environmental Horticulture) | major | 9 | 7 | 4 | 40/60 (67%) |
+| Agricultural Science and Technology Major (Environmental Horticulture) | major | 10 | 6 | 4 | 49/60 (82%) |
 | Agricultural Science and Technology Major (Agricultural and Extension Education: Teaching Certificate) | major | 25 | 1 | 0 | 38/38 (100%) |
 | Agricultural Science and Technology Major (Agricultural and Extension education: Extension/Industry) | major | 23 | 2 | 1 | 34/35 (97%) |
 | American Studies Major | major | 3 | 5 | 4 | 3/16 (19%) |
@@ -124,7 +121,7 @@ One line per requirement table. Converted: rule rows drafted automatically, of a
 | Anthropology Major (Bachelor of Arts) | major | 1 | 1 | 1 | 10/10 (100%) |
 | Anthropology Major (Bachelor of Science) | major | 1 | 1 | 0 | 6/6 (100%) |
 | Anthropology Major (Bachelor of Arts) | major | 0 | 2 | 0 | 0/1 (0%) |
-| Anthropology Major (Bachelor of Science) | major | 0 | 2 | 4 | 0/46 (0%) |
+| Anthropology Major (Bachelor of Science) | major | 1 | 1 | 4 | 46/46 (100%) |
 | Arabic Studies Major | major | 6 | 3 | 0 | 6/8 (75%) |
 | Arabic Studies Major (Foundation Electives (a minimum of 9 credits)) | major | 6 | 1 | 0 | 6/6 (100%) |
 | Arabic Studies Major (Optional Electives (a maximum of 9 credits, including at least one 3-credit course taught in Arabic)) | major | 8 | 1 | 0 | 8/8 (100%) |
@@ -181,7 +178,7 @@ One line per requirement table. Converted: rule rows drafted automatically, of a
 | Computer Science Major | major | 9 | 4 | 6 | 43/46 (93%) |
 | Computer Science Major (Cybersecurity Specialization) | major | 3 | 2 | 1 | 9/10 (90%) |
 | Computer Science Major (Data Science Specialization) | major | 6 | 1 | 0 | 24/24 (100%) |
-| Computer Science Major (Machine Learning Specialization) | major | 3 | 3 | 1 | 3/14 (21%) |
+| Computer Science Major (Machine Learning Specialization) | major | 4 | 2 | 1 | 13/14 (93%) |
 | Computer Science Major (Quantum Information Specialization) | major | 2 | 3 | 0 | 2/32 (6%) |
 | Criminology and Criminal Justice Major | major | 8 | 2 | 3 | 16/21 (76%) |
 | Criminology and Criminal Justice Major at Shady Grove | major | 8 | 1 | 2 | 16/17 (94%) |
@@ -212,7 +209,7 @@ One line per requirement table. Converted: rule rows drafted automatically, of a
 | Environmental Science and Policy Major | major | 6 | 2 | 3 | 21/41 (51%) |
 | Environmental Science and Policy Major (Environment and Agriculture (AGNR)) | major | 0 | 5 | 1 | 0/21 (0%) |
 | Environmental Science and Policy Major (Environmental Economics (AGNR)) | major | 0 | 4 | 1 | 0/27 (0%) |
-| Environmental Science and Policy Major (Soil, Water, and Land Resources (AGNR)) | major | 4 | 3 | 1 | 15/20 (75%) |
+| Environmental Science and Policy Major (Soil, Water, and Land Resources (AGNR)) | major | 5 | 2 | 1 | 19/20 (95%) |
 | Environmental Science and Policy Major (Wildlife Ecology and Management (AGNR)) | major | 11 | 2 | 1 | 12/15 (80%) |
 | Environmental Science and Policy Major (Culture and Environment (BSOS)) | major | 3 | 3 | 1 | 4/6 (67%) |
 | Environmental Science and Policy Major (Environmental Politics and Policy (BSOS)) | major | 7 | 2 | 1 | 7/8 (88%) |
@@ -428,7 +425,7 @@ One line per requirement table. Converted: rule rows drafted automatically, of a
 | Digital Storytelling and Poetics Minor | minor | 1 | 3 | 2 | 1/6 (17%) |
 | Disability Studies Minor | minor | 3 | 0 | 3 | 22/22 (100%) |
 | Earth History Minor | minor | 3 | 0 | 0 | 11/11 (100%) |
-| Earth Material Properties Minor | minor | 2 | 1 | 0 | 4/12 (33%) |
+| Earth Material Properties Minor | minor | 3 | 0 | 0 | 12/12 (100%) |
 | Economics Minor (Courses Required for the Minor) | minor | 2 | 3 | 1 | 2/5 (40%) |
 | Education Policy, Equity, and Justice Minor (EDUC) | minor | 3 | 0 | 1 | 3/3 (100%) |
 | Education Policy, Equity, and Justice Minor (PLCY) | minor | 3 | 0 | 1 | 3/3 (100%) |
@@ -439,7 +436,7 @@ One line per requirement table. Converted: rule rows drafted automatically, of a
 | Entomology Minor | minor | 8 | 1 | 0 | 8/8 (100%) |
 | Entomology Minor | minor | 10 | 1 | 0 | 10/10 (100%) |
 | Entrepreneurial Leadership Minor | minor | 3 | 2 | 1 | 3/13 (23%) |
-| French Studies Minor | minor | 4 | 2 | 1 | 4/12 (33%) |
+| French Studies Minor | minor | 5 | 1 | 1 | 11/12 (92%) |
 | General Business Minor | minor | 4 | 2 | 2 | 4/8 (50%) |
 | Geochemistry Minor | minor | 4 | 0 | 1 | 15/15 (100%) |
 | Geographic Information Science Minor | minor | 4 | 1 | 0 | 19/20 (95%) |
@@ -459,7 +456,7 @@ One line per requirement table. Converted: rule rows drafted automatically, of a
 | Human Development Minor (Area 3: Research) | minor | 1 | 1 | 0 | 1/1 (100%) |
 | Human Development Minor (Area 4: Lifespan) | minor | 8 | 1 | 0 | 8/8 (100%) |
 | Humanities, Health, and Medicine Minor | minor | 2 | 8 | 2 | 3/11 (27%) |
-| Hydrology Minor | minor | 3 | 1 | 0 | 5/11 (45%) |
+| Hydrology Minor | minor | 4 | 0 | 0 | 11/11 (100%) |
 | Information Risk Management, Ethics, and Privacy Minor | minor | 5 | 0 | 0 | 5/5 (100%) |
 | Information Risk Management, Ethics, and Privacy Minor at Shady Grove | minor | 5 | 0 | 0 | 5/5 (100%) |
 | International Development and Conflict Management Minor | minor | 4 | 2 | 0 | 4/6 (67%) |
@@ -494,7 +491,7 @@ One line per requirement table. Converted: rule rows drafted automatically, of a
 | Paleobiology Minor (GEPS) | minor | 5 | 2 | 1 | 15/29 (52%) |
 | Persian Studies Minor | minor | 5 | 0 | 0 | 9/9 (100%) |
 | Philosophy Minor | minor | 0 | 4 | 2 | 0/4 (0%) |
-| Physics Minor (Courses Required for the Minor) | minor | 4 | 1 | 0 | 7/21 (33%) |
+| Physics Minor (Courses Required for the Minor) | minor | 5 | 0 | 0 | 21/21 (100%) |
 | Planetary Sciences Minor (ASTR) | minor | 4 | 1 | 2 | 21/22 (95%) |
 | Planetary Sciences Minor (GEPS) | minor | 4 | 1 | 2 | 21/22 (95%) |
 | Portuguese and Brazilian Studies Minor | minor | 1 | 0 | 1 | 23/23 (100%) |
@@ -526,7 +523,7 @@ One line per requirement table. Converted: rule rows drafted automatically, of a
 | Spanish Minor 2: Language, Culture, and Professional Contexts | minor | 5 | 1 | 1 | 12/21 (57%) |
 | Spanish Minor 3: Heritage Language and Latina/o Culture | minor | 5 | 1 | 1 | 14/29 (48%) |
 | Statistics Minor | minor | 1 | 2 | 0 | 2/16 (13%) |
-| Surficial Geology Minor | minor | 3 | 1 | 0 | 5/14 (36%) |
+| Surficial Geology Minor | minor | 4 | 0 | 0 | 14/14 (100%) |
 | Survey Methodology Minor | minor | 5 | 2 | 3 | 25/26 (96%) |
 | Survey Methodology Minor (Additional Survey Methodology Courses (4-5 credits)) | minor | 3 | 1 | 0 | 3/3 (100%) |
 | Sustainability Studies Minor (AGNR) | minor | 1 | 1 | 3 | 1/6 (17%) |
