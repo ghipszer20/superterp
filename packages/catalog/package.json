@@ -13,6 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@superterp/audit": "*",
     "@superterp/campus-data": "*",
     "cheerio": "1.2.0"
   },
