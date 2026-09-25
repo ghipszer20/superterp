@@ -291,3 +291,5 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
   - Filters: **days off (any weekday, multi-select)**, No 8ams, Open seats only. **Sort** (Best first, …).
   - **Teacher info: option B**, a compact strip under each mini-calendar listing each course's professor and PlanetTerp rating, color-matched to the course's blocks; blocks show course number only.
   - Found with real data: CMSC351 + STAT400 + ENGL394 has 494 layouts and none with Fridays off, so an empty state for over-filtering is needed.
+  - **Editor (tap a layout): option A, popover.** Tapping a class opens a popover of its section choices: "same lecture, other discussion", then "other lecture times", each with professor, rating, time and open seats.
+  - **Ghost sections (owner idea):** hovering or focusing a choice shows that section's meetings on the calendar as muted "ghost" blocks, while the current section fades. Clicking commits it, and the ghost turns full color. On touch devices, the first tap previews and a second tap (or a "Switch" button) commits.
