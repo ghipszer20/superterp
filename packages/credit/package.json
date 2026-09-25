@@ -1,0 +1,23 @@
+{
+  "name": "@superterp/credit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "UMD credit for AP and IB exams and dual-enrollment courses, as audit-ready student courses. Framework-free.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.1"
+  },
+  "dependencies": {
+    "@superterp/audit": "*"
+  }
+}
