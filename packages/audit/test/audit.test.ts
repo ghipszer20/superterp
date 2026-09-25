@@ -2,7 +2,7 @@
 // out by hand.
 
 import { describe, expect, it } from "vitest";
-import { auditProgram, type Program, type StudentCourse } from "../src/audit.ts";
+import { auditProgram, auditPrograms, type Program, type StudentCourse } from "../src/audit.ts";
 
 const took = (...ids: string[]): StudentCourse[] => ids.map((id) => ({ id, credits: 3, status: "completed" }));
 
@@ -86,6 +86,56 @@ describe("auditProgram", () => {
     const short = await auditProgram(program, took("CMSC420", "CMSC421", "CMSC422"));
     expect(short.requirements[0]).toMatchObject({ status: "partial" });
     expect(short.requirements[0]!.assigned).toHaveLength(3);
+  });
+
+  it("doesn't count a completed course below the program's minimum grade, but counts planned courses", async () => {
+    const program: Program = {
+      id: "p",
+      name: "Test",
+      minGrade: "C-",
+      requirements: [
+        { kind: "course", id: "pl", name: "Programming Languages", options: ["CMSC330"] },
+        { kind: "course", id: "algo", name: "Algorithms", options: ["CMSC351"] },
+      ],
+    };
+    const result = await auditProgram(program, [
+      { id: "CMSC330", credits: 3, status: "completed", grade: "D" },
+      { id: "CMSC351", credits: 3, status: "planned" },
+    ]);
+    expect(result.requirements.map((r) => r.status)).toEqual(["missing", "satisfied"]);
+    expect(result.unused).toEqual(["CMSC330"]);
+  });
+
+  describe("several programs at once (double major)", () => {
+    const math: Program = {
+      id: "math",
+      name: "Math",
+      requirements: [
+        { kind: "course", id: "calc2", name: "Calculus II", options: ["MATH141"] },
+        { kind: "course", id: "proofs", name: "Proofs", options: ["MATH310"] },
+      ],
+    };
+    const cs: Program = {
+      id: "cs",
+      name: "CS",
+      requirements: [
+        { kind: "course", id: "calc2", name: "Calculus II", options: ["MATH141"] },
+        { kind: "course", id: "algo", name: "Algorithms", options: ["CMSC351"] },
+      ],
+    };
+    const courses = took("MATH141", "MATH310", "CMSC351");
+
+    it("lets one course count toward both programs by default", async () => {
+      const [m, c] = await auditPrograms([math, cs], courses);
+      expect(m!.requirements.map((r) => r.status)).toEqual(["satisfied", "satisfied"]);
+      expect(c!.requirements.map((r) => r.status)).toEqual(["satisfied", "satisfied"]);
+    });
+
+    it("respects a limit on how many courses may count toward two programs", async () => {
+      const [m, c] = await auditPrograms([math, cs], courses, { maxSharedCourses: 0 });
+      const calc2 = [m!.requirements[0]!.status, c!.requirements[0]!.status].sort();
+      expect(calc2).toEqual(["missing", "satisfied"]);
+    });
   });
 
   describe("area distribution (CS: five 400-level courses from at least three areas, at most three per area)", () => {

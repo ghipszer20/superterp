@@ -25,9 +25,26 @@ export type Requirement =
   /** N courses spread over areas, e.g. "five courses from at least three areas, at most three per area". */
   | { kind: "distribution"; id: string; name: string; count: number; minAreas: number; maxPerArea: number; areas: Area[] };
 
-export type Program = { id: string; name: string; requirements: Requirement[] };
+export type Program = {
+  id: string;
+  name: string;
+  requirements: Requirement[];
+  /** Lowest grade a completed course needs to count toward this program, e.g. "C-". */
+  minGrade?: string;
+};
 
-export type StudentCourse = { id: string; credits: number; status: "completed" | "planned" };
+export type StudentCourse = { id: string; credits: number; status: "completed" | "planned"; grade?: string };
+
+// UMD letter grades, lowest to highest.
+const GRADE_ORDER = ["F", "D-", "D", "D+", "C-", "C", "C+", "B-", "B", "B+", "A-", "A", "A+"];
+const gradeRank = (g: string) => GRADE_ORDER.indexOf(g.trim().toUpperCase());
+
+function meetsGrade(course: StudentCourse, minGrade: string | undefined): boolean {
+  if (!minGrade || course.status !== "completed" || !course.grade) return true;
+  const rank = gradeRank(course.grade);
+  // Non-letter grades (P, S, W…) don't meet a letter-grade minimum.
+  return rank >= 0 && rank >= gradeRank(minGrade);
+}
 
 export type RequirementResult = {
   id: string;
@@ -66,92 +83,138 @@ function need(req: Requirement): number {
   return req.credits ?? req.count ?? 0;
 }
 
-/** One way a course could count toward a requirement (for distributions: through one area). */
-type Pair = { c: number; r: number; area: number | null; name: string; weight: number };
 
-function pairsFor(req: Requirement, r: number, course: StudentCourse, c: number): Pair[] {
+/** One way a course could count toward a requirement (for distributions: through one area). */
+type Pair = { p: number; c: number; r: number; area: number | null; name: string; weight: number };
+
+function pairsFor(req: Requirement, p: number, r: number, course: StudentCourse, c: number): Pair[] {
+  const base = `x_${p}_${c}_${r}`;
   if (req.kind === "course") {
-    return req.options.includes(course.id) ? [{ c, r, area: null, name: `x_${c}_${r}`, weight: 1 }] : [];
+    return req.options.includes(course.id) ? [{ p, c, r, area: null, name: base, weight: 1 }] : [];
   }
   if (req.kind === "choose") {
     if (!matchesFilter(req.from, course.id)) return [];
-    return [{ c, r, area: null, name: `x_${c}_${r}`, weight: req.credits ? course.credits : 1 }];
+    return [{ p, c, r, area: null, name: base, weight: req.credits ? course.credits : 1 }];
   }
   return req.areas.flatMap((area, a) =>
-    area.courses.includes(course.id) ? [{ c, r, area: a, name: `x_${c}_${r}_${a}`, weight: 1 }] : [],
+    area.courses.includes(course.id) ? [{ p, c, r, area: a, name: `${base}_${a}`, weight: 1 }] : [],
   );
 }
 
-const sum = (ps: Pair[]) => ps.map((p) => `${p.weight} ${p.name}`).join(" + ");
+const sum = (ps: Pair[]) => ps.map((q) => `${q.weight} ${q.name}`).join(" + ");
+
+export type AuditOptions = {
+  /** How many courses may count toward more than one program (a Sharing Limit). Unlimited if omitted. */
+  maxSharedCourses?: number;
+};
 
 /**
- * Integer program (ADR 0001):
- *   x[c,r(,a)] = 1 when course c counts toward requirement r (through area a)
- *   y[r]       = 1 when requirement r is satisfied
- *   z[r,a]     = 1 when distribution r uses area a
- *   each course counts toward at most one requirement, once;
+ * Integer program (ADR 0001), over every program at once:
+ *   x[p,c,r(,a)] = 1 when course c counts toward requirement r of program p (through area a)
+ *   y[p,r]       = 1 when requirement r of program p is satisfied
+ *   z[p,r,a]     = 1 when distribution r of program p uses area a
+ *   s[c]         = 1 when course c counts toward more than one program
+ *   within a program each course counts once; across programs, sharing is limited;
  *   each requirement takes at most what it needs, and is satisfied only with enough;
  *   distributions cap each area and need enough areas to be satisfied;
  *   maximize satisfied requirements first, then total progress.
  */
-export async function auditProgram(program: Program, courses: StudentCourse[]): Promise<AuditResult> {
-  const reqs = program.requirements;
-  const pairs = courses.flatMap((course, c) => reqs.flatMap((req, r) => pairsFor(req, r, course, c)));
-  const binaries = [...reqs.map((_, r) => `y_${r}`), ...pairs.map((p) => p.name)];
+export async function auditPrograms(
+  programs: Program[],
+  courses: StudentCourse[],
+  options: AuditOptions = {},
+): Promise<AuditResult[]> {
+  const pairs = programs.flatMap((program, p) =>
+    courses.flatMap((course, c) =>
+      meetsGrade(course, program.minGrade) ? program.requirements.flatMap((req, r) => pairsFor(req, p, r, course, c)) : [],
+    ),
+  );
+  const y = (p: number, r: number) => `y_${p}_${r}`;
+  const binaries = [...programs.flatMap((pr, p) => pr.requirements.map((_, r) => y(p, r))), ...pairs.map((q) => q.name)];
   const constraints: string[] = [];
 
-  courses.forEach((_, c) => {
-    const mine = pairs.filter((p) => p.c === c);
-    if (mine.length > 1) constraints.push(` once_${c}: ${mine.map((p) => p.name).join(" + ")} <= 1`);
-  });
+  // Within one program, a course counts toward at most one requirement.
+  programs.forEach((_, p) =>
+    courses.forEach((_, c) => {
+      const mine = pairs.filter((q) => q.p === p && q.c === c);
+      if (mine.length > 1) constraints.push(` once_${p}_${c}: ${mine.map((q) => q.name).join(" + ")} <= 1`);
+    }),
+  );
 
-  reqs.forEach((req, r) => {
-    const mine = pairs.filter((p) => p.r === r);
-    const n = need(req);
-    if (mine.length === 0) {
-      constraints.push(` sat_${r}: y_${r} <= 0`);
-      return;
-    }
-    // A credit requirement may overshoot by less than one course (e.g. 4 credits toward the last 3).
-    const slack = Math.max(0, ...mine.map((p) => p.weight)) - 1;
-    constraints.push(` cap_${r}: ${sum(mine)} <= ${n + slack}`);
-    constraints.push(` sat_${r}: ${sum(mine)} - ${n} y_${r} >= 0`);
+  // Across programs: a course used by k programs needs k-1 "shares"; shares are limited.
+  if (options.maxSharedCourses !== undefined && programs.length > 1) {
+    const shares: string[] = [];
+    courses.forEach((_, c) => {
+      const uses = pairs.filter((q) => q.c === c);
+      if (new Set(uses.map((q) => q.p)).size < 2) return;
+      const s = `s_${c}`;
+      binaries.push(s);
+      shares.push(s);
+      constraints.push(` share_${c}: ${uses.map((q) => q.name).join(" + ")} - ${programs.length - 1} ${s} <= 1`);
+    });
+    if (shares.length > 0) constraints.push(` shared: ${shares.join(" + ")} <= ${options.maxSharedCourses}`);
+  }
 
-    if (req.kind === "distribution") {
-      const used: string[] = [];
-      req.areas.forEach((_, a) => {
-        const inArea = mine.filter((p) => p.area === a);
-        if (inArea.length === 0) return;
-        const z = `z_${r}_${a}`;
-        binaries.push(z);
-        used.push(z);
-        constraints.push(` area_${r}_${a}: ${sum(inArea)} <= ${req.maxPerArea}`);
-        constraints.push(` used_${r}_${a}: ${sum(inArea)} - ${z} >= 0`);
-      });
-      constraints.push(` areas_${r}: ${[...used, `- ${req.minAreas} y_${r}`].join(" + ").replace("+ -", "-")} >= 0`);
-    }
-  });
+  programs.forEach((program, p) =>
+    program.requirements.forEach((req, r) => {
+      const mine = pairs.filter((q) => q.p === p && q.r === r);
+      const n = need(req);
+      const id = `${p}_${r}`;
+      if (mine.length === 0) {
+        constraints.push(` sat_${id}: ${y(p, r)} <= 0`);
+        return;
+      }
+      // A credit requirement may overshoot by less than one course (e.g. 4 credits toward the last 3).
+      const slack = Math.max(0, ...mine.map((q) => q.weight)) - 1;
+      constraints.push(` cap_${id}: ${sum(mine)} <= ${n + slack}`);
+      constraints.push(` sat_${id}: ${sum(mine)} - ${n} ${y(p, r)} >= 0`);
 
-  const objective = [...reqs.map((_, r) => `1000 y_${r}`), ...pairs.map((p) => `1 ${p.name}`)].join(" + ");
-  const model = ["Maximize", ` obj: ${objective || "0 y_0"}`, "Subject To", ...constraints, "Binary", ` ${binaries.join(" ")}`, "End"];
+      if (req.kind === "distribution") {
+        const used: string[] = [];
+        req.areas.forEach((_, a) => {
+          const inArea = mine.filter((q) => q.area === a);
+          if (inArea.length === 0) return;
+          const z = `z_${id}_${a}`;
+          binaries.push(z);
+          used.push(z);
+          constraints.push(` area_${id}_${a}: ${sum(inArea)} <= ${req.maxPerArea}`);
+          constraints.push(` used_${id}_${a}: ${sum(inArea)} - ${z} >= 0`);
+        });
+        constraints.push(` areas_${id}: ${[...used, `- ${req.minAreas} ${y(p, r)}`].join(" + ").replace("+ -", "-")} >= 0`);
+      }
+    }),
+  );
+
+  const objective = [
+    ...programs.flatMap((pr, p) => pr.requirements.map((_, r) => `1000 ${y(p, r)}`)),
+    ...pairs.map((q) => `1 ${q.name}`),
+  ].join(" + ");
+  const model = ["Maximize", ` obj: ${objective || "0 y_0_0"}`, "Subject To", ...constraints, "Binary", ` ${binaries.join(" ")}`, "End"];
 
   const highs = await getSolver();
   const solution = highs.solve(model.join("\n"), { output_flag: false });
   if (solution.Status !== "Optimal") throw new Error(`Audit solver ended with status ${solution.Status}`);
   const chosen = (name: string) => (solution.Columns[name]?.Primal ?? 0) > 0.5;
 
-  const used = new Set<number>();
-  const requirements = reqs.map((req, r): RequirementResult => {
-    const assigned = pairs.filter((p) => p.r === r && chosen(p.name));
-    assigned.forEach((p) => used.add(p.c));
-    const progress = assigned.reduce((t, p) => t + p.weight, 0);
-    const satisfied = chosen(`y_${r}`) && progress >= need(req);
-    return {
-      id: req.id,
-      name: req.name,
-      status: satisfied ? "satisfied" : progress > 0 ? "partial" : "missing",
-      assigned: assigned.map((p) => courses[p.c]!.id),
-    };
+  return programs.map((program, p) => {
+    const used = new Set<number>();
+    const requirements = program.requirements.map((req, r): RequirementResult => {
+      const assigned = pairs.filter((q) => q.p === p && q.r === r && chosen(q.name));
+      assigned.forEach((q) => used.add(q.c));
+      const progress = assigned.reduce((t, q) => t + q.weight, 0);
+      const satisfied = chosen(y(p, r)) && progress >= need(req);
+      return {
+        id: req.id,
+        name: req.name,
+        status: satisfied ? "satisfied" : progress > 0 ? "partial" : "missing",
+        assigned: assigned.map((q) => courses[q.c]!.id),
+      };
+    });
+    return { requirements, unused: courses.filter((_, c) => !used.has(c)).map((c) => c.id) };
   });
-  return { requirements, unused: courses.filter((_, c) => !used.has(c)).map((c) => c.id) };
+}
+
+export async function auditProgram(program: Program, courses: StudentCourse[]): Promise<AuditResult> {
+  const [result] = await auditPrograms([program], courses);
+  return result!;
 }
