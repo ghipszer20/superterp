@@ -87,4 +87,50 @@ describe("auditProgram", () => {
     expect(short.requirements[0]).toMatchObject({ status: "partial" });
     expect(short.requirements[0]!.assigned).toHaveLength(3);
   });
+
+  describe("area distribution (CS: five 400-level courses from at least three areas, at most three per area)", () => {
+    const program: Program = {
+      id: "cs",
+      name: "CS",
+      requirements: [
+        {
+          kind: "distribution",
+          id: "areas",
+          name: "Upper-level areas",
+          count: 5,
+          minAreas: 3,
+          maxPerArea: 3,
+          areas: [
+            { name: "Systems", courses: ["CMSC411", "CMSC412", "CMSC414", "CMSC416", "CMSC417"] },
+            { name: "Information Processing", courses: ["CMSC420", "CMSC421", "CMSC422", "CMSC471"] },
+            { name: "Software Engineering", courses: ["CMSC430", "CMSC433", "CMSC435", "CMSC471"] },
+            { name: "Theory", courses: ["CMSC451", "CMSC452", "CMSC456"] },
+          ],
+        },
+      ],
+    };
+
+    it("is satisfied by five courses across three areas", async () => {
+      const r = await auditProgram(program, took("CMSC411", "CMSC412", "CMSC414", "CMSC420", "CMSC451"));
+      expect(r.requirements[0]).toMatchObject({ status: "satisfied" });
+      expect(r.requirements[0]!.assigned).toHaveLength(5);
+    });
+
+    it("counts at most three courses from one area", async () => {
+      const r = await auditProgram(program, took("CMSC411", "CMSC412", "CMSC414", "CMSC416", "CMSC420"));
+      expect(r.requirements[0]).toMatchObject({ status: "partial" });
+      expect(r.requirements[0]!.assigned).toHaveLength(4);
+    });
+
+    it("isn't satisfied with five courses from only two areas", async () => {
+      const r = await auditProgram(program, took("CMSC411", "CMSC412", "CMSC414", "CMSC420", "CMSC421"));
+      expect(r.requirements[0]).toMatchObject({ status: "partial" });
+    });
+
+    it("uses a course listed in two areas for whichever area completes the rule", async () => {
+      // CMSC471 must count as Software Engineering to reach three areas.
+      const r = await auditProgram(program, took("CMSC411", "CMSC412", "CMSC420", "CMSC421", "CMSC471"));
+      expect(r.requirements[0]).toMatchObject({ status: "satisfied" });
+    });
+  });
 });
