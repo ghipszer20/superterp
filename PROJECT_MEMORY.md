@@ -303,3 +303,4 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
   2. A **W** on a gateway with no other attempt: currently below-minimum. Should it be treated as "missing" instead?
   3. Math Applied **Sequence Twelve** (AOSC200–201 plus two 400-level AOSC) can't be expressed yet (needs "fixed set + any N from a filter"); students on it see the supporting sequence as unmet.
   4. Traditional track's Sequence Four doesn't yet accept CMSC141/142 (Applied does). Make them consistent?
+  - **Gallery v3 (owner, 2026-09-25):** larger spacing between cards so previews don't open by accident, plus a short hover delay (~300 ms) before the enlarged preview. **Filters are workday-focused:** each weekday is either **Off** or has a **desired workday window** (e.g. Mon 8am–1pm), replacing "No 8ams" and merging "days off". A "same hours every day" shortcut sets all days at once. A layout matches only if every class on a day falls inside that day's window.
