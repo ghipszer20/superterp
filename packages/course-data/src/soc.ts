@@ -210,7 +210,8 @@ export function parseSections(html: string): Section[] {
           instructors: sec
             .find(".section-instructor")
             .toArray()
-            .map((i) => text($(i).text()))
+            // Unstaffed sections read "Instructor: TBA"; keep just "TBA".
+            .map((i) => text($(i).text()).replace(/^Instructor:\s*/i, ""))
             .filter(Boolean),
           seats: {
             total: int(sec.find(".total-seats-count").first().text()),
