@@ -160,3 +160,16 @@ export async function fetchCategoryAvailability(
     grid,
   );
 }
+
+// Not study space for students: equipment loans and faculty-only offices.
+const EXCLUDED_CATEGORY = /equipment|faculty/i;
+
+/** Each study-room category (by library) once, in catalog order. */
+export function studyRoomCategories(rooms: Room[]): { locationId: number; categoryId: number }[] {
+  const seen = new Map<number, { locationId: number; categoryId: number }>();
+  for (const r of rooms) {
+    if (EXCLUDED_CATEGORY.test(r.categoryName) || seen.has(r.categoryId)) continue;
+    seen.set(r.categoryId, { locationId: r.locationId, categoryId: r.categoryId });
+  }
+  return [...seen.values()];
+}
