@@ -77,4 +77,82 @@ describe("parsePrerequisite", () => {
       ],
     });
   });
+
+  it("keeps a requirement with no course as something to confirm by hand", () => {
+    expect(parsePrerequisite("Permission of CMNS-Mathematics department.")).toEqual({
+      kind: "manual",
+      text: "Permission of CMNS-Mathematics department",
+    });
+  });
+
+  it("joins semicolon clauses by their leading connector, keeping manual alternatives", () => {
+    expect(parsePrerequisite("Minimum grade of C- in CMSC330 and CMSC351; or permission of instructor.")).toEqual({
+      kind: "any",
+      of: [
+        {
+          kind: "all",
+          of: [
+            { kind: "course", course: "CMSC330", minGrade: "C-" },
+            { kind: "course", course: "CMSC351", minGrade: "C-" },
+          ],
+        },
+        { kind: "manual", text: "permission of instructor" },
+      ],
+    });
+  });
+
+  it("treats a sentence starting with 'Or' as an alternative to everything before it", () => {
+    expect(
+      parsePrerequisite(
+        "Minimum grade of C- in CMSC351; and permission of CMNS-Computer Science department. Or must be in the (Computer Science (Doctoral), Computer Science (Master's)) program.",
+      ),
+    ).toEqual({
+      kind: "any",
+      of: [
+        {
+          kind: "all",
+          of: [
+            { kind: "course", course: "CMSC351", minGrade: "C-" },
+            { kind: "manual", text: "permission of CMNS-Computer Science department" },
+          ],
+        },
+        {
+          kind: "manual",
+          text: "must be in the (Computer Science (Doctoral), Computer Science (Master's)) program",
+        },
+      ],
+    });
+  });
+
+  it("doesn't mistake an ordinary word and a number for a course", () => {
+    expect(parsePrerequisite("Must have completed more than 300 hours of clinical work.")).toEqual({
+      kind: "manual",
+      text: "Must have completed more than 300 hours of clinical work",
+    });
+  });
+
+  it("allows taking a course at the same time when the text says 'concurrently enrolled'", () => {
+    expect(parsePrerequisite("Must have completed or be concurrently enrolled in CHEM481.")).toEqual({
+      kind: "course",
+      course: "CHEM481",
+      concurrentOk: true,
+    });
+  });
+
+  it("treats math eligibility as a placement to confirm, not a course to have taken", () => {
+    expect(parsePrerequisite("Must have math eligibility of MATH120 or higher.")).toEqual({
+      kind: "manual",
+      text: "Must have math eligibility of MATH120 or higher",
+    });
+  });
+
+  it("keeps a permission requirement that shares a clause with a course", () => {
+    expect(parsePrerequisite("Minimum grade of C- in MATH340 and permission of CMNS-Mathematics department.")).toEqual({
+      kind: "all",
+      of: [
+        { kind: "course", course: "MATH340", minGrade: "C-" },
+        { kind: "manual", text: "permission of CMNS-Mathematics department" },
+      ],
+    });
+  });
 });
