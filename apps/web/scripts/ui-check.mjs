@@ -86,6 +86,11 @@ for (const path of paths.length ? paths : ["/"]) {
   errors.length = 0;
   await send("Page.navigate", { url: base + path });
   await sleep(7000);
+  // Optional interaction before capturing, e.g. UI_CHECK_EVAL='document.querySelector("button").click()'
+  if (process.env.UI_CHECK_EVAL) {
+    await send("Runtime.evaluate", { expression: process.env.UI_CHECK_EVAL });
+    await sleep(800);
+  }
   const { result } = await send("Runtime.evaluate", {
     expression: "document.querySelector('main')?.innerText ?? document.body.innerText",
     returnByValue: true,
