@@ -208,6 +208,36 @@ describe("auditProgram", () => {
     expect(r.requirements[0]).toMatchObject({ status: "satisfied", assigned: ["HIST110", "PHIL100"] });
   });
 
+  it("counts every course's credits toward a university total, alongside other requirements", async () => {
+    const program: Program = {
+      id: "university",
+      name: "University",
+      requirements: [
+        { kind: "course", id: "engl101", name: "Academic Writing", options: ["ENGL101"] },
+        { kind: "choose", id: "total", name: "120 credits", credits: 12, overlay: true, from: { anyCourse: true } },
+      ],
+    };
+    const r = await auditProgram(program, took("ENGL101", "HIST110", "CMSC131", "MATH140"));
+    expect(r.requirements.map((x) => x.status)).toEqual(["satisfied", "satisfied"]);
+    expect(r.requirements[1]!.assigned).toHaveLength(4);
+  });
+
+  it("applies a minimum grade set on one requirement only", async () => {
+    const program: Program = {
+      id: "gened",
+      name: "Gen Ed",
+      requirements: [
+        { kind: "choose", id: "fsaw", name: "Academic Writing", count: 1, minGrade: "C-", from: { genEd: ["FSAW"] } },
+        { kind: "choose", id: "dshu", name: "Humanities", count: 1, from: { genEd: ["DSHU"] } },
+      ],
+    };
+    const r = await auditProgram(program, [
+      { id: "ENGL101", credits: 3, status: "completed", grade: "D", genEd: ["FSAW"] },
+      { id: "HIST110", credits: 3, status: "completed", grade: "D", genEd: ["DSHU"] },
+    ]);
+    expect(r.requirements.map((x) => x.status)).toEqual(["missing", "satisfied"]);
+  });
+
   describe("several programs at once (double major)", () => {
     const math: Program = {
       id: "math",

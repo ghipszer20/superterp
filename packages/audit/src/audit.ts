@@ -15,6 +15,8 @@ export type CourseFilter = {
   exclude?: string[];
   /** Courses carrying any of these Gen Ed codes, e.g. ["DSHU"]. */
   genEd?: string[];
+  /** Every course matches (e.g. the university's 120-credit total). */
+  anyCourse?: boolean;
 };
 
 export type Area = { name: string; courses: string[] };
@@ -25,6 +27,8 @@ export type Requirement = RequirementRule & {
    * courses, which must include MATH410…": MATH410 counts toward both.
    */
   overlay?: boolean;
+  /** Lowest grade a completed course needs for this requirement only, e.g. Academic Writing's "C-". */
+  minGrade?: string;
 };
 
 export type RequirementRule =
@@ -105,6 +109,7 @@ const COURSE_ID = /^([A-Z]{4})(\d{3})[A-Z]?$/;
 export function matchesFilter(filter: CourseFilter, course: Pick<StudentCourse, "id" | "genEd">): boolean {
   const courseId = course.id;
   if (filter.exclude?.includes(courseId)) return false;
+  if (filter.anyCourse) return true;
   if (filter.courses?.includes(courseId)) return true;
   if (filter.genEd) return filter.genEd.some((code) => course.genEd?.includes(code));
   const m = COURSE_ID.exec(courseId);
@@ -188,7 +193,9 @@ export async function auditPrograms(
 ): Promise<AuditResult[]> {
   const pairs = programs.flatMap((program, p) =>
     courses.flatMap((course, c) =>
-      meetsGrade(course, program.minGrade) ? program.requirements.flatMap((req, r) => pairsFor(req, p, r, course, c)) : [],
+      meetsGrade(course, program.minGrade)
+        ? program.requirements.flatMap((req, r) => (meetsGrade(course, req.minGrade) ? pairsFor(req, p, r, course, c) : []))
+        : [],
     ),
   );
   const y = (p: number, r: number) => `y_${p}_${r}`;
