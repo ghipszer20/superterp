@@ -17,7 +17,15 @@ export type CourseFilter = {
 
 export type Area = { name: string; courses: string[] };
 
-export type Requirement =
+export type Requirement = RequirementRule & {
+  /**
+   * An overlay counts courses without using them up, e.g. Math's "eight 400-level
+   * courses, which must include MATH410…": MATH410 counts toward both.
+   */
+  overlay?: boolean;
+};
+
+export type RequirementRule =
   /** One course from a short list (usually just one), e.g. "CMSC351". */
   | { kind: "course"; id: string; name: string; options: string[] }
   /** N courses, or N credits, matching a filter, e.g. "12 credits of 400-level CMSC". */
@@ -176,10 +184,14 @@ export async function auditPrograms(
   const binaries = [...programs.flatMap((pr, p) => pr.requirements.map((_, r) => y(p, r))), ...pairs.map((q) => q.name)];
   const constraints: string[] = [];
 
+  // Overlay requirements count courses without using them up, so they're left
+  // out of the "once" and sharing limits below.
+  const consumes = (q: Pair) => !programs[q.p]!.requirements[q.r]!.overlay;
+
   // Within one program, a course counts toward at most one requirement.
   programs.forEach((_, p) =>
     courses.forEach((_, c) => {
-      const mine = pairs.filter((q) => q.p === p && q.c === c);
+      const mine = pairs.filter((q) => q.p === p && q.c === c && consumes(q));
       if (mine.length > 1) constraints.push(` once_${p}_${c}: ${mine.map((q) => q.name).join(" + ")} <= 1`);
     }),
   );
@@ -188,7 +200,7 @@ export async function auditPrograms(
   if (options.maxSharedCourses !== undefined && programs.length > 1) {
     const shares: string[] = [];
     courses.forEach((_, c) => {
-      const uses = pairs.filter((q) => q.c === c);
+      const uses = pairs.filter((q) => q.c === c && consumes(q));
       if (new Set(uses.map((q) => q.p)).size < 2) return;
       const s = `s_${c}`;
       binaries.push(s);

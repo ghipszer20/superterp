@@ -169,6 +169,30 @@ describe("auditProgram", () => {
     });
   });
 
+  it("lets an overlay requirement count courses that other requirements also use", async () => {
+    // Math: "eight 400-level courses; must include MATH410" — MATH410 counts toward both.
+    const program: Program = {
+      id: "math",
+      name: "Math",
+      requirements: [
+        { kind: "course", id: "math410", name: "Advanced Calculus I", options: ["MATH410"] },
+        {
+          kind: "choose",
+          id: "eight",
+          name: "Two 400-level MATH courses",
+          count: 2,
+          overlay: true,
+          from: { departments: ["MATH"], minNumber: 400, maxNumber: 499 },
+        },
+      ],
+    };
+    const r = await auditProgram(program, took("MATH410", "MATH401"));
+    expect(r.requirements.map((x) => [x.id, x.status, x.assigned])).toEqual([
+      ["math410", "satisfied", ["MATH410"]],
+      ["eight", "satisfied", ["MATH410", "MATH401"]],
+    ]);
+  });
+
   describe("several programs at once (double major)", () => {
     const math: Program = {
       id: "math",
