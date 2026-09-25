@@ -2,7 +2,7 @@
 // out by hand.
 
 import { describe, expect, it } from "vitest";
-import { auditProgram, auditPrograms, type Program, type StudentCourse } from "../src/audit.ts";
+import { auditProgram, auditPrograms, type Program, type Requirement, type StudentCourse } from "../src/audit.ts";
 
 const took = (...ids: string[]): StudentCourse[] => ids.map((id) => ({ id, credits: 3, status: "completed" }));
 
@@ -267,6 +267,195 @@ describe("auditProgram", () => {
       const [m, c] = await auditPrograms([math, cs], courses, { maxSharedCourses: 0 });
       const calc2 = [m!.requirements[0]!.status, c!.requirements[0]!.status].sort();
       expect(calc2).toEqual(["missing", "satisfied"]);
+    });
+  });
+
+  describe("complete N of several sets (Anthropology: 'Select three of: …, BSCI160 & BSCI180, BSCI170 & BSCI180, …')", () => {
+    const program: Program = {
+      id: "anth",
+      name: "Anthropology",
+      requirements: [
+        {
+          kind: "sets",
+          id: "science",
+          name: "Two science courses or pairs",
+          count: 2,
+          options: [["AGNR301"], ["BSCI160", "BSCI180"], ["BSCI170", "BSCI180"], ["GEOL100", "GEOL110"]],
+        },
+      ],
+    };
+
+    it("is satisfied by two complete sets", async () => {
+      const r = await auditProgram(program, took("AGNR301", "GEOL100", "GEOL110"));
+      expect(r.requirements[0]).toMatchObject({ status: "satisfied" });
+      expect([...r.requirements[0]!.assigned].sort()).toEqual(["AGNR301", "GEOL100", "GEOL110"]);
+    });
+
+    it("is partial with only one complete set", async () => {
+      const r = await auditProgram(program, took("GEOL100", "GEOL110", "BSCI160"));
+      expect(r.requirements[0]!.status).toBe("partial");
+    });
+
+    it("doesn't use one course for two sets (BSCI180 in both BSCI pairs)", async () => {
+      const r = await auditProgram(program, took("BSCI160", "BSCI170", "BSCI180"));
+      expect(r.requirements[0]!.status).toBe("partial");
+    });
+
+    it("doesn't use one course for two sets even as an overlay", async () => {
+      const overlay: Program = { ...program, requirements: [{ ...program.requirements[0]!, overlay: true }] };
+      const r = await auditProgram(overlay, took("BSCI160", "BSCI170", "BSCI180"));
+      expect(r.requirements[0]!.status).toBe("partial");
+    });
+
+    it("respects a sharing limit across programs", async () => {
+      const other: Program = { id: "geol", name: "Geology", requirements: [{ kind: "course", id: "geol100", name: "Physical Geology", options: ["GEOL100"] }] };
+      const plan = took("AGNR301", "GEOL100", "GEOL110");
+      const [shared] = await auditPrograms([program, other], plan);
+      expect(shared!.requirements[0]!.status).toBe("satisfied");
+      const [anth, geol] = await auditPrograms([program, other], plan, { maxSharedCourses: 0 });
+      expect([anth!.requirements[0]!.status, geol!.requirements[0]!.status].sort()).toEqual(["partial", "satisfied"]);
+    });
+  });
+
+  describe("a set with a filter part (Math Applied Sequence Twelve: AOSC200, AOSC201 and two 400-level AOSC)", () => {
+    const AOSC_400 = { count: 2, from: { departments: ["AOSC"], minNumber: 400, maxNumber: 499 } };
+    const program: Program = {
+      id: "math",
+      name: "Math",
+      requirements: [
+        {
+          kind: "sets",
+          id: "supporting",
+          name: "Supporting sequence",
+          options: [
+            ["PHYS171", "PHYS272", "PHYS273"],
+            ["AOSC200", "AOSC201", AOSC_400],
+          ],
+        },
+      ],
+    };
+
+    it("is satisfied by the fixed courses plus two courses from the filter", async () => {
+      const r = await auditProgram(program, took("AOSC200", "AOSC201", "AOSC431", "AOSC432"));
+      expect(r.requirements[0]).toMatchObject({ status: "satisfied" });
+      expect([...r.requirements[0]!.assigned].sort()).toEqual(["AOSC200", "AOSC201", "AOSC431", "AOSC432"]);
+    });
+
+    it("isn't satisfied with only one course from the filter", async () => {
+      const r = await auditProgram(program, took("AOSC200", "AOSC201", "AOSC431", "AOSC301"));
+      expect(r.requirements[0]!.status).toBe("partial");
+    });
+
+    it("isn't satisfied by extra filter courses standing in for a missing fixed course", async () => {
+      const r = await auditProgram(program, took("AOSC200", "AOSC431", "AOSC432", "AOSC433", "AOSC434"));
+      expect(r.requirements[0]!.status).toBe("partial");
+    });
+
+    it("counts only as many filter courses as the part needs, leaving the rest unused", async () => {
+      const r = await auditProgram(program, took("AOSC200", "AOSC201", "AOSC431", "AOSC432", "AOSC433"));
+      expect(r.requirements[0]!.assigned).toHaveLength(4);
+      expect(r.unused).toHaveLength(1);
+    });
+
+    describe("when one course is eligible for both a fixed part and the filter part", () => {
+      // AOSC401 is fixed and also a 400-level AOSC course: it may fill only one of them.
+      const both = (overlay: boolean): Program => ({
+        id: "x",
+        name: "X",
+        requirements: [
+          { kind: "sets", id: "seq", name: "Sequence", overlay, options: [["AOSC200", "AOSC401", AOSC_400]] },
+        ],
+      });
+
+      it.each([false, true])("isn't satisfied by it plus one more filter course (overlay: %s)", async (overlay) => {
+        const r = await auditProgram(both(overlay), took("AOSC200", "AOSC401", "AOSC431"));
+        expect(r.requirements[0]!.status).toBe("partial");
+      });
+
+      it.each([false, true])("is satisfied when two other filter courses fill the filter part (overlay: %s)", async (overlay) => {
+        const r = await auditProgram(both(overlay), took("AOSC200", "AOSC401", "AOSC431", "AOSC432"));
+        expect(r.requirements[0]!.status).toBe("satisfied");
+      });
+    });
+
+    it("applies the requirement's minimum grade to the filter part", async () => {
+      const graded: Program = { ...program, requirements: [{ ...program.requirements[0]!, minGrade: "C-" }] };
+      const r = await auditProgram(graded, [
+        ...took("AOSC200", "AOSC201", "AOSC431"),
+        { id: "AOSC432", credits: 3, status: "completed", grade: "D" },
+      ]);
+      expect(r.requirements[0]!.status).toBe("partial");
+    });
+
+    it("combines with a count: two of several sets, one with a filter part", async () => {
+      const two: Program = { ...program, requirements: [{ ...program.requirements[0]!, count: 2 } as Requirement] };
+      const r = await auditProgram(two, took("PHYS171", "PHYS272", "PHYS273", "AOSC200", "AOSC201", "AOSC431", "AOSC432"));
+      expect(r.requirements[0]).toMatchObject({ status: "satisfied" });
+      expect(r.requirements[0]!.assigned).toHaveLength(7);
+    });
+  });
+
+  describe("alternatives inside a choice (CS ML: 'Select two of: CMSC426, CMSC460 or CMSC466, CMSC470')", () => {
+    const program: Program = {
+      id: "cs",
+      name: "CS",
+      requirements: [
+        {
+          kind: "choose",
+          id: "ml",
+          name: "Two ML courses",
+          count: 2,
+          from: { courses: ["CMSC426", "CMSC460", "CMSC466", "CMSC470"] },
+          alternatives: [["CMSC460", "CMSC466"]],
+        },
+      ],
+    };
+
+    it("counts at most one course of an 'or' group", async () => {
+      const r = await auditProgram(program, took("CMSC460", "CMSC466"));
+      expect(r.requirements[0]).toMatchObject({ status: "partial" });
+      expect(r.requirements[0]!.assigned).toHaveLength(1);
+      expect(r.unused).toHaveLength(1);
+    });
+
+    it("is satisfied by one course of the group plus another listed course", async () => {
+      const r = await auditProgram(program, took("CMSC460", "CMSC466", "CMSC470"));
+      expect(r.requirements[0]).toMatchObject({ status: "satisfied" });
+      expect(r.requirements[0]!.assigned).toContain("CMSC470");
+    });
+
+    it("limits a group in a credit requirement too", async () => {
+      const credits: Program = {
+        id: "cs",
+        name: "CS",
+        requirements: [{ kind: "choose", id: "ml", name: "6 credits", credits: 6, from: { courses: ["CMSC460", "CMSC466", "CMSC470"] }, alternatives: [["CMSC460", "CMSC466"]] }],
+      };
+      expect((await auditProgram(credits, took("CMSC460", "CMSC466"))).requirements[0]).toMatchObject({ status: "partial" });
+      expect((await auditProgram(credits, took("CMSC460", "CMSC470"))).requirements[0]).toMatchObject({ status: "satisfied" });
+    });
+
+    it("limits the group within its own requirement only: the other alternative may count elsewhere", async () => {
+      const two: Program = {
+        id: "cs",
+        name: "CS",
+        requirements: [
+          ...program.requirements,
+          { kind: "choose", id: "numerical", name: "A numerical course", count: 1, from: { courses: ["CMSC460", "CMSC466"] } },
+        ],
+      };
+      const r = await auditProgram(two, took("CMSC426", "CMSC460", "CMSC466"));
+      expect(r.requirements.map((x) => x.status)).toEqual(["satisfied", "satisfied"]);
+    });
+
+    it("lets the other alternative count when one fails the minimum grade", async () => {
+      const graded: Program = { ...program, minGrade: "C-" };
+      const r = await auditProgram(graded, [
+        { id: "CMSC460", credits: 3, status: "completed", grade: "D" },
+        { id: "CMSC466", credits: 3, status: "completed", grade: "B" },
+        { id: "CMSC426", credits: 3, status: "completed", grade: "B" },
+      ]);
+      expect(r.requirements[0]).toMatchObject({ status: "satisfied" });
+      expect([...r.requirements[0]!.assigned].sort()).toEqual(["CMSC426", "CMSC466"]);
     });
   });
 

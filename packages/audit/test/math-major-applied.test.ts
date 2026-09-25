@@ -114,6 +114,23 @@ describe("Math major, Applied Mathematics Track, 2026–27", () => {
     expect((await statusOf(withSupporting("GEOL100", "GEOL110", "GEOL340", "GEOL375"))).supporting).toBe("satisfied");
   });
 
+  it("accepts Sequence Twelve: AOSC200, AOSC201 and two 400-level AOSC courses", async () => {
+    const plan = withSupporting("AOSC200", "AOSC201", "AOSC431", "AOSC432");
+    const result = await audit(plan);
+    const supporting = result.requirements.find((r) => r.id === "supporting")!;
+    expect(supporting.status).toBe("satisfied");
+    expect([...supporting.assigned].sort()).toEqual(["AOSC200", "AOSC201", "AOSC431", "AOSC432"]);
+    for (const r of result.requirements) expect(`${r.id}: ${r.status}`).toBe(`${r.id}: satisfied`);
+  });
+
+  it("flags Sequence Twelve with one 400-level AOSC course (a 300-level one doesn't count)", async () => {
+    expect((await statusOf(withSupporting("AOSC200", "AOSC201", "AOSC431", "AOSC375"))).supporting).not.toBe("satisfied");
+  });
+
+  it("flags Sequence Twelve without AOSC201, even with extra 400-level AOSC courses", async () => {
+    expect((await statusOf(withSupporting("AOSC200", "AOSC431", "AOSC432", "AOSC433"))).supporting).not.toBe("satisfied");
+  });
+
   it("requires two GEOL courses from the list for Sequence Eleven", async () => {
     expect((await statusOf(withSupporting("GEOL100", "GEOL110", "GEOL340"))).supporting).not.toBe("satisfied");
   });

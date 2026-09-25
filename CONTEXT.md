@@ -82,6 +82,14 @@ One level of rules applied to a student: University, Gen Ed, College, Program, T
 One rule a Program imposes, such as "take CMSC351", "12 credits of 400-level CMSC", or "5 courses from at least 3 areas".
 _Avoid_: Rule (in user-facing text), criterion
 
+**Alternatives**:
+Courses a Requirement lists as "A or B": they stand in for each other, so at most one of them counts toward that Requirement (the other may still count elsewhere).
+_Avoid_: Equivalents, substitutes
+
+**Course Set**:
+Courses a Requirement asks for together, such as a supporting sequence ("AOSC200, AOSC201 and two 400-level AOSC courses"); a Requirement may ask for one or several of its Course Sets, and a course fills only one place in them.
+_Avoid_: Bundle, pair (unless it has exactly two courses)
+
 **Sharing Limit**:
 How many courses or credits may count toward two Requirements or two Programs at once.
 _Avoid_: Double-count rule, overlap policy

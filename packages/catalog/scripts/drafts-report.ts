@@ -99,8 +99,7 @@ const REASON_TEXT: Record<ReviewReason, string> = {
   "must-include": "An umbrella count over the rows after it ('eight courses … must include:'), an overlay",
   "empty-group": "A 'Select …' rule followed by labelled groups rather than courses (options, tracks)",
   "group-boundary": "A 'Select …' group whose end is unclear (member credits differ)",
-  "choose-of-sets": "More than one of several 'A and B' sets",
-  "exclusive-alternatives": "A choice of several with 'or' alternatives inside",
+  "sets-with-alternatives": "More than one of several 'A and B' sets with 'or' between sets, or credits over sets",
   "sequence-with-rule": "A sequence with a nested rule, left out of an otherwise drafted sets requirement",
   "alternatives-flattened": "'or' alternatives inside a distribution area listed separately",
   "ambiguous-code": "A code like PLSC110/111 (cross-listing or pair?)",
@@ -150,8 +149,8 @@ export function renderDraftsReport(s: DraftsSummary, opts: { generated: string; 
   for (const g of s.engineGaps) out.push(`| ${g.reason} | ${cell(g.description)} | ${g.items} | ${g.rows} | ${cell(g.programs.join(", "))} |`);
   out.push(
     "",
-    "Not counted above but also beyond the engine: a sets option mixing fixed courses with 'any N from a filter' (Math Applied Sequence Twelve,",
-    "AOSC200–201 plus two 400-level AOSC), which shows up under sequence-with-rule.",
+    "A sets option mixing fixed courses with 'any N from a filter' (Math Applied Sequence Twelve, AOSC200–201 plus two 400-level AOSC)",
+    "is expressible (a set member with a filter and a count), but the drafter leaves it to review under sequence-with-rule.",
     "",
   );
 

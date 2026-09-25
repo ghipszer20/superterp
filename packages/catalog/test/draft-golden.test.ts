@@ -6,7 +6,7 @@
 
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import type { Program, Requirement } from "@superterp/audit";
+import type { Program, Requirement, SetMember } from "@superterp/audit";
 import { cmscMajor } from "../../audit/programs/cmsc-major-2026-27.ts";
 import { mathMajorTraditional } from "../../audit/programs/math-major-2026-27.ts";
 import { mathMajorApplied } from "../../audit/programs/math-major-applied-2026-27.ts";
@@ -16,6 +16,13 @@ import { parseProgramPage } from "../src/program.ts";
 const fixture = (name: string) => parseProgramPage(readFileSync(new URL(`./fixtures/${name}`, import.meta.url), "utf8"));
 const meta = { catalogYear: "2026-27", source: "UMD Academic Catalog 2026–27" };
 
+/** A set as text, members in order-independent form: "AOSC200&AOSC201&2 of {…}". */
+const setKey = (o: SetMember[]) =>
+  o
+    .map((m) => (typeof m === "string" ? m : `${m.count} of ${JSON.stringify(m.from)}`))
+    .sort()
+    .join("&");
+
 /** What a requirement means to the audit, without its id or name. "One of" is the same rule as a course or a choose-one. */
 function meaning(r: Requirement): string {
   const sorted = (xs: string[]) => [...xs].sort();
@@ -23,11 +30,13 @@ function meaning(r: Requirement): string {
   switch (r.kind) {
     case "course":
       return `one of ${sorted(r.options)}${overlay}`;
-    case "choose":
-      if (r.count === 1 && r.from.courses && Object.keys(r.from).length === 1) return `one of ${sorted(r.from.courses)}${overlay}`;
-      return `choose ${r.count ?? `${r.credits} credits`} from ${JSON.stringify(r.from)}${overlay}`;
+    case "choose": {
+      const alternatives = r.alternatives ? ` alternatives ${sorted(r.alternatives.map((g) => sorted(g).join("|")))}` : "";
+      if (r.count === 1 && r.from.courses && Object.keys(r.from).length === 1 && !alternatives) return `one of ${sorted(r.from.courses)}${overlay}`;
+      return `choose ${r.count ?? `${r.credits} credits`} from ${JSON.stringify(r.from)}${alternatives}${overlay}`;
+    }
     case "sets":
-      return `sets ${sorted(r.options.map((o) => sorted(o).join("&")))}${overlay}`;
+      return `sets ${r.count ?? 1} of ${sorted(r.options.map(setKey))}${overlay}`;
     case "distribution":
       return `distribution ${r.count}/${r.minAreas}/${r.maxPerArea} ${r.areas.map((a) => `${a.name}=${sorted(a.courses)}`)}${overlay}`;
     case "concentration":
@@ -104,7 +113,8 @@ const goldens: Record<string, Golden> = {
         hand: "supporting",
         why:
           "overlay (owner ruling on CMSC131); the hand encoding adds CMSC141/142 to Sequence Four (owner), BSCI171+BSCI161 for BSCI180 (a note in the course title), " +
-          "and Sequence Eleven's 'Select Two From:' expanded by hand; the draft leaves Eleven and Twelve out with a check note",
+          "Sequence Eleven's 'Select Two From:' expanded by hand, and Sequence Twelve as a set with a filter part (two 400-level AOSC); " +
+          "the draft leaves Eleven and Twelve out with a check note",
         overlay: true,
         fewerSets: true,
       },
@@ -136,8 +146,8 @@ describe.each(Object.entries(goldens))("draft of %s vs the hand encoding", (_, {
     expect(Boolean(h.overlay)).toBe(Boolean(pair.overlay));
     expect(d.overlay).toBeUndefined();
     if (d.kind === "sets" && h.kind === "sets") {
-      const handSets = new Set(h.options.map((o) => [...o].sort().join("&")));
-      for (const o of d.options) expect(handSets).toContain([...o].sort().join("&"));
+      const handSets = new Set(h.options.map(setKey));
+      for (const o of d.options) expect(handSets).toContain(setKey(o));
       expect(d.options.length < h.options.length).toBe(Boolean(pair.fewerSets));
       if (!pair.fewerSets) expect(meaning({ ...h, overlay: undefined })).toBe(meaning(d));
       return;

@@ -157,16 +157,74 @@ describe("draftProgram", () => {
       ]);
     });
 
-    it("sends 'select two' over 'A and B' rows to review as an engine gap (N of several sets)", () => {
-      const { program, review } = draftProgram(page([t("Select two of the following:"), c(["STAT400", "STAT401"]), c(["STAT410", "STAT420"]), c("STAT430")]), meta);
-      expect(program.requirements).toEqual([]);
-      expect(review).toContainEqual(expect.objectContaining({ confidence: "manual", reason: "choose-of-sets", rows: 4 }));
+    it("drafts 'select two' over 'A and B' rows as a sets requirement with a count", () => {
+      const { program, review, rows } = draftProgram(page([t("Select two of the following:"), c(["STAT400", "STAT401"]), c(["STAT410", "STAT420"]), c("STAT430")]), meta);
+      expect(program.requirements).toEqual([
+        {
+          kind: "sets",
+          id: "two-of-stat400",
+          name: "Select two of the following:",
+          count: 2,
+          options: [["STAT400", "STAT401"], ["STAT410", "STAT420"], ["STAT430"]],
+        },
+      ]);
+      expect(review).toEqual([]);
+      expect(rows).toEqual({ converted: 4, review: 0, structural: 0 });
     });
 
-    it("sends 'select two' with mutually exclusive 'or' rows to review as an engine gap", () => {
-      const { program, review } = draftProgram(page([t("Select two of the following:"), c("CMSC426"), c("CMSC460"), c("CMSC466", { or: true }), c("CMSC470")]), meta);
+    it("drafts 'select two' with 'or' rows as a choose whose 'or' groups are alternatives", () => {
+      const { program, review, rows } = draftProgram(page([t("Select two of the following:"), c("CMSC426"), c("CMSC460"), c("CMSC466", { or: true }), c("CMSC470")]), meta);
+      expect(program.requirements).toEqual([
+        {
+          kind: "choose",
+          id: "two-of-cmsc426",
+          name: "Select two of the following:",
+          count: 2,
+          from: { courses: ["CMSC426", "CMSC460", "CMSC466", "CMSC470"] },
+          alternatives: [["CMSC460", "CMSC466"]],
+        },
+      ]);
+      expect(review).toEqual([]);
+      expect(rows).toEqual({ converted: 5, review: 0, structural: 0 });
+    });
+
+    it("treats a cross-listed code as alternatives of one another (CS: 'CMSC/AMSC460 or CMSC/AMSC466')", () => {
+      const { program } = draftProgram(page([t("Select two of the following:"), c("CMSC426"), c("CMSC/AMSC460"), c("CMSC/AMSC466", { or: true })]), meta);
+      expect(program.requirements[0]).toMatchObject({
+        kind: "choose",
+        count: 2,
+        from: { courses: ["CMSC426", "CMSC460", "AMSC460", "CMSC466", "AMSC466"] },
+        alternatives: [["CMSC460", "AMSC460", "CMSC466", "AMSC466"]],
+      });
+    });
+
+    it("drafts a credit rule with 'or' rows as a credit choose with alternatives", () => {
+      const { program } = draftProgram(page([t("Select 6 credits from the following:"), c("GEOL435"), c("GEOL436", { or: true }), c("GEOL444")]), meta);
+      expect(program.requirements).toEqual([
+        {
+          kind: "choose",
+          id: "6-credits-of-geol435",
+          name: "Select 6 credits from the following:",
+          credits: 6,
+          from: { courses: ["GEOL435", "GEOL436", "GEOL444"] },
+          alternatives: [["GEOL435", "GEOL436"]],
+        },
+      ]);
+    });
+
+    it("sends a choice of several sets with 'or' alternatives between them to review as an engine gap", () => {
+      const { program, review } = draftProgram(
+        page([t("Select two of the following:"), c(["STAT400", "STAT401"]), c("STAT410", { or: true }), c("STAT430"), c("STAT440")]),
+        meta,
+      );
       expect(program.requirements).toEqual([]);
-      expect(review).toContainEqual(expect.objectContaining({ confidence: "manual", reason: "exclusive-alternatives", rows: 5 }));
+      expect(review).toContainEqual(expect.objectContaining({ confidence: "manual", reason: "sets-with-alternatives", rows: 5 }));
+    });
+
+    it("sends a credit rule over 'A and B' rows to review as an engine gap", () => {
+      const { program, review } = draftProgram(page([t("Select 6 credits from the following:"), c(["STAT400", "STAT401"]), c("STAT430")]), meta);
+      expect(program.requirements).toEqual([]);
+      expect(review).toContainEqual(expect.objectContaining({ confidence: "manual", reason: "sets-with-alternatives", rows: 3 }));
     });
 
     it("never drafts an empty group: a select with no course rows goes to review with what follows it", () => {
