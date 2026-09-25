@@ -159,3 +159,6 @@ out/
 .vercel/
 *.tsbuildinfo
 next-env.d.ts
+
+# Brainstorming companion mockups
+.superpowers/
