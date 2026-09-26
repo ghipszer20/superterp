@@ -3,7 +3,7 @@
 // holiday, trips past midnight, and final stops.
 
 import { describe, expect, it } from "vitest";
-import { nearestStops, nextDepartures, parseGtfs, routesOn, servicesOn } from "../src/buses.ts";
+import { nearestStops, nextDepartures, parseGtfs, routeMap, routesOn, servicesOn } from "../src/buses.ts";
 import { SourceError } from "../src/http.ts";
 
 const feed = parseGtfs({
@@ -19,11 +19,11 @@ const feed = parseGtfs({
     "METRO,College Park Metro,38.97800,-76.92800",
   ].join("\n"),
   "trips.txt": [
-    "route_id,service_id,trip_id,trip_headsign",
-    "118,WEEKDAY,g1,Metro",
-    "118,WEEKDAY,g2,Metro",
-    "118,WEEKDAY,late,Metro",
-    "CP,GAMEDAY,fb1,Stadium",
+    "route_id,service_id,trip_id,trip_headsign,shape_id",
+    "118,WEEKDAY,g1,Metro,shp118",
+    "118,WEEKDAY,g2,Metro,shp118",
+    "118,WEEKDAY,late,Metro,shp118",
+    "CP,GAMEDAY,fb1,Stadium,",
   ].join("\n"),
   "stop_times.txt": [
     "trip_id,arrival_time,departure_time,stop_id,stop_sequence",
@@ -36,6 +36,13 @@ const feed = parseGtfs({
     "late,24:45:00,24:45:00,METRO,2",
     "fb1,10:00:00,10:00:00,METRO,1",
     "fb1,10:20:00,10:20:00,STAMP,2",
+  ].join("\n"),
+  // Points are out of order on purpose, to prove routeMap sorts by shape_pt_sequence.
+  "shapes.txt": [
+    "shape_id,shape_pt_sequence,shape_pt_lat,shape_pt_lon",
+    "shp118,2,38.97800,-76.92800",
+    "shp118,0,38.98820,-76.94450",
+    "shp118,1,38.98600,-76.94500",
   ].join("\n"),
   "calendar.txt": [
     "service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date",
@@ -109,4 +116,40 @@ describe("nearestStops", () => {
 
 it("rejects a feed missing required files", () => {
   expect(() => parseGtfs({ "routes.txt": "route_id\n1" })).toThrow(SourceError);
+});
+
+describe("routeMap", () => {
+  it("builds a route's line from shapes.txt, sorted by shape_pt_sequence, as [lon, lat] pairs", () => {
+    const { routes } = routeMap(feed, "2026-09-25");
+    const r118 = routes.find((r) => r.id === "118")!;
+    expect(r118.lines).toEqual([
+      [
+        [-76.9445, 38.9882],
+        [-76.945, 38.986],
+        [-76.928, 38.978],
+      ],
+    ]);
+  });
+
+  it("lists every stop a route visits", () => {
+    const { routes } = routeMap(feed, "2026-09-25");
+    const r118 = routes.find((r) => r.id === "118")!;
+    expect(r118.stopIds.sort()).toEqual(["MCK", "METRO", "STAMP"]);
+  });
+
+  it("falls back to the trip's stop order when it has no shape", () => {
+    const { routes } = routeMap(feed, "2026-09-26"); // gameday: CP's fb1 trip has no shape_id
+    const cp = routes.find((r) => r.id === "CP")!;
+    expect(cp.lines).toEqual([
+      [
+        [-76.928, 38.978], // METRO
+        [-76.9445, 38.9882], // STAMP
+      ],
+    ]);
+  });
+
+  it("indexes which routes serve each stop, for the day requested", () => {
+    expect(routeMap(feed, "2026-09-25").stopRoutes["STAMP"]).toEqual(["118"]);
+    expect(routeMap(feed, "2026-09-26").stopRoutes["METRO"]).toEqual(["CP"]);
+  });
 });
