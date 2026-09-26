@@ -34,6 +34,11 @@ export function Card({ children, className }: { children: ReactNode; className?:
   return <div className={`${styles.card} ${className ?? ""}`}>{children}</div>;
 }
 
+/** A label for a sub-group of rows inside one Section's Card(s) -- smaller than a Section title. */
+export function SubHeading({ children }: { children: ReactNode }) {
+  return <p className={styles.subHeading}>{children}</p>;
+}
+
 type RowProps = {
   title: ReactNode;
   subtitle?: ReactNode;
