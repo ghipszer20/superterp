@@ -45,6 +45,18 @@
   letter-spacing: -0.01em;
 }
 
+/* A label for a sub-group of rows inside one Section (e.g. Eppley's
+   Aquatics / Climbing / Pickleball sub-sections), smaller than sectionTitle
+   since it isn't a new top-level Section. */
+.subHeading {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 16px 4px 8px;
+}
+
 .card {
   background: var(--surface);
   border-radius: var(--r-lg);

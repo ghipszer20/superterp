@@ -133,21 +133,14 @@ function confirmTexts(req: Requirement, history: Record<string, CourseRecord>): 
 
 const count = (n: number) => (n === 2 ? "twice" : `${n} times`);
 
-/**
- * Whether a W (withdrawal) counts as failing for the repeat rule. ASSUMPTION (Claude's, recorded
- * under "Repeated courses (owner ruling)" in PROJECT_MEMORY section 17): it doesn't. The owner
- * may relax this by setting it to true.
- */
-export const W_COUNTS_AS_FAILED = false;
-
 const gradeIs = (c: PlanCourse, grade: string) => c.grade?.trim().toUpperCase() === grade;
 
 /**
- * Owner ruling (PROJECT_MEMORY section 17, "Repeated courses"): a course may be in the plan again
- * only after a failed attempt, meaning a completed attempt graded F (or W, if W_COUNTS_AS_FAILED).
+ * Owner ruling ("Repeated courses"): a course may be in the plan again only after a completed
+ * attempt graded F (failed) or W (withdrawn) — any other repeat is an error.
  */
-export function isFailedAttempt(c: PlanCourse): boolean {
-  return c.status === "completed" && (gradeIs(c, "F") || (W_COUNTS_AS_FAILED && gradeIs(c, "W")));
+export function allowsRetake(c: PlanCourse): boolean {
+  return c.status === "completed" && (gradeIs(c, "F") || gradeIs(c, "W"));
 }
 
 export function checkPlan(plan: Plan, catalog: PlanCatalog, options: CheckOptions = {}): PlanIssue[] {
@@ -301,14 +294,13 @@ function repeatIssues(
     const terms = listing(list.map((x) => x.term), "and");
     const last = { kind: "repeat" as const, term: list.at(-1)!.term, course: id };
     if (repeat.kind === "unknown") {
-      // Owner ruling: every attempt after the first must follow a failed one.
-      const allowed = list.every((_, k) => k === 0 || isFailedAttempt(list[k - 1]!.course));
+      // Owner ruling: every attempt after the first must follow a failed or withdrawn one.
+      const allowed = list.every((_, k) => k === 0 || allowsRetake(list[k - 1]!.course));
       if (!allowed) {
-        const hadW = list.some((x) => x.course.status === "completed" && gradeIs(x.course, "W"));
         issues.push({
           ...last,
           severity: "error",
-          message: `${id} is in your plan ${count(list.length)} (${terms}). You can only retake a course you failed${hadW && !W_COUNTS_AS_FAILED ? "; a W doesn't count as failing" : ""}.`,
+          message: `${id} is in your plan ${count(list.length)} (${terms}). You can only retake a course you failed or withdrew from.`,
         });
       }
       continue;

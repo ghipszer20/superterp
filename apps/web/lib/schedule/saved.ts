@@ -1,8 +1,9 @@
 // What the schedule builder remembers on this device (no accounts yet): the term's courses,
 // the gallery filters, saved plans A/B/C and the Build-my-own picks.
 //
-// Plan sync rule (owner): only COURSE changes would update the 4-year plan; section changes
-// never do. `courses` is the one field the plan will read; `affectsPlan` says when it changed.
+// Plan sync rule (owner): the builder never writes to the 4-year plan on its own -- only an
+// explicit, confirmed "Update plan" click does (see plan-link.ts). `courses` is null until the
+// student overrides the plan's list for this term; `affectsPlan` says when that override changed.
 
 import type { Weekday } from "@superterp/course-data/schedules";
 import { DEFAULT_FILTERS, type FilterState } from "./filters";
@@ -16,8 +17,11 @@ export type SectionPicks = Record<string, string>;
 export type SavedSchedule = {
   v: 1;
   term: string;
-  /** The term's courses, in the order the student added them. */
-  courses: string[];
+  /**
+   * The student's own course list, in the order they added them -- or null while the builder is
+   * still following the 4-year plan's list for this term (see plan-link.ts's `builderCourses`).
+   */
+  courses: string[] | null;
   filters: FilterState;
   plans: Partial<Record<PlanId, SectionPicks>>;
   /** Build my own: the sections placed so far. */
@@ -29,7 +33,7 @@ export const SAVED_KEY = "superterp-schedule";
 export const emptySaved = (term: string): SavedSchedule => ({
   v: 1,
   term,
-  courses: [],
+  courses: null,
   filters: DEFAULT_FILTERS,
   plans: {},
   own: {},
@@ -42,7 +46,9 @@ export function parseSaved(raw: string | null, term: string): SavedSchedule {
   if (!raw) return emptySaved(term);
   try {
     const s = JSON.parse(raw) as Partial<SavedSchedule>;
-    if (s.v !== 1 || s.term !== term || !Array.isArray(s.courses) || !isPicks(s.own)) return emptySaved(term);
+    if (s.v !== 1 || s.term !== term || (s.courses !== null && !Array.isArray(s.courses)) || !isPicks(s.own)) {
+      return emptySaved(term);
+    }
     const plans: SavedSchedule["plans"] = {};
     for (const p of PLAN_IDS) if (isPicks(s.plans?.[p])) plans[p] = s.plans![p];
     const days: FilterState["days"] = {};
@@ -54,7 +60,7 @@ export function parseSaved(raw: string | null, term: string): SavedSchedule {
     return {
       v: 1,
       term,
-      courses: s.courses.filter((c): c is string => typeof c === "string"),
+      courses: s.courses === null ? null : s.courses.filter((c): c is string => typeof c === "string"),
       filters: { days, sort: s.filters?.sort ?? "best" },
       plans,
       own: s.own,
@@ -87,9 +93,9 @@ export function setOwnSection(s: SavedSchedule, courseId: string, sectionId: str
   return { ...s, own };
 }
 
-/** True only when the set of courses changed: the one thing the 4-year plan will follow. */
+/** True only when the student's own course override changed (added, removed, or first set). */
 export function affectsPlan(prev: SavedSchedule, next: SavedSchedule): boolean {
-  const a = [...prev.courses].sort().join(",");
-  const b = [...next.courses].sort().join(",");
+  const a = [...(prev.courses ?? [])].sort().join(",");
+  const b = [...(next.courses ?? [])].sort().join(",");
   return a !== b;
 }

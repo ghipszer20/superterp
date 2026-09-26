@@ -25,6 +25,13 @@ describe("parseHours", () => {
     expect(parseHours("24 Hours").kind).toBe("24h");
   });
 
+  // RecWell's informal-rec columns (e.g. Pickleball) use a bare "--" for "no
+  // drop-in session scheduled" -- treat it the same as an empty cell.
+  it("treats a dash-only cell as closed", () => {
+    expect(parseHours("--")).toEqual({ kind: "closed", label: "Closed" });
+    expect(parseHours("—")).toEqual({ kind: "closed", label: "Closed" });
+  });
+
   it("keeps text it can't parse, stripping HTML", () => {
     expect(parseHours('By <a href="x">appointment</a> only')).toEqual({ kind: "text", label: "By appointment only" });
   });

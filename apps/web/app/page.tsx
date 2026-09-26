@@ -1,10 +1,12 @@
 import { Suspense } from "react";
 import { connection } from "next/server";
-import { campusDate, campusMinutes, DINING_HALLS, recWellOnDate } from "@superterp/campus-data";
+import { campusDate, campusMinutes, DINING_HALLS, orderLibraries, recWellOnDate } from "@superterp/campus-data";
 import { BusIcon, DiningIcon, GymIcon, LibraryIcon, RoomIcon } from "@/components/icons";
 import { LiveStatus } from "@/components/LiveStatus";
 import { Card, IconTile, Page, Row, Section, SkeletonCard } from "@/components/ui";
 import { getAllDiningMenus, getLibraryHours, getRecWellAreas, getRoutesOn, safe } from "@/lib/campus";
+import { gymRowTitle, MAIN_GYMS } from "@/lib/gyms";
+import { compactLibraryName } from "@/lib/libraries";
 import { currentMealName, mealHighlights } from "@/lib/status";
 
 export default function TodayPage() {
@@ -92,7 +94,7 @@ async function Dining({ today, minutes }: { today: string; minutes: number }) {
 
 async function Libraries({ today, minutes }: { today: string; minutes: number }) {
   const res = await safe(getLibraryHours);
-  const libs = res.ok ? pickMain(res.data.filter((l) => l.kind === "library"), MAIN_LIBRARIES, (l) => l.name) : [];
+  const libs = res.ok ? orderLibraries(res.data.filter((l) => l.kind === "library")) : [];
   return (
     <Card>
       {libs.map((lib) => (
@@ -104,7 +106,7 @@ async function Libraries({ today, minutes }: { today: string; minutes: number })
               <LibraryIcon />
             </IconTile>
           }
-          title={lib.name}
+          title={compactLibraryName(lib.name)}
           subtitle={<LiveStatus hours={lib.days[today]} initialMinutes={minutes} inline />}
         />
       ))}
@@ -141,7 +143,7 @@ async function Gyms({ today, minutes }: { today: string; minutes: number }) {
                 <GymIcon />
               </IconTile>
             }
-            title={b.name === b.group ? b.name : `${b.group} ${b.name}`}
+            title={gymRowTitle(b.group, b.name)}
             subtitle={<LiveStatus hours={b.hours} initialMinutes={minutes} inline />}
           />
         ))
@@ -168,16 +170,6 @@ async function Buses({ today }: { today: string }) {
     </Card>
   );
 }
-
-// The places most students mean by "the library" and "the gym". Falls back
-// to feed order if UMD renames them.
-const MAIN_LIBRARIES = [/^McKeldin/i, /^STEM/i, /^Hornbake/i];
-// Matched against "<facility> | <area>".
-const MAIN_GYMS = [
-  /^Eppley Recreation Center \| Eppley Recreation Center$/i,
-  /^Ritchie Coliseum \| Ritchie Coliseum$/i,
-  /^School of Public Health \| Fitness Center$/i,
-];
 
 function pickMain<T>(items: T[], patterns: RegExp[], key: (item: T) => string, count = 3): T[] {
   const picked = patterns.flatMap((p) => items.filter((i) => p.test(key(i))).slice(0, 1));

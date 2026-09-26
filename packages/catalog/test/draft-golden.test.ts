@@ -23,6 +23,33 @@ const setKey = (o: SetMember[]) =>
     .sort()
     .join("&");
 
+/** Every k-course subset of `xs`, order-independent (n choose k). */
+function chooseFrom<T>(xs: T[], k: number): T[][] {
+  if (k === 0) return [[]];
+  if (xs.length < k) return [];
+  const [head, ...rest] = xs;
+  return [...chooseFrom(rest, k - 1).map((c) => [head!, ...c]), ...chooseFrom(rest, k)];
+}
+
+/**
+ * Every fully-expanded set a compact set option could mean: a `{count, from:{courses}}` member
+ * (the drafter's compact form for "N more from a list") expands to every course combination it
+ * could pick, crossed with the option's other members. A department/number-range filter (e.g.
+ * "two 400-level AOSC courses") can't be enumerated into courses and is kept as one opaque member,
+ * so it's compared by the filter itself rather than by course. A plain, already-expanded option
+ * (the hand encoding's usual style) expands to just itself.
+ */
+function expandOption(option: SetMember[]): SetMember[][] {
+  return option.reduce<SetMember[][]>((acc, m) => {
+    if (typeof m === "string" || !m.from.courses) return acc.map((combo) => [...combo, m]);
+    const picks = chooseFrom(m.from.courses, m.count);
+    return acc.flatMap((combo) => picks.map((p) => [...combo, ...p]));
+  }, [[]]);
+}
+
+/** setKeys of every set an options list could mean, once compact filter-over-a-list members are expanded. */
+const expandedSetKeys = (options: SetMember[][]) => new Set(options.flatMap((o) => expandOption(o).map(setKey)));
+
 /** What a requirement means to the audit, without its id or name. "One of" is the same rule as a course or a choose-one. */
 function meaning(r: Requirement): string {
   const sorted = (xs: string[]) => [...xs].sort();
@@ -53,8 +80,9 @@ type Pair = {
   extraOptions?: string[];
   /** The hand encoding marks it an overlay; otherwise identical. */
   overlay?: true;
-  /** Every draft set is in the hand encoding, which has more (sets requirements). */
-  fewerSets?: true;
+  /** Every draft set is in the hand encoding, which has more (sets requirements): exactly the
+   * expanded set keys (see `expandedSetKeys`) the hand encoding has and the draft doesn't. */
+  fewerSets?: string[];
 };
 /** A hand requirement with no drafted counterpart: the table row went to review with this reason, or it isn't in the table at all. */
 type Missing = { hand: string; why: string; review: ReviewReason | null; row?: string };
@@ -99,7 +127,8 @@ const goldens: Record<string, Golden> = {
           "owner ruling: CMSC131 may count for programming and Sequence Four, so the sequence is an overlay; " +
           "the hand encoding adds CMSC141/142 to Sequence Four (assumption, PROJECT_MEMORY section 17 open question 4)",
         overlay: true,
-        fewerSets: true,
+        // Sequence Four's CMSC141/CMSC142 variants (owner-confirmed, not in the catalog table).
+        fewerSets: ["CMSC131&CMSC142&CMSC216", "CMSC132&CMSC141&CMSC216", "CMSC141&CMSC142&CMSC216"],
       },
     ],
     missing: [
@@ -120,11 +149,18 @@ const goldens: Record<string, Golden> = {
         draft: "sequence-phys161",
         hand: "supporting",
         why:
-          "overlay (owner ruling on CMSC131); the hand encoding adds CMSC141/142 to Sequence Four (owner), BSCI171+BSCI161 for BSCI180 (a note in the course title), " +
-          "Sequence Eleven's 'Select Two From:' expanded by hand, and Sequence Twelve as a set with a filter part (two 400-level AOSC); " +
-          "the draft leaves Eleven and Twelve out with a check note",
+          "overlay (owner ruling on CMSC131); the hand encoding adds CMSC141/142 to Sequence Four (owner) and BSCI171+BSCI161 for BSCI180 (a note in the course title); " +
+          "Sequence Eleven's 'Select Two From:' is drafted as a course-count filter part (checked by expansion below, against the hand encoding's six fully expanded sets), " +
+          "and Sequence Twelve matches the hand encoding's filter part (two 400-level AOSC) exactly",
         overlay: true,
-        fewerSets: true,
+        // Sequence Four's CMSC141/CMSC142 variants and Sequence Nine's BSCI171+BSCI161 variants (both owner-confirmed, not in the catalog table).
+        fewerSets: [
+          "BSCI160&BSCI161&BSCI170&BSCI171&CHEM131&CHEM132",
+          "BSCI160&BSCI161&BSCI170&BSCI171&CHEM146&CHEM177",
+          "CMSC131&CMSC142&CMSC216",
+          "CMSC132&CMSC141&CMSC216",
+          "CMSC141&CMSC142&CMSC216",
+        ],
       },
     ],
     missing: [
@@ -154,10 +190,14 @@ describe.each(Object.entries(goldens))("draft of %s vs the hand encoding", (_, {
     expect(Boolean(h.overlay)).toBe(Boolean(pair.overlay));
     expect(d.overlay).toBeUndefined();
     if (d.kind === "sets" && h.kind === "sets") {
-      const handSets = new Set(h.options.map(setKey));
-      for (const o of d.options) expect(handSets).toContain(setKey(o));
-      expect(d.options.length < h.options.length).toBe(Boolean(pair.fewerSets));
-      if (!pair.fewerSets) expect(meaning({ ...h, overlay: undefined })).toBe(meaning(d));
+      const handSets = expandedSetKeys(h.options);
+      const draftSets = expandedSetKeys(d.options);
+      for (const o of d.options) for (const variant of expandOption(o)) expect(handSets).toContain(setKey(variant));
+      if (pair.fewerSets) expect([...handSets].filter((k) => !draftSets.has(k)).sort()).toEqual([...pair.fewerSets].sort());
+      else {
+        expect(d.options.length < h.options.length).toBe(false);
+        expect(meaning({ ...h, overlay: undefined })).toBe(meaning(d));
+      }
       return;
     }
     const options = (r: Requirement) => (r.kind === "course" ? r.options : r.kind === "choose" ? (r.from.courses ?? []) : []);

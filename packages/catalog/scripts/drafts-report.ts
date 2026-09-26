@@ -101,6 +101,7 @@ const REASON_TEXT: Record<ReviewReason, string> = {
   "group-boundary": "A 'Select …' group whose end is unclear (member credits differ)",
   "sets-with-alternatives": "More than one of several 'A and B' sets with 'or' between sets, or credits over sets",
   "sequence-with-rule": "A sequence with a nested rule, left out of an otherwise drafted sets requirement",
+  "sequence-filter": "A sequence's nested rule converted into a course-count filter part of its set (confirm the count and range)",
   "alternatives-flattened": "'or' alternatives inside a distribution area listed separately",
   "ambiguous-code": "A code like PLSC110/111 (cross-listing or pair?)",
   "stray-or": "An 'or' with nothing above it to attach to",
@@ -147,12 +148,7 @@ export function renderDraftsReport(s: DraftsSummary, opts: { generated: string; 
   );
   if (s.engineGaps.length === 0) out.push("| none | | | | |");
   for (const g of s.engineGaps) out.push(`| ${g.reason} | ${cell(g.description)} | ${g.items} | ${g.rows} | ${cell(g.programs.join(", "))} |`);
-  out.push(
-    "",
-    "A sets option mixing fixed courses with 'any N from a filter' (Math Applied Sequence Twelve, AOSC200–201 plus two 400-level AOSC)",
-    "is expressible (a set member with a filter and a count), but the drafter leaves it to review under sequence-with-rule.",
-    "",
-  );
+  out.push("");
 
   out.push(`## Top ${top} unrecognized phrasings`, "", "Lead rows of unrecognized-rule items; course codes become COURSE and numbers N.", "");
   out.push("| Count | Phrasing |", "| --- | --- |");

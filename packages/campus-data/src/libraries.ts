@@ -65,6 +65,18 @@ export function parseLibCalHours(feed: LibCalHoursFeed): LibraryHours[] {
   });
 }
 
+/**
+ * Every on-campus library, McKeldin first and the rest alphabetically — so
+ * the order is stable even if UMD's own feed order changes. Callers filter
+ * to `kind === "library"` first; department entries (Special Collections,
+ * IPAM, the Makerspace) aren't reordered here.
+ */
+export function orderLibraries(libs: LibraryHours[]): LibraryHours[] {
+  const isMcKeldin = (l: LibraryHours) => /^McKeldin/i.test(l.name);
+  const rest = libs.filter((l) => !isMcKeldin(l)).sort((a, b) => a.name.localeCompare(b.name));
+  return [...libs.filter(isMcKeldin), ...rest];
+}
+
 export async function fetchLibraryHours(weeks = 2): Promise<LibraryHours[]> {
   const url = `https://umd.libcal.com/api_hours_grid.php?iid=${LIBCAL_INSTITUTION_ID}&format=json&weeks=${weeks}`;
   return parseLibCalHours(await fetchJson<LibCalHoursFeed>("libcal-hours", url));

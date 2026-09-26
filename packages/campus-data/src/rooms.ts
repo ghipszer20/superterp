@@ -79,10 +79,18 @@ export function parseRooms(html: string): Room[] {
       categoryId,
       locationId,
       categoryName: jsString(block, "grouping") ?? "",
-      bookingUrl: `${LIBCAL}${jsString(block, "url") ?? `/space/${id}`}`,
+      // Always build this from the room's own eid — never trust the feed's
+      // "url" field, which can point at a category or availability page
+      // instead of this specific room's booking screen.
+      bookingUrl: `${LIBCAL}/space/${id}`,
     });
   }
   return rooms;
+}
+
+/** A room's own LibCal booking screen, pre-filled to one date. */
+export function roomBookingUrl(roomId: number, isoDate: string): string {
+  return `${LIBCAL}/space/${roomId}?date=${isoDate}`;
 }
 
 /** Merge a room's open half-hour slots into contiguous windows. */

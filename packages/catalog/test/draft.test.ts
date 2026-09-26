@@ -407,7 +407,7 @@ describe("draftProgram", () => {
       ]);
     });
 
-    it("leaves out a sequence with a rule inside it, with a check note that the sets are incomplete", () => {
+    it("converts 'N additional NNN-level DEPT courses' into a filter set member, with a check note", () => {
       const { program, review } = draftProgram(
         page([
           t("Select one of two sequences"),
@@ -420,9 +420,104 @@ describe("draftProgram", () => {
         ]),
         meta,
       );
+      expect(program.requirements).toEqual([
+        {
+          kind: "sets",
+          id: "sequence-astr130",
+          name: "Select one of two sequences",
+          options: [["ASTR130", "ASTR131"], ["AOSC200", "AOSC201", { count: 2, from: { departments: ["AOSC"], minNumber: 400, maxNumber: 499 } }]],
+        },
+      ]);
+      expect(review).toContainEqual(
+        expect.objectContaining({
+          confidence: "check",
+          reason: "sequence-filter",
+          text: expect.stringContaining('"Two additional 400-level AOSC courses"'),
+          rows: 0,
+        }),
+      );
+    });
+
+    it("converts a leading course-pattern code ('AOSC4xx …') into a filter set member with count 1", () => {
+      const { program, review } = draftProgram(
+        page([
+          t("Select one of two sequences"),
+          t("Sequence One"),
+          c("ASTR130"),
+          c("ASTR131"),
+          t("Sequence Two"),
+          c(["AOSC200", "AOSC201"]),
+          t("AOSC4xx Any 400 level AOSC course"),
+        ]),
+        meta,
+      );
+      expect(program.requirements).toEqual([
+        {
+          kind: "sets",
+          id: "sequence-astr130",
+          name: "Select one of two sequences",
+          options: [["ASTR130", "ASTR131"], ["AOSC200", "AOSC201", { count: 1, from: { departments: ["AOSC"], minNumber: 400, maxNumber: 499 } }]],
+        },
+      ]);
+      expect(review).toContainEqual(
+        expect.objectContaining({ confidence: "check", reason: "sequence-filter", text: expect.stringContaining('"AOSC4xx Any 400 level AOSC course"'), rows: 0 }),
+      );
+    });
+
+    it("converts a nested 'Select N From:' rule followed by a course list into a count-over-courses filter member", () => {
+      const { program, review } = draftProgram(
+        page([
+          t("Select one of two sequences"),
+          t("Sequence One"),
+          c("ASTR130"),
+          c("ASTR131"),
+          t("Sequence Two"),
+          c(["GEOL100", "GEOL110"]),
+          t("Select Two From:"),
+          c("GEOL322"),
+          c("GEOL340"),
+          c("GEOL341"),
+          c("GEOL375"),
+        ]),
+        meta,
+      );
+      expect(program.requirements).toEqual([
+        {
+          kind: "sets",
+          id: "sequence-astr130",
+          name: "Select one of two sequences",
+          options: [
+            ["ASTR130", "ASTR131"],
+            ["GEOL100", "GEOL110", { count: 2, from: { courses: ["GEOL322", "GEOL340", "GEOL341", "GEOL375"] } }],
+          ],
+        },
+      ]);
+      expect(review).toContainEqual(
+        expect.objectContaining({ confidence: "check", reason: "sequence-filter", text: expect.stringContaining('"Select Two From:"'), rows: 0 }),
+      );
+    });
+
+    it("still leaves out a sequence with a nested rule the draft can't expand into a filter", () => {
+      const { program, review } = draftProgram(
+        page([
+          t("Select one of two sequences"),
+          t("Sequence One"),
+          c("ASTR130"),
+          c("ASTR131"),
+          t("Sequence Two"),
+          c(["AOSC200", "AOSC201"]),
+          t("Two additional courses approved by the department"),
+        ]),
+        meta,
+      );
       expect(program.requirements).toEqual([{ kind: "sets", id: "sequence-astr130", name: "Select one of two sequences", options: [["ASTR130", "ASTR131"]] }]);
       expect(review).toContainEqual(
-        expect.objectContaining({ confidence: "check", reason: "sequence-with-rule", text: expect.stringContaining('"Two additional 400-level AOSC courses"'), rows: 3 }),
+        expect.objectContaining({
+          confidence: "check",
+          reason: "sequence-with-rule",
+          text: expect.stringContaining('"Two additional courses approved by the department"'),
+          rows: 3,
+        }),
       );
     });
   });
