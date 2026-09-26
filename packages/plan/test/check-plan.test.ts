@@ -143,7 +143,7 @@ describe("repeated courses", () => {
   const failed = { id: "CMSC131", status: "completed", grade: "F" } as const;
   const planned = { id: "CMSC131" };
 
-  it("rejects a course planned twice when it isn't repeatable and wasn't failed", () => {
+  it("rejects a course planned twice when it isn't repeatable and wasn't failed or withdrawn", () => {
     const issues = checkPlan(plan({ "Fall 2026": ["CMSC131"], "Spring 2027": ["CMSC131"] }), catalog);
     expect(of(issues, "repeat")).toEqual([
       {
@@ -151,7 +151,7 @@ describe("repeated courses", () => {
         severity: "error",
         term: "Spring 2027",
         course: "CMSC131",
-        message: "CMSC131 is in your plan twice (Fall 2026 and Spring 2027). You can only retake a course you failed.",
+        message: "CMSC131 is in your plan twice (Fall 2026 and Spring 2027). You can only retake a course you failed or withdrew from.",
       },
     ]);
   });
@@ -169,15 +169,23 @@ describe("repeated courses", () => {
   it("rejects a retake of a course passed in an earlier term", () => {
     const issues = checkPlan(attempts(["Fall 2026", { ...failed, grade: "D" }], ["Spring 2027", planned]), catalog);
     expect(errors(issues, "repeat").map((i) => i.message)).toEqual([
-      "CMSC131 is in your plan twice (Fall 2026 and Spring 2027). You can only retake a course you failed.",
+      "CMSC131 is in your plan twice (Fall 2026 and Spring 2027). You can only retake a course you failed or withdrew from.",
     ]);
   });
 
-  it("doesn't count a W as failing, and says so", () => {
+  // Owner ruling: "a course can be retaken after a W." A withdrawal now excuses a retake the same
+  // way a failing grade does.
+  it("allows a retake of a course withdrawn from (W) in an earlier term", () => {
     const issues = checkPlan(attempts(["Fall 2026", { ...failed, grade: "W" }], ["Spring 2027", planned]), catalog);
-    expect(errors(issues, "repeat").map((i) => i.message)).toEqual([
-      "CMSC131 is in your plan twice (Fall 2026 and Spring 2027). You can only retake a course you failed; a W doesn't count as failing.",
-    ]);
+    expect(of(issues, "repeat")).toEqual([]);
+  });
+
+  it("allows a third attempt after a failed attempt then a withdrawal", () => {
+    const issues = checkPlan(
+      attempts(["Fall 2026", failed], ["Spring 2027", { ...failed, grade: "W" }], ["Fall 2027", planned]),
+      catalog,
+    );
+    expect(of(issues, "repeat")).toEqual([]);
   });
 
   it("rejects a second planned retake after one failed attempt", () => {
@@ -185,7 +193,20 @@ describe("repeated courses", () => {
     expect(errors(issues, "repeat")).toMatchObject([
       {
         term: "Fall 2027",
-        message: "CMSC131 is in your plan 3 times (Fall 2026, Spring 2027 and Fall 2027). You can only retake a course you failed.",
+        message: "CMSC131 is in your plan 3 times (Fall 2026, Spring 2027 and Fall 2027). You can only retake a course you failed or withdrew from.",
+      },
+    ]);
+  });
+
+  it("rejects a second planned retake after one withdrawal, since a later repeat still needs its own failed or withdrawn attempt", () => {
+    const issues = checkPlan(
+      attempts(["Fall 2026", { ...failed, grade: "W" }], ["Spring 2027", planned], ["Fall 2027", planned]),
+      catalog,
+    );
+    expect(errors(issues, "repeat")).toMatchObject([
+      {
+        term: "Fall 2027",
+        message: "CMSC131 is in your plan 3 times (Fall 2026, Spring 2027 and Fall 2027). You can only retake a course you failed or withdrew from.",
       },
     ]);
   });
