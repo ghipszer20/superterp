@@ -9,17 +9,20 @@
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
     "ui-check": "node scripts/ui-check.mjs",
-    "test": "vitest run"
+    "test": "vitest run",
+    "advisor-data": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/advisor-data.mts"
   },
   "dependencies": {
     "@superterp/audit": "*",
     "@superterp/campus-data": "*",
     "@superterp/catalog": "*",
+    "@superterp/course-data": "*",
+    "@superterp/credit": "*",
+    "@superterp/plan": "*",
+    "@superterp/ratings": "*",
     "next": "16.3.6",
     "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "@superterp/course-data": "*",
-    "@superterp/ratings": "*"
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
     "@types/node": "^20",

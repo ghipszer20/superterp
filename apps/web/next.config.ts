@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
     "@superterp/catalog",
     "@superterp/audit",
     "@superterp/course-data",
+    "@superterp/credit",
+    "@superterp/plan",
     "@superterp/ratings",
   ],
   // Keep old links working after the tab restructure.
