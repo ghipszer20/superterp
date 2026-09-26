@@ -22,14 +22,19 @@ import { deptBiol } from "./dept-biol-2026-27.ts";
 import { deptCbmg } from "./dept-cbmg-2026-27.ts";
 import { deptChem } from "./dept-chem-2026-27.ts";
 import { deptComm } from "./dept-comm-2026-27.ts";
+import { deptEcon } from "./dept-econ-2026-27.ts";
 import { deptEng } from "./dept-eng-2026-27.ts";
 import { deptEngl } from "./dept-engl-2026-27.ts";
+import { deptEnsp } from "./dept-ensp-2026-27.ts";
 import { deptEntm } from "./dept-entm-2026-27.ts";
 import { deptGeol } from "./dept-geol-2026-27.ts";
 import { deptGers } from "./dept-gers-2026-27.ts";
+import { deptGvpt } from "./dept-gvpt-2026-27.ts";
 import { deptHist } from "./dept-hist-2026-27.ts";
+import { deptKnes } from "./dept-knes-2026-27.ts";
 import { deptMath } from "./dept-math-2026-27.ts";
 import { deptPhys } from "./dept-phys-2026-27.ts";
+import { deptPsyc } from "./dept-psyc-2026-27.ts";
 import { deptSpan } from "./dept-span-2026-27.ts";
 import { deptWgss } from "./dept-wgss-2026-27.ts";
 import { carillon } from "./llp-carillon-2026-27.ts";
@@ -154,6 +159,7 @@ export const specialPrograms: SpecialEntry[] = [
   hand("departmental", deptCbmg),
   hand("departmental", deptChem),
   hand("departmental", deptComm),
+  hand("departmental", deptEcon),
   hand("departmental", deptEng),
   none(
     "departmental",
@@ -162,12 +168,16 @@ export const specialPrograms: SpecialEntry[] = [
     "ECE's own honors page (ece.umd.edu/undergraduate/current-students/honors-program) returns HTTP 403; the Clark School's directory of departmental honors contacts lists \"Electrical and Computer Engineering\" separately from \"Engineering,\" but ECE's undergraduate page links only to the Clark School's shared Engineering Honors Program (drafted as \"Departmental Honors: Engineering (Clark School)\"), which lists ENEE499 as ECE's research-course option.",
   ),
   hand("departmental", deptEngl),
+  hand("departmental", deptEnsp),
   hand("departmental", deptEntm),
   hand("departmental", deptGeol),
   hand("departmental", deptGers),
+  hand("departmental", deptGvpt),
   hand("departmental", deptHist),
+  hand("departmental", deptKnes),
   hand("departmental", deptMath),
   hand("departmental", deptPhys),
+  hand("departmental", deptPsyc),
   hand("departmental", deptSpan),
   hand("departmental", deptWgss),
   none(
@@ -175,5 +185,77 @@ export const specialPrograms: SpecialEntry[] = [
     "Departmental Honors: Astronomy",
     "https://www.astro.umd.edu/undergrad/major.html",
     "No course ids are published: the Departmental Honors Program section says only that \"Honors students work with a faculty advisor on a research project for academic credit,\" submit \"a written report,\" and pass \"an oral comprehensive examination.\"",
+  ),
+  none(
+    "departmental",
+    "Departmental Honors: Agriculture & Natural Resources",
+    "https://agnr.umd.edu/academics/undergraduate-honors",
+    "College-wide program with no drafteable course ids: \"Six or more credits in upper-level honors courses, seminars, or workshops\" from any department, plus \"Six or more credits of DEPARTMENTAL 388 Honors Thesis Research,\" where DEPARTMENTAL is a 4-letter prefix that varies by the student's own AGNR major (ANSC388, NFSC388, PLSC388, etc.) and isn't enumerated on the page.",
+  ),
+  none(
+    "departmental",
+    "Departmental Honors: Behavioral and Community Health",
+    "https://sph.umd.edu/academics/departments-units/department-behavioral-and-community-health/student-resources-and-programs-behavioral-and-community-health/undergraduate-student-resources-community-health",
+    "The Honors College directory links this URL for Behavioral and Community Health, but the page (an undergraduate resources page for the Public Health Practice major) has no honors program section, course ids or requirements.",
+  ),
+  none(
+    "departmental",
+    "Departmental Honors: Criminology & Criminal Justice",
+    "https://ccjs.umd.edu/landingtopic/undergraduate-honors-program",
+    "ccjs.umd.edu did not respond to repeated fetches (\"fetch failed\"), including the department's own root page, as of 2026-09-26; no cached copy of a requirements page exists.",
+  ),
+  none(
+    "departmental",
+    "Departmental Honors: Computer Science",
+    "https://undergrad.cs.umd.edu/honors/requirements",
+    "No enumerated course requirement: to graduate with the citation a student must have \"Completed a graduate level 'PhD Qualifying' CMSC course OR an honors version of a CMSC3xx/4xx course (not including CMSC396H)\" plus an approved honors thesis; neither the qualifying-course list nor the honors-version course ids are published, and CMSC499/CMSC396H research credit is explicitly \"not strictly required.\"",
+  ),
+  none(
+    "departmental",
+    "Departmental Honors: Family Health",
+    "https://sph.umd.edu/academics/departments-units/department-family-science/student-resources-family-science/undergraduate-student-resources-family-health",
+    "No course ids are published: \"Students enroll in special honors courses, complete honors option work in regular courses and conduct independent research,\" culminating in a senior honors thesis, but no course ids or credit totals are named.",
+  ),
+  none(
+    "departmental",
+    "Departmental Honors: French",
+    "https://sllc.umd.edu/fields/french",
+    "Unlike German and Spanish, SLLC publishes no dedicated honors-program page for French: the page the Honors College directory links to is the general French Program page, with no honors section, and no French-specific honors subpage was found from its links.",
+  ),
+  none(
+    "departmental",
+    "Departmental Honors: Hearing & Speech Sciences",
+    "https://hesp.umd.edu/undergraduate/honors-hearing-and-speech-sciences-undergraduate-students",
+    "hesp.umd.edu did not respond to repeated fetches (\"fetch failed\" / connect timeout), including the department's root page, as of 2026-09-26; no cached copy of a requirements page exists.",
+  ),
+  none(
+    "departmental",
+    "Departmental Honors: Human Development",
+    "https://education.umd.edu/human-development-honors-program",
+    "No course ids are published: the page describes a \"two-year program sequence\" with \"an Honors seminar offered in the fall of the Junior year\" and senior-year thesis mentorship, but names no course ids and defers eligibility/application details to a separate overview page.",
+  ),
+  none(
+    "departmental",
+    "Departmental Honors: Linguistics",
+    "https://linguistics.umd.edu/academic-programs/undergraduate/honors-programs",
+    "No required course: a student finds a faculty supervisor and may \"optionally register for LING 499 ('Directed Studies')\"; there's no fixed, required course id and no other requirement beyond a thesis and its supervisor's recommendation.",
+  ),
+  none(
+    "departmental",
+    "Departmental Honors: Neuroscience",
+    "https://neur.umd.edu/opportunities/honors-requirements",
+    "neur.umd.edu did not respond to repeated fetches (\"fetch failed\" / connect timeout) as of 2026-09-26; no cached copy of a requirements page exists.",
+  ),
+  none(
+    "departmental",
+    "Departmental Honors: Philosophy",
+    "https://philosophy.umd.edu/",
+    "The Honors College directory links only the department's general homepage; it has no honors program section, and no dedicated Philosophy honors-program page was found from its navigation or links.",
+  ),
+  none(
+    "departmental",
+    "Departmental Honors: Sociology",
+    "https://socy.umd.edu/undergraduate/honors-program",
+    "socy.umd.edu did not respond to repeated fetches (\"fetch failed\" / connect timeout), including the department's undergraduate and root pages, as of 2026-09-26; no cached copy of a requirements page exists.",
   ),
 ];
