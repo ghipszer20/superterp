@@ -78,8 +78,35 @@ describe("renderDraftsReport", () => {
     expect(md).toMatch(/## Engine gaps[\s\S]*sets-with-alternatives[\s\S]*\| 1 \| 4 \|/);
   });
 
-  it("says a set with a filter part (Sequence Twelve) is expressible, though the drafter leaves it to review", () => {
+  it("doesn't claim a filter-part set is beyond the engine", () => {
     expect(md).not.toContain("also beyond the engine");
-    expect(md).toContain("sets option mixing fixed courses with 'any N from a filter'");
+  });
+});
+
+describe("a sequence's nested rule converted into a filter part", () => {
+  const converted: DraftPageResult[] = [
+    result("Zeta", [
+      t("Select one of two sequences"),
+      t("Sequence One"),
+      c("ASTR130"),
+      c("ASTR131"),
+      t("Sequence Two"),
+      c(["AOSC200", "AOSC201"]),
+      t("Two additional 400-level AOSC courses"),
+    ]),
+  ];
+  const s = summarizeDrafts(converted);
+  const md = renderDraftsReport(s, { generated: "2026-09-25" });
+
+  it("counts its rows as converted, not sent to review", () => {
+    expect(s.rows).toEqual({ converted: 7, review: 0, structural: 0 });
+  });
+
+  it("lists it as a check item under sequence-filter, with no rows to review", () => {
+    expect(s.reasons).toContainEqual(expect.objectContaining({ reason: "sequence-filter", items: 1, rows: 0, manual: 0, check: 1, engineGap: false }));
+  });
+
+  it("shows a full 100% conversion in the per-program table", () => {
+    expect(md).toContain("| Zeta | major | 1 | 0 | 1 | 7/7 (100%) |");
   });
 });

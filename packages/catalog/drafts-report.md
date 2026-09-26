@@ -1,13 +1,13 @@
 # Draft programs report
 
-Generated 2026-09-25 by `packages/catalog/scripts/draft-all.ts`, which drafts every cached program page
+Generated 2026-09-26 by `packages/catalog/scripts/draft-all.ts`, which drafts every cached program page
 (see `coverage.ts`) into audit Programs with `draftProgram` (`src/draft.ts`). Drafts are never verified;
 they are not committed. This report is what the deterministic drafter converts and what it leaves to the owner.
 
 ## Overall
 
 - Programs: **270**, with at least one requirement table: **252**; drafted tables: **467**
-- Converted automatically: **5726 of 8660** rule rows (**66.1%**); sent to review: 2934. Plain section headers (753) are not counted.
+- Converted automatically: **5739 of 8660** rule rows (**66.3%**); sent to review: 2921. Plain section headers (753) are not counted.
 - Requirements drafted: **3466** (course 3321, choose 99, sets 45, distribution 1)
 - Review items: **1174** manual (not drafted), **453** check (drafted, confirm)
 
@@ -22,11 +22,11 @@ Ranked by rows sent to review. Check items send no rows; they flag drafted requi
 | course-pattern | An unlinked course pattern such as STAT4xx (a filter is suggested) | 32 | 33 |  |
 | ambiguous-code | A code like PLSC110/111 (cross-listing or pair?) | 5 | 22 |  |
 | group-boundary | A 'Select …' group whose end is unclear (member credits differ) | 2 | 17 |  |
-| sequence-with-rule | A sequence with a nested rule, left out of an otherwise drafted sets requirement | 3 | 13 |  |
 | must-include | An umbrella count over the rows after it ('eight courses … must include:'), an overlay | 4 | 4 |  |
 | stray-or | An 'or' with nothing above it to attach to | 1 | 1 |  |
 | footnote | A footnote on a drafted row or section (check it doesn't change the rule) | 449 | 0 |  |
 | multiple-lists | Several tables on one page: tracks, specializations or parts of one program? | 290 | 0 |  |
+| sequence-filter | A sequence's nested rule converted into a course-count filter part of its set (confirm the count and range) | 3 | 0 |  |
 | alternatives-flattened | 'or' alternatives inside a distribution area listed separately | 1 | 0 |  |
 
 ## Engine gaps
@@ -37,9 +37,6 @@ encoded with the existing requirement kinds once someone reads the prose.
 | Reason | Shape | Items | Rows | Programs |
 | --- | --- | --- | --- | --- |
 | none | | | | |
-
-A sets option mixing fixed courses with 'any N from a filter' (Math Applied Sequence Twelve, AOSC200–201 plus two 400-level AOSC)
-is expressible (a set member with a filter and a count), but the drafter leaves it to review under sequence-with-rule.
 
 ## Top 30 unrecognized phrasings
 
@@ -285,8 +282,8 @@ One line per requirement table. Converted: rule rows drafted automatically, of a
 | Marketing Major | major | 4 | 1 | 0 | 13/14 (93%) |
 | Marketing Major at Shady Grove | major | 4 | 1 | 0 | 13/14 (93%) |
 | Mathematics Major (Traditional Track) | major | 11 | 5 | 5 | 62/71 (87%) |
-| Mathematics Major (Applied Mathematics Track) | major | 13 | 5 | 6 | 82/101 (81%) |
-| Mathematics Major (Secondary Education Track) | major | 16 | 3 | 6 | 56/61 (92%) |
+| Mathematics Major (Applied Mathematics Track) | major | 13 | 5 | 6 | 92/101 (91%) |
+| Mathematics Major (Secondary Education Track) | major | 16 | 3 | 6 | 59/61 (97%) |
 | Mathematics Major (Statistics Track) | major | 14 | 3 | 4 | 63/70 (90%) |
 | Mathematics Major (1. Pure Mathematics) | major | 22 | 2 | 0 | 24/25 (96%) |
 | Mathematics Major (2. Secondary Teaching) | major | 5 | 1 | 0 | 5/5 (100%) |
