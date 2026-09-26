@@ -7,6 +7,11 @@ import type { Program } from "../src/audit.ts";
 const MATH_400_LEVEL = { departments: ["MATH", "AMSC", "STAT"], minNumber: 400, maxNumber: 499 };
 // Footnote 4: electives may not include these.
 const NOT_ELECTIVES = ["MATH461", "MATH478", "MATH480", "MATH481", "MATH482", "MATH483", "MATH484", "STAT464"];
+// ASSUMPTION (PROJECT_MEMORY section 17, open question 4; owner to confirm): Sequence Four accepts
+// CMSC141 for CMSC131 and CMSC142 for CMSC132, as the Applied track does (the owner ruled these
+// substitute generally). To reverse, set these back to ["CMSC131"] and ["CMSC132"].
+const CMSC_I = ["CMSC131", "CMSC141"];
+const CMSC_II = ["CMSC132", "CMSC142"];
 
 export const mathMajorTraditional: Program = {
   id: "math-major-traditional",
@@ -21,7 +26,7 @@ export const mathMajorTraditional: Program = {
     "Eight 400-level MATH/AMSC/STAT courses: encoded as an overlay count of 8 that the specific requirements (MATH410, algebra, AMSC, STAT, depth) also count toward. Footnote 4's exclusions (MATH461, 478, 480–484, STAT464) are applied to all eight, not only the electives.",
     "The depth sequence is an overlay: its courses may also be MATH410 / the algebra course.",
     "Applied Mathematics Track (the owner's track) is encoded separately in math-major-applied-2026-27.ts.",
-    "Programming requirement also accepts CMSC141/CMSC142 (owner confirmed these substitute for CMSC131/132 in CS; assumed here too).",
+    "Programming requirement also accepts CMSC141/CMSC142 (owner confirmed these substitute for CMSC131/132 in CS; assumed here too). Sequence Four also accepts CMSC141 for CMSC131 and CMSC142 for CMSC132, matching the Applied track (assumed, PROJECT_MEMORY section 17 open question 4; owner to confirm).",
     "Footnote 2 (at least four of the 400-level courses taken at College Park) and footnote 3 (outside substitutions with Undergraduate Office approval) are not enforced.",
   ],
   requirements: [
@@ -63,7 +68,8 @@ export const mathMajorTraditional: Program = {
         ["PHYS161", "PHYS260", "PHYS261", "PHYS270", "PHYS271"],
         ["PHYS171", "PHYS272", "PHYS273"],
         ["ENES102", "PHYS161", "ENES220"],
-        ["CMSC131", "CMSC132", "CMSC216"],
+        // Sequence Four (CMSC141/142 substitutes: see CMSC_I and CMSC_II)
+        ...CMSC_I.flatMap((i) => CMSC_II.map((ii) => [i, ii, "CMSC216"])),
         ["CHEM146", "CHEM177", "CHEM237", "CHEM247"],
         ["CHEM131", "CHEM132", "CHEM231", "CHEM232", "CHEM241", "CHEM242"],
         ["ECON200", "ECON201", "ECON305"],

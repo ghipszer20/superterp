@@ -34,6 +34,27 @@ const GRADE_ORDER = ["F", "D-", "D", "D+", "C-", "C", "C+", "B-", "B", "B+", "A-
 const gradeRank = (g: string) => GRADE_ORDER.indexOf(g.trim().toUpperCase());
 
 /**
+ * ASSUMPTION (PROJECT_MEMORY section 17, open question 1; owner to confirm): a gateway course
+ * completed without a letter grade (AP/IB exam or transfer credit, which @superterp/credit
+ * records with no grade) meets the gateway. Set this to false to make such credit not count.
+ */
+const NO_GRADE_CREDIT_MEETS_GATEWAY = true;
+
+/**
+ * ASSUMPTION (PROJECT_MEMORY section 17, open question 2; owner to confirm): a W is ignored,
+ * as if the course was never taken. A W alone is "missing", not "below-minimum". Set this to false
+ * here to count a W as a below-minimum attempt again.
+ */
+const W_MEANS_NOT_TAKEN = true;
+const isWithdrawal = (c: StudentCourse) => c.grade?.trim().toUpperCase() === "W";
+
+function meetsGatewayGrade(c: StudentCourse, minRank: number): boolean {
+  if (c.status !== "completed") return false;
+  if (c.grade === undefined) return NO_GRADE_CREDIT_MEETS_GATEWAY;
+  return gradeRank(c.grade) >= 0 && gradeRank(c.grade) >= minRank;
+}
+
+/**
  * One gateway course, checked against the rule's minimum grade. Every attempt
  * of the course or its substitute counts. Checked in this order:
  * - "met": some completed attempt has a letter grade at or above the minimum.
@@ -41,9 +62,12 @@ const gradeRank = (g: string) => GRADE_ORDER.indexOf(g.trim().toUpperCase());
  *   (StudentCourse has no term). `satisfiedBy` names that course.
  * - "planned": not met, and an attempt is in the Plan. This covers a first
  *   attempt and a planned retake of a below-minimum grade.
- * - "below-minimum": only completed attempts, none meeting the minimum. Pass/fail,
- *   W and other non-letter grades, or a missing grade, never meet a letter minimum.
+ * - "below-minimum": only completed attempts, none meeting the minimum. Pass/fail
+ *   and other non-letter grades never meet a letter minimum.
  * - "missing": neither completed nor planned.
+ * Assumptions (see NO_GRADE_CREDIT_MEETS_GATEWAY and W_MEANS_NOT_TAKEN): a completed
+ * course with no grade (AP/IB/transfer credit) is "met"; a W is ignored, so a W alone
+ * is "missing".
  */
 export type GatewayCourseStatus = "met" | "below-minimum" | "missing" | "planned";
 
@@ -100,10 +124,8 @@ export function checkCsGateway(input: GatewayInput): GatewayResult {
   const minRank = gradeRank(rule.minGrade);
 
   const courses = GATEWAY_COURSES.map((g): GatewayCourseResult => {
-    const attempts = input.courses.filter((c) => g.options.includes(c.id));
-    const passing = attempts.find(
-      (c) => c.status === "completed" && c.grade !== undefined && gradeRank(c.grade) >= 0 && gradeRank(c.grade) >= minRank,
-    );
+    const attempts = input.courses.filter((c) => g.options.includes(c.id) && !(W_MEANS_NOT_TAKEN && isWithdrawal(c)));
+    const passing = attempts.find((c) => meetsGatewayGrade(c, minRank));
     if (passing) return { ...g, status: "met", satisfiedBy: passing.id };
     if (attempts.some((c) => c.status === "planned")) return { ...g, status: "planned" };
     if (attempts.some((c) => c.status === "completed")) return { ...g, status: "below-minimum" };

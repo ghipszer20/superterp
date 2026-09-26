@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { buildCatalog } from "../src/catalog.ts";
-import { checkPlan, type Plan, type PlanIssue } from "../src/check.ts";
+import { checkPlan, type Plan, type PlanCourse, type PlanIssue } from "../src/check.ts";
 import { SPRING_2027 } from "./helpers.ts";
 
 const catalog = buildCatalog(SPRING_2027);
@@ -135,18 +135,64 @@ describe("corequisites", () => {
 });
 
 describe("repeated courses", () => {
-  it("asks the student to check a course planned twice when the data doesn't say it's repeatable", () => {
-    const issues = checkPlan(plan({ "Fall 2026": ["HIST200"], "Spring 2027": ["HIST200"] }), catalog);
+  // Owner ruling (PROJECT_MEMORY section 17): a course may be in the plan twice only when the
+  // earlier attempt was failed; any other repeat is an error.
+  const attempts = (...terms: [string, PlanCourse][]): Plan => ({
+    terms: terms.map(([name, course]) => ({ name, courses: [course] })),
+  });
+  const failed = { id: "CMSC131", status: "completed", grade: "F" } as const;
+  const planned = { id: "CMSC131" };
+
+  it("rejects a course planned twice when it isn't repeatable and wasn't failed", () => {
+    const issues = checkPlan(plan({ "Fall 2026": ["CMSC131"], "Spring 2027": ["CMSC131"] }), catalog);
     expect(of(issues, "repeat")).toEqual([
       {
         kind: "repeat",
-        severity: "confirm",
+        severity: "error",
         term: "Spring 2027",
-        course: "HIST200",
-        message:
-          "HIST200 is in your plan twice (Fall 2026 and Spring 2027). The course data doesn't say whether it can be repeated for credit, so check with the department before keeping both.",
+        course: "CMSC131",
+        message: "CMSC131 is in your plan twice (Fall 2026 and Spring 2027). You can only retake a course you failed.",
       },
     ]);
+  });
+
+  it("allows a retake of a course failed (F) in an earlier term", () => {
+    const issues = checkPlan(attempts(["Fall 2026", failed], ["Spring 2027", planned]), catalog);
+    expect(of(issues, "repeat")).toEqual([]);
+  });
+
+  it("allows a third attempt after two failed ones", () => {
+    const issues = checkPlan(attempts(["Fall 2026", failed], ["Spring 2027", failed], ["Fall 2027", planned]), catalog);
+    expect(of(issues, "repeat")).toEqual([]);
+  });
+
+  it("rejects a retake of a course passed in an earlier term", () => {
+    const issues = checkPlan(attempts(["Fall 2026", { ...failed, grade: "D" }], ["Spring 2027", planned]), catalog);
+    expect(errors(issues, "repeat").map((i) => i.message)).toEqual([
+      "CMSC131 is in your plan twice (Fall 2026 and Spring 2027). You can only retake a course you failed.",
+    ]);
+  });
+
+  it("doesn't count a W as failing, and says so", () => {
+    const issues = checkPlan(attempts(["Fall 2026", { ...failed, grade: "W" }], ["Spring 2027", planned]), catalog);
+    expect(errors(issues, "repeat").map((i) => i.message)).toEqual([
+      "CMSC131 is in your plan twice (Fall 2026 and Spring 2027). You can only retake a course you failed; a W doesn't count as failing.",
+    ]);
+  });
+
+  it("rejects a second planned retake after one failed attempt", () => {
+    const issues = checkPlan(attempts(["Fall 2026", failed], ["Spring 2027", planned], ["Fall 2027", planned]), catalog);
+    expect(errors(issues, "repeat")).toMatchObject([
+      {
+        term: "Fall 2027",
+        message: "CMSC131 is in your plan 3 times (Fall 2026, Spring 2027 and Fall 2027). You can only retake a course you failed.",
+      },
+    ]);
+  });
+
+  it("never asks the student to check a repeat with the department", () => {
+    const issues = checkPlan(plan({ "Fall 2026": ["HIST200"], "Spring 2027": ["HIST200"] }), catalog);
+    expect(of(issues, "repeat").map((i) => i.severity)).toEqual(["error"]);
   });
 
   it("accepts a repeatable course within its credit limit", () => {

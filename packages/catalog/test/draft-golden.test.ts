@@ -92,7 +92,15 @@ const goldens: Record<string, Golden> = {
       { draft: "math241", hand: "math241", why: FOOTNOTE_1_HONORS, extraOptions: ["MATH340"] },
       { draft: "one-of-math246", hand: "intro3", why: FOOTNOTE_1_HONORS, extraOptions: ["MATH341"] },
       { draft: "one-of-cmsc106", hand: "programming", why: OWNER_CMSC141, extraOptions: ["CMSC141", "CMSC142"] },
-      { draft: "sequence-phys161", hand: "supporting", why: "owner ruling: CMSC131 may count for programming and Sequence Four, so the sequence is an overlay", overlay: true },
+      {
+        draft: "sequence-phys161",
+        hand: "supporting",
+        why:
+          "owner ruling: CMSC131 may count for programming and Sequence Four, so the sequence is an overlay; " +
+          "the hand encoding adds CMSC141/142 to Sequence Four (assumption, PROJECT_MEMORY section 17 open question 4)",
+        overlay: true,
+        fewerSets: true,
+      },
     ],
     missing: [
       { hand: "stat4xx", why: "'Any 400-level STAT course other than STAT464' is prose the drafter doesn't parse", review: "unrecognized-rule", row: "Any 400-level STAT course" },

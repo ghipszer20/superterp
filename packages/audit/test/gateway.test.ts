@@ -124,8 +124,37 @@ describe("checkCsGateway: gateway course status", () => {
     expect(gateway([done("MATH140", "P")], "MATH140")?.status).toBe("below-minimum");
   });
 
-  it("does not meet a letter minimum with a completed course that has no grade", () => {
-    expect(gateway([done("MATH140")], "MATH140")?.status).toBe("below-minimum");
+  // Assumption (PROJECT_MEMORY section 17, open question 1): credit without a letter grade
+  // (AP/IB/transfer) meets the gateway.
+  it("meets a gateway with a completed course that has no letter grade (AP/IB/transfer credit)", () => {
+    expect(gateway([done("MATH140")], "MATH140")).toMatchObject({ status: "met", satisfiedBy: "MATH140" });
+  });
+
+  it("makes a student eligible whose MATH140 gateway is AP credit with no grade", () => {
+    const result = checkCsGateway({
+      matriculationTerm: NEW,
+      courses: [done("MATH140"), done("CMSC131", "A"), done("CMSC132", "B")],
+      cumulativeGpa: 3.2,
+    });
+    expect(result.overall).toBe("eligible");
+  });
+
+  // Assumption (PROJECT_MEMORY section 17, open question 2): a W alone means not yet taken.
+  it("marks a gateway whose only attempt is a W as missing, not below-minimum", () => {
+    expect(gateway([done("CMSC131", "W")], "CMSC131")?.status).toBe("missing");
+  });
+
+  it("is not-yet (not ineligible) when a gateway's only attempt is a W", () => {
+    const result = checkCsGateway({
+      matriculationTerm: NEW,
+      courses: [done("MATH140", "A"), done("CMSC131", "W"), done("CMSC132", "B")],
+      cumulativeGpa: 3.2,
+    });
+    expect(result.overall).toBe("not-yet");
+  });
+
+  it("still marks a gateway below-minimum when a W sits beside a low completed grade", () => {
+    expect(gateway([done("CMSC131", "W"), done("CMSC131", "C")], "CMSC131")?.status).toBe("below-minimum");
   });
 });
 
