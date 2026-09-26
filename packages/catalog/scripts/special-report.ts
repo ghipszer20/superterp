@@ -10,6 +10,7 @@ const KIND_LABEL: Record<SpecialKind, string> = {
   honors: "Honors",
   llp: "Other LLP",
   special: "Other special program",
+  departmental: "Departmental Honors",
 };
 
 const counts = (e: SpecialEntry) => {

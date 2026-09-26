@@ -14,10 +14,11 @@ interpretation quoted in `reviewNotes`; **none** = no academic requirements are 
 | Scholars | 13 | 13 | 0 |
 | Honors | 8 | 8 | 0 |
 | Other LLP | 6 | 5 | 1 |
-| Other special program | 9 | 2 | 7 |
-| **Total** | **36** | **28** | **8** |
+| Other special program | 8 | 2 | 6 |
+| Departmental Honors | 39 | 25 | 14 |
+| **Total** | **74** | **53** | **21** |
 
-Drafted: **150** requirements and **210** review notes (113 manual, 97 check).
+Drafted: **206** requirements and **324** review notes (188 manual, 136 check).
 Manual notes are rules the audit can't check (GPA, residence, attendance, approvals); check notes are interpretations to confirm.
 
 ## Programs
@@ -59,4 +60,42 @@ Manual notes are rules the audit can't check (GPA, residence, attendance, approv
 | Army ROTC | Other special program | none: Commissioning program; its academic part (ARMY301, ARMY302, ARMY401, ARMY402 and military history) is the catalog's Army Leadership Studies minor, which the catalog pipeline drafts. | 0 | 0 | 0 | 0 |
 | Naval ROTC | Other special program | none: Commissioning program; the catalog gives sample plans ("Navy Option students typically will take") and requirement categories (calculus, physics, English) rather than a course list. The Naval Science minor is drafted by the catalog pipeline. | 0 | 0 | 0 | 0 |
 | C.D. Mote Jr. Incentive Awards Program | Other special program | none: A scholarship and mentoring program with no academic course requirements. | 0 | 0 | 0 | 0 |
-| Departmental Honors Programs | Other special program | none: Out of scope for this pass: over 40 programs, each defined by its department (usually on the major's catalog page, which the catalog pipeline drafts). | 0 | 0 | 0 | 0 |
+| Departmental Honors: Aerospace Engineering | Departmental Honors | hand | 4 | 4 | 3 | 1 |
+| Departmental Honors: American Studies | Departmental Honors | hand | 1 | 4 | 3 | 1 |
+| Departmental Honors: Anthropology | Departmental Honors | hand | 3 | 4 | 3 | 1 |
+| Departmental Honors: Art | Departmental Honors | hand | 2 | 4 | 3 | 1 |
+| Departmental Honors: Art History & Archaeology | Departmental Honors | hand | 2 | 3 | 2 | 1 |
+| Departmental Honors: Bioengineering | Departmental Honors | hand | 2 | 5 | 3 | 2 |
+| Departmental Honors: Biology | Departmental Honors | hand | 2 | 4 | 2 | 2 |
+| Departmental Honors: Cell Biology & Molecular Genetics | Departmental Honors | hand | 2 | 5 | 3 | 2 |
+| Departmental Honors: Chemistry and Biochemistry | Departmental Honors | hand | 2 | 4 | 2 | 2 |
+| Departmental Honors: Communication | Departmental Honors | hand | 1 | 5 | 4 | 1 |
+| Departmental Honors: Economics | Departmental Honors | hand | 2 | 4 | 3 | 1 |
+| Departmental Honors: Engineering (Clark School) | Departmental Honors | hand | 3 | 5 | 3 | 2 |
+| Departmental Honors: Electrical and Computer Engineering | Departmental Honors | none: ECE's own honors page (ece.umd.edu/undergraduate/current-students/honors-program) returns HTTP 403; the Clark School's directory of departmental honors contacts lists "Electrical and Computer Engineering" separately from "Engineering," but ECE's undergraduate page links only to the Clark School's shared Engineering Honors Program (drafted as "Departmental Honors: Engineering (Clark School)"), which lists ENEE499 as ECE's research-course option. | 0 | 0 | 0 | 0 |
+| Departmental Honors: English | Departmental Honors | hand | 4 | 5 | 3 | 2 |
+| Departmental Honors: Environmental Science and Policy | Departmental Honors | hand | 1 | 4 | 3 | 1 |
+| Departmental Honors: Entomology | Departmental Honors | hand | 1 | 4 | 3 | 1 |
+| Departmental Honors: Geology | Departmental Honors | hand | 3 | 5 | 3 | 2 |
+| Departmental Honors: Germanic Studies | Departmental Honors | hand | 2 | 5 | 4 | 1 |
+| Departmental Honors: Government & Politics | Departmental Honors | hand | 2 | 4 | 3 | 1 |
+| Departmental Honors: History | Departmental Honors | hand | 4 | 4 | 3 | 1 |
+| Departmental Honors: Kinesiology | Departmental Honors | hand | 3 | 6 | 3 | 3 |
+| Departmental Honors: Mathematics | Departmental Honors | hand | 2 | 7 | 4 | 3 |
+| Departmental Honors: Physics | Departmental Honors | hand | 1 | 4 | 3 | 1 |
+| Departmental Honors: Psychology | Departmental Honors | hand | 4 | 8 | 4 | 4 |
+| Departmental Honors: Spanish & Portuguese | Departmental Honors | hand | 1 | 4 | 3 | 1 |
+| Departmental Honors: Women, Gender, and Sexuality Studies | Departmental Honors | hand | 2 | 3 | 2 | 1 |
+| Departmental Honors: Astronomy | Departmental Honors | none: No course ids are published: the Departmental Honors Program section says only that "Honors students work with a faculty advisor on a research project for academic credit," submit "a written report," and pass "an oral comprehensive examination." | 0 | 0 | 0 | 0 |
+| Departmental Honors: Agriculture & Natural Resources | Departmental Honors | none: College-wide program with no drafteable course ids: "Six or more credits in upper-level honors courses, seminars, or workshops" from any department, plus "Six or more credits of DEPARTMENTAL 388 Honors Thesis Research," where DEPARTMENTAL is a 4-letter prefix that varies by the student's own AGNR major (ANSC388, NFSC388, PLSC388, etc.) and isn't enumerated on the page. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Behavioral and Community Health | Departmental Honors | none: The Honors College directory links this URL for Behavioral and Community Health, but the page (an undergraduate resources page for the Public Health Practice major) has no honors program section, course ids or requirements. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Criminology & Criminal Justice | Departmental Honors | none: ccjs.umd.edu did not respond to repeated fetches ("fetch failed"), including the department's own root page, as of 2026-09-26; no cached copy of a requirements page exists. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Computer Science | Departmental Honors | none: No enumerated course requirement: to graduate with the citation a student must have "Completed a graduate level 'PhD Qualifying' CMSC course OR an honors version of a CMSC3xx/4xx course (not including CMSC396H)" plus an approved honors thesis; neither the qualifying-course list nor the honors-version course ids are published, and CMSC499/CMSC396H research credit is explicitly "not strictly required." | 0 | 0 | 0 | 0 |
+| Departmental Honors: Family Health | Departmental Honors | none: No course ids are published: "Students enroll in special honors courses, complete honors option work in regular courses and conduct independent research," culminating in a senior honors thesis, but no course ids or credit totals are named. | 0 | 0 | 0 | 0 |
+| Departmental Honors: French | Departmental Honors | none: Unlike German and Spanish, SLLC publishes no dedicated honors-program page for French: the page the Honors College directory links to is the general French Program page, with no honors section, and no French-specific honors subpage was found from its links. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Hearing & Speech Sciences | Departmental Honors | none: hesp.umd.edu did not respond to repeated fetches ("fetch failed" / connect timeout), including the department's root page, as of 2026-09-26; no cached copy of a requirements page exists. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Human Development | Departmental Honors | none: No course ids are published: the page describes a "two-year program sequence" with "an Honors seminar offered in the fall of the Junior year" and senior-year thesis mentorship, but names no course ids and defers eligibility/application details to a separate overview page. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Linguistics | Departmental Honors | none: No required course: a student finds a faculty supervisor and may "optionally register for LING 499 ('Directed Studies')"; there's no fixed, required course id and no other requirement beyond a thesis and its supervisor's recommendation. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Neuroscience | Departmental Honors | none: neur.umd.edu did not respond to repeated fetches ("fetch failed" / connect timeout) as of 2026-09-26; no cached copy of a requirements page exists. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Philosophy | Departmental Honors | none: The Honors College directory links only the department's general homepage; it has no honors program section, and no dedicated Philosophy honors-program page was found from its navigation or links. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Sociology | Departmental Honors | none: socy.umd.edu did not respond to repeated fetches ("fetch failed" / connect timeout), including the department's undergraduate and root pages, as of 2026-09-26; no cached copy of a requirements page exists. | 0 | 0 | 0 | 0 |

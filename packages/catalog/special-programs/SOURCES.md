@@ -23,6 +23,9 @@ each page fetched once.
   Incentive Awards, the ROTC programs, and the Global Studies minors.
 - **SLLC special programs** (https://sllc.umd.edu/special-programs): Language House, Persian Flagship,
   Summer Language Institutes.
+- **Honors College, "Departmental Honors"** (https://honors.umd.edu/academics/departmental-honors/, fetched 2026-09-26):
+  the "Departmental Honors contacts" list of 39 department (or college-wide) programs, each with its own
+  requirements page (see "Departmental honors programs" below).
 
 **Renamed or gone (not missing):**
 - CIVICUS relaunched in Fall 2024 as the Scholars program **Civic Engagement for Social Good** (Scholars news, 2024-01-29).
@@ -38,8 +41,22 @@ Scholarships Office and Academic Common Market are not programs with requirement
 
 **No CourseLeaf tables:** none of these requirement pages is a catalog `sc_courselist` table. The one catalog
 page (Office of Undergraduate Studies) has only `sc_plangrid` sample plans for ROTC, which `parseProgramPage`
-correctly ignores (see `test/special-sources.test.ts`). So everything is transcribed by hand, and the program
-`kind` type (`ProgramKind`) needed no new kinds.
+correctly ignores (see `test/special-sources.test.ts`). So everything is transcribed by hand.
+
+## Departmental honors programs
+
+The Honors College's "Departmental Honors contacts" list (https://honors.umd.edu/academics/departmental-honors/)
+names 39 department or college-wide programs, each with its own director and (usually) its own requirements page
+on the department's site — not the Academic Catalog, and not one shared format. This pass adds a `"departmental"`
+`SpecialKind` (report label "Departmental Honors") for them, drafting every one whose page names specific course
+ids; the rest are `none` entries quoting why (no course ids published, or the department's site did not respond
+to a fetch as of 2026-09-26 — see the per-program `why` in `registry.ts`). GPA minimums, thesis documents, oral
+defenses and faculty/committee approvals are never audit requirements; they are `[manual]` review notes.
+
+Three department sites (`ccjs.umd.edu`, `hesp.umd.edu`, `socy.umd.edu`, `neur.umd.edu`) timed out on every
+attempt (`fetch failed` / `UND_ERR_CONNECT_TIMEOUT`) even though sibling BSOS/CMNS domains and the department's
+own root page (where checked) responded, so Criminology & Criminal Justice, Hearing & Speech Sciences,
+Neuroscience and Sociology are `none` entries citing the fetch failure rather than a missing requirements page.
 
 ## Programs
 
@@ -83,4 +100,42 @@ table (hand-transcribed); **none** = no requirement list published.
 | Army ROTC | Other special program | https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/ | ARMY105–402 plan grid (24 credits) + military history; = Army Leadership Studies minor | none | 2026-27 catalog |
 | Naval ROTC | Other special program | https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/ | Sample NAVY plans, NAVY108 lab each term, categories of core courses | none | 2026-27 catalog |
 | C.D. Mote Jr. Incentive Awards Program | Other special program | https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/ | Scholarship and mentoring; no course requirements | none | 2026-27 catalog |
-| Departmental Honors Programs | Other special program | https://honors.umd.edu/academics/departmental-honors/ | 40+ department programs (out of scope for this pass) | none | fetched 2026-09-25 |
+| Departmental Honors: Aerospace Engineering | Departmental Honors | https://aero.umd.edu/undergraduate/ae-honors-program | ENAE283H, ENAE410H, ENAE423H, ENAE398H (3cr) | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: American Studies | Departmental Honors | https://amst.umd.edu/academic-programs/undergraduate/honors-program | 6 credits of AMST388 (thesis); flexible 6-credit coursework not drafted | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Anthropology | Departmental Honors | https://anth.umd.edu/undergraduate/honors-program | ANTH485, ANTH486, ANTH487 (9 credits) | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Art | Departmental Honors | https://art.umd.edu/academic-programs/honors-programs | ARTT480H, ARTT498H; two unlisted studio honors electives not drafted | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Art History & Archaeology | Departmental Honors | https://arthistory.umd.edu/academics/undergraduate/honors | ARTH498 (2cr), ARTH499 (3cr) | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Astronomy | Departmental Honors | https://www.astro.umd.edu/undergrad/major.html | No course ids: research project, written report, oral exam | none | undated, fetched 2026-09-26 |
+| Departmental Honors: Bioengineering | Departmental Honors | https://bioe.umd.edu/undergraduate/honors | BIOE399H (6cr), BIOE489H (3 semesters); 1 600-level elective not drafted | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Biology | Departmental Honors | https://biology.umd.edu/undergraduate/current-students/honors/program-requirements | BSCI399H (research), BSCI398H (seminar), each semester; no fixed credit total | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Cell Biology & Molecular Genetics | Departmental Honors | https://cbmg.umd.edu/education/undergraduate/undergrad-honors/ | BSCI379H (6cr), BSCI378H (3cr); 7cr of approved lecture courses not drafted | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Chemistry and Biochemistry | Departmental Honors | https://www.chem.umd.edu/undergraduateprogram/current-students/chemistry-biochemistry-honors-program | CHEM399 (3cr), CHEM398 (final semester) | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Communication | Departmental Honors | https://communication.umd.edu/academics/undergraduate/honors | COMM399 (6 credits); admissions currently suspended | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Electrical and Computer Engineering | Departmental Honors | https://www.eng.umd.edu/current/honors-program | HTTP 403 on ECE's own page; ECE participates in the Clark School's shared Engineering Honors Program | none | fetched 2026-09-26 |
+| Departmental Honors: Engineering (Clark School) | Departmental Honors | https://www.eng.umd.edu/current/honors-program | ENES480, ENES481 (1cr each); research course from a 9-course department list | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: English | Departmental Honors | https://www.english.umd.edu/academics/undergraduate/honors | ENGL370, ENGL373, ENGL495, ENGL428 (twice); 12 credits | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Entomology | Departmental Honors | https://entomology.umd.edu/honors-program.html | BSCI389H (6 credits); flexible 2-course requirement not drafted | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Environmental Science and Policy | Departmental Honors | https://www.ensp.umd.edu/research/honors-ensp | ENSP499 (6 credits); flexible 9-credit coursework not drafted | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Economics | Departmental Honors | https://www.econ.umd.edu/undergraduate/departmental-honors-program | ECON396, ECON397 | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Geology | Departmental Honors | https://www.geol.umd.edu/undergraduate/ugdhonors.php | GEOL497H (3cr), GEOL393 (3cr), GEOL394 (3cr); 6cr elective not drafted | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Germanic Studies | Departmental Honors | https://sllc.umd.edu/fields/german/undergraduate/honors | GERS398H (3cr), GERS499H (3cr); flexible 6-credit coursework not drafted | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Government & Politics | Departmental Honors | https://gvpt.umd.edu/undergraduate/gvpt-honors-program | GVPT396, GVPT397; flexible 2-course requirement not drafted | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: History | Departmental Honors | https://history.umd.edu/academics/undergraduate/honors | HIST395, HIST396, HIST398, HIST399 (12 credits) | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Kinesiology | Departmental Honors | https://sph.umd.edu/academics/departments-units/department-kinesiology/student-resources-kinesiology/kinesiology-honors-program | KNES478 (3cr), KNES476 (3cr), KNES477 (3cr); flexible 6cr not drafted | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Mathematics | Departmental Honors | https://www-math.umd.edu/undergraduate/opportunities.html?id=101 | Thesis option: 2 breadth courses from a 9-course list, 6 credits of MATH498 | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Physics | Departmental Honors | https://umdphysics.umd.edu/academics/undergraduate/ugrad-phys-honors.html | Research course (3cr) from a 4-course list; 3cr H-version course not drafted | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Psychology | Departmental Honors | https://psyc.umd.edu/undergraduate/psyc-honors-program | PSYC468H (3cr), PSYC469H, PSYC498H, PSYC499H | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Spanish & Portuguese | Departmental Honors | https://sllc.umd.edu/fields/spanish/undergraduate/honors | SPAN479 (6 credits); flexible "H"-version coursework not drafted | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Women, Gender, and Sexuality Studies | Departmental Honors | https://wgss.umd.edu/academic-programs/undergraduate/experiential-learning | WGSS487 (3cr), WGSS489A (6cr) | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Agriculture & Natural Resources | Departmental Honors | https://agnr.umd.edu/academics/undergraduate-honors | College-wide; "DEPARTMENTAL 388" varies by major, not enumerable | none | undated, fetched 2026-09-26 |
+| Departmental Honors: Behavioral and Community Health | Departmental Honors | https://sph.umd.edu/academics/departments-units/department-behavioral-and-community-health/student-resources-and-programs-behavioral-and-community-health/undergraduate-student-resources-community-health | No honors section on the linked page | none | fetched 2026-09-26 |
+| Departmental Honors: Criminology & Criminal Justice | Departmental Honors | https://ccjs.umd.edu/landingtopic/undergraduate-honors-program | ccjs.umd.edu unreachable | none | attempted 2026-09-26 |
+| Departmental Honors: Computer Science | Departmental Honors | https://undergrad.cs.umd.edu/honors/requirements | No enumerated qualifying/honors course list; research credit "not strictly required" | none | undated, fetched 2026-09-26 |
+| Departmental Honors: Family Health | Departmental Honors | https://sph.umd.edu/academics/departments-units/department-family-science/student-resources-family-science/undergraduate-student-resources-family-health | No course ids: "special honors courses... honors option work" | none | fetched 2026-09-26 |
+| Departmental Honors: French | Departmental Honors | https://sllc.umd.edu/fields/french | No dedicated honors-program page found | none | fetched 2026-09-26 |
+| Departmental Honors: Hearing & Speech Sciences | Departmental Honors | https://hesp.umd.edu/undergraduate/honors-hearing-and-speech-sciences-undergraduate-students | hesp.umd.edu unreachable | none | attempted 2026-09-26 |
+| Departmental Honors: Human Development | Departmental Honors | https://education.umd.edu/human-development-honors-program | No course ids published | none | fetched 2026-09-26 |
+| Departmental Honors: Linguistics | Departmental Honors | https://linguistics.umd.edu/academic-programs/undergraduate/honors-programs | LING499 only "optional"; no required course | none | fetched 2026-09-26 |
+| Departmental Honors: Neuroscience | Departmental Honors | https://neur.umd.edu/opportunities/honors-requirements | neur.umd.edu unreachable | none | attempted 2026-09-26 |
+| Departmental Honors: Philosophy | Departmental Honors | https://philosophy.umd.edu/ | No honors page found; directory links only the department homepage | none | fetched 2026-09-26 |
+| Departmental Honors: Sociology | Departmental Honors | https://socy.umd.edu/undergraduate/honors-program | socy.umd.edu unreachable | none | attempted 2026-09-26 |

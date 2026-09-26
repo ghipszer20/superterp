@@ -40,7 +40,14 @@ const drafted = specialPrograms.filter((e): e is typeof e & { program: Program }
 describe("special programs registry", () => {
   it("has an entry for every kind of program", () => {
     const kinds = new Set(specialPrograms.map((e) => e.kind));
-    expect([...kinds].sort()).toEqual(["honors", "llp", "scholars", "special"]);
+    expect([...kinds].sort()).toEqual(["departmental", "honors", "llp", "scholars", "special"]);
+  });
+
+  it("has unique program ids and entry names across the whole registry", () => {
+    const ids = drafted.map((e) => e.program.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    const names = specialPrograms.map((e) => e.name);
+    expect(new Set(names).size).toBe(names.length);
   });
 
   it("gives every entry a source URL, and a reason when nothing is drafted", () => {
@@ -56,7 +63,7 @@ describe("special programs registry", () => {
     // Table rows: | Name | Kind | …
     const names = sources
       .split("\n")
-      .filter((l) => /^\| [^-|][^|]*\| (Scholars|Honors|Other LLP|Other special program) \|/.test(l))
+      .filter((l) => /^\| [^-|][^|]*\| (Scholars|Honors|Other LLP|Other special program|Departmental Honors) \|/.test(l))
       .map((l) => l.split("|")[1]!.trim());
     expect(names.length).toBeGreaterThan(0);
     expect(names.sort()).toEqual(specialPrograms.map((e) => e.name).sort());
