@@ -158,7 +158,21 @@ export function planReducer(plan: AdvisorPlan, action: PlanAction): AdvisorPlan 
       return { ...plan, terms: plan.terms.filter((t) => t.name !== action.name) };
     case "set-term-courses": {
       const ids = [...new Set(action.ids.map(normalizeId).filter(Boolean))];
-      return mapTerm(plan, action.term, (t) => ({ ...t, courses: ids.map((id) => t.courses.find((c) => c.id === id) ?? { id }) }));
+      const term = plan.terms.find((t) => t.name === action.term);
+      if (!term) {
+        // The schedule builder's term isn't a plan term yet (e.g. it's beyond the plan's
+        // eight terms): create it in sorted order, the same place `add-term` would put it.
+        if (!parseTerm(action.term)) return plan;
+        const names = sortTerms([...plan.terms.map((t) => t.name), action.term]);
+        const terms = names.map((name) =>
+          name === action.term ? { name, courses: ids.map((id) => ({ id })) } : plan.terms.find((t) => t.name === name)!,
+        );
+        return { ...plan, terms };
+      }
+      const courses = ids.map((id) => term.courses.find((c) => c.id === id) ?? { id });
+      // Same courses, same order: return the same plan so a no-op sync never triggers a save.
+      const unchanged = courses.length === term.courses.length && courses.every((c, i) => c === term.courses[i]);
+      return unchanged ? plan : mapTerm(plan, action.term, (t) => ({ ...t, courses }));
     }
     case "set-prior":
       return { ...plan, prior: action.prior };
