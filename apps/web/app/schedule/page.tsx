@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { ComingSoon } from "@/components/ComingSoon";
+import { Suspense } from "react";
+import { Page, SkeletonCard } from "@/components/ui";
+import { ScheduleBuilder } from "./ScheduleBuilder";
 
 export const metadata: Metadata = { title: "Schedule" };
 
+// The builder runs in the browser (schedule generation in a Web Worker) on pre-built,
+// CDN-cached course files from /api/schedule, so the server does no per-student work.
 export default function SchedulePage() {
   return (
-    <ComingSoon title="Schedule" headline="Schedule builder is coming">
-      Build your semester section by section with professor ratings and grade data for every course, see conflicts
-      instantly, and compare Plan A, B and C before registration.
-    </ComingSoon>
+    <Page title="Schedule" subtitle="Schedule builder">
+      <Suspense fallback={<SkeletonCard rows={4} />}>
+        <ScheduleBuilder />
+      </Suspense>
+    </Page>
   );
 }

@@ -51,7 +51,7 @@ function distributionOf(rows: GradeRow[]): Distribution {
 
 // ---- professor names ----
 
-const tokens = (name: string) =>
+export const nameTokens = (name: string) =>
   name
     .normalize("NFD")
     .replace(/\p{M}/gu, "")
@@ -61,7 +61,7 @@ const tokens = (name: string) =>
     .split(" ")
     .filter(Boolean);
 
-const isTba = (name: string) => /\bTBA\b/i.test(name) || name.trim() === "";
+export const isTba = (name: string) => /\bTBA\b/i.test(name) || name.trim() === "";
 
 function sameName(a: string[], b: string[]): boolean {
   if (a.length === 0 || b.length === 0) return false;
@@ -72,10 +72,10 @@ function sameName(a: string[], b: string[]): boolean {
 function matchNames(planetTerp: string[], soc: string[]): { rename: Map<string, string>; names: NameReport } {
   const rename = new Map<string, string>();
   const names: NameReport = { renamed: [], unmatched: [] };
-  const ptTokens = planetTerp.map((n) => [n, tokens(n)] as const);
+  const ptTokens = planetTerp.map((n) => [n, nameTokens(n)] as const);
   for (const s of [...new Set(soc)]) {
     if (isTba(s)) continue;
-    const st = tokens(s);
+    const st = nameTokens(s);
     const hits = ptTokens.filter(([n, t]) => !rename.has(n) && sameName(t, st)).map(([n]) => n);
     if (hits.length === 0) {
       const last = st.at(-1);

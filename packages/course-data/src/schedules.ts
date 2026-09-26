@@ -5,6 +5,9 @@
 
 import type { Meeting, Section } from "./soc.ts";
 
+// Type-only, so browser code can import the schedule API without the SOC scraper (cheerio).
+export type { Meeting, Section };
+
 function meetingsOverlap(a: Meeting, b: Meeting): boolean {
   if (a.start === null || a.end === null || b.start === null || b.end === null) return false;
   if (!a.days.some((d) => b.days.includes(d))) return false;
