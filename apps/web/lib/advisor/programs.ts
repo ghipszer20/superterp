@@ -45,9 +45,15 @@ export function toggleProgram(selected: string[], id: string): string[] {
 
 const chosen = (selected: string[]) => selected.map(option).filter((o): o is ProgramOption => o !== undefined);
 
+/** The chosen majors alone, without Gen Ed or the university rules -- what a what-if comparison
+ * calls "current" or "proposed" (its `layers` are always AUTOMATIC_PROGRAMS). */
+export function majorPrograms(selected: string[]): Program[] {
+  return chosen(selected).map((o) => o.program);
+}
+
 /** The chosen majors, then Gen Ed and the university rules. */
 export function auditedPrograms(selected: string[]): Program[] {
-  return [...chosen(selected).map((o) => o.program), ...AUTOMATIC_PROGRAMS];
+  return [...majorPrograms(selected), ...AUTOMATIC_PROGRAMS];
 }
 
 /**
