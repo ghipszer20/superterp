@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { connection } from "next/server";
-import { campusDate, campusMinutes } from "@superterp/campus-data";
+import { campusDate, campusMinutes, orderLibraries } from "@superterp/campus-data";
 import { LiveStatus } from "@/components/LiveStatus";
 import { RoomIcon } from "@/components/icons";
 import { Card, IconTile, Notice, Page, Row, Section, SkeletonCard, SourceError } from "@/components/ui";
@@ -42,7 +42,7 @@ async function LibraryList() {
   if (!res.ok) return <SourceError source="UMD Libraries" />;
 
   const groups = [
-    { title: "Libraries", items: res.data.filter((l) => l.kind === "library") },
+    { title: "Libraries", items: orderLibraries(res.data.filter((l) => l.kind === "library")) },
     { title: "Collections & spaces", items: res.data.filter((l) => l.kind === "department") },
   ];
 

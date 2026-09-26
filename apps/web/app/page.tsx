@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { connection } from "next/server";
-import { campusDate, campusMinutes, DINING_HALLS, recWellOnDate } from "@superterp/campus-data";
+import { campusDate, campusMinutes, DINING_HALLS, orderLibraries, recWellOnDate } from "@superterp/campus-data";
 import { BusIcon, DiningIcon, GymIcon, LibraryIcon, RoomIcon } from "@/components/icons";
 import { LiveStatus } from "@/components/LiveStatus";
 import { Card, IconTile, Page, Row, Section, SkeletonCard } from "@/components/ui";
@@ -92,7 +92,7 @@ async function Dining({ today, minutes }: { today: string; minutes: number }) {
 
 async function Libraries({ today, minutes }: { today: string; minutes: number }) {
   const res = await safe(getLibraryHours);
-  const libs = res.ok ? pickMain(res.data.filter((l) => l.kind === "library"), MAIN_LIBRARIES, (l) => l.name) : [];
+  const libs = res.ok ? orderLibraries(res.data.filter((l) => l.kind === "library")) : [];
   return (
     <Card>
       {libs.map((lib) => (
@@ -169,9 +169,8 @@ async function Buses({ today }: { today: string }) {
   );
 }
 
-// The places most students mean by "the library" and "the gym". Falls back
-// to feed order if UMD renames them.
-const MAIN_LIBRARIES = [/^McKeldin/i, /^STEM/i, /^Hornbake/i];
+// The places most students mean by "the gym". Falls back to feed order if
+// UMD renames them.
 // Matched against "<facility> | <area>".
 const MAIN_GYMS = [
   /^Eppley Recreation Center \| Eppley Recreation Center$/i,
