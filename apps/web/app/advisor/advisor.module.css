@@ -234,12 +234,14 @@
 /* ---------- Cards (checks, notices, audit, prior credit) ---------- */
 
 .card {
+  min-width: 0;
   margin-bottom: 14px;
   padding: 14px 16px;
   border: 0.5px solid var(--separator);
   border-radius: var(--r-md);
   background: var(--surface);
   box-shadow: var(--shadow);
+  overflow-wrap: anywhere;
 }
 
 .cardTitle {
@@ -829,23 +831,32 @@
   inset: 0;
   z-index: 50;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column;
+  /* Phone: the sheet stretches full width and sits at the bottom. */
+  align-items: stretch;
+  justify-content: flex-end;
   background: rgb(0 0 0 / 0.4);
   padding: 0;
 }
 
 @media (min-width: 700px) {
   .overlay {
+    /* Desktop: the sheet caps at max-width and centers both ways. */
     align-items: center;
+    justify-content: center;
     padding: 24px;
   }
 }
 
 .sheet {
-  width: 100%;
+  /* A viewport unit, not a percentage: percentage width on this flex item
+     was observed to resolve wider than the viewport in headless mobile
+     Chromium (position:fixed + inset:0 + display:flex ancestor), clipping
+     content off the right edge. vw isn't subject to that. */
+  width: 100vw;
+  min-width: 0;
   max-width: 560px;
-  max-height: 92dvh;
+  max-height: 92vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -913,6 +924,7 @@
   color: var(--text);
   font: var(--t-sub);
   margin-bottom: 8px;
+  overflow-wrap: anywhere;
 }
 
 .sheetFacts {
@@ -920,13 +932,16 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 0;
 }
 
 .sheetFact {
   display: flex;
   flex-direction: column;
   gap: 1px;
+  min-width: 0;
   font: var(--t-sub);
+  overflow-wrap: anywhere;
 }
 
 .sheetFact dt {
