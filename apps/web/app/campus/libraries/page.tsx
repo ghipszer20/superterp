@@ -6,6 +6,7 @@ import { LiveStatus } from "@/components/LiveStatus";
 import { RoomIcon } from "@/components/icons";
 import { Card, IconTile, Notice, Page, Row, Section, SkeletonCard, SourceError } from "@/components/ui";
 import { getLibraryHours, safe } from "@/lib/campus";
+import { compactLibraryName } from "@/lib/libraries";
 
 export const metadata: Metadata = { title: "Libraries" };
 
@@ -53,7 +54,7 @@ async function LibraryList() {
           {g.items.map((lib) => (
             <Row
               key={lib.id}
-              title={lib.name}
+              title={compactLibraryName(lib.name)}
               subtitle={<LiveStatus hours={lib.days[today]} initialMinutes={minutes} inline />}
               trailing={lib.days[today]?.kind === "ranges" ? lib.days[today].label : undefined}
               href={lib.url}

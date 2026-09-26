@@ -5,6 +5,7 @@ import { BusIcon, DiningIcon, GymIcon, LibraryIcon, RoomIcon } from "@/component
 import { LiveStatus } from "@/components/LiveStatus";
 import { Card, IconTile, Page, Row, Section, SkeletonCard } from "@/components/ui";
 import { getAllDiningMenus, getLibraryHours, getRecWellAreas, getRoutesOn, safe } from "@/lib/campus";
+import { compactLibraryName } from "@/lib/libraries";
 import { currentMealName, mealHighlights } from "@/lib/status";
 
 export default function TodayPage() {
@@ -104,7 +105,7 @@ async function Libraries({ today, minutes }: { today: string; minutes: number })
               <LibraryIcon />
             </IconTile>
           }
-          title={lib.name}
+          title={compactLibraryName(lib.name)}
           subtitle={<LiveStatus hours={lib.days[today]} initialMinutes={minutes} inline />}
         />
       ))}
