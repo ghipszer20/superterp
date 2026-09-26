@@ -31,6 +31,9 @@ export function parseHours(raw: string): DayHours {
   const label = raw.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
   if (label === "" || /^closed$/i.test(label)) return { kind: "closed", label: "Closed" };
   if (/^(open\s*)?24\s*(hours|hrs)$/i.test(label)) return { kind: "24h", label: "Open 24 hours" };
+  // RecWell's informal-rec columns (e.g. Pickleball) use a bare "--" for "no
+  // drop-in session scheduled today" -- treat that the same as "Closed".
+  if (/^[-–—]+$/.test(label)) return { kind: "closed", label: "Closed" };
 
   const ranges: TimeRange[] = [];
   for (const m of label.matchAll(RANGE)) {
