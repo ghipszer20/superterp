@@ -9,7 +9,15 @@ import { EmptyState, SkeletonCard } from "@/components/ui";
 import { timeScale } from "@/lib/schedule/calendar";
 import { DEFAULT_FILTERS, readQuery, relaxConstraint, relaxOptions, toScheduleFilters, writeQuery, type FilterState } from "@/lib/schedule/filters";
 import type { GenerateRequest } from "@/lib/schedule/generate";
-import { applyQueryCourses, otherPlannedTerms, planCourseIds, planTermName } from "@/lib/schedule/plan-link";
+import {
+  applyQueryCourses,
+  builderCourses,
+  describePlanDiff,
+  otherPlannedTerms,
+  planCourseDiff,
+  planCourseIds,
+  planTermName,
+} from "@/lib/schedule/plan-link";
 import {
   parseSaved,
   PLAN_IDS,
@@ -64,46 +72,33 @@ export function ScheduleBuilder() {
     [term],
   );
 
-  // The 4-year plan's term for this schedule term, if a plan exists ("There is one plan model.
-  // The builder for a term is a view of that term in the 4-year plan, plus the chosen sections.")
+  // The 4-year plan's term for this schedule term, if a plan exists at all (even one without a
+  // matching term yet — the builder is happy to grow it). Owner ruling: the builder "should give
+  // you the option to update the plan, but you'd have to confirm that. shouldn't be automatic."
   const advisorPlan = advisor?.plan ?? null;
   const termName = useMemo(() => (term ? planTermName(term) : null), [term]);
   const linked = advisorPlan !== null && termName !== null;
-  const hasPlanTerm = linked && advisorPlan!.terms.some((t) => t.name === termName);
+  const planCourses = useMemo(() => (linked ? planCourseIds(advisorPlan!, termName!) : []), [linked, advisorPlan, termName]);
 
-  // The one source of truth for which courses are in this term: the plan's term once it's
-  // linked, otherwise the builder's own saved list. Never both at once (derive, don't copy).
-  const courses = useMemo(
-    () => (hasPlanTerm ? planCourseIds(advisorPlan!, termName!) : (saved?.courses ?? [])),
-    [hasPlanTerm, advisorPlan, termName, saved],
-  );
+  // The builder's own course list: it follows the plan's list (including edits made in the
+  // Advisor tab) until the student's own list first differs from it — see builderCourses.
+  // Section picks are never part of this and never touch the plan.
+  const ownCourses = saved?.courses ?? null;
+  const courses = useMemo(() => (linked ? builderCourses(ownCourses, planCourses) : (ownCourses ?? [])), [linked, ownCourses, planCourses]);
   const filters = saved?.filters ?? DEFAULT_FILTERS;
 
-  const setCourses = useCallback(
-    (next: string[]) => {
-      if (linked && termName) dispatchPlan({ type: "set-term-courses", term: termName, ids: next });
-      else update((s) => withCourses(s, next));
-    },
-    [linked, termName, update],
-  );
+  const setCourses = useCallback((next: string[]) => update((s) => withCourses(s, next)), [update]);
 
-  // A plan just appeared (or gained a term) for a term the builder already had local courses
-  // in: fold them into the plan term once, then clear the local copy so the plan becomes the
-  // one source of truth going forward (a course later removed in the Advisor won't come back).
-  useEffect(() => {
-    if (!termName || advisor === null || !advisorPlan || hasPlanTerm) return;
-    if (!saved || saved.courses.length === 0) return;
-    dispatchPlan({ type: "set-term-courses", term: termName, ids: saved.courses });
-    update((s) => withCourses(s, []));
-  }, [termName, advisor, advisorPlan, hasPlanTerm, saved, update]);
-
-  // Once linked, keep the builder's local cache (and the section picks it prunes) in step with
-  // the plan — it may have changed courses for this term from the Advisor tab.
-  useEffect(() => {
-    if (!hasPlanTerm || !saved) return;
-    if (saved.courses.join() === courses.join()) return;
-    update((s) => withCourses(s, courses));
-  }, [hasPlanTerm, saved, courses, update]);
+  // What "Update plan" would change, or null while the builder is following the plan (no local
+  // override diverges from it yet). Owner ruling: only that explicit click ever writes the plan.
+  const planDiff = useMemo(() => (linked ? planCourseDiff(ownCourses, planCourses) : null), [linked, ownCourses, planCourses]);
+  const [dismissedDiff, setDismissedDiff] = useState<string | null>(null);
+  const diffText = planDiff ? describePlanDiff(planDiff) : null;
+  const showDiffPrompt = diffText !== null && diffText !== dismissedDiff;
+  const updatePlan = () => {
+    if (termName) dispatchPlan({ type: "set-term-courses", term: termName, ids: courses });
+  };
+  const dismissDiff = () => setDismissedDiff(diffText);
 
   // A link like ?c=CMSC351,STAT400&off=F sets up the builder once; afterwards the URL follows the state.
   const fromUrl = useRef(false);
@@ -183,8 +178,9 @@ export function ScheduleBuilder() {
   }, [saved, sectionByKey, courses]);
 
   // A course present in this linked term's plan, and the same course's other plan terms, for
-  // the picker's "From your 4-year plan" / "Also planned for …" notes.
-  const fromPlan = useMemo(() => (hasPlanTerm ? new Set(courses) : new Set<string>()), [hasPlanTerm, courses]);
+  // the picker's "From your 4-year plan" / "Also planned for …" notes. Only courses the plan
+  // itself has count — once the builder diverges, a newly added course isn't "from the plan".
+  const fromPlan = useMemo(() => new Set(courses.filter((id) => planCourses.includes(id))), [courses, planCourses]);
   const elsewhere = useMemo(() => {
     const m = new Map<string, string[]>();
     if (!linked || !termName || !advisorPlan) return m;
@@ -282,6 +278,22 @@ export function ScheduleBuilder() {
       </div>
 
       {view.kind !== "editor" ? picker : null}
+
+      {showDiffPrompt && planDiff && termName && view.kind !== "editor" ? (
+        <div className={styles.planPrompt} role="status">
+          <p>
+            Your 4-year plan has different courses for {termName}. Update your plan? {describePlanDiff(planDiff)}
+          </p>
+          <div className={styles.planPromptActions}>
+            <button type="button" className={styles.planPromptUpdate} onClick={updatePlan}>
+              Update plan
+            </button>
+            <button type="button" className={styles.linkButton} onClick={dismissDiff}>
+              Not now
+            </button>
+          </div>
+        </div>
+      ) : null}
 
       {courses.length === 0 && view.kind !== "editor" ? (
         <div className={styles.panel}>

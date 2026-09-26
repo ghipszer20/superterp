@@ -1,8 +1,10 @@
 // Links the schedule builder's term (a Testudo id, e.g. "202701") to the student's 4-year plan
-// (a term name, e.g. "Spring 2027"). Owner ruling: "There is one plan model. The builder for a
-// term is a view of that term in the 4-year plan, plus the chosen sections." So once a plan
-// exists, the plan's course list for the matching term IS the builder's course list — derived,
-// never copied — and sections stay builder-only (saved.ts).
+// (a term name, e.g. "Spring 2027"). Owner ruling: the builder "should give you the option to
+// update the plan, but you'd have to confirm that. shouldn't be automatic." So the builder keeps
+// its own course list (SavedSchedule.courses, null until the student overrides it) and only
+// *reads* the plan: it follows the plan's course list for the matching term until the student's
+// own list first differs, and only an explicit "Update plan" click ever writes back to the plan.
+// Sections stay builder-only regardless (saved.ts).
 
 import { termCourseIds, type AdvisorPlan } from "../advisor/plan-state";
 import { sortTerms, termFromMatriculationId } from "../advisor/terms";
@@ -29,4 +31,39 @@ export function otherPlannedTerms(plan: AdvisorPlan, termName: string, courseId:
  */
 export function applyQueryCourses(current: string[], query: string[], linked: boolean): string[] {
   return linked ? [...new Set([...current, ...query])] : [...query];
+}
+
+const sameSet = (a: string[], b: string[]): boolean => a.length === b.length && a.every((id) => b.includes(id));
+
+/**
+ * The builder's course list to show: `own` (the student's local override) once it differs from
+ * the plan term's courses, otherwise the plan's own list — so the builder "follows" the plan
+ * (including edits made in the Advisor tab) until the student's own list first diverges from it.
+ * `own` is null before the student has ever touched this term's course list.
+ */
+export function builderCourses(own: string[] | null, planCourses: string[]): string[] {
+  return own === null || sameSet(own, planCourses) ? planCourses : own;
+}
+
+export type PlanCourseDiff = { adds: string[]; removes: string[] };
+
+/**
+ * What clicking "Update plan" would change: the plan term's courses replaced by `own`'s — or
+ * null while the builder is still following the plan (own is null, or already matches it).
+ * Owner ruling: never automatic; this only ever feeds a confirmation prompt.
+ */
+export function planCourseDiff(own: string[] | null, planCourses: string[]): PlanCourseDiff | null {
+  if (own === null || sameSet(own, planCourses)) return null;
+  return {
+    adds: own.filter((id) => !planCourses.includes(id)),
+    removes: planCourses.filter((id) => !own.includes(id)),
+  };
+}
+
+/** "Adds CMSC216 · Removes PHIL140" (either half omitted when empty). */
+export function describePlanDiff(diff: PlanCourseDiff): string {
+  const parts: string[] = [];
+  if (diff.adds.length) parts.push(`Adds ${diff.adds.join(", ")}`);
+  if (diff.removes.length) parts.push(`Removes ${diff.removes.join(", ")}`);
+  return parts.join(" · ");
 }

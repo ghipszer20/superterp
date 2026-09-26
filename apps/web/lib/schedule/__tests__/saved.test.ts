@@ -3,11 +3,11 @@ import { DEFAULT_FILTERS } from "../filters";
 import { affectsPlan, emptySaved, parseSaved, savePlan, serializeSaved, setOwnSection, withCourses } from "../saved";
 
 describe("saved schedule (per device)", () => {
-  it("starts empty for the term", () => {
+  it("starts empty for the term, following the plan (no local course list yet)", () => {
     expect(emptySaved("202701")).toEqual({
       v: 1,
       term: "202701",
-      courses: [],
+      courses: null,
       filters: DEFAULT_FILTERS,
       plans: {},
       own: {},
@@ -30,6 +30,16 @@ describe("saved schedule (per device)", () => {
     expect(parseSaved(serializeSaved(old), "202701")).toEqual(emptySaved("202701"));
   });
 
+  it("round-trips a builder that's still following the plan (courses: null)", () => {
+    expect(parseSaved(serializeSaved(emptySaved("202701")), "202701")).toEqual(emptySaved("202701"));
+  });
+
+  it("treats a course list once it's set as the student's own override, even an emptied one", () => {
+    const overridden = withCourses(emptySaved("202701"), []);
+    expect(overridden.courses).toEqual([]);
+    expect(parseSaved(serializeSaved(overridden), "202701")).toEqual(overridden);
+  });
+
   it("drops a removed course's sections from every plan and from Build my own", () => {
     let s = withCourses(emptySaved("202701"), ["CMSC351", "STAT400"]);
     s = savePlan(s, "A", { CMSC351: "0101", STAT400: "0111" });
@@ -47,6 +57,14 @@ describe("saved schedule (per device)", () => {
 
 describe("affectsPlan (only course changes reach the 4-year plan)", () => {
   const base = withCourses(emptySaved("202701"), ["CMSC351", "STAT400"]);
+
+  it("is false while both are still following the plan (courses: null)", () => {
+    expect(affectsPlan(emptySaved("202701"), emptySaved("202701"))).toBe(false);
+  });
+
+  it("is true when the student sets a first override", () => {
+    expect(affectsPlan(emptySaved("202701"), base)).toBe(true);
+  });
 
   it("is true when a course is added or removed", () => {
     expect(affectsPlan(base, withCourses(base, ["CMSC351", "STAT400", "ENGL394"]))).toBe(true);
