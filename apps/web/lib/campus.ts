@@ -28,6 +28,7 @@ import {
   fetchShuttleFeed,
   nextDepartures,
   parseGtfs,
+  routeMap,
   routesOn,
   studyRoomCategories,
   type DiningMenu,
@@ -35,6 +36,8 @@ import {
   type LibraryHours,
   type RecWellArea,
   type RoomAvailability,
+  type RouteWithMap,
+  type Stop,
 } from "@superterp/campus-data";
 import {
   defaultSnapshotDir,
@@ -203,6 +206,22 @@ export async function getRoutesOn(isoDate: string) {
     routes: routesOn(f, isoDate).sort((a, b) => a.shortName.localeCompare(b.shortName, "en", { numeric: true })),
     validUntil: f.validUntil,
   };
+}
+
+export type MapStop = { id: string; name: string; lat: number; lon: number };
+export type CampusMap = { routes: RouteWithMap[]; stops: MapStop[]; stopRoutes: Record<string, string[]> };
+
+/** Route lines and stops for the Transport map, for the routes running that day. */
+export async function getCampusMap(isoDate: string): Promise<CampusMap> {
+  "use cache";
+  cacheLife({ stale: 3600, revalidate: 86400, expire: 2 * 86400 });
+  const f = await loadFeed();
+  const { routes, stopRoutes } = routeMap(f, isoDate);
+  const stops = Object.keys(stopRoutes)
+    .map((id) => f.stops.get(id))
+    .filter((s): s is Stop => Boolean(s))
+    .map(({ id, name, lat, lon }) => ({ id, name, lat, lon }));
+  return { routes, stops, stopRoutes };
 }
 
 export async function getDepartures(stopIds: string[], isoDate: string, fromMinutes: number, perStop = 4) {

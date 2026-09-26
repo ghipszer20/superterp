@@ -18,7 +18,8 @@ const nextConfig: NextConfig = {
   // Keep old links working after the tab restructure.
   async redirects() {
     return [
-      { source: "/campus/buses", destination: "/campus/transit", permanent: true },
+      { source: "/campus/buses", destination: "/campus/transport", permanent: true },
+      { source: "/campus/transit", destination: "/campus/transport", permanent: true },
       { source: "/plan", destination: "/advisor", permanent: true },
       { source: "/explore", destination: "/schedule", permanent: true },
     ];
