@@ -108,7 +108,7 @@ function declareBy(plan: Plan): string {
  * requirement counted in credits is converted at 3 credits a course. Overlay requirements (which
  * reuse courses from other requirements) count only when they need more than the rest together.
  */
-function shortfall(program: Program, result: AuditResult, courses: StudentCourse[]): { count: number; missing: string[] } {
+export function shortfall(program: Program, result: AuditResult, courses: StudentCourse[]): { count: number; missing: string[] } {
   const credits = new Map(courses.map((c) => [c.id, c.credits]));
   const have = new Set(courses.map((c) => c.id));
   let own = 0;
