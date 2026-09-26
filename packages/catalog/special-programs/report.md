@@ -15,10 +15,10 @@ interpretation quoted in `reviewNotes`; **none** = no academic requirements are 
 | Honors | 8 | 8 | 0 |
 | Other LLP | 6 | 5 | 1 |
 | Other special program | 8 | 2 | 6 |
-| Departmental Honors | 18 | 17 | 1 |
-| **Total** | **53** | **45** | **8** |
+| Departmental Honors | 22 | 20 | 2 |
+| **Total** | **57** | **48** | **9** |
 
-Drafted: **185** requirements and **284** review notes (163 manual, 121 check).
+Drafted: **194** requirements and **298** review notes (172 manual, 126 check).
 Manual notes are rules the audit can't check (GPA, residence, attendance, approvals); check notes are interpretations to confirm.
 
 ## Programs
@@ -60,14 +60,18 @@ Manual notes are rules the audit can't check (GPA, residence, attendance, approv
 | Army ROTC | Other special program | none: Commissioning program; its academic part (ARMY301, ARMY302, ARMY401, ARMY402 and military history) is the catalog's Army Leadership Studies minor, which the catalog pipeline drafts. | 0 | 0 | 0 | 0 |
 | Naval ROTC | Other special program | none: Commissioning program; the catalog gives sample plans ("Navy Option students typically will take") and requirement categories (calculus, physics, English) rather than a course list. The Naval Science minor is drafted by the catalog pipeline. | 0 | 0 | 0 | 0 |
 | C.D. Mote Jr. Incentive Awards Program | Other special program | none: A scholarship and mentoring program with no academic course requirements. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Aerospace Engineering | Departmental Honors | hand | 4 | 4 | 3 | 1 |
 | Departmental Honors: American Studies | Departmental Honors | hand | 1 | 4 | 3 | 1 |
 | Departmental Honors: Anthropology | Departmental Honors | hand | 3 | 4 | 3 | 1 |
 | Departmental Honors: Art | Departmental Honors | hand | 2 | 4 | 3 | 1 |
 | Departmental Honors: Art History & Archaeology | Departmental Honors | hand | 2 | 3 | 2 | 1 |
+| Departmental Honors: Bioengineering | Departmental Honors | hand | 2 | 5 | 3 | 2 |
 | Departmental Honors: Biology | Departmental Honors | hand | 2 | 4 | 2 | 2 |
 | Departmental Honors: Cell Biology & Molecular Genetics | Departmental Honors | hand | 2 | 5 | 3 | 2 |
 | Departmental Honors: Chemistry and Biochemistry | Departmental Honors | hand | 2 | 4 | 2 | 2 |
 | Departmental Honors: Communication | Departmental Honors | hand | 1 | 5 | 4 | 1 |
+| Departmental Honors: Engineering (Clark School) | Departmental Honors | hand | 3 | 5 | 3 | 2 |
+| Departmental Honors: Electrical and Computer Engineering | Departmental Honors | none: ECE's own honors page (ece.umd.edu/undergraduate/current-students/honors-program) returns HTTP 403; the Clark School's directory of departmental honors contacts lists "Electrical and Computer Engineering" separately from "Engineering," but ECE's undergraduate page links only to the Clark School's shared Engineering Honors Program (drafted as "Departmental Honors: Engineering (Clark School)"), which lists ENEE499 as ECE's research-course option. | 0 | 0 | 0 | 0 |
 | Departmental Honors: English | Departmental Honors | hand | 4 | 5 | 3 | 2 |
 | Departmental Honors: Entomology | Departmental Honors | hand | 1 | 4 | 3 | 1 |
 | Departmental Honors: Geology | Departmental Honors | hand | 3 | 5 | 3 | 2 |

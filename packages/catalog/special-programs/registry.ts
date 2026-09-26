@@ -12,14 +12,17 @@ import { honorsHumanities } from "./honors-humanities-2026-27.ts";
 import { honorsIbh } from "./honors-ibh-2026-27.ts";
 import { honorsIls } from "./honors-ils-2026-27.ts";
 import { honorsUh } from "./honors-uh-2026-27.ts";
+import { deptAero } from "./dept-aero-2026-27.ts";
 import { deptAmst } from "./dept-amst-2026-27.ts";
 import { deptAnth } from "./dept-anth-2026-27.ts";
 import { deptArt } from "./dept-art-2026-27.ts";
 import { deptArth } from "./dept-arth-2026-27.ts";
+import { deptBioe } from "./dept-bioe-2026-27.ts";
 import { deptBiol } from "./dept-biol-2026-27.ts";
 import { deptCbmg } from "./dept-cbmg-2026-27.ts";
 import { deptChem } from "./dept-chem-2026-27.ts";
 import { deptComm } from "./dept-comm-2026-27.ts";
+import { deptEng } from "./dept-eng-2026-27.ts";
 import { deptEngl } from "./dept-engl-2026-27.ts";
 import { deptEntm } from "./dept-entm-2026-27.ts";
 import { deptGeol } from "./dept-geol-2026-27.ts";
@@ -141,14 +144,23 @@ export const specialPrograms: SpecialEntry[] = [
   ),
 
   // Departmental honors programs (see honors.umd.edu/academics/departmental-honors/ for the department directory)
+  hand("departmental", deptAero),
   hand("departmental", deptAmst),
   hand("departmental", deptAnth),
   hand("departmental", deptArt),
   hand("departmental", deptArth),
+  hand("departmental", deptBioe),
   hand("departmental", deptBiol),
   hand("departmental", deptCbmg),
   hand("departmental", deptChem),
   hand("departmental", deptComm),
+  hand("departmental", deptEng),
+  none(
+    "departmental",
+    "Departmental Honors: Electrical and Computer Engineering",
+    "https://www.eng.umd.edu/current/honors-program",
+    "ECE's own honors page (ece.umd.edu/undergraduate/current-students/honors-program) returns HTTP 403; the Clark School's directory of departmental honors contacts lists \"Electrical and Computer Engineering\" separately from \"Engineering,\" but ECE's undergraduate page links only to the Clark School's shared Engineering Honors Program (drafted as \"Departmental Honors: Engineering (Clark School)\"), which lists ENEE499 as ECE's research-course option.",
+  ),
   hand("departmental", deptEngl),
   hand("departmental", deptEntm),
   hand("departmental", deptGeol),
