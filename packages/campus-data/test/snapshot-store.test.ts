@@ -63,6 +63,33 @@ describe("FileSnapshotStore", () => {
     await expect(store.put("../evil", { updatedAt: "x", data: 1 })).rejects.toThrow(/invalid snapshot key/i);
     await expect(store.get("a//b")).rejects.toThrow(/invalid snapshot key/i);
   });
+
+  it("lists keys stored under a prefix, without the .json suffix", async () => {
+    const store = new FileSnapshotStore(dir);
+    await store.put("rooms/2026-09-25/6745-23066", { updatedAt: "x", data: 1 });
+    await store.put("rooms/2026-09-26/6745-23066", { updatedAt: "x", data: 1 });
+    await store.put("dining/2026-09-25/19", { updatedAt: "x", data: 1 });
+    expect((await store.list("rooms")).sort()).toEqual(["rooms/2026-09-25/6745-23066", "rooms/2026-09-26/6745-23066"]);
+    expect(await store.list("dining")).toEqual(["dining/2026-09-25/19"]);
+  });
+
+  it("lists an empty array for a prefix with nothing stored", async () => {
+    const store = new FileSnapshotStore(dir);
+    expect(await store.list("rooms")).toEqual([]);
+  });
+
+  it("deletes a key so it reads back as missing", async () => {
+    const store = new FileSnapshotStore(dir);
+    await store.put("dining/2026-09-25/19", { updatedAt: "x", data: 1 });
+    await store.delete("dining/2026-09-25/19");
+    expect(await store.get("dining/2026-09-25/19")).toBeNull();
+    expect(await store.list("dining")).toEqual([]);
+  });
+
+  it("deleting a key that was never written does not throw", async () => {
+    const store = new FileSnapshotStore(dir);
+    await expect(store.delete("dining/2026-09-25/19")).resolves.toBeUndefined();
+  });
 });
 
 describe("defaultSnapshotDir", () => {
