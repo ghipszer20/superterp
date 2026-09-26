@@ -1,0 +1,296 @@
+"use client";
+
+import type { PlanIssue } from "@superterp/plan/check";
+import { useMemo, useState } from "react";
+import { courseKey, type IssueGroups, type Severity } from "@/lib/advisor/issues";
+import type { AdvisorPlan, PlanTermState } from "@/lib/advisor/plan-state";
+import type { PriorCreditResult } from "@/lib/advisor/prior-credit";
+import { searchCourses } from "@/lib/advisor/search";
+import { academicYears, parseTerm } from "@/lib/advisor/terms";
+import type { AnalysisState, OpenCourse } from "./AdvisorApp";
+import { ChecksPanel, Notices } from "./ChecksPanel";
+import type { CatalogState } from "./data";
+import { dispatchPlan, openView } from "./store";
+import styles from "./advisor.module.css";
+
+type Checked = { issues: PlanIssue[]; groups: IssueGroups; ms: number } | null;
+
+export function PlanView({
+  plan,
+  catalog,
+  checked,
+  analysis,
+  prior,
+  onOpenCourse,
+}: {
+  plan: AdvisorPlan;
+  catalog: CatalogState;
+  checked: Checked;
+  analysis: AnalysisState;
+  prior: PriorCreditResult;
+  onOpenCourse: (c: OpenCourse) => void;
+}) {
+  const years = academicYears(plan.terms.map((t) => t.name));
+  const byName = new Map(plan.terms.map((t) => [t.name, t]));
+  const ready = catalog.status === "ready" ? catalog : null;
+  const creditsOf = (id: string, own?: number) => own ?? ready?.catalog.get(id)?.credits.min ?? null;
+  const total = plan.terms.reduce((t, term) => t + term.courses.reduce((s, c) => s + (creditsOf(c.id, c.credits) ?? 0), 0), 0);
+  const lastTerm = plan.terms.at(-1)?.name;
+
+  return (
+    <div className={styles.planLayout}>
+      <div className={styles.planSide}>
+        <Notices analysis={analysis} />
+        <ChecksPanel checked={checked} catalogStatus={catalog.status} onOpenCourse={onOpenCourse} />
+      </div>
+
+      <div className={styles.planMain}>
+        <div className={styles.summaryBar}>
+          <span>
+            <strong>{total + prior.totalCredits}</strong> credits planned
+            {prior.totalCredits > 0 ? ` (${prior.totalCredits} from prior credit)` : ""}
+          </span>
+          <button type="button" className={styles.linkButton} onClick={() => openView("credit")}>
+            {prior.entries.length ? "Edit prior credit" : "Add AP, IB or college credit"}
+          </button>
+        </div>
+
+        {years.map((year, i) => (
+          <section key={year.label} className={styles.year} aria-label={`Year ${i + 1}, ${year.label}`}>
+            <h2 className={styles.yearTitle}>
+              Year {i + 1} <span>{year.label}</span>
+            </h2>
+            <div className={styles.terms}>
+              {year.terms.map((name) => (
+                <TermColumn
+                  key={name}
+                  term={byName.get(name)!}
+                  catalog={catalog}
+                  groups={checked?.groups ?? null}
+                  creditsOf={creditsOf}
+                  onOpenCourse={onOpenCourse}
+                />
+              ))}
+            </div>
+            <OptionalTerms yearTerms={year.terms} />
+          </section>
+        ))}
+        {lastTerm ? (
+          <button type="button" className={styles.addTerm} onClick={() => dispatchPlan({ type: "add-term", name: nextMainTerm(lastTerm) })}>
+            + Add {nextMainTerm(lastTerm)}
+          </button>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+function nextMainTerm(last: string): string {
+  const t = parseTerm(last)!;
+  return t.season === "Fall" ? `Spring ${t.year + 1}` : `Fall ${t.year}`;
+}
+
+/** "+ Winter" and "+ Summer" for an academic year that doesn't have them. */
+function OptionalTerms({ yearTerms }: { yearTerms: string[] }) {
+  const fall = yearTerms.map(parseTerm).find((t) => t?.season === "Fall");
+  const spring = yearTerms.map(parseTerm).find((t) => t?.season === "Spring");
+  const next = fall ? fall.year + 1 : spring?.year;
+  if (next === undefined) return null;
+  const missing = [
+    ...(fall && !yearTerms.includes(`Winter ${next}`) ? [`Winter ${next}`] : []),
+    ...(!yearTerms.includes(`Summer ${next}`) ? [`Summer ${next}`] : []),
+  ];
+  if (missing.length === 0) return null;
+  return (
+    <div className={styles.optionalTerms}>
+      {missing.map((name) => (
+        <button key={name} type="button" className={styles.smallButton} onClick={() => dispatchPlan({ type: "add-term", name })}>
+          + {name}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+const DRAG_TYPE = "application/x-superterp-course";
+
+function TermColumn({
+  term,
+  catalog,
+  groups,
+  creditsOf,
+  onOpenCourse,
+}: {
+  term: PlanTermState;
+  catalog: CatalogState;
+  groups: IssueGroups | null;
+  creditsOf: (id: string, own?: number) => number | null;
+  onOpenCourse: (c: OpenCourse) => void;
+}) {
+  const [over, setOver] = useState(false);
+  const season = parseTerm(term.name)?.season;
+  const optional = season === "Winter" || season === "Summer";
+  const credits = term.courses.reduce((t, c) => t + (creditsOf(c.id, c.credits) ?? 0), 0);
+  const unknown = term.courses.some((c) => creditsOf(c.id, c.credits) === null);
+  const termIssues = groups?.byTerm.get(term.name) ?? [];
+  const ready = catalog.status === "ready" ? catalog : null;
+
+  const drop = (e: React.DragEvent, index?: number) => {
+    const raw = e.dataTransfer.getData(DRAG_TYPE);
+    if (!raw) return;
+    e.preventDefault();
+    e.stopPropagation();
+    setOver(false);
+    const { id, from } = JSON.parse(raw) as { id: string; from: string };
+    dispatchPlan({ type: "move-course", id, from, to: term.name, ...(index !== undefined ? { index } : {}) });
+  };
+
+  return (
+    <div
+      className={styles.term}
+      data-optional={optional || undefined}
+      data-over={over || undefined}
+      onDragOver={(e) => {
+        if (e.dataTransfer.types.includes(DRAG_TYPE)) {
+          e.preventDefault();
+          setOver(true);
+        }
+      }}
+      onDragLeave={() => setOver(false)}
+      onDrop={(e) => drop(e)}
+    >
+      <div className={styles.termHead}>
+        <h3 className={styles.termName}>{term.name}</h3>
+        <span className={styles.termCredits} data-severity={termIssues.some((i) => i.kind === "credit-load") ? "error" : undefined}>
+          {credits}
+          {unknown ? "+" : ""} cr
+        </span>
+        {optional ? (
+          <button
+            type="button"
+            className={styles.iconButton}
+            aria-label={`Remove ${term.name}`}
+            onClick={() => {
+              if (term.courses.length === 0 || confirm(`Remove ${term.name} and its ${term.courses.length} course(s)?`))
+                dispatchPlan({ type: "remove-term", name: term.name });
+            }}
+          >
+            ×
+          </button>
+        ) : null}
+      </div>
+      {termIssues.map((issue, i) => (
+        <p key={i} className={styles.inlineIssue} data-severity={issue.severity}>
+          {issue.message}
+        </p>
+      ))}
+      <ul className={styles.courseList}>
+        {term.courses.map((c, index) => {
+          const key = courseKey(term.name, c.id);
+          const issues = groups?.byCourse.get(key) ?? [];
+          const worst: Severity | undefined = groups?.worstByCourse.get(key);
+          const info = ready?.catalog.get(c.id);
+          const cr = creditsOf(c.id, c.credits);
+          return (
+            <li
+              key={c.id}
+              className={styles.courseCard}
+              data-severity={worst}
+              draggable
+              onDragStart={(e) => {
+                e.dataTransfer.setData(DRAG_TYPE, JSON.stringify({ id: c.id, from: term.name }));
+                e.dataTransfer.effectAllowed = "move";
+              }}
+              onDrop={(e) => drop(e, index)}
+            >
+              <button type="button" className={styles.courseButton} onClick={() => onOpenCourse({ id: c.id, term: term.name })}>
+                <span className={styles.courseTop}>
+                  <span className={styles.courseId}>{c.id}</span>
+                  <span className={styles.courseCredits}>{cr === null ? "?" : cr} cr</span>
+                </span>
+                <span className={styles.courseTitle}>{info?.title ?? (ready ? "Not in SuperTerp's course data" : " ")}</span>
+                {issues.length > 0 ? (
+                  <span className={styles.courseIssue} data-severity={worst}>
+                    {issues[0]!.message}
+                    {issues.length > 1 ? ` (+${issues.length - 1} more)` : ""}
+                  </span>
+                ) : null}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+      <AddCourse term={term} catalog={catalog} />
+    </div>
+  );
+}
+
+function AddCourse({ term, catalog }: { term: PlanTermState; catalog: CatalogState }) {
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const list = catalog.status === "ready" ? catalog.list : null;
+  const results = useMemo(() => (list ? searchCourses(list, query, 8) : []), [list, query]);
+  const typedId = query.replace(/\s+/g, "").toUpperCase();
+  const looksLikeId = /^[A-Z]{4}\d{3}[A-Z]?$/.test(typedId) && !results.some((r) => r.id === typedId);
+
+  const add = (id: string) => {
+    dispatchPlan({ type: "add-course", term: term.name, id });
+    setQuery("");
+  };
+
+  if (!open) {
+    return (
+      <button type="button" className={styles.addCourse} onClick={() => setOpen(true)}>
+        + Add course
+      </button>
+    );
+  }
+  return (
+    <div className={styles.search}>
+      <input
+        className={styles.input}
+        autoFocus
+        value={query}
+        placeholder="Course or title, e.g. CMSC351"
+        aria-label={`Add a course to ${term.name}`}
+        onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Escape") setOpen(false);
+          if (e.key === "Enter") {
+            e.preventDefault();
+            if (results[0]) add(results[0].id);
+            else if (looksLikeId) add(typedId);
+          }
+        }}
+      />
+      {query.trim() ? (
+        <ul className={styles.results} role="listbox" aria-label="Matching courses">
+          {results.map((r) => {
+            const inTerm = term.courses.some((c) => c.id === r.id);
+            return (
+              <li key={r.id}>
+                <button type="button" className={styles.result} disabled={inTerm} onClick={() => add(r.id)}>
+                  <span className={styles.courseId}>{r.id}</span>
+                  <span className={styles.resultTitle}>{r.title}</span>
+                  <span className={styles.courseCredits}>{inTerm ? "Added" : `${r.credits} cr`}</span>
+                </button>
+              </li>
+            );
+          })}
+          {looksLikeId ? (
+            <li>
+              <button type="button" className={styles.result} onClick={() => add(typedId)}>
+                <span className={styles.courseId}>{typedId}</span>
+                <span className={styles.resultTitle}>Add anyway (not in this term&apos;s Schedule of Classes)</span>
+              </button>
+            </li>
+          ) : null}
+          {results.length === 0 && !looksLikeId ? <li className={styles.noResults}>No matching courses</li> : null}
+        </ul>
+      ) : null}
+      <button type="button" className={styles.linkButton} onClick={() => setOpen(false)}>
+        Done
+      </button>
+    </div>
+  );
+}
