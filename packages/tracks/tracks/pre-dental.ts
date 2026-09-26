@@ -3,16 +3,15 @@
 
 import { HPAO_DISCLAIMER, type Track } from "../src/types.ts";
 import {
-  CALCULUS,
   COMMITTEE_MILESTONES,
   HPAO,
   MAPPING_NOTES,
   biochem,
+  collegeAlgebraOrCalculus,
   english,
   genChem1,
   genChem2,
   introBio,
-  oneOf,
   organicChem,
   physics,
   statistics,
@@ -35,12 +34,7 @@ export const preDental: Track = {
     biochem("Biochemistry"),
     introBio("8-12 credits of Biology with labs", onDat),
     upperBioLab("8-12 credits of Biology with labs"),
-    {
-      requirement: oneOf("math", "College algebra or calculus", ["MATH113", "MATH115", ...CALCULUS]),
-      source: "College Algebra or Calculus",
-      examCredit: "accepted",
-      examCreditAdvice: "HPAO: schools that require math accept AP/IB credit for it; don't repeat the course.",
-    },
+    collegeAlgebraOrCalculus("College Algebra or Calculus"),
     statistics("Statistics"),
     physics("8 Credits of Physics with labs"),
     english("6 Credits of English"),

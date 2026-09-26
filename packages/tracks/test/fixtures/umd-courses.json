@@ -1,1 +1,326 @@
-{"courses": {}}
+{
+  "source": "Built from packages/course-data/.cache/soc-202701.json (Spring 2027 Schedule of Classes) in the main checkout, the only Schedule of Classes snapshot cached anywhere in this repo (see SOURCES.md and MAPPING_NOTES.fixture). Limited to the course ids @superterp/tracks actually names. PHIL170 is the one exception (see its own note).",
+  "courses": {
+    "AREC240": {
+      "title": "Introduction to Economics and the Environment",
+      "credits": 4
+    },
+    "BCHM461": {
+      "title": "Biochemistry I",
+      "credits": 3
+    },
+    "BCHM463": {
+      "title": "Biochemistry of Physiology",
+      "credits": 3
+    },
+    "BIOM301": {
+      "title": "Introduction to Biometrics",
+      "credits": 3
+    },
+    "BMGT110": {
+      "title": "Introduction to the Business Value Chain",
+      "credits": 3
+    },
+    "BMGT220": {
+      "title": "Principles of Accounting I",
+      "credits": 3
+    },
+    "BMGT380": {
+      "title": "Business Law I",
+      "credits": 3
+    },
+    "BSCI160": {
+      "title": "Principles of Ecology and Evolution",
+      "credits": 3
+    },
+    "BSCI170": {
+      "title": "Principles of Molecular & Cellular Biology",
+      "credits": 3
+    },
+    "BSCI180": {
+      "title": "Principles of Biology Laboratory",
+      "credits": 1
+    },
+    "BSCI201": {
+      "title": "Human Anatomy and Physiology I",
+      "credits": 4
+    },
+    "BSCI202": {
+      "title": "Human Anatomy and Physiology II",
+      "credits": 4
+    },
+    "BSCI222": {
+      "title": "Principles of Genetics",
+      "credits": 4
+    },
+    "BSCI223": {
+      "title": "General Microbiology",
+      "credits": 4
+    },
+    "BSCI283": {
+      "title": "Principles of Microbiology",
+      "credits": 4
+    },
+    "BSCI331": {
+      "title": "Cell Biology and Physiology",
+      "credits": 3
+    },
+    "BSCI332": {
+      "title": "Cell Biology and Physiology Laboratory",
+      "credits": 1
+    },
+    "CCJS100": {
+      "title": "Introduction to Criminal Justice",
+      "credits": 3
+    },
+    "CCJS105": {
+      "title": "Introduction to Criminology",
+      "credits": 3
+    },
+    "CCJS230": {
+      "title": "Criminal Law in Action",
+      "credits": 3
+    },
+    "CHEM131": {
+      "title": "Chemistry I - Fundamentals of General Chemistry",
+      "credits": 3
+    },
+    "CHEM132": {
+      "title": "General Chemistry I Laboratory",
+      "credits": 1
+    },
+    "CHEM135": {
+      "title": "General Chemistry for Engineers",
+      "credits": 3
+    },
+    "CHEM136": {
+      "title": "General Chemistry Laboratory for Engineers",
+      "credits": 1
+    },
+    "CHEM231": {
+      "title": "Organic Chemistry I",
+      "credits": 3
+    },
+    "CHEM232": {
+      "title": "Organic Chemistry Laboratory I",
+      "credits": 1
+    },
+    "CHEM237": {
+      "title": "Principles of Organic Chemistry I",
+      "credits": 4
+    },
+    "CHEM241": {
+      "title": "Organic Chemistry II",
+      "credits": 3
+    },
+    "CHEM242": {
+      "title": "Organic Chemistry Laboratory II",
+      "credits": 1
+    },
+    "CHEM271": {
+      "title": "General Chemistry and Energetics",
+      "credits": 2
+    },
+    "CHEM272": {
+      "title": "General Bioanalytical Chemistry Laboratory",
+      "credits": 2
+    },
+    "CHEM276": {
+      "title": "General Chemistry and Energetics - Majors",
+      "credits": 2
+    },
+    "CHEM277": {
+      "title": "Fundamentals of Analytical and Bioanalytical Chemistry Laboratory",
+      "credits": 3
+    },
+    "CLAS170": {
+      "title": "Ancient Myths and Modern Lives",
+      "credits": 3
+    },
+    "COMM107": {
+      "title": "Oral Communication: Principles and Practices",
+      "credits": 3
+    },
+    "COMM230": {
+      "title": "Argumentation and Debate",
+      "credits": 3
+    },
+    "COMM330": {
+      "title": "Argumentation and Public Policy",
+      "credits": 3
+    },
+    "ECON200": {
+      "title": "Principles of Microeconomics",
+      "credits": 3
+    },
+    "ECON201": {
+      "title": "Principles of Macroeconomics",
+      "credits": 3
+    },
+    "ECON456": {
+      "title": "Law and Economics",
+      "credits": 3
+    },
+    "EDHD320": {
+      "title": "Human Development Through the Life Span",
+      "credits": 3
+    },
+    "ENGL101": {
+      "title": "Academic Writing",
+      "credits": 3
+    },
+    "ENGL392": {
+      "title": "Legal Writing",
+      "credits": 3
+    },
+    "EPIB315": {
+      "title": "Biostatistics for Public Health Practice",
+      "credits": 3
+    },
+    "FMSC487": {
+      "title": "Family Law",
+      "credits": 3
+    },
+    "GVPT170": {
+      "title": "American Government",
+      "credits": 3
+    },
+    "GVPT331": {
+      "title": "Courts, Law and Justice",
+      "credits": 3
+    },
+    "GVPT432": {
+      "title": "Civil Rights and the Constitution",
+      "credits": 3
+    },
+    "HIST200": {
+      "title": "Interpreting American History: Beginnings to 1877",
+      "credits": 3
+    },
+    "HIST201": {
+      "title": "Interpreting American History: From 1865 to the Present",
+      "credits": 3
+    },
+    "HIST455": {
+      "title": "Constitutional History of the United States: Since 1865",
+      "credits": 3
+    },
+    "JOUR181": {
+      "title": "Grammar for Journalists",
+      "credits": 1
+    },
+    "MATH113": {
+      "title": "College Algebra and Trigonometry",
+      "credits": 3
+    },
+    "MATH115": {
+      "title": "Precalculus",
+      "credits": 3
+    },
+    "MATH120": {
+      "title": "Elementary Calculus I",
+      "credits": 3
+    },
+    "MATH136": {
+      "title": "Calculus for Life Sciences",
+      "credits": 4
+    },
+    "MATH140": {
+      "title": "Calculus I",
+      "credits": 4
+    },
+    "NFSC100": {
+      "title": "Elements of Nutrition",
+      "credits": 3
+    },
+    "PHIL100": {
+      "title": "Introduction to Philosophy",
+      "credits": 3
+    },
+    "PHIL140": {
+      "title": "Contemporary Moral Issues",
+      "credits": 3
+    },
+    "PHIL170": {
+      "title": "Introduction to Logic",
+      "credits": 3,
+      "note": "Not in the Spring 2027 Schedule of Classes (likely a fall-only offering); kept because the Pre-Law timeline document (SOURCES.md) names it directly by course number as one of pre-law students two most common courses."
+    },
+    "PHYS121": {
+      "title": "Fundamentals of Physics I",
+      "credits": 4
+    },
+    "PHYS122": {
+      "title": "Fundamentals of Physics II",
+      "credits": 4
+    },
+    "PHYS131": {
+      "title": "Fundamentals of Physics for Life Sciences I",
+      "credits": 4
+    },
+    "PHYS132": {
+      "title": "Fundamentals of Physics for Life Sciences II",
+      "credits": 4
+    },
+    "PHYS161": {
+      "title": "General Physics: Mechanics and Particle Dynamics",
+      "credits": 3
+    },
+    "PHYS260": {
+      "title": "General Physics: Electricity, Magnetism and Thermodynamics",
+      "credits": 3
+    },
+    "PHYS261": {
+      "title": "General Physics: Mechanics, Vibrations, Waves, Heat (Laboratory)",
+      "credits": 1
+    },
+    "PHYS271": {
+      "title": "General Physics: Electrodynamics, Light, Relativity and Modern Physics (Laboratory)",
+      "credits": 1
+    },
+    "PSYC100": {
+      "title": "Introduction to Psychology",
+      "credits": 3
+    },
+    "PSYC200": {
+      "title": "Statistical Methods in Psychology",
+      "credits": 3
+    },
+    "PSYC221": {
+      "title": "Social Psychology",
+      "credits": 3
+    },
+    "PSYC330": {
+      "title": "Child Psychopathology",
+      "credits": 3
+    },
+    "PSYC353": {
+      "title": "Adult Psychopathology",
+      "credits": 3
+    },
+    "PSYC355": {
+      "title": "Developmental Psychology",
+      "credits": 3
+    },
+    "SOCY100": {
+      "title": "Introduction to Sociology",
+      "credits": 3
+    },
+    "SOCY105": {
+      "title": "Understanding Contemporary Social Problems - Frameworks for Critical Thinking and Strategies for Solutions",
+      "credits": 3
+    },
+    "STAT100": {
+      "title": "Elementary Statistics and Probability",
+      "credits": 3
+    },
+    "STAT400": {
+      "title": "Applied Probability and Statistics I",
+      "credits": 3
+    },
+    "STAT464": {
+      "title": "Introduction to Biostatistics",
+      "credits": 3
+    }
+  }
+}

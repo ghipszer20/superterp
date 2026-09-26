@@ -30,10 +30,13 @@ const cat = (requirement: Requirement, source: string, extra: Extra = {}): Track
 // UMD's general chemistry is split around organic chemistry: CHEM131/132 (Chemistry I and lab)
 // come first, and CHEM271/272 (General Chemistry and Energetics, and lab) come after organic.
 
+// CHEM146/CHEM177 (the chemistry/biochemistry majors' first-semester alternative) are not in
+// the Spring 2027 Schedule of Classes, the only Schedule of Classes snapshot cached in this repo
+// (no fall term is cached; see SOURCES.md and MAPPING_NOTES.genChem), so they're left out here
+// rather than left unverified against nothing.
 export const GEN_CHEM_1_OPTIONS = [
   ["CHEM131", "CHEM132"],
   ["CHEM135", "CHEM136"], // engineering students
-  ["CHEM146", "CHEM177"], // chemistry/biochemistry majors
 ];
 export const GEN_CHEM_2_OPTIONS = [
   ["CHEM271", "CHEM272"],
@@ -48,19 +51,17 @@ export const genChem1 = (source: string, extra?: Extra) =>
 export const genChem2 = (source: string, extra?: Extra) =>
   cat(sets("gen-chem-2", "General chemistry II with lab", GEN_CHEM_2_OPTIONS), source, extra);
 
+// CHEM247 (the second half of the chemistry/biochemistry majors' organic sequence) is not in the
+// Spring 2027 Schedule of Classes; only CHEM237, its first half, is verified, so it's used alone
+// in ORGANIC_CHEM_1_OPTIONS below and left out of the two-semester sequence.
+export const ORGANIC_CHEM_1_OPTIONS = [["CHEM231", "CHEM232"], ["CHEM237"]];
+
 export const organicChem = (source: string, extra?: Extra) =>
-  cat(
-    sets("organic-chem", "Organic chemistry I and II with labs", [
-      ["CHEM231", "CHEM232", "CHEM241", "CHEM242"],
-      ["CHEM237", "CHEM247"], // chemistry/biochemistry majors
-    ]),
-    source,
-    extra,
-  );
+  cat(sets("organic-chem", "Organic chemistry I and II with labs", [["CHEM231", "CHEM232", "CHEM241", "CHEM242"]]), source, extra);
 
 /** One semester of organic chemistry with lab. */
 export const organicChem1 = (source: string, extra?: Extra) =>
-  cat(sets("organic-chem-1", "Organic chemistry I with lab", [["CHEM231", "CHEM232"], ["CHEM237"]]), source, extra);
+  cat(sets("organic-chem-1", "Organic chemistry I with lab", ORGANIC_CHEM_1_OPTIONS), source, extra);
 
 export const biochem = (source: string, extra?: Extra) =>
   cat(oneOf("biochem", "Biochemistry", ["BCHM461", "BCHM463"]), source, extra);
@@ -69,18 +70,15 @@ export const biochem = (source: string, extra?: Extra) =>
 // BSCI180 (Principles of Biology Laboratory) replaced BSCI161 and BSCI171 in Fall 2026; the
 // catalog says BSCI161 and BSCI171 may count for it, and AP Biology still awards them.
 
+// BSCI161 and BSCI171 (the courses BSCI180 replaced) are not in the Spring 2027 Schedule of
+// Classes and are not being scheduled for new students, so only the current BSCI160/170/180
+// sequence is encoded; a student with older transfer or AP credit for BSCI161/171 should confirm
+// it's still accepted with an advisor (MAPPING_NOTES.introBio).
 export const introBio = (source: string, extra?: Extra) =>
-  cat(
-    sets("intro-bio", "Introductory biology with lab", [
-      ["BSCI160", "BSCI170", "BSCI180"],
-      ["BSCI160", "BSCI161", "BSCI170", "BSCI171"],
-    ]),
-    source,
-    {
-      examCreditAdvice: "HPAO: don't repeat BSCI160/161 or 170/171; take upper-level biology with labs instead (BSCI223 and BSCI330 are good first choices).",
-      ...extra,
-    },
-  );
+  cat(sets("intro-bio", "Introductory biology with lab", [["BSCI160", "BSCI170", "BSCI180"]]), source, {
+    examCreditAdvice: "HPAO: don't repeat BSCI160 or BSCI170; take upper-level biology with labs instead (BSCI223 and BSCI331/BSCI332 are good first choices).",
+    ...extra,
+  });
 
 /** One lecture and its lab, for tracks asking for a single semester of general biology. */
 export const introBioOneSemester = (source: string, extra?: Extra) =>
@@ -88,23 +86,16 @@ export const introBioOneSemester = (source: string, extra?: Extra) =>
     sets("intro-bio", "General biology with lab", [
       ["BSCI170", "BSCI180"],
       ["BSCI160", "BSCI180"],
-      ["BSCI170", "BSCI171"],
-      ["BSCI160", "BSCI161"],
     ]),
     source,
     extra,
   );
 
+// BSCI330 (the lecture-plus-lab course BSCI331 + BSCI332 replaced) is not in the Spring 2027
+// Schedule of Classes, so only the current two-course version is encoded.
 export const upperBioLab = (source: string, extra?: Extra) =>
   cat(
-    sets("upper-bio", "Upper-level biology with lab", [
-      ["BSCI223"],
-      ["BSCI330"],
-      ["BSCI331", "BSCI332"],
-      ["BSCI222"],
-      ["BSCI201"],
-      ["BSCI202"],
-    ]),
+    sets("upper-bio", "Upper-level biology with lab", [["BSCI223"], ["BSCI331", "BSCI332"], ["BSCI222"], ["BSCI201"], ["BSCI202"]]),
     source,
     extra,
   );
@@ -117,12 +108,14 @@ export const microbiology = (source: string, extra?: Extra) =>
 
 // --- Physics ---------------------------------------------------------------------------------
 
+// PHYS141/PHYS142 are not in the Spring 2027 Schedule of Classes, so the physics-for-life-sciences
+// (PHYS131/132) and calculus-based (PHYS121/122) sequences, plus the engineering sequence with its
+// labs, are the only ones encoded here.
 export const physics = (source: string, extra?: Extra) =>
   cat(
     sets("physics", "Physics I and II with labs", [
       ["PHYS131", "PHYS132"], // for life sciences
       ["PHYS121", "PHYS122"],
-      ["PHYS141", "PHYS142"],
       ["PHYS161", "PHYS261", "PHYS260", "PHYS271"], // engineering sequence with its labs
     ]),
     source,
@@ -133,11 +126,7 @@ export const physics = (source: string, extra?: Extra) =>
   );
 
 export const physicsOneSemester = (source: string, extra?: Extra) =>
-  cat(
-    sets("physics", "Physics with lab", [["PHYS131"], ["PHYS121"], ["PHYS141"], ["PHYS161", "PHYS261"]]),
-    source,
-    extra,
-  );
+  cat(sets("physics", "Physics with lab", [["PHYS131"], ["PHYS121"], ["PHYS161", "PHYS261"]]), source, extra);
 
 // --- Math, statistics, English ---------------------------------------------------------------
 
@@ -187,6 +176,12 @@ export const humanDevelopment = (source: string, extra?: Extra) =>
   cat(oneOf("human-development", "Human growth and development", ["EDHD320", "PSYC355"]), source, extra);
 export const sociology = (source: string, extra?: Extra) => cat(oneOf("sociology", "Sociology", ["SOCY100", "SOCY105"]), source, extra);
 export const nutrition = (source: string, extra?: Extra) => cat(oneOf("nutrition", "Nutrition", ["NFSC100"]), source, extra);
+export const microeconomics = (source: string, extra?: Extra) =>
+  cat(oneOf("microeconomics", "Microeconomics", ["ECON200"]), source, extra);
+/** HPAO's pharmacy page names no course; ECON200's own general-education communication requirement
+ * doesn't fit, so this maps to Oral Communication, UMD's most general communications course. */
+export const communications = (source: string, extra?: Extra) =>
+  cat(oneOf("communications", "Communications", ["COMM107"]), source, extra);
 
 /** Medical terminology: HPAO says UMD offers it in winter, but names no course, so the student confirms it. */
 export const medicalTerminology = (source: string): TrackCategory => ({
@@ -194,6 +189,23 @@ export const medicalTerminology = (source: string): TrackCategory => ({
   name: "Medical terminology",
   source,
 });
+
+/** "College Algebra or Calculus" (HPAO's dentistry page; also PT's "3 credits of mathematics"). */
+export const collegeAlgebraOrCalculus = (source: string, extra?: Extra) =>
+  cat(oneOf("math", "College algebra or calculus", ["MATH113", "MATH115", ...CALCULUS]), source, {
+    examCredit: "accepted",
+    examCreditAdvice: "HPAO: schools that require math accept AP/IB credit for it; don't repeat the course.",
+    ...extra,
+  });
+
+/** The ANSC Pre-Veterinary Advising Guide's "1-2 semesters of mathematics (statistics or (pre)calculus)". */
+export const statisticsOrCalculus = (source: string, extra?: Extra) =>
+  cat(sets("math", "Statistics or (pre)calculus", [...STATISTICS.map((c) => [c]), ...CALCULUS.map((c) => [c])]), source, extra);
+
+/** One semester of organic chemistry with lab, or a second semester of general chemistry with lab
+ * (HPAO's Physical Therapy page offers either). */
+export const organicOrGenChem2 = (source: string, extra?: Extra) =>
+  cat(sets("organic-or-chem2", "Organic chemistry I with lab, or General chemistry II with lab", [...ORGANIC_CHEM_1_OPTIONS, ...GEN_CHEM_2_OPTIONS]), source, extra);
 
 // --- Milestones shared by the HPAO committee process (medical and dental applicants) --------
 
@@ -231,18 +243,34 @@ export const COMMITTEE_MILESTONES: Milestone[] = [
   },
 ];
 
+/** The GRE, for tracks whose HPAO page says "most programs require the GRE". */
+export const GRE_MILESTONE: Milestone = {
+  id: "gre",
+  kind: "exam",
+  name: "GRE",
+  detail: "Most programs require the GRE; check each target school. Take it in your junior year or the summer before you apply, leaving time for a retake.",
+};
+
+/** CPR certification, for tracks whose HPAO page says "most require the GRE and CPR". */
+export const CPR_MILESTONE: Milestone = {
+  id: "cpr",
+  kind: "experience",
+  name: "CPR certification",
+  detail: "Most programs require current CPR certification (often BLS for Healthcare Providers) at the time you apply or matriculate.",
+};
+
 export const MAPPING_NOTES = {
   genChem:
-    "General chemistry (\"8 credits of inorganic chemistry with labs\") = CHEM131 & CHEM132 then CHEM271 & CHEM272, UMD's two general chemistry courses, split around organic chemistry (Bio major supporting courses; HPAO AP page). Engineering CHEM135 & CHEM136 and majors' CHEM146 & CHEM177 / CHEM276 & CHEM277 are accepted as alternatives (assumed; CHEM146/177 are not in the Spring 2027 schedule).",
+    "General chemistry (\"8 credits of inorganic chemistry with labs\") = CHEM131 & CHEM132 then CHEM271 & CHEM272, UMD's two general chemistry courses, split around organic chemistry (Bio major supporting courses; HPAO AP page). Engineering CHEM135 & CHEM136 and majors' CHEM276 & CHEM277 are accepted as alternatives (assumed). Majors' first-semester alternative, CHEM146 & CHEM177, is left out: it's not in the Spring 2027 Schedule of Classes, the only Schedule of Classes snapshot cached in this repo (no fall term is cached), so it couldn't be verified to exist.",
   organic:
-    "Organic chemistry = CHEM231 & CHEM232 and CHEM241 & CHEM242, or majors' CHEM237 & CHEM247 (assumed; CHEM247 is not in the Spring 2027 schedule).",
+    "Organic chemistry = CHEM231 & CHEM232 and CHEM241 & CHEM242. Majors' one-semester CHEM237 is accepted as an alternative to CHEM231 & CHEM232 (ORGANIC_CHEM_1_OPTIONS), but the majors' two-semester sequence's second half, CHEM247, is not in the Spring 2027 Schedule of Classes and is left out rather than left unverified.",
   biochem: "Biochemistry = BCHM461 or BCHM463 (HPAO AP page names both).",
   introBio:
-    "Introductory biology with lab = BSCI160, BSCI170 and BSCI180, or the older BSCI160/161 and BSCI170/171 (Bio major catalog page: BSCI180 replaced BSCI161 and BSCI171 in Fall 2026, and they may count for it).",
+    "Introductory biology with lab = BSCI160, BSCI170 and BSCI180 (Bio major catalog page: BSCI180 replaced BSCI161 and BSCI171 in Fall 2026). BSCI161 and BSCI171 themselves are left out: they're not in the Spring 2027 Schedule of Classes and aren't being scheduled for new students; a student with older transfer or AP credit under those numbers should confirm it's still accepted.",
   upperBio:
-    "HPAO's \"8–12 credits of biology with labs\" and \"nearly all medical schools require at least two biology courses with formal laboratories\" are encoded as intro biology plus one upper-level biology course with a lab: BSCI223, BSCI330 (now BSCI331 + BSCI332 lab), BSCI222, BSCI201 or BSCI202. HPAO's AP page names BSCI223 and BSCI330; that BSCI222 includes a lab is assumed from its 4 credits.",
+    "HPAO's \"8–12 credits of biology with labs\" and \"nearly all medical schools require at least two biology courses with formal laboratories\" are encoded as intro biology plus one upper-level biology course with a lab: BSCI223, BSCI331 + BSCI332 lab, BSCI222, BSCI201 or BSCI202. HPAO's AP page names BSCI223 and BSCI330 (the single course BSCI331 + BSCI332 replaced, and not in the Spring 2027 schedule, so BSCI331 + BSCI332 stands in for it); that BSCI222 includes a lab is assumed from its 4 credits.",
   physics:
-    "Physics with labs = PHYS131 & 132 (life sciences), PHYS121 & 122, PHYS141 & 142, or engineering PHYS161 + PHYS261 lab and PHYS260 + PHYS271 lab (BIOE sample plan). PHYS141/142 are not in the Spring 2027 schedule; majors' PHYS171/272/273 sequence is not included.",
+    "Physics with labs = PHYS131 & 132 (life sciences), PHYS121 & 122, or engineering PHYS161 + PHYS261 lab and PHYS260 + PHYS271 lab (BIOE sample plan). PHYS141/142 are not in the Spring 2027 schedule and are left out; majors' PHYS171/272/273 sequence is not included.",
   calculus:
     "Calculus = MATH120, MATH136 or MATH140. MATH135 (Discrete Mathematics for Life Sciences) is not calculus. MATH120 is closed to science majors but is calculus.",
   statistics:
@@ -251,6 +279,8 @@ export const MAPPING_NOTES = {
     "English (\"6 credits\") = ENGL101 plus one ENGL390–398 (HPAO AP page: \"If you have received AP credit for ENGL 101, you may complete just 39X\"). AP credit here is noted, not warned about.",
   grades:
     "Minimum grade C (HPAO: \"a C (not a C-)\"): a completed course below C doesn't count, and a low-grade warning is shown. Pass/fail (P/S) courses do count in the audit but get a warning; AP/IB credit counts but gets a warning, except calculus and English, where HPAO says it is accepted.",
+  fixture:
+    "test/fixtures/umd-courses.json is built from the Spring 2027 Schedule of Classes (packages/course-data/.cache/soc-202701.json in the main checkout), the only Schedule of Classes snapshot cached anywhere in this repo. Courses this package names that aren't offered that term (e.g. fall-only courses) are left out of the requirement options above and noted individually; the one exception is PHIL170, added to the fixture on the strength of the Pre-Law timeline document (SOURCES.md), which names it by course number even though it isn't in the Spring 2027 schedule.",
 };
 
 export const HPAO = {
