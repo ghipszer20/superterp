@@ -54,6 +54,8 @@ export type PlanAction =
   | { type: "move-course"; id: string; from: string; to: string; index?: number }
   | { type: "add-term"; name: string }
   | { type: "remove-term"; name: string }
+  /** Marks a course completed (with a grade) or back to planned, from the course sheet. */
+  | { type: "set-course"; term: string; id: string; status?: "planned" | "completed"; grade?: string }
   /** Course-level sync from the schedule builder's Active Schedule. */
   | { type: "set-term-courses"; term: string; ids: string[] }
   | { type: "set-prior"; prior: PriorInputs }
@@ -111,6 +113,22 @@ export function planReducer(plan: AdvisorPlan, action: PlanAction): AdvisorPlan 
     }
     case "remove-course":
       return mapTerm(plan, action.term, (t) => ({ ...t, courses: t.courses.filter((c) => c.id !== action.id) }));
+    case "set-course": {
+      const term = plan.terms.find((t) => t.name === action.term);
+      if (!term || !term.courses.some((c) => c.id === action.id)) return plan;
+      return mapTerm(plan, action.term, (t) => ({
+        ...t,
+        courses: t.courses.map((c): PlannedCourse => {
+          if (c.id !== action.id) return c;
+          const next = { ...c };
+          if (action.status === undefined) delete next.status;
+          else next.status = action.status;
+          if (action.grade === undefined) delete next.grade;
+          else next.grade = action.grade;
+          return next;
+        }),
+      }));
+    }
     case "move-course": {
       const from = plan.terms.find((t) => t.name === action.from);
       const to = plan.terms.find((t) => t.name === action.to);

@@ -64,9 +64,8 @@ function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; cat
   );
   const checked = useMemo(() => {
     if (!ready) return null;
-    const t = performance.now();
     const issues = checkPlan(checkerPlan(plan, prior.courses), ready.catalog);
-    return { issues, groups: groupIssues(issues, plan.terms.map((x) => x.name)), ms: performance.now() - t };
+    return { issues, groups: groupIssues(issues, plan.terms.map((x) => x.name)) };
   }, [plan, prior.courses, ready]);
 
   const analysis = useAnalysis(plan, ready, prior.courses);
@@ -103,7 +102,7 @@ function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; cat
         <PlanView plan={plan} catalog={catalog} checked={checked} analysis={analysis} prior={prior} onOpenCourse={setOpen} />
       ) : null}
       {view === "credit" ? <PriorCreditView plan={plan} prior={prior} catalog={catalog} /> : null}
-      {view === "audit" ? <AuditView plan={plan} analysis={analysis} onOpenCourse={setOpen} /> : null}
+      {view === "audit" ? <AuditView plan={plan} analysis={analysis} prior={prior} onOpenCourse={setOpen} /> : null}
 
       {open ? (
         <CourseSheet

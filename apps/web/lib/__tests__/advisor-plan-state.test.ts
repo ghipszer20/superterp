@@ -79,6 +79,35 @@ describe("planReducer: courses", () => {
     plan = planReducer(plan, { type: "move-course", id: "CMSC498", from: "Fall 2026", to: "Fall 2027" });
     expect(plan.terms.find((t) => t.name === "Fall 2027")!.courses).toEqual([{ id: "CMSC498", credits: 2 }]);
   });
+
+  it("sets a course's completion status and grade", () => {
+    let plan = planReducer(base(), { type: "add-course", term: "Fall 2026", id: "CMSC131" });
+    plan = planReducer(plan, { type: "set-course", term: "Fall 2026", id: "CMSC131", status: "completed", grade: "B+" });
+    expect(plan.terms[0]!.courses).toEqual([{ id: "CMSC131", status: "completed", grade: "B+" }]);
+  });
+
+  it("clears a course's status and grade when set back to undefined", () => {
+    let plan = planReducer(base(), { type: "add-course", term: "Fall 2026", id: "CMSC131" });
+    plan = planReducer(plan, { type: "set-course", term: "Fall 2026", id: "CMSC131", status: "completed", grade: "F" });
+    plan = planReducer(plan, { type: "set-course", term: "Fall 2026", id: "CMSC131", status: undefined, grade: undefined });
+    expect(plan.terms[0]!.courses).toEqual([{ id: "CMSC131" }]);
+  });
+
+  it("leaves other courses and terms alone", () => {
+    let plan = planReducer(base(), { type: "add-course", term: "Fall 2026", id: "CMSC131", credits: 4 });
+    plan = planReducer(plan, { type: "add-course", term: "Fall 2026", id: "MATH140" });
+    plan = planReducer(plan, { type: "set-course", term: "Fall 2026", id: "CMSC131", status: "completed", grade: "A" });
+    expect(plan.terms[0]!.courses).toEqual([
+      { id: "CMSC131", credits: 4, status: "completed", grade: "A" },
+      { id: "MATH140" },
+    ]);
+  });
+
+  it("ignores a course or term that isn't in the plan", () => {
+    const plan = planReducer(base(), { type: "add-course", term: "Fall 2026", id: "CMSC131" });
+    expect(planReducer(plan, { type: "set-course", term: "Fall 2026", id: "MATH140", status: "completed" })).toBe(plan);
+    expect(planReducer(plan, { type: "set-course", term: "Fall 2040", id: "CMSC131", status: "completed" })).toBe(plan);
+  });
 });
 
 describe("planReducer: terms", () => {

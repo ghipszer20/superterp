@@ -13,7 +13,7 @@ import type { CatalogState } from "./data";
 import { dispatchPlan, openView } from "./store";
 import styles from "./advisor.module.css";
 
-type Checked = { issues: PlanIssue[]; groups: IssueGroups; ms: number } | null;
+type Checked = { issues: PlanIssue[]; groups: IssueGroups } | null;
 
 export function PlanView({
   plan,

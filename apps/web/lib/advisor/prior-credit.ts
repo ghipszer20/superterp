@@ -172,6 +172,13 @@ export function ibLevelsFor(exam: string): IbLevel[] {
   return found ? (["SL", "HL"] as const).filter((l) => found.levels[l] !== undefined) : ["SL", "HL"];
 }
 
+/** Removes one AP, IB or dual-enrollment row by its key; choices are left as they are. */
+export function removePriorEntry(prior: PriorInputs, kind: "ap" | "ib" | "dual", key: string): PriorInputs {
+  if (kind === "ap") return { ...prior, ap: prior.ap.filter((a) => a.key !== key) };
+  if (kind === "ib") return { ...prior, ib: prior.ib.filter((a) => a.key !== key) };
+  return { ...prior, dual: prior.dual.filter((a) => a.key !== key) };
+}
+
 /** A credit record's id for people: placeholder credit ("L1:…", "DSNL:…") in words. */
 export function creditLabel(id: string): string {
   const m = /^([A-Z0-9]+):/.exec(id);

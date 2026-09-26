@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { emptyPrior, type PriorInputs } from "../advisor/plan-state";
-import { computePriorCredit, creditLabel, ibLevelsFor } from "../advisor/prior-credit";
+import { computePriorCredit, creditLabel, ibLevelsFor, removePriorEntry } from "../advisor/prior-credit";
 
 const prior = (p: Partial<PriorInputs>): PriorInputs => ({ ...emptyPrior(), ...p });
 const noGenEd = () => [];
@@ -154,5 +154,32 @@ describe("creditLabel", () => {
     expect(creditLabel("MATH140")).toBe("MATH140");
     expect(creditLabel("L1:AP Computer Science A")).toBe("Elective credit");
     expect(creditLabel("DSNL:AP Biology")).toBe("Gen Ed credit (DSNL)");
+  });
+});
+
+describe("removePriorEntry", () => {
+  it("removes an AP entry by key, leaving the others", () => {
+    const p = prior({
+      ap: [
+        { key: "a", exam: "Calculus BC", score: 5 },
+        { key: "b", exam: "Physics 1", score: 4 },
+      ],
+    });
+    expect(removePriorEntry(p, "ap", "a").ap).toEqual([{ key: "b", exam: "Physics 1", score: 4 }]);
+  });
+
+  it("removes an IB entry by key", () => {
+    const p = prior({ ib: [{ key: "a", exam: "Psychology", level: "HL", score: 6 }] });
+    expect(removePriorEntry(p, "ib", "a").ib).toEqual([]);
+  });
+
+  it("removes a dual-enrollment entry by key", () => {
+    const p = prior({ dual: [{ key: "a", institution: "Montgomery College", course: "MATH181", credits: 4, umd: "MATH141", elective: false }] });
+    expect(removePriorEntry(p, "dual", "a").dual).toEqual([]);
+  });
+
+  it("leaves choices untouched", () => {
+    const p = prior({ ap: [{ key: "a", exam: "Calculus BC", score: 5 }], choices: { "AP History": "HIST200" } });
+    expect(removePriorEntry(p, "ap", "a").choices).toEqual({ "AP History": "HIST200" });
   });
 });
