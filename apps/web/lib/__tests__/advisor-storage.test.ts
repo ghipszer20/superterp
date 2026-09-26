@@ -1,0 +1,50 @@
+import { describe, expect, it } from "vitest";
+import { newPlan, planReducer } from "../advisor/plan-state";
+import { parsePlan, serializePlan } from "../advisor/storage";
+
+const plan = () => {
+  let p = newPlan({ programs: ["math-major-applied", "cmsc-major"], catalogYear: "2026-27", startTerm: "Fall 2026" });
+  p = planReducer(p, { type: "add-course", term: "Fall 2026", id: "CMSC131" });
+  p = planReducer(p, { type: "add-term", name: "Winter 2027" });
+  p = planReducer(p, {
+    type: "set-prior",
+    prior: {
+      ap: [{ key: "a", exam: "Calculus BC", score: 5 }],
+      ib: [{ key: "b", exam: "Psychology", level: "HL", score: 6 }],
+      dual: [{ key: "c", institution: "Montgomery College", course: "ENGL101", credits: 3, umd: "ENGL101", elective: false }],
+      choices: { "AP Art History (5)": "ARTH200" },
+    },
+  });
+  return planReducer(p, { type: "set-gpa", gpa: 3.5 });
+};
+
+describe("plan storage", () => {
+  it("round-trips a plan", () => {
+    const p = plan();
+    expect(parsePlan(serializePlan(p))).toEqual(p);
+  });
+
+  it("returns null for nothing, junk, or another version", () => {
+    expect(parsePlan(null)).toBeNull();
+    expect(parsePlan("{not json")).toBeNull();
+    expect(parsePlan(JSON.stringify({ ...plan(), v: 2 }))).toBeNull();
+    expect(parsePlan(JSON.stringify({ v: 1 }))).toBeNull();
+  });
+
+  it("drops malformed pieces and keeps the rest", () => {
+    const raw = JSON.parse(serializePlan(plan()));
+    raw.terms[0].courses.push({ id: 42 }, null, { id: "MATH140", credits: "four" });
+    raw.terms.push({ name: "Autumn 2027", courses: [] });
+    raw.prior.ap.push({ key: "x", exam: "Calculus AB", score: 9 });
+    raw.prior.ib.push({ key: "y", exam: "Physics", level: "XL", score: 5 });
+    raw.programs.push(7);
+    raw.gpa = "high";
+    const back = parsePlan(JSON.stringify(raw))!;
+    expect(back.terms[0]!.courses).toEqual([{ id: "CMSC131" }, { id: "MATH140" }]);
+    expect(back.terms.map((t) => t.name)).not.toContain("Autumn 2027");
+    expect(back.prior.ap).toHaveLength(1);
+    expect(back.prior.ib).toHaveLength(1);
+    expect(back.programs).toEqual(["math-major-applied", "cmsc-major"]);
+    expect(back).not.toHaveProperty("gpa");
+  });
+});
