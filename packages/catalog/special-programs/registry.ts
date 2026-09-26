@@ -13,13 +13,20 @@ import { honorsIbh } from "./honors-ibh-2026-27.ts";
 import { honorsIls } from "./honors-ils-2026-27.ts";
 import { honorsUh } from "./honors-uh-2026-27.ts";
 import { deptAmst } from "./dept-amst-2026-27.ts";
+import { deptAnth } from "./dept-anth-2026-27.ts";
 import { deptArt } from "./dept-art-2026-27.ts";
 import { deptArth } from "./dept-arth-2026-27.ts";
+import { deptBiol } from "./dept-biol-2026-27.ts";
+import { deptCbmg } from "./dept-cbmg-2026-27.ts";
+import { deptChem } from "./dept-chem-2026-27.ts";
 import { deptComm } from "./dept-comm-2026-27.ts";
 import { deptEngl } from "./dept-engl-2026-27.ts";
+import { deptEntm } from "./dept-entm-2026-27.ts";
+import { deptGeol } from "./dept-geol-2026-27.ts";
 import { deptGers } from "./dept-gers-2026-27.ts";
 import { deptHist } from "./dept-hist-2026-27.ts";
 import { deptMath } from "./dept-math-2026-27.ts";
+import { deptPhys } from "./dept-phys-2026-27.ts";
 import { deptSpan } from "./dept-span-2026-27.ts";
 import { deptWgss } from "./dept-wgss-2026-27.ts";
 import { carillon } from "./llp-carillon-2026-27.ts";
@@ -135,13 +142,26 @@ export const specialPrograms: SpecialEntry[] = [
 
   // Departmental honors programs (see honors.umd.edu/academics/departmental-honors/ for the department directory)
   hand("departmental", deptAmst),
+  hand("departmental", deptAnth),
   hand("departmental", deptArt),
   hand("departmental", deptArth),
+  hand("departmental", deptBiol),
+  hand("departmental", deptCbmg),
+  hand("departmental", deptChem),
   hand("departmental", deptComm),
   hand("departmental", deptEngl),
+  hand("departmental", deptEntm),
+  hand("departmental", deptGeol),
   hand("departmental", deptGers),
   hand("departmental", deptHist),
   hand("departmental", deptMath),
+  hand("departmental", deptPhys),
   hand("departmental", deptSpan),
   hand("departmental", deptWgss),
+  none(
+    "departmental",
+    "Departmental Honors: Astronomy",
+    "https://www.astro.umd.edu/undergrad/major.html",
+    "No course ids are published: the Departmental Honors Program section says only that \"Honors students work with a faculty advisor on a research project for academic credit,\" submit \"a written report,\" and pass \"an oral comprehensive examination.\"",
+  ),
 ];
