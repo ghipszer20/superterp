@@ -2,7 +2,7 @@
 
 > Single source of truth for project context. Update this file whenever a decision changes.
 > Last updated: 2026-09-26 (slimmed: history, feature rulings, legal and roadmap moved to `docs/project/`).
-> Loaded into every session and builder via CLAUDE.md, so keep it under ~20 KB (section 18).
+> Read by the main session at the start of every session (builders don't read it; CLAUDE.md), so keep it under ~20 KB (section 18).
 
 ## 1. Vision
 An all-in-one iOS app + website for UMD students. It combines:
@@ -144,8 +144,8 @@ Code comments that cite "PROJECT_MEMORY section 17" (e.g. "open question 1") ref
   - **Builders run on Sonnet** (`model: sonnet` when dispatching). The main session stays on Opus for review and merging. Use Opus for a builder only when a task needs hard reasoning (e.g. new audit-engine semantics), and note why in the status log.
   - **One agent per task.** No per-task spec-reviewer or code-reviewer subagents: the main session's diff review plus CI is the review. `requesting-code-review` means the main session reviews the diff, not a new agent.
   - **At most 2 builders at the same time.** Queue the rest; dispatch the next when one finishes. Prefer critical-path work (owner-facing UI, audit engine) first.
-  - **Short briefs.** Each builder gets a 20–40 line brief: goal, files/packages involved, the owner rulings that apply (quoted from `docs/project/rulings.md`), done criteria (tests, typecheck, lint, build, `ui-check` screenshots for UI), and its branch name. Builders read other `docs/project/` files only when the brief points to them.
+  - **Short briefs.** Each builder gets a 20–40 line brief: goal, files/packages involved, the owner rulings that apply (quoted from `docs/project/rulings.md`), done criteria (tests, typecheck, lint, build, `ui-check` screenshots for UI), and its branch name. Builders build only from the brief: CLAUDE.md tells them not to read this file (owner, 2026-09-26), so anything they need from it must be in the brief. They read other `docs/project/` files only when the brief points to them. The main session checks every builder's work against this file and `docs/project/rulings.md` before merging.
   - **Screenshots are expensive** (images cost far more than text). Builders capture only the pages they changed, at phone and desktop width; the main session reviews those, not the whole app.
   - **Resume, don't restart.** Before dispatching, run `git worktree list`; if a worktree or branch for the task already exists, the builder continues from it.
   - **Push early.** Builders commit and push after the first passing test and at each green step, so a stopped builder leaves recoverable work on GitHub.
-- **Keep this file small (owner, 2026-09-26; after it reached 52 KB).** CLAUDE.md imports this file, so it loads into every session and every builder on every request. Keep it under ~20 KB: section 14 is replaced in place, never appended to; dated history goes to `docs/project/status-log.md`; feature rulings go to `docs/project/rulings.md`; detail goes to `docs/project/`. If it grows past ~20 KB, move content out before continuing.
+- **Keep this file small (owner, 2026-09-26; after it reached 52 KB).** The main session reads this file at the start and carries it in every request for the rest of the session (builders no longer load it). Keep it under ~20 KB: section 14 is replaced in place, never appended to; dated history goes to `docs/project/status-log.md`; feature rulings go to `docs/project/rulings.md`; detail goes to `docs/project/`. If it grows past ~20 KB, move content out before continuing.
