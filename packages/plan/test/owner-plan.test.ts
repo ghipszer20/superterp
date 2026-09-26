@@ -50,7 +50,8 @@ describe("the owner's Math (Applied) + CS plan", () => {
   });
 
   it("flags an overloaded term", () => {
-    const issues = problems(checkPlan(added(ownerPlan(), "Spring 2027", "PSYC100", "THET110"), catalog));
+    // Two courses not already in the plan (PSYC100 is in Fall 2029, so adding it would also be a repeat).
+    const issues = problems(checkPlan(added(ownerPlan(), "Spring 2027", "GVPT390", "THET110"), catalog));
     expect(issues).toEqual([
       {
         kind: "credit-load",

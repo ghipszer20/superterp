@@ -36,7 +36,7 @@ export const mathMajorApplied: Program = {
     "'STAT4XX' is encoded as a 400-level STAT course other than STAT410 (which is required separately) and STAT464.",
     "The depth sequence is an overlay: its courses may also fill MATH410, STAT410, STAT4xx or the applied-list course. So STAT410–STAT420 alone fills stat410, stat4xx and depth, and MATH462–MATH463 may fill both the applied list and depth.",
     "The applied-list course (MATH416, 420, 424, 431, 452, 456, 462, 463, 464, 475) uses a course up; a course taken for the MATH246/436/462 slot can't also be it (MATH462).",
-    "Programming requirement also accepts CMSC141/CMSC142 (owner confirmed these substitute for CMSC131/132 in CS; assumed here too). Sequence Four also accepts CMSC141 for CMSC131 and CMSC142 for CMSC132 (the Traditional track file does NOT do this for its Sequence Four yet).",
+    "Programming requirement also accepts CMSC141/CMSC142 (owner confirmed these substitute for CMSC131/132 in CS; assumed here too). Sequence Four also accepts CMSC141 for CMSC131 and CMSC142 for CMSC132 (the Traditional track now does the same).",
     "CMSC131 may count for both the programming requirement and Sequence Four (owner-confirmed): the supporting sequence is an overlay.",
     "Sequence Seven (ECON200, ECON201, ECON305 or 306, OR ECON325 or 326) is expanded into four three-course sets.",
     "Sequence Nine (BSCI170, BSCI160, BSCI180, CHEM131–132 or CHEM146–177; 'BSCI171 and BSCI161 may count for BSCI180') is expanded into four sets, all courses required.",

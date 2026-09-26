@@ -133,6 +133,23 @@ function confirmTexts(req: Requirement, history: Record<string, CourseRecord>): 
 
 const count = (n: number) => (n === 2 ? "twice" : `${n} times`);
 
+/**
+ * Whether a W (withdrawal) counts as failing for the repeat rule. ASSUMPTION (Claude's, recorded
+ * under "Repeated courses (owner ruling)" in PROJECT_MEMORY section 17): it doesn't. The owner
+ * may relax this by setting it to true.
+ */
+export const W_COUNTS_AS_FAILED = false;
+
+const gradeIs = (c: PlanCourse, grade: string) => c.grade?.trim().toUpperCase() === grade;
+
+/**
+ * Owner ruling (PROJECT_MEMORY section 17, "Repeated courses"): a course may be in the plan again
+ * only after a failed attempt, meaning a completed attempt graded F (or W, if W_COUNTS_AS_FAILED).
+ */
+export function isFailedAttempt(c: PlanCourse): boolean {
+  return c.status === "completed" && (gradeIs(c, "F") || (W_COUNTS_AS_FAILED && gradeIs(c, "W")));
+}
+
 export function checkPlan(plan: Plan, catalog: PlanCatalog, options: CheckOptions = {}): PlanIssue[] {
   const issues: PlanIssue[] = [];
   const maxCredits = { ...DEFAULT_MAX_CREDITS, ...options.maxCredits };
@@ -257,7 +274,7 @@ function repeatIssues(
   creditsOf: (c: PlanCourse) => number,
 ): PlanIssue[] {
   const issues: PlanIssue[] = [];
-  const taken = new Map<string, { term: string; credits: number }[]>();
+  const taken = new Map<string, { term: string; credits: number; course: PlanCourse }[]>();
   for (const term of plan.terms) {
     for (const course of term.courses) {
       const info = catalog.get(course.id);
@@ -273,7 +290,7 @@ function repeatIssues(
         });
       }
       const list = taken.get(course.id) ?? [];
-      list.push({ term: term.name, credits: creditsOf(course) });
+      list.push({ term: term.name, credits: creditsOf(course), course });
       taken.set(course.id, list);
     }
   }
@@ -284,11 +301,16 @@ function repeatIssues(
     const terms = listing(list.map((x) => x.term), "and");
     const last = { kind: "repeat" as const, term: list.at(-1)!.term, course: id };
     if (repeat.kind === "unknown") {
-      issues.push({
-        ...last,
-        severity: "confirm",
-        message: `${id} is in your plan ${count(list.length)} (${terms}). The course data doesn't say whether it can be repeated for credit, so check with the department before keeping ${list.length === 2 ? "both" : "them all"}.`,
-      });
+      // Owner ruling: every attempt after the first must follow a failed one.
+      const allowed = list.every((_, k) => k === 0 || isFailedAttempt(list[k - 1]!.course));
+      if (!allowed) {
+        const hadW = list.some((x) => x.course.status === "completed" && gradeIs(x.course, "W"));
+        issues.push({
+          ...last,
+          severity: "error",
+          message: `${id} is in your plan ${count(list.length)} (${terms}). You can only retake a course you failed${hadW && !W_COUNTS_AS_FAILED ? "; a W doesn't count as failing" : ""}.`,
+        });
+      }
       continue;
     }
     const total = list.reduce((t, x) => t + x.credits, 0);

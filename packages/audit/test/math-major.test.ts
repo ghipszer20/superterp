@@ -60,4 +60,16 @@ describe("Math major, Traditional Track, 2026–27", () => {
     const statuses = await statusOf(plan);
     expect([statuses.math240, statuses.math241, statuses.intro3]).toEqual(["satisfied", "satisfied", "satisfied"]);
   });
+
+  // Assumption (PROJECT_MEMORY section 17, open question 4): same substitutes as the Applied track.
+  it("accepts CMSC141/CMSC142 for CMSC131/CMSC132 in Sequence Four", async () => {
+    const plan = [...without("CMSC131", "CMSC132"), c("CMSC141", 4), c("CMSC142", 4)];
+    const statuses = await statusOf(plan);
+    expect([statuses.programming, statuses.supporting]).toEqual(["satisfied", "satisfied"]);
+  });
+
+  it("accepts a mixed Sequence Four: CMSC141, CMSC132, CMSC216", async () => {
+    const plan = [...without("CMSC131"), c("CMSC141", 4)];
+    expect((await statusOf(plan)).supporting).toBe("satisfied");
+  });
 });
