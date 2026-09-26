@@ -80,8 +80,9 @@ type Pair = {
   extraOptions?: string[];
   /** The hand encoding marks it an overlay; otherwise identical. */
   overlay?: true;
-  /** Every draft set is in the hand encoding, which has more (sets requirements). */
-  fewerSets?: true;
+  /** Every draft set is in the hand encoding, which has more (sets requirements): exactly the
+   * expanded set keys (see `expandedSetKeys`) the hand encoding has and the draft doesn't. */
+  fewerSets?: string[];
 };
 /** A hand requirement with no drafted counterpart: the table row went to review with this reason, or it isn't in the table at all. */
 type Missing = { hand: string; why: string; review: ReviewReason | null; row?: string };
@@ -126,7 +127,8 @@ const goldens: Record<string, Golden> = {
           "owner ruling: CMSC131 may count for programming and Sequence Four, so the sequence is an overlay; " +
           "the hand encoding adds CMSC141/142 to Sequence Four (assumption, PROJECT_MEMORY section 17 open question 4)",
         overlay: true,
-        fewerSets: true,
+        // Sequence Four's CMSC141/CMSC142 variants (owner-confirmed, not in the catalog table).
+        fewerSets: ["CMSC131&CMSC142&CMSC216", "CMSC132&CMSC141&CMSC216", "CMSC141&CMSC142&CMSC216"],
       },
     ],
     missing: [
@@ -151,7 +153,14 @@ const goldens: Record<string, Golden> = {
           "Sequence Eleven's 'Select Two From:' is drafted as a course-count filter part (checked by expansion below, against the hand encoding's six fully expanded sets), " +
           "and Sequence Twelve matches the hand encoding's filter part (two 400-level AOSC) exactly",
         overlay: true,
-        fewerSets: true,
+        // Sequence Four's CMSC141/CMSC142 variants and Sequence Nine's BSCI171+BSCI161 variants (both owner-confirmed, not in the catalog table).
+        fewerSets: [
+          "BSCI160&BSCI161&BSCI170&BSCI171&CHEM131&CHEM132",
+          "BSCI160&BSCI161&BSCI170&BSCI171&CHEM146&CHEM177",
+          "CMSC131&CMSC142&CMSC216",
+          "CMSC132&CMSC141&CMSC216",
+          "CMSC141&CMSC142&CMSC216",
+        ],
       },
     ],
     missing: [
@@ -182,9 +191,13 @@ describe.each(Object.entries(goldens))("draft of %s vs the hand encoding", (_, {
     expect(d.overlay).toBeUndefined();
     if (d.kind === "sets" && h.kind === "sets") {
       const handSets = expandedSetKeys(h.options);
+      const draftSets = expandedSetKeys(d.options);
       for (const o of d.options) for (const variant of expandOption(o)) expect(handSets).toContain(setKey(variant));
-      expect(d.options.length < h.options.length).toBe(Boolean(pair.fewerSets));
-      if (!pair.fewerSets) expect(meaning({ ...h, overlay: undefined })).toBe(meaning(d));
+      if (pair.fewerSets) expect([...handSets].filter((k) => !draftSets.has(k)).sort()).toEqual([...pair.fewerSets].sort());
+      else {
+        expect(d.options.length < h.options.length).toBe(false);
+        expect(meaning({ ...h, overlay: undefined })).toBe(meaning(d));
+      }
       return;
     }
     const options = (r: Requirement) => (r.kind === "course" ? r.options : r.kind === "choose" ? (r.from.courses ?? []) : []);
