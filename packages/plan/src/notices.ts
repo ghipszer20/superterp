@@ -3,7 +3,7 @@
 // Runs the degree audit (@superterp/audit, an integer program), so it's async and slower than
 // checkPlan; run it after edits settle, not on every keystroke.
 
-import { auditPrograms, type AuditResult, type Program, type StudentCourse } from "@superterp/audit";
+import { auditPrograms, matchesFilter, type AuditResult, type Program, type StudentCourse } from "@superterp/audit";
 import type { PlanCatalog } from "./catalog.ts";
 import type { Plan } from "./check.ts";
 
@@ -126,9 +126,27 @@ function shortfall(program: Program, result: AuditResult, courses: StudentCourse
     } else if (req.kind === "distribution") n = req.count - r.assigned.length;
     else if (req.kind === "concentration") n = Math.ceil((req.credits - assignedCredits) / 3);
     else {
-      const gaps = req.options.map((o) => o.filter((id) => !have.has(id)));
-      names = gaps.reduce((a, b) => (b.length < a.length ? b : a));
-      n = names.length;
+      // Each set's gap: its fixed courses not yet taken, plus what each "any N from a filter"
+      // member still needs after the student's other matching courses. The requirement needs its
+      // `count` (default 1) smallest gaps.
+      const gaps = req.options.map((set) => {
+        const fixed = new Set(set.filter((m): m is string => typeof m === "string"));
+        const gap = { names: [...fixed].filter((id) => !have.has(id)), size: 0 };
+        gap.size = gap.names.length;
+        for (const m of set) {
+          if (typeof m === "string") continue;
+          const matching = courses.filter((c) => !fixed.has(c.id) && matchesFilter(m.from, c)).length;
+          const short = Math.max(0, m.count - matching);
+          if (short > 0) {
+            gap.names.push(`${short} more for ${req.name}`);
+            gap.size += short;
+          }
+        }
+        return gap;
+      });
+      const needed = [...gaps].sort((a, b) => a.size - b.size).slice(0, req.count ?? 1);
+      names = needed.flatMap((g) => g.names);
+      n = needed.reduce((t, g) => t + g.size, 0);
     }
     n = Math.max(1, n);
     if (req.overlay) overlay = Math.max(overlay, n);
