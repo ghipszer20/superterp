@@ -7,7 +7,7 @@ import type { Program } from "@superterp/audit";
 import { describe, expect, it } from "vitest";
 import { cmscMajor } from "../../audit/programs/cmsc-major-2026-27.ts";
 import { mathMajorApplied } from "../../audit/programs/math-major-applied-2026-27.ts";
-import { mathMajorTraditional } from "../../audit/programs/math-major-traditional-2026-27.ts";
+import { mathMajorTraditional } from "../../audit/programs/math-major-2026-27.ts";
 import { buildCatalog } from "../src/catalog.ts";
 import type { Plan } from "../src/check.ts";
 import { whatIf } from "../src/what-if.ts";
@@ -66,11 +66,14 @@ describe("course classification", () => {
   });
 
   it("is unused once neither a major, Gen Ed, nor the credit floor needs it", async () => {
-    // Fill the 9-credit floor with HIST200 (3cr) + CMSC131 (4cr) = 7cr, then CMSC132 (4cr) pushes
-    // past the floor and matches nothing else.
-    const result = await whatIf(planWith("HIST200", "CMSC131", "CMSC132"), catalog, [], [], [genEdish, universityish]);
-    const cmsc132 = result.courses.find((x) => x.id === "CMSC132")!;
-    expect(cmsc132.currentStatus).toBe("unused");
+    // Chronologically: HIST200 (3cr, before=0<9, running total 3) counts for the floor; CMSC131
+    // (4cr, before=3<9, running total 7) counts too; CMSC132 (4cr, before=7<9, running total 11)
+    // also counts -- still within the floor's one-course overshoot allowance (cap 9+3=12).
+    // CMSC250 (4cr, before=11>=9) starts after the floor is already full, and matches nothing
+    // else, so it's unused.
+    const result = await whatIf(planWith("HIST200", "CMSC131", "CMSC132", "CMSC250"), catalog, [], [], [genEdish, universityish]);
+    const cmsc250 = result.courses.find((x) => x.id === "CMSC250")!;
+    expect(cmsc250.currentStatus).toBe("unused");
   });
 
   it("fills the credit floor chronologically: prior credit, then term order", async () => {
@@ -134,12 +137,6 @@ describe("freed credits", () => {
 });
 
 describe("graduation term estimate", () => {
-  const load15Plan: Plan = {
-    terms: [
-      { name: "Fall 2026", courses: ["CMSC131", "MATH140", "ENGL101"].map((id) => ({ id })) }, // 4+4+3=11? see below
-    ],
-  };
-
   it("documents the rule: typical load is the median credits of Fall/Spring terms with courses", async () => {
     const plan: Plan = {
       terms: [
@@ -184,9 +181,89 @@ describe("graduation term estimate", () => {
       ],
     };
     const result = await whatIf(plan, catalog, [], [majorB], []);
+    // Typical load is 4 (both terms). majorB needs CMSC132 + CMSC250 (4cr each = 8cr), neither in
+    // the plan: ceil(8/4) = 2 extra terms, so the finish term moves from Spring 2027 to Spring 2028
+    // (Spring 2027 -> Fall 2027 -> Spring 2028, alternating).
     expect(result.graduation.currentFinishTerm).toBe("Spring 2027");
-    if (result.graduation.deltaTerms === 1) expect(result.graduation.proposedFinishTerm).toBe("Fall 2027");
+    expect(result.graduation.deltaTerms).toBe(2);
+    expect(result.graduation.proposedFinishTerm).toBe("Spring 2028");
   });
+});
+
+describe("CS gateway", () => {
+  const gatewayPlan = (grade: string): Plan => ({
+    terms: [{ name: "Fall 2026", courses: [{ id: "CMSC131", status: "completed", grade }] }],
+  });
+
+  it("is included when the CS major is in either the current or proposed set", async () => {
+    const withCurrent = await whatIf(gatewayPlan("B-"), catalog, [cmscMajor], [], [], { matriculationTerm: "202408" });
+    const withProposed = await whatIf(gatewayPlan("B-"), catalog, [], [cmscMajor], [], { matriculationTerm: "202408" });
+    const withNeither = await whatIf(gatewayPlan("B-"), catalog, [majorA], [majorB], [], { matriculationTerm: "202408" });
+    expect(withCurrent.gateway).not.toBeUndefined();
+    expect(withProposed.gateway).not.toBeUndefined();
+    expect(withNeither.gateway).toBeUndefined();
+  });
+
+  it("applies the pre-Fall-2024 C-/2.7 rule for an earlier matriculation term", async () => {
+    const result = await whatIf(gatewayPlan("C"), catalog, [cmscMajor], [], [], { matriculationTerm: "202405" });
+    const c131 = result.gateway!.courses.find((c) => c.id === "CMSC131")!;
+    expect(c131.status).toBe("met");
+  });
+
+  it("applies the Fall-2024-or-later B-/3.0 rule for a later matriculation term", async () => {
+    const result = await whatIf(gatewayPlan("C"), catalog, [cmscMajor], [], [], { matriculationTerm: "202408" });
+    const c131 = result.gateway!.courses.find((c) => c.id === "CMSC131")!;
+    expect(c131.status).toBe("below-minimum");
+  });
+});
+
+describe("retakes", () => {
+  // Owner ruling: a course may appear twice in a plan only after a failed or withdrawn attempt.
+  // The failed attempt should stop counting toward a minimum-grade requirement (so a later,
+  // passing retake is the one that counts), and the failed attempt itself should show as unused.
+  const gradedMajor: Program = {
+    id: "graded-major",
+    name: "Graded Major",
+    minGrade: "C-",
+    requirements: [{ kind: "course", id: "cmsc131", name: "CMSC131", options: ["CMSC131"] }],
+  };
+
+  it("lets a passing retake count after a failed attempt, leaving the failed attempt unused", async () => {
+    const plan: Plan = {
+      terms: [
+        { name: "Fall 2026", courses: [{ id: "CMSC131", status: "completed", grade: "F" }] },
+        { name: "Spring 2027", courses: [{ id: "CMSC131" }] },
+      ],
+    };
+    const result = await whatIf(plan, catalog, [gradedMajor], [gradedMajor], []);
+    const counted = result.courses.filter((c) => c.id === "CMSC131");
+    expect(counted).toHaveLength(2);
+    expect(counted.filter((c) => c.currentStatus === "counts")).toHaveLength(1);
+    expect(counted.filter((c) => c.currentStatus === "unused")).toHaveLength(1);
+  });
+});
+
+describe("graduation clamp", () => {
+  it("never estimates an earlier finish than the layers' own credit floor allows", async () => {
+    // Only 8 credits in the whole plan (CMSC132 + CMSC250), already under the 9-credit university
+    // floor. Dropping majorB would otherwise "free" all 8 of those credits (ceil(8/4) = 2 terms
+    // earlier), but the plan has no room to lose any credits and stay at or above the floor, so
+    // the clamp holds freed credits to 0: no earlier finish at all.
+    const plan: Plan = {
+      terms: [
+        { name: "Fall 2026", courses: [{ id: "CMSC132" }] },
+        { name: "Spring 2027", courses: [{ id: "CMSC250" }] },
+      ],
+    };
+    const result = await whatIf(plan, catalog, [majorB], [], [universityish]);
+    expect(result.graduation.deltaTerms).toBe(0);
+  });
+});
+
+/** ownerPlan() without a course, for a scenario the full plan wouldn't create. */
+const without = (plan: Plan, ...ids: string[]): Plan => ({
+  ...plan,
+  terms: plan.terms.map((t) => ({ ...t, courses: t.courses.filter((c) => !ids.includes(c.id)) })),
 });
 
 describe("real programs: the owner's Math (Applied) + CS plan", () => {
@@ -199,13 +276,19 @@ describe("real programs: the owner's Math (Applied) + CS plan", () => {
     expect(c.currentStatus).toBe("counts");
   });
 
+  // The full owner plan happens to satisfy Math Traditional too (it shares almost all of Applied's
+  // courses), so these two tests drop MATH411 -- Traditional's depth sequence and its "eight
+  // 400-level courses" overlay both need it, with no spare 400-level course to replace it -- to
+  // exercise a genuine shortfall.
+  const shortOfTraditional = () => without(ownerPlan(), "MATH411");
+
   it("switching Math Applied to Math Traditional reports the traditional track's shortfall", async () => {
-    const result = await whatIf(ownerPlan(), catalog, [mathMajorApplied, cmscMajor], [mathMajorTraditional, cmscMajor], []);
+    const result = await whatIf(shortOfTraditional(), catalog, [mathMajorApplied, cmscMajor], [mathMajorTraditional, cmscMajor], []);
     expect(result.newlyMissing.map((g) => g.program.id)).toEqual(["math-major-traditional"]);
   });
 
   it("gives the proposed program's catalog year", async () => {
-    const result = await whatIf(ownerPlan(), catalog, [mathMajorApplied], [mathMajorTraditional], []);
+    const result = await whatIf(shortOfTraditional(), catalog, [mathMajorApplied], [mathMajorTraditional], []);
     expect(result.newlyMissing[0]!.program.catalogYear).toBe("2026-27");
   });
 });

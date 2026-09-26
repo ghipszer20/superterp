@@ -10,7 +10,8 @@
     "./check": "./src/check.ts",
     "./catalog": "./src/catalog.ts",
     "./catalog-file": "./src/catalog-file.ts",
-    "./notices": "./src/notices.ts"
+    "./notices": "./src/notices.ts",
+    "./what-if": "./src/what-if.ts"
   },
   "scripts": {
     "test": "vitest run",

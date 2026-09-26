@@ -4,6 +4,7 @@
 // checkPlan; run it after edits settle, not on every keystroke.
 
 import { auditPrograms, matchesFilter, type AuditResult, type Program, type StudentCourse } from "@superterp/audit";
+import { allowsRetake } from "./check.ts";
 import type { PlanCatalog } from "./catalog.ts";
 import type { Plan } from "./check.ts";
 
@@ -54,14 +55,20 @@ export type ProgramNotice =
 
 /**
  * The plan's courses as the audit sees them: prior credit and completed courses as completed,
- * the rest planned. A course counts once, however many times it appears (owner ruling:
- * overlapping credit counts once).
+ * the rest planned. A course counts once, however many times it appears -- except a legitimate
+ * retake (owner ruling: a course may appear twice in a plan only after a failed or withdrawn
+ * attempt), which keeps both occurrences, so the audit can assign a passing retake and leave the
+ * failed or withdrawn attempt unused rather than have it silently win by appearing first.
  */
 export function planCourses(plan: Plan, catalog: PlanCatalog): StudentCourse[] {
-  const courses = new Map<string, StudentCourse>();
+  const courses: StudentCourse[] = [];
+  const seen = new Set<string>();
+  const retakable = new Set<string>();
+
   for (const c of plan.priorCredit ?? []) {
-    if (courses.has(c.id)) continue;
-    courses.set(c.id, {
+    if (seen.has(c.id)) continue; // Prior credit is never a retake of an earlier attempt here.
+    seen.add(c.id);
+    courses.push({
       id: c.id,
       credits: c.credits,
       status: "completed",
@@ -71,18 +78,21 @@ export function planCourses(plan: Plan, catalog: PlanCatalog): StudentCourse[] {
   }
   for (const term of plan.terms) {
     for (const c of term.courses) {
-      if (courses.has(c.id)) continue;
+      if (seen.has(c.id) && !retakable.has(c.id)) continue;
+      retakable.delete(c.id);
+      seen.add(c.id);
       const info = catalog.get(c.id);
-      courses.set(c.id, {
+      courses.push({
         id: c.id,
         credits: c.credits ?? info?.credits.min ?? 0,
         status: c.status === "completed" ? "completed" : "planned",
         ...(c.grade ? { grade: c.grade } : {}),
         genEd: info?.genEd ?? [],
       });
+      if (allowsRetake(c)) retakable.add(c.id);
     }
   }
-  return [...courses.values()];
+  return courses;
 }
 
 const complete = (result: AuditResult) => result.requirements.every((r) => r.status === "satisfied");
