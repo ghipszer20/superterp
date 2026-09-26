@@ -15,10 +15,10 @@ interpretation quoted in `reviewNotes`; **none** = no academic requirements are 
 | Honors | 8 | 8 | 0 |
 | Other LLP | 6 | 5 | 1 |
 | Other special program | 8 | 2 | 6 |
-| Departmental Honors | 2 | 2 | 0 |
-| **Total** | **37** | **30** | **7** |
+| Departmental Honors | 10 | 10 | 0 |
+| **Total** | **45** | **38** | **7** |
 
-Drafted: **156** requirements and **221** review notes (120 manual, 101 check).
+Drafted: **171** requirements and **254** review notes (144 manual, 110 check).
 Manual notes are rules the audit can't check (GPA, residence, attendance, approvals); check notes are interpretations to confirm.
 
 ## Programs
@@ -60,5 +60,13 @@ Manual notes are rules the audit can't check (GPA, residence, attendance, approv
 | Army ROTC | Other special program | none: Commissioning program; its academic part (ARMY301, ARMY302, ARMY401, ARMY402 and military history) is the catalog's Army Leadership Studies minor, which the catalog pipeline drafts. | 0 | 0 | 0 | 0 |
 | Naval ROTC | Other special program | none: Commissioning program; the catalog gives sample plans ("Navy Option students typically will take") and requirement categories (calculus, physics, English) rather than a course list. The Naval Science minor is drafted by the catalog pipeline. | 0 | 0 | 0 | 0 |
 | C.D. Mote Jr. Incentive Awards Program | Other special program | none: A scholarship and mentoring program with no academic course requirements. | 0 | 0 | 0 | 0 |
+| Departmental Honors: American Studies | Departmental Honors | hand | 1 | 4 | 3 | 1 |
+| Departmental Honors: Art | Departmental Honors | hand | 2 | 4 | 3 | 1 |
+| Departmental Honors: Art History & Archaeology | Departmental Honors | hand | 2 | 3 | 2 | 1 |
+| Departmental Honors: Communication | Departmental Honors | hand | 1 | 5 | 4 | 1 |
+| Departmental Honors: English | Departmental Honors | hand | 4 | 5 | 3 | 2 |
+| Departmental Honors: Germanic Studies | Departmental Honors | hand | 2 | 5 | 4 | 1 |
 | Departmental Honors: History | Departmental Honors | hand | 4 | 4 | 3 | 1 |
 | Departmental Honors: Mathematics | Departmental Honors | hand | 2 | 7 | 4 | 3 |
+| Departmental Honors: Spanish & Portuguese | Departmental Honors | hand | 1 | 4 | 3 | 1 |
+| Departmental Honors: Women, Gender, and Sexuality Studies | Departmental Honors | hand | 2 | 3 | 2 | 1 |

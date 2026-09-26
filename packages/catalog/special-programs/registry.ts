@@ -12,8 +12,16 @@ import { honorsHumanities } from "./honors-humanities-2026-27.ts";
 import { honorsIbh } from "./honors-ibh-2026-27.ts";
 import { honorsIls } from "./honors-ils-2026-27.ts";
 import { honorsUh } from "./honors-uh-2026-27.ts";
+import { deptAmst } from "./dept-amst-2026-27.ts";
+import { deptArt } from "./dept-art-2026-27.ts";
+import { deptArth } from "./dept-arth-2026-27.ts";
+import { deptComm } from "./dept-comm-2026-27.ts";
+import { deptEngl } from "./dept-engl-2026-27.ts";
+import { deptGers } from "./dept-gers-2026-27.ts";
 import { deptHist } from "./dept-hist-2026-27.ts";
 import { deptMath } from "./dept-math-2026-27.ts";
+import { deptSpan } from "./dept-span-2026-27.ts";
+import { deptWgss } from "./dept-wgss-2026-27.ts";
 import { carillon } from "./llp-carillon-2026-27.ts";
 import { flexus, virtus } from "./llp-flexus-virtus-2026-27.ts";
 import { languageHouse } from "./llp-language-house-2026-27.ts";
@@ -126,6 +134,14 @@ export const specialPrograms: SpecialEntry[] = [
   ),
 
   // Departmental honors programs (see honors.umd.edu/academics/departmental-honors/ for the department directory)
+  hand("departmental", deptAmst),
+  hand("departmental", deptArt),
+  hand("departmental", deptArth),
+  hand("departmental", deptComm),
+  hand("departmental", deptEngl),
+  hand("departmental", deptGers),
   hand("departmental", deptHist),
   hand("departmental", deptMath),
+  hand("departmental", deptSpan),
+  hand("departmental", deptWgss),
 ];
