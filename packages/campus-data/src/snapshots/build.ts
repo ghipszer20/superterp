@@ -156,6 +156,7 @@ export async function buildSnapshots(
       return files;
     }),
   ]);
+  await pruneSnapshots(store, now);
   return report(results.flat());
 }
 
@@ -179,4 +180,34 @@ export async function refreshFast(
     refreshMenus(store, now, sources, dueHalls),
   ]);
   return report(results.flat());
+}
+
+/** The dated key prefixes pruneSnapshots looks under: `<prefix>/<date>/...`. */
+const DATED_PREFIXES = ["rooms", "dining"] as const;
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+
+export type PruneOptions = { keepDays?: number };
+export type PruneReport = { removed: string[] };
+
+/**
+ * Remove dated snapshots (and their `status/` entries) whose date falls outside
+ * `keepDays` days of `now`, in campus time. Defaults to keeping yesterday, today,
+ * and tomorrow (keepDays: 1). Undated keys (the room catalog, library hours,
+ * RecWell areas, the GTFS feed) are never touched.
+ */
+export async function pruneSnapshots(store: SnapshotStore, now: Date, { keepDays = 1 }: PruneOptions = {}): Promise<PruneReport> {
+  const today = campusDate(now);
+  const from = addDays(today, -keepDays);
+  const to = addDays(today, keepDays);
+  const removed: string[] = [];
+  for (const prefix of DATED_PREFIXES) {
+    for (const key of await store.list(prefix)) {
+      const date = key.split("/")[1];
+      if (!date || !ISO_DATE.test(date) || (date >= from && date <= to)) continue;
+      await store.delete(key);
+      await store.delete(snapshotKeys.status(key));
+      removed.push(key);
+    }
+  }
+  return { removed };
 }

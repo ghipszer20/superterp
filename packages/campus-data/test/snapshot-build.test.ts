@@ -11,6 +11,7 @@ import { parseRecWellTab } from "../src/recwell.ts";
 import { applyAvailability, parseRoomLocations, parseRooms, type Room } from "../src/rooms.ts";
 import {
   buildSnapshots,
+  pruneSnapshots,
   refreshFast,
   snapshotKeys,
   type CampusSources,
@@ -167,6 +168,16 @@ describe("buildSnapshots", () => {
     expect(report.ok).toBe(true);
     expect((await store.get<DiningMenu>("dining/2026-09-25/51"))?.data.meals).toEqual([]);
   });
+
+  it("prunes old dated snapshots at the end of the build", async () => {
+    await buildSnapshots(store, NOW, fakeSources().sources);
+    const staleKey = snapshotKeys.diningMenu("2026-09-01", 19);
+    await store.put(staleKey, { updatedAt: NOW.toISOString(), data: { hallId: 19, date: "2026-09-01", meals: [] } });
+
+    await buildSnapshots(store, minutesAfter(24 * 60), fakeSources().sources);
+
+    expect(await store.get(staleKey)).toBeNull();
+  });
 });
 
 describe("refreshFast", () => {
@@ -221,5 +232,57 @@ describe("refreshFast", () => {
       ok: false,
       error: expect.stringMatching(/no room catalog snapshot/i),
     });
+  });
+});
+
+describe("pruneSnapshots", () => {
+  async function putDated(key: string) {
+    await store.put(key, { updatedAt: NOW.toISOString(), data: 1 });
+    await store.put<SourceStatus>(snapshotKeys.status(key), {
+      updatedAt: NOW.toISOString(),
+      data: { lastAttemptAt: NOW.toISOString(), lastSuccessAt: NOW.toISOString(), error: null },
+    });
+  }
+
+  it("keeps yesterday, today, and tomorrow by default, and removes everything else dated, including its status entry", async () => {
+    const tooOld = snapshotKeys.diningMenu("2026-09-20", 19);
+    const yesterday = snapshotKeys.diningMenu("2026-09-24", 19);
+    const today = snapshotKeys.diningMenu("2026-09-25", 19);
+    const tomorrow = snapshotKeys.roomAvailability("2026-09-26", 6745, 23066);
+    const tooNew = snapshotKeys.roomAvailability("2026-09-27", 6745, 23066);
+    for (const key of [tooOld, yesterday, today, tomorrow, tooNew]) await putDated(key);
+
+    const result = await pruneSnapshots(store, NOW);
+
+    expect(result.removed.sort()).toEqual([tooNew, tooOld].sort());
+    expect(await store.get(tooOld)).toBeNull();
+    expect(await store.get(snapshotKeys.status(tooOld))).toBeNull();
+    expect(await store.get(tooNew)).toBeNull();
+    expect(await store.get(snapshotKeys.status(tooNew))).toBeNull();
+    expect(await store.get(yesterday)).not.toBeNull();
+    expect(await store.get(today)).not.toBeNull();
+    expect(await store.get(tomorrow)).not.toBeNull();
+    expect(await store.get(snapshotKeys.status(yesterday))).not.toBeNull();
+  });
+
+  it("never touches undated keys", async () => {
+    const undated = [snapshotKeys.roomCatalog, snapshotKeys.libraryHours, snapshotKeys.recWellAreas, snapshotKeys.shuttleGtfs];
+    for (const key of undated) await store.put(key, { updatedAt: NOW.toISOString(), data: 1 });
+
+    const result = await pruneSnapshots(store, NOW);
+
+    expect(result.removed).toEqual([]);
+    for (const key of undated) expect(await store.get(key)).not.toBeNull();
+  });
+
+  it("widens the keep window with keepDays", async () => {
+    const key = snapshotKeys.diningMenu("2026-09-22", 19); // 3 days before NOW's campus date
+    await putDated(key);
+
+    await pruneSnapshots(store, NOW, { keepDays: 3 });
+    expect(await store.get(key)).not.toBeNull();
+
+    await pruneSnapshots(store, NOW, { keepDays: 1 });
+    expect(await store.get(key)).toBeNull();
   });
 });

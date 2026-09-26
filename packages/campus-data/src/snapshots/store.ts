@@ -4,7 +4,7 @@
 // store at deployment without touching the jobs or the pages.
 
 import { existsSync } from "node:fs";
-import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 
 /** Bump when a snapshot's data shape changes; older snapshots then read as missing. */
@@ -19,6 +19,10 @@ export type Snapshot<T> = {
 export interface SnapshotStore {
   get<T>(key: string): Promise<Snapshot<T> | null>;
   put<T>(key: string, snapshot: Snapshot<T>): Promise<void>;
+  /** Keys stored under `prefix` (e.g. "rooms" or "dining/2026-09-25"), most-nested first. */
+  list(prefix: string): Promise<string[]>;
+  /** No-op if the key doesn't exist. */
+  delete(key: string): Promise<void>;
 }
 
 type Envelope<T> = Snapshot<T> & { schema: number; key: string };
@@ -67,6 +71,34 @@ export class FileSnapshotStore implements SnapshotStore {
       await rm(tmp, { force: true });
       throw err;
     }
+  }
+
+  async list(prefix: string): Promise<string[]> {
+    checkKey(prefix);
+    const keys: string[] = [];
+    const walk = async (dir: string, keyPrefix: string): Promise<void> => {
+      let entries;
+      try {
+        entries = await readdir(dir, { withFileTypes: true });
+      } catch (err) {
+        if ((err as NodeJS.ErrnoException).code === "ENOENT") return;
+        throw err;
+      }
+      for (const entry of entries) {
+        const entryKey = `${keyPrefix}/${entry.name}`;
+        if (entry.isDirectory()) {
+          await walk(join(dir, entry.name), entryKey);
+        } else if (entry.name.endsWith(".json")) {
+          keys.push(entryKey.slice(0, -".json".length));
+        }
+      }
+    };
+    await walk(join(this.dir, ...prefix.split("/")), prefix);
+    return keys;
+  }
+
+  async delete(key: string): Promise<void> {
+    await rm(this.file(key), { force: true });
   }
 }
 
