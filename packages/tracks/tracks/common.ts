@@ -226,6 +226,15 @@ export const collegeAlgebraOrCalculus = (source: string, extra?: Extra) =>
     ...extra,
   });
 
+/** "College Algebra" alone (HPAO's Dental Hygiene page names no calculus alternative here, unlike
+ * dentistry's and PT's "College Algebra or Calculus"; see MAPPING_NOTES.collegeAlgebra). */
+export const collegeAlgebra = (source: string, extra?: Extra) =>
+  cat(oneOf("math", "College algebra", ["MATH113", "MATH115"]), source, extra);
+
+/** "Advanced Genetics" (HPAO's Genetic Counseling page); see MAPPING_NOTES.advancedGenetics. */
+export const advancedGenetics = (source: string, extra?: Extra) =>
+  cat(oneOf("advanced-genetics", "Advanced Genetics", ["BSCI410", "BSCI416"]), source, extra);
+
 /** The ANSC Pre-Veterinary Advising Guide's "1-2 semesters of mathematics (statistics or (pre)calculus)". */
 export const statisticsOrCalculus = (source: string, extra?: Extra) =>
   cat(sets("math", "Statistics or (pre)calculus", [...STATISTICS.map((c) => [c]), ...CALCULUS.map((c) => [c])]), source, extra);
@@ -309,6 +318,10 @@ export const MAPPING_NOTES = {
     "Minimum grade C (HPAO: \"a C (not a C-)\"): a completed course below C doesn't count, and a low-grade warning is shown. Pass/fail (P/S) courses do count in the audit but get a warning; AP/IB credit counts but gets a warning, except calculus and English, where HPAO says it is accepted.",
   fixture:
     "test/fixtures/umd-courses.json is built from the Spring 2027 Schedule of Classes (packages/course-data/.cache/soc-202701.json in the main checkout), the only Schedule of Classes snapshot cached anywhere in this repo. A course not being offered that one term doesn't make its number invalid, so courses this package names that the Spring 2027 schedule doesn't confirm (CHEM146, CHEM177, CHEM247, BSCI161, BSCI171, BSCI330, PHYS141, PHYS142, PHIL170) are still in both the fixture and the requirement options above, each with its own reviewNote; most of them (BSCI161/171/330, PHYS141/142, PHIL170) are independently confirmed by another already-fetched UMD page (the Biological Sciences catalog page, or the Pre-Law timeline document), but CHEM146/CHEM177/CHEM247 have no confirming source at all and need the owner's direct verification.",
+  collegeAlgebra:
+    "\"College Algebra\" (Dental Hygiene) = MATH113 (College Algebra and Trigonometry), UMD's actual college-algebra course, or MATH115 (Precalculus), a more advanced course that assumedly covers the same ground and more. Unlike dentistry's and PT's \"College Algebra or Calculus\", HPAO's Dental Hygiene page offers no calculus alternative, so the CALCULUS courses aren't included here.",
+  advancedGenetics:
+    "\"Advanced Genetics\" (Genetic Counseling) = BSCI410 (Molecular Genetics), whose own catalog description calls it \"An advanced genetics course emphasizing the molecular basis of gene structure and function\" — the clearest match for HPAO's wording. BSCI416 (Human Genetics), which requires BSCI410 first (a minimum grade of C- in it, or concurrent enrollment), is kept as a further alternative. BSCI222 (Principles of Genetics), the introductory course both of these build on, is NOT used here: it's the prerequisite for \"advanced\" genetics, not the advanced course itself, and it's already used elsewhere in this package (upperBioLab).",
 };
 
 export const HPAO = {

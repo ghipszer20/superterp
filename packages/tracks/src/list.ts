@@ -4,7 +4,10 @@
 // itself (src/check.ts), which does call the solver, imports trackProgram from here too.
 
 import type { Program } from "@superterp/audit";
+import { preAnesthesiologistAssistant } from "../tracks/pre-anesthesiologist-assistant.ts";
 import { preDental } from "../tracks/pre-dental.ts";
+import { preDentalHygiene } from "../tracks/pre-dental-hygiene.ts";
+import { preGeneticCounseling } from "../tracks/pre-genetic-counseling.ts";
 import { preLaw } from "../tracks/pre-law.ts";
 import { preMed } from "../tracks/pre-med.ts";
 import { preNursing } from "../tracks/pre-nursing.ts";
@@ -31,6 +34,9 @@ export const TRACKS: Track[] = [
   preOt,
   preNursing,
   preLaw,
+  preAnesthesiologistAssistant,
+  preDentalHygiene,
+  preGeneticCounseling,
 ];
 
 /**

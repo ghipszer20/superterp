@@ -49,6 +49,9 @@ const EXPECTED = [
   "pre-ot",
   "pre-nursing",
   "pre-law",
+  "pre-anesthesiologist-assistant",
+  "pre-dental-hygiene",
+  "pre-genetic-counseling",
 ];
 
 describe("track definitions", () => {
@@ -119,7 +122,19 @@ describe("track definitions", () => {
   });
 
   it("use HPAO's disclaimer and minimum grade of C on every HPAO track except the nursing pathway", () => {
-    for (const id of ["pre-med", "pre-dental", "pre-pa", "pre-pharmacy", "pre-optometry", "pre-podiatry", "pre-pt", "pre-ot"]) {
+    for (const id of [
+      "pre-med",
+      "pre-dental",
+      "pre-pa",
+      "pre-pharmacy",
+      "pre-optometry",
+      "pre-podiatry",
+      "pre-pt",
+      "pre-ot",
+      "pre-anesthesiologist-assistant",
+      "pre-dental-hygiene",
+      "pre-genetic-counseling",
+    ]) {
       const track = TRACKS.find((t) => t.id === id)!;
       expect(track.disclaimer, id).toBe(HPAO_DISCLAIMER);
       expect(track.minGrade, id).toBe("C");
@@ -129,6 +144,23 @@ describe("track definitions", () => {
     expect(nursing.minGrade).toBe("C-");
     expect(nursing.examCreditAccepted).toBe(true);
     expect(nursing.entry).toEqual({ kind: "transfer", afterYears: 2 });
+  });
+
+  it("models Pre-Dental Hygiene as a 2+2 transfer track, like nursing", () => {
+    const dentalHygiene = TRACKS.find((t) => t.id === "pre-dental-hygiene")!;
+    expect(dentalHygiene.entry).toEqual({ kind: "transfer", afterYears: 2 });
+  });
+
+  it("gives the Anesthesiologist Assistant and Genetic Counseling master's tracks an after-degree entry", () => {
+    for (const id of ["pre-anesthesiologist-assistant", "pre-genetic-counseling"]) {
+      const track = TRACKS.find((t) => t.id === id)!;
+      expect(track.entry, id).toEqual({ kind: "after-degree" });
+    }
+  });
+
+  it("doesn't link the AA track's categories to a single exam, since HPAO names the MCAT or the GRE", () => {
+    const aa = TRACKS.find((t) => t.id === "pre-anesthesiologist-assistant")!;
+    expect(aa.categories.every((c) => !c.examContent)).toBe(true);
   });
 
   it("give pre-law no required courses, but suggested courses, the LSAT and GPA protection", () => {
