@@ -169,6 +169,33 @@ describe("planReducer: term course list from the schedule builder", () => {
     plan = planReducer(plan, { type: "set-term-courses", term: "Fall 2026", ids: ["CMSC498", "MATH140"] });
     expect(plan.terms[0]!.courses).toEqual([{ id: "CMSC498", credits: 2 }, { id: "MATH140" }]);
   });
+
+  it("creates the term, in sorted order, when the schedule builder's term isn't in the plan yet", () => {
+    const plan = planReducer(base(), { type: "set-term-courses", term: "Fall 2030", ids: ["STAT400"] });
+    expect(plan.terms.map((t) => t.name)).toEqual([
+      "Fall 2026",
+      "Spring 2027",
+      "Fall 2027",
+      "Spring 2028",
+      "Fall 2028",
+      "Spring 2029",
+      "Fall 2029",
+      "Spring 2030",
+      "Fall 2030",
+    ]);
+    expect(plan.terms.at(-1)!.courses).toEqual([{ id: "STAT400" }]);
+  });
+
+  it("ignores a malformed term name it would otherwise have to create", () => {
+    const plan = base();
+    expect(planReducer(plan, { type: "set-term-courses", term: "Not A Term", ids: ["STAT400"] })).toBe(plan);
+  });
+
+  it("returns the same plan when the course ids are already what's asked for", () => {
+    const plan = planReducer(base(), { type: "add-course", term: "Fall 2026", id: "CMSC131" });
+    const next = planReducer(plan, { type: "set-term-courses", term: "Fall 2026", ids: ["CMSC131"] });
+    expect(next).toBe(plan);
+  });
 });
 
 describe("planReducer: prior credit and GPA", () => {

@@ -5,9 +5,7 @@
 // loaded by lib/advisor/analysis.ts, which the app code-splits with import().
 
 import type { GatewayCourseStatus, GatewayOverallStatus, RequirementResult } from "@superterp/audit";
-import { gatewayCourseNote } from "@/lib/advisor/gateway-notes";
 import type { AdvisorPlan } from "@/lib/advisor/plan-state";
-import type { PriorCreditResult } from "@/lib/advisor/prior-credit";
 import type { AnalysisState, OpenCourse } from "./AdvisorApp";
 import { dispatchPlan } from "./store";
 import styles from "./advisor.module.css";
@@ -17,12 +15,10 @@ const REQ_STATUS: Record<RequirementResult["status"], string> = { satisfied: "Sa
 export function AuditView({
   plan,
   analysis,
-  prior,
   onOpenCourse,
 }: {
   plan: AdvisorPlan;
   analysis: AnalysisState;
-  prior: PriorCreditResult;
   onOpenCourse: (c: OpenCourse) => void;
 }) {
   if (!analysis.result) {
@@ -35,7 +31,6 @@ export function AuditView({
     );
   }
   const { audits, gateway } = analysis.result;
-  const priorCourseIds = new Set(prior.courses.map((c) => c.id));
 
   return (
     <div className={styles.auditLayout} aria-busy={analysis.status === "running"}>
@@ -88,23 +83,19 @@ export function AuditView({
               : `Matriculated before Fall 2024: every gateway course ${gateway.rule.minGrade} or better, cumulative GPA ${gateway.rule.minGpa.toFixed(1)} or higher.`}
           </p>
           <ul className={styles.reqList}>
-            {gateway.courses.map((c) => {
-              const note = gatewayCourseNote(c, gateway.rule.minGrade, priorCourseIds);
-              return (
-                <li key={c.id} className={styles.reqRow}>
-                  <div className={styles.reqHead}>
-                    <span className={styles.reqName}>
-                      {c.name} ({c.options.join(" or ")})
-                    </span>
-                    <span className={styles.reqStatus} data-status={GATEWAY_TONE[c.status]}>
-                      {GATEWAY_COURSE_LABEL[c.status]}
-                      {c.satisfiedBy ? ` (${c.satisfiedBy})` : ""}
-                    </span>
-                  </div>
-                  {note ? <p className={styles.reqGap}>{note}</p> : null}
-                </li>
-              );
-            })}
+            {gateway.courses.map((c) => (
+              <li key={c.id} className={styles.reqRow}>
+                <div className={styles.reqHead}>
+                  <span className={styles.reqName}>
+                    {c.name} ({c.options.join(" or ")})
+                  </span>
+                  <span className={styles.reqStatus} data-status={GATEWAY_TONE[c.status]}>
+                    {GATEWAY_COURSE_LABEL[c.status]}
+                    {c.satisfiedBy ? ` (${c.satisfiedBy})` : ""}
+                  </span>
+                </div>
+              </li>
+            ))}
           </ul>
           <label className={styles.field}>
             <span className={styles.fieldLabel}>Cumulative UMD GPA</span>

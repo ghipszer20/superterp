@@ -1,5 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { academicYears, compareTerms, defaultTerms, matriculationTermId, parseTerm, sortTerms, startTermOptions } from "../advisor/terms";
+import {
+  academicYears,
+  compareTerms,
+  defaultTerms,
+  matriculationTermId,
+  parseTerm,
+  sortTerms,
+  startTermOptions,
+  termFromMatriculationId,
+} from "../advisor/terms";
 
 describe("defaultTerms", () => {
   it("gives eight fall and spring terms from a fall start", () => {
@@ -60,6 +69,24 @@ describe("matriculationTermId", () => {
   it("gives the Testudo id of a fall or spring start", () => {
     expect(matriculationTermId("Fall 2026")).toBe("202608");
     expect(matriculationTermId("Spring 2027")).toBe("202701");
+  });
+});
+
+describe("termFromMatriculationId", () => {
+  it("inverts matriculationTermId for a fall or spring start", () => {
+    expect(termFromMatriculationId("202608")).toBe("Fall 2026");
+    expect(termFromMatriculationId("202701")).toBe("Spring 2027");
+  });
+
+  it("round-trips through matriculationTermId", () => {
+    for (const name of ["Fall 2026", "Spring 2027", "Summer 2027", "Winter 2027"]) {
+      expect(termFromMatriculationId(matriculationTermId(name)!)).toBe(name);
+    }
+  });
+
+  it("is null for an unrecognized id", () => {
+    expect(termFromMatriculationId("not-a-term")).toBeNull();
+    expect(termFromMatriculationId("202699")).toBeNull();
   });
 });
 

@@ -127,6 +127,19 @@
   list-style: none;
 }
 
+.chipCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 100%;
+}
+
+.chipNote {
+  padding-left: 10px;
+  color: var(--text-2);
+  font: var(--t-foot);
+}
+
 .courseChip {
   display: flex;
   align-items: center;
