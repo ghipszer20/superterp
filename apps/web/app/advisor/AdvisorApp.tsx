@@ -10,6 +10,7 @@ import { groupIssues } from "@/lib/advisor/issues";
 import type { AdvisorPlan } from "@/lib/advisor/plan-state";
 import { computePriorCredit } from "@/lib/advisor/prior-credit";
 import { programsLabel } from "@/lib/advisor/programs";
+import { termFromMatriculationId } from "@/lib/advisor/terms";
 import { AuditView } from "./AuditView";
 import { CourseSheet } from "./CourseSheet";
 import { useCatalog, type CatalogState } from "./data";
@@ -129,8 +130,7 @@ function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; cat
   );
 }
 
-const SEASONS: Record<string, string> = { "01": "Spring", "05": "Summer", "08": "Fall", "12": "Winter" };
-const termLabel = (id: string) => `${SEASONS[id.slice(4)] ?? ""} ${id.slice(0, 4)}`.trim();
+const termLabel = (id: string) => termFromMatriculationId(id) ?? "";
 
 /** ?course=CMSC351 opens that course's sheet (a deep link; also used by screenshots). */
 function initialCourse(): OpenCourse | null {

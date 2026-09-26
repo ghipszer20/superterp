@@ -5,6 +5,7 @@ export type Season = "Fall" | "Winter" | "Spring" | "Summer";
 
 const ORDER: Record<Season, number> = { Winter: 0, Spring: 1, Summer: 2, Fall: 3 };
 const TESTUDO_MONTH: Record<Season, string> = { Spring: "01", Summer: "05", Fall: "08", Winter: "12" };
+const SEASON_FROM_MONTH: Record<string, Season> = { "01": "Spring", "05": "Summer", "08": "Fall", "12": "Winter" };
 
 export function parseTerm(name: string): { season: Season; year: number } | null {
   const m = /^(Fall|Winter|Spring|Summer) (\d{4})$/.exec(name.trim());
@@ -62,6 +63,14 @@ export function academicYears(names: string[]): { label: string; terms: string[]
 export function matriculationTermId(name: string): string | null {
   const t = parseTerm(name);
   return t ? `${t.year}${TESTUDO_MONTH[t.season]}` : null;
+}
+
+/** Inverse of matriculationTermId, e.g. "202701" → "Spring 2027"; null for an unrecognized id. */
+export function termFromMatriculationId(id: string): string | null {
+  const m = /^(\d{4})(\d{2})$/.exec(id);
+  if (!m) return null;
+  const season = SEASON_FROM_MONTH[m[2]!];
+  return season ? `${season} ${m[1]}` : null;
 }
 
 /** Fall and spring start terms from four years back to two years ahead. */
