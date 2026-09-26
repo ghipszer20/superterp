@@ -1,0 +1,281 @@
+/* The section chooser: a side panel beside the calendar (never covering it), a half-height
+   bottom sheet on phones. Real border, so it stays distinct when shadows are flattened. */
+
+.panel {
+  position: sticky;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 32px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05), 0 6px 20px rgb(0 0 0 / 0.08);
+  animation: slideIn 0.22s var(--spring);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+}
+
+@media (max-width: 899px) {
+  .panel {
+    position: fixed;
+    z-index: 60;
+    right: 0;
+    bottom: calc(56px + env(safe-area-inset-bottom));
+    left: 0;
+    height: 46vh;
+    max-height: none;
+    border-width: 1px 0 0;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -10px 40px rgb(0 0 0 / 0.18);
+    animation-name: sheetUp;
+  }
+
+  @keyframes sheetUp {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+  }
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px 8px 14px;
+  border-bottom: 1px solid var(--separator);
+}
+
+.headSwatch {
+  flex: none;
+  width: 12px;
+  height: 28px;
+  border: 1px solid var(--fg);
+  border-radius: 4px;
+  background: var(--bg);
+}
+
+.headText {
+  flex: 1;
+  min-width: 0;
+}
+
+.head h3 {
+  font: 700 15px/1.25 var(--font);
+}
+
+.head p {
+  overflow: hidden;
+  color: var(--text-2);
+  font: var(--t-foot);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.close {
+  display: grid;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--text-2);
+  font: 700 13px/1 var(--font);
+  cursor: pointer;
+}
+
+.scroll {
+  overflow-y: auto;
+  padding: 4px 10px 12px;
+  overscroll-behavior: contain;
+}
+
+.group {
+  margin: 12px 4px 4px;
+  color: var(--text-2);
+  font: 700 11px/1.2 var(--font);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  position: relative;
+  border-radius: 10px;
+}
+
+.row[data-current] {
+  background: var(--accent-tint);
+}
+
+.row[data-preview] {
+  background: color-mix(in srgb, var(--fg) 10%, var(--surface));
+}
+
+.rowMain {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+  padding: 8px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.row[data-current] .rowMain {
+  cursor: default;
+}
+
+@media (hover: hover) {
+  .row:not([data-current]) .rowMain:hover {
+    background: color-mix(in srgb, var(--fg) 8%, var(--surface));
+  }
+}
+
+.rowTop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font: var(--t-foot);
+}
+
+.sectionId {
+  font-variant-numeric: tabular-nums;
+}
+
+.who {
+  overflow: hidden;
+  min-width: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.seats {
+  margin-left: auto;
+  color: var(--text-2);
+  font: 500 12px/1.2 var(--font);
+  white-space: nowrap;
+}
+
+.seats[data-low] {
+  color: var(--soon);
+}
+
+.when {
+  color: var(--text-2);
+  font: 400 12px/1.3 var(--font);
+}
+
+.clash {
+  align-self: flex-start;
+  padding: 1px 7px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--rating-low) 14%, transparent);
+  color: var(--rating-low);
+  font: 700 11px/1.5 var(--font);
+}
+
+.grades {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+.gradeBar {
+  display: flex;
+  overflow: hidden;
+  height: 12px;
+  border: 1px solid var(--separator);
+  border-radius: 4px;
+  background: var(--surface-2);
+}
+
+.gradeBar span {
+  display: grid;
+  flex-basis: 0;
+  place-items: center;
+  color: #fff;
+  font: 800 8.5px/1 var(--font);
+}
+
+.gradeBar [data-letter="A"] { background: #2e9e4f; }
+.gradeBar [data-letter="B"] { background: #7ab648; }
+.gradeBar [data-letter="C"] { background: #e3a21a; }
+.gradeBar [data-letter="D"] { background: #e8742a; }
+.gradeBar [data-letter="F"] { background: #d0453a; }
+.gradeBar [data-letter="W"] { background: #8e8e93; }
+
+.gradeMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+  color: var(--text-2);
+  font: 400 11px/1.3 var(--font);
+}
+
+.gradeMeta b {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.gradeLegend {
+  flex-basis: 100%;
+}
+
+.gradeNone {
+  color: var(--text-3);
+  font: italic 400 11px/1.3 var(--font);
+}
+
+.switch {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 5px 12px;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: var(--accent);
+  color: var(--on-accent);
+  font: 700 12px/1.2 var(--font);
+  cursor: pointer;
+}
+
+.none,
+.source {
+  margin: 12px 4px 0;
+  color: var(--text-3);
+  font: 400 11px/1.3 var(--font);
+}
+
+.remove {
+  margin: 12px 4px 0;
+  padding: 6px 0;
+  border: 0;
+  background: none;
+  color: var(--rating-low);
+  font: 600 13px/1.2 var(--font);
+  cursor: pointer;
+}

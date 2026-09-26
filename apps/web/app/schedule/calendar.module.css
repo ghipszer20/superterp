@@ -1,0 +1,199 @@
+/* Week calendars: gallery cards (mini), the enlarged preview (zoom) and the editor (large). */
+
+.course[data-color="0"], .block[data-color="0"] { --bg: var(--course-0-bg); --fg: var(--course-0-fg); }
+.course[data-color="1"], .block[data-color="1"] { --bg: var(--course-1-bg); --fg: var(--course-1-fg); }
+.course[data-color="2"], .block[data-color="2"] { --bg: var(--course-2-bg); --fg: var(--course-2-fg); }
+.course[data-color="3"], .block[data-color="3"] { --bg: var(--course-3-bg); --fg: var(--course-3-fg); }
+.course[data-color="4"], .block[data-color="4"] { --bg: var(--course-4-bg); --fg: var(--course-4-fg); }
+.course[data-color="5"], .block[data-color="5"] { --bg: var(--course-5-bg); --fg: var(--course-5-fg); }
+.course[data-color="6"], .block[data-color="6"] { --bg: var(--course-6-bg); --fg: var(--course-6-fg); }
+.course[data-color="7"], .block[data-color="7"] { --bg: var(--course-7-bg); --fg: var(--course-7-fg); }
+
+.grid {
+  display: grid;
+  grid-template-columns: 20px repeat(5, minmax(0, 1fr));
+  gap: 3px;
+  padding-top: 15px;
+}
+
+.grid[data-size="zoom"] {
+  grid-template-columns: 30px repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  padding-top: 17px;
+}
+
+.grid[data-size="large"] {
+  grid-template-columns: 34px repeat(5, minmax(0, 1fr));
+  gap: 5px;
+  padding-top: 20px;
+}
+
+.hours {
+  position: relative;
+}
+
+.hours span {
+  position: absolute;
+  right: 2px;
+  transform: translateY(-50%);
+  color: var(--text-2);
+  font: 500 7px/1 var(--font);
+  white-space: nowrap;
+}
+
+.grid[data-size="zoom"] .hours span {
+  font-size: 9px;
+}
+
+.grid[data-size="large"] .hours span {
+  right: 5px;
+  font-size: 11px;
+}
+
+.colWrap {
+  position: relative;
+  min-width: 0;
+}
+
+.dayHead {
+  position: absolute;
+  top: -14px;
+  right: 0;
+  left: 0;
+  color: var(--text-2);
+  font: 700 9px/1 var(--font);
+  text-align: center;
+}
+
+.grid[data-size="zoom"] .dayHead {
+  top: -16px;
+  font-size: 10.5px;
+}
+
+.grid[data-size="large"] .dayHead {
+  top: -19px;
+  font-size: 12px;
+}
+
+.col {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--separator);
+  border-radius: 6px;
+  background: var(--surface-2);
+}
+
+.grid[data-size="large"] .col {
+  overflow: visible;
+  border-radius: 9px;
+}
+
+.col[data-off] {
+  background: repeating-linear-gradient(135deg, var(--surface-2) 0 6px, var(--surface-pressed) 6px 12px);
+}
+
+.window {
+  position: absolute;
+  right: 0;
+  left: 0;
+  background: var(--accent-tint);
+}
+
+.line {
+  position: absolute;
+  right: 0;
+  left: 0;
+  border-top: 1px solid var(--separator);
+  opacity: 0.5;
+}
+
+/* Discussion and lab blocks look exactly like their course's lecture (owner rule);
+   only ghosts are striped and dashed. */
+.block {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 3px;
+  border: 1px solid color-mix(in srgb, var(--fg) 28%, transparent);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--fg);
+  font: 700 8px/9px var(--font);
+  white-space: nowrap;
+}
+
+.grid[data-size="zoom"] .block {
+  padding: 0 6px;
+  border-radius: 6px;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.grid[data-size="large"] .block {
+  padding: 0 7px;
+  border-radius: 7px;
+  font-size: 12px;
+  line-height: 14px;
+  transition: box-shadow var(--fast) ease;
+}
+
+.block[role="button"] {
+  cursor: pointer;
+}
+
+.block[role="button"]:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 1px;
+}
+
+.block[data-outlined] {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  z-index: 1;
+}
+
+.block[data-conflict] {
+  border: 1.5px solid var(--rating-low);
+  box-shadow: inset 3px 0 0 var(--rating-low);
+}
+
+.block[data-ghost] {
+  z-index: 2;
+  border: 1.5px dashed color-mix(in srgb, var(--fg) 60%, transparent);
+  background: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--fg) 16%, var(--surface)) 0 6px,
+    color-mix(in srgb, var(--fg) 6%, var(--surface)) 6px 12px
+  );
+  color: color-mix(in srgb, var(--fg) 85%, transparent);
+  pointer-events: none;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.labelMain,
+.labelSub {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.labelSub {
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+@keyframes land {
+  from {
+    transform: scale(0.96);
+    opacity: 0.6;
+  }
+}
+
+.grid[data-size="large"] .block:not([data-ghost]) {
+  animation: land 0.3s var(--spring);
+}

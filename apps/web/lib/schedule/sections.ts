@@ -1,9 +1,10 @@
 // Section-level helpers for the editor's side panel: the choices for one class, which
 // section stands in for a group of interchangeable ones, ratings and grade summaries.
 
-import type { Section } from "@superterp/course-data/schedules";
+import { sectionsConflict, type Section } from "@superterp/course-data/schedules";
 import { NEUTRAL_RATING } from "@superterp/course-data/sort";
 import type { CourseGrades, Distribution } from "@superterp/ratings";
+import { clock } from "./calendar";
 
 export const sectionKey = (s: Pick<Section, "courseId" | "id">) => `${s.courseId}/${s.id}`;
 
@@ -80,4 +81,42 @@ export function gradeSummary(
   const d: Distribution | undefined = instructors.map((n) => course.byProfessor[n]).find((x) => x && x.students > 0);
   if (!d) return null;
   return { bars: LETTERS.map((letter) => ({ letter, share: d.shares[letter] })), gpa: d.averageGpa, students: d.students };
+}
+
+/** Instructors of a section, or of a group of interchangeable ones: "Ting Jiang +1". */
+export function instructorLabel(pick: Section, group?: Section[]): string {
+  const main = pick.instructors[0] ?? "TBA";
+  const others = new Set((group ?? [pick]).flatMap((s) => s.instructors));
+  others.delete(main);
+  return others.size ? `${main} +${others.size}` : main;
+}
+
+export function bestRating(pick: Section, ratings: Readonly<Record<string, number>>): number | undefined {
+  const rated = pick.instructors.map((n) => ratings[n]).filter((r): r is number => r !== undefined);
+  return rated.length ? Math.max(...rated) : undefined;
+}
+
+/** "TuTh 9:30am–10:45am · F 11am–11:50am Discussion" */
+export function meetingSummary(s: Section): string {
+  return s.meetings
+    .map((m) => {
+      const kind = m.type === "Lecture" ? "" : ` ${m.type}`;
+      if (m.start === null || m.end === null) return `Time TBA${kind}`;
+      return `${m.days.join("")} ${clock(m.start)}–${clock(m.end)}${kind}`;
+    })
+    .join(" · ");
+}
+
+/** Build my own: the other placed courses this section would overlap (its own course is replaced, so skipped). */
+export function overlapsWith(candidate: Section, placed: Section[]): string[] {
+  return placed.filter((p) => p.courseId !== candidate.courseId && sectionsConflict(p, candidate)).map((p) => p.courseId);
+}
+
+/** Build my own: every pair of placed courses that overlap, each once. */
+export function conflictPairs(placed: Section[]): [string, string][] {
+  const out: [string, string][] = [];
+  placed.forEach((a, i) => {
+    for (const c of overlapsWith(a, placed.slice(i + 1))) out.push([a.courseId, c]);
+  });
+  return out;
 }

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { Section } from "@superterp/course-data/schedules";
 import { distributionFromCounts, GRADE_COLUMNS, type CourseGrades } from "@superterp/ratings";
-import { gradeSummary, pickSection, ratingTone, sectionChoices, sectionKey } from "../sections";
+import { bestRating, conflictPairs, gradeSummary, instructorLabel, meetingSummary, overlapsWith, pickSection, ratingTone, sectionChoices, sectionKey } from "../sections";
 
 const sec = (
   id: string,
@@ -115,5 +115,63 @@ describe("gradeSummary", () => {
 
   it("uses the first co-instructor with data", () => {
     expect(gradeSummary(grades, "STAT400", ["New Person", "Archana Khurana"])?.students).toBe(100);
+  });
+});
+
+describe("instructorLabel", () => {
+  it("names the section's instructor, TBA when none", () => {
+    expect(instructorLabel(s0111)).toBe("Archana Khurana");
+    expect(instructorLabel(sec("0101", [], [MWF10]))).toBe("TBA");
+  });
+
+  it("counts the other instructors among interchangeable sections", () => {
+    expect(instructorLabel(s0111, [s0111, s0111other, s0211])).toBe("Archana Khurana +2");
+  });
+});
+
+describe("bestRating", () => {
+  it("is the best rating among the section's instructors, undefined when unrated", () => {
+    const co = sec("0101", ["A", "B"], [MWF10]);
+    expect(bestRating(co, { A: 3.2, B: 4.1 })).toBe(4.1);
+    expect(bestRating(co, {})).toBeUndefined();
+  });
+});
+
+describe("meetingSummary", () => {
+  it("lists each meeting's days and times, naming non-lecture meetings", () => {
+    expect(meetingSummary(s0311)).toBe("TuTh 9:30am–10:45am · F 11am–11:50am Discussion");
+  });
+
+  it("says when a meeting has no set time", () => {
+    const online = sec("0101", [], [[[], 0, 0, "Lecture"]]);
+    online.meetings[0]!.start = null;
+    online.meetings[0]!.end = null;
+    expect(meetingSummary(online)).toBe("Time TBA");
+  });
+});
+
+describe("overlapsWith", () => {
+  it("names the other placed courses a candidate section would overlap", () => {
+    const cmsc = sec("0101", ["Ting Jiang"], [[["M", "W", "F"], 600, 650, "Lecture"]], 10, "CMSC351");
+    const engl = sec("0101", [], [[["Tu"], 1000, 1050, "Lecture"]], 10, "ENGL394");
+    expect(overlapsWith(s0111, [cmsc, engl])).toEqual(["CMSC351"]);
+    expect(overlapsWith(s0311, [cmsc, engl])).toEqual([]);
+  });
+
+  it("ignores the candidate's own course (it would be replaced)", () => {
+    expect(overlapsWith(s0121, [s0111])).toEqual([]);
+  });
+});
+
+describe("conflictPairs", () => {
+  it("lists each overlapping pair of placed courses once", () => {
+    const cmsc = sec("0101", [], [[["M", "W", "F"], 600, 650, "Lecture"]], 10, "CMSC351");
+    const engl = sec("0101", [], [[["M"], 620, 700, "Lecture"]], 10, "ENGL394");
+    const math = sec("0101", [], [[["Tu"], 600, 650, "Lecture"]], 10, "MATH140");
+    expect(conflictPairs([cmsc, s0111, engl, math])).toEqual([
+      ["CMSC351", "STAT400"],
+      ["CMSC351", "ENGL394"],
+      ["STAT400", "ENGL394"],
+    ]);
   });
 });
