@@ -13,11 +13,17 @@ export function CoursePicker({
   picked,
   titles,
   onChange,
+  fromPlan,
+  elsewhere,
 }: {
   courses: readonly IndexedCourse[];
   picked: string[];
   titles: Record<string, string>;
   onChange: (courses: string[]) => void;
+  /** Course ids the 4-year plan already has in this term ("From your 4-year plan"). */
+  fromPlan?: ReadonlySet<string>;
+  /** Course id -> other plan terms that also have it ("Also planned for Fall 2027"). */
+  elsewhere?: ReadonlyMap<string, string[]>;
 }) {
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
@@ -79,20 +85,27 @@ export function CoursePicker({
       </div>
       {picked.length ? (
         <ul className={styles.chips} aria-label="Your courses">
-          {picked.map((id) => (
-            <li key={id} className={`${styles.courseChip} ${cal.course}`} data-color={courseColor(picked, id)}>
-              <span className={styles.chipSwatch} />
-              <b>{id}</b>
-              <span className={styles.chipTitle}>{titles[id] ?? titleOf.get(id) ?? ""}</span>
-              <button
-                type="button"
-                aria-label={`Remove ${id}`}
-                onClick={() => onChange(picked.filter((c) => c !== id))}
-              >
-                ✕
-              </button>
-            </li>
-          ))}
+          {picked.map((id) => {
+            const others = elsewhere?.get(id);
+            return (
+              <li key={id} className={styles.chipCol}>
+                <div className={`${styles.courseChip} ${cal.course}`} data-color={courseColor(picked, id)}>
+                  <span className={styles.chipSwatch} />
+                  <b>{id}</b>
+                  <span className={styles.chipTitle}>{titles[id] ?? titleOf.get(id) ?? ""}</span>
+                  <button
+                    type="button"
+                    aria-label={`Remove ${id}`}
+                    onClick={() => onChange(picked.filter((c) => c !== id))}
+                  >
+                    ✕
+                  </button>
+                </div>
+                {fromPlan?.has(id) ? <small className={styles.chipNote}>From your 4-year plan</small> : null}
+                {others?.length ? <small className={styles.chipNote}>Also planned for {others.join(", ")}</small> : null}
+              </li>
+            );
+          })}
         </ul>
       ) : null}
     </div>

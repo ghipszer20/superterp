@@ -3,11 +3,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { useSearchParams } from "next/navigation";
 import type { Section } from "@superterp/course-data/schedules";
+import { dispatchPlan, useAdvisorStore } from "@/app/advisor/store";
 import { Segmented } from "@/components/Segmented";
 import { EmptyState, SkeletonCard } from "@/components/ui";
 import { timeScale } from "@/lib/schedule/calendar";
 import { DEFAULT_FILTERS, readQuery, relaxConstraint, relaxOptions, toScheduleFilters, writeQuery, type FilterState } from "@/lib/schedule/filters";
 import type { GenerateRequest } from "@/lib/schedule/generate";
+import { applyQueryCourses, otherPlannedTerms, planCourseIds, planTermName } from "@/lib/schedule/plan-link";
 import {
   parseSaved,
   PLAN_IDS,
@@ -43,6 +45,8 @@ export function ScheduleBuilder() {
   const [plan, setPlan] = useState<PlanId>("A");
   const [savedNote, setSavedNote] = useState<string | null>(null);
   const raw = useSyncExternalStore(savedStore.subscribe, savedStore.getSnapshot, savedStore.getServerSnapshot);
+  // null until this device's Advisor plan (if any) has loaded.
+  const advisor = useAdvisorStore();
 
   // The term is known once the course index loads; the saved schedule is per term.
   const [courseList, setCourseList] = useState<string[]>([]);
@@ -60,22 +64,59 @@ export function ScheduleBuilder() {
     [term],
   );
 
+  // The 4-year plan's term for this schedule term, if a plan exists ("There is one plan model.
+  // The builder for a term is a view of that term in the 4-year plan, plus the chosen sections.")
+  const advisorPlan = advisor?.plan ?? null;
+  const termName = useMemo(() => (term ? planTermName(term) : null), [term]);
+  const linked = advisorPlan !== null && termName !== null;
+  const hasPlanTerm = linked && advisorPlan!.terms.some((t) => t.name === termName);
+
+  // The one source of truth for which courses are in this term: the plan's term once it's
+  // linked, otherwise the builder's own saved list. Never both at once (derive, don't copy).
+  const courses = useMemo(
+    () => (hasPlanTerm ? planCourseIds(advisorPlan!, termName!) : (saved?.courses ?? [])),
+    [hasPlanTerm, advisorPlan, termName, saved],
+  );
+  const filters = saved?.filters ?? DEFAULT_FILTERS;
+
+  const setCourses = useCallback(
+    (next: string[]) => {
+      if (linked && termName) dispatchPlan({ type: "set-term-courses", term: termName, ids: next });
+      else update((s) => withCourses(s, next));
+    },
+    [linked, termName, update],
+  );
+
+  // A plan just appeared (or gained a term) for a term the builder already had local courses
+  // in: fold them into the plan term once, then clear the local copy so the plan becomes the
+  // one source of truth going forward (a course later removed in the Advisor won't come back).
+  useEffect(() => {
+    if (!termName || advisor === null || !advisorPlan || hasPlanTerm) return;
+    if (!saved || saved.courses.length === 0) return;
+    dispatchPlan({ type: "set-term-courses", term: termName, ids: saved.courses });
+    update((s) => withCourses(s, []));
+  }, [termName, advisor, advisorPlan, hasPlanTerm, saved, update]);
+
+  // Once linked, keep the builder's local cache (and the section picks it prunes) in step with
+  // the plan — it may have changed courses for this term from the Advisor tab.
+  useEffect(() => {
+    if (!hasPlanTerm || !saved) return;
+    if (saved.courses.join() === courses.join()) return;
+    update((s) => withCourses(s, courses));
+  }, [hasPlanTerm, saved, courses, update]);
+
   // A link like ?c=CMSC351,STAT400&off=F sets up the builder once; afterwards the URL follows the state.
   const fromUrl = useRef(false);
   useEffect(() => {
-    if (!term || fromUrl.current) return;
+    if (!term || advisor === null || fromUrl.current) return;
     fromUrl.current = true;
     const q = readQuery(new URLSearchParams(window.location.search));
-    if (q.courses || q.filters) {
-      update((s) => {
-        const next = q.courses ? withCourses(s, q.courses) : s;
-        return q.filters ? { ...next, filters: q.filters } : next;
-      });
-    }
-  }, [term, update]);
+    // A stale or shared link must never delete a linked term's plan courses: add-only there.
+    if (q.courses) setCourses(applyQueryCourses(courses, q.courses, linked));
+    if (q.filters) update((s) => ({ ...s, filters: q.filters! }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [term, advisor]);
 
-  const courses = useMemo(() => saved?.courses ?? [], [saved]);
-  const filters = saved?.filters ?? DEFAULT_FILTERS;
   useEffect(() => {
     // Mirror the saved courses into the data loader (a separate state so loading starts as soon as they're known).
     const t = setTimeout(() => setCourseList((prev) => (prev.join() === courses.join() ? prev : courses)), 0);
@@ -84,11 +125,11 @@ export function ScheduleBuilder() {
 
   useEffect(() => {
     if (!saved || !fromUrl.current) return;
-    const q = writeQuery(saved.courses, saved.filters);
+    const q = writeQuery(courses, saved.filters);
     const viewParam = view.kind === "own" ? `${q ? "&" : ""}view=own` : "";
     const next = `${window.location.pathname}${q || viewParam ? `?${q}${viewParam}` : ""}`;
     if (next !== `${window.location.pathname}${window.location.search}`) window.history.replaceState(null, "", next);
-  }, [saved, view.kind]);
+  }, [saved, courses, view.kind]);
 
   const sectionsByCourse = useMemo(() => {
     const m = new Map<string, Section[]>();
@@ -130,12 +171,29 @@ export function ScheduleBuilder() {
   const ownScale = useMemo(() => timeScale(data.sections.filter((s) => s.seats.open > 0).flatMap((s) => s.meetings)), [data.sections]);
   const ownPicks = useMemo(() => {
     const out: Record<string, Section> = {};
+    // Filtered against `courses` (not written into `saved` at write time) so a course the
+    // Advisor tab removed from a linked term disappears here too, without waiting on the
+    // reconciliation effect.
     for (const [c, id] of Object.entries(saved?.own ?? {})) {
+      if (!courses.includes(c)) continue;
       const s = sectionByKey.get(`${c}/${id}`);
       if (s) out[c] = s;
     }
     return out;
-  }, [saved, sectionByKey]);
+  }, [saved, sectionByKey, courses]);
+
+  // A course present in this linked term's plan, and the same course's other plan terms, for
+  // the picker's "From your 4-year plan" / "Also planned for …" notes.
+  const fromPlan = useMemo(() => (hasPlanTerm ? new Set(courses) : new Set<string>()), [hasPlanTerm, courses]);
+  const elsewhere = useMemo(() => {
+    const m = new Map<string, string[]>();
+    if (!linked || !termName || !advisorPlan) return m;
+    for (const id of courses) {
+      const others = otherPlannedTerms(advisorPlan, termName, id);
+      if (others.length) m.set(id, others);
+    }
+    return m;
+  }, [linked, termName, advisorPlan, courses]);
 
   if (data.indexState.status === "loading" || (data.indexState.status === "ready" && !saved)) {
     return <SkeletonCard rows={4} />;
@@ -152,19 +210,21 @@ export function ScheduleBuilder() {
     );
   }
 
-  const setCourses = (next: string[]) => update((s) => withCourses(s, next));
   const setFilters = (f: FilterState) => update((s) => ({ ...s, filters: f }));
   const save = (picks: Record<string, string>) => {
     update((s) => savePlan(s, plan, picks));
     setSavedNote(`Saved as Plan ${plan}`);
     setTimeout(() => setSavedNote(null), 2500);
   };
+  // Only a saved plan's picks for courses still in this term count — a course the plan or the
+  // picker dropped shouldn't leave a phantom "Plan A ✓".
+  const planHasPicks = (p: PlanId) => Object.keys(saved.plans[p] ?? {}).some((c) => courses.includes(c));
   const planHeader = (picks: Record<string, string>, back: React.ReactNode) => (
     <div className={styles.editorTop}>
       {back}
       <Segmented<PlanId>
         label="Plan"
-        options={PLAN_IDS.map((p) => ({ value: p, label: `Plan ${p}${saved.plans[p] ? " ✓" : ""}` }))}
+        options={PLAN_IDS.map((p) => ({ value: p, label: `Plan ${p}${planHasPicks(p) ? " ✓" : ""}` }))}
         value={plan}
         onChange={setPlan}
       />
@@ -178,6 +238,7 @@ export function ScheduleBuilder() {
   const openPlan = (p: PlanId) => {
     const picks: Record<string, Section> = {};
     for (const [c, id] of Object.entries(saved.plans[p] ?? {})) {
+      if (!courses.includes(c)) continue;
       const s = sectionByKey.get(`${c}/${id}`);
       if (s) picks[c] = s;
     }
@@ -186,7 +247,14 @@ export function ScheduleBuilder() {
   };
 
   const picker = (
-    <CoursePicker courses={data.indexState.index.courses} picked={courses} titles={data.titles} onChange={setCourses} />
+    <CoursePicker
+      courses={data.indexState.index.courses}
+      picked={courses}
+      titles={data.titles}
+      onChange={setCourses}
+      fromPlan={fromPlan}
+      elsewhere={elsewhere}
+    />
   );
 
   return (
@@ -201,10 +269,10 @@ export function ScheduleBuilder() {
           value={view.kind === "own" ? "own" : "browse"}
           onChange={(v) => setView(v === "own" ? { kind: "own" } : { kind: "gallery" })}
         />
-        {PLAN_IDS.some((p) => saved.plans[p]) ? (
+        {PLAN_IDS.some((p) => planHasPicks(p)) ? (
           <div className={styles.savedPlans}>
             <span>Saved:</span>
-            {PLAN_IDS.filter((p) => saved.plans[p]).map((p) => (
+            {PLAN_IDS.filter((p) => planHasPicks(p)).map((p) => (
               <button key={p} type="button" className={styles.planChip} onClick={() => openPlan(p)}>
                 Plan {p}
               </button>
