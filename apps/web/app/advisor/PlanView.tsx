@@ -41,7 +41,7 @@ export function PlanView({
     <div className={styles.planLayout}>
       <div className={styles.planSide}>
         <Notices analysis={analysis} />
-        <ChecksPanel checked={checked} catalogStatus={catalog.status} onOpenCourse={onOpenCourse} />
+        <ChecksPanel checked={checked} catalogStatus={catalog.status} analysis={analysis} onOpenCourse={onOpenCourse} />
       </div>
 
       <div className={styles.planMain}>

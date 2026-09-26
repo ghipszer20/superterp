@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
     "@superterp/credit",
     "@superterp/plan",
     "@superterp/ratings",
+    "@superterp/tracks",
   ],
   // Keep old links working after the tab restructure.
   async redirects() {

@@ -1,10 +1,13 @@
 "use client";
 
-// The degree audit, per program, and the CS gateway. Reads the debounced Analysis; never imports
-// @superterp/audit as a value (only types), so HiGHS stays out of this file's bundle — it's already
-// loaded by lib/advisor/analysis.ts, which the app code-splits with import().
+// The degree audit, per program, the CS gateway, and pre-professional Tracks. Reads the debounced
+// Analysis; never imports @superterp/audit or @superterp/tracks as a value (only types), so HiGHS
+// stays out of this file's bundle — it's already loaded by lib/advisor/analysis.ts, which the app
+// code-splits with import(). A Track's own data (name, categories, disclaimer, milestones) comes
+// through as a value on analysis.result.tracks[].track, which isn't an import and so is fine.
 
 import type { GatewayCourseStatus, GatewayOverallStatus, RequirementResult } from "@superterp/audit";
+import type { MilestoneTiming } from "@superterp/tracks";
 import type { AdvisorPlan } from "@/lib/advisor/plan-state";
 import type { AnalysisState, OpenCourse } from "./AdvisorApp";
 import { dispatchPlan } from "./store";
@@ -30,7 +33,8 @@ export function AuditView({
       </div>
     );
   }
-  const { audits, gateway } = analysis.result;
+  const { audits, gateway, tracks, scienceGpa } = analysis.result;
+  const termOrder = plan.terms.map((t) => t.name);
 
   return (
     <div className={styles.auditLayout} aria-busy={analysis.status === "running"}>
@@ -118,8 +122,118 @@ export function AuditView({
           </p>
         </section>
       ) : null}
+
+      {tracks.length > 0 ? (
+        <section aria-label="Tracks" className={styles.trackSection}>
+          <h2 className={styles.trackSectionTitle}>Tracks</h2>
+          <p className={styles.cardNote}>
+            Prerequisites for applying to a professional school, on top of any major -- never a UMD graduation requirement.
+          </p>
+          {tracks.map(({ track, requirements, satisfied, milestones }) => {
+            const manual = track.categories.filter((c) => !c.requirement);
+            return (
+              <section key={track.id} className={styles.card}>
+                <div className={styles.auditHead}>
+                  <h3 className={styles.cardTitle}>{track.name}</h3>
+                  {!track.verified ? <span className={styles.unverified}>Unverified</span> : null}
+                </div>
+
+                {requirements.length > 0 ? (
+                  <>
+                    <p className={styles.cardNote}>
+                      {satisfied} of {requirements.length} requirements met
+                    </p>
+                    <ul className={styles.reqList}>
+                      {requirements.map(({ requirement, result, gap }) => (
+                        <li key={requirement.id} className={styles.reqRow}>
+                          <div className={styles.reqHead}>
+                            <span className={styles.reqName}>{requirement.name}</span>
+                            <span className={styles.reqStatus} data-status={result.status}>
+                              {REQ_STATUS[result.status]}
+                            </span>
+                          </div>
+                          {result.assigned.length > 0 ? (
+                            <p className={styles.reqAssigned}>
+                              Counted: <CourseChips ids={result.assigned} onOpenCourse={onOpenCourse} />
+                            </p>
+                          ) : null}
+                          {gap ? (
+                            <p className={styles.reqGap}>
+                              Still needed: {gap.need}
+                              {gap.suggestions.length > 0 ? (
+                                <>
+                                  {" "}
+                                  For example: <CourseChips ids={gap.suggestions} onOpenCourse={onOpenCourse} />
+                                </>
+                              ) : null}
+                            </p>
+                          ) : null}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <p className={styles.cardNote}>No required UMD courses -- {track.schools} weigh GPA, admission tests and the rest of the application.</p>
+                )}
+                {manual.length > 0 ? (
+                  <p className={styles.cardNote}>Also confirm yourself: {manual.map((c) => c.name ?? c.source).join(", ")}.</p>
+                ) : null}
+
+                {scienceGpa.gpa !== null ? (
+                  <p className={styles.cardNote}>
+                    Science GPA (BCPM): {scienceGpa.gpa.toFixed(2)} ({scienceGpa.credits} credits)
+                  </p>
+                ) : null}
+
+                {milestones.length > 0 ? (
+                  <div className={styles.milestoneTimeline}>
+                    <h4 className={styles.trackGroupTitle}>Milestones on your plan</h4>
+                    {milestoneBuckets(milestones, termOrder).map((bucket) => (
+                      <div key={bucket.label} className={styles.milestoneBucket}>
+                        <p className={styles.milestoneBucketLabel}>{bucket.label}</p>
+                        <ul className={styles.issueList}>
+                          {bucket.items.map((m) => (
+                            <li key={m.milestone.id} className={styles.issueRow} data-severity="info">
+                              <span className={styles.issueSeverity} data-severity="info">
+                                {m.monthName} {m.year}
+                              </span>
+                              <span className={styles.issueText}>
+                                <strong>{m.milestone.name}.</strong> {m.milestone.detail}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+
+                <p className={styles.cardNote}>{track.disclaimer}</p>
+              </section>
+            );
+          })}
+        </section>
+      ) : null}
     </div>
   );
+}
+
+/** Groups a track's milestones onto the plan's own timeline: one bucket per plan term (in the
+ * plan's order) that has a milestone, then any milestones after the plan's last term, then any
+ * that fall in a season the plan doesn't have a term for (e.g. an unplanned Winter or Summer). */
+function milestoneBuckets(milestones: MilestoneTiming[], termOrder: string[]): { label: string; items: MilestoneTiming[] }[] {
+  const byTerm = new Map<string, MilestoneTiming[]>();
+  const other: MilestoneTiming[] = [];
+  const after: MilestoneTiming[] = [];
+  for (const m of milestones) {
+    if (m.term) byTerm.set(m.term, [...(byTerm.get(m.term) ?? []), m]);
+    else if (m.afterLast) after.push(m);
+    else other.push(m);
+  }
+  const buckets = termOrder.filter((name) => byTerm.has(name)).map((name) => ({ label: name, items: byTerm.get(name)! }));
+  if (other.length) buckets.unshift({ label: "Not on a planned term", items: other.sort((a, b) => a.year - b.year) });
+  if (after.length) buckets.push({ label: "After your last planned term", items: after.sort((a, b) => a.year - b.year) });
+  return buckets;
 }
 
 function CourseChips({ ids, onOpenCourse }: { ids: string[]; onOpenCourse: (c: OpenCourse) => void }) {

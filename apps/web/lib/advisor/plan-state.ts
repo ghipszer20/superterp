@@ -45,10 +45,32 @@ export type AdvisorPlan = {
   prior: PriorInputs;
   /** Cumulative UMD GPA, for the CS gateway check. */
   gpa?: number;
+  /** Chosen pre-professional track ids (@superterp/tracks), never degree requirements. Omitted when empty. */
+  tracks?: string[];
+  /**
+   * Planned term for an exam-content milestone, by the milestone's id (e.g. "mcat"): shared by
+   * every chosen track whose categories point at it (pre-med and pre-podiatry both use "mcat").
+   * Omitted when empty.
+   */
+  examTerms?: Record<string, string>;
+  /**
+   * Expected grades for not-yet-completed courses, by term name then course id, used only for a
+   * gpaProtection track (pre-law). Kept separate from a course's own `grade`, which is a
+   * transcript grade for a completed course. Omitted when empty.
+   */
+  expectedGrades?: Record<string, Record<string, string>>;
 };
 
 export type PlanAction =
-  | { type: "setup"; programs: string[]; catalogYear: string; startTerm: string }
+  | {
+      type: "setup";
+      programs: string[];
+      catalogYear: string;
+      startTerm: string;
+      tracks: string[];
+      examTerms: Record<string, string>;
+      expectedGrades: Record<string, Record<string, string>>;
+    }
   | { type: "add-course"; term: string; id: string; credits?: number }
   | { type: "remove-course"; term: string; id: string }
   | { type: "move-course"; id: string; from: string; to: string; index?: number }
@@ -63,7 +85,13 @@ export type PlanAction =
 
 export const emptyPrior = (): PriorInputs => ({ ap: [], ib: [], dual: [], choices: {} });
 
-export function newPlan(setup: { programs: string[]; catalogYear: string; startTerm: string }): AdvisorPlan {
+export function newPlan(setup: {
+  programs: string[];
+  catalogYear: string;
+  startTerm: string;
+  tracks?: string[];
+  examTerms?: Record<string, string>;
+}): AdvisorPlan {
   return {
     v: 1,
     programs: setup.programs,
@@ -71,6 +99,8 @@ export function newPlan(setup: { programs: string[]; catalogYear: string; startT
     startTerm: setup.startTerm,
     terms: defaultTerms(setup.startTerm).map((name) => ({ name, courses: [] })),
     prior: emptyPrior(),
+    ...(setup.tracks?.length ? { tracks: setup.tracks } : {}),
+    ...(setup.examTerms && Object.keys(setup.examTerms).length ? { examTerms: setup.examTerms } : {}),
   };
 }
 
@@ -89,19 +119,53 @@ function mapTerm(plan: AdvisorPlan, name: string, f: (t: PlanTermState) => PlanT
 /** Moves the whole plan to a new start term, keeping each course's place in the fall/spring sequence. */
 function restart(plan: AdvisorPlan, startTerm: string): AdvisorPlan {
   const main: PlannedCourse[][] = [];
+  const oldNames: string[][] = []; // old term name(s) each main bucket was built from
   for (const term of plan.terms) {
-    if (isMain(term.name) || main.length === 0) main.push([...term.courses]);
-    // A winter or summer term's courses join the term before it.
-    else main[main.length - 1]!.push(...term.courses.filter((c) => !main[main.length - 1]!.some((x) => x.id === c.id)));
+    if (isMain(term.name) || main.length === 0) {
+      main.push([...term.courses]);
+      oldNames.push([term.name]);
+    } else {
+      // A winter or summer term's courses (and name) join the term before it.
+      main[main.length - 1]!.push(...term.courses.filter((c) => !main[main.length - 1]!.some((x) => x.id === c.id)));
+      oldNames[oldNames.length - 1]!.push(term.name);
+    }
   }
   const names = defaultTerms(startTerm, Math.max(8, main.length));
-  return { ...plan, startTerm, terms: names.map((name, i) => ({ name, courses: main[i] ?? [] })) };
+  const rename = new Map<string, string>();
+  oldNames.forEach((olds, i) => olds.forEach((old) => rename.set(old, names[i]!)));
+
+  const next: AdvisorPlan = { ...plan, startTerm, terms: names.map((name, i) => ({ name, courses: main[i] ?? [] })) };
+  if (plan.examTerms) {
+    const examTerms: Record<string, string> = {};
+    for (const [milestone, term] of Object.entries(plan.examTerms)) {
+      const renamed = rename.get(term);
+      if (renamed) examTerms[milestone] = renamed;
+    }
+    if (Object.keys(examTerms).length) next.examTerms = examTerms;
+    else delete next.examTerms;
+  }
+  if (plan.expectedGrades) {
+    const expectedGrades: Record<string, Record<string, string>> = {};
+    for (const [term, grades] of Object.entries(plan.expectedGrades)) {
+      const renamed = rename.get(term);
+      if (renamed) expectedGrades[renamed] = { ...expectedGrades[renamed], ...grades };
+    }
+    if (Object.keys(expectedGrades).length) next.expectedGrades = expectedGrades;
+    else delete next.expectedGrades;
+  }
+  return next;
 }
 
 export function planReducer(plan: AdvisorPlan, action: PlanAction): AdvisorPlan {
   switch (action.type) {
     case "setup": {
-      const next = { ...plan, programs: action.programs, catalogYear: action.catalogYear };
+      const next: AdvisorPlan = { ...plan, programs: action.programs, catalogYear: action.catalogYear };
+      if (action.tracks.length) next.tracks = action.tracks;
+      else delete next.tracks;
+      if (Object.keys(action.examTerms).length) next.examTerms = action.examTerms;
+      else delete next.examTerms;
+      if (Object.keys(action.expectedGrades).length) next.expectedGrades = action.expectedGrades;
+      else delete next.expectedGrades;
       return action.startTerm === plan.startTerm || !parseTerm(action.startTerm) ? next : restart(next, action.startTerm);
     }
     case "add-course": {
@@ -154,8 +218,16 @@ export function planReducer(plan: AdvisorPlan, action: PlanAction): AdvisorPlan 
       const names = sortTerms([...plan.terms.map((t) => t.name), action.name]);
       return { ...plan, terms: names.map((name) => plan.terms.find((t) => t.name === name) ?? { name, courses: [] }) };
     }
-    case "remove-term":
-      return { ...plan, terms: plan.terms.filter((t) => t.name !== action.name) };
+    case "remove-term": {
+      const next: AdvisorPlan = { ...plan, terms: plan.terms.filter((t) => t.name !== action.name) };
+      if (next.expectedGrades && action.name in next.expectedGrades) {
+        const expectedGrades = { ...next.expectedGrades };
+        delete expectedGrades[action.name];
+        if (Object.keys(expectedGrades).length) next.expectedGrades = expectedGrades;
+        else delete next.expectedGrades;
+      }
+      return next;
+    }
     case "set-term-courses": {
       const ids = [...new Set(action.ids.map(normalizeId).filter(Boolean))];
       const term = plan.terms.find((t) => t.name === action.term);
