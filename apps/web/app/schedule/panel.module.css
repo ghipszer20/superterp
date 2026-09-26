@@ -25,6 +25,7 @@
   .panel {
     position: fixed;
     z-index: 60;
+    top: auto;
     right: 0;
     bottom: calc(56px + env(safe-area-inset-bottom));
     left: 0;
