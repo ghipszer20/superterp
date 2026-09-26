@@ -98,14 +98,15 @@ export function ScheduleBuilder() {
   const sectionByKey = useMemo(() => new Map(data.sections.map((s) => [sectionKey(s), s])), [data.sections]);
 
   const ready = data.loaded && courseList.join() === courses.join();
+  // filters is rebuilt from saved on every change; key the memo on its serialized form.
+  const filtersKey = JSON.stringify(filters);
   const request = useMemo<GenerateRequest | null>(
     () =>
       ready && courses.length
         ? { courseIds: courses, sections: data.sections, filters: toScheduleFilters(filters), sort: filters.sort, ratings: data.ratings }
         : null,
-    // filters is rebuilt from saved on every change; key on its serialized form.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [ready, courses, data.sections, data.ratings, JSON.stringify(filters)],
+    [ready, courses, data.sections, data.ratings, filtersKey],
   );
   const { result, pending } = useLayouts(view.kind === "own" ? null : request);
 
