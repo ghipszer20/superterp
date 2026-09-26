@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   // each campus source at its own refresh rate (see lib/campus.ts).
   cacheComponents: true,
   // The shared data package ships TypeScript source; let Next compile it.
-  transpilePackages: ["@superterp/campus-data"],
+  transpilePackages: ["@superterp/campus-data", "@superterp/course-data", "@superterp/ratings"],
   // Keep old links working after the tab restructure.
   async redirects() {
     return [
