@@ -1,26 +1,35 @@
 // Runs a snapshot job against the live UMD sites (see ../SNAPSHOTS.md).
 //
-//   node scripts/build-snapshots.ts daily   # ~5am: everything
+//   node scripts/build-snapshots.ts daily   # ~5am: everything (also prunes old dated snapshots)
 //   node scripts/build-snapshots.ts fast    # every 5 min: rooms; menus once 30 min old
+//   node scripts/build-snapshots.ts prune   # remove dated snapshots outside the keep window
 //   ... [--dir <path>]                       # default: $SUPERTERP_SNAPSHOT_DIR or <repo>/.cache/snapshots
 //
 // Exits 1 if any source failed (its last good snapshot is kept), so a
 // scheduler marks the run as failed and someone notices.
 
-import { buildSnapshots, defaultSnapshotDir, FileSnapshotStore, refreshFast } from "../src/snapshots/index.ts";
+import { buildSnapshots, defaultSnapshotDir, FileSnapshotStore, pruneSnapshots, refreshFast } from "../src/snapshots/index.ts";
 
 const args = process.argv.slice(2);
 const job = args[0];
 const dirFlag = args.indexOf("--dir");
 const dir = dirFlag >= 0 ? args[dirFlag + 1] : defaultSnapshotDir();
 
-if ((job !== "daily" && job !== "fast") || !dir) {
-  console.error("Usage: node scripts/build-snapshots.ts <daily|fast> [--dir <path>]");
+if ((job !== "daily" && job !== "fast" && job !== "prune") || !dir) {
+  console.error("Usage: node scripts/build-snapshots.ts <daily|fast|prune> [--dir <path>]");
   process.exit(2);
 }
 
 const store = new FileSnapshotStore(dir);
 const started = performance.now();
+
+if (job === "prune") {
+  const { removed } = await pruneSnapshots(store, new Date());
+  for (const key of removed) console.log(`✗ ${key}  removed`);
+  console.log(`prune: ${removed.length} removed in ${Math.round(performance.now() - started)} ms → ${dir}`);
+  process.exit(0);
+}
+
 const report = await (job === "daily" ? buildSnapshots : refreshFast)(store, new Date());
 
 for (const r of report.results) console.log(`${r.ok ? "✓" : "✗"} ${r.key}${r.ok ? "" : `  ${r.error}`}`);

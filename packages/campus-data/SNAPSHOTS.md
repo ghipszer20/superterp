@@ -6,15 +6,17 @@ Pages never scrape UMD sites per request. Two jobs fetch the data ahead of time 
 
 | Job | Schedule | What it refreshes |
 | --- | --- | --- |
-| `buildSnapshots` (`daily`) | once a day, ~5:00am campus time | room catalog, today's room availability, today's menus for every hall, library hours (2 weeks), RecWell hours (14 days from today), Shuttle-UM GTFS feed |
+| `buildSnapshots` (`daily`) | once a day, ~5:00am campus time | room catalog, today's room availability, today's menus for every hall, library hours (2 weeks), RecWell hours (14 days from today), Shuttle-UM GTFS feed, then `pruneSnapshots` |
 | `refreshFast` (`fast`) | every 5 minutes | room availability for today; each hall's menu once its snapshot is 30+ minutes old (so menus are re-checked every ~30 min), or right away when the date rolls over |
+| `pruneSnapshots` (`prune`) | run automatically at the end of `daily`; also available on its own | removes dated snapshots (and their matching `status/` entries) outside the keep window |
 
 Run them with the CLI (from `packages/campus-data`):
 
 ```sh
-npm run snapshots -- daily          # the 5am build
+npm run snapshots -- daily          # the 5am build (prunes old snapshots at the end)
 npm run snapshots -- fast           # the 5-minute refresh
 npm run snapshots -- fast --dir D:/snaps
+npm run snapshots -- prune          # remove old dated snapshots on their own
 ```
 
 The CLI prints one line per snapshot and exits 1 if any source failed, so a scheduler flags the run.
@@ -36,6 +38,8 @@ The CLI prints one line per snapshot and exits 1 if any source failed, so a sche
 interface SnapshotStore {
   get<T>(key: string): Promise<{ updatedAt: string; data: T } | null>;
   put<T>(key: string, snapshot: { updatedAt: string; data: T }): Promise<void>;
+  list(prefix: string): Promise<string[]>;
+  delete(key: string): Promise<void>;
 }
 ```
 
@@ -55,4 +59,8 @@ Keys:
 | `buses/gtfs` | unzipped GTFS text files (about 7 MB); the web parses them once per server instance |
 | `status/<key>` | the last refresh attempt for `<key>` |
 
-Dated keys aren't cleaned up yet. They add about 12 small files a day.
+## Cleanup
+
+Dated keys (`rooms/<date>/...`, `dining/<date>/...`) add about 12 small files a day. `pruneSnapshots(store, now, { keepDays })` removes any dated snapshot — and its matching `status/<key>` entry — whose date falls outside `now`'s campus date ± `keepDays`. `keepDays` defaults to 1, keeping yesterday, today, and tomorrow (the extra day on each side is slack for timezone edges around midnight). Undated keys (`rooms/catalog`, `libraries/hours`, `recwell/areas`, `buses/gtfs`) are never touched.
+
+The daily build runs `pruneSnapshots` automatically after refreshing everything else. It can also be run on its own with `npm run snapshots -- prune`.
