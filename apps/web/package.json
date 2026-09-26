@@ -15,6 +15,10 @@
     "@superterp/audit": "*",
     "@superterp/campus-data": "*",
     "@superterp/catalog": "*",
+    "@superterp/course-data": "*",
+    "@superterp/credit": "*",
+    "@superterp/plan": "*",
+    "@superterp/ratings": "*",
     "next": "16.3.6",
     "react": "19.2.8",
     "react-dom": "19.2.8"
