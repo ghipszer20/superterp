@@ -57,3 +57,55 @@ describe("runAnalysis", () => {
     expect(a.gateway).toBeNull();
   });
 });
+
+describe("runAnalysis: tracks", () => {
+  it("audits a chosen track's requirements, like a program, without touching majors, notices or the gateway", async () => {
+    const withTracks = { ...plan, tracks: ["pre-med"] };
+    const [a, b] = await Promise.all([
+      runAnalysis({ plan: withTracks, catalog, priorCourses: prior.courses }),
+      runAnalysis({ plan, catalog, priorCourses: prior.courses }),
+    ]);
+    expect(a.audits).toEqual(b.audits);
+    expect(a.notices).toEqual(b.notices);
+    expect(a.gateway).toEqual(b.gateway);
+
+    const preMed = a.tracks.find((t) => t.track.id === "pre-med")!;
+    expect(preMed.requirements.length).toBeGreaterThan(0);
+    expect(preMed.requirements.some((r) => r.result.status === "missing")).toBe(true);
+    expect(preMed.milestones.length).toBeGreaterThan(0);
+    expect(preMed.milestones.some((m) => m.milestone.id === "mcat")).toBe(true);
+  });
+
+  it("audits nothing extra when no track is chosen", async () => {
+    const a = await runAnalysis({ plan, catalog, priorCourses: prior.courses });
+    expect(a.tracks).toEqual([]);
+  });
+
+  it("resolves each course's credits from the catalog, so GPA protection (pre-law) actually fires", async () => {
+    const withGpaProtection = {
+      ...plan,
+      programs: [],
+      tracks: ["pre-law"],
+      terms: [
+        { name: "Fall 2026", courses: [{ id: "HIST200", status: "completed" as const, grade: "A" }] },
+        { name: "Spring 2027", courses: [{ id: "CHEM131", status: "planned" as const }] },
+      ],
+      expectedGrades: { "Spring 2027": { CHEM131: "C-" } },
+    };
+    const a = await runAnalysis({ plan: withGpaProtection, catalog, priorCourses: [] });
+    const preLaw = a.tracks.find((t) => t.track.id === "pre-law")!;
+    const issue = preLaw.result.issues.find((i) => i.kind === "gpa-protection");
+    expect(issue?.message).toContain("Spring 2027");
+  });
+
+  it("reports the science (BCPM) GPA when a graded science course exists", async () => {
+    const withGrades = {
+      ...plan,
+      tracks: ["pre-med"],
+      terms: [{ name: "Fall 2026", courses: [{ id: "CHEM131", status: "completed" as const, grade: "A" }] }],
+    };
+    const a = await runAnalysis({ plan: withGrades, catalog, priorCourses: [] });
+    expect(a.scienceGpa.gpa).not.toBeNull();
+    expect(a.scienceGpa.byCategory.chemistry.gpa).toBe(4.0);
+  });
+});

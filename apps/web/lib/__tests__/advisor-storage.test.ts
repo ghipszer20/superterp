@@ -15,6 +15,15 @@ const plan = () => {
       choices: { "AP Art History (5)": "ARTH200" },
     },
   });
+  p = planReducer(p, {
+    type: "setup",
+    programs: p.programs,
+    catalogYear: p.catalogYear,
+    startTerm: p.startTerm,
+    tracks: ["pre-med"],
+    examTerms: { mcat: "Spring 2027" },
+    expectedGrades: { "Fall 2026": { CMSC131: "B" } },
+  });
   return planReducer(p, { type: "set-gpa", gpa: 3.5 });
 };
 
@@ -46,5 +55,29 @@ describe("plan storage", () => {
     expect(back.prior.ib).toHaveLength(1);
     expect(back.programs).toEqual(["math-major-applied", "cmsc-major"]);
     expect(back).not.toHaveProperty("gpa");
+  });
+
+  it("drops an unknown track id, keeps a known one, and drops a malformed exam term or expected grade", () => {
+    const raw = JSON.parse(serializePlan(plan()));
+    raw.tracks.push("not-a-real-track", 7);
+    raw.examTerms.gre = "Not A Term";
+    raw.examTerms.dat = "Spring 2028";
+    raw.expectedGrades["Fall 2026"]["not a course"] = "A";
+    raw.expectedGrades["Not A Term"] = { CMSC131: "A" };
+    const back = parsePlan(JSON.stringify(raw))!;
+    expect(back.tracks).toEqual(["pre-med"]);
+    expect(back.examTerms).toEqual({ mcat: "Spring 2027", dat: "Spring 2028" });
+    expect(back.expectedGrades).toEqual({ "Fall 2026": { CMSC131: "B" } });
+  });
+
+  it("omits tracks, examTerms and expectedGrades entirely when none are well-formed", () => {
+    const raw = JSON.parse(serializePlan(plan()));
+    raw.tracks = ["nonsense"];
+    raw.examTerms = { gre: "nonsense" };
+    raw.expectedGrades = { nonsense: { CMSC131: "A" } };
+    const back = parsePlan(JSON.stringify(raw))!;
+    expect(back).not.toHaveProperty("tracks");
+    expect(back).not.toHaveProperty("examTerms");
+    expect(back).not.toHaveProperty("expectedGrades");
   });
 });

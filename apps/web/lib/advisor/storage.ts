@@ -1,6 +1,9 @@
 // The Plan in this device's localStorage. Loading validates everything and drops what it can't
 // read, so a corrupt or older save never breaks the page.
 
+// TRACKS comes from "@superterp/tracks/list", which has no runtime @superterp/audit import (no
+// HiGHS), so validating a saved track id here doesn't pull the solver into the main bundle.
+import { TRACKS } from "@superterp/tracks/list";
 import type { AdvisorPlan, ApInput, DualInput, IbInput, PlannedCourse, PlanTermState, PriorInputs } from "./plan-state";
 import { parseTerm } from "./terms";
 
@@ -46,6 +49,35 @@ function prior(x: unknown): PriorInputs {
   return { ap, ib, dual, choices };
 }
 
+const KNOWN_TRACK_IDS = new Set(TRACKS.map((t) => t.id));
+
+/** Chosen track ids, unknown ones dropped; undefined when none are left. */
+function tracks(x: unknown): string[] | undefined {
+  const ids = [...new Set(list(x).filter((v): v is string => str(v) && KNOWN_TRACK_IDS.has(v)))];
+  return ids.length ? ids : undefined;
+}
+
+/** Milestone id -> term name, a malformed term name dropped; undefined when none are left. */
+function examTerms(x: unknown): Record<string, string> | undefined {
+  if (!isObj(x)) return undefined;
+  const out: Record<string, string> = {};
+  for (const [milestone, term] of Object.entries(x)) if (str(term) && parseTerm(term)) out[milestone] = term;
+  return Object.keys(out).length ? out : undefined;
+}
+
+/** Term name -> course id -> grade, a malformed term or course id dropped; undefined when none are left. */
+function expectedGrades(x: unknown): Record<string, Record<string, string>> | undefined {
+  if (!isObj(x)) return undefined;
+  const out: Record<string, Record<string, string>> = {};
+  for (const [term, grades] of Object.entries(x)) {
+    if (!parseTerm(term) || !isObj(grades)) continue;
+    const g: Record<string, string> = {};
+    for (const [id, grade] of Object.entries(grades)) if (COURSE.test(id) && str(grade)) g[id] = grade;
+    if (Object.keys(g).length) out[term] = g;
+  }
+  return Object.keys(out).length ? out : undefined;
+}
+
 export function parsePlan(raw: string | null): AdvisorPlan | null {
   if (!raw) return null;
   let data: unknown;
@@ -66,5 +98,11 @@ export function parsePlan(raw: string | null): AdvisorPlan | null {
     prior: prior(data.prior),
   };
   if (num(data.gpa)) plan.gpa = data.gpa;
+  const t = tracks(data.tracks);
+  if (t) plan.tracks = t;
+  const et = examTerms(data.examTerms);
+  if (et) plan.examTerms = et;
+  const eg = expectedGrades(data.expectedGrades);
+  if (eg) plan.expectedGrades = eg;
   return plan;
 }

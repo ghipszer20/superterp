@@ -39,4 +39,19 @@ describe("seedFromUrl", () => {
     expect(seed.plan).toBeNull();
     expect(hasConsent(seed.consent)).toBe(true);
   });
+
+  it("adds tracks named in the URL to the owner seed's plan, dropping an unknown one", () => {
+    const seed = seedFromUrl("?seed=owner&tracks=pre-med,not-a-track,pre-law", dev)!;
+    expect(seed.plan!.tracks).toEqual(["pre-med", "pre-law"]);
+  });
+
+  it("leaves the owner seed's plan without a tracks field when none are given", () => {
+    const seed = seedFromUrl("?seed=owner", dev)!;
+    expect(seed.plan).not.toHaveProperty("tracks");
+  });
+
+  it("ignores a tracks param on the plain (planless) signed seed", () => {
+    const seed = seedFromUrl("?seed=signed&tracks=pre-med", dev)!;
+    expect(seed.plan).toBeNull();
+  });
 });

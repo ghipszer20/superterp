@@ -55,7 +55,7 @@ function Shell() {
 
 function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; catalog: CatalogState; signedBy: string; signedAt: string }) {
   const view = useView();
-  const [editing, setEditing] = useState(false);
+  const [editing, setEditing] = useState(() => initialSetup());
   const [open, setOpen] = useState<OpenCourse | null>(() => initialCourse());
   const ready = catalog.status === "ready" ? catalog : null;
 
@@ -137,6 +137,12 @@ function initialCourse(): OpenCourse | null {
   if (typeof window === "undefined") return null;
   const id = new URLSearchParams(location.search).get("course");
   return id && /^[A-Z]{4}\d{3}[A-Z]?$/.test(id) ? { id, term: null } : null;
+}
+
+/** ?setup=1 opens Edit setup directly (a deep link; also used by screenshots). */
+function initialSetup(): boolean {
+  if (typeof window === "undefined") return false;
+  return new URLSearchParams(location.search).get("setup") === "1";
 }
 
 export type AnalysisState = { status: "idle" | "running" | "ready" | "error"; result: Analysis | null };

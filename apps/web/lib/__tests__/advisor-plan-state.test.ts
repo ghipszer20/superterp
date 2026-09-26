@@ -20,6 +20,20 @@ describe("newPlan", () => {
     ]);
     expect(plan.terms.every((t) => t.courses.length === 0)).toBe(true);
     expect(plan.prior).toEqual(emptyPrior());
+    expect(plan).not.toHaveProperty("tracks");
+    expect(plan).not.toHaveProperty("examTerms");
+  });
+
+  it("accepts tracks and exam terms chosen at first-run setup", () => {
+    const plan = newPlan({
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2026",
+      tracks: ["pre-med"],
+      examTerms: { mcat: "Spring 2030" },
+    });
+    expect(plan.tracks).toEqual(["pre-med"]);
+    expect(plan.examTerms).toEqual({ mcat: "Spring 2030" });
   });
 });
 
@@ -139,7 +153,15 @@ describe("planReducer: terms", () => {
 describe("planReducer: setup", () => {
   it("changes programs and catalog year without touching the terms", () => {
     let plan = planReducer(base(), { type: "add-course", term: "Fall 2026", id: "CMSC131" });
-    plan = planReducer(plan, { type: "setup", programs: ["math-major-applied"], catalogYear: "2026-27", startTerm: "Fall 2026" });
+    plan = planReducer(plan, {
+      type: "setup",
+      programs: ["math-major-applied"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2026",
+      tracks: [],
+      examTerms: {},
+      expectedGrades: {},
+    });
     expect(plan.programs).toEqual(["math-major-applied"]);
     expect(courses(plan, "Fall 2026")).toEqual(["CMSC131"]);
   });
@@ -147,7 +169,15 @@ describe("planReducer: setup", () => {
   it("shifts every course with a new start term, keeping each course's position in the sequence", () => {
     let plan = planReducer(base(), { type: "add-course", term: "Fall 2026", id: "CMSC131" });
     plan = planReducer(plan, { type: "add-course", term: "Spring 2027", id: "CMSC132" });
-    plan = planReducer(plan, { type: "setup", programs: ["cmsc-major"], catalogYear: "2026-27", startTerm: "Fall 2027" });
+    plan = planReducer(plan, {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2027",
+      tracks: [],
+      examTerms: {},
+      expectedGrades: {},
+    });
     expect(plan.startTerm).toBe("Fall 2027");
     expect(courses(plan, "Fall 2027")).toEqual(["CMSC131"]);
     expect(courses(plan, "Spring 2028")).toEqual(["CMSC132"]);
@@ -157,8 +187,135 @@ describe("planReducer: setup", () => {
   it("moves a winter or summer term's courses into the term before it when the start changes", () => {
     let plan = planReducer(base(), { type: "add-term", name: "Winter 2027" });
     plan = planReducer(plan, { type: "add-course", term: "Winter 2027", id: "MATH241" });
-    plan = planReducer(plan, { type: "setup", programs: ["cmsc-major"], catalogYear: "2026-27", startTerm: "Spring 2027" });
+    plan = planReducer(plan, {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Spring 2027",
+      tracks: [],
+      examTerms: {},
+      expectedGrades: {},
+    });
     expect(courses(plan, "Spring 2027")).toEqual(["MATH241"]);
+  });
+});
+
+describe("planReducer: setup (tracks)", () => {
+  it("stores chosen tracks, exam terms and expected grades", () => {
+    const plan = planReducer(base(), {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2026",
+      tracks: ["pre-med"],
+      examTerms: { mcat: "Spring 2030" },
+      expectedGrades: { "Fall 2026": { CHEM131: "B" } },
+    });
+    expect(plan.tracks).toEqual(["pre-med"]);
+    expect(plan.examTerms).toEqual({ mcat: "Spring 2030" });
+    expect(plan.expectedGrades).toEqual({ "Fall 2026": { CHEM131: "B" } });
+  });
+
+  it("omits tracks, examTerms and expectedGrades when empty, and clears them if previously set", () => {
+    let plan = planReducer(base(), {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2026",
+      tracks: ["pre-med"],
+      examTerms: { mcat: "Spring 2030" },
+      expectedGrades: { "Fall 2026": { CHEM131: "B" } },
+    });
+    plan = planReducer(plan, {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2026",
+      tracks: [],
+      examTerms: {},
+      expectedGrades: {},
+    });
+    expect(plan).not.toHaveProperty("tracks");
+    expect(plan).not.toHaveProperty("examTerms");
+    expect(plan).not.toHaveProperty("expectedGrades");
+  });
+
+  it("remaps exam terms and expected grades to the new term names when the start term changes", () => {
+    let plan = planReducer(base(), {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2026",
+      tracks: ["pre-med"],
+      examTerms: { mcat: "Spring 2027" },
+      expectedGrades: { "Fall 2026": { CMSC131: "B" } },
+    });
+    plan = planReducer(plan, {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2027",
+      tracks: ["pre-med"],
+      examTerms: { mcat: "Spring 2027" },
+      expectedGrades: { "Fall 2026": { CMSC131: "B" } },
+    });
+    expect(plan.examTerms).toEqual({ mcat: "Spring 2028" });
+    expect(plan.expectedGrades).toEqual({ "Fall 2027": { CMSC131: "B" } });
+  });
+
+  it("merges a winter or summer term's expected grades into the term before it when the start changes", () => {
+    let plan = planReducer(base(), { type: "add-term", name: "Winter 2027" });
+    plan = planReducer(plan, {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2026",
+      tracks: [],
+      examTerms: {},
+      expectedGrades: { "Fall 2026": { CMSC131: "B" }, "Winter 2027": { CMSC132: "A" } },
+    });
+    plan = planReducer(plan, {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Spring 2027",
+      tracks: [],
+      examTerms: {},
+      expectedGrades: plan.expectedGrades ?? {},
+    });
+    expect(plan.expectedGrades).toEqual({ "Spring 2027": { CMSC131: "B", CMSC132: "A" } });
+  });
+});
+
+describe("planReducer: removing a term prunes its expected grades", () => {
+  it("drops the removed term's expected grades but keeps other terms'", () => {
+    let plan = planReducer(base(), { type: "add-term", name: "Summer 2027" });
+    plan = planReducer(plan, {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2026",
+      tracks: [],
+      examTerms: {},
+      expectedGrades: { "Fall 2026": { CMSC131: "B" }, "Summer 2027": { STAT400: "A" } },
+    });
+    plan = planReducer(plan, { type: "remove-term", name: "Summer 2027" });
+    expect(plan.expectedGrades).toEqual({ "Fall 2026": { CMSC131: "B" } });
+  });
+
+  it("drops the field entirely when it becomes empty", () => {
+    let plan = planReducer(base(), { type: "add-term", name: "Summer 2027" });
+    plan = planReducer(plan, {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2026",
+      tracks: [],
+      examTerms: {},
+      expectedGrades: { "Summer 2027": { STAT400: "A" } },
+    });
+    plan = planReducer(plan, { type: "remove-term", name: "Summer 2027" });
+    expect(plan).not.toHaveProperty("expectedGrades");
   });
 });
 

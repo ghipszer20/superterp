@@ -5,7 +5,7 @@
 import { auditProgram, matchesFilter, type AuditResult, type Requirement } from "@superterp/audit";
 import type { Plan, PlanCourse, PriorCredit } from "@superterp/plan";
 import { amcasGpa, gpaOf, type GradedCourse } from "./gpa.ts";
-import { trackProgram } from "./index.ts";
+import { trackProgram } from "./list.ts";
 import type { Milestone, Track } from "./types.ts";
 
 export type TrackIssueKind = "exam-timing" | "exam-credit" | "pass-fail-credit" | "low-grade" | "milestone" | "gpa-protection";
@@ -227,8 +227,23 @@ function examTimingIssues(plan: Plan, track: Track, audit: AuditResult, examTerm
   return issues;
 }
 
-function milestoneIssues(plan: Plan, track: Track, entryYear: number | undefined): TrackIssue[] {
-  if (entryYear === undefined || plan.terms.length === 0) return [];
+/** A milestone's timing relative to the plan (see trackMilestoneTimings). */
+export type MilestoneTiming = {
+  milestone: Milestone;
+  /** Calendar year the milestone falls in. */
+  year: number;
+  monthName: string;
+  /** The plan term whose season and year match, if any. */
+  term: string | null;
+  /** True when the milestone's date is after the plan's last term (only meaningful when `term` is null). */
+  afterLast: boolean;
+  /** The same wording milestoneIssues puts in its message: "during Spring 2028", "after your last planned term", or "around Spring 2028". */
+  when: string;
+};
+
+function milestoneTiming(plan: Plan, m: Milestone, entryYear: number): MilestoneTiming | null {
+  const date = m.due ?? m.start;
+  if (!date) return null;
   const last = parseTerm(plan.terms.at(-1)!.name);
   const lastOrder = last ? last.year * 4 + SEASON_RANK[last.season.toLowerCase()]! : undefined;
 
@@ -238,25 +253,35 @@ function milestoneIssues(plan: Plan, track: Track, entryYear: number | undefined
     if (parsed) termByDate.set(`${parsed.year}-${parsed.season.toLowerCase()}`, t.name);
   }
 
-  const issues: TrackIssue[] = [];
-  for (const m of track.milestones) {
-    const date = m.due ?? m.start;
-    if (!date) continue;
-    const year = entryYear + date.year;
-    const season = seasonOfMonth(date.month);
-    const monthName = MONTHS[date.month - 1];
-    const matchedTerm = termByDate.get(`${year}-${season.name.toLowerCase()}`);
-    const order = year * 4 + season.rank;
-    const afterLast = lastOrder !== undefined && order > lastOrder;
-    const when = matchedTerm ? `during ${matchedTerm}` : afterLast ? "after your last planned term" : `around ${season.name} ${year}`;
-    issues.push({
-      kind: "milestone",
-      severity: "info",
-      milestone: m.id,
-      message: `${m.name}: ${m.detail} (around ${monthName} ${year}, ${when}.)`,
-    });
-  }
-  return issues;
+  const year = entryYear + date.year;
+  const season = seasonOfMonth(date.month);
+  const monthName = MONTHS[date.month - 1]!;
+  const matchedTerm = termByDate.get(`${year}-${season.name.toLowerCase()}`) ?? null;
+  const order = year * 4 + season.rank;
+  const afterLast = lastOrder !== undefined && order > lastOrder;
+  const when = matchedTerm ? `during ${matchedTerm}` : afterLast ? "after your last planned term" : `around ${season.name} ${year}`;
+  return { milestone: m, year, monthName, term: matchedTerm, afterLast, when };
+}
+
+/**
+ * Every milestone's timing relative to the plan, structured for a UI that lines milestones up
+ * with plan terms (a "Tracks" audit timeline). Milestones with neither a `due` nor a `start` date
+ * are left out. Empty when `entryYear` can't be given or inferred (see CheckTrackOptions.entryYear)
+ * or the plan has no terms.
+ */
+export function trackMilestoneTimings(plan: Plan, track: Track, entryYear?: number): MilestoneTiming[] {
+  const year = entryYear ?? inferEntryYear(plan, track);
+  if (year === undefined || plan.terms.length === 0) return [];
+  return track.milestones.map((m) => milestoneTiming(plan, m, year)).filter((t): t is MilestoneTiming => t !== null);
+}
+
+function milestoneIssues(plan: Plan, track: Track, entryYear: number | undefined): TrackIssue[] {
+  return trackMilestoneTimings(plan, track, entryYear).map((t) => ({
+    kind: "milestone",
+    severity: "info",
+    milestone: t.milestone.id,
+    message: `${t.milestone.name}: ${t.milestone.detail} (around ${t.monthName} ${t.year}, ${t.when}.)`,
+  }));
 }
 
 function gpaProtectionIssues(plan: Plan, track: Track, expectedGrades: Record<string, Record<string, string>> | undefined): TrackIssue[] {

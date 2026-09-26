@@ -2,7 +2,12 @@
 // Math (Applied) + CS plan (the terms of packages/plan/test/fixtures/owner-plan.ts) with AP
 // Calculus BC 5 entered, and signs the agreement as "UI Check". Inert in production builds unless
 // NEXT_PUBLIC_SUPERTERP_SEED=1, so a student can never skip the agreement.
+// &tracks=pre-med,pre-law adds those tracks to the owner seed's plan (unknown ids dropped), for
+// screenshotting the Tracks checks and audit section without hand-editing the owner plan above.
 
+// TRACKS comes from "@superterp/tracks/list" (no runtime @superterp/audit import), so this stays
+// out of the main bundle's solver code -- store.ts, which calls seedFromUrl, is part of it.
+import { TRACKS } from "@superterp/tracks/list";
 import { CONSENT_VERSION, type ConsentRecord } from "./consent";
 import { emptyPrior, type AdvisorPlan } from "./plan-state";
 
@@ -34,10 +39,17 @@ function ownerPlan(): AdvisorPlan {
   };
 }
 
+const KNOWN_TRACK_IDS = new Set(TRACKS.map((t) => t.id));
+
 export function seedFromUrl(search: string, env: Env): { plan: AdvisorPlan | null; consent: ConsentRecord } | null {
   if (!seedAllowed(env)) return null;
-  const seed = new URLSearchParams(search).get("seed");
+  const params = new URLSearchParams(search);
+  const seed = params.get("seed");
   if (seed !== "owner" && seed !== "signed") return null;
   const consent = { name: "UI Check", acceptedAt: "2026-09-25T12:00:00.000Z", version: CONSENT_VERSION };
-  return { plan: seed === "owner" ? ownerPlan() : null, consent };
+  if (seed !== "owner") return { plan: null, consent };
+  const plan = ownerPlan();
+  const tracks = (params.get("tracks") ?? "").split(",").filter((id) => KNOWN_TRACK_IDS.has(id));
+  if (tracks.length) plan.tracks = tracks;
+  return { plan, consent };
 }

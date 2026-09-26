@@ -385,6 +385,15 @@
   margin-top: 8px;
 }
 
+.trackGpaProtection {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 0.5px solid var(--separator);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 /* ---------- Plan grid ---------- */
 
 .planLayout {
@@ -824,6 +833,20 @@
   font: var(--t-sub);
 }
 
+/* ---------- Track checks (grouped under the track's name, in the Checks card) ---------- */
+
+.trackGroup {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 0.5px solid var(--separator);
+}
+
+.trackGroupTitle {
+  font: var(--t-sub);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
 /* ---------- Course sheet ---------- */
 
 .overlay {
@@ -1081,6 +1104,35 @@
   margin-top: 4px;
   color: var(--text-2);
   font: var(--t-foot);
+}
+
+/* ---------- Tracks (audit view) ---------- */
+
+.trackSection {
+  margin-top: 22px;
+  padding-top: 6px;
+  border-top: 0.5px solid var(--separator);
+}
+
+.trackSectionTitle {
+  font: var(--t-large);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.milestoneTimeline {
+  margin-top: 10px;
+}
+
+.milestoneBucket {
+  margin-top: 8px;
+}
+
+.milestoneBucketLabel {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
 /* ---------- Prior credit ---------- */
