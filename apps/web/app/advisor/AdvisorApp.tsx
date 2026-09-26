@@ -102,7 +102,7 @@ function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; cat
         <PlanView plan={plan} catalog={catalog} checked={checked} analysis={analysis} prior={prior} onOpenCourse={setOpen} />
       ) : null}
       {view === "credit" ? <PriorCreditView plan={plan} prior={prior} catalog={catalog} /> : null}
-      {view === "audit" ? <AuditView plan={plan} analysis={analysis} prior={prior} onOpenCourse={setOpen} /> : null}
+      {view === "audit" ? <AuditView plan={plan} analysis={analysis} onOpenCourse={setOpen} /> : null}
 
       {open ? (
         <CourseSheet
