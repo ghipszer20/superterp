@@ -12,7 +12,8 @@
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "grades": "node scripts/build-grade-summaries.ts"
+    "grades": "node scripts/build-grade-summaries.ts",
+    "professor-ratings": "node scripts/build-professor-ratings.ts"
   },
   "devDependencies": {
     "@types/node": "^22.20.4",
