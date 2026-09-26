@@ -1,0 +1,86 @@
+# Sources: living-learning and special programs
+
+Found 2026-09-25 from UMD's own sites. Raw pages and PDFs are cached (git-ignored) in
+`packages/catalog/.cache/special/` by `scripts/fetch-special.ts`: one request at a time, 500 ms apart,
+each page fetched once.
+
+## Where the list comes from
+
+- **Department of Resident Life, "Living-Learning Programs"** (https://reslife.umd.edu/explore-halls/living-learning-programs):
+  ACES, BioFIRE, Carillon Communities, College Park Scholars, Design Cultures & Creativity, Flexus, Gemstone,
+  Honors College, Honors Humanities, Integrated Life Sciences, Interdisciplinary Business Honors,
+  Jiménez-Porter Writers' House, Language House, University Honors, Virtus.
+- **Office of Undergraduate Studies, "Living Learning Programs"** (https://ugst.umd.edu/llsop/index.html):
+  the same programs plus **FIRE** ("living-learning and other special programs such as FIRE").
+- **Honors College, "Programs at a Glance"** (https://honors.umd.edu/living-learning-programs/honors-living-learning-programs-at-a-glance-1/)
+  and **"Honors Citation"** (https://honors.umd.edu/academics/honors-citation/, which links each program's
+  citation requirements): ACES, DCC, Gemstone, HGLO, Honors Humanities, ILS, IBH, University Honors.
+- **College Park Scholars, "Citation Requirements"** (https://scholars.umd.edu/about/curriculum/citation-requirements):
+  the 13 programs and a "Curriculum Requirements" PDF for each (Fall 2026 PDFs uploaded 2026-05).
+- **UMD Academic Catalog 2026-27, Office of Undergraduate Studies**
+  (https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/): Carillon,
+  Scholars (13 programs listed), Honors College, UMD Fellows Program, Southern Management Leadership Program,
+  Incentive Awards, the ROTC programs, and the Global Studies minors.
+- **SLLC special programs** (https://sllc.umd.edu/special-programs): Language House, Persian Flagship,
+  Summer Language Institutes.
+
+**Renamed or gone (not missing):**
+- CIVICUS relaunched in Fall 2024 as the Scholars program **Civic Engagement for Social Good** (Scholars news, 2024-01-29).
+- **Honors Global Communities** is now **Honors Global Challenges & Solutions (HGLO)**; the catalog course prefix is still titled "HGLO - Honors Global Communities".
+- The Scholars program **Science, Discovery and the Universe** has no curriculum after 2021.
+- **Business, Society and the Economy** is now **Business, Society and Entrepreneurship**.
+- The only **Language Flagship** program at UMD is Persian. Arabic has Summer Language Institutes, not a Flagship.
+
+**Not LLPs, covered elsewhere:** the Global Studies minors (International Development and Conflict Management,
+International Engineering, Global Poverty, Global Terrorism Studies) and the ROTC-related minors are catalog
+minors with requirement tables, so the catalog pipeline drafts them. The First Year Book Program, National
+Scholarships Office and Academic Common Market are not programs with requirements.
+
+**No CourseLeaf tables:** none of these requirement pages is a catalog `sc_courselist` table. The one catalog
+page (Office of Undergraduate Studies) has only `sc_plangrid` sample plans for ROTC, which `parseProgramPage`
+correctly ignores (see `test/special-sources.test.ts`). So everything is transcribed by hand, and the program
+`kind` type (`ProgramKind`) needed no new kinds.
+
+## Programs
+
+Format: **PDF** = a PDF checklist (hand-transcribed); **prose** = an HTML page of prose, lists or a plain HTML
+table (hand-transcribed); **none** = no requirement list published.
+
+| Name | Kind | Requirement page | What it contains | Format | Year / date |
+| --- | --- | --- | --- | --- | --- |
+| College Park Scholars: Arts | Scholars | https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsArts2026.pdf | Colloquia CPSA100–201, practicum (one of 3), 3 supporting courses from a list or 12 approved prefixes, DVCC/DVUP rule | PDF | Fall 2026 (2026-05) |
+| College Park Scholars: Business, Society and Entrepreneurship | Scholars | https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsBSE2026_0.pdf | Colloquia, BMGT161, BMGT461S, CPBE225, practicum, one DVCC/DVUP course | PDF | Fall 2026 (2026-05) |
+| College Park Scholars: Civic Engagement for Social Good | Scholars | https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsCESG2026_0.pdf | Colloquia, CPCV225, CHSE228C, practicum, one supporting course from a list | PDF | Fall 2026 (2026-05) |
+| College Park Scholars: Data Justice | Scholars | https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsDJ2026_1.pdf | Colloquia, INST204S, practicum, one supporting course from a list | PDF | Fall 2026 (2026-05) |
+| College Park Scholars: Environment, Technology and Economy | Scholars | https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsETE2026_0.pdf | Colloquia, practicum, two supporting courses from a 150-course list, AP exception | PDF | Fall 2026 (2026-05) |
+| College Park Scholars: Global Public Health | Scholars | https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsGPH2026.pdf | Colloquia, FMSC110S, CPGH210, two proposed supporting courses (examples only) | PDF | Fall 2026 (2026-05) |
+| College Park Scholars: International Studies | Scholars | https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsIS2026.pdf | Colloquia, GVPT200 or 241, practicum, dialogue course, one supporting course | PDF | Fall 2026 (2026-05) |
+| College Park Scholars: Justice and Legal Thought | Scholars | https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsJLT2026.pdf | Colloquia, MLAW100, MLAW150, practicum, one supporting course (one is a two-course pair) | PDF | Fall 2026 (2026-05) |
+| College Park Scholars: Life Sciences | Scholars | https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsLS2026.pdf | Colloquia, BSCI160/170/180S, CHEM131/132S, CMNS100, CPSF230; regular grading | PDF | Fall 2026 (2026-05) |
+| College Park Scholars: Media, Self and Society | Scholars | https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsMedia2026.pdf | Colloquia, CPMS225, practicum, two supporting courses with "or" groups | PDF | Fall 2026 (2026-05) |
+| College Park Scholars: Public Leadership | Scholars | https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsPL2026_0.pdf | Colloquia, PLCY201S, an FSOC course, a practicum described in prose | PDF | Fall 2026 (2026-05) |
+| College Park Scholars: Science and Global Change | Scholars | https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsSGC2026_0.pdf | Colloquia, practicum, CDP (DVCC/DVUP) course, supporting courses A/B/C from lists | PDF | Fall 2026 (2026-05) |
+| College Park Scholars: Science, Technology and Society | Scholars | https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsSTS2026.pdf | Colloquia, practicum (one of 6), capstone, one supporting course from a 110-course list | PDF | Fall 2026 (2026-05) |
+| Advanced Cybersecurity Experience for Students (ACES) | Honors | https://aces.umd.edu/llp-course-requirements | HACS100/101/200, two HACS208 seminars, 3 credits of HACS287/297; 15 credits | prose | undated, fetched 2026-09-25 |
+| Design Cultures & Creativity | Honors | https://dcc.umd.edu/learning/curriculum/ | HDCC105/106/201/208/209 + a 3-credit option; C- in HDCC; 16 credits | prose | undated (mentions Fall 2026), fetched 2026-09-25 |
+| Gemstone | Honors | https://www.gemstone.umd.edu/current-students/earning-gemstone-citation | GEMS101–497 (17 credits), C- minimum, team thesis | prose | undated, fetched 2026-09-25 |
+| Honors Global Challenges & Solutions | Honors | https://hglo.umd.edu/currentstudents/academicrequirements | Links the "Advising Guide for Fall 2026 Incoming Cohort" (Google Doc): HGLO100/101, GVPT201, two tracks, a supporting course; C- | prose | Fall 2026 cohort guide |
+| Honors Humanities | Honors | https://arhu.umd.edu/academics/undergraduate-studies/living-and-learning-programs/honors-humanities/prospective-students/academics | HHUM105/106/205/206 + a 3-credit experience; C- in each | prose | undated, fetched 2026-09-25 |
+| Integrated Life Sciences | Honors | https://www.ils.umd.edu/courses | HLSC100/280/322/102 + one fall and one spring second-year course; 16 credits | prose (HTML table) | undated, fetched 2026-09-25 |
+| Interdisciplinary Business Honors | Honors | https://ibh.umd.edu/academics | HBUS100/105/200/205 + one elective; 15 credits | prose | undated, fetched 2026-09-25 |
+| University Honors | Honors | https://universityhonors.umd.edu/curriculum/ | HNUH100, HNUH300, two HNUH2xx pairs (12 credits); cluster/track lists on sub-pages | prose | Fall 2026–Spring 2028 clusters, fetched 2026-09-25 |
+| Carillon Communities | Other LLP | https://carillon.umd.edu/carillon-experience/year-carillon | Studio (CRLN101) + a 3-credit community course (no id published) | prose | undated, fetched 2026-09-25 |
+| Flexus: Women in Engineering | Other LLP | https://eng.umd.edu/women/current-students/communities/flexus | Four 1-credit seminars ENED115, ENES114/116, ENED215, ENES214/216 | prose (HTML table) | Fall 2026 cohort, fetched 2026-09-25 |
+| Virtus: Men in Engineering | Other LLP | https://eng.umd.edu/women/current-students/communities/virtus | Same four seminars as Flexus | prose (HTML table) | Fall 2026 cohort, fetched 2026-09-25 |
+| Jiménez-Porter Writers' House | Other LLP | https://arhu.umd.edu/academics/undergraduate-studies/living-and-learning-programs/jimenez-porter-writers-house/current-students/handbook | Notation track: ARHU300/309/318/319/320 + a supporting course from a list; B or better; 12 credits | prose | undated, fetched 2026-09-25 |
+| Language House | Other LLP | https://sllc.umd.edu/special-programs/language-house/info-current-students-mentors | SLLC329 each semester + a 3-credit target-language course with B or better | prose | undated, fetched 2026-09-25 |
+| BioFIRE | Other LLP | https://cmns.umd.edu/undergraduate/future-students/living-learning-special-programs/biofire | "a one-credit fall and spring seminar" (no course ids) | none | fetched 2026-09-25 (the CMNS LLP index returned HTTP 403) |
+| FIRE: First-Year Innovation & Research Experience | Other special program | https://www.fire.umd.edu/about | FIRE120, FIRE198, FIRE298 | prose | undated, fetched 2026-09-25 |
+| UMD Fellows Program | Other special program | https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/ | Seminar (13 cross-listed options), internship FGSM398/HNUH398P, two approved supporting courses; 3.0 GPA to apply | prose (catalog) | 2026-27 catalog |
+| Persian Flagship Program | Other special program | https://sllc.umd.edu/special-programs/arabic-persian/persian-flagship | Program description, capstone projects; no requirements list | none | fetched 2026-09-25 |
+| Southern Management Leadership Program | Other special program | https://www.smlp.umd.edu/ | Catalog lists SMLP470–474 (restricted to the program); no stated requirements | none | 2026-27 catalog |
+| Air Force ROTC | Other special program | https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/ | GMC/POC structure, Leadership Laboratory ARSC059, cadet standards | none | 2026-27 catalog |
+| Army ROTC | Other special program | https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/ | ARMY105–402 plan grid (24 credits) + military history; = Army Leadership Studies minor | none | 2026-27 catalog |
+| Naval ROTC | Other special program | https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/ | Sample NAVY plans, NAVY108 lab each term, categories of core courses | none | 2026-27 catalog |
+| C.D. Mote Jr. Incentive Awards Program | Other special program | https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/ | Scholarship and mentoring; no course requirements | none | 2026-27 catalog |
+| Departmental Honors Programs | Other special program | https://honors.umd.edu/academics/departmental-honors/ | 40+ department programs (out of scope for this pass) | none | fetched 2026-09-25 |
