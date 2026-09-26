@@ -14,10 +14,11 @@ interpretation quoted in `reviewNotes`; **none** = no academic requirements are 
 | Scholars | 13 | 13 | 0 |
 | Honors | 8 | 8 | 0 |
 | Other LLP | 6 | 5 | 1 |
-| Other special program | 9 | 2 | 7 |
-| **Total** | **36** | **28** | **8** |
+| Other special program | 8 | 2 | 6 |
+| Departmental Honors | 2 | 2 | 0 |
+| **Total** | **37** | **30** | **7** |
 
-Drafted: **150** requirements and **210** review notes (113 manual, 97 check).
+Drafted: **156** requirements and **221** review notes (120 manual, 101 check).
 Manual notes are rules the audit can't check (GPA, residence, attendance, approvals); check notes are interpretations to confirm.
 
 ## Programs
@@ -59,4 +60,5 @@ Manual notes are rules the audit can't check (GPA, residence, attendance, approv
 | Army ROTC | Other special program | none: Commissioning program; its academic part (ARMY301, ARMY302, ARMY401, ARMY402 and military history) is the catalog's Army Leadership Studies minor, which the catalog pipeline drafts. | 0 | 0 | 0 | 0 |
 | Naval ROTC | Other special program | none: Commissioning program; the catalog gives sample plans ("Navy Option students typically will take") and requirement categories (calculus, physics, English) rather than a course list. The Naval Science minor is drafted by the catalog pipeline. | 0 | 0 | 0 | 0 |
 | C.D. Mote Jr. Incentive Awards Program | Other special program | none: A scholarship and mentoring program with no academic course requirements. | 0 | 0 | 0 | 0 |
-| Departmental Honors Programs | Other special program | none: Out of scope for this pass: over 40 programs, each defined by its department (usually on the major's catalog page, which the catalog pipeline drafts). | 0 | 0 | 0 | 0 |
+| Departmental Honors: History | Departmental Honors | hand | 4 | 4 | 3 | 1 |
+| Departmental Honors: Mathematics | Departmental Honors | hand | 2 | 7 | 4 | 3 |

@@ -12,6 +12,8 @@ import { honorsHumanities } from "./honors-humanities-2026-27.ts";
 import { honorsIbh } from "./honors-ibh-2026-27.ts";
 import { honorsIls } from "./honors-ils-2026-27.ts";
 import { honorsUh } from "./honors-uh-2026-27.ts";
+import { deptHist } from "./dept-hist-2026-27.ts";
+import { deptMath } from "./dept-math-2026-27.ts";
 import { carillon } from "./llp-carillon-2026-27.ts";
 import { flexus, virtus } from "./llp-flexus-virtus-2026-27.ts";
 import { languageHouse } from "./llp-language-house-2026-27.ts";
@@ -32,7 +34,7 @@ import { scholarsSts } from "./scholars-sts-2026-27.ts";
 import { fire } from "./special-fire-2026-27.ts";
 import { umdFellows } from "./special-umd-fellows-2026-27.ts";
 
-export type SpecialKind = "scholars" | "honors" | "llp" | "special";
+export type SpecialKind = "scholars" | "honors" | "llp" | "special" | "departmental";
 
 /** hand: transcribed into a Program; none: not drafted (why says so). No LLP page is a catalog table. */
 export type Drafting = "hand" | "none";
@@ -122,10 +124,8 @@ export const specialPrograms: SpecialEntry[] = [
     UGST_CATALOG,
     "A scholarship and mentoring program with no academic course requirements.",
   ),
-  none(
-    "special",
-    "Departmental Honors Programs",
-    "https://honors.umd.edu/academics/departmental-honors/",
-    "Out of scope for this pass: over 40 programs, each defined by its department (usually on the major's catalog page, which the catalog pipeline drafts).",
-  ),
+
+  // Departmental honors programs (see honors.umd.edu/academics/departmental-honors/ for the department directory)
+  hand("departmental", deptHist),
+  hand("departmental", deptMath),
 ];

@@ -23,6 +23,9 @@ each page fetched once.
   Incentive Awards, the ROTC programs, and the Global Studies minors.
 - **SLLC special programs** (https://sllc.umd.edu/special-programs): Language House, Persian Flagship,
   Summer Language Institutes.
+- **Honors College, "Departmental Honors"** (https://honors.umd.edu/academics/departmental-honors/, fetched 2026-09-26):
+  the "Departmental Honors contacts" list of 39 department (or college-wide) programs, each with its own
+  requirements page (see "Departmental honors programs" below).
 
 **Renamed or gone (not missing):**
 - CIVICUS relaunched in Fall 2024 as the Scholars program **Civic Engagement for Social Good** (Scholars news, 2024-01-29).
@@ -38,8 +41,22 @@ Scholarships Office and Academic Common Market are not programs with requirement
 
 **No CourseLeaf tables:** none of these requirement pages is a catalog `sc_courselist` table. The one catalog
 page (Office of Undergraduate Studies) has only `sc_plangrid` sample plans for ROTC, which `parseProgramPage`
-correctly ignores (see `test/special-sources.test.ts`). So everything is transcribed by hand, and the program
-`kind` type (`ProgramKind`) needed no new kinds.
+correctly ignores (see `test/special-sources.test.ts`). So everything is transcribed by hand.
+
+## Departmental honors programs
+
+The Honors College's "Departmental Honors contacts" list (https://honors.umd.edu/academics/departmental-honors/)
+names 39 department or college-wide programs, each with its own director and (usually) its own requirements page
+on the department's site — not the Academic Catalog, and not one shared format. This pass adds a `"departmental"`
+`SpecialKind` (report label "Departmental Honors") for them, drafting every one whose page names specific course
+ids; the rest are `none` entries quoting why (no course ids published, or the department's site did not respond
+to a fetch as of 2026-09-26 — see the per-program `why` in `registry.ts`). GPA minimums, thesis documents, oral
+defenses and faculty/committee approvals are never audit requirements; they are `[manual]` review notes.
+
+Three department sites (`ccjs.umd.edu`, `hesp.umd.edu`, `socy.umd.edu`, `neur.umd.edu`) timed out on every
+attempt (`fetch failed` / `UND_ERR_CONNECT_TIMEOUT`) even though sibling BSOS/CMNS domains and the department's
+own root page (where checked) responded, so Criminology & Criminal Justice, Hearing & Speech Sciences,
+Neuroscience and Sociology are `none` entries citing the fetch failure rather than a missing requirements page.
 
 ## Programs
 
@@ -83,4 +100,5 @@ table (hand-transcribed); **none** = no requirement list published.
 | Army ROTC | Other special program | https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/ | ARMY105–402 plan grid (24 credits) + military history; = Army Leadership Studies minor | none | 2026-27 catalog |
 | Naval ROTC | Other special program | https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/ | Sample NAVY plans, NAVY108 lab each term, categories of core courses | none | 2026-27 catalog |
 | C.D. Mote Jr. Incentive Awards Program | Other special program | https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/ | Scholarship and mentoring; no course requirements | none | 2026-27 catalog |
-| Departmental Honors Programs | Other special program | https://honors.umd.edu/academics/departmental-honors/ | 40+ department programs (out of scope for this pass) | none | fetched 2026-09-25 |
+| Departmental Honors: History | Departmental Honors | https://history.umd.edu/academics/undergraduate/honors | HIST395, HIST396, HIST398, HIST399 (12 credits) | prose | undated, fetched 2026-09-26 |
+| Departmental Honors: Mathematics | Departmental Honors | https://www-math.umd.edu/undergraduate/opportunities.html?id=101 | Thesis option: 2 breadth courses from a 9-course list, 6 credits of MATH498 | prose | undated, fetched 2026-09-26 |
