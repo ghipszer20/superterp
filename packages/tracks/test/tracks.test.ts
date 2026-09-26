@@ -151,4 +151,37 @@ describe("track definitions", () => {
     expect(onDat).not.toContain("biochem");
     expect(onDat).toContain("organic-chem");
   });
+
+  // A course not being offered in the one cached Schedule of Classes snapshot doesn't make it an
+  // invalid course number; these alternatives are kept (with a reviewNote flagging them for the
+  // owner) rather than dropped, so a student who already took one still satisfies the category.
+  describe("alternatives not offered in the Spring 2027 Schedule of Classes are still accepted", () => {
+    const requirementOf = (id: string) => {
+      const med = TRACKS.find((t) => t.id === "pre-med")!;
+      return med.categories.find((c) => c.requirement?.id === id)!.requirement!;
+    };
+    const solo = async (id: string, courses: { id: string; credits: number }[]) => {
+      const program = { id: "test", name: "test", requirements: [requirementOf(id)] };
+      const result = await auditProgram(
+        program,
+        courses.map((c) => ({ ...c, status: "completed" as const })),
+      );
+      return result.requirements[0]!.status;
+    };
+
+    it("PHYS141/PHYS142 (the Biological Sciences catalog's alternate physics sequence) satisfies physics", async () => {
+      expect(await solo("physics", [{ id: "PHYS141", credits: 4 }, { id: "PHYS142", credits: 4 }])).toBe("satisfied");
+    });
+
+    it("BSCI160/161 and BSCI170/171 (the courses BSCI180 replaced) satisfies intro-bio", async () => {
+      expect(
+        await solo("intro-bio", [
+          { id: "BSCI160", credits: 3 },
+          { id: "BSCI161", credits: 1 },
+          { id: "BSCI170", credits: 3 },
+          { id: "BSCI171", credits: 1 },
+        ]),
+      ).toBe("satisfied");
+    });
+  });
 });
