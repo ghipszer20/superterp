@@ -162,3 +162,6 @@ next-env.d.ts
 
 # Brainstorming companion mockups
 .superpowers/
+
+# Advisor/schedule static data built from scraped snapshots (apps/web/scripts/advisor-data.mts)
+apps/web/public/data/
