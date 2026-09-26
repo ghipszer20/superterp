@@ -4,13 +4,14 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { parseDiningMenu } from "../src/dining.ts";
-import { parseLibCalHours, type LibCalHoursFeed } from "../src/libraries.ts";
+import { orderLibraries, parseLibCalHours, type LibCalHoursFeed, type LibraryHours } from "../src/libraries.ts";
 import { parseRecWellTab, recWellOnDate, recWellWindow } from "../src/recwell.ts";
 import {
   applyAvailability,
   parseRoomCategories,
   parseRoomLocations,
   parseRooms,
+  roomBookingUrl,
   studyRoomCategories,
 } from "../src/rooms.ts";
 import { SourceError } from "../src/http.ts";
@@ -70,6 +71,34 @@ describe("LibCal hours feed", () => {
 
   it("rejects an empty feed", () => {
     expect(() => parseLibCalHours({ locations: [] })).toThrow(SourceError);
+  });
+});
+
+describe("library display order", () => {
+  const lib = (name: string): LibraryHours => ({ id: 1, name, kind: "library", url: "", days: {} });
+
+  it("puts McKeldin first, then the rest alphabetically, regardless of feed order", () => {
+    const scrambled = [
+      lib("STEM Library"),
+      lib("Art Library"),
+      lib("McKeldin Library"),
+      lib("Hornbake Library"),
+      lib("Architecture Library"),
+      lib("Michelle Smith Performing Arts Library"),
+    ];
+    expect(orderLibraries(scrambled).map((l) => l.name)).toEqual([
+      "McKeldin Library",
+      "Architecture Library",
+      "Art Library",
+      "Hornbake Library",
+      "Michelle Smith Performing Arts Library",
+      "STEM Library",
+    ]);
+  });
+
+  it("keeps every library, not just the well-known three", () => {
+    const all = [lib("McKeldin Library"), lib("Art Library"), lib("Hornbake Library")];
+    expect(orderLibraries(all)).toHaveLength(3);
   });
 });
 
@@ -141,6 +170,37 @@ describe("study rooms", () => {
       { start: "2026-09-25 10:30:00", end: "2026-09-25 14:00:00" },
     ]);
     expect(chatelet!.open).toEqual([{ start: "2026-09-25 08:00:00", end: "2026-09-25 14:00:00" }]);
+  });
+});
+
+describe("room booking links", () => {
+  it("builds the booking url from the room's own eid, never the feed's url field", () => {
+    // A synthetic block whose "url" field points at a generic category page
+    // instead of the room's own space page — parseRooms must not trust it.
+    const block = `
+      ({
+        id: "eid_99999",
+        title: "Odd Room (Capacity 2)",
+        url: "/reserve/some-category-page",
+        eid: 99999,
+        gid: 1,
+        lid: 1,
+        grouping: "Test Category",
+        capacity: 2,
+      })
+    `;
+    const [room] = parseRooms(block);
+    expect(room!.bookingUrl).toBe("https://umd.libcal.com/space/99999");
+  });
+
+  it("gives every parsed room its own /space/<id> page, never a generic fallback", () => {
+    const rooms = parseRooms(fixture("rooms-stem.html"));
+    expect(rooms.length).toBeGreaterThan(0);
+    for (const r of rooms) expect(r.bookingUrl).toMatch(/^https:\/\/umd\.libcal\.com\/space\/\d+$/);
+  });
+
+  it("carries the chosen date on a room's own booking page", () => {
+    expect(roomBookingUrl(86389, "2026-09-28")).toBe("https://umd.libcal.com/space/86389?date=2026-09-28");
   });
 });
 
