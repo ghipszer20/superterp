@@ -12,10 +12,13 @@
 //                                            rows, sets { count }
 //   "N credits from/of the following"     -> choose { credits } over the group's courses (with alternatives)
 //   "Select N … from at least M of the following areas …" + area labels -> distribution
-//   "Select one of N sequences" + "Sequence …" labels -> sets ("or" choices expanded)
+//   "Select one of N sequences" + "Sequence …" labels -> sets ("or" choices expanded);
+//     a sequence with one nested rule ("Select N From:" + a course list, or a course
+//     pattern like "AOSC4xx" / "N additional NNN-level DEPT courses") becomes a set
+//     member with a filter part, e.g. ["AOSC200", "AOSC201", { count: 2, from: {...} }]
 // A group is the course rows after the rule, up to the next header or text row.
 
-import type { Area, Program, Requirement } from "@superterp/audit";
+import type { Area, CourseFilter, Program, Requirement, SetMember } from "@superterp/audit";
 import type { CatalogRow, CourseList, ProgramPage } from "./program.ts";
 
 export type DraftMeta = {
@@ -39,6 +42,7 @@ export type ReviewReason =
   | "group-boundary"
   | "sets-with-alternatives"
   | "sequence-with-rule"
+  | "sequence-filter"
   | "alternatives-flattened"
   | "ambiguous-code"
   | "stray-or"
@@ -137,13 +141,39 @@ function classify(text: string): Rule {
   if (MUST_INCLUDE.test(s)) return { kind: "must-include" };
   const p = COURSE_PATTERN.exec(text.trim());
   if (p) {
-    const hundreds = Number(p[2]);
-    const tens = /\d/.test(p[3]!) ? Number(p[3]) : null;
-    const min = hundreds * 100 + (tens ?? 0) * 10;
-    const max = p[4] ? Number(p[4]) * 100 + 99 : tens === null ? hundreds * 100 + 99 : min + 9;
+    const { min, max } = patternRange(p[2]!, p[3]!, p[4]);
     return { kind: "pattern", department: p[1]!, min, max };
   }
   return { kind: "other" };
+}
+
+/** The number range a code pattern like "AOSC4xx" or "MATH4xx/5xx" covers. */
+function patternRange(hundredsDigit: string, tensDigit: string, quadHundreds?: string): { min: number; max: number } {
+  const hundreds = Number(hundredsDigit);
+  const tens = /\d/.test(tensDigit) ? Number(tensDigit) : null;
+  const min = hundreds * 100 + (tens ?? 0) * 10;
+  const max = quadHundreds ? Number(quadHundreds) * 100 + 99 : tens === null ? hundreds * 100 + 99 : min + 9;
+  return { min, max };
+}
+
+/** Nested course-pattern rules inside a sequence: "N additional NNN-level DEPT courses", or a leading code like "AOSC4xx". */
+const NESTED_PATTERN_PROSE = new RegExp(`^(?:${NUM}\\s+)?(?:additional\\s+)?(\\d{3})[- ]level\\s+([A-Z]{4})\\s+courses?$`, "i");
+const NESTED_PATTERN_CODE = /^([A-Z]{4})\s?(\d)([\dxX])[xX](?:\s*\/\s*(\d)[xX][xX])?\b/;
+
+/** A sequence's nested rule, read as "count courses from a department/number-range filter" (not a course list). Null if it isn't one. */
+function nestedPatternFilter(text: string): { count: number; department: string; min: number; max: number } | null {
+  const s = clean(text);
+  const prose = NESTED_PATTERN_PROSE.exec(s);
+  if (prose) {
+    const min = Number(prose[2]);
+    return { count: prose[1] ? toNumber(prose[1]) : 1, department: prose[3]!.toUpperCase(), min, max: min + 99 };
+  }
+  const code = NESTED_PATTERN_CODE.exec(text.trim());
+  if (code) {
+    const { min, max } = patternRange(code[2]!, code[3]!, code[4]);
+    return { count: 1, department: code[1]!, min, max };
+  }
+  return null;
 }
 
 const SINGLE = /^[A-Z]{4}\d{3}[A-Z]?$/;
@@ -464,30 +494,43 @@ class ListDrafter {
     }
 
     // sequences
-    const sets: string[][] = [];
+    const sets: SetMember[][] = [];
     const kept: number[] = [i];
     const leftOut: { g: (typeof groups)[number]; why: string }[] = [];
+    const checked: { g: (typeof groups)[number]; text: string }[] = [];
     for (const g of groups) {
-      const nested = g.rows.find((k) => this.row(k).kind === "text" && !this.isOr(this.row(k)));
-      const parsed = nested === undefined ? this.slots(g.rows) : null;
-      if (nested !== undefined || !parsed || "problem" in parsed || parsed.slots.length === 0) {
-        const why = nested !== undefined ? `its row "${(this.row(nested) as { text: string }).text}" is a rule the draft can't expand` : "it isn't a plain list of courses";
-        leftOut.push({ g, why });
+      const nestedIdx = g.rows.findIndex((k) => this.row(k).kind === "text" && !this.isOr(this.row(k)));
+      if (nestedIdx === -1) {
+        const parsed = this.slots(g.rows);
+        if ("problem" in parsed || parsed.slots.length === 0) {
+          leftOut.push({ g, why: "it isn't a plain list of courses" });
+          continue;
+        }
+        const combos = product(parsed.slots.map((s) => s.alts.map((a) => a.join(" ")))).map((combo) => combo.flatMap((x) => x.split(" ")));
+        if (combos.length > 32) {
+          leftOut.push({ g, why: `its "or" choices expand to ${combos.length} sets` });
+          continue;
+        }
+        sets.push(...combos);
+        kept.push(g.label, ...g.rows);
         continue;
       }
-      const combos = product(parsed.slots.map((s) => s.alts.map((a) => a.join(" ")))).map((combo) => combo.flatMap((x) => x.split(" ")));
-      if (combos.length > 32) {
-        leftOut.push({ g, why: `its "or" choices expand to ${combos.length} sets` });
+      const nestedText = (this.row(g.rows[nestedIdx]!) as { text: string }).text;
+      const converted = this.convertNestedRule(g.rows, nestedIdx);
+      if (converted) {
+        sets.push(converted);
+        kept.push(g.label, ...g.rows);
+        checked.push({ g, text: nestedText });
         continue;
       }
-      sets.push(...combos);
-      kept.push(g.label, ...g.rows);
+      leftOut.push({ g, why: `its row "${nestedText}" is a rule the draft can't expand` });
     }
     if (sets.length === 0) {
       this.sendToReview("unrecognized-rule", [i, ...body], this.notConverted(i, body, "No sequence is a plain list of courses."));
       return i + 1 + body.length;
     }
-    const id = this.id(`sequence-${sets[0]![0]!.toLowerCase()}`);
+    const firstCode = sets.flat().find((m): m is string => typeof m === "string")?.toLowerCase() ?? "sequence";
+    const id = this.id(`sequence-${firstCode}`);
     this.add({ kind: "sets", id, name, options: sets }, kept);
     for (const { g, why } of leftOut) {
       this.sendToReview(
@@ -497,7 +540,53 @@ class ListDrafter {
         "check",
       );
     }
+    for (const { g, text } of checked) {
+      this.review.push({
+        confidence: "check",
+        reason: "sequence-filter",
+        text: `${id}: sequence "${label(g)}" converted the row "${text}" into a course-count filter part; check the count and the range.`,
+        list: this.list.heading,
+        rows: 0,
+        at: [g.label, ...g.rows],
+      });
+    }
     return i + 1 + body.length;
+  }
+
+  /**
+   * A sequence group's rows split around one nested rule row (at `rows[nestedIdx]`): the plain
+   * courses before it, plus a filter part read from the nested row itself. Two shapes convert:
+   * a "Select N From:" rule with a plain course list after it (count over those courses), or a
+   * course-pattern rule with nothing after it (count over a department/number-range filter).
+   * Null if the rows before it aren't a plain list, or the nested rule isn't either shape.
+   */
+  private convertNestedRule(rows: number[], nestedIdx: number): SetMember[] | null {
+    const before = rows.slice(0, nestedIdx);
+    const after = rows.slice(nestedIdx + 1);
+    const nestedText = (this.row(rows[nestedIdx]!) as { text: string }).text;
+
+    let prefix: string[] = [];
+    if (before.length > 0) {
+      const parsed = this.slots(before);
+      if ("problem" in parsed || parsed.slots.some((s) => s.alts.length > 1)) return null;
+      prefix = parsed.slots.flatMap((s) => s.alts[0]!);
+    }
+
+    let member: { count: number; from: CourseFilter };
+    if (after.length > 0) {
+      const rule = classify(nestedText);
+      if (rule.kind !== "count") return null;
+      const parsed = this.slots(after);
+      if ("problem" in parsed || parsed.slots.some((s) => s.alts.length > 1 || s.alts[0]!.length > 1)) return null;
+      const courses = parsed.slots.map((s) => s.alts[0]![0]!);
+      if (rule.count > courses.length) return null;
+      member = { count: rule.count, from: { courses } };
+    } else {
+      const filter = nestedPatternFilter(nestedText);
+      if (!filter) return null;
+      member = { count: filter.count, from: { departments: [filter.department], minNumber: filter.min, maxNumber: filter.max } };
+    }
+    return [...prefix, member];
   }
 
   draft(): Omit<Draft, "program" | "total"> & { requirements: Requirement[] } {
