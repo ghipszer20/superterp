@@ -53,7 +53,8 @@ export type GradeColumn = (typeof GRADE_COLUMNS)[number];
 
 export type GradeRow = {
   course: string;
-  professor: string;
+  /** null when PlanetTerp doesn't know who taught the section (seen in MATH140, STAT400, CMSC132). */
+  professor: string | null;
   /** Testudo term id, e.g. "201608". */
   semester: string;
   section: string;
@@ -149,7 +150,7 @@ export function parseGrades(data: unknown): GradeRow[] {
     for (const col of GRADE_COLUMNS) counts[col] = num(row, col, "grade row");
     return {
       course: str(row, "course", "grade row"),
-      professor: str(row, "professor", "grade row"),
+      professor: row.professor === null ? null : str(row, "professor", "grade row"),
       semester: str(row, "semester", "grade row"),
       section: str(row, "section", "grade row"),
       counts,
@@ -212,6 +213,11 @@ export async function fetchProfessor(name: string): Promise<Professor | null> {
 export async function fetchCourse(id: string): Promise<Course | null> {
   const data = await getOrNull(`${API}/course?name=${q(id)}`);
   return data === null ? null : parseCourse(data);
+}
+
+/** A course's unparsed /grades body; not-found becomes {"error": "course not found"}. Other failures throw. */
+export async function fetchGradesRaw(course: string): Promise<unknown> {
+  return (await getOrNull(`${API}/grades?course=${q(course)}`)) ?? { error: "course not found" };
 }
 
 export async function fetchGrades(course: string, professor?: string): Promise<GradeRow[]> {
