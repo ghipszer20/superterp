@@ -1,0 +1,265 @@
+// Category → UMD course mappings shared by several tracks. HPAO publishes categories, not UMD
+// course numbers, so every mapping here is SuperTerp's reading of UMD's own pages (SOURCES.md);
+// MAPPING_NOTES lists each choice for the owner to verify.
+
+import type { Requirement, SetMember } from "@superterp/audit";
+import type { Milestone, TrackCategory } from "../src/types.ts";
+
+/** One course by number, with any suffix (honors "H", "S" sections…), e.g. CHEM232 matches CHEM232S. */
+export function num(id: string): SetMember {
+  const m = /^([A-Z]{4})(\d{3})$/.exec(id);
+  if (!m) throw new Error(`Not a course number: ${id}`);
+  const n = Number(m[2]);
+  return { count: 1, from: { departments: [m[1]!], minNumber: n, maxNumber: n } };
+}
+
+/** All of the courses in one of the options, e.g. [["CHEM131", "CHEM132"], ["CHEM135", "CHEM136"]]. */
+export function sets(id: string, name: string, options: string[][]): Requirement {
+  return { kind: "sets", id, name, options: options.map((o) => o.map(num)) };
+}
+
+/** One course from a list. */
+export function oneOf(id: string, name: string, courses: string[]): Requirement {
+  return sets(id, name, courses.map((c) => [c]));
+}
+
+type Extra = Omit<TrackCategory, "requirement" | "source">;
+const cat = (requirement: Requirement, source: string, extra: Extra = {}): TrackCategory => ({ requirement, source, ...extra });
+
+// --- Chemistry -------------------------------------------------------------------------------
+// UMD's general chemistry is split around organic chemistry: CHEM131/132 (Chemistry I and lab)
+// come first, and CHEM271/272 (General Chemistry and Energetics, and lab) come after organic.
+
+export const GEN_CHEM_1_OPTIONS = [
+  ["CHEM131", "CHEM132"],
+  ["CHEM135", "CHEM136"], // engineering students
+  ["CHEM146", "CHEM177"], // chemistry/biochemistry majors
+];
+export const GEN_CHEM_2_OPTIONS = [
+  ["CHEM271", "CHEM272"],
+  ["CHEM276", "CHEM277"], // chemistry/biochemistry majors
+];
+
+export const genChem1 = (source: string, extra?: Extra) =>
+  cat(sets("gen-chem-1", "General chemistry I with lab", GEN_CHEM_1_OPTIONS), source, {
+    examCreditAdvice: "HPAO: with AP Chemistry 4 or 5, go on to CHEM231/232, 241/242, 271/272 and biochemistry; you don't need to start with CHEM131/132.",
+    ...extra,
+  });
+export const genChem2 = (source: string, extra?: Extra) =>
+  cat(sets("gen-chem-2", "General chemistry II with lab", GEN_CHEM_2_OPTIONS), source, extra);
+
+export const organicChem = (source: string, extra?: Extra) =>
+  cat(
+    sets("organic-chem", "Organic chemistry I and II with labs", [
+      ["CHEM231", "CHEM232", "CHEM241", "CHEM242"],
+      ["CHEM237", "CHEM247"], // chemistry/biochemistry majors
+    ]),
+    source,
+    extra,
+  );
+
+/** One semester of organic chemistry with lab. */
+export const organicChem1 = (source: string, extra?: Extra) =>
+  cat(sets("organic-chem-1", "Organic chemistry I with lab", [["CHEM231", "CHEM232"], ["CHEM237"]]), source, extra);
+
+export const biochem = (source: string, extra?: Extra) =>
+  cat(oneOf("biochem", "Biochemistry", ["BCHM461", "BCHM463"]), source, extra);
+
+// --- Biology ---------------------------------------------------------------------------------
+// BSCI180 (Principles of Biology Laboratory) replaced BSCI161 and BSCI171 in Fall 2026; the
+// catalog says BSCI161 and BSCI171 may count for it, and AP Biology still awards them.
+
+export const introBio = (source: string, extra?: Extra) =>
+  cat(
+    sets("intro-bio", "Introductory biology with lab", [
+      ["BSCI160", "BSCI170", "BSCI180"],
+      ["BSCI160", "BSCI161", "BSCI170", "BSCI171"],
+    ]),
+    source,
+    {
+      examCreditAdvice: "HPAO: don't repeat BSCI160/161 or 170/171; take upper-level biology with labs instead (BSCI223 and BSCI330 are good first choices).",
+      ...extra,
+    },
+  );
+
+/** One lecture and its lab, for tracks asking for a single semester of general biology. */
+export const introBioOneSemester = (source: string, extra?: Extra) =>
+  cat(
+    sets("intro-bio", "General biology with lab", [
+      ["BSCI170", "BSCI180"],
+      ["BSCI160", "BSCI180"],
+      ["BSCI170", "BSCI171"],
+      ["BSCI160", "BSCI161"],
+    ]),
+    source,
+    extra,
+  );
+
+export const upperBioLab = (source: string, extra?: Extra) =>
+  cat(
+    sets("upper-bio", "Upper-level biology with lab", [
+      ["BSCI223"],
+      ["BSCI330"],
+      ["BSCI331", "BSCI332"],
+      ["BSCI222"],
+      ["BSCI201"],
+      ["BSCI202"],
+    ]),
+    source,
+    extra,
+  );
+
+export const anatomyPhysiology = (source: string, extra?: Extra) =>
+  cat(sets("anatomy-physiology", "Human anatomy and physiology I and II with labs", [["BSCI201", "BSCI202"]]), source, extra);
+
+export const microbiology = (source: string, extra?: Extra) =>
+  cat(oneOf("microbiology", "Microbiology with lab", ["BSCI223", "BSCI283"]), source, extra);
+
+// --- Physics ---------------------------------------------------------------------------------
+
+export const physics = (source: string, extra?: Extra) =>
+  cat(
+    sets("physics", "Physics I and II with labs", [
+      ["PHYS131", "PHYS132"], // for life sciences
+      ["PHYS121", "PHYS122"],
+      ["PHYS141", "PHYS142"],
+      ["PHYS161", "PHYS261", "PHYS260", "PHYS271"], // engineering sequence with its labs
+    ]),
+    source,
+    {
+      examCreditAdvice: "HPAO: even with two semesters of AP physics credit, take at least one semester of physics with a lab at UMD.",
+      ...extra,
+    },
+  );
+
+export const physicsOneSemester = (source: string, extra?: Extra) =>
+  cat(
+    sets("physics", "Physics with lab", [["PHYS131"], ["PHYS121"], ["PHYS141"], ["PHYS161", "PHYS261"]]),
+    source,
+    extra,
+  );
+
+// --- Math, statistics, English ---------------------------------------------------------------
+
+/** MATH135 is Discrete Mathematics for Life Sciences, not calculus, so it isn't here. */
+export const CALCULUS = ["MATH120", "MATH136", "MATH140"];
+
+export const calculus = (source: string, extra?: Extra) =>
+  cat(oneOf("calculus", "Calculus", CALCULUS), source, {
+    examCredit: "accepted",
+    examCreditAdvice: "HPAO: schools that require math accept AP/IB credit for it; don't repeat the course.",
+    ...extra,
+  });
+
+/** The NEUR pre-med plan's approved statistics courses, plus STAT100. */
+export const STATISTICS = ["BIOM301", "EPIB315", "PSYC200", "STAT400", "STAT464", "STAT100"];
+
+export const statistics = (source: string, extra?: Extra) => cat(oneOf("statistics", "Statistics", STATISTICS), source, extra);
+
+/** Two semesters of writing: ENGL101 and an upper-level ENGL39X, as HPAO's AP page describes. */
+export const english = (source: string, extra?: Extra) =>
+  cat(
+    {
+      kind: "sets",
+      id: "english",
+      name: "English: ENGL101 and an ENGL39X",
+      options: [[num("ENGL101"), { count: 1, from: { departments: ["ENGL"], minNumber: 390, maxNumber: 398 } }]],
+    },
+    source,
+    {
+      examCredit: "accepted",
+      examCreditAdvice: "HPAO: with AP credit for ENGL101, you may complete just an ENGL39X.",
+      ...extra,
+    },
+  );
+
+export const englishComposition = (source: string, extra?: Extra) =>
+  cat(oneOf("english", "English composition", ["ENGL101"]), source, extra);
+
+// --- Psychology and social science -----------------------------------------------------------
+
+export const generalPsych = (source: string, extra?: Extra) => cat(oneOf("psychology", "General psychology", ["PSYC100"]), source, extra);
+export const abnormalPsych = (source: string, extra?: Extra) =>
+  cat(oneOf("abnormal-psych", "Abnormal psychology", ["PSYC353", "PSYC330"]), source, extra);
+export const developmentalPsych = (source: string, extra?: Extra) =>
+  cat(oneOf("developmental-psych", "Developmental psychology", ["PSYC355"]), source, extra);
+export const humanDevelopment = (source: string, extra?: Extra) =>
+  cat(oneOf("human-development", "Human growth and development", ["EDHD320", "PSYC355"]), source, extra);
+export const sociology = (source: string, extra?: Extra) => cat(oneOf("sociology", "Sociology", ["SOCY100", "SOCY105"]), source, extra);
+export const nutrition = (source: string, extra?: Extra) => cat(oneOf("nutrition", "Nutrition", ["NFSC100"]), source, extra);
+
+/** Medical terminology: HPAO says UMD offers it in winter, but names no course, so the student confirms it. */
+export const medicalTerminology = (source: string): TrackCategory => ({
+  id: "medical-terminology",
+  name: "Medical terminology",
+  source,
+});
+
+// --- Milestones shared by the HPAO committee process (medical and dental applicants) --------
+
+/** HPAO's Committee Process and application-year timeline (prehealth.umd.edu/application-process). */
+export const COMMITTEE_MILESTONES: Milestone[] = [
+  {
+    id: "are-you-ready",
+    kind: "advising",
+    name: "HPAO \"Are You Ready?\" workshop",
+    detail: "Attend it to confirm you're ready to apply in the coming cycle, and join HPAO's Committee Process Canvas course.",
+    due: { year: -2, month: 10 },
+  },
+  {
+    id: "pre-health-packet",
+    kind: "committee",
+    name: "HPAO Pre-Health Packet",
+    detail: "The first-time applicant packet opens November 1 and is due February 15 at 4:30 p.m.; HPAO allows no exceptions. The packet review meeting must be done by May 15.",
+    start: { year: -2, month: 11, day: 1 },
+    due: { year: -1, month: 2, day: 15 },
+  },
+  {
+    id: "letters",
+    kind: "letters",
+    name: "Letters of recommendation",
+    detail: "Open an Interfolio account and start collecting letters (medical schools often want two science letters, one non-science academic letter and one clinical letter). Letters are due in Interfolio June 1.",
+    start: { year: -2, month: 11 },
+    due: { year: -1, month: 6, day: 1 },
+  },
+  {
+    id: "committee-meetings",
+    kind: "committee",
+    name: "HPAO mock interview and school-list review",
+    detail: "Finish the mock interview / personal statement review and the primary application and school list review meetings by July 15.",
+    due: { year: -1, month: 7, day: 15 },
+  },
+];
+
+export const MAPPING_NOTES = {
+  genChem:
+    "General chemistry (\"8 credits of inorganic chemistry with labs\") = CHEM131 & CHEM132 then CHEM271 & CHEM272, UMD's two general chemistry courses, split around organic chemistry (Bio major supporting courses; HPAO AP page). Engineering CHEM135 & CHEM136 and majors' CHEM146 & CHEM177 / CHEM276 & CHEM277 are accepted as alternatives (assumed; CHEM146/177 are not in the Spring 2027 schedule).",
+  organic:
+    "Organic chemistry = CHEM231 & CHEM232 and CHEM241 & CHEM242, or majors' CHEM237 & CHEM247 (assumed; CHEM247 is not in the Spring 2027 schedule).",
+  biochem: "Biochemistry = BCHM461 or BCHM463 (HPAO AP page names both).",
+  introBio:
+    "Introductory biology with lab = BSCI160, BSCI170 and BSCI180, or the older BSCI160/161 and BSCI170/171 (Bio major catalog page: BSCI180 replaced BSCI161 and BSCI171 in Fall 2026, and they may count for it).",
+  upperBio:
+    "HPAO's \"8–12 credits of biology with labs\" and \"nearly all medical schools require at least two biology courses with formal laboratories\" are encoded as intro biology plus one upper-level biology course with a lab: BSCI223, BSCI330 (now BSCI331 + BSCI332 lab), BSCI222, BSCI201 or BSCI202. HPAO's AP page names BSCI223 and BSCI330; that BSCI222 includes a lab is assumed from its 4 credits.",
+  physics:
+    "Physics with labs = PHYS131 & 132 (life sciences), PHYS121 & 122, PHYS141 & 142, or engineering PHYS161 + PHYS261 lab and PHYS260 + PHYS271 lab (BIOE sample plan). PHYS141/142 are not in the Spring 2027 schedule; majors' PHYS171/272/273 sequence is not included.",
+  calculus:
+    "Calculus = MATH120, MATH136 or MATH140. MATH135 (Discrete Mathematics for Life Sciences) is not calculus. MATH120 is closed to science majors but is calculus.",
+  statistics:
+    "Statistics = BIOM301, EPIB315, PSYC200, STAT400 or STAT464 (the NEUR pre-med plan's approved list) plus STAT100, which is on no UMD pre-health list (assumed acceptable).",
+  english:
+    "English (\"6 credits\") = ENGL101 plus one ENGL390–398 (HPAO AP page: \"If you have received AP credit for ENGL 101, you may complete just 39X\"). AP credit here is noted, not warned about.",
+  grades:
+    "Minimum grade C (HPAO: \"a C (not a C-)\"): a completed course below C doesn't count, and a low-grade warning is shown. Pass/fail (P/S) courses do count in the audit but get a warning; AP/IB credit counts but gets a warning, except calculus and English, where HPAO says it is accepted.",
+};
+
+export const HPAO = {
+  home: "https://prehealth.umd.edu/",
+  apIb: "https://prehealth.umd.edu/prospective-students/ap-ib-credit",
+  application: "https://prehealth.umd.edu/application-process",
+  career: (page: string) => `https://prehealth.umd.edu/explore-careers/${page}`,
+  catalog:
+    "https://academiccatalog.umd.edu/undergraduate/campus-administration-resources-student-services/academic-resources-services/pre-health-professions-advising-programs/",
+  bioMajor: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/biological-sciences/",
+  neurPlan: "https://neur.umd.edu/sites/neur.umd.edu/files/Four-Year%20Plans/NEUR%20Pre-Med%20Sample%204%20Year%20Plan%2011_06_20_0.pdf",
+};
