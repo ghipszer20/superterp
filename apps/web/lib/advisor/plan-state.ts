@@ -78,7 +78,7 @@ export type PlanAction =
   | { type: "remove-term"; name: string }
   /** Marks a course completed (with a grade) or back to planned, from the course sheet. */
   | { type: "set-course"; term: string; id: string; status?: "planned" | "completed"; grade?: string }
-  /** Course-level sync from the schedule builder's Active Schedule. */
+  /** Course-level sync from the schedule builder, only ever dispatched from an explicit, student-confirmed "Update plan" click. */
   | { type: "set-term-courses"; term: string; ids: string[] }
   | { type: "set-prior"; prior: PriorInputs }
   | { type: "set-gpa"; gpa: number | undefined };
