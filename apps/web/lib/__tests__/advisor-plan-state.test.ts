@@ -369,3 +369,28 @@ describe("planReducer: prior credit and GPA", () => {
     expect(plan).not.toHaveProperty("gpa");
   });
 });
+
+describe("planReducer: set-programs (Apply from the what-if comparison)", () => {
+  it("replaces the plan's majors and nothing else", () => {
+    const plan = planReducer(base(), { type: "add-course", term: "Fall 2026", id: "CMSC131" });
+    const next = planReducer(plan, { type: "set-programs", programs: ["math-major-applied", "cmsc-major"] });
+    expect(next.programs).toEqual(["math-major-applied", "cmsc-major"]);
+    expect(next.catalogYear).toBe(plan.catalogYear);
+    expect(next.terms).toEqual(plan.terms);
+  });
+
+  it("never touches tracks or exam terms", () => {
+    const plan = planReducer(base(), {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2026",
+      tracks: ["pre-med"],
+      examTerms: { mcat: "Spring 2030" },
+      expectedGrades: {},
+    });
+    const next = planReducer(plan, { type: "set-programs", programs: ["math-major-applied"] });
+    expect(next.tracks).toEqual(["pre-med"]);
+    expect(next.examTerms).toEqual({ mcat: "Spring 2030" });
+  });
+});

@@ -81,7 +81,10 @@ export type PlanAction =
   /** Course-level sync from the schedule builder, only ever dispatched from an explicit, student-confirmed "Update plan" click. */
   | { type: "set-term-courses"; term: string; ids: string[] }
   | { type: "set-prior"; prior: PriorInputs }
-  | { type: "set-gpa"; gpa: number | undefined };
+  | { type: "set-gpa"; gpa: number | undefined }
+  /** Applying a what-if comparison: replaces only the declared majors, never tracks, exam terms
+   * or anything else "setup" also touches. */
+  | { type: "set-programs"; programs: string[] };
 
 export const emptyPrior = (): PriorInputs => ({ ap: [], ib: [], dual: [], choices: {} });
 
@@ -254,5 +257,7 @@ export function planReducer(plan: AdvisorPlan, action: PlanAction): AdvisorPlan 
       else next.gpa = action.gpa;
       return next;
     }
+    case "set-programs":
+      return { ...plan, programs: action.programs };
   }
 }

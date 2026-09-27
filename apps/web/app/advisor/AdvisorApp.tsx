@@ -19,12 +19,14 @@ import { PlanView } from "./PlanView";
 import { PriorCreditView } from "./PriorCreditView";
 import { SetupView } from "./SetupView";
 import { openView, savePlan, useAdvisorStore, useView, type View } from "./store";
+import { WhatIfView } from "./WhatIfView";
 import styles from "./advisor.module.css";
 
 const VIEWS: { value: View; label: string }[] = [
   { value: "plan", label: "Plan" },
   { value: "credit", label: "Prior credit" },
   { value: "audit", label: "Audit" },
+  { value: "what-if", label: "What if" },
 ];
 
 /** Debounce for the audit and notices (HiGHS); the plan checker itself runs on every edit. */
@@ -104,6 +106,7 @@ function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; cat
       ) : null}
       {view === "credit" ? <PriorCreditView plan={plan} prior={prior} catalog={catalog} /> : null}
       {view === "audit" ? <AuditView plan={plan} analysis={analysis} onOpenCourse={setOpen} /> : null}
+      {view === "what-if" ? <WhatIfView plan={plan} catalog={catalog} prior={prior} /> : null}
 
       {open ? (
         <CourseSheet

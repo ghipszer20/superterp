@@ -87,9 +87,11 @@ for (const path of paths.length ? paths : ["/"]) {
   await send("Page.navigate", { url: base + path });
   await sleep(7000);
   // Optional interaction before capturing, e.g. UI_CHECK_EVAL='document.querySelector("button").click()'
+  // UI_CHECK_EVAL_WAIT overrides the default 800ms settle time after it runs, e.g. for a debounced,
+  // solver-backed comparison that needs longer than a click's usual repaint.
   if (process.env.UI_CHECK_EVAL) {
     await send("Runtime.evaluate", { expression: process.env.UI_CHECK_EVAL });
-    await sleep(800);
+    await sleep(Number(process.env.UI_CHECK_EVAL_WAIT ?? 800));
   }
   const { result } = await send("Runtime.evaluate", {
     expression: "document.querySelector('main')?.innerText ?? document.body.innerText",

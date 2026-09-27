@@ -78,8 +78,8 @@ export function dispatchPlan(action: PlanAction) {
 
 // ---- which view is open (#plan, #credit, #audit) ----
 
-export type View = "plan" | "credit" | "audit";
-const VIEWS: View[] = ["plan", "credit", "audit"];
+export type View = "plan" | "credit" | "audit" | "what-if";
+const VIEWS: View[] = ["plan", "credit", "audit", "what-if"];
 
 const subscribeHash = (l: () => void) => {
   window.addEventListener("hashchange", l);
