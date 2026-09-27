@@ -9,3 +9,4 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Rulings still assumed: a program counts as verified once its department-page comparison has no open flags. (Credit caps answered 2026-09-26: per college and term, to be sourced online; see rulings.md.)
 - Transport: phones show two location buttons ("Show my location" above the map, "Stops near me" below it); the map attribution covers the bottom of the map on phones.
 - Math: confirm the supporting-sequence course numbers the Math department page gives in old form (ASTR sequence: ASTR130/131 plus ASTR232, not ASTR132; BSCI170/160/180 with BSCI171/161 alternatives).
+- Transport: exit-marker labels (e.g. "To Graduate Hills at 3404 Tulane Drive") are large on phones and cover part of the map; shrink or shorten?
