@@ -80,6 +80,33 @@
   font: var(--t-sub);
 }
 
+/* Marks where the selected route's line leaves the campus bounds -- stops beyond that point
+   aren't drawn, so this stands in for them. Colors (background/color) are set inline per
+   route/marker in MapView, since they follow the route's own brand color, not the theme. */
+.exitMarker {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.exitArrow {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  /* Points north by default; MapView rotates it to the route's actual heading at the crossing. */
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+}
+
+.exitLabel {
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+  font: 700 11px/1.3 var(--font-rounded);
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
 .stopCard {
   margin-top: 14px;
   border: 1px solid var(--card-border);

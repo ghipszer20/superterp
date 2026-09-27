@@ -11,6 +11,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { formatMinutes } from "@superterp/campus-data/hours";
 import { LocationIcon } from "@/components/icons";
 import { Card, EmptyState } from "@/components/ui";
+import { CAMPUS_BOUNDS, CAMPUS_MIN_ZOOM, findRouteExits, nearestOffCampusStop, toMapLibreBounds } from "@/lib/mapBounds";
 import type { MapRoute, MapStop } from "./TransportMap";
 import busStyles from "./buses.module.css";
 import styles from "./map.module.css";
@@ -24,10 +25,6 @@ import styles from "./map.module.css";
 // `npm install`'s postinstall) copies the worker together with that sibling
 // file, both under their original names, to public/vendor/ instead.
 setWorkerUrl("/vendor/maplibre-gl-worker.mjs");
-
-// Roughly the middle of the College Park campus (McKeldin Mall).
-const CAMPUS_CENTER: [number, number] = [-76.9426, 38.9869];
-const DEFAULT_ZOOM = 14.3;
 
 const LIGHT_STYLE = "https://tiles.openfreemap.org/styles/liberty";
 const DARK_STYLE = "https://tiles.openfreemap.org/styles/dark";
@@ -78,6 +75,43 @@ function applyHighlight(map: MapLibreMap, selectedRoute: string | null, routes: 
   );
 }
 
+// Where the selected route's line leaves campus, a marker stands in for the stops beyond it
+// (which aren't drawn -- see the campus-bounds ruling). Only the selected route gets markers,
+// since it's the only route whose line is ever drawn (see applyHighlight's filter above).
+function updateExitMarkers(
+  map: MapLibreMap,
+  markersRef: { current: Marker[] },
+  selectedRoute: string | null,
+  routes: MapRoute[],
+  stops: MapStop[],
+): void {
+  for (const marker of markersRef.current) marker.remove();
+  markersRef.current = [];
+
+  const route = routes.find((r) => r.id === selectedRoute);
+  if (!route) return;
+
+  const routeStops = stops.filter((s) => route.stopIds.includes(s.id));
+  for (const exit of findRouteExits(route.lines, CAMPUS_BOUNDS)) {
+    const destination = nearestOffCampusStop([exit.lon, exit.lat], routeStops, CAMPUS_BOUNDS)?.name ?? route.longName;
+
+    const el = document.createElement("div");
+    el.className = styles.exitMarker;
+    const arrow = document.createElement("span");
+    arrow.className = styles.exitArrow;
+    arrow.style.background = route.color;
+    arrow.style.transform = `rotate(${exit.bearingDeg}deg)`;
+    const label = document.createElement("span");
+    label.className = styles.exitLabel;
+    label.style.background = route.color;
+    label.style.color = route.textColor;
+    label.textContent = `To ${destination}`;
+    el.append(arrow, label);
+
+    markersRef.current.push(new Marker({ element: el, anchor: "center" }).setLngLat([exit.lon, exit.lat]).addTo(map));
+  }
+}
+
 function hasWebGl(): boolean {
   try {
     const canvas = document.createElement("canvas");
@@ -99,6 +133,7 @@ export function MapView({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const hereMarkerRef = useRef<Marker | null>(null);
+  const exitMarkersRef = useRef<Marker[]>([]);
   const [unsupported] = useState(() => !hasWebGl());
   const [failed, setFailed] = useState(false);
   const [themeTick, setThemeTick] = useState(0);
@@ -125,8 +160,17 @@ export function MapView({
       map = new MapLibreMap({
         container: containerRef.current,
         style: currentTheme() === "dark" ? DARK_STYLE : LIGHT_STYLE,
-        center: CAMPUS_CENTER,
-        zoom: DEFAULT_ZOOM,
+        // Campus only (owner ruling): fit the initial view to campus, then don't let the
+        // student pan or zoom out past it -- a route that leaves those bounds gets an edge
+        // marker instead (below) rather than the map just scrolling out to show it.
+        bounds: toMapLibreBounds(CAMPUS_BOUNDS),
+        fitBoundsOptions: { padding: 20 },
+        maxBounds: toMapLibreBounds(CAMPUS_BOUNDS),
+        minZoom: CAMPUS_MIN_ZOOM,
+        // No tilt or rotation (owner ruling): a flat map isn't a shortcoming to fix.
+        maxPitch: 0,
+        dragRotate: false,
+        touchPitch: false,
       });
     } catch {
       // Deferred: react-hooks/set-state-in-effect flags a setState call made
@@ -137,11 +181,23 @@ export function MapView({
       return;
     }
     mapRef.current = map;
+    // touchPitch/dragRotate above cover mouse-drag and two-finger-drag pitch; the remaining
+    // rotate gesture is pinch-rotate, part of the combined touchZoomRotate handler, which has
+    // to stay enabled for pinch-*zoom*. Its own disableRotation() turns off just the rotate half.
+    map.touchZoomRotate.disableRotation();
     // MapLibre logs uncaught errors to console.error unless something listens.
     map.on("error", (e) => console.warn("[transport map]", e.error?.message ?? e));
     map.addControl(new NavigationControl({ showCompass: false }), "top-right");
 
     map.on("load", () => {
+      // MapLibre's own attribution control already collapses to a small circular "i" button
+      // once the map container is narrow, as ours is on a phone -- but only *after* the
+      // student's first drag; before that it shows the full attribution pill, which is wide
+      // enough to cover a real chunk of a 380px-tall card (the owner flagged this). Starting
+      // it in that same already-collapsed state keeps the attribution one tap away (never
+      // removed) without it ever eclipsing the map.
+      map.getContainer().querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
+
       map.addSource("routes", {
         type: "geojson",
         data: {
@@ -196,6 +252,7 @@ export function MapView({
       // map with a selection already in React state but none of it painted
       // yet.
       applyHighlight(map, selectedRoute, routes);
+      updateExitMarkers(map, exitMarkersRef, selectedRoute, routes, stops);
 
       const onClick = (e: MapMouseEvent & { features?: MapGeoJSONFeature[] }) => {
         const id = e.features?.[0]?.properties?.id;
@@ -207,12 +264,12 @@ export function MapView({
     });
 
     return () => {
+      // Both marker kinds below were added to *this* map; drop them (and the stale refs)
+      // before it's destroyed, instead of leaving a marker with no map underneath it.
+      for (const marker of exitMarkersRef.current) marker.remove();
+      exitMarkersRef.current = [];
       map.remove();
       mapRef.current = null;
-      // The marker (if any) was added to *this* map and was destroyed with
-      // it; drop the stale reference so the "here" effect below creates a
-      // fresh one on the map rebuilt for the new theme, instead of calling
-      // setLngLat() on a marker with no map underneath it.
       hereMarkerRef.current = null;
     };
     // Rebuilding on themeTick swaps the basemap for Light/Dark; routes/stops/stopRoutes
@@ -220,14 +277,15 @@ export function MapView({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [themeTick, unsupported]);
 
-  // Highlight the selected route's line(s) and the stops it serves. (A
-  // theme switch is also handled: applyHighlight runs again once the
+  // Highlight the selected route's line(s) and the stops it serves, and mark where that route's
+  // line leaves campus, if it does. (A theme switch is also handled: both run again once the
   // rebuilt map's style has loaded, in the effect above.)
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !map.getLayer("routes-line")) return;
     applyHighlight(map, selectedRoute, routes);
-  }, [selectedRoute, routes]);
+    updateExitMarkers(map, exitMarkersRef, selectedRoute, routes, stops);
+  }, [selectedRoute, routes, stops]);
 
   // Fetch scheduled departures for the tapped stop. `board` is tagged with
   // the stop it was fetched for, so switching stops (or closing the card)
