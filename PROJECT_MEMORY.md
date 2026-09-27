@@ -1,7 +1,7 @@
 # SuperTerp — Project Memory
 
 > Single source of truth for project context. Update this file whenever a decision changes.
-> Last updated: 2026-09-27 (registry follow-ups and multi-program rules running).
+> Last updated: 2026-09-27 (registry follow-ups merged; multi-program rules running).
 > Read by the main session at the start of every session (builders don't read it; CLAUDE.md), so keep it under ~20 KB (section 18).
 
 ## 1. Vision
@@ -97,7 +97,7 @@ Moved to `docs/project/legal.md`. Read it before building the disclaimer, accoun
 ## 14. Current state (replace in place, never append; dated narrative goes in `docs/project/status-log.md`)
 - **Branches:** PR #1 `feat/campus-foundation` (draft); PR #2 `feat/course-data` (draft, stacked on #1) is the working branch everything merges into. CI green as of 2026-09-26 evening.
 - **Built** (full list in `docs/project/built.md`; all unverified by the owner unless noted): About page; Campus tab (dining, libraries, study rooms, gyms, Transport map + trip planner); Schedule builder linked to the 4-year plan; Advisor tab (disclaimer, setup, credit caps, What-if, AP/IB credit, plan grid, checks, audit, 14 pre-professional tracks); CS / Math Traditional / Math Applied / Gen Ed and 61 special programs encoded.
-- **In progress:** registry follow-ups (Sonnet, `feat/registry-followups`, worktree `../SuperTerp-wt-regfix`); multi-program rules (Opus: new audit-engine semantics; `feat/multi-program`, worktree `../SuperTerp-wt-multi`). Merged 2026-09-27: transcript import, trip dropdown fix, program registry (`packages/programs`; batch builders follow `docs/project/program-batches.md`). Older AP chart resolved (identical to current; not merged).
+- **In progress:** multi-program rules (Opus: new audit-engine semantics; `feat/multi-program`, worktree `../SuperTerp-wt-multi`). Merged 2026-09-27: transcript import, trip dropdown fix, program registry (`packages/programs`; batch builders follow `docs/project/program-batches.md`), registry follow-ups (double-major notice pre-filter: plan-course overlap >=30%, cap 5, from generated `course-sets.generated.ts`, which batches regenerate). Older AP chart resolved (identical to current; not merged).
 - **Queue (in order; follows `docs/project/first-draft-plan.md`; rulings in `docs/project/rulings.md`, task notes in `docs/project/roadmap.md` "Queue notes"):** grad courses as an undergrad; honors retry (fresh worktree from `feat/course-data`); CS specializations; program batches by college (CMNS first, Wave 2); then Wave 3 (section recommendations, schedule leftovers, grades in audit, advising export, registration prep + deadlines, test students) and Wave 4 (deployment).
 - **Waiting on the owner:** see `docs/project/owner-review.md` (include it in every progress report; add new items there).
 - **Known to-dos:** email a copy of each signed Advisor agreement to the owner's records address (with deployment; address from the owner as an env var); the GTFS feed ends 2026-12-24 (warn in the UI and in a scheduled check first); check the GTFS license before public launch; show last good data when a source is down (needs a database); deployment (Vercel + Supabase accounts from the owner) with pre-warmed data.
