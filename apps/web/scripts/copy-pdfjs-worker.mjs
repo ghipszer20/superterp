@@ -9,7 +9,7 @@
 
 import { copyFileSync, existsSync, mkdirSync } from "node:fs";
 import { createRequire } from "node:module";
-import { dirname, join } from "node:path";
+import { join } from "node:path";
 
 const require = createRequire(import.meta.url);
 const outDir = join(import.meta.dirname, "..", "public", "vendor", "pdfjs");
