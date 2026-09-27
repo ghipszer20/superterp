@@ -12,7 +12,7 @@ import { checkerPlan } from "@/lib/advisor/checker";
 import type { AdvisorPlan } from "@/lib/advisor/plan-state";
 import type { PriorCreditResult } from "@/lib/advisor/prior-credit";
 import { PROGRAM_OPTIONS, programsLabel, toggleProgram } from "@/lib/advisor/programs";
-import { addedProgramNotes, completedCreditTotals, gatewayRuleText } from "@/lib/advisor/what-if-display";
+import { addedProgramNotes, completedCreditTotals, gatewayAttemptLimitNote, gatewayRuleText } from "@/lib/advisor/what-if-display";
 import type { CourseWhatIf, WhatIfResult } from "@/lib/advisor/what-if";
 import type { CatalogState } from "./data";
 import { dispatchPlan } from "./store";
@@ -266,6 +266,11 @@ function CompareResult({ compare, current, proposed }: { compare: CompareState; 
           <p className={styles.reqStatus} data-status={OVERALL_TONE[r.gateway.overall]}>
             {OVERALL_LABEL[r.gateway.overall]}
           </p>
+          {gatewayAttemptLimitNote(r.gateway) ? (
+            <p className={styles.cardNote} data-severity="warning">
+              {gatewayAttemptLimitNote(r.gateway)}
+            </p>
+          ) : null}
         </section>
       ) : null}
 

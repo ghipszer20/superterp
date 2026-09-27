@@ -6,7 +6,7 @@
 
 import type { CourseWhatIf } from "@superterp/plan/what-if";
 import { describe, expect, it } from "vitest";
-import { addedProgramNotes, completedCreditTotals, gatewayRuleText } from "../advisor/what-if-display";
+import { addedProgramNotes, completedCreditTotals, gatewayAttemptLimitNote, gatewayRuleText } from "../advisor/what-if-display";
 
 describe("gatewayRuleText", () => {
   it("states the Fall-2024-or-later rule's grade and GPA minimums", () => {
@@ -19,6 +19,19 @@ describe("gatewayRuleText", () => {
     expect(gatewayRuleText({ name: "spring-2024-or-earlier", minGrade: "C-", minGpa: 2.7 })).toBe(
       "Matriculated before Fall 2024: every gateway course C- or better, cumulative GPA 2.7 or higher.",
     );
+  });
+});
+
+describe("gatewayAttemptLimitNote", () => {
+  it("is null when the repeat limit isn't violated", () => {
+    expect(gatewayAttemptLimitNote({ attemptLimitViolated: false })).toBeNull();
+  });
+
+  it("cites the CS LEP repeat-limit policy when the limit is violated", () => {
+    const note = gatewayAttemptLimitNote({ attemptLimitViolated: true });
+    expect(note).toMatch(/one gateway course/i);
+    expect(note).toMatch(/repeated once/i);
+    expect(note).toMatch(/undergrad\.cs\.umd\.edu/);
   });
 });
 
