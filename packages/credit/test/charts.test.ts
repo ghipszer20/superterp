@@ -2,7 +2,7 @@
 
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { AP_EXAMS, IB_EXAMS, normalizeName, type AwardPart, type ChartRow } from "../src/index.ts";
+import { AP_EXAMS, AP_EXAMS_OLDER, IB_EXAMS, normalizeName, type AwardPart, type ChartRow } from "../src/index.ts";
 
 const squash = (s: string) => s.replace(/\s+/g, "");
 const fixture = (name: string) => squash(readFileSync(new URL(`./fixtures/${name}`, import.meta.url), "utf8"));
@@ -12,6 +12,7 @@ const partCredits = (p: AwardPart) => p.credits;
 const partIds = (p: AwardPart) => (p.kind === "course" ? [p.id] : p.kind === "choice" ? p.options.map((o) => o.id) : []);
 
 const apRows = AP_EXAMS.flatMap((e) => e.rows.map((r) => ({ label: `AP ${e.name} ${r.scores.join(",")}`, row: r, max: 5 })));
+const apRowsOlder = AP_EXAMS_OLDER.flatMap((e) => e.rows.map((r) => ({ label: `AP (through 2022) ${e.name} ${r.scores.join(",")}`, row: r, max: 5 })));
 const ibRows = IB_EXAMS.flatMap((e) =>
   Object.entries(e.levels).flatMap(([level, rows]) => rows.map((r) => ({ label: `IB ${e.name} ${level} ${r.scores.join(",")}`, row: r, max: 7 }))),
 );
@@ -49,6 +50,21 @@ describe("AP chart", () => {
 
   it("never gives two exams the same name", () => {
     const names = AP_EXAMS.flatMap((e) => [...new Set([e.name, ...e.aliases].map(normalizeName))]);
+    expect(new Set(names).size).toBe(names.length);
+  });
+});
+
+// No fixtures/*.txt for this one: its source PDF is owner-provided and gitignored (see
+// src/ap-through-2022.ts), so rows are checked structurally here and by eye against the PDF.
+describe("AP chart (through 2022)", () => {
+  it.each(apRowsOlder)("$label is consistent", (r) => checkRow(r));
+
+  it("has no overlapping score bands", () => {
+    for (const e of AP_EXAMS_OLDER) checkBands(e.name, e.rows);
+  });
+
+  it("never gives two exams the same name", () => {
+    const names = AP_EXAMS_OLDER.flatMap((e) => [...new Set([e.name, ...e.aliases].map(normalizeName))]);
     expect(new Set(names).size).toBe(names.length);
   });
 });
