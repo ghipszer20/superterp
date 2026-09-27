@@ -30,7 +30,7 @@ export const CONSENT_POINTS: { title: string; body: string }[] = [
   },
   {
     title: "Pre-professional tracks",
-    body: "Guidance for pre-professional tracks (like pre-med or pre-law) is general. It would take too much effort to track every professional program's own requirements, so confirm them yourself with the specific programs you're interested in.",
+    body: "Guidance for pre-professional tracks (like pre-med or pre-law) is general. Requirements differ from one professional program to the next, so confirm them yourself with the specific programs you're interested in.",
   },
 ];
 
