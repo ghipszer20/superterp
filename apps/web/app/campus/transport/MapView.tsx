@@ -5,7 +5,7 @@
 // never be imported from a Server Component.
 
 import { useEffect, useRef, useState } from "react";
-import { Map as MapLibreMap, Marker, NavigationControl } from "maplibre-gl";
+import { Map as MapLibreMap, Marker, NavigationControl, setWorkerUrl } from "maplibre-gl";
 import type { MapGeoJSONFeature, MapMouseEvent } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { formatMinutes } from "@superterp/campus-data/hours";
@@ -14,6 +14,16 @@ import { Card, EmptyState } from "@/components/ui";
 import type { MapRoute, MapStop } from "./TransportMap";
 import busStyles from "./buses.module.css";
 import styles from "./map.module.css";
+
+// maplibre-gl's worker script itself imports a sibling "./maplibre-gl-shared.mjs".
+// Next only ever sees the worker file as an opaque static asset (it isn't
+// re-bundled), so that relative import breaks once Next serves it under a
+// hashed chunk name -- the worker fails to load and every vector tile and
+// GeoJSON source (routes, stops) silently never renders; only the style's
+// flat background color shows. scripts/copy-maplibre-worker.mjs (run by
+// `npm install`'s postinstall) copies the worker together with that sibling
+// file, both under their original names, to public/vendor/ instead.
+setWorkerUrl("/vendor/maplibre-gl-worker.mjs");
 
 // Roughly the middle of the College Park campus (McKeldin Mall).
 const CAMPUS_CENTER: [number, number] = [-76.9426, 38.9869];
