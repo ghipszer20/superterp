@@ -9,6 +9,7 @@
 import type { GatewayCourseStatus, GatewayOverallStatus, RequirementResult } from "@superterp/audit";
 import type { MilestoneTiming } from "@superterp/tracks";
 import type { AdvisorPlan } from "@/lib/advisor/plan-state";
+import { gatewayAttemptLimitNote } from "@/lib/advisor/what-if-display";
 import type { AnalysisState, OpenCourse } from "./AdvisorApp";
 import { dispatchPlan } from "./store";
 import styles from "./advisor.module.css";
@@ -120,6 +121,11 @@ export function AuditView({
           <p className={styles.reqStatus} data-status={OVERALL_TONE[gateway.overall]}>
             {OVERALL_LABEL[gateway.overall]}
           </p>
+          {gatewayAttemptLimitNote(gateway) ? (
+            <p className={styles.cardNote} data-severity="warning">
+              {gatewayAttemptLimitNote(gateway)}
+            </p>
+          ) : null}
         </section>
       ) : null}
 

@@ -2,7 +2,7 @@
 // server-side record (account, timestamp, hash of the name) comes with accounts.
 // Bump CONSENT_VERSION whenever the wording changes materially: everyone is asked again.
 
-export const CONSENT_VERSION = "2026-09-25";
+export const CONSENT_VERSION = "2026-09-26";
 
 export const CONSENT_TITLE = "Before you plan";
 
@@ -25,8 +25,12 @@ export const CONSENT_POINTS: { title: string; body: string }[] = [
     body: "SuperTerp is provided as is, with no warranty. Its makers aren't liable for anything that follows from relying on it, such as an extra semester, extra costs or a missed deadline.",
   },
   {
-    title: "Everywhere in Advisor",
-    body: "This covers every part of Advisor: the plan, the audit, AP/IB and transfer credit, pre-professional tracks, and future suggestions and AI feedback.",
+    title: "Applies to all of Advisor",
+    body: "These terms apply to everything in the Advisor tab, including your plan, audit, AP/IB and transfer credit, pre-professional tracks, and any suggestions or AI feedback.",
+  },
+  {
+    title: "Pre-professional tracks",
+    body: "Guidance for pre-professional tracks (like pre-med or pre-law) is general. Requirements differ from one professional program to the next, so confirm them yourself with the specific programs you're interested in.",
   },
 ];
 

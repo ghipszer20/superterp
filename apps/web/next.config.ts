@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
   // The shared packages ship TypeScript source; let Next compile them.
   transpilePackages: [
     "@superterp/campus-data",
-    "@superterp/catalog",
     "@superterp/audit",
     "@superterp/course-data",
     "@superterp/credit",

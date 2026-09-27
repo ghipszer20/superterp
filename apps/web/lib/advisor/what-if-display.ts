@@ -19,6 +19,22 @@ export function gatewayRuleText(rule: GatewayRule): string {
   return `${when}: every gateway course ${rule.minGrade} or better, cumulative GPA ${rule.minGpa.toFixed(1)} or higher.`;
 }
 
+/**
+ * Shown on both the Audit and What-if tabs (AuditView.tsx, WhatIfView.tsx) whenever a gateway's
+ * `attemptLimitViolated` is true, so a student who sees "ineligible" with every course "Met" or
+ * "Planned" knows why: UMD's CS LEP repeat limit, not a grade. Source:
+ * undergrad.cs.umd.edu/internal-transfer-applicants ("LEP Guidelines"), the same text at
+ * lep.umd.edu/computerscience-after2024.html and lep.umd.edu/computerscience.html.
+ */
+export function gatewayAttemptLimitNote(gateway: { attemptLimitViolated: boolean }): string | null {
+  if (!gateway.attemptLimitViolated) return null;
+  return (
+    "UMD's CS LEP allows only one gateway course to be repeated, and that course may only be " +
+    "repeated once (a W counts as an attempt). Your record already uses up, or would exceed, " +
+    "that limit. See undergrad.cs.umd.edu/internal-transfer-applicants."
+  );
+}
+
 export type AddedProgramNote = { id: string; name: string; catalogYear?: string; verified: boolean };
 
 /**

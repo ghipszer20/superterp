@@ -248,13 +248,15 @@ export function checkPlan(plan: Plan, catalog: PlanCatalog, options: CheckOption
     const info = creditCap(options.college, season);
     const cap = options.maxCredits?.[season] ?? info.max;
     if (credits > cap) {
-      const limitLabel = options.college ? `${collegeName(options.college)}'s ${cap}-credit limit` : `the ${cap}-credit limit`;
+      const limitLabel = options.college
+        ? `the ${cap}-credit ${season.toLowerCase()} limit for ${collegeName(options.college)} students`
+        : `the ${cap}-credit limit for a ${season.toLowerCase()} term`;
       const approvalText = info.approval === "dean" ? "your dean's approval" : info.approval === "advisor" ? "your advisor's approval" : "approval";
       issues.push({
         kind: "credit-load",
         severity: "error",
         term: term.name,
-        message: `${term.name} has ${credits} credits, over ${limitLabel} for a ${season.toLowerCase()} term. Going over ${cap} credits needs ${approvalText}.`,
+        message: `${term.name} has ${credits} credits, over ${limitLabel}. Going over ${cap} credits needs ${approvalText}.`,
       });
     } else if ((season === "Fall" || season === "Spring") && credits < FULL_TIME_CREDITS) {
       issues.push({

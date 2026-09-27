@@ -56,6 +56,7 @@ describe("checkCsGateway: gateway course status", () => {
       options: ["MATH140"],
       status: "met",
       satisfiedBy: "MATH140",
+      attempts: 1,
     });
   });
 
@@ -86,6 +87,7 @@ describe("checkCsGateway: gateway course status", () => {
       options: ["CMSC131", "CMSC141"],
       status: "met",
       satisfiedBy: "CMSC141",
+      attempts: 1,
     });
   });
 
@@ -96,6 +98,7 @@ describe("checkCsGateway: gateway course status", () => {
       options: ["CMSC132", "CMSC142"],
       status: "met",
       satisfiedBy: "CMSC142",
+      attempts: 1,
     });
   });
 
@@ -124,8 +127,9 @@ describe("checkCsGateway: gateway course status", () => {
     expect(gateway([done("MATH140", "P")], "MATH140")?.status).toBe("below-minimum");
   });
 
-  // Assumption (PROJECT_MEMORY section 17, open question 1): credit without a letter grade
-  // (AP/IB/transfer) meets the gateway.
+  // Owner ruling (2026-09-26, verbatim: "it absolutely counts towards the gateway - this is
+  // true for gateway courses for all programs"): credit without a letter grade (AP/IB/transfer)
+  // meets the gateway.
   it("meets a gateway with a completed course that has no letter grade (AP/IB/transfer credit)", () => {
     expect(gateway([done("MATH140")], "MATH140")).toMatchObject({ status: "met", satisfiedBy: "MATH140" });
   });
@@ -139,7 +143,9 @@ describe("checkCsGateway: gateway course status", () => {
     expect(result.overall).toBe("eligible");
   });
 
-  // Assumption (PROJECT_MEMORY section 17, open question 2): a W alone means not yet taken.
+  // Owner ruling (2026-09-26, verbatim: "A W counts as an attempt - but not as failing."): a W
+  // is never treated as a failing grade, so a lone W leaves the gateway "missing" (not yet
+  // passed), never "below-minimum". It still counts toward the attempt total below.
   it("marks a gateway whose only attempt is a W as missing, not below-minimum", () => {
     expect(gateway([done("CMSC131", "W")], "CMSC131")?.status).toBe("missing");
   });
@@ -155,6 +161,104 @@ describe("checkCsGateway: gateway course status", () => {
 
   it("still marks a gateway below-minimum when a W sits beside a low completed grade", () => {
     expect(gateway([done("CMSC131", "W"), done("CMSC131", "C")], "CMSC131")?.status).toBe("below-minimum");
+  });
+});
+
+describe("checkCsGateway: attempts (UMD CS LEP repeat limit)", () => {
+  // Source: undergrad.cs.umd.edu/internal-transfer-applicants ("LEP Guidelines"), the same text
+  // republished at lep.umd.edu/computerscience-after2024.html and lep.umd.edu/computerscience.html
+  // (both the current and pre-2024 rule): "Only one gateway course may be repeated to earn the
+  // required grade and that course may only be repeated once ... a grade of 'W' is considered an
+  // attempt." The Undergraduate Catalog's own LEP page states no number.
+
+  it("counts a completed attempt, including a W", () => {
+    expect(gateway([done("MATH140", "W")], "MATH140")?.attempts).toBe(1);
+  });
+
+  it("does not count a planned course as an attempt yet", () => {
+    expect(gateway([planned("MATH140")], "MATH140")?.attempts).toBe(0);
+  });
+
+  it("does not count AP/transfer credit with no letter grade as an attempt", () => {
+    expect(gateway([done("MATH140")], "MATH140")?.attempts).toBe(0);
+  });
+
+  it("is not-yet after a W with a planned retake (first attempt still available)", () => {
+    const result = checkCsGateway({
+      matriculationTerm: NEW,
+      courses: [done("MATH140", "W"), planned("MATH140"), done("CMSC131", "A"), done("CMSC132", "A")],
+      cumulativeGpa: 3.5,
+    });
+    expect(result.overall).toBe("not-yet");
+  });
+
+  it("is met, using one repeat, when a W is followed by a passing attempt", () => {
+    const c = gateway([done("MATH140", "W"), done("MATH140", "B-")], "MATH140");
+    expect(c?.status).toBe("met");
+    expect(c?.attempts).toBe(2);
+  });
+
+  it("is ineligible when a gateway already has two completed attempts and a third is planned (the one repeat is used up)", () => {
+    const result = checkCsGateway({
+      matriculationTerm: NEW,
+      courses: [done("MATH140", "W"), done("MATH140", "C"), planned("MATH140"), done("CMSC131", "A"), done("CMSC132", "A")],
+      cumulativeGpa: 3.5,
+    });
+    expect(result.overall).toBe("ineligible");
+  });
+
+  it("is ineligible when a gateway's only two attempts are both W (the one repeat is used up with no pass)", () => {
+    const result = checkCsGateway({
+      matriculationTerm: NEW,
+      courses: [done("MATH140", "W"), done("MATH140", "W"), done("CMSC131", "A"), done("CMSC132", "A")],
+      cumulativeGpa: 3.5,
+    });
+    expect(result.overall).toBe("ineligible");
+  });
+
+  it("is ineligible when a second gateway would need its own repeat but the one allowed repeat is already spent on another", () => {
+    const result = checkCsGateway({
+      matriculationTerm: NEW,
+      courses: [
+        done("MATH140", "C"),
+        done("MATH140", "B-"),
+        done("CMSC131", "C"),
+        planned("CMSC131"),
+        done("CMSC132", "A"),
+      ],
+      cumulativeGpa: 3.5,
+    });
+    expect(result.overall).toBe("ineligible");
+  });
+
+  it("is ineligible when two gateways were each repeated once and passed (only one gateway may ever be repeated)", () => {
+    const result = checkCsGateway({
+      matriculationTerm: NEW,
+      courses: [
+        done("MATH140", "C"),
+        done("MATH140", "B-"),
+        done("CMSC131", "C"),
+        done("CMSC131", "B-"),
+        done("CMSC132", "A"),
+      ],
+      cumulativeGpa: 3.5,
+    });
+    expect(result.overall).toBe("ineligible");
+  });
+
+  it("still counts as a repeat, and is met, when a CMSC141 substitute follows a failed CMSC131", () => {
+    const c = gateway([done("CMSC131", "C+"), done("CMSC141", "B-")], "CMSC131");
+    expect(c?.status).toBe("met");
+    expect(c?.attempts).toBe(2);
+  });
+
+  it("is eligible with exactly one repeated gateway, passed, and the others met on the first try", () => {
+    const result = checkCsGateway({
+      matriculationTerm: NEW,
+      courses: [done("MATH140", "C"), done("MATH140", "B-"), done("CMSC131", "A"), done("CMSC132", "A")],
+      cumulativeGpa: 3.5,
+    });
+    expect(result.overall).toBe("eligible");
   });
 });
 

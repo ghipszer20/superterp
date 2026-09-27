@@ -277,7 +277,7 @@ describe("credit load", () => {
         severity: "error",
         term: "Fall 2026",
         message:
-          "Fall 2026 has 22 credits, over Computer, Mathematical, and Natural Sciences's 17-credit limit for a fall term. Going over 17 credits needs your dean's approval.",
+          "Fall 2026 has 22 credits, over the 17-credit fall limit for Computer, Mathematical, and Natural Sciences students. Going over 17 credits needs your dean's approval.",
       },
     ]);
   });

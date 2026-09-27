@@ -20,19 +20,6 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Owner review tool (`/review`)
-
-An internal page where the owner checks each program's requirements against the catalog and signs it off
-(PROJECT_MEMORY.md section 6, step 5). It is never shipped to students:
-
-- **Enabled** only under `npm run dev`, or in a production build started with `SUPERTERP_REVIEW=1`
-  (e.g. `SUPERTERP_REVIEW=1 npm run start -w @superterp/web`). Otherwise `proxy.ts` answers 404 for `/review`
-  and `/api/review`, and the pages and API route check again. Not linked from the nav; disallowed in `robots.txt`.
-- **Data:** reads the catalog cache in `packages/catalog/.cache/catalog/` (fill it with
-  `node scripts/coverage.ts` in packages/catalog) and the hand-encoded programs in `packages/audit/programs/`.
-- **Sign-offs** are written to `packages/catalog/review/signoffs.json`; commit that file.
-- Overrides: `SUPERTERP_CATALOG_CACHE` (cache directory), `SUPERTERP_SIGNOFFS` (sign-off file).
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
