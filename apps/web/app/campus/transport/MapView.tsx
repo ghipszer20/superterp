@@ -11,6 +11,17 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { formatMinutes } from "@superterp/campus-data/hours";
 import { LocationIcon } from "@/components/icons";
 import { Card, EmptyState } from "@/components/ui";
+import {
+  CAMPUS_BOUNDS,
+  CAMPUS_MIN_ZOOM,
+  expandBounds,
+  findRouteExits,
+  isInCampusBounds,
+  nearestOffCampusStop,
+  stripDirectionSuffix,
+  toMapLibreBounds,
+  type BoundsEdge,
+} from "@/lib/mapBounds";
 import type { MapRoute, MapStop } from "./TransportMap";
 import busStyles from "./buses.module.css";
 import styles from "./map.module.css";
@@ -25,15 +36,23 @@ import styles from "./map.module.css";
 // file, both under their original names, to public/vendor/ instead.
 setWorkerUrl("/vendor/maplibre-gl-worker.mjs");
 
-// Roughly the middle of the College Park campus (McKeldin Mall).
-const CAMPUS_CENTER: [number, number] = [-76.9426, 38.9869];
-const DEFAULT_ZOOM = 14.3;
-
 const LIGHT_STYLE = "https://tiles.openfreemap.org/styles/liberty";
 const DARK_STYLE = "https://tiles.openfreemap.org/styles/dark";
 
 const DEFAULT_STOP_COLOR = "#6e6e73";
 const HERE_COLOR = "#0a84ff";
+
+// How far past what's actually shown on load a student can still pan/zoom out (see the maxBounds
+// comment below for why this is computed from the fitted view rather than being CAMPUS_BOUNDS
+// itself).
+const MAX_BOUNDS_SLACK = 0.15;
+
+// Anchor an exit marker so its arrow+label sit *inward* from the edge it's on, instead of
+// straddling the boundary (and, on the east/west edges, running back off the visible map).
+const EDGE_ANCHOR = { north: "top", south: "bottom", east: "right", west: "left" } as const satisfies Record<
+  BoundsEdge,
+  string
+>;
 
 type Departure = {
   tripId: string;
@@ -54,6 +73,30 @@ function casingColor(): string {
   return currentTheme() === "dark" ? "#000000" : "#ffffff";
 }
 
+// A small east-pointing chevron, registered as an SDF image (map.addImage(..., { sdf: true })
+// below) so it can be recolored per route via icon-color/icon-halo-color like a normal paint
+// property, the same way the route line itself is. Drawn pointing east/right specifically
+// because that's the reference direction "icon-rotation-alignment: map" rotates *from*: with
+// symbol-placement: "line", MapLibre then turns it to match each line segment's actual bearing,
+// in the order the GTFS shape's points come in -- i.e. the real direction of travel, not just
+// "whichever way reads upright" (icon-keep-upright: false, set on the layer, turns that off).
+function createArrowIcon(): ImageData {
+  const size = 20;
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d")!;
+  ctx.fillStyle = "#000";
+  ctx.beginPath();
+  ctx.moveTo(4, 3);
+  ctx.lineTo(17, 10);
+  ctx.lineTo(4, 17);
+  ctx.lineTo(8, 10);
+  ctx.closePath();
+  ctx.fill();
+  return ctx.getImageData(0, 0, size, size);
+}
+
 // Paints the selected route's line(s) and the stops it serves; "no route
 // selected" is its own case (routeId "" never matches a real route, so
 // nothing is highlighted). Called both right after the style loads --
@@ -62,8 +105,11 @@ function casingColor(): string {
 function applyHighlight(map: MapLibreMap, selectedRoute: string | null, routes: MapRoute[]): void {
   map.setFilter("routes-casing", ["==", ["get", "routeId"], selectedRoute ?? ""]);
   map.setFilter("routes-line", ["==", ["get", "routeId"], selectedRoute ?? ""]);
+  map.setFilter("routes-arrows-casing", ["==", ["get", "routeId"], selectedRoute ?? ""]);
+  map.setFilter("routes-arrows", ["==", ["get", "routeId"], selectedRoute ?? ""]);
   const route = routes.find((r) => r.id === selectedRoute);
   map.setPaintProperty("routes-line", "line-color", route ? route.color : "#6e6e73");
+  map.setPaintProperty("routes-arrows", "icon-color", route ? route.color : "#6e6e73");
   map.setPaintProperty(
     "stops-circle",
     "circle-color",
@@ -76,6 +122,49 @@ function applyHighlight(map: MapLibreMap, selectedRoute: string | null, routes: 
     "circle-radius",
     selectedRoute ? ["case", ["in", selectedRoute, ["get", "routeIds"]], 7, 4] : 5,
   );
+}
+
+// Where the selected route's line leaves campus, a marker stands in for the stops beyond it
+// (which aren't drawn -- see the campus-bounds ruling). Only the selected route gets markers,
+// since it's the only route whose line is ever drawn (see applyHighlight's filter above).
+function updateExitMarkers(
+  map: MapLibreMap,
+  markersRef: { current: Marker[] },
+  selectedRoute: string | null,
+  routes: MapRoute[],
+  stops: MapStop[],
+): void {
+  for (const marker of markersRef.current) marker.remove();
+  markersRef.current = [];
+
+  const route = routes.find((r) => r.id === selectedRoute);
+  if (!route) return;
+
+  const routeStops = stops.filter((s) => route.stopIds.includes(s.id));
+  for (const exit of findRouteExits(route.lines, CAMPUS_BOUNDS)) {
+    // The farthest point of the excursion, not the crossing itself, is the better stand-in for
+    // "where this goes" -- the crossing is often still right at the campus edge.
+    const nearest = nearestOffCampusStop(exit.farthest, routeStops, CAMPUS_BOUNDS);
+    const destination = nearest ? stripDirectionSuffix(nearest.name) : route.longName;
+
+    const el = document.createElement("div");
+    el.className = styles.exitMarker;
+    el.dataset.edge = exit.edge;
+    const arrow = document.createElement("span");
+    arrow.className = styles.exitArrow;
+    arrow.style.background = route.color;
+    arrow.style.transform = `rotate(${exit.bearingDeg}deg)`;
+    const label = document.createElement("span");
+    label.className = styles.exitLabel;
+    label.style.background = route.color;
+    label.style.color = route.textColor;
+    label.textContent = `To ${destination}`;
+    el.append(arrow, label);
+
+    markersRef.current.push(
+      new Marker({ element: el, anchor: EDGE_ANCHOR[exit.edge] }).setLngLat([exit.lon, exit.lat]).addTo(map),
+    );
+  }
 }
 
 function hasWebGl(): boolean {
@@ -99,6 +188,7 @@ export function MapView({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const hereMarkerRef = useRef<Marker | null>(null);
+  const exitMarkersRef = useRef<Marker[]>([]);
   const [unsupported] = useState(() => !hasWebGl());
   const [failed, setFailed] = useState(false);
   const [themeTick, setThemeTick] = useState(0);
@@ -125,8 +215,18 @@ export function MapView({
       map = new MapLibreMap({
         container: containerRef.current,
         style: currentTheme() === "dark" ? DARK_STYLE : LIGHT_STYLE,
-        center: CAMPUS_CENTER,
-        zoom: DEFAULT_ZOOM,
+        // Campus only (owner ruling): fit the initial view to campus -- maxBounds is set below,
+        // once this fit has actually happened, not here (see the comment on that call for why).
+        bounds: toMapLibreBounds(CAMPUS_BOUNDS),
+        fitBoundsOptions: { padding: 20 },
+        minZoom: CAMPUS_MIN_ZOOM,
+        // No tilt or rotation (owner ruling): a flat map isn't a shortcoming to fix.
+        maxPitch: 0,
+        dragRotate: false,
+        touchPitch: false,
+        // The attribution stays visible, not collapsed to a click-to-reveal icon (see the CSS
+        // for how it's kept compact instead).
+        attributionControl: { compact: false },
       });
     } catch {
       // Deferred: react-hooks/set-state-in-effect flags a setState call made
@@ -137,11 +237,31 @@ export function MapView({
       return;
     }
     mapRef.current = map;
+    // touchPitch/dragRotate above cover mouse-drag and two-finger-drag pitch; the remaining
+    // rotate gesture is pinch-rotate, part of the combined touchZoomRotate handler, which has
+    // to stay enabled for pinch-*zoom*. Its own disableRotation() turns off just the rotate half.
+    // keyboard.disableRotation() covers the last one: Shift+Left/Right normally rotates too.
+    map.touchZoomRotate.disableRotation();
+    map.keyboard.disableRotation();
     // MapLibre logs uncaught errors to console.error unless something listens.
     map.on("error", (e) => console.warn("[transport map]", e.error?.message ?? e));
     map.addControl(new NavigationControl({ showCompass: false }), "top-right");
 
     map.on("load", () => {
+      // maxBounds wasn't set in the constructor above because MapLibre enforces it as a "cover"
+      // constraint: it won't let the camera zoom out past the level where the bounds fill the
+      // *whole* viewport, which is a tighter zoom than "the whole box is visible" (a "contain"
+      // fit) whenever the box's aspect ratio doesn't match the map card's -- exactly the case
+      // here (the campus box is taller than it is wide; the card is wider than it is tall).
+      // Passing the same bounds to both `bounds` and `maxBounds` at once made maxBounds win,
+      // so the initial view came out zoomed in and cropped rather than fitting all of campus.
+      // Setting maxBounds *after* the initial fit instead, from the bounds that fit actually
+      // produced, means the pan/zoom-out limit always matches what's really on screen for this
+      // card's shape -- with a bit of slack so scrolling out a little is still possible.
+      const fitted = map.getBounds();
+      const fittedCampusBounds = { west: fitted.getWest(), south: fitted.getSouth(), east: fitted.getEast(), north: fitted.getNorth() };
+      map.setMaxBounds(toMapLibreBounds(expandBounds(fittedCampusBounds, MAX_BOUNDS_SLACK)));
+
       map.addSource("routes", {
         type: "geojson",
         data: {
@@ -170,15 +290,55 @@ export function MapView({
         paint: { "line-color": "#6e6e73", "line-width": 4 },
       });
 
+      // Direction-of-travel arrows along the route line (owner request): repeated along the
+      // line at a fixed spacing, each one rotated to the line's actual bearing at that point --
+      // see createArrowIcon's comment for how that rotation-from-shape-order works. The halo
+      // (casingColor(), same as the line's own casing) is what keeps them visible against both
+      // the light and dark basemap styles -- as a second, larger, casing-colored icon layer
+      // underneath the colored one (icon-halo-* needs the image to actually be a distance
+      // field to feather properly; this plain filled shape isn't one, so icon-color recolor,
+      // the same mechanism routes-casing/routes-line already rely on, is what's used instead).
+      map.addImage("route-arrow", createArrowIcon(), { sdf: true });
+      const arrowLayout = {
+        "icon-image": "route-arrow",
+        "symbol-placement": "line",
+        "symbol-spacing": 70,
+        "icon-rotation-alignment": "map",
+        "icon-pitch-alignment": "map",
+        "icon-keep-upright": false,
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+      } as const;
+      map.addLayer({
+        id: "routes-arrows-casing",
+        type: "symbol",
+        source: "routes",
+        filter: ["==", ["get", "routeId"], ""],
+        layout: { ...arrowLayout, "icon-size": 1.3 },
+        paint: { "icon-color": casingColor() },
+      });
+      map.addLayer({
+        id: "routes-arrows",
+        type: "symbol",
+        source: "routes",
+        filter: ["==", ["get", "routeId"], ""],
+        layout: { ...arrowLayout, "icon-size": 0.9 },
+        paint: { "icon-color": "#6e6e73" },
+      });
+
       map.addSource("stops", {
         type: "geojson",
         data: {
           type: "FeatureCollection",
-          features: stops.map((s) => ({
-            type: "Feature" as const,
-            geometry: { type: "Point" as const, coordinates: [s.lon, s.lat] },
-            properties: { id: s.id, name: s.name, routeIds: stopRoutes[s.id] ?? [] },
-          })),
+          // Off-campus stops aren't drawn as dots (the exit marker stands in for them); the
+          // stop list/departures below the map is unaffected -- it's built from the full list.
+          features: stops
+            .filter((s) => isInCampusBounds([s.lon, s.lat], CAMPUS_BOUNDS))
+            .map((s) => ({
+              type: "Feature" as const,
+              geometry: { type: "Point" as const, coordinates: [s.lon, s.lat] },
+              properties: { id: s.id, name: s.name, routeIds: stopRoutes[s.id] ?? [] },
+            })),
         },
       });
       map.addLayer({
@@ -196,6 +356,7 @@ export function MapView({
       // map with a selection already in React state but none of it painted
       // yet.
       applyHighlight(map, selectedRoute, routes);
+      updateExitMarkers(map, exitMarkersRef, selectedRoute, routes, stops);
 
       const onClick = (e: MapMouseEvent & { features?: MapGeoJSONFeature[] }) => {
         const id = e.features?.[0]?.properties?.id;
@@ -207,12 +368,12 @@ export function MapView({
     });
 
     return () => {
+      // Both marker kinds below were added to *this* map; drop them (and the stale refs)
+      // before it's destroyed, instead of leaving a marker with no map underneath it.
+      for (const marker of exitMarkersRef.current) marker.remove();
+      exitMarkersRef.current = [];
       map.remove();
       mapRef.current = null;
-      // The marker (if any) was added to *this* map and was destroyed with
-      // it; drop the stale reference so the "here" effect below creates a
-      // fresh one on the map rebuilt for the new theme, instead of calling
-      // setLngLat() on a marker with no map underneath it.
       hereMarkerRef.current = null;
     };
     // Rebuilding on themeTick swaps the basemap for Light/Dark; routes/stops/stopRoutes
@@ -220,14 +381,15 @@ export function MapView({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [themeTick, unsupported]);
 
-  // Highlight the selected route's line(s) and the stops it serves. (A
-  // theme switch is also handled: applyHighlight runs again once the
+  // Highlight the selected route's line(s) and the stops it serves, and mark where that route's
+  // line leaves campus, if it does. (A theme switch is also handled: both run again once the
   // rebuilt map's style has loaded, in the effect above.)
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !map.getLayer("routes-line")) return;
     applyHighlight(map, selectedRoute, routes);
-  }, [selectedRoute, routes]);
+    updateExitMarkers(map, exitMarkersRef, selectedRoute, routes, stops);
+  }, [selectedRoute, routes, stops]);
 
   // Fetch scheduled departures for the tapped stop. `board` is tagged with
   // the stop it was fetched for, so switching stops (or closing the card)
