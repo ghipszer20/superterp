@@ -41,12 +41,14 @@ export type CompletedCreditTotals = { counts: number; elective: number; unused: 
  * How the student's existing credits (completed courses and prior credit -- planCourses gives
  * prior credit "completed" status too) would apply under the proposed majors: how many count
  * toward a requirement, become electives, or go unused. Not-yet-taken (planned) courses are
- * excluded; those aren't "existing credits" yet.
+ * excluded; those aren't "existing credits" yet. A completed course that earns no credit (F or W --
+ * see @superterp/audit's earnsCredit, mirrored on CourseWhatIf.earnsCredit since this file can't
+ * value-import @superterp/audit) contributes to none of the three totals.
  */
 export function completedCreditTotals(courses: CourseWhatIf[]): CompletedCreditTotals {
   const totals: CompletedCreditTotals = { counts: 0, elective: 0, unused: 0 };
   for (const c of courses) {
-    if (c.status !== "completed") continue;
+    if (c.status !== "completed" || !c.earnsCredit) continue;
     totals[c.proposedStatus] += c.credits;
   }
   return totals;

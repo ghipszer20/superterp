@@ -25,6 +25,10 @@ export type CourseWhatIf = {
   currentPrograms: string[];
   /** Ids of the proposed majors (only -- never layers) this course is assigned to. */
   proposedPrograms: string[];
+  /** Whether this occurrence earns credit (@superterp/audit's earnsCredit): false only for a
+   * completed course graded F or W. A pure-display consumer (what-if-display.ts) can't value-import
+   * @superterp/audit itself (it would pull in HiGHS), so this is computed here instead. */
+  earnsCredit: boolean;
 };
 
 export type MissingRequirement = {
@@ -216,6 +220,7 @@ export async function whatIf(
       proposedStatus: statusFor(proposedPrograms, i),
       currentPrograms,
       proposedPrograms,
+      earnsCredit: earnsCredit(c),
     };
   });
 

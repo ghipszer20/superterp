@@ -50,6 +50,7 @@ const course = (over: Partial<CourseWhatIf>): CourseWhatIf => ({
   proposedStatus: "counts",
   currentPrograms: [],
   proposedPrograms: [],
+  earnsCredit: true,
   ...over,
 });
 
@@ -71,5 +72,17 @@ describe("completedCreditTotals", () => {
 
   it("is all zero with no courses", () => {
     expect(completedCreditTotals([])).toEqual({ counts: 0, elective: 0, unused: 0 });
+  });
+
+  it("doesn't let a failed or withdrawn attempt's credits appear in any total, whatever bucket it landed in", () => {
+    // A completed course that earns no credit (F/W) shouldn't count as "credits you've already
+    // earned", no matter which of the three statuses it happens to carry.
+    const totals = completedCreditTotals([
+      course({ proposedStatus: "counts", credits: 4, earnsCredit: false }),
+      course({ proposedStatus: "elective", credits: 3, earnsCredit: false }),
+      course({ proposedStatus: "unused", credits: 3, earnsCredit: false }),
+      course({ proposedStatus: "counts", credits: 4, earnsCredit: true }),
+    ]);
+    expect(totals).toEqual({ counts: 4, elective: 0, unused: 0 });
   });
 });
