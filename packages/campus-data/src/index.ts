@@ -7,3 +7,4 @@ export * from "./http.ts";
 export * from "./libraries.ts";
 export * from "./recwell.ts";
 export * from "./rooms.ts";
+export * from "./trip.ts";
