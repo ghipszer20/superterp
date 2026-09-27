@@ -43,12 +43,17 @@ export function applyTranscriptImport(plan: AdvisorPlan, selection: { courses: S
     }
   }
 
-  if (selection.ap.length > 0) {
+  // Testudo lists one AP line per course equivalency (the same exam can repeat on one transcript),
+  // and a student may re-import the same transcript later: skip any exam already in prior.ap either
+  // way, so credit for it is never counted more than once.
+  const existingExams = new Set(next.prior.ap.map((a) => a.exam));
+  const newAp = selection.ap.filter((a) => !existingExams.has(a.exam));
+  if (newAp.length > 0) {
     next = {
       ...next,
       prior: {
         ...next.prior,
-        ap: [...next.prior.ap, ...selection.ap.map((a) => ({ key: uid(), exam: a.exam, score: a.score }))],
+        ap: [...next.prior.ap, ...newAp.map((a) => ({ key: uid(), exam: a.exam, score: a.score }))],
       },
     };
   }

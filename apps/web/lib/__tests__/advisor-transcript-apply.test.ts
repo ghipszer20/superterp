@@ -76,4 +76,36 @@ describe("applyTranscriptImport: AP exams", () => {
     });
     expect(new Set(next.prior.ap.map((a) => a.key)).size).toBe(2);
   });
+
+  it("skips an AP exam already present in prior.ap, so re-importing doesn't duplicate it", () => {
+    const plan = { ...basePlan(), prior: { ...emptyPrior(), ap: [{ key: "existing", exam: "Calculus BC", score: 5 }] } };
+    const next = applyTranscriptImport(plan, { courses: [], ap: [{ exam: "Calculus BC", score: 5 }] });
+    expect(next.prior.ap).toHaveLength(1);
+    expect(next.prior.ap[0]!.key).toBe("existing");
+  });
+
+  it("still adds AP exams not already present, alongside ones that are skipped", () => {
+    const plan = { ...basePlan(), prior: { ...emptyPrior(), ap: [{ key: "existing", exam: "Calculus BC", score: 5 }] } };
+    const next = applyTranscriptImport(plan, {
+      courses: [],
+      ap: [
+        { exam: "Calculus BC", score: 5 },
+        { exam: "Chemistry", score: 4 },
+      ],
+    });
+    expect(next.prior.ap.map((a) => a.exam)).toEqual(["Calculus BC", "Chemistry"]);
+  });
+});
+
+describe("applyTranscriptImport: re-importing the same transcript", () => {
+  it("leaves the plan unchanged the second time (courses and AP exams both)", () => {
+    const plan = basePlan();
+    const selection = {
+      courses: [{ term: "Fall 2024", code: "CMSC131", grade: "A" as const, credits: 4, status: "completed" as const }],
+      ap: [{ exam: "Calculus BC", score: 5 }],
+    };
+    const once = applyTranscriptImport(plan, selection);
+    const twice = applyTranscriptImport(once, selection);
+    expect(twice).toEqual(once);
+  });
 });

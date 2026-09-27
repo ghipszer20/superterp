@@ -8,10 +8,10 @@
 
 import { apExamNames } from "@superterp/credit";
 import { useMemo, useState } from "react";
-import { matchApExamName } from "@/lib/advisor/transcript-ap-match";
+import { selectApLines } from "@/lib/advisor/transcript-ap-select";
 import { applyTranscriptImport, type SelectedAp, type SelectedCourse } from "@/lib/advisor/transcript-apply";
 import type { AdvisorPlan } from "@/lib/advisor/plan-state";
-import { parseTranscriptText, type ParsedApLine, type ParsedCourse, type ParsedTranscript, type Source } from "@/lib/advisor/transcript-parse";
+import { parseTranscriptText, type ParsedCourse, type ParsedTranscript, type Source } from "@/lib/advisor/transcript-parse";
 import styles from "./advisor.module.css";
 
 const AP_EXAM_NAMES = apExamNames();
@@ -21,8 +21,6 @@ type Stage =
   | { kind: "reading"; detail: string }
   | { kind: "review"; parsed: ParsedTranscript; source: Source }
   | { kind: "error"; message: string };
-
-type ApRow = ParsedApLine & { matchedExam: string | null };
 
 export function ImportTranscriptView({ plan, onDone, onCancel }: { plan: AdvisorPlan; onDone: (plan: AdvisorPlan) => void; onCancel: () => void }) {
   const [stage, setStage] = useState<Stage>({ kind: "input" });
@@ -143,9 +141,13 @@ function ReviewStage({
 }) {
   const [courseChecked, setCourseChecked] = useState<boolean[]>(() => parsed.courses.map(() => true));
 
-  const apRows = useMemo<ApRow[]>(() => parsed.apLines.map((line) => ({ ...line, matchedExam: matchApExamName(line.examRaw, AP_EXAM_NAMES) })), [parsed.apLines]);
-  const matchedAp = useMemo(() => apRows.filter((a) => a.matchedExam !== null), [apRows]);
-  const unmatchedAp = useMemo(() => apRows.filter((a) => a.matchedExam === null), [apRows]);
+  // Collapses repeated lines for the same exam to one (keeping the highest score -- Testudo lists
+  // one AP line per course equivalency, so the same exam can print several times) and pulls the
+  // Calculus BC AB Subscore out as an info-only row when a Calculus BC line is also present.
+  const apSelection = useMemo(() => selectApLines(parsed.apLines, AP_EXAM_NAMES), [parsed.apLines]);
+  const matchedAp = apSelection.matched;
+  const infoAp = apSelection.info;
+  const unmatchedAp = apSelection.unmatched;
   const [apChecked, setApChecked] = useState<boolean[]>(() => matchedAp.map(() => true));
 
   const termGroups = useMemo(() => {
@@ -173,7 +175,7 @@ function ReviewStage({
         credits: c.earnedCredits ?? c.attemptedCredits,
         status: c.status,
       }));
-    const ap: SelectedAp[] = matchedAp.filter((_, i) => apChecked[i]).map((a) => ({ exam: a.matchedExam!, score: a.score }));
+    const ap: SelectedAp[] = matchedAp.filter((_, i) => apChecked[i]).map((a) => ({ exam: a.exam, score: a.score }));
     onDone(applyTranscriptImport(plan, { courses, ap }));
   };
 
@@ -238,7 +240,7 @@ function ReviewStage({
                   <input type="checkbox" checked={apChecked[i]} onChange={() => toggle(apChecked, setApChecked, i)} />
                   <div className={styles.entryHead}>
                     <span className={styles.entrySource}>
-                      AP {a.matchedExam} ({a.score})
+                      AP {a.exam} ({a.score})
                     </span>
                     {a.flagged ? (
                       <span className={styles.issueSeverity} data-severity="confirm">
@@ -247,6 +249,27 @@ function ReviewStage({
                     ) : null}
                   </div>
                 </label>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      {infoAp.length > 0 ? (
+        <section className={styles.card} aria-label="AP exam information">
+          <h2 className={styles.cardTitle}>Also on the transcript</h2>
+          <ul className={styles.entryList}>
+            {infoAp.map((a, i) => (
+              <li key={i} className={styles.entryRow}>
+                <div className={styles.entryHead}>
+                  <span className={styles.entrySource}>
+                    AP {a.exam} ({a.score})
+                  </span>
+                  <span className={styles.issueSeverity} data-severity="info">
+                    Info
+                  </span>
+                </div>
+                <p className={styles.cardNote}>{a.note}</p>
               </li>
             ))}
           </ul>
