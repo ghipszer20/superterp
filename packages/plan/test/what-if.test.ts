@@ -354,3 +354,31 @@ describe("real programs: the owner's Math (Applied) + CS plan", () => {
     expect(result.newlyMissing[0]!.program.catalogYear).toBe("2026-27");
   });
 });
+
+describe("adding or dropping a minor", () => {
+  const minor: Program = {
+    id: "x-minor",
+    name: "X Minor",
+    requirements: [
+      { kind: "course", id: "hist200", name: "HIST200", options: ["HIST200"] },
+      { kind: "course", id: "arth200", name: "ARTH200", options: ["ARTH200"] },
+    ],
+  };
+  const plan = planWith("CMSC131", "HIST200", "ARTH200");
+
+  it("dropping it frees its credits and lists the courses that now count toward nothing", async () => {
+    const result = await whatIf(plan, catalog, [majorA, minor], [majorA], []);
+    expect(result.freedCredits).toBe(6);
+    expect(result.orphaned).toEqual(["HIST200", "ARTH200"]);
+  });
+
+  it("doesn't call a course orphaned when a layer still uses it as an elective", async () => {
+    const result = await whatIf(plan, catalog, [majorA, minor], [majorA], [genEdish]);
+    expect(result.orphaned).toEqual(["ARTH200"]);
+  });
+
+  it("adding it orphans nothing", async () => {
+    const result = await whatIf(plan, catalog, [majorA], [majorA, minor], []);
+    expect(result.orphaned).toEqual([]);
+  });
+});

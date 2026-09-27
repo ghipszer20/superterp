@@ -6,8 +6,10 @@
 import type { Program } from "@superterp/audit";
 import { genEd, university } from "@superterp/audit/programs/gen-ed-2026-27.ts";
 import type { College } from "@superterp/plan/credit-caps";
+import type { Degree } from "@superterp/plan/degrees";
 import type { ProgramCandidate } from "@superterp/plan/notices";
 import { MAJOR_COURSE_SETS } from "@superterp/programs/course-sets";
+import type { DegreeChoice } from "./plan-state";
 import { findProgram, loadPrograms, majorKey, PROGRAMS, type ProgramEntry } from "@superterp/programs";
 
 export type ProgramOption = ProgramEntry;
@@ -105,6 +107,29 @@ export async function noticeCandidates(selected: string[], planCourseIds: readon
   const filtered = rankNoticeCandidates(others, planCourseIds);
   const [declared, undeclared] = await Promise.all([loadPrograms(mine.map((o) => o.id)), loadPrograms(filtered.map((o) => o.id))]);
   return [...declared.map((program) => ({ program, declared: true })), ...undeclared.map((program) => ({ program, declared: false }))];
+}
+
+/** Double major vs double degree, with two or more majors chosen (the stored choice, a double
+ * major by default); null with fewer, where the choice doesn't apply. */
+export function degreeModeOf(selected: string[], stored: DegreeChoice | undefined): DegreeChoice | null {
+  return chosen(selected).filter((o) => o.kind === "major").length >= 2 ? (stored ?? "double-major") : null;
+}
+
+/**
+ * The student's Degrees for checkDegrees (@superterp/plan/degrees): one degree holding every
+ * chosen program for a double major (or a single major), or one degree per major for a double
+ * degree, with minors and special programs in the first. The Advisor doesn't know which programs
+ * are officially declared yet, so every one is "planned" (the declaration-deadline note shows).
+ * College rules aren't encoded yet, so no degree has any.
+ */
+export async function studentDegrees(selected: string[], mode: DegreeChoice | null): Promise<Degree[]> {
+  const options = chosen(selected);
+  const programs = await loadPrograms(options.map((o) => o.id));
+  const entries = options.map((o, i) => ({ program: programs[i]!, kind: o.kind, status: "planned" as const }));
+  const majors = entries.filter((e) => e.kind === "major");
+  if (mode !== "double-degree" || majors.length < 2) return [{ programs: entries }];
+  const others = entries.filter((e) => e.kind !== "major");
+  return majors.map((m, i) => ({ programs: i === 0 ? [m, ...others] : [m] }));
 }
 
 /** The Advisor's default college: the first declared major's college, in the order chosen (or the

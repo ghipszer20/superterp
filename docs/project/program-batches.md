@@ -35,4 +35,10 @@ Rules:
   registry line lives here.
 - No 🧪 labels (or any test/debug marker) in production code or UI text. "Unverified" is the only label.
 - No student-correction button; the owner decides flagged items.
+- Sharing limits (`max_shared_with`): when the catalog caps overlap with other programs, set
+  `maxSharedWith` on the Program, e.g. a minor's "no more than 2 courses may also count toward the
+  major" is `maxSharedWith: [{ courses: 2 }]`; a credit cap is `[{ credits: 6 }]`; a cap toward
+  named programs only is `[{ programs: ["cmsc-major"], courses: 0 }]`. Omitted `programs` means every
+  other program; Gen Ed, university and college layers never count. The audit enforces it across all
+  programs at once. Put nothing there when the catalog is silent (sharing is then unlimited).
 - Run `npm test -w @superterp/programs -- --reporter=dot` while working; the package must stay green.

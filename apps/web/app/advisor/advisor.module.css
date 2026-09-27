@@ -1245,3 +1245,11 @@
 .pickerGroup .optionList {
   margin-top: 6px;
 }
+
+/* ---------- Setup: double major vs double degree ---------- */
+.degreeChoice {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}

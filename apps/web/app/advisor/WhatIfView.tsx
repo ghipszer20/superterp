@@ -196,6 +196,16 @@ function CompareResult({ compare, current, proposed }: { compare: CompareState; 
         </section>
       ) : null}
 
+      {r.orphaned.length > 0 ? (
+        <section className={styles.card}>
+          <h2 className={styles.cardTitle}>Would count toward nothing</h2>
+          <p className={styles.cardNote}>
+            {listing(r.orphaned)} would no longer count toward any program or Gen Ed requirement. Keep {r.orphaned.length === 1 ? "it" : "them"} as
+            {" "}free electives or swap {r.orphaned.length === 1 ? "it" : "them"} out.
+          </p>
+        </section>
+      ) : null}
+
       {r.newlyMissing.length > 0 ? (
         <section className={styles.card}>
           <h2 className={styles.cardTitle}>Still needed</h2>

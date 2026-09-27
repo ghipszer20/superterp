@@ -2,12 +2,14 @@ import { describe, expect, it } from "vitest";
 import {
   auditedPrograms,
   collegeOf,
+  degreeModeOf,
   MAX_NOTICE_CANDIDATES,
   noticeCandidates,
   NOTICE_OVERLAP_THRESHOLD,
   PROGRAM_OPTIONS,
   programsLabel,
   rankNoticeCandidates,
+  studentDegrees,
   toggleProgram,
 } from "../advisor/programs";
 import type { ProgramOption } from "../advisor/programs";
@@ -76,6 +78,37 @@ describe("auditedPrograms", () => {
       "gen-ed",
       "university",
     ]);
+  });
+});
+
+describe("studentDegrees", () => {
+  const shape = (degrees: Awaited<ReturnType<typeof studentDegrees>>) =>
+    degrees.map((d) => d.programs.map((p) => `${p.program.id}:${p.kind}:${p.status}`));
+  const picked = ["math-major-applied", "cmsc-major", "honors-aces"];
+
+  it("puts every program in one degree for a double major", async () => {
+    expect(shape(await studentDegrees(picked, "double-major"))).toEqual([
+      ["math-major-applied:major:planned", "cmsc-major:major:planned", "honors-aces:special:planned"],
+    ]);
+  });
+
+  it("gives each major its own degree for a double degree; other programs go with the first", async () => {
+    expect(shape(await studentDegrees(picked, "double-degree"))).toEqual([
+      ["math-major-applied:major:planned", "honors-aces:special:planned"],
+      ["cmsc-major:major:planned"],
+    ]);
+  });
+
+  it("uses one degree with a single major, whatever the mode says", async () => {
+    expect(shape(await studentDegrees(["cmsc-major", "honors-aces"], "double-degree"))).toHaveLength(1);
+  });
+});
+
+describe("degreeModeOf", () => {
+  it("is a double major by default with two majors, the stored choice when set, and null with one major", () => {
+    expect(degreeModeOf(["math-major-applied", "cmsc-major"], undefined)).toBe("double-major");
+    expect(degreeModeOf(["math-major-applied", "cmsc-major"], "double-degree")).toBe("double-degree");
+    expect(degreeModeOf(["cmsc-major", "honors-aces"], "double-degree")).toBeNull();
   });
 });
 

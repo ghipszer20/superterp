@@ -51,6 +51,11 @@ export type AdvisorPlan = {
    * default rather than needing a `v` bump.
    */
   college?: College;
+  /**
+   * With two majors: one degree with both (a double major) or two degrees (a double degree),
+   * chosen in setup. Omitted means a double major (see degreeModeOf in programs.ts).
+   */
+  degreeMode?: DegreeChoice;
   /** Cumulative UMD GPA, for the CS gateway check. */
   gpa?: number;
   /** Chosen pre-professional track ids (@superterp/tracks), never degree requirements. Omitted when empty. */
@@ -80,6 +85,8 @@ export type PlanAction =
       expectedGrades: Record<string, Record<string, string>>;
       /** Omitted: leaves the plan's existing college untouched (older callers/tests don't set one). */
       college?: College;
+      /** Omitted: leaves the plan's existing choice untouched. */
+      degreeMode?: DegreeChoice;
     }
   | { type: "add-course"; term: string; id: string; credits?: number }
   | { type: "remove-course"; term: string; id: string }
@@ -96,6 +103,9 @@ export type PlanAction =
    * or anything else "setup" also touches. */
   | { type: "set-programs"; programs: string[] };
 
+export type DegreeChoice = "double-major" | "double-degree";
+export const DEGREE_CHOICES: DegreeChoice[] = ["double-major", "double-degree"];
+
 export const emptyPrior = (): PriorInputs => ({ ap: [], ib: [], dual: [], choices: {} });
 
 export function newPlan(setup: {
@@ -105,6 +115,7 @@ export function newPlan(setup: {
   tracks?: string[];
   examTerms?: Record<string, string>;
   college?: College;
+  degreeMode?: DegreeChoice;
 }): AdvisorPlan {
   return {
     v: 1,
@@ -116,6 +127,7 @@ export function newPlan(setup: {
     ...(setup.tracks?.length ? { tracks: setup.tracks } : {}),
     ...(setup.examTerms && Object.keys(setup.examTerms).length ? { examTerms: setup.examTerms } : {}),
     ...(setup.college ? { college: setup.college } : {}),
+    ...(setup.degreeMode ? { degreeMode: setup.degreeMode } : {}),
   };
 }
 
@@ -176,6 +188,7 @@ export function planReducer(plan: AdvisorPlan, action: PlanAction): AdvisorPlan 
     case "setup": {
       const next: AdvisorPlan = { ...plan, programs: action.programs, catalogYear: action.catalogYear };
       if (action.college !== undefined) next.college = action.college;
+      if (action.degreeMode !== undefined) next.degreeMode = action.degreeMode;
       if (action.tracks.length) next.tracks = action.tracks;
       else delete next.tracks;
       if (Object.keys(action.examTerms).length) next.examTerms = action.examTerms;

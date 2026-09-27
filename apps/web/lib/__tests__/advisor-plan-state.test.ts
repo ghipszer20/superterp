@@ -195,6 +195,15 @@ describe("planReducer: setup", () => {
     expect(plan.college).toBe("CMNS"); // untouched: no college in this action
   });
 
+  it("stores double major vs double degree from setup; omitted, the plan has none", () => {
+    const setup = { type: "setup" as const, programs: ["math-major-applied", "cmsc-major"], catalogYear: "2026-27", startTerm: "Fall 2026", tracks: [], examTerms: {}, expectedGrades: {} };
+    expect(base()).not.toHaveProperty("degreeMode");
+    const plan = planReducer(base(), { ...setup, degreeMode: "double-degree" });
+    expect(plan.degreeMode).toBe("double-degree");
+    expect(planReducer(plan, setup).degreeMode).toBe("double-degree");
+    expect(newPlan({ programs: ["cmsc-major"], catalogYear: "2026-27", startTerm: "Fall 2026", degreeMode: "double-major" }).degreeMode).toBe("double-major");
+  });
+
   it("shifts every course with a new start term, keeping each course's position in the sequence", () => {
     let plan = planReducer(base(), { type: "add-course", term: "Fall 2026", id: "CMSC131" });
     plan = planReducer(plan, { type: "add-course", term: "Spring 2027", id: "CMSC132" });
