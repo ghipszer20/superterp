@@ -88,6 +88,23 @@ export type StudentCourse = {
   genEd?: string[];
 };
 
+/** Every literal course id one requirement mentions -- never a department/number-range filter's
+ * courses, since matching those needs the filter machinery, not a fixed id list. */
+function requirementCourseIds(req: RequirementRule): string[] {
+  if (req.kind === "course") return req.options;
+  if (req.kind === "choose") return [...(req.from.courses ?? []), ...(req.alternatives?.flat() ?? [])];
+  if (req.kind === "distribution") return req.areas.flatMap((a) => a.courses);
+  if (req.kind === "concentration") return [];
+  return req.options.flat().flatMap((m) => (typeof m === "string" ? [m] : (m.from.courses ?? [])));
+}
+
+/** Every literal course id a Program's requirements mention, deduped, in requirement order. Used
+ * to build a per-program course set (@superterp/programs) cheaply, without running the audit --
+ * e.g. to pre-filter which undeclared majors are even worth auditing for a double-major notice. */
+export function programCourseIds(program: Program): string[] {
+  return [...new Set(program.requirements.flatMap(requirementCourseIds))];
+}
+
 // UMD letter grades, lowest to highest.
 const GRADE_ORDER = ["F", "D-", "D", "D+", "C-", "C", "C+", "B-", "B", "B+", "A-", "A", "A+"];
 const gradeRank = (g: string) => GRADE_ORDER.indexOf(g.trim().toUpperCase());

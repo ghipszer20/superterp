@@ -11,7 +11,10 @@ One batch = one college, 10–15 programs. For each program:
    long, `kind`, `college` (from the catalog URL's `colleges-schools/<slug>/`), `catalogYear`, `verified`,
    `major` + `track` only for tracks of one major (default track first), `sources.catalog` and
    `sources.department`, and `load: () => import("@superterp/audit/programs/<file>.ts").then((m) => m.<export>)`.
-   The import path must be a literal (the bundler splits each program into its own chunk).
+   The import path must be a literal (the bundler splits each program into its own chunk). **Majors
+   only**: after adding or changing a major's requirements, run `npm run build:course-sets -w @superterp/programs`
+   to regenerate `packages/programs/src/course-sets.generated.ts` (the double-major notice pre-filter's
+   per-major course list); `packages/programs/test/course-sets.test.ts` fails if you forget.
 3. **Sample plan fixture**: `packages/programs/sample-plans/<id>.json` (see `math-major-applied.json`).
    Majors: the 4-year plan reached from https://4yearplans.umd.edu (college page, then department page),
    term by term, Gen Ed slots left out, credits listed for non-3-credit courses. Placeholder slots
