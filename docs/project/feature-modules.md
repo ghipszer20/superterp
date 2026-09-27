@@ -19,6 +19,7 @@ Moved out of PROJECT_MEMORY.md (section 3) so it loads only when needed. Update 
        - 600–897 (not 799) are allowed, subject to the offering department's rules.
        - Each grad course is tagged by how its credit counts: undergrad credit / graduate-only (max 9 credits, a petition can add up to 3) / double-counted in a combined BS/MS.
        - A combined BS/MS double-counts up to 35% of the master's credits, only 600+ courses with a grade of B- or better.
+       - Grad courses need advisor permission (owner ruling 2026-09-27, rulings.md): they can be planned, with a "needs advisor permission" warning.
        - Grad courses get a badge on the plan grid. Permission-only prerequisites become manual ☐ items.
      - The owner's hand-built test students must include: a major switch in sophomore year, a double major, a double degree, a BS/MS student, and a dropped minor.
    - **Pre-professional tracks (owner requirement):** pre-med (MD/DO), pre-dental, pre-PA, pre-vet, pre-pharmacy, pre-optometry, pre-PT, pre-OT, pre-nursing, pre-law, and others. They're a separate layer type called a "track": prerequisites for applying to a professional school, **not** degree requirements. Tracks can be added to any major, and what-if audits cover them.
