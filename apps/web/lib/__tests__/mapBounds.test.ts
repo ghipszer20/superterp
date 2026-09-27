@@ -1,5 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { CAMPUS_BOUNDS, findRouteExits, isInCampusBounds, nearestOffCampusStop, toMapLibreBounds } from "../mapBounds";
+import {
+  CAMPUS_BOUNDS,
+  expandBounds,
+  findRouteExits,
+  isInCampusBounds,
+  nearestOffCampusStop,
+  stripDirectionSuffix,
+  toMapLibreBounds,
+} from "../mapBounds";
 
 // A simple 0..10 box (not real coordinates) so the geometry is easy to check by hand.
 const box = { west: 0, south: 0, east: 10, north: 10 };
@@ -26,6 +34,17 @@ describe("toMapLibreBounds", () => {
   });
 });
 
+describe("expandBounds", () => {
+  it("grows each side by a fraction of that axis's span", () => {
+    // 10-wide, 10-tall box; 20% growth adds 2 on each side.
+    expect(expandBounds(box, 0.2)).toEqual({ west: -2, south: -2, east: 12, north: 12 });
+  });
+
+  it("does nothing at fraction 0", () => {
+    expect(expandBounds(box, 0)).toEqual(box);
+  });
+});
+
 describe("findRouteExits", () => {
   it("finds nothing for a line that stays inside the bounds", () => {
     expect(findRouteExits([[[1, 1], [5, 5], [9, 9]]], box)).toEqual([]);
@@ -35,12 +54,16 @@ describe("findRouteExits", () => {
     expect(findRouteExits([[[20, 20], [30, 30]]], box)).toEqual([]);
   });
 
-  it("finds the crossing point and heading where a line exits the east edge", () => {
-    expect(findRouteExits([[[5, 5], [15, 5]]], box)).toEqual([{ lon: 10, lat: 5, bearingDeg: 90 }]);
+  it("finds the crossing point, edge and heading where a line exits due east", () => {
+    expect(findRouteExits([[[5, 5], [15, 5]]], box)).toEqual([
+      { lon: 10, lat: 5, bearingDeg: 90, edge: "east", farthest: [15, 5] },
+    ]);
   });
 
-  it("finds the crossing point and heading where a line exits the north edge", () => {
-    expect(findRouteExits([[[5, 5], [5, 15]]], box)).toEqual([{ lon: 5, lat: 10, bearingDeg: 0 }]);
+  it("finds the crossing point, edge and heading where a line exits due north", () => {
+    expect(findRouteExits([[[5, 5], [5, 15]]], box)).toEqual([
+      { lon: 5, lat: 10, bearingDeg: 0, edge: "north", farthest: [5, 15] },
+    ]);
   });
 
   it("finds exits on the south and west edges too, across separate lines of one route", () => {
@@ -52,8 +75,8 @@ describe("findRouteExits", () => {
       box,
     );
     expect(exits).toEqual([
-      { lon: 5, lat: 0, bearingDeg: 180 },
-      { lon: 0, lat: 5, bearingDeg: 270 },
+      { lon: 5, lat: 0, bearingDeg: 180, edge: "south", farthest: [5, -5] },
+      { lon: 0, lat: 5, bearingDeg: 270, edge: "west", farthest: [-5, 5] },
     ]);
   });
 
@@ -69,13 +92,27 @@ describe("findRouteExits", () => {
     // Starts inside, leaves east, comes back to the same point (re-entry ignored), then leaves west.
     const exits = findRouteExits([[[5, 5], [15, 5], [5, 5], [-15, 5]]], box);
     expect(exits).toEqual([
-      { lon: 10, lat: 5, bearingDeg: 90 },
-      { lon: 0, lat: 5, bearingDeg: 270 },
+      { lon: 10, lat: 5, bearingDeg: 90, edge: "east", farthest: [15, 5] },
+      { lon: 0, lat: 5, bearingDeg: 270, edge: "west", farthest: [-15, 5] },
     ]);
   });
 
   it("treats a point exactly on the boundary as inside (exits with zero travel)", () => {
-    expect(findRouteExits([[[10, 5], [15, 5]]], box)).toEqual([{ lon: 10, lat: 5, bearingDeg: 90 }]);
+    expect(findRouteExits([[[10, 5], [15, 5]]], box)).toEqual([
+      { lon: 10, lat: 5, bearingDeg: 90, edge: "east", farthest: [15, 5] },
+    ]);
+  });
+
+  it("reports the farthest point of a multi-point run outside the bounds, not just the first", () => {
+    // Exits east at x=10, then keeps going further out before the shape ends (e.g. a real
+    // terminal loop past the edge) -- the label should point at the far end, not the edge itself.
+    const [exit] = findRouteExits([[[5, 5], [12, 5], [20, 5], [30, 5]]], box);
+    expect(exit!.farthest).toEqual([30, 5]);
+  });
+
+  it("stops the farthest-point walk as soon as the line comes back inside", () => {
+    const [exit] = findRouteExits([[[5, 5], [12, 5], [20, 5], [5, 5]]], box);
+    expect(exit!.farthest).toEqual([20, 5]);
   });
 });
 
@@ -92,5 +129,20 @@ describe("nearestOffCampusStop", () => {
 
   it("returns null when every candidate stop is inside the bounds", () => {
     expect(nearestOffCampusStop([10, 5], [stops[0]!], box)).toBeNull();
+  });
+});
+
+describe("stripDirectionSuffix", () => {
+  it("drops a trailing (Inbound) or (Outbound) GTFS direction tag", () => {
+    expect(stripDirectionSuffix("Denton Hall (Inbound)")).toBe("Denton Hall");
+    expect(stripDirectionSuffix("Denton Hall (Outbound)")).toBe("Denton Hall");
+  });
+
+  it("leaves a name with no direction tag alone", () => {
+    expect(stripDirectionSuffix("Stamp Student Union")).toBe("Stamp Student Union");
+  });
+
+  it("doesn't touch a parenthetical that isn't a direction tag", () => {
+    expect(stripDirectionSuffix("South Campus Commons 5 and 6")).toBe("South Campus Commons 5 and 6");
   });
 });

@@ -12,8 +12,9 @@ export type CampusBounds = { west: number; south: number; east: number; north: n
 // north of campus, the M-Square research park across the Beltway, and other small lots). Just
 // taking the bounding box of the whole relation sweeps in all of that, plus, incidentally, the
 // College Park Metro station a few blocks away. This is instead the bounding box of that
-// relation's single largest ring (377 vertices; the other 31 are all well under half its size)
-// -- the contiguous academic/residential/athletic core that's actually "campus" for a student
+// relation's single largest ring by bbox area (377 vertices; the next-largest, the golf course,
+// covers about 55% as much area, and the rest are far smaller) -- the contiguous academic/
+// residential/athletic core that's actually "campus" for a student
 // walking or riding around it. Computed on 2026-09-26 via:
 //   curl "https://nominatim.openstreetmap.org/search?q=University+of+Maryland+College+Park&format=json&polygon_geojson=1&limit=1"
 // then taking the bbox of geojson.coordinates[0][0] (the largest of the MultiPolygon's rings).
@@ -46,12 +47,35 @@ export function isInCampusBounds([lon, lat]: LonLat, bounds: CampusBounds): bool
   return lon >= bounds.west && lon <= bounds.east && lat >= bounds.south && lat <= bounds.north;
 }
 
+/** Grows a CampusBounds by `fraction` of each axis's own span, on every side. */
+export function expandBounds(bounds: CampusBounds, fraction: number): CampusBounds {
+  const padLon = (bounds.east - bounds.west) * fraction;
+  const padLat = (bounds.north - bounds.south) * fraction;
+  return {
+    west: bounds.west - padLon,
+    south: bounds.south - padLat,
+    east: bounds.east + padLon,
+    north: bounds.north + padLat,
+  };
+}
+
+/** Which side of the box a route's line crossed. */
+export type BoundsEdge = "north" | "south" | "east" | "west";
+
 /** Where a route's line crosses out of the campus bounds, and which way it's heading. */
 export type RouteExit = {
   lon: number;
   lat: number;
   /** Compass bearing of travel at the crossing: 0 = north, 90 = east, 180 = south, 270 = west. */
   bearingDeg: number;
+  edge: BoundsEdge;
+  /**
+   * The farthest point this line reaches outside the bounds after this crossing, before either
+   * the line ends or comes back inside. The crossing point itself is often still right at the
+   * campus edge (e.g. a road that's on campus right up to the property line); this is a better
+   * anchor for "where does this go" -- closer to the route's actual off-campus destination.
+   */
+  farthest: LonLat;
 };
 
 /**
@@ -75,22 +99,32 @@ export function findRouteExits(lines: LonLat[][], bounds: CampusBounds): RouteEx
 
       // Liang-Barsky-style exit clip: since `a` is inside and `b` is outside, the segment
       // leaves through whichever of the (up to two) relevant box edges it reaches first.
-      const candidates: number[] = [];
-      if (dx > 0) candidates.push((bounds.east - a[0]) / dx);
-      else if (dx < 0) candidates.push((bounds.west - a[0]) / dx);
-      if (dy > 0) candidates.push((bounds.north - a[1]) / dy);
-      else if (dy < 0) candidates.push((bounds.south - a[1]) / dy);
+      const candidates: { t: number; edge: BoundsEdge }[] = [];
+      if (dx > 0) candidates.push({ t: (bounds.east - a[0]) / dx, edge: "east" });
+      else if (dx < 0) candidates.push({ t: (bounds.west - a[0]) / dx, edge: "west" });
+      if (dy > 0) candidates.push({ t: (bounds.north - a[1]) / dy, edge: "north" });
+      else if (dy < 0) candidates.push({ t: (bounds.south - a[1]) / dy, edge: "south" });
 
-      const t = Math.min(...candidates.filter((c) => c >= 0 && c <= 1));
-      const lon = a[0] + t * dx;
-      const lat = a[1] + t * dy;
+      const winner = candidates.filter((c) => c.t >= 0 && c.t <= 1).reduce((best, c) => (c.t < best.t ? c : best));
+      const lon = a[0] + winner.t * dx;
+      const lat = a[1] + winner.t * dy;
 
       // Longitude degrees are narrower than latitude degrees away from the equator; scale by
       // cos(latitude) so the bearing points the right way instead of skewing east/west.
       const scaledDx = dx * Math.cos((a[1] * Math.PI) / 180);
       const bearingDeg = (Math.atan2(scaledDx, dy) * 180) / Math.PI;
 
-      exits.push({ lon, lat, bearingDeg: (bearingDeg + 360) % 360 });
+      // Walk forward while the line stays outside the bounds, to find how far out it goes.
+      let farthestIdx = i + 1;
+      while (farthestIdx + 1 < line.length && !isInCampusBounds(line[farthestIdx + 1]!, bounds)) farthestIdx++;
+
+      exits.push({
+        lon,
+        lat,
+        bearingDeg: (bearingDeg + 360) % 360,
+        edge: winner.edge,
+        farthest: line[farthestIdx]!,
+      });
     }
   }
   return exits;
@@ -113,4 +147,9 @@ export function nearestOffCampusStop<T extends { lat: number; lon: number }>(
     }
   }
   return best;
+}
+
+/** Strips a trailing GTFS "(Inbound)"/"(Outbound)" direction tag from a stop name, if present. */
+export function stripDirectionSuffix(name: string): string {
+  return name.replace(/\s*\((?:Inbound|Outbound)\)\s*$/, "");
 }

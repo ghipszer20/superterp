@@ -11,7 +11,17 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { formatMinutes } from "@superterp/campus-data/hours";
 import { LocationIcon } from "@/components/icons";
 import { Card, EmptyState } from "@/components/ui";
-import { CAMPUS_BOUNDS, CAMPUS_MIN_ZOOM, findRouteExits, nearestOffCampusStop, toMapLibreBounds } from "@/lib/mapBounds";
+import {
+  CAMPUS_BOUNDS,
+  CAMPUS_MIN_ZOOM,
+  expandBounds,
+  findRouteExits,
+  isInCampusBounds,
+  nearestOffCampusStop,
+  stripDirectionSuffix,
+  toMapLibreBounds,
+  type BoundsEdge,
+} from "@/lib/mapBounds";
 import type { MapRoute, MapStop } from "./TransportMap";
 import busStyles from "./buses.module.css";
 import styles from "./map.module.css";
@@ -31,6 +41,18 @@ const DARK_STYLE = "https://tiles.openfreemap.org/styles/dark";
 
 const DEFAULT_STOP_COLOR = "#6e6e73";
 const HERE_COLOR = "#0a84ff";
+
+// How far past what's actually shown on load a student can still pan/zoom out (see the maxBounds
+// comment below for why this is computed from the fitted view rather than being CAMPUS_BOUNDS
+// itself).
+const MAX_BOUNDS_SLACK = 0.15;
+
+// Anchor an exit marker so its arrow+label sit *inward* from the edge it's on, instead of
+// straddling the boundary (and, on the east/west edges, running back off the visible map).
+const EDGE_ANCHOR = { north: "top", south: "bottom", east: "right", west: "left" } as const satisfies Record<
+  BoundsEdge,
+  string
+>;
 
 type Departure = {
   tripId: string;
@@ -93,10 +115,14 @@ function updateExitMarkers(
 
   const routeStops = stops.filter((s) => route.stopIds.includes(s.id));
   for (const exit of findRouteExits(route.lines, CAMPUS_BOUNDS)) {
-    const destination = nearestOffCampusStop([exit.lon, exit.lat], routeStops, CAMPUS_BOUNDS)?.name ?? route.longName;
+    // The farthest point of the excursion, not the crossing itself, is the better stand-in for
+    // "where this goes" -- the crossing is often still right at the campus edge.
+    const nearest = nearestOffCampusStop(exit.farthest, routeStops, CAMPUS_BOUNDS);
+    const destination = nearest ? stripDirectionSuffix(nearest.name) : route.longName;
 
     const el = document.createElement("div");
     el.className = styles.exitMarker;
+    el.dataset.edge = exit.edge;
     const arrow = document.createElement("span");
     arrow.className = styles.exitArrow;
     arrow.style.background = route.color;
@@ -108,7 +134,9 @@ function updateExitMarkers(
     label.textContent = `To ${destination}`;
     el.append(arrow, label);
 
-    markersRef.current.push(new Marker({ element: el, anchor: "center" }).setLngLat([exit.lon, exit.lat]).addTo(map));
+    markersRef.current.push(
+      new Marker({ element: el, anchor: EDGE_ANCHOR[exit.edge] }).setLngLat([exit.lon, exit.lat]).addTo(map),
+    );
   }
 }
 
@@ -160,17 +188,18 @@ export function MapView({
       map = new MapLibreMap({
         container: containerRef.current,
         style: currentTheme() === "dark" ? DARK_STYLE : LIGHT_STYLE,
-        // Campus only (owner ruling): fit the initial view to campus, then don't let the
-        // student pan or zoom out past it -- a route that leaves those bounds gets an edge
-        // marker instead (below) rather than the map just scrolling out to show it.
+        // Campus only (owner ruling): fit the initial view to campus -- maxBounds is set below,
+        // once this fit has actually happened, not here (see the comment on that call for why).
         bounds: toMapLibreBounds(CAMPUS_BOUNDS),
         fitBoundsOptions: { padding: 20 },
-        maxBounds: toMapLibreBounds(CAMPUS_BOUNDS),
         minZoom: CAMPUS_MIN_ZOOM,
         // No tilt or rotation (owner ruling): a flat map isn't a shortcoming to fix.
         maxPitch: 0,
         dragRotate: false,
         touchPitch: false,
+        // The attribution stays visible, not collapsed to a click-to-reveal icon (see the CSS
+        // for how it's kept compact instead).
+        attributionControl: { compact: false },
       });
     } catch {
       // Deferred: react-hooks/set-state-in-effect flags a setState call made
@@ -184,19 +213,27 @@ export function MapView({
     // touchPitch/dragRotate above cover mouse-drag and two-finger-drag pitch; the remaining
     // rotate gesture is pinch-rotate, part of the combined touchZoomRotate handler, which has
     // to stay enabled for pinch-*zoom*. Its own disableRotation() turns off just the rotate half.
+    // keyboard.disableRotation() covers the last one: Shift+Left/Right normally rotates too.
     map.touchZoomRotate.disableRotation();
+    map.keyboard.disableRotation();
     // MapLibre logs uncaught errors to console.error unless something listens.
     map.on("error", (e) => console.warn("[transport map]", e.error?.message ?? e));
     map.addControl(new NavigationControl({ showCompass: false }), "top-right");
 
     map.on("load", () => {
-      // MapLibre's own attribution control already collapses to a small circular "i" button
-      // once the map container is narrow, as ours is on a phone -- but only *after* the
-      // student's first drag; before that it shows the full attribution pill, which is wide
-      // enough to cover a real chunk of a 380px-tall card (the owner flagged this). Starting
-      // it in that same already-collapsed state keeps the attribution one tap away (never
-      // removed) without it ever eclipsing the map.
-      map.getContainer().querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
+      // maxBounds wasn't set in the constructor above because MapLibre enforces it as a "cover"
+      // constraint: it won't let the camera zoom out past the level where the bounds fill the
+      // *whole* viewport, which is a tighter zoom than "the whole box is visible" (a "contain"
+      // fit) whenever the box's aspect ratio doesn't match the map card's -- exactly the case
+      // here (the campus box is taller than it is wide; the card is wider than it is tall).
+      // Passing the same bounds to both `bounds` and `maxBounds` at once made maxBounds win,
+      // so the initial view came out zoomed in and cropped rather than fitting all of campus.
+      // Setting maxBounds *after* the initial fit instead, from the bounds that fit actually
+      // produced, means the pan/zoom-out limit always matches what's really on screen for this
+      // card's shape -- with a bit of slack so scrolling out a little is still possible.
+      const fitted = map.getBounds();
+      const fittedCampusBounds = { west: fitted.getWest(), south: fitted.getSouth(), east: fitted.getEast(), north: fitted.getNorth() };
+      map.setMaxBounds(toMapLibreBounds(expandBounds(fittedCampusBounds, MAX_BOUNDS_SLACK)));
 
       map.addSource("routes", {
         type: "geojson",
@@ -230,11 +267,15 @@ export function MapView({
         type: "geojson",
         data: {
           type: "FeatureCollection",
-          features: stops.map((s) => ({
-            type: "Feature" as const,
-            geometry: { type: "Point" as const, coordinates: [s.lon, s.lat] },
-            properties: { id: s.id, name: s.name, routeIds: stopRoutes[s.id] ?? [] },
-          })),
+          // Off-campus stops aren't drawn as dots (the exit marker stands in for them); the
+          // stop list/departures below the map is unaffected -- it's built from the full list.
+          features: stops
+            .filter((s) => isInCampusBounds([s.lon, s.lat], CAMPUS_BOUNDS))
+            .map((s) => ({
+              type: "Feature" as const,
+              geometry: { type: "Point" as const, coordinates: [s.lon, s.lat] },
+              properties: { id: s.id, name: s.name, routeIds: stopRoutes[s.id] ?? [] },
+            })),
         },
       });
       map.addLayer({
