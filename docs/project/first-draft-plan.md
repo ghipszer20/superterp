@@ -16,7 +16,7 @@ Already built (docs/project/built.md): the Campus tab (dining, libraries, study 
 ## Wave 0: finish what's in flight (now)
 1. **Transcript import** (`feat/transcript-import`, running before plan mode paused it). Its builder wrote a plan (`~/.claude/plans/lexical-coalescing-fairy-agent-a9d85cc0c5778b5f0.md`): pure parser modules, self-hosted tesseract.js (~4 MB, lazy-loaded from `/vendor/tesseract/`, the same way `copy-maplibre-worker.mjs` self-hosts the map worker), and an "Import transcript" button in the plan view. Resume it once this plan is approved.
 2. **Trip dropdown fix** (`feat/trip-planner-2`). Plan: a `clipNone` prop on `Card` (`components/ui.tsx`, `ui.module.css`), used only by `TripPlanner.tsx`. Resume it.
-3. **Older AP chart** (`feat/credit-older-charts`): add the pre-May-2023 chart from `transcripts/umd_ap_2023andbefore_searchable.pdf` next to `packages/credit/src/ap-2023-2026.ts`, chosen by exam year. Older IB charts too if UMD publishes them.
+3. **Older AP chart:** resolved 2026-09-27; the pre-May-2023 policy is identical to the current chart, so no work is needed (rulings.md).
 
 ## Wave 1: program infrastructure (before the program batches)
 4. **Program registry** ⚙: replace the hard-coded list in `programs.ts` with a registry that loads every encoded program (major / minor / certificate, catalog year, status). The Advisor picker and what-if list come from it, and programs load lazily so the bundle stays small. Include a batch validation harness: each program's official 4-year plan (4yearplans.umd.edu) must pass the audit, and deliberately broken plans must fail (requirements pipeline steps 4–5).
