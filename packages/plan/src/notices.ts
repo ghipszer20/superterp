@@ -3,7 +3,7 @@
 // Runs the degree audit (@superterp/audit, an integer program), so it's async and slower than
 // checkPlan; run it after edits settle, not on every keystroke.
 
-import { auditPrograms, matchesFilter, type AuditResult, type Program, type StudentCourse } from "@superterp/audit";
+import { auditPrograms, earnsCredit, matchesFilter, type AuditResult, type Program, type StudentCourse } from "@superterp/audit";
 import { allowsRetake } from "./check.ts";
 import type { PlanCatalog } from "./catalog.ts";
 import type { Plan } from "./check.ts";
@@ -120,7 +120,9 @@ function declareBy(plan: Plan): string {
  */
 export function shortfall(program: Program, result: AuditResult, courses: StudentCourse[]): { count: number; missing: string[] } {
   const credits = new Map(courses.map((c) => [c.id, c.credits]));
-  const have = new Set(courses.map((c) => c.id));
+  // A failed/withdrawn attempt earns no credit, so it doesn't count as "have" a fixed course or as
+  // one of the courses filling an "any N from a filter" member.
+  const have = new Set(courses.filter(earnsCredit).map((c) => c.id));
   let own = 0;
   let overlay = 0;
   const missing: string[] = [];
@@ -145,7 +147,7 @@ export function shortfall(program: Program, result: AuditResult, courses: Studen
         gap.size = gap.names.length;
         for (const m of set) {
           if (typeof m === "string") continue;
-          const matching = courses.filter((c) => !fixed.has(c.id) && matchesFilter(m.from, c)).length;
+          const matching = courses.filter((c) => !fixed.has(c.id) && earnsCredit(c) && matchesFilter(m.from, c)).length;
           const short = Math.max(0, m.count - matching);
           if (short > 0) {
             gap.names.push(`${short} more for ${req.name}`);
@@ -231,8 +233,9 @@ export async function programNotices(
     }
   });
 
-  // Dual degree: any two completed majors, as two degrees.
-  const totalCredits = courses.reduce((t, c) => t + c.credits, 0);
+  // Dual degree: any two completed majors, as two degrees. A failed/withdrawn attempt earns no
+  // credit, so it never counts toward the 150-credit total.
+  const totalCredits = courses.filter(earnsCredit).reduce((t, c) => t + c.credits, 0);
   const creditsShort = Math.max(0, DUAL_DEGREE_CREDITS - totalCredits);
   for (let i = 0; i < candidates.length; i++) {
     for (let j = i + 1; j < candidates.length; j++) {
