@@ -2,15 +2,21 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { connection } from "next/server";
 import { campusDate, campusMinutes } from "@superterp/campus-data";
-import { Notice, Page, SkeletonCard, SourceError } from "@/components/ui";
-import { getBusStops, getRoutesOn, safe } from "@/lib/campus";
+import { Notice, Page, Section, SkeletonCard, SourceError } from "@/components/ui";
+import { getBusStops, getCampusMap, getRoutesOn, safe } from "@/lib/campus";
 import { BusBoard } from "./BusBoard";
+import { TransportMap } from "./TransportMap";
 
 export const metadata: Metadata = { title: "Transport" };
 
 export default function TransportPage() {
   return (
     <Page title="Transport" subtitle="Shuttle-UM">
+      <Section title="Map">
+        <Suspense fallback={<SkeletonCard rows={1} />}>
+          <MapSection />
+        </Suspense>
+      </Section>
       <Suspense fallback={<SkeletonCard rows={6} />}>
         <Board />
       </Suspense>
@@ -23,6 +29,14 @@ export default function TransportPage() {
       </Notice>
     </Page>
   );
+}
+
+async function MapSection() {
+  await connection();
+  const today = campusDate();
+  const map = await safe(() => getCampusMap(today));
+  if (!map.ok) return <SourceError source="Shuttle-UM" />;
+  return <TransportMap routes={map.data.routes} stops={map.data.stops} stopRoutes={map.data.stopRoutes} />;
 }
 
 async function Board() {

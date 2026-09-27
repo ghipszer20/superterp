@@ -5,8 +5,8 @@
 // never be imported from a Server Component.
 
 import { useEffect, useRef, useState } from "react";
-import maplibregl, { NavigationControl } from "maplibre-gl";
-import type { Map as MapLibreMap, MapGeoJSONFeature, MapMouseEvent, Marker } from "maplibre-gl";
+import { Map as MapLibreMap, Marker, NavigationControl } from "maplibre-gl";
+import type { MapGeoJSONFeature, MapMouseEvent } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { formatMinutes } from "@superterp/campus-data/hours";
 import { LocationIcon } from "@/components/icons";
@@ -88,7 +88,7 @@ export function MapView({
     if (unsupported || !containerRef.current) return;
     let map: MapLibreMap;
     try {
-      map = new maplibregl.Map({
+      map = new MapLibreMap({
         container: containerRef.current,
         style: currentTheme() === "dark" ? DARK_STYLE : LIGHT_STYLE,
         center: CAMPUS_CENTER,
@@ -177,9 +177,13 @@ export function MapView({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !map.getLayer("routes-line")) return;
-    const filter = selectedRoute ? (["==", ["get", "routeId"], selectedRoute] as const) : (["==", ["get", "routeId"], ""] as const);
-    map.setFilter("routes-casing", filter);
-    map.setFilter("routes-line", filter);
+    if (selectedRoute) {
+      map.setFilter("routes-casing", ["==", ["get", "routeId"], selectedRoute]);
+      map.setFilter("routes-line", ["==", ["get", "routeId"], selectedRoute]);
+    } else {
+      map.setFilter("routes-casing", ["==", ["get", "routeId"], ""]);
+      map.setFilter("routes-line", ["==", ["get", "routeId"], ""]);
+    }
     const route = routes.find((r) => r.id === selectedRoute);
     map.setPaintProperty(
       "routes-line",
@@ -246,7 +250,7 @@ export function MapView({
     const map = mapRef.current;
     if (!map || !here) return;
     if (!hereMarkerRef.current) {
-      hereMarkerRef.current = new maplibregl.Marker({ color: HERE_COLOR }).setLngLat([here.lon, here.lat]).addTo(map);
+      hereMarkerRef.current = new Marker({ color: HERE_COLOR }).setLngLat([here.lon, here.lat]).addTo(map);
     } else {
       hereMarkerRef.current.setLngLat([here.lon, here.lat]);
     }
