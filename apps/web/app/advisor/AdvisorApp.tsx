@@ -15,6 +15,7 @@ import { AuditView } from "./AuditView";
 import { CourseSheet } from "./CourseSheet";
 import { useCatalog, type CatalogState } from "./data";
 import { DisclaimerGate } from "./DisclaimerGate";
+import { ImportTranscriptView } from "./ImportTranscriptView";
 import { PlanView } from "./PlanView";
 import { PriorCreditView } from "./PriorCreditView";
 import { SetupView } from "./SetupView";
@@ -58,6 +59,7 @@ function Shell() {
 function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; catalog: CatalogState; signedBy: string; signedAt: string }) {
   const view = useView();
   const [editing, setEditing] = useState(() => initialSetup());
+  const [importing, setImporting] = useState(() => initialImport());
   const [open, setOpen] = useState<OpenCourse | null>(() => initialCourse());
   const ready = catalog.status === "ready" ? catalog : null;
 
@@ -74,6 +76,7 @@ function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; cat
   const analysis = useAnalysis(plan, ready, prior.courses);
 
   if (editing) return <SetupView plan={plan} onDone={(next) => (savePlan(next), setEditing(false))} onCancel={() => setEditing(false)} />;
+  if (importing) return <ImportTranscriptView plan={plan} onDone={(next) => (savePlan(next), setImporting(false))} onCancel={() => setImporting(false)} />;
 
   const date = new Date(signedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
   return (
@@ -85,6 +88,9 @@ function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; cat
           </p>
           <h1 className={styles.title}>Advisor</h1>
         </div>
+        <button type="button" className={styles.ghostButton} onClick={() => setImporting(true)}>
+          Import transcript
+        </button>
         <button type="button" className={styles.ghostButton} onClick={() => setEditing(true)}>
           Edit setup
         </button>
@@ -146,6 +152,12 @@ function initialCourse(): OpenCourse | null {
 function initialSetup(): boolean {
   if (typeof window === "undefined") return false;
   return new URLSearchParams(location.search).get("setup") === "1";
+}
+
+/** ?import=1 opens Import transcript directly (a deep link; also used by screenshots). */
+function initialImport(): boolean {
+  if (typeof window === "undefined") return false;
+  return new URLSearchParams(location.search).get("import") === "1";
 }
 
 export type AnalysisState = { status: "idle" | "running" | "ready" | "error"; result: Analysis | null };
