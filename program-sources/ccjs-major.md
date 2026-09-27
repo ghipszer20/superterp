@@ -1,4 +1,4 @@
-Source: Department of Criminology and Criminal Justice, "CCJS Major Requirements" page (URL not given)
+Source: https://ccjs.umd.edu/undergraduate/ccjs-major-requirements (Department of Criminology and Criminal Justice, "CCJS Major Requirements")
 Pasted by the owner: 2026-09-26
 
 The major requirements for the degree are listed below. The CCJS major is comprised of 36 credit hours of coursework in the CCJS department and either MATH 107 or STAT 100. A calculus class (MATH 120, 136, or 140) with a grade of C- or higher may be substituted for MATH 107 or STAT 100. The requirements below are in effect for all students who matriculated into the UM system Fall 2015 or later and for students who are currently changing their major to CCJS.
