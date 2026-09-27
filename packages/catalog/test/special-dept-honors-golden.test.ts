@@ -37,7 +37,7 @@ describe("Departmental Honors: History (2026-27)", () => {
 describe("Departmental Honors: Mathematics (2026-27)", () => {
   const plan = [c("MATH403"), c("MATH432"), c("MATH498", 3), c("MATH498", 3)];
 
-  it("passes a complete plan", async () => expectAllSatisfied(deptMath, plan));
+  it("passes a complete plan (thesis option)", async () => expectAllSatisfied(deptMath, plan));
 
   it("needs two breadth courses, not one", async () => {
     expect((await statuses(deptMath, replace(plan, "MATH432", null))).breadth).toBe("partial");
@@ -47,8 +47,33 @@ describe("Departmental Honors: Mathematics (2026-27)", () => {
     expect((await statuses(deptMath, replace(plan, "MATH432", c("MATH410")))).breadth).toBe("partial");
   });
 
-  it("needs 6 credits of MATH498, not 3", async () => {
+  it("needs 6 credits (two courses) of MATH498 for the thesis option, not one", async () => {
     const short = [c("MATH403"), c("MATH432"), c("MATH498", 3)];
-    expect((await statuses(deptMath, short))["depth-thesis"]).toBe("partial");
+    expect((await statuses(deptMath, short)).depth).toBe("partial");
+  });
+
+  it("counts a 600-level MATH/AMSC/STAT course as a breadth substitute", async () => {
+    const plan2 = [c("MATH630"), c("AMSC660"), c("MATH498", 3), c("MATH498", 3)];
+    expect((await statuses(deptMath, plan2)).breadth).toBe("satisfied");
+  });
+
+  it("doesn't accept a 600-level course outside MATH/AMSC/STAT as a breadth substitute", async () => {
+    const plan2 = [c("CMSC650"), c("MATH432"), c("MATH498", 3), c("MATH498", 3)];
+    expect((await statuses(deptMath, plan2)).breadth).toBe("partial");
+  });
+
+  it("accepts the non-thesis option: breadth, one 600-level course, and one MATH498 reading course", async () => {
+    const nonThesis = [c("MATH403"), c("MATH432"), c("STAT620"), c("MATH498", 3)];
+    expect((await statuses(deptMath, nonThesis)).depth).toBe("satisfied");
+  });
+
+  it("accepts the non-thesis option's other alternative: a 600-level course plus a listed course", async () => {
+    const nonThesis = [c("MATH403"), c("MATH432"), c("AMSC698"), c("MATH446")];
+    expect((await statuses(deptMath, nonThesis)).depth).toBe("satisfied");
+  });
+
+  it("doesn't accept two ordinary breadth-list courses as the non-thesis depth (needs a 600-level course)", async () => {
+    const notDepth = [c("MATH403"), c("MATH432"), c("MATH446"), c("MATH407")];
+    expect((await statuses(deptMath, notDepth)).depth).not.toBe("satisfied");
   });
 });

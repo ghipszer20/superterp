@@ -1,6 +1,6 @@
 # Living-learning and special programs report
 
-Generated 2026-09-26 by `packages/catalog/scripts/special-report.ts` from `special-programs/registry.ts`.
+Generated 2026-09-27 by `packages/catalog/scripts/special-report.ts` from `special-programs/registry.ts`.
 Sources and page formats are in `SOURCES.md`. Every drafted program is `verified: false` until the owner signs it off.
 
 How programs were drafted: **table** = a catalog requirement table through `parseProgramPage` + `draftPrograms`
@@ -18,7 +18,7 @@ interpretation quoted in `reviewNotes`; **none** = no academic requirements are 
 | Departmental Honors | 39 | 25 | 14 |
 | **Total** | **74** | **53** | **21** |
 
-Drafted: **206** requirements and **324** review notes (188 manual, 136 check).
+Drafted: **206** requirements and **324** review notes (187 manual, 137 check).
 Manual notes are rules the audit can't check (GPA, residence, attendance, approvals); check notes are interpretations to confirm.
 
 ## Programs
@@ -81,7 +81,7 @@ Manual notes are rules the audit can't check (GPA, residence, attendance, approv
 | Departmental Honors: Government & Politics | Departmental Honors | hand | 2 | 4 | 3 | 1 |
 | Departmental Honors: History | Departmental Honors | hand | 4 | 4 | 3 | 1 |
 | Departmental Honors: Kinesiology | Departmental Honors | hand | 3 | 6 | 3 | 3 |
-| Departmental Honors: Mathematics | Departmental Honors | hand | 2 | 7 | 4 | 3 |
+| Departmental Honors: Mathematics | Departmental Honors | hand | 2 | 7 | 3 | 4 |
 | Departmental Honors: Physics | Departmental Honors | hand | 1 | 4 | 3 | 1 |
 | Departmental Honors: Psychology | Departmental Honors | hand | 4 | 8 | 4 | 4 |
 | Departmental Honors: Spanish & Portuguese | Departmental Honors | hand | 1 | 4 | 3 | 1 |
