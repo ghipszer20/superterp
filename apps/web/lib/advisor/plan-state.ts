@@ -3,6 +3,7 @@
 // prior-credit form inputs (derived credit is recomputed, never stored).
 
 import type { College } from "@superterp/plan/credit-caps";
+import type { GradCreditTag } from "@superterp/plan/grad-courses";
 import { defaultTerms, parseTerm, sortTerms } from "./terms";
 
 export type PlannedCourse = {
@@ -11,6 +12,9 @@ export type PlannedCourse = {
   credits?: number;
   status?: "planned" | "completed";
   grade?: string;
+  /** How a graduate course's credits count (@superterp/plan/grad-courses); omitted (the default)
+   * is "undergrad credit". Ignored by the checker for a non-graduate course. */
+  gradTag?: GradCreditTag;
 };
 
 export type PlanTermState = { name: string; courses: PlannedCourse[] };
@@ -72,6 +76,12 @@ export type AdvisorPlan = {
    * transcript grade for a completed course. Omitted when empty.
    */
   expectedGrades?: Record<string, Record<string, string>>;
+  /**
+   * The combined BS/MS program's total master's credits, for the double-count cap
+   * (@superterp/plan/grad-courses: 35% of this number). Optional; omitted shows an info note
+   * instead of checking the cap.
+   */
+  mastersCredits?: number;
 };
 
 export type PlanAction =
@@ -95,6 +105,10 @@ export type PlanAction =
   | { type: "remove-term"; name: string }
   /** Marks a course completed (with a grade) or back to planned, from the course sheet. */
   | { type: "set-course"; term: string; id: string; status?: "planned" | "completed"; grade?: string }
+  /** Sets a graduate course's credit tag from the course sheet; undefined resets it to "undergrad credit". */
+  | { type: "set-grad-tag"; term: string; id: string; gradTag?: GradCreditTag }
+  /** Sets or clears the combined BS/MS program's total master's credits. */
+  | { type: "set-masters-credits"; mastersCredits: number | undefined }
   /** Course-level sync from the schedule builder, only ever dispatched from an explicit, student-confirmed "Update plan" click. */
   | { type: "set-term-courses"; term: string; ids: string[] }
   | { type: "set-prior"; prior: PriorInputs }
@@ -222,6 +236,20 @@ export function planReducer(plan: AdvisorPlan, action: PlanAction): AdvisorPlan 
         }),
       }));
     }
+    case "set-grad-tag": {
+      const term = plan.terms.find((t) => t.name === action.term);
+      if (!term || !term.courses.some((c) => c.id === action.id)) return plan;
+      return mapTerm(plan, action.term, (t) => ({
+        ...t,
+        courses: t.courses.map((c): PlannedCourse => {
+          if (c.id !== action.id) return c;
+          const next = { ...c };
+          if (action.gradTag === undefined) delete next.gradTag;
+          else next.gradTag = action.gradTag;
+          return next;
+        }),
+      }));
+    }
     case "move-course": {
       const from = plan.terms.find((t) => t.name === action.from);
       const to = plan.terms.find((t) => t.name === action.to);
@@ -285,5 +313,11 @@ export function planReducer(plan: AdvisorPlan, action: PlanAction): AdvisorPlan 
     }
     case "set-programs":
       return { ...plan, programs: action.programs };
+    case "set-masters-credits": {
+      const next = { ...plan };
+      if (action.mastersCredits === undefined) delete next.mastersCredits;
+      else next.mastersCredits = action.mastersCredits;
+      return next;
+    }
   }
 }

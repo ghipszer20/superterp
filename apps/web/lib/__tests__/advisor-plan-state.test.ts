@@ -127,6 +127,20 @@ describe("planReducer: courses", () => {
     expect(planReducer(plan, { type: "set-course", term: "Fall 2026", id: "MATH140", status: "completed" })).toBe(plan);
     expect(planReducer(plan, { type: "set-course", term: "Fall 2040", id: "CMSC131", status: "completed" })).toBe(plan);
   });
+
+  it("sets and clears a graduate course's credit tag", () => {
+    let plan = planReducer(base(), { type: "add-course", term: "Fall 2026", id: "CMSC616" });
+    plan = planReducer(plan, { type: "set-grad-tag", term: "Fall 2026", id: "CMSC616", gradTag: "graduate-only" });
+    expect(plan.terms[0]!.courses).toEqual([{ id: "CMSC616", gradTag: "graduate-only" }]);
+    plan = planReducer(plan, { type: "set-grad-tag", term: "Fall 2026", id: "CMSC616", gradTag: undefined });
+    expect(plan.terms[0]!.courses).toEqual([{ id: "CMSC616" }]);
+  });
+
+  it("ignores set-grad-tag for a course or term that isn't in the plan", () => {
+    const plan = planReducer(base(), { type: "add-course", term: "Fall 2026", id: "CMSC616" });
+    expect(planReducer(plan, { type: "set-grad-tag", term: "Fall 2026", id: "MATH140", gradTag: "bs-ms" })).toBe(plan);
+    expect(planReducer(plan, { type: "set-grad-tag", term: "Fall 2040", id: "CMSC616", gradTag: "bs-ms" })).toBe(plan);
+  });
 });
 
 describe("planReducer: terms", () => {
@@ -405,6 +419,13 @@ describe("planReducer: prior credit and GPA", () => {
     expect(plan.gpa).toBe(3.4);
     plan = planReducer(plan, { type: "set-gpa", gpa: undefined });
     expect(plan).not.toHaveProperty("gpa");
+  });
+
+  it("stores master's credits (for the BS/MS double-count cap) and clears it", () => {
+    let plan = planReducer(base(), { type: "set-masters-credits", mastersCredits: 30 });
+    expect(plan.mastersCredits).toBe(30);
+    plan = planReducer(plan, { type: "set-masters-credits", mastersCredits: undefined });
+    expect(plan).not.toHaveProperty("mastersCredits");
   });
 });
 

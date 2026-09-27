@@ -4,6 +4,7 @@
 // TRACKS comes from "@superterp/tracks/list", which has no runtime @superterp/audit import (no
 // HiGHS), so validating a saved track id here doesn't pull the solver into the main bundle.
 import { COLLEGES, type College } from "@superterp/plan/credit-caps";
+import { GRAD_CREDIT_TAGS, type GradCreditTag } from "@superterp/plan/grad-courses";
 import { TRACKS } from "@superterp/tracks/list";
 import { DEGREE_CHOICES, type AdvisorPlan, type ApInput, type DegreeChoice, type DualInput, type IbInput, type PlannedCourse, type PlanTermState, type PriorInputs } from "./plan-state";
 import { parseTerm } from "./terms";
@@ -19,12 +20,15 @@ const num = (x: unknown): x is number => typeof x === "number" && Number.isFinit
 const list = (x: unknown): unknown[] => (Array.isArray(x) ? x : []);
 const COURSE = /^[A-Z]{4}\d{3}[A-Z]?$/;
 
+const KNOWN_GRAD_TAGS = new Set<string>(GRAD_CREDIT_TAGS);
+
 function course(x: unknown): PlannedCourse | null {
   if (!isObj(x) || !str(x.id) || !COURSE.test(x.id)) return null;
   const out: PlannedCourse = { id: x.id };
   if (num(x.credits)) out.credits = x.credits;
   if (x.status === "planned" || x.status === "completed") out.status = x.status;
   if (str(x.grade)) out.grade = x.grade;
+  if (str(x.gradTag) && KNOWN_GRAD_TAGS.has(x.gradTag)) out.gradTag = x.gradTag as GradCreditTag;
   return out;
 }
 
@@ -101,6 +105,7 @@ export function parsePlan(raw: string | null): AdvisorPlan | null {
     prior: prior(data.prior),
   };
   if (num(data.gpa)) plan.gpa = data.gpa;
+  if (num(data.mastersCredits) && data.mastersCredits > 0) plan.mastersCredits = data.mastersCredits;
   const c = college(data.college);
   if (c) plan.college = c;
   if (DEGREE_CHOICES.includes(data.degreeMode as DegreeChoice)) plan.degreeMode = data.degreeMode as DegreeChoice;
