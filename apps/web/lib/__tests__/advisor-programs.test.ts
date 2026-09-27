@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { auditedPrograms, noticeCandidates, PROGRAM_OPTIONS, programsLabel, toggleProgram } from "../advisor/programs";
+import { auditedPrograms, collegeOf, noticeCandidates, PROGRAM_OPTIONS, programsLabel, toggleProgram } from "../advisor/programs";
 
 const ids = (list: { id: string }[]) => list.map((p) => p.id);
 
@@ -7,6 +7,24 @@ describe("program options", () => {
   it("offers the encoded majors, all unverified for now", () => {
     expect(ids(PROGRAM_OPTIONS)).toEqual(["cmsc-major", "math-major-traditional", "math-major-applied"]);
     expect(PROGRAM_OPTIONS.every((o) => o.program.verified !== true)).toBe(true);
+  });
+
+  it("names each program's college, from its catalog page", () => {
+    expect(PROGRAM_OPTIONS.every((o) => o.college === "CMNS")).toBe(true);
+  });
+});
+
+describe("collegeOf", () => {
+  it("uses the first declared major's college", () => {
+    expect(collegeOf(["cmsc-major", "math-major-applied"])).toBe("CMNS");
+  });
+
+  it("is undefined with no majors chosen", () => {
+    expect(collegeOf([])).toBeUndefined();
+  });
+
+  it("ignores an unknown program id", () => {
+    expect(collegeOf(["nope"])).toBeUndefined();
   });
 });
 

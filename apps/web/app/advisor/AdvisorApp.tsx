@@ -9,7 +9,7 @@ import { hasConsent } from "@/lib/advisor/consent";
 import { groupIssues } from "@/lib/advisor/issues";
 import type { AdvisorPlan } from "@/lib/advisor/plan-state";
 import { computePriorCredit } from "@/lib/advisor/prior-credit";
-import { programsLabel } from "@/lib/advisor/programs";
+import { collegeOf, programsLabel } from "@/lib/advisor/programs";
 import { termFromMatriculationId } from "@/lib/advisor/terms";
 import { AuditView } from "./AuditView";
 import { CourseSheet } from "./CourseSheet";
@@ -67,7 +67,7 @@ function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; cat
   );
   const checked = useMemo(() => {
     if (!ready) return null;
-    const issues = checkPlan(checkerPlan(plan, prior.courses), ready.catalog);
+    const issues = checkPlan(checkerPlan(plan, prior.courses), ready.catalog, { college: plan.college ?? collegeOf(plan.programs) });
     return { issues, groups: groupIssues(issues, plan.terms.map((x) => x.name)) };
   }, [plan, prior.courses, ready]);
 

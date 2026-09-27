@@ -2,6 +2,7 @@
 // course-level entries (never sections, so the schedule builder can sync by course only), and the
 // prior-credit form inputs (derived credit is recomputed, never stored).
 
+import type { College } from "@superterp/plan/credit-caps";
 import { defaultTerms, parseTerm, sortTerms } from "./terms";
 
 export type PlannedCourse = {
@@ -43,6 +44,13 @@ export type AdvisorPlan = {
   startTerm: string;
   terms: PlanTermState[];
   prior: PriorInputs;
+  /**
+   * The student's college, for the credit-cap check (packages/plan/src/credit-caps.ts). Chosen in
+   * setup ("College" picker in SetupView), defaulting there to the first declared major's
+   * college; omitted until setup sets it, so an older stored plan falls back to that same derived
+   * default rather than needing a `v` bump.
+   */
+  college?: College;
   /** Cumulative UMD GPA, for the CS gateway check. */
   gpa?: number;
   /** Chosen pre-professional track ids (@superterp/tracks), never degree requirements. Omitted when empty. */
@@ -70,6 +78,8 @@ export type PlanAction =
       tracks: string[];
       examTerms: Record<string, string>;
       expectedGrades: Record<string, Record<string, string>>;
+      /** Omitted: leaves the plan's existing college untouched (older callers/tests don't set one). */
+      college?: College;
     }
   | { type: "add-course"; term: string; id: string; credits?: number }
   | { type: "remove-course"; term: string; id: string }
@@ -94,6 +104,7 @@ export function newPlan(setup: {
   startTerm: string;
   tracks?: string[];
   examTerms?: Record<string, string>;
+  college?: College;
 }): AdvisorPlan {
   return {
     v: 1,
@@ -104,6 +115,7 @@ export function newPlan(setup: {
     prior: emptyPrior(),
     ...(setup.tracks?.length ? { tracks: setup.tracks } : {}),
     ...(setup.examTerms && Object.keys(setup.examTerms).length ? { examTerms: setup.examTerms } : {}),
+    ...(setup.college ? { college: setup.college } : {}),
   };
 }
 
@@ -163,6 +175,7 @@ export function planReducer(plan: AdvisorPlan, action: PlanAction): AdvisorPlan 
   switch (action.type) {
     case "setup": {
       const next: AdvisorPlan = { ...plan, programs: action.programs, catalogYear: action.catalogYear };
+      if (action.college !== undefined) next.college = action.college;
       if (action.tracks.length) next.tracks = action.tracks;
       else delete next.tracks;
       if (Object.keys(action.examTerms).length) next.examTerms = action.examTerms;
