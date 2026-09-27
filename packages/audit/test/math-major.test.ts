@@ -72,4 +72,30 @@ describe("Math major, Traditional Track, 2026–27", () => {
     const plan = [...without("CMSC131"), c("CMSC141", 4)];
     expect((await statusOf(plan)).supporting).toBe("satisfied");
   });
+
+  it("accepts MATH461 in place of MATH240 (department page)", async () => {
+    const plan = [...without("MATH240"), c("MATH461")];
+    expect((await statusOf(plan)).math240).toBe("satisfied");
+  });
+
+  it("accepts the department page's expanded programming list (e.g. AOSC247)", async () => {
+    const plan = [...without("CMSC131", "CMSC132"), c("AOSC247")];
+    expect((await statusOf(plan)).programming).toBe("satisfied");
+  });
+
+  it("accepts the department page's extra supporting sequences (Nine: BSCI, Ten: ASTR)", async () => {
+    const withSupporting = (...ids: string[]) => [...without("CMSC132", "CMSC216"), ...ids.map((id) => c(id))];
+    expect((await statusOf(withSupporting("BSCI170", "BSCI160", "BSCI180", "CHEM131", "CHEM132"))).supporting).toBe("satisfied");
+    expect((await statusOf(withSupporting("ASTR130", "ASTR131", "ASTR232"))).supporting).toBe("satisfied");
+  });
+
+  it("accepts the department page's extra supporting sequences (Eleven: GEOL, Twelve: AOSC)", async () => {
+    const withSupporting = (...ids: string[]) => [...without("CMSC132", "CMSC216"), ...ids.map((id) => c(id))];
+    expect((await statusOf(withSupporting("GEOL100", "GEOL110", "GEOL340", "GEOL375"))).supporting).toBe("satisfied");
+    expect((await statusOf(withSupporting("AOSC200", "AOSC201", "AOSC431", "AOSC432"))).supporting).toBe("satisfied");
+  });
+
+  it("documents the unencoded major-GPA requirement", () => {
+    expect(mathMajorTraditional.reviewNotes!.some((n) => n.includes("2.000"))).toBe(true);
+  });
 });

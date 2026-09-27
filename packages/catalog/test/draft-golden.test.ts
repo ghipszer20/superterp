@@ -78,6 +78,11 @@ type Pair = {
   why: string;
   /** Options the hand encoding adds beyond the table (and nothing else differs). */
   extraOptions?: string[];
+  /**
+   * Options the table has that the hand encoding drops (e.g. the department page overrides the
+   * catalog and removes a course; owner ruling: follow the department page).
+   */
+  missingOptions?: string[];
   /** The hand encoding marks it an overlay; otherwise identical. */
   overlay?: true;
   /** Every draft set is in the hand encoding, which has more (sets requirements): exactly the
@@ -91,6 +96,12 @@ type Golden = { draft: Draft; hand: Program; pairs: Pair[]; missing: Missing[] }
 
 const FOOTNOTE_1_HONORS = "footnote 1 (honors MATH340–MATH341) is prose; the table lists only the standard course";
 const OWNER_CMSC141 = "owner-confirmed 2026-09-25: CMSC141/CMSC142 substitute for CMSC131/CMSC132; not in the catalog table";
+const DEPT_PROGRAMMING_EXTRAS = ["AOSC247", "BIOE241", "ENME202", "ENME351", "ENME489I", "PHYS165", "AOSC358L"];
+const DEPT_VS_CATALOG_PROGRAMMING =
+  "department-vs-catalog difference (owner ruling: follow the department page): the department page's programming item (4) is " +
+  "'CMSC 106, 131, 132, AOSC247, BIOE 241, ENAE 202, ENME202, ENME 351, ENME489I, ENEE150, PHYS 165, PHYS265, AOSC358L', wider than the catalog's row";
+const DEPT_MATH240_MATH461 =
+  "department-vs-catalog difference (owner ruling: follow the department page): the department page says 'the MATH 240 requirement may be fulfilled by MATH461'; the catalog's footnote 1 doesn't";
 
 const goldens: Record<string, Golden> = {
   "Computer Science Major": {
@@ -116,19 +127,49 @@ const goldens: Record<string, Golden> = {
     draft: draftProgram(fixture("math-major.html"), { ...meta, id: "math-major", list: 0 }),
     hand: mathMajorTraditional,
     pairs: [
-      { draft: "math240", hand: "math240", why: `${FOOTNOTE_1_HONORS}; the hand encoding also makes it an overlay`, extraOptions: ["MATH340"], overlay: true },
+      {
+        draft: "math240",
+        hand: "math240",
+        why: `${FOOTNOTE_1_HONORS}; the hand encoding also makes it an overlay; ${DEPT_MATH240_MATH461}`,
+        extraOptions: ["MATH340", "MATH461"],
+        overlay: true,
+      },
       { draft: "math241", hand: "math241", why: FOOTNOTE_1_HONORS, extraOptions: ["MATH340"] },
       { draft: "one-of-math246", hand: "intro3", why: FOOTNOTE_1_HONORS, extraOptions: ["MATH341"] },
-      { draft: "one-of-cmsc106", hand: "programming", why: OWNER_CMSC141, extraOptions: ["CMSC141", "CMSC142"] },
+      {
+        draft: "one-of-cmsc106",
+        hand: "programming",
+        why: `${OWNER_CMSC141}; ${DEPT_VS_CATALOG_PROGRAMMING}`,
+        extraOptions: ["CMSC141", "CMSC142", ...DEPT_PROGRAMMING_EXTRAS],
+      },
       {
         draft: "sequence-phys161",
         hand: "supporting",
         why:
           "owner ruling: CMSC131 may count for programming and Sequence Four, so the sequence is an overlay; " +
-          "the hand encoding adds CMSC141/142 to Sequence Four (assumption, PROJECT_MEMORY section 17 open question 4)",
+          "the hand encoding adds CMSC141/142 to Sequence Four (assumption, PROJECT_MEMORY section 17 open question 4); " +
+          "department-vs-catalog difference (owner ruling: follow the department page): the department page's item 5 adds Sequences " +
+          "Nine (BSCI/CHEM), Ten (ASTR), Eleven (GEOL) and Twelve (AOSC) beyond the catalog's eight, matching the Applied track",
         overlay: true,
-        // Sequence Four's CMSC141/CMSC142 variants (owner-confirmed, not in the catalog table).
-        fewerSets: ["CMSC131&CMSC142&CMSC216", "CMSC132&CMSC141&CMSC216", "CMSC141&CMSC142&CMSC216"],
+        // Sequence Four's CMSC141/CMSC142 variants (owner-confirmed, not in the catalog table), and
+        // Sequences Nine-Twelve (department page only, not in the catalog's eight-sequence table).
+        fewerSets: [
+          "CMSC131&CMSC142&CMSC216",
+          "CMSC132&CMSC141&CMSC216",
+          "CMSC141&CMSC142&CMSC216",
+          "BSCI160&BSCI161&BSCI170&BSCI171&CHEM131&CHEM132",
+          "BSCI160&BSCI161&BSCI170&BSCI171&CHEM146&CHEM177",
+          "BSCI160&BSCI170&BSCI180&CHEM131&CHEM132",
+          "BSCI160&BSCI170&BSCI180&CHEM146&CHEM177",
+          "ASTR130&ASTR131&ASTR232",
+          "GEOL100&GEOL110&GEOL322&GEOL340",
+          "GEOL100&GEOL110&GEOL322&GEOL341",
+          "GEOL100&GEOL110&GEOL322&GEOL375",
+          "GEOL100&GEOL110&GEOL340&GEOL341",
+          "GEOL100&GEOL110&GEOL340&GEOL375",
+          "GEOL100&GEOL110&GEOL341&GEOL375",
+          '2 of {"departments":["AOSC"],"minNumber":400,"maxNumber":499}&AOSC200&AOSC201',
+        ],
       },
     ],
     missing: [
@@ -141,10 +182,39 @@ const goldens: Record<string, Golden> = {
     draft: draftProgram(fixture("math-major.html"), { ...meta, id: "math-major", list: 1 }),
     hand: mathMajorApplied,
     pairs: [
-      { draft: "math240", hand: "math240", why: `${FOOTNOTE_1_HONORS}; the hand encoding also makes it an overlay`, extraOptions: ["MATH340"], overlay: true },
+      {
+        draft: "math240",
+        hand: "math240",
+        why: `${FOOTNOTE_1_HONORS}; the hand encoding also makes it an overlay; ${DEPT_MATH240_MATH461}`,
+        extraOptions: ["MATH340", "MATH461"],
+        overlay: true,
+      },
       { draft: "math241", hand: "math241", why: FOOTNOTE_1_HONORS, extraOptions: ["MATH340"] },
-      { draft: "one-of-math246", hand: "intro3", why: FOOTNOTE_1_HONORS, extraOptions: ["MATH341"] },
-      { draft: "one-of-cmsc106", hand: "programming", why: OWNER_CMSC141, extraOptions: ["CMSC141", "CMSC142"] },
+      {
+        draft: "one-of-math246",
+        hand: "intro3",
+        why:
+          `${FOOTNOTE_1_HONORS}; department-vs-catalog difference (owner ruling: follow the department page): the department page's ` +
+          "Applied Math Track item (1) offers only 'MATH 246 requirement may be fulfilled by MATH 462 instead', while the catalog's Applied " +
+          "table also lists MATH436 for the same slot (as the Traditional track does); MATH436 is dropped here",
+        extraOptions: ["MATH341"],
+        missingOptions: ["MATH436"],
+      },
+      {
+        draft: "one-of-cmsc106",
+        hand: "programming",
+        why: `${OWNER_CMSC141}; ${DEPT_VS_CATALOG_PROGRAMMING}`,
+        extraOptions: ["CMSC141", "CMSC142", ...DEPT_PROGRAMMING_EXTRAS],
+      },
+      {
+        draft: "one-of-math416",
+        hand: "applied",
+        why:
+          "department-vs-catalog difference (owner ruling: follow the department page): department page items (1) and (3)(f) say a MATH462 " +
+          "used for the MATH246 slot may also count as this upper-level requirement; the catalog's footnote 3 is silent, so the hand encoding " +
+          "makes this requirement an overlay",
+        overlay: true,
+      },
       {
         draft: "sequence-phys161",
         hand: "supporting",
@@ -164,7 +234,7 @@ const goldens: Record<string, Golden> = {
       },
     ],
     missing: [
-      { hand: "stat4xx", why: "'STAT4XX' is an unlinked course pattern (and the hand encoding excludes STAT410 and STAT464)", review: "course-pattern", row: "STAT4XX" },
+      { hand: "stat4xx", why: "'STAT4XX' is an unlinked course pattern (and the hand encoding excludes STAT400, STAT410 and STAT464, matching the catalog row's own text)", review: "course-pattern", row: "STAT4XX" },
       { hand: "depth", why: "'Select depth requirement; …' isn't a recognized phrasing, and it's an overlay", review: "unrecognized-rule", row: "Select depth requirement" },
       { hand: "eight", why: "'Select eight 400-level or higher; must include:' is an umbrella overlay count, with footnote 3's exclusions", review: "must-include", row: "must include" },
     ],
@@ -202,7 +272,7 @@ describe.each(Object.entries(goldens))("draft of %s vs the hand encoding", (_, {
     }
     const options = (r: Requirement) => (r.kind === "course" ? r.options : r.kind === "choose" ? (r.from.courses ?? []) : []);
     expect(options(h).filter((o) => !options(d).includes(o)).sort()).toEqual([...(pair.extraOptions ?? [])].sort());
-    expect(options(d).every((o) => options(h).includes(o))).toBe(true);
+    expect(options(d).filter((o) => !options(h).includes(o)).sort()).toEqual([...(pair.missingOptions ?? [])].sort());
   });
 
   it.each(missing)("$hand is left to review ($review): $why", (m) => {

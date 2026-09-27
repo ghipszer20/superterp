@@ -145,4 +145,34 @@ describe("Math major, Applied Mathematics Track, 2026–27", () => {
     const plan = [...without("MATH410"), { ...c("MATH410"), grade: "D+" }];
     expect((await statusOf(plan)).math410).toBe("missing");
   });
+
+  it("doesn't count STAT400 as the STAT4xx course (department page: 'other than STAT400, STAT410, STAT464')", async () => {
+    const plan = [...without("STAT420"), c("STAT400")];
+    expect((await statusOf(plan)).stat4xx).toBe("missing");
+  });
+
+  it("accepts MATH461 in place of MATH240 (department page)", async () => {
+    const plan = [...without("MATH240"), c("MATH461")];
+    expect((await statusOf(plan)).math240).toBe("satisfied");
+  });
+
+  it("accepts the department page's expanded programming list (e.g. AOSC247)", async () => {
+    const plan = [...without("CMSC131", "CMSC132"), c("AOSC247")];
+    expect((await statusOf(plan)).programming).toBe("satisfied");
+  });
+
+  it("no longer accepts MATH436 for the introductory MATH246 slot (department page lists only MATH462 for Applied)", async () => {
+    const plan = [...without("MATH246"), c("MATH436")];
+    expect((await statusOf(plan)).intro3).toBe("missing");
+  });
+
+  it("allows MATH462 used for the MATH246 slot to also satisfy the upper-level applied-list requirement (department page (3)(f))", async () => {
+    const plan = [...without("MATH246", "MATH420"), c("MATH462")];
+    const statuses = await statusOf(plan);
+    expect([statuses.intro3, statuses.applied, statuses.eight]).toEqual(["satisfied", "satisfied", "satisfied"]);
+  });
+
+  it("documents the unencoded major-GPA requirement", () => {
+    expect(mathMajorApplied.reviewNotes!.some((n) => n.includes("2.000"))).toBe(true);
+  });
 });
