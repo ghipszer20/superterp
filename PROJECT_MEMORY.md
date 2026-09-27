@@ -74,7 +74,7 @@ Moved to `docs/project/roadmap.md` (phases 0–6, MVP recommendation, hour and c
 - [ ] Email UMD DOTS requesting Shuttle-UM real-time data access (a Swiftly GTFS-RT key).
 - [ ] Claim a domain (superterp.app or getsuperterp.com), the App Store name and social handles.
 - [ ] Decide whether to reuse or partner with Jupiterp (open source; check license).
-- [ ] Confirm UMD's per-semester credit cap and Expo's native-component support.
+- [ ] Confirm Expo's native-component support. (Credit caps: owner ruled they vary by college and term; `feat/credit-caps` queued.)
 - [ ] Decide: launch everything at once, or in waves by college.
 - [x] ~~Expo vs SwiftUI~~: decided website-first with Next.js (section 13); iOS later.
 - [x] Monetization: never (section 2). Team: solo owner + Claude.
@@ -104,7 +104,7 @@ Update this section in place when work merges or plans change. Put the dated nar
   - Advisor tab: typed-name disclaimer, What-if (switch/add/drop a major: existing credits count/elective/unused, catalog year, graduation date, CS gateway rule and GPA, Apply with Undo), setup, AP/IB/dual-enrollment credit, plan grid, checks and notices, audit with CS gateway, course sheet with grades, 14 pre-professional tracks (`@superterp/tracks`).
   - Data and engine: SOC parser, prerequisites, catalog parser + drafter (66.3% of rule rows), HiGHS audit, CS / Math Traditional / Math Applied / Gen Ed encoded, 61 special programs (LLPs, Scholars, Honors, 25 Departmental Honors), grade summaries, owner review tool (`/review`).
 - **In progress (2 Sonnet builders):** Transport map (`feat/transport-map`, finishing and verifying; screenshots of /campus/transport only). F/W attempts earn no credit (`feat/no-credit-grades`, new worktree `../SuperTerp-wt-no-credit`): the audit counted failed/withdrawn attempts toward requirements with no minimum grade (e.g. the 120-credit total), made worse once retakes kept both attempts.
-- **Queue:** honors retry for 4 unreachable department sites (`feat/honors-retry`, worktree exists); grad courses as an undergrad (600–897 rules, BS/MS double counting).
+- **Queue:** credit caps per college and term (`feat/credit-caps`: research official limits with sources, then plan checker uses the student's college); honors retry for 4 unreachable department sites (`feat/honors-retry`, worktree exists); grad courses as an undergrad (600–897 rules, BS/MS double counting).
 - **Waiting on the owner:** see `docs/project/owner-review.md` (include it in every progress report; add new items there).
 - **Known to-dos:** the GTFS feed ends 2026-12-24 (warn in the UI and in a scheduled check first); check the GTFS license before public launch; show last good data when a source is down (needs a database); deployment (Vercel + Supabase accounts from the owner) with pre-warmed data.
 
