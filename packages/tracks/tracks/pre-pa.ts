@@ -26,6 +26,7 @@ export const prePa: Track = {
   schools: "PA programs",
   minGrade: "C",
   minGradeNote: "HPAO: many PA programs require a C, and many require a B or higher; check each target school.",
+  usesScienceGpa: true,
   entry: { kind: "after-degree" },
   categories: [
     introBioOneSemester("General biology with lab"),

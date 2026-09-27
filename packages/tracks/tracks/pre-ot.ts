@@ -25,6 +25,7 @@ export const preOt: Track = {
   schools: "OT programs",
   minGrade: "C",
   minGradeNote: "Example (Towson MS OT, HPAO's OT page): a B or better in prerequisites; check each target school.",
+  usesScienceGpa: true,
   entry: { kind: "after-degree" },
   categories: [
     anatomyPhysiology("Anatomy and physiology 1 and 2 with labs"),

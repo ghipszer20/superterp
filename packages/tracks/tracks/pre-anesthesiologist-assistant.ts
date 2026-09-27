@@ -28,6 +28,7 @@ export const preAnesthesiologistAssistant: Track = {
   schools: "Anesthesiologist Assistant (AA) programs",
   minGrade: "C",
   minGradeNote: "HPAO: schools generally require a minimum of a C (not a C-) in all prerequisite courses.",
+  usesScienceGpa: true,
   entry: { kind: "after-degree" },
   categories: [
     genChem1("8 Credits of Inorganic Chemistry (with labs)"),

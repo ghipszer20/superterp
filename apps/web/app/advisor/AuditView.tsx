@@ -9,6 +9,7 @@
 import type { GatewayCourseStatus, GatewayOverallStatus, RequirementResult } from "@superterp/audit";
 import type { MilestoneTiming } from "@superterp/tracks";
 import type { AdvisorPlan } from "@/lib/advisor/plan-state";
+import { showsScienceGpa } from "@/lib/advisor/tracks";
 import { gatewayAttemptLimitNote } from "@/lib/advisor/what-if-display";
 import type { AnalysisState, OpenCourse } from "./AdvisorApp";
 import { dispatchPlan } from "./store";
@@ -185,7 +186,7 @@ export function AuditView({
                   <p className={styles.cardNote}>Also confirm yourself: {manual.map((c) => c.name ?? c.source).join(", ")}.</p>
                 ) : null}
 
-                {scienceGpa.gpa !== null ? (
+                {showsScienceGpa(track) && scienceGpa.gpa !== null ? (
                   <p className={styles.cardNote}>
                     Science GPA (BCPM): {scienceGpa.gpa.toFixed(2)} ({scienceGpa.credits} credits)
                   </p>

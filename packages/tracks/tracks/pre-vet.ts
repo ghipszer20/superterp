@@ -27,6 +27,7 @@ export const preVet: Track = {
   schools: "veterinary schools",
   minGrade: "C-",
   minGradeNote: "The ANSC guide: \"some schools won't accept a grade below C or C-\" in a prerequisite; check each target school.",
+  usesScienceGpa: true,
   entry: { kind: "after-degree" },
   categories: [
     englishComposition("1-2 semesters of English"),

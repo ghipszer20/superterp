@@ -26,6 +26,7 @@ export const preDental: Track = {
   schools: "dental schools",
   minGrade: "C",
   minGradeNote: "HPAO: dental schools generally require a C (not a C-) in every prerequisite.",
+  usesScienceGpa: true,
   entry: { kind: "after-degree" },
   categories: [
     genChem1("8 Credits of Inorganic Chemistry with labs", onDat),

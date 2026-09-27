@@ -27,6 +27,7 @@ export const prePharmacy: Track = {
   schools: "pharmacy schools",
   minGrade: "C",
   minGradeNote: "Confirm each target school's minimum prerequisite grade; HPAO doesn't state one for pharmacy.",
+  usesScienceGpa: true,
   entry: { kind: "after-degree" },
   categories: [
     genChem1("General chemistry with labs"),

@@ -24,6 +24,7 @@ export const prePt: Track = {
   schools: "DPT programs",
   minGrade: "C",
   minGradeNote: "Example (UMB DPT, HPAO's PT page): 3.0 overall and prerequisite GPA and a C or better in each prerequisite; check each target school.",
+  usesScienceGpa: true,
   entry: { kind: "after-degree" },
   categories: [
     introBioOneSemester("4-8 credits of general biology with lab"),

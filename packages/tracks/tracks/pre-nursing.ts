@@ -23,6 +23,7 @@ export const preNursing: Track = {
   minGrade: "C-",
   minGradeNote: "UMSON's Guaranteed Pathway: BSCI170 and BSCI180 need a C- or better, with a 3.0 science GPA and no more than one grade below C-.",
   examCreditAccepted: true,
+  usesScienceGpa: true,
   entry: { kind: "transfer", afterYears: 2 },
   categories: [
     anatomyPhysiology("Anatomy and physiology I and II with labs"),

@@ -14,6 +14,7 @@ export const prePodiatry: Track = {
   schools: "podiatric medical schools",
   minGrade: "C",
   minGradeNote: "HPAO: schools generally require a C (not a C-) in every prerequisite, as for medicine.",
+  usesScienceGpa: true,
   entry: { kind: "after-degree" },
   categories: [
     genChem1("8 credits of Inorganic Chemistry with labs", onMcat),

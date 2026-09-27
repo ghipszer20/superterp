@@ -81,6 +81,11 @@ export type Track = {
   suggestedCourses?: SuggestedCourses[];
   /** Warn when a term's expected grades would lower the GPA (pre-law). */
   gpaProtection?: boolean;
+  /**
+   * Show the BCPM science GPA on this track's card. True for health tracks (BCPM is a health
+   * professions admissions concept); pre-law omits it (owner ruling, 2026-09-27).
+   */
+  usesScienceGpa?: boolean;
   /** Shown with every result. */
   disclaimer: string;
   /** URLs this track was encoded from (all listed in SOURCES.md). */

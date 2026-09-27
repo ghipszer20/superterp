@@ -13,6 +13,7 @@ export const preDentalHygiene: Track = {
   schools: "dental hygiene programs",
   minGrade: "C",
   minGradeNote: "HPAO: schools generally require a minimum of a C (not a C-) in all prerequisite courses; some programs require higher.",
+  usesScienceGpa: true,
   entry: { kind: "transfer", afterYears: 2 },
   categories: [
     introBioOneSemester("General Biology with lab(s)"),

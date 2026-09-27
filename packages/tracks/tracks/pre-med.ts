@@ -26,6 +26,7 @@ export const preMed: Track = {
   schools: "medical schools",
   minGrade: "C",
   minGradeNote: "HPAO: medical schools generally require a C (not a C-) in every prerequisite.",
+  usesScienceGpa: true,
   entry: { kind: "after-degree" },
   categories: [
     genChem1("8 Credits of Inorganic Chemistry with labs", onMcat),
