@@ -14,6 +14,8 @@ export type CourseWhatIf = {
   id: string;
   /** Whether this occurrence is a completed or a not-yet-taken (planned) attempt. */
   status: "completed" | "planned";
+  /** From the catalog (or the plan's own override), for a completed-credits totals display. */
+  credits: number;
   /** Counts toward a major requirement, is used only as an elective (Gen Ed or the credit
    * floor), or is unused, under the student's currently declared majors. */
   currentStatus: CourseStatus;
@@ -204,6 +206,7 @@ export async function whatIf(
     return {
       id: c.id,
       status: c.status,
+      credits: c.credits,
       currentStatus: statusFor(currentPrograms, i),
       proposedStatus: statusFor(proposedPrograms, i),
       currentPrograms,

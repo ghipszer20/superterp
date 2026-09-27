@@ -55,6 +55,13 @@ describe("course classification", () => {
     expect(c.proposedPrograms).toEqual(["a-major"]);
   });
 
+  it("carries the course's credits, from the catalog, for a totals display", async () => {
+    // CMSC131 is a 4-credit course in the fixture catalog (see catalog.get("CMSC131").credits.min).
+    const result = await whatIf(planWith("CMSC131"), catalog, [majorA], [majorA], []);
+    const c = result.courses.find((x) => x.id === "CMSC131")!;
+    expect(c.credits).toBe(4);
+  });
+
   it("becomes elective when no major needs it but Gen Ed or the credit floor does", async () => {
     // HIST200 matches the Gen Ed stand-in; CMSC131 (4 cr) is within the 9-credit floor even
     // though no major or Gen Ed rule claims it.
