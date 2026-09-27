@@ -21,14 +21,13 @@ export type ProgramOption = {
   /**
    * The college that owns this major's catalog page, for the credit-cap check
    * (packages/plan/src/credit-caps.ts). New entries: read it off the major's catalog URL's
-   * `colleges-schools/<slug>/` segment (see packages/catalog/src/review.ts's HAND_ENCODED list,
-   * which already records that URL for each hand-encoded program).
+   * `colleges-schools/<slug>/` segment.
    */
   college: College;
 };
 
 /** Listed with each major's default track first. All three are hand-encoded from catalog pages
- * under colleges-schools/computer-mathematical-natural-sciences/ (packages/catalog/src/review.ts). */
+ * under colleges-schools/computer-mathematical-natural-sciences/. */
 export const PROGRAM_OPTIONS: ProgramOption[] = [
   { id: cmscMajor.id, major: "cmsc", short: "Computer Science", program: cmscMajor, college: "CMNS" },
   { id: mathMajorTraditional.id, major: "math", short: "Math (Traditional)", track: "Traditional", program: mathMajorTraditional, college: "CMNS" },

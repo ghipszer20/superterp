@@ -1,5 +1,5 @@
-// A Requirement in plain language, for the owner's review tool: "One of: CMSC131,
-// CMSC133", "Choose 2 of: …, at most one of CMSC460 / CMSC466". Framework-free.
+// A Requirement in plain language: "One of: CMSC131, CMSC133", "Choose 2 of: …,
+// at most one of CMSC460 / CMSC466". Framework-free.
 
 import type { CourseFilter, Requirement, SetMember } from "@superterp/audit";
 
