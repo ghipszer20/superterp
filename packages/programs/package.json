@@ -7,11 +7,13 @@
   "type": "module",
   "exports": {
     ".": "./src/registry.ts",
-    "./harness": "./src/harness.ts"
+    "./harness": "./src/harness.ts",
+    "./course-sets": "./src/course-sets.generated.ts"
   },
   "scripts": {
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:course-sets": "tsx scripts/build-course-sets.ts"
   },
   "dependencies": {
     "@superterp/audit": "*",
@@ -20,6 +22,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.20.4",
+    "tsx": "^4.23.15",
     "typescript": "^5.9.3",
     "vitest": "^5.0.1"
   }
