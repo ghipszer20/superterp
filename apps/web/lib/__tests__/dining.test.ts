@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { DiningMenu } from "@superterp/campus-data";
-import { diningSlice, resolveMeal } from "../dining";
+import { diningSlice, resolveMeal, stationDisplayName } from "../dining";
 
 const item = (name: string) => ({ name, labelUrl: null, diets: [], contains: [] });
 const menu: DiningMenu = {
@@ -54,5 +54,25 @@ describe("diningSlice", () => {
 
   it("is empty but loaded for a hall that posted no menu", () => {
     expect(diningSlice({ ...menu, meals: [] }, "Lunch")).toEqual({ meals: [], meal: null, stations: [] });
+  });
+});
+
+// Owner ruling: the "Breakfast" station shows breakfast-style food that's available beyond
+// breakfast hours, so calling it "Breakfast" during lunch or dinner is confusing. Renamed for
+// display only -- the underlying station name from UMD Dining is untouched (used as the React
+// key and for the main/filler sort).
+describe("stationDisplayName", () => {
+  it("relabels the Breakfast station", () => {
+    expect(stationDisplayName("Breakfast")).toBe("Breakfast Area");
+  });
+
+  it("matches case-insensitively and trims whitespace", () => {
+    expect(stationDisplayName("breakfast")).toBe("Breakfast Area");
+    expect(stationDisplayName(" BREAKFAST ")).toBe("Breakfast Area");
+  });
+
+  it("leaves other station names unchanged", () => {
+    expect(stationDisplayName("Grill")).toBe("Grill");
+    expect(stationDisplayName("Breakfast Sandwiches")).toBe("Breakfast Sandwiches");
   });
 });

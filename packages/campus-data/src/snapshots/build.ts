@@ -8,6 +8,7 @@
 // to a separate status record, so a snapshot's updatedAt always means "when
 // this data was fetched".
 
+import { fetchBuildings, type Building } from "../buildings.ts";
 import { addDays, campusDate } from "../dates.ts";
 import { DINING_HALLS, fetchDiningMenu, type DiningMenu } from "../dining.ts";
 import { parseGtfs, SHUTTLE_UM_GTFS_URL, unzipGtfs } from "../buses.ts";
@@ -35,6 +36,8 @@ export type CampusSources = {
   recWellAreas(): Promise<RecWellArea[]>;
   /** The unzipped GTFS text files (file name → contents). */
   shuttleGtfs(): Promise<Record<string, string>>;
+  /** UMD building locations, for the trip planner's place search. */
+  buildings(): Promise<Building[]>;
 };
 
 export const liveSources: CampusSources = {
@@ -45,6 +48,7 @@ export const liveSources: CampusSources = {
   libraryHours: () => fetchLibraryHours(2),
   recWellAreas: fetchRecWellAreas,
   shuttleGtfs: async () => unzipGtfs(await fetchBytes("buses", SHUTTLE_UM_GTFS_URL)),
+  buildings: fetchBuildings,
 };
 
 export const snapshotKeys = {
@@ -55,6 +59,7 @@ export const snapshotKeys = {
   libraryHours: "libraries/hours",
   recWellAreas: "recwell/areas",
   shuttleGtfs: "buses/gtfs",
+  buildings: "buildings",
   /** The last attempt to refresh a snapshot key. */
   status: (key: string) => `status/${key}`,
 } as const;
@@ -155,6 +160,7 @@ export async function buildSnapshots(
       parseGtfs(files); // throws on a feed we couldn't use
       return files;
     }),
+    refresh(store, now, snapshotKeys.buildings, () => sources.buildings()),
   ]);
   await pruneSnapshots(store, now);
   return report(results.flat());
@@ -193,7 +199,7 @@ export type PruneReport = { removed: string[] };
  * Remove dated snapshots (and their `status/` entries) whose date falls outside
  * `keepDays` days of `now`, in campus time. Defaults to keeping yesterday, today,
  * and tomorrow (keepDays: 1). Undated keys (the room catalog, library hours,
- * RecWell areas, the GTFS feed) are never touched.
+ * RecWell areas, the GTFS feed, building locations) are never touched.
  */
 export async function pruneSnapshots(store: SnapshotStore, now: Date, { keepDays = 1 }: PruneOptions = {}): Promise<PruneReport> {
   const today = campusDate(now);

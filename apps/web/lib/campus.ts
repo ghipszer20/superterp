@@ -20,6 +20,7 @@ import { cacheLife } from "next/cache";
 import {
   addDays,
   DINING_HALLS,
+  fetchBuildings,
   fetchCategoryAvailability,
   fetchDiningMenu,
   fetchLibraryHours,
@@ -28,12 +29,16 @@ import {
   fetchShuttleFeed,
   nextDepartures,
   parseGtfs,
+  planTrip,
   routeMap,
   routesOn,
   studyRoomCategories,
+  type Building,
   type DiningMenu,
   type Feed,
   type LibraryHours,
+  type Place,
+  type PlanTripResult,
   type RecWellArea,
   type RoomAvailability,
   type RouteWithMap,
@@ -84,6 +89,12 @@ export async function getLibraryHours(): Promise<LibraryHours[]> {
 export async function getRecWellAreas(): Promise<RecWellArea[]> {
   const snap = await readSnapshot<RecWellArea[]>(snapshotKeys.recWellAreas, STABLE);
   return (await snapshotOrLive(snap, liveRecWellAreas)).data;
+}
+
+/** UMD building locations, for the trip planner's "From"/"To" search. Barely changes, so it's read like the other stable snapshots. */
+export async function getBuildings(): Promise<Building[]> {
+  const snap = await readSnapshot<Building[]>(snapshotKeys.buildings, STABLE);
+  return (await snapshotOrLive(snap, liveBuildings)).data;
 }
 
 export async function getDiningMenu(hallId: number, isoDate: string): Promise<DiningMenu> {
@@ -140,6 +151,12 @@ async function liveRecWellAreas() {
   "use cache";
   cacheLife({ stale: 300, revalidate: 6 * 3600, expire: 3 * 86400 });
   return fetchRecWellAreas();
+}
+
+async function liveBuildings() {
+  "use cache";
+  cacheLife({ stale: 3600, revalidate: 86400, expire: 7 * 86400 });
+  return fetchBuildings();
 }
 
 async function liveDiningMenu(hallId: number, isoDate: string) {
@@ -238,4 +255,10 @@ export async function getDepartures(stopIds: string[], isoDate: string, fromMinu
       minutes: d.minutes,
     })),
   }));
+}
+
+/** The trip planner: walking the whole way, plus up to 3 Shuttle-UM itineraries between two real places. */
+export async function planTripBetween(isoDate: string, fromMinutes: number, from: Place, to: Place): Promise<PlanTripResult> {
+  const f = await loadFeed();
+  return planTrip(f, isoDate, fromMinutes, from, to);
 }

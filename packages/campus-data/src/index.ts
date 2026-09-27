@@ -1,3 +1,4 @@
+export * from "./buildings.ts";
 export * from "./buses.ts";
 export * from "./dates.ts";
 export * from "./dining.ts";
@@ -6,3 +7,4 @@ export * from "./http.ts";
 export * from "./libraries.ts";
 export * from "./recwell.ts";
 export * from "./rooms.ts";
+export * from "./trip.ts";
