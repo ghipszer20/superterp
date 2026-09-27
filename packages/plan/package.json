@@ -13,7 +13,8 @@
     "./catalog-file": "./src/catalog-file.ts",
     "./notices": "./src/notices.ts",
     "./what-if": "./src/what-if.ts",
-    "./degrees": "./src/degrees.ts"
+    "./degrees": "./src/degrees.ts",
+    "./grad-courses": "./src/grad-courses.ts"
   },
   "scripts": {
     "test": "vitest run",

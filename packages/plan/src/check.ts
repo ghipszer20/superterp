@@ -4,6 +4,15 @@
 import { checkRequirement, type CourseRecord, type Requirement } from "@superterp/course-data/prereqs";
 import type { PlanCatalog } from "./catalog.ts";
 import { collegeName, creditCap, type College } from "./credit-caps.ts";
+import {
+  bsMsCap,
+  GRADUATE_ONLY_MAX_CREDITS,
+  GRADUATE_ONLY_WARN_CREDITS,
+  isBlockedGraduateCourse,
+  isGraduateCourse,
+  meetsBsMsGrade,
+  type GradCreditTag,
+} from "./grad-courses.ts";
 
 /** A course in one term of the Plan: planned by default, or completed (from the transcript). */
 export type PlanCourse = {
@@ -12,6 +21,8 @@ export type PlanCourse = {
   grade?: string;
   /** Overrides the catalog's credits, e.g. for a variable-credit course. */
   credits?: number;
+  /** How a graduate course's credits count (grad-courses.ts); ignored for a non-graduate course. */
+  gradTag?: GradCreditTag;
 };
 
 /** One term, named like "Fall 2026", "Winter 2027", "Spring 2027" or "Summer 2027". */
@@ -24,9 +35,26 @@ export type PlanTerm = { name: string; courses: PlanCourse[] };
 export type PriorCredit = { id: string; credits: number; grade?: string; genEd?: string[]; source?: string };
 
 /** Terms in order, first to last. */
-export type Plan = { terms: PlanTerm[]; priorCredit?: PriorCredit[] };
+export type Plan = {
+  terms: PlanTerm[];
+  priorCredit?: PriorCredit[];
+  /** For the BS/MS double-count cap (grad-courses.ts): 35% of this number. Omitted shows an info
+   * note instead of checking the cap. */
+  mastersCredits?: number;
+};
 
-export type IssueKind = "prerequisite" | "corequisite" | "repeat" | "credit-load" | "light-load" | "unknown-course";
+export type IssueKind =
+  | "prerequisite"
+  | "corequisite"
+  | "repeat"
+  | "credit-load"
+  | "light-load"
+  | "unknown-course"
+  | "grad-permission"
+  | "grad-restricted"
+  | "grad-only-cap"
+  | "grad-double-count-cap"
+  | "grad-double-count-grade";
 
 export type PlanIssue = {
   kind: IssueKind;
@@ -182,6 +210,42 @@ export function checkPlan(plan: Plan, catalog: PlanCatalog, options: CheckOption
       const info = catalog.get(course.id);
       const at = { term: term.name, course: course.id };
       const where = `${course.id} (${term.name})`;
+
+      // Grad courses as an undergrad (owner ruling): checked from the course id alone, so this
+      // runs even for a course SuperTerp's catalog doesn't have, and for a completed course.
+      if (isBlockedGraduateCourse(course.id)) {
+        issues.push({
+          kind: "grad-restricted",
+          severity: "error",
+          ...at,
+          message: `${where} is thesis research or a doctoral-level course (799, 898 or 899) and can't be planned as an undergraduate.`,
+        });
+      } else if (isGraduateCourse(course.id)) {
+        issues.push({
+          kind: "grad-permission",
+          severity: "warning",
+          ...at,
+          message: `${where} is a graduate course. Taking it as an undergraduate needs your advisor's permission.`,
+        });
+        if (course.gradTag === "bs-ms" && !meetsBsMsGrade(course)) {
+          issues.push(
+            course.status === "completed"
+              ? {
+                  kind: "grad-double-count-grade",
+                  severity: "warning",
+                  ...at,
+                  message: `${where} needs a B- or better to double-count toward your BS/MS. A grade of ${course.grade} doesn't qualify, so it counts toward your bachelor's degree only.`,
+                }
+              : {
+                  kind: "grad-double-count-grade",
+                  severity: "info",
+                  ...at,
+                  message: `${where} needs a B- or better to double-count toward your BS/MS.`,
+                },
+          );
+        }
+      }
+
       if (!info) {
         issues.push({
           kind: "unknown-course",
@@ -240,6 +304,7 @@ export function checkPlan(plan: Plan, catalog: PlanCatalog, options: CheckOption
   });
 
   issues.push(...repeatIssues(plan, catalog, prior, creditsOf));
+  issues.push(...gradCapIssues(plan, creditsOf));
 
   plan.terms.forEach((term) => {
     const season = seasonOf(term.name);
@@ -321,6 +386,64 @@ function repeatIssues(
         ...last,
         severity: "error",
         message: `${id} can count for at most ${repeat.maxCredits} credits, but your plan has ${total} (${terms}).`,
+      });
+    }
+  }
+  return issues;
+}
+
+/**
+ * Whole-plan grad-credit caps (grad-courses.ts): graduate-only credits (9 warns, 12 -- the
+ * petitioned cap -- errors) and the BS/MS double-count cap (35% of `plan.mastersCredits`, or an
+ * info note with no total set). One issue each, at the term of the last occurrence in plan order
+ * (matching repeatIssues' convention), since these are totals across the whole plan.
+ */
+function gradCapIssues(plan: Plan, creditsOf: (c: PlanCourse) => number): PlanIssue[] {
+  const issues: PlanIssue[] = [];
+  const byTag = (tag: GradCreditTag) => {
+    const occurrences: { term: string; credits: number }[] = [];
+    for (const term of plan.terms) {
+      for (const course of term.courses) if (course.gradTag === tag) occurrences.push({ term: term.name, credits: creditsOf(course) });
+    }
+    return occurrences;
+  };
+
+  const graduateOnly = byTag("graduate-only");
+  const graduateOnlyTotal = graduateOnly.reduce((t, o) => t + o.credits, 0);
+  if (graduateOnlyTotal > GRADUATE_ONLY_MAX_CREDITS) {
+    issues.push({
+      kind: "grad-only-cap",
+      severity: "error",
+      term: graduateOnly.at(-1)!.term,
+      message: `Your plan has ${graduateOnlyTotal} graduate-only credits, over the petitioned ${GRADUATE_ONLY_MAX_CREDITS}-credit cap (${GRADUATE_ONLY_WARN_CREDITS} plus up to 3 more by petition).`,
+    });
+  } else if (graduateOnlyTotal > GRADUATE_ONLY_WARN_CREDITS) {
+    issues.push({
+      kind: "grad-only-cap",
+      severity: "warning",
+      term: graduateOnly.at(-1)!.term,
+      message: `Your plan has ${graduateOnlyTotal} graduate-only credits, over the usual ${GRADUATE_ONLY_WARN_CREDITS}-credit cap. A petition can add up to 3 more credits (up to ${GRADUATE_ONLY_MAX_CREDITS}).`,
+    });
+  }
+
+  const bsMs = byTag("bs-ms");
+  const bsMsTotal = bsMs.reduce((t, o) => t + o.credits, 0);
+  if (bsMsTotal > 0) {
+    const term = bsMs.at(-1)!.term;
+    const cap = bsMsCap(plan.mastersCredits);
+    if (cap === null) {
+      issues.push({
+        kind: "grad-double-count-cap",
+        severity: "info",
+        term,
+        message: `${bsMsTotal} credits are tagged to double-count toward a BS/MS. Add your master's-credit total to check the 35% cap.`,
+      });
+    } else if (bsMsTotal > cap) {
+      issues.push({
+        kind: "grad-double-count-cap",
+        severity: "warning",
+        term,
+        message: `${bsMsTotal} credits are tagged to double-count toward a BS/MS, over the 35% cap of ${cap} credits for a ${plan.mastersCredits}-credit master's.`,
       });
     }
   }

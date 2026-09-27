@@ -1,6 +1,7 @@
 "use client";
 
 import type { PlanIssue } from "@superterp/plan/check";
+import { isGraduateCourse } from "@superterp/plan/grad-courses";
 import { useMemo, useState } from "react";
 import { courseKey, type IssueGroups, type Severity } from "@/lib/advisor/issues";
 import type { AdvisorPlan, PlanTermState } from "@/lib/advisor/plan-state";
@@ -205,7 +206,10 @@ function TermColumn({
             >
               <button type="button" className={styles.courseButton} onClick={() => onOpenCourse({ id: c.id, term: term.name })}>
                 <span className={styles.courseTop}>
-                  <span className={styles.courseId}>{c.id}</span>
+                  <span className={styles.courseIdRow}>
+                    <span className={styles.courseId}>{c.id}</span>
+                    {isGraduateCourse(c.id) ? <span className={styles.gradBadge}>Grad</span> : null}
+                  </span>
                   <span className={styles.courseCredits}>{cr === null ? "?" : cr} cr</span>
                 </span>
                 <span className={styles.courseTitle}>{info?.title ?? (ready ? "Not in SuperTerp's course data" : " ")}</span>

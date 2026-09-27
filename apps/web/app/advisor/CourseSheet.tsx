@@ -5,6 +5,7 @@
 // phone: move to another term, mark completed with a grade, or remove it.
 
 import type { PlanIssue } from "@superterp/plan/check";
+import { GRAD_CREDIT_TAGS, isGraduateCourse, type GradCreditTag } from "@superterp/plan/grad-courses";
 import { useEffect, useState } from "react";
 import type { CourseDetails } from "@/lib/advisor/course-details";
 import { gradeBars, gradeSummary, termSpan } from "@/lib/advisor/grades";
@@ -18,6 +19,11 @@ import { dispatchPlan } from "./store";
 import styles from "./advisor.module.css";
 
 const GRADES = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F", "P", "S", "W", "I"];
+
+const GRAD_TAG_LABEL: Record<GradCreditTag, string> = {
+  "graduate-only": "Graduate-only (max 9 credits)",
+  "bs-ms": "BS/MS double-count",
+};
 
 export function CourseSheet({
   course,
@@ -88,6 +94,7 @@ export function CourseSheet({
         </div>
 
         <div className={styles.sheetMeta}>
+          {isGraduateCourse(course.id) ? <span className={styles.gradBadge}>Grad</span> : null}
           {credits !== null ? <span>{credits} credits</span> : null}
           {info?.genEd.map((g) => (
             <span key={g} className={styles.tag}>
@@ -176,6 +183,50 @@ export function CourseSheet({
                       </option>
                     ))}
                   </select>
+                </label>
+              ) : null}
+              {isGraduateCourse(course.id) ? (
+                <label className={styles.field}>
+                  <span className={styles.fieldLabel}>Credit counts as</span>
+                  <select
+                    className={styles.input}
+                    value={planned?.gradTag ?? "undergrad"}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      dispatchPlan({
+                        type: "set-grad-tag",
+                        term: term.name,
+                        id: course.id,
+                        gradTag: value === "undergrad" ? undefined : (value as GradCreditTag),
+                      });
+                    }}
+                  >
+                    <option value="undergrad">Undergrad credit</option>
+                    {GRAD_CREDIT_TAGS.map((tag) => (
+                      <option key={tag} value={tag}>
+                        {GRAD_TAG_LABEL[tag]}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              ) : null}
+              {planned?.gradTag === "bs-ms" ? (
+                <label className={styles.field}>
+                  <span className={styles.fieldLabel}>Master&apos;s credits (for the 35% BS/MS cap)</span>
+                  <input
+                    className={styles.input}
+                    type="number"
+                    min={0}
+                    step={1}
+                    value={plan.mastersCredits ?? ""}
+                    placeholder="Not entered"
+                    onChange={(e) =>
+                      dispatchPlan({
+                        type: "set-masters-credits",
+                        mastersCredits: e.target.value === "" ? undefined : Number(e.target.value),
+                      })
+                    }
+                  />
                 </label>
               ) : null}
               {otherTerms.length > 0 ? (

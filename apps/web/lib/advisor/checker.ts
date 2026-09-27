@@ -14,5 +14,6 @@ export function checkerPlan(plan: AdvisorPlan, priorCourses: CreditCourse[]): Pl
       genEd: c.genEd ?? [],
       source: c.source,
     })),
+    ...(plan.mastersCredits !== undefined ? { mastersCredits: plan.mastersCredits } : {}),
   };
 }
