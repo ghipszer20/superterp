@@ -158,7 +158,7 @@ async function Buses({ today }: { today: string }) {
   return (
     <Card>
       <Row
-        href="/campus/transit"
+        href="/campus/transport"
         leading={
           <IconTile>
             <BusIcon />

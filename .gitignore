@@ -165,3 +165,5 @@ next-env.d.ts
 
 # Advisor/schedule static data built from scraped snapshots (apps/web/scripts/advisor-data.mts)
 apps/web/public/data/
+# maplibre-gl's worker bundle, copied from node_modules by postinstall (apps/web/scripts/copy-maplibre-worker.mjs)
+apps/web/public/vendor/
