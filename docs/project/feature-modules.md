@@ -58,7 +58,7 @@ Moved out of PROJECT_MEMORY.md (section 3) so it loads only when needed. Update 
    - LLM feedback: encouraging tone and honest about how little data it's based on.
    - Privacy: stored on the device by default, explicit consent before anything goes to the LLM, no name or UID sent, one-tap delete.
 6. **Difficulty and professors.**
-   - Course score from PlanetTerp average GPA, W/F rate and review sentiment. Semester score from total difficulty and credit load.
+   - Course score from PlanetTerp average GPA, W/F rate and review sentiment. Semester score from total difficulty and credit load. Shown as a score out of 10 with one short sentence on why, no bullet points (owner ruling 2026-09-27; first draft).
    - LLM professor summaries cached each term and linked to the current Schedule of Classes.
 7. **Reviews (student-written).**
    - Sign-in limited to umd.edu/terpmail addresses; reviews displayed anonymously.
