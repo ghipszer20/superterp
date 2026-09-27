@@ -61,7 +61,10 @@ describe("CS major 2026–27", () => {
   });
 
   it("flags a concentration split across two departments", async () => {
-    const plan = [...without("MATH403", "MATH410"), c("STAT401"), c("STAT410")];
+    // Not MATH+STAT: the department's Upper Level Concentration page lets students "mix and
+    // match their courses between MATH and STAT" for the ULC (see the review notes), so that
+    // split is department-page-sanctioned, not an error the engine should flag here.
+    const plan = [...without("MATH403", "MATH410"), c("ECON300"), c("ECON305")];
     expect((await statusOf(plan)).concentration).toBe("partial");
   });
 
@@ -96,17 +99,24 @@ describe("CS major 2026–27", () => {
 
   // Footnote 2 (catalog) / Math Requirements table (department page) for the STAT4xx and
   // MATH/AMSC/STAT elective slots: "cannot be cross-listed with CMSC". AMSC460 is cross-listed
-  // as CMSC460 (confirmed: the department's Upper Level Concentration page lists "AMSC 460 -
-  // Computational Methods" as not acceptable for exactly this reason, and the Machine Learning
-  // specialization page writes it as "CMSC/AMSC 460"). Neither source disagrees here -- this is
-  // an engine gap the catalog and department page both call for; STAT426 (cross-listed/"credit
-  // only granted for" CMSC320) and MATH456/MATH475 (cross-listed with CMSC456/CMSC475) are the
-  // same gap. Only mathxxx is tested directly; stat4xx gets the matching STAT426 exclusion.
+  // as CMSC460 (confirmed: the department's Upper Level Concentration page's own worked example
+  // is "courses cross-listed with CMSC courses (e.g., AMSC460)"). Neither source disagrees here --
+  // this is an engine gap the catalog and department page both call for.
   it("does not accept a CMSC-cross-listed course (AMSC460) for the MATH/AMSC/STAT elective", async () => {
     const plan = [...without("MATH240"), c("AMSC460")];
     const result = await auditProgram(cmscMajor, plan);
     const mathxxx = result.requirements.find((r) => r.id === "mathxxx")!;
     expect(mathxxx.assigned).not.toContain("AMSC460");
+  });
+
+  // STAT426: the department's Upper Level Concentration page cites it as its own example of a
+  // "credit only granted for" CMSC course. Applied to the STAT4xx major requirement's "not
+  // cross-listed with CMSC" wording by interpretation (see the review notes for the caveat).
+  it("does not accept STAT426 ('credit only granted for' a CMSC course) for the STAT4xx requirement", async () => {
+    const plan = [...without("STAT400"), c("STAT426")];
+    const result = await auditProgram(cmscMajor, plan);
+    const stat4xx = result.requirements.find((r) => r.id === "stat4xx")!;
+    expect(stat4xx.assigned).not.toContain("STAT426");
   });
 
   // Department page (upper-level-concentration, "Not Eligible for ULC"): Data Science (DATA),

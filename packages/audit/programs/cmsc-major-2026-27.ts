@@ -26,12 +26,24 @@ const AREAS = [
 ];
 
 // Footnote 2 (catalog) / Math Requirements table (department page): the STAT4xx and
-// MATH/AMSC/STAT elective slots "cannot be cross-listed with CMSC". Confirmed cross-listings
-// (both sources agree these exist; not a department-vs-catalog difference, just an engine gap):
-// AMSC460/AMSC466 (= CMSC460/CMSC466, department's Upper Level Concentration page and the
-// Machine Learning specialization page, which writes "CMSC/AMSC 460"/"CMSC/AMSC 466"), MATH456
-// (= CMSC456/ENEE456), MATH475 (= CMSC475), STAT426 (= CMSC320, "credit only granted for").
-const CMSC_CROSSLISTS = ["AMSC460", "AMSC466", "MATH456", "MATH475", "STAT426"];
+// MATH/AMSC/STAT elective slots "cannot be cross-listed with CMSC". Confirmed by the department's
+// own Upper Level Concentration page (its own worked example: "courses cross-listed with CMSC
+// courses (e.g., AMSC460)"; its course table lists "AMSC: 460, 466") -- both sources call for this
+// exclusion, so it's an engine gap, not a disagreement between them.
+const AMSC_CROSSLISTS = ["AMSC460", "AMSC466"];
+// MATH456 (= CMSC456/ENEE456) and MATH475 (= CMSC475) are cross-listed per Testudo/Coursicle
+// schedule-of-classes listings (web search, 2026-09-26) -- the department's ULC page lists
+// MATH456/475 as ULC-ineligible but doesn't say cross-listed-with-CMSC is the reason for each one
+// individually, so this pairing is confirmed by a different source than AMSC460/466 above.
+const MATH_CROSSLISTS = ["MATH456", "MATH475"];
+// STAT426: the department's ULC page cites it as its OWN example of a "credit only granted for"
+// CMSC course ("courses 'credit only granted for' with CMSC courses (e.g. STAT426)"), a category
+// the page treats as distinct from "cross-listed". Which specific CMSC course it's credit-only-for
+// is unverified (unconfirmed web search guessed CMSC320). Applying "credit only granted for" here,
+// under the STAT4xx/MATH-AMSC-STAT major requirement's footnote-2 "not cross-listed with CMSC"
+// wording, is this encoding's own interpretation/extension -- neither source states it for this
+// requirement (only for the ULC, a different requirement) -- flagged for the owner.
+const STAT_CROSSLISTS = ["STAT426"];
 
 export const cmscMajor: Program = {
   id: "cmsc-major",
@@ -45,7 +57,7 @@ export const cmscMajor: Program = {
   reviewNotes: [
     "Footnote 2 ('MATH/AMSC/STAT xxx' must have MATH141 or higher as a prerequisite, not cross-listed with CMSC) is approximated as any MATH/AMSC/STAT course numbered 240+. Needs the real prerequisite check. The department page's own Math Requirements table says 'MATH/STATXXX' (no AMSC) for this slot, but its LEP Benchmarks section on the same page says 'MATH/AMSC/STAT course' for the equivalent 75-credit checkpoint -- the department page disagrees with itself, so this isn't a clean department-vs-catalog case. AMSC is kept (catalog's reading; flagged for the owner as unclear wording rather than acted on).",
     "'STAT4xx' is encoded as any STAT course numbered 400–499.",
-    "Cross-listed-with-CMSC exclusion (engine gap the catalog and department page both call for, not a disagreement between them; see CMSC_CROSSLISTS above): AMSC460, AMSC466, MATH456, MATH475 and STAT426 are excluded from stat4xx/mathxxx. This list is only as complete as what could be confirmed (department course pages, PlanetTerp/Testudo listings) -- not necessarily exhaustive.",
+    "Cross-listed-with-CMSC exclusion (engine gap the catalog and department page both call for, not a disagreement between them): mathxxx excludes AMSC460, AMSC466 (dept-page-confirmed), MATH456, MATH475 (web-search-confirmed via Testudo/Coursicle) and STAT426 (dept-page-confirmed as 'credit only granted for' CMSC, applied here by interpretation -- see the constants above for exact sourcing per course). stat4xx excludes only STAT426, since it's STAT-department-only already. This list is only as complete as what could be confirmed -- not necessarily exhaustive.",
     "Footnote 4 (credit for only one of CMSC460/CMSC466) is not enforced yet.",
     "Upper-level electives: footnote 3 says 6 credits at the 300/400 level, including 1-credit winter courses and independent study; encoded as 6 credits of CMSC 300–499 excluding CMSC330 and CMSC351. The department's General Track page lists specific eligible electives (CMSC320, 335, 388/389/398 STICs, 395, 396, 401, 425, 437, 473, 475, 476, 477, 488A, 498, 498A, 499A) -- all within this range, so no widening or narrowing needed. CMSC395 (TAs only) and CMSC396 (Dept Honors only) have eligibility gates the audit can't check (no TA/Honors data on StudentCourse); not enforced.",
     "Department-vs-catalog difference (owner ruling: follow the department page): the department's main requirements page lists 'CMSC131 (4) Object-Oriented Programming I* or CMSC133 (2) Object-Oriented Programming I Beyond Fundamentals'; the academic catalog's required-courses table lists only CMSC131. CMSC133 is added to cmsc131's options, alongside the owner-confirmed CMSC141. Flagged for the owner: gateway.ts's GATEWAY_COURSES comment says 'The substitutes match cmsc-major-2026-27.ts' but only lists CMSC131/CMSC141 for the LEP gateway -- CMSC133 now diverges from that comment (gateway.ts is out of scope here; not changed).",
@@ -55,9 +67,10 @@ export const cmscMajor: Program = {
     "The same Upper Level Concentration page gives a worked example that a course 'cross-listed as CMSC' is ineligible even outside the CMSC department (e.g. AMSC460) and lists dozens more course-specific exclusions across AOSC, AREC, BIOE, BSCI, BMGT, ECON, ENEE, ENGL, GEOG, GEOL, IMDM, MATH, PHIL, PHPE, PHYS, PSYC and STAT -- explicitly captioned 'not exhaustive; updated with new courses regularly' and 'send the syllabus to your advisor for review'. The concentration requirement only supports whole-department exclusion (excludeDepartments), not a per-course list, and this table is advisor-maintained rather than a fixed rule; not encoded. Manual check (see program-sources/cmsc-major.md for the full list as fetched).",
     "Both sources require a minimum GPA in the outside-CMSC concentration coursework, but disagree on the number: the department's Upper Level Concentration page says 'a cumulative GPA of 1.7 or higher'; the academic catalog's footnote 5 says 'an overall 2.0 average'. Department-vs-catalog difference (owner ruling: follow the department page) -- 1.7 is the number to use once the engine can check it. The audit engine has no GPA-average concept, only per-course minGrade, so this stays a manual check either way.",
     "Footnote 5 / the concentration page also require: each course at least 3 credits, at most one independent-study/experiential-learning course, up to 6 transfer credits, and no course also used for the CS major (the last one is already true by construction -- a course counts toward at most one non-overlay requirement per program). None of the credit/count limits are enforced; manual check.",
+    "Department-vs-catalog-adjacent gap the engine can't express (not a disagreement -- the catalog says nothing about discipline groups at all): the department's Upper Level Concentration page says 'Students using Math or Statistics courses for the ULC are able to mix and match their courses between MATH and STAT' (and the same for LGBT/WGSS courses). The concentration requirement here treats every department strictly on its own, so a MATH+STAT (or LGBT+WGSS) split is wrongly reported as spanning two disciplines. Not encoded (would need a 'discipline group' concept in the concentration type); listed as a follow-up. This matters for the owner's own verification target (Math Applied + CS), whose concentration is very likely MATH/STAT.",
     "LEP Benchmarks (department page): a 45-credit checkpoint (CMSC131, CMSC132, MATH140, each C- or better, 2.0 cumulative GPA) and a 75-credit checkpoint (CMSC330, CMSC351, one of STAT4xx/MATH-AMSC-STAT xxx, C- or better, 2.0 cumulative GPA). This is a progress-checkpoint concept (tied to credits-earned-so-far) the audit engine doesn't model at all (it only reports gaps against the finished requirement list, not by checkpoint); not encoded. Flagged for the owner: this page's 2.0 GPA differs from gateway.ts's Fall-2024-or-later rule of a 3.0 cumulative GPA -- gateway.ts is out of scope here (not changed), but the two pages may describe different things (an ongoing-major benchmark vs. LEP admission) or one may be stale; worth the owner's attention.",
     "No CS-specific residency requirement is stated on the department's requirements pages (only the general university residency policy would apply, which the audit engine doesn't model at all).",
-    "Minimum grade C- applies to all major courses here; gateway courses need B- for students who started Fall 2024 or later (CS tracking sheet), handled separately by the gateway check.",
+    "Minimum grade C- applies to all major courses here; gateway courses need B- for students who started Fall 2024 or later (CS tracking sheet), handled separately by the gateway check. Exception the engine can't safely express yet: the Upper Level Concentration page allows a D grade in the concentration specifically ('Courses with a grade of D can be used for the ULC as long as the cumulative GPA for the ULC is at least 1.7'), stricter than the catalog's blanket 'C- or better'. The audit engine's minGrade is checked at the program level before any per-requirement minGrade (audit.ts: `meetsGrade(course, program.minGrade)` gates every requirement, so a requirement's own minGrade can only tighten the program floor, never loosen it) -- giving the concentration requirement its own looser minGrade would need that check changed to `req.minGrade ?? program.minGrade`. That change alone would be safe (every other program leaves requirement-level minGrade unset, so it's a no-op for them), but packages/plan/src/what-if.ts's `usedIndices` independently re-derives which occurrences 'count' using only `program.minGrade` (it doesn't look at which specific requirement each occurrence was assigned to), so it would keep treating a D-grade concentration course as not-earning-credit even after an audit.ts fix, silently disagreeing with the audit. Fixing this correctly needs a coordinated change to audit.ts and what-if.ts, both outside this program file; not done here. Flagged for the owner as a real gap (not a code fix in this branch) -- see the final report.",
     "Specializations (Cybersecurity, Data Science, Machine Learning, Quantum Information) are separate programs, not encoded yet (see report/follow-ups). The academic catalog's tables for these are also stale relative to the department's specialization pages: Cybersecurity's 'choose four' list is missing CMSC431; Data Science's 'choose two' list is missing CMSC431 and CMSC471; and the department adds MATH461 and MATH341 as Linear Algebra options alongside MATH240 for Data Science, Machine Learning and Quantum Information (the catalog only lists MATH240 for these tracks' supporting math).",
   ],
   requirements: [
@@ -78,14 +91,19 @@ export const cmscMajor: Program = {
       id: "stat4xx",
       name: "STAT 400-level course",
       count: 1,
-      from: { departments: ["STAT"], minNumber: 400, maxNumber: 499, exclude: CMSC_CROSSLISTS },
+      from: { departments: ["STAT"], minNumber: 400, maxNumber: 499, exclude: STAT_CROSSLISTS },
     },
     {
       kind: "choose",
       id: "mathxxx",
       name: "MATH/AMSC/STAT course (prerequisite MATH141 or higher)",
       count: 1,
-      from: { departments: ["MATH", "AMSC", "STAT"], minNumber: 240, maxNumber: 499, exclude: CMSC_CROSSLISTS },
+      from: {
+        departments: ["MATH", "AMSC", "STAT"],
+        minNumber: 240,
+        maxNumber: 499,
+        exclude: [...AMSC_CROSSLISTS, ...MATH_CROSSLISTS, ...STAT_CROSSLISTS],
+      },
     },
     // Upper level: five 400-level courses from at least three areas, at most three per area (footnote 3)
     { kind: "distribution", id: "areas", name: "Five 400-level CMSC courses across three areas", count: 5, minAreas: 3, maxPerArea: 3, areas: AREAS },

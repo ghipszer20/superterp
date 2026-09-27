@@ -58,9 +58,10 @@ describe("describeGap", () => {
   it("describes a filter and suggests catalog courses that fit and aren't in the plan", () => {
     const r = req(cmscMajor, "stat4xx");
     // Footnote 2 / department page: "cannot be cross-listed with CMSC" -- STAT426 is excluded
-    // (cross-listed as CMSC320); see CMSC_CROSSLISTS in cmsc-major-2026-27.ts.
+    // (the department's Upper Level Concentration page's own "credit only granted for CMSC"
+    // example); see STAT_CROSSLISTS in cmsc-major-2026-27.ts.
     expect(describeGap(r, result(r, "missing"), ctx(taken("STAT400")))).toEqual({
-      need: "1 more STAT course numbered 400–499 (not AMSC460, AMSC466, MATH456, MATH475 or STAT426).",
+      need: "1 more STAT course numbered 400–499 (not STAT426).",
       suggestions: ["STAT401", "STAT410", "STAT420", "STAT464"],
     });
   });
