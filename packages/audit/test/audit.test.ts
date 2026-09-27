@@ -238,6 +238,51 @@ describe("auditProgram", () => {
     expect(r.requirements.map((x) => x.status)).toEqual(["missing", "satisfied"]);
   });
 
+  describe("a completed course graded F or W earns no credit (UMD grading; owner ruling: a course may be retaken only after an F or a W)", () => {
+    const university: Program = {
+      id: "university",
+      name: "University",
+      requirements: [{ kind: "choose", id: "total", name: "6 credits", credits: 6, overlay: true, from: { anyCourse: true } }],
+    };
+
+    it("doesn't let a failed course count toward a credit requirement with no minimum grade", async () => {
+      const r = await auditProgram(university, [{ id: "CMSC131", credits: 3, status: "completed", grade: "F" }]);
+      expect(r.requirements[0]).toMatchObject({ status: "missing", assigned: [] });
+      expect(r.unused).toEqual(["CMSC131"]);
+    });
+
+    it("doesn't let a withdrawn course count either, case- and whitespace-insensitively", async () => {
+      const r = await auditProgram(university, [{ id: "CMSC131", credits: 3, status: "completed", grade: " w " }]);
+      expect(r.requirements[0]).toMatchObject({ status: "missing", assigned: [] });
+      expect(r.unused).toEqual(["CMSC131"]);
+    });
+
+    it("still counts a planned course, a completed course with no grade (transfer/AP/IB), and a passing grade including P/S", async () => {
+      // 9 credits so the cap allows all three 3-credit courses (see the "counts credits" test above).
+      const nineCredits: Program = { ...university, requirements: [{ ...university.requirements[0]!, credits: 9 } as Requirement] };
+      const courses: StudentCourse[] = [
+        { id: "CMSC131", credits: 3, status: "planned" },
+        { id: "CMSC132", credits: 3, status: "completed" },
+        { id: "CMSC216", credits: 3, status: "completed", grade: "P" },
+      ];
+      const r = await auditProgram(nineCredits, courses);
+      expect(r.requirements[0]).toMatchObject({ status: "satisfied" });
+      expect(r.requirements[0]!.assigned).toHaveLength(3);
+      expect(r.unused).toEqual([]);
+    });
+
+    it("lets a passing retake count while the failed attempt it followed shows as unused (owner ruling: retake only after F/W)", async () => {
+      const courses: StudentCourse[] = [
+        { id: "CMSC131", credits: 3, status: "completed", grade: "F" },
+        { id: "CMSC131", credits: 3, status: "completed", grade: "B" },
+      ];
+      const r = await auditProgram(university, courses);
+      expect(r.requirements[0]).toMatchObject({ status: "partial" });
+      expect(r.requirements[0]!.assigned).toEqual(["CMSC131"]);
+      expect(r.unused).toEqual(["CMSC131"]);
+    });
+  });
+
   describe("several programs at once (double major)", () => {
     const math: Program = {
       id: "math",

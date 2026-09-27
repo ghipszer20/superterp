@@ -92,10 +92,24 @@ export type StudentCourse = {
 const GRADE_ORDER = ["F", "D-", "D", "D+", "C-", "C", "C+", "B-", "B", "B+", "A-", "A", "A+"];
 const gradeRank = (g: string) => GRADE_ORDER.indexOf(g.trim().toUpperCase());
 
+/**
+ * A completed course graded F or W earns no credit (UMD grading; owner ruling: a course may be
+ * retaken only after an F or a W), so it never satisfies any requirement -- even one with no
+ * minimum grade, like the university's "any course" credit total or a Gen Ed category. Planned
+ * courses, and completed courses with no grade (AP/IB/transfer credit) or a passing grade
+ * (including P/S), earn credit as usual. Case- and whitespace-insensitive, like gradeRank.
+ */
+export function earnsCredit(course: Pick<StudentCourse, "status" | "grade">): boolean {
+  if (course.status !== "completed" || !course.grade) return true;
+  const g = course.grade.trim().toUpperCase();
+  return g !== "F" && g !== "W";
+}
+
 function meetsGrade(course: StudentCourse, minGrade: string | undefined): boolean {
+  if (!earnsCredit(course)) return false;
   if (!minGrade || course.status !== "completed" || !course.grade) return true;
   const rank = gradeRank(course.grade);
-  // Non-letter grades (P, S, W…) don't meet a letter-grade minimum.
+  // Non-letter grades (P, S…) don't meet a letter-grade minimum.
   return rank >= 0 && rank >= gradeRank(minGrade);
 }
 
