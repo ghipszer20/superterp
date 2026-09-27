@@ -45,6 +45,11 @@ describe("seedFromUrl", () => {
     expect(seed.plan!.tracks).toEqual(["pre-med", "pre-law"]);
   });
 
+  it("sets double major vs double degree from the URL, ignoring an unknown value", () => {
+    expect(seedFromUrl("?seed=owner&degree=double-degree", dev)!.plan!.degreeMode).toBe("double-degree");
+    expect(seedFromUrl("?seed=owner&degree=nope", dev)!.plan).not.toHaveProperty("degreeMode");
+  });
+
   it("leaves the owner seed's plan without a tracks field when none are given", () => {
     const seed = seedFromUrl("?seed=owner", dev)!;
     expect(seed.plan).not.toHaveProperty("tracks");

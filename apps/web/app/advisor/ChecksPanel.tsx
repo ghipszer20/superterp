@@ -27,6 +27,8 @@ export function ChecksPanel({
   onOpenCourse: (c: OpenCourse) => void;
 }) {
   const tracks = analysis.result?.tracks ?? [];
+  const degrees = analysis.result?.degrees ?? null;
+  const degreeIssues = degrees ? [...degrees.issues].sort((a, b) => rank(a.severity) - rank(b.severity)) : [];
   const noPlanIssues = !checked || checked.issues.length === 0;
   const loadingTracks = tracks.length === 0 && analysis.status === "running";
 
@@ -39,7 +41,7 @@ export function ChecksPanel({
         <p className={styles.cardNote}>Build the course data to check prerequisites and credit loads.</p>
       ) : (
         <>
-          {noPlanIssues && tracks.length === 0 && !loadingTracks ? (
+          {noPlanIssues && tracks.length === 0 && degreeIssues.length === 0 && !loadingTracks ? (
             <p className={styles.cardNote}>No issues found. SuperTerp checks prerequisites, corequisites, repeats and credit loads on every edit.</p>
           ) : null}
           {!noPlanIssues ? (
@@ -70,6 +72,21 @@ export function ChecksPanel({
               </div>
             ) : null,
           )}
+          {degreeIssues.length > 0 ? (
+            <div className={styles.trackGroup}>
+              <h3 className={styles.trackGroupTitle}>{degrees!.mode === "double-degree" ? "Double degree" : "Double major"}</h3>
+              <ul className={styles.issueList}>
+                {degreeIssues.map((issue, i) => (
+                  <li key={i} className={styles.issueRow} data-severity={issue.severity}>
+                    <span className={styles.issueSeverity} data-severity={issue.severity}>
+                      {SEVERITY[issue.severity].label}
+                    </span>
+                    <span className={styles.issueText}>{issue.message}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </>
       )}
     </section>

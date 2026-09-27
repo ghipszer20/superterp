@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { newPlan, planReducer, type AdvisorPlan } from "@/lib/advisor/plan-state";
-import { AUTOMATIC_PROGRAMS, CATALOG_YEARS, collegeOf, toggleProgram } from "@/lib/advisor/programs";
+import { newPlan, planReducer, type AdvisorPlan, type DegreeChoice } from "@/lib/advisor/plan-state";
+import { Segmented } from "@/components/Segmented";
+import { AUTOMATIC_PROGRAMS, CATALOG_YEARS, collegeOf, degreeModeOf, toggleProgram } from "@/lib/advisor/programs";
 import { defaultTerms, startTermOptions } from "@/lib/advisor/terms";
 import { examMilestone, toggleTrack, TRACKS, type Track } from "@/lib/advisor/tracks";
 import { COLLEGES, type College } from "@superterp/plan/credit-caps";
@@ -23,12 +24,14 @@ export function SetupView({ plan, onDone, onCancel }: { plan: AdvisorPlan | null
   const [startTerm, setStartTerm] = useState(plan?.startTerm ?? `Fall ${thisYear}`);
   const [college, setCollege] = useState<College>(plan?.college ?? collegeOf(plan?.programs ?? []) ?? COLLEGES[0]!.code);
   const [tracks, setTracks] = useState<string[]>(plan?.tracks ?? []);
+  const [degreeChoice, setDegreeChoice] = useState<DegreeChoice | undefined>(plan?.degreeMode);
+  const degreeMode = degreeModeOf(programs, degreeChoice);
   const [examTerms, setExamTerms] = useState<Record<string, string>>(plan?.examTerms ?? {});
   const [expectedGrades, setExpectedGrades] = useState<Record<string, Record<string, string>>>(plan?.expectedGrades ?? {});
   const moves = plan !== null && plan.startTerm !== startTerm && plan.terms.some((t) => t.courses.length > 0);
 
   const done = () => {
-    const setup = { programs, catalogYear, startTerm, tracks, examTerms, expectedGrades, college };
+    const setup = { programs, catalogYear, startTerm, tracks, examTerms, expectedGrades, college, ...(degreeMode ? { degreeMode } : {}) };
     onDone(plan ? planReducer(plan, { type: "setup", ...setup }) : newPlan(setup));
   };
 
@@ -64,6 +67,24 @@ export function SetupView({ plan, onDone, onCancel }: { plan: AdvisorPlan | null
         <h2 className={styles.panelTitle}>Your programs</h2>
         <p className={styles.panelNote}>Pick every major, minor or program you have or want. Tracks of one major replace each other.</p>
         <ProgramPicker label="Programs" selected={programs} onToggle={(id) => setPrograms((p) => toggleProgram(p, id))} />
+        {degreeMode ? (
+          <div className={styles.degreeChoice}>
+            <Segmented<DegreeChoice>
+              label="Two majors as"
+              options={[
+                { value: "double-major", label: "Double major" },
+                { value: "double-degree", label: "Double degree" },
+              ]}
+              value={degreeMode}
+              onChange={setDegreeChoice}
+            />
+            <p className={styles.panelNote}>
+              {degreeMode === "double-major"
+                ? "One degree with both majors: 120 credits, and courses may count toward both."
+                : "Two degrees: 150 credits, with at least 18 credits in each degree that don't count toward the other."}
+            </p>
+          </div>
+        ) : null}
         <p className={styles.panelNote}>
           Always included: {AUTOMATIC_PROGRAMS.map((p) => p.name).join(" and ")}.
         </p>

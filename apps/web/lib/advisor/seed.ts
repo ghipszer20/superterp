@@ -4,12 +4,13 @@
 // NEXT_PUBLIC_SUPERTERP_SEED=1, so a student can never skip the agreement.
 // &tracks=pre-med,pre-law adds those tracks to the owner seed's plan (unknown ids dropped), for
 // screenshotting the Tracks checks and audit section without hand-editing the owner plan above.
+// &degree=double-degree checks the owner plan as two degrees (the double-degree checks).
 
 // TRACKS comes from "@superterp/tracks/list" (no runtime @superterp/audit import), so this stays
 // out of the main bundle's solver code -- store.ts, which calls seedFromUrl, is part of it.
 import { TRACKS } from "@superterp/tracks/list";
 import { CONSENT_VERSION, type ConsentRecord } from "./consent";
-import { emptyPrior, type AdvisorPlan } from "./plan-state";
+import { DEGREE_CHOICES, emptyPrior, type AdvisorPlan, type DegreeChoice } from "./plan-state";
 
 type Env = { NODE_ENV?: string; NEXT_PUBLIC_SUPERTERP_SEED?: string };
 
@@ -51,5 +52,7 @@ export function seedFromUrl(search: string, env: Env): { plan: AdvisorPlan | nul
   const plan = ownerPlan();
   const tracks = (params.get("tracks") ?? "").split(",").filter((id) => KNOWN_TRACK_IDS.has(id));
   if (tracks.length) plan.tracks = tracks;
+  const degree = params.get("degree");
+  if (DEGREE_CHOICES.includes(degree as DegreeChoice)) plan.degreeMode = degree as DegreeChoice;
   return { plan, consent };
 }
