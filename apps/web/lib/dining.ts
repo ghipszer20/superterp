@@ -24,3 +24,16 @@ export function diningSlice(menu: DiningMenu | null, preferredMeal: string): Din
   const meal = resolveMeal(meals, preferredMeal);
   return { meals, meal, stations: menu.meals.find((m) => m.name === meal)?.stations ?? [] };
 }
+
+// Owner ruling: the "Breakfast" station serves breakfast-style food that's shown at lunch and
+// dinner too, so labeling it "Breakfast" then reads as wrong. This only relabels what's shown --
+// the station's real name from UMD Dining (used as the React key and for the main/filler sort)
+// is untouched. Add more display-name overrides here if the owner flags other station names.
+const STATION_DISPLAY_NAMES: Record<string, string> = {
+  breakfast: "Breakfast Area",
+};
+
+/** The station name to display, applying any owner-requested rename (case/whitespace-insensitive). */
+export function stationDisplayName(name: string): string {
+  return STATION_DISPLAY_NAMES[name.trim().toLowerCase()] ?? name;
+}
