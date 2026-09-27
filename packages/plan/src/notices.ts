@@ -191,6 +191,14 @@ async function uniqueCredits(a: Program, b: Program, courses: StudentCourse[], s
 }
 
 /**
+ * The student's chosen mode for two or more declared majors (double major or double degree; see
+ * degreeModeOf in the Advisor). Only affects notices about a pair of declared (chosen) majors --
+ * an undeclared candidate's notices never change. Omit it (or pass null/undefined) to keep the
+ * double-major behavior below, which is also right when the student hasn't chosen yet.
+ */
+export type ChosenDegreeMode = "double-major" | "double-degree";
+
+/**
  * Info-level notices about the plan and the given majors (the student's declared ones plus
  * candidates to test). Uses completed, planned and prior-credit courses.
  */
@@ -198,6 +206,7 @@ export async function programNotices(
   plan: Plan,
   catalog: PlanCatalog,
   candidates: ProgramCandidate[],
+  mode?: ChosenDegreeMode | null,
 ): Promise<ProgramNotice[]> {
   if (candidates.length === 0) return [];
   const courses = planCourses(plan, catalog);
@@ -222,7 +231,10 @@ export async function programNotices(
         declared: false,
         message: `Your plan also completes ${the(other.program)}. You're eligible to declare it as a double major. A double major has to be declared at least one full academic year before you graduate${declareBy(plan)}.`,
       });
-    } else if (done[primary]) {
+    } else if (done[primary] && mode !== "double-degree") {
+      // The student chose double degree for this pair: that's a stronger claim than "a double
+      // major", and checkDegrees (degrees.ts) already reports the real double-degree result, so
+      // don't also claim "a double major" here.
       notices.push({
         kind: "double-major",
         severity: "info",
@@ -240,6 +252,11 @@ export async function programNotices(
   for (let i = 0; i < candidates.length; i++) {
     for (let j = i + 1; j < candidates.length; j++) {
       if (!done[i] || !done[j]) continue;
+      // The student already chose double degree for this pair (both declared): checkDegrees owns
+      // the real result there (a different, degree-grouped solve with the 18-unique goal), and its
+      // own "eligible" can disagree with this pairwise solve. Say nothing here rather than risk a
+      // duplicate or contradicting notice; this also skips uniqueCredits' HiGHS runs for the pair.
+      if (mode === "double-degree" && candidates[i]!.declared && candidates[j]!.declared) continue;
       const a = candidates[i]!.program;
       const b = candidates[j]!.program;
       const usedByB = new Set(results[j]!.requirements.flatMap((r) => r.assigned));

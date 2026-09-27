@@ -41,6 +41,38 @@ describe("runAnalysis", () => {
     expect(b.degrees?.issues.map((i) => i.kind)).toContain("double-degree-credits");
   });
 
+  it("doesn't contradict a chosen double degree with a double-major or dual-degree notice about the chosen pair", async () => {
+    // The owner plan is under 150 credits (double-degree-credits above), so neither notice should
+    // appear for the chosen pair -- Checks (a.degrees.issues) already owns that shortfall.
+    const b = await runAnalysis({ plan: { ...plan, degreeMode: "double-degree" }, catalog, priorCourses: prior.courses });
+    const aboutChosenPair = b.notices.filter(
+      (n) => (n.kind === "double-major" || n.kind === "dual-degree") && n.programs.every((id) => ["math-major-applied", "cmsc-major"].includes(id)),
+    );
+    expect(aboutChosenPair).toEqual([]);
+  });
+
+  it("agrees with Checks: the Audit tab uses checkDegrees' own solve, not a second one, for a double degree", async () => {
+    const a = await runAnalysis({ plan: { ...plan, degreeMode: "double-degree" }, catalog, priorCourses: prior.courses });
+    expect(a.audits.map((x) => x.program.id)).toEqual(["math-major-applied", "cmsc-major", "gen-ed", "university"]);
+    for (const programAudit of a.audits) {
+      const degreeAudit = a.degrees!.audits.find((x) => x.program.id === programAudit.program.id)!;
+      programAudit.requirements.forEach((req, r) => {
+        expect(req.result).toBe(degreeAudit.result.requirements[r]);
+      });
+    }
+  });
+
+  it("also uses checkDegrees' own solve for the Audit tab under the default double-major mode", async () => {
+    const a = await runAnalysis({ plan, catalog, priorCourses: prior.courses });
+    expect(a.audits.map((x) => x.program.id)).toEqual(["math-major-applied", "cmsc-major", "gen-ed", "university"]);
+    for (const programAudit of a.audits) {
+      const degreeAudit = a.degrees!.audits.find((x) => x.program.id === programAudit.program.id)!;
+      programAudit.requirements.forEach((req, r) => {
+        expect(req.result).toBe(degreeAudit.result.requirements[r]);
+      });
+    }
+  });
+
   it("has no degree check with one major", async () => {
     const a = await runAnalysis({ plan: { ...plan, programs: ["cmsc-major"] }, catalog, priorCourses: prior.courses });
     expect(a.degrees).toBeNull();

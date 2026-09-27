@@ -86,11 +86,17 @@ export async function runAnalysis(input: { plan: AdvisorPlan; catalog: PlanCatal
     ),
   ]);
   const mode = degreeModeOf(input.plan.programs, input.plan.degreeMode);
-  const [results, notices, degrees] = await Promise.all([
-    auditPrograms(programs, courses),
-    programNotices(plan, input.catalog, candidates),
+  const [solveResults, notices, degrees] = await Promise.all([
+    // With two or more majors, checkDegrees below already solves every program (with degree
+    // groups and the 18-unique goal); reuse its audits instead of a second, disagreeing solve.
+    mode ? null : auditPrograms(programs, courses),
+    programNotices(plan, input.catalog, candidates, mode),
     mode ? studentDegrees(input.plan.programs, mode).then((d) => checkDegrees(plan, input.catalog, d, AUTOMATIC_PROGRAMS, { today: new Date() })) : null,
   ]);
+  // Match by program id, not position: checkDegrees' own entries are laid out layers-first
+  // (Gen Ed, university, then each degree's programs), while the Audit tab expects chosen
+  // programs first, then Gen Ed and the university layers -- the order `programs` is already in.
+  const results = degrees ? programs.map((p) => degrees.audits.find((a) => a.program.id === p.id)!.result) : solveResults!;
   const catalogList = [...input.catalog.values()].map((c) => ({ id: c.id, genEd: c.genEd }));
   const audits = programs.map((program, p): ProgramAudit => {
     const requirements = program.requirements.map((requirement, r) => {

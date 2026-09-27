@@ -233,4 +233,42 @@ describe("dual degree", () => {
     );
     expect(notice).toMatchObject({ uniqueCredits: { p: 9, q: 9 } });
   });
+
+  describe("chosen degree mode", () => {
+    it("drops the double-major and (non-eligible) dual-degree notices for a chosen pair when double degree is chosen", async () => {
+      const notices = await programNotices(planWith(140), catalog, candidates, "double-degree");
+      expect(of(notices, "double-major")).toEqual([]);
+      expect(of(notices, "dual-degree")).toEqual([]);
+    });
+
+    it("also drops the positive (eligible) dual-degree notice for a chosen pair when double degree is chosen", async () => {
+      // checkDegrees (a different, degree-grouped solve) owns the real double-degree result; this
+      // notice's own "eligible" flag can disagree with it, so it's dropped for a chosen pair rather
+      // than risk contradicting the Checks panel.
+      const notices = await programNotices(planWith(150), catalog, candidates, "double-degree");
+      expect(of(notices, "dual-degree")).toEqual([]);
+    });
+
+    it("keeps both notices for a chosen pair when double major is chosen (unchanged)", async () => {
+      const notices = await programNotices(planWith(140), catalog, candidates, "double-major");
+      expect(of(notices, "double-major")).not.toEqual([]);
+      expect(of(notices, "dual-degree")).not.toEqual([]);
+    });
+
+    it("behaves the same as passing no mode at all", async () => {
+      const withMode = await programNotices(planWith(140), catalog, candidates, "double-major");
+      const withoutMode = await programNotices(planWith(140), catalog, candidates);
+      expect(withMode).toEqual(withoutMode);
+    });
+
+    it("leaves an undeclared candidate's notices unchanged in double-degree mode", async () => {
+      const mixed = [
+        { program: mathish, declared: true },
+        { program: csish, declared: false },
+      ];
+      const withMode = await programNotices(planWith(140), catalog, mixed, "double-degree");
+      const withoutMode = await programNotices(planWith(140), catalog, mixed);
+      expect(withMode).toEqual(withoutMode);
+    });
+  });
 });
