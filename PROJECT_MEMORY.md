@@ -1,7 +1,7 @@
 # SuperTerp — Project Memory
 
 > Single source of truth for project context. Update this file whenever a decision changes.
-> Last updated: 2026-09-27 (transcript blocked on a text PDF; trip-planner follow-up running).
+> Last updated: 2026-09-27 (transcript import and trip-planner follow-up running).
 > Read by the main session at the start of every session (builders don't read it; CLAUDE.md), so keep it under ~20 KB (section 18).
 
 ## 1. Vision
@@ -94,8 +94,8 @@ Moved to `docs/project/legal.md`. Read it before building the disclaimer, accoun
 ## 14. Current state (replace in place, never append; dated narrative goes in `docs/project/status-log.md`)
 - **Branches:** PR #1 `feat/campus-foundation` (draft); PR #2 `feat/course-data` (draft, stacked on #1) is the working branch everything merges into. CI green as of 2026-09-26 evening.
 - **Built** (full list in `docs/project/built.md`; all unverified by the owner unless noted): About page; Campus tab (dining, libraries, study rooms, gyms, Transport map + trip planner); Schedule builder linked to the 4-year plan; Advisor tab (disclaimer, setup, credit caps, What-if, AP/IB credit, plan grid, checks, audit, 14 pre-professional tracks); CS / Math Traditional / Math Applied / Gen Ed and 61 special programs encoded.
-- **In progress:** trip-planner follow-up builder (Sonnet, `feat/trip-planner-2`, worktree `../SuperTerp-wt-trip`): the owner narrowed it to one of the fixes (the others are unimportant, owner 2026-09-27) and resumed it directly. Transcript upload is **blocked on the owner**: their PDF ("Microsoft Print to PDF") has no text layer, only vector outlines; ruling (rulings.md): text PDFs + paste box, no OCR; the owner re-saves the Testudo page with Chrome/Edge "Save as PDF" into `../SuperTerp-wt-transcript/transcripts/`, then dispatch the builder there (WIP `b212a7a` adds pdfjs-dist; `transcripts/extract.mjs` dumps text to `sample.txt`).
-- **Queue (in order; details and rulings in `docs/project/rulings.md`, task notes in `docs/project/roadmap.md` "Queue notes"):** transcript upload (resume); trip-planner follow-up (estimate labels, icons, dev-overlay issue); program batches from department pages (CMNS first); older AP/IB charts; honors retry (fresh worktree from `feat/course-data`; the old branch has no unique commits); grad courses as an undergrad.
+- **In progress:** trip-planner follow-up builder (Sonnet, `feat/trip-planner-2`, worktree `../SuperTerp-wt-trip`): the owner narrowed it to one of the fixes (the others are unimportant, owner 2026-09-27) and resumed it directly. Transcript import builder (Sonnet, `feat/transcript-import`, worktree `../SuperTerp-wt-transcript`): text PDF + paste + on-device OCR fallback (rulings.md); samples in gitignored `transcripts/` of the main checkout.
+- **Queue (in order; next after these: older AP chart, sample now in `transcripts/`; details and rulings in `docs/project/rulings.md`, task notes in `docs/project/roadmap.md` "Queue notes"):** transcript upload (resume); trip-planner follow-up (estimate labels, icons, dev-overlay issue); program batches from department pages (CMNS first); older AP/IB charts; honors retry (fresh worktree from `feat/course-data`; the old branch has no unique commits); grad courses as an undergrad.
 - **Waiting on the owner:** see `docs/project/owner-review.md` (include it in every progress report; add new items there).
 - **Known to-dos:** email a copy of each signed Advisor agreement to the owner's records address (with deployment; address from the owner as an env var); the GTFS feed ends 2026-12-24 (warn in the UI and in a scheduled check first); check the GTFS license before public launch; show last good data when a source is down (needs a database); deployment (Vercel + Supabase accounts from the owner) with pre-warmed data.
 
