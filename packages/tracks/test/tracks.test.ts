@@ -59,6 +59,16 @@ describe("track definitions", () => {
     expect(TRACKS.map((t) => t.id).sort()).toEqual([...EXPECTED].sort());
   });
 
+  // Owner ruling (Tracks, 2026-09-27): pre-law ignores science GPA (BCPM) -- only health tracks
+  // show it. Flagged per track (`usesScienceGpa`), not by a hard-coded id check in the UI.
+  it("flags science GPA (BCPM) for health tracks only, not pre-law", () => {
+    const preLaw = TRACKS.find((t) => t.id === "pre-law")!;
+    expect(preLaw.usesScienceGpa).not.toBe(true);
+    for (const track of TRACKS.filter((t) => t.id !== "pre-law")) {
+      expect(track.usesScienceGpa, track.id).toBe(true);
+    }
+  });
+
   describe.each(TRACKS.map((t): [string, Track] => [t.id, t]))("%s", (_, track) => {
     it("is unverified, with review notes and sources recorded in SOURCES.md", () => {
       expect(track.verified).toBe(false);

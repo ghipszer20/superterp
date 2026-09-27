@@ -14,6 +14,7 @@ export const prePodiatry: Track = {
   schools: "podiatric medical schools",
   minGrade: "C",
   minGradeNote: "HPAO: schools generally require a C (not a C-) in every prerequisite, as for medicine.",
+  usesScienceGpa: true,
   entry: { kind: "after-degree" },
   categories: [
     genChem1("8 credits of Inorganic Chemistry with labs", onMcat),
@@ -60,7 +61,7 @@ export const prePodiatry: Track = {
     MAPPING_NOTES.physics,
     MAPPING_NOTES.english,
     MAPPING_NOTES.grades,
-    "HPAO's podiatry page gives no biochemistry, calculus or statistics requirement (unlike medicine's list), so none is included here; the owner should double check this is a genuine gap in HPAO's page and not an oversight.",
+    "HPAO's podiatry page gives no biochemistry, calculus or statistics requirement (unlike medicine's list), so none is included here. Re-fetched directly (https://prehealth.umd.edu/explore-careers/podiatry, 2026-09-27) to double-check: the page's category list is just inorganic chemistry, organic chemistry, biology, physics and English -- the gap is genuine, not a scraping miss.",
     "No HPAO committee-process milestones are included: HPAO's application-process page names only \"medical and dental applicants\", and its podiatry page doesn't mention a Pre-Health Packet.",
   ],
 };

@@ -27,6 +27,7 @@ export const preOptometry: Track = {
   schools: "optometry schools",
   minGrade: "C",
   minGradeNote: "HPAO: schools generally require a C (not a C-) in every prerequisite, as for medicine.",
+  usesScienceGpa: true,
   entry: { kind: "after-degree" },
   categories: [
     genChem1("8 Credits of Inorganic Chemistry with labs", onOat),

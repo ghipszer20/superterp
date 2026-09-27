@@ -84,9 +84,22 @@ describe("checkCsGateway: gateway course status", () => {
     expect(gateway([done("CMSC141", "B")], "CMSC131")).toEqual({
       id: "CMSC131",
       name: "Object-Oriented Programming I",
-      options: ["CMSC131", "CMSC141"],
+      options: ["CMSC131", "CMSC141", "CMSC133"],
       status: "met",
       satisfiedBy: "CMSC141",
+      attempts: 1,
+    });
+  });
+
+  // Owner ruling (CS department-page answers, 2026-09-27): CMSC133 also satisfies the CMSC131
+  // gateway course.
+  it("meets the CMSC131 gateway with the CMSC133 substitute", () => {
+    expect(gateway([done("CMSC133", "B")], "CMSC131")).toEqual({
+      id: "CMSC131",
+      name: "Object-Oriented Programming I",
+      options: ["CMSC131", "CMSC141", "CMSC133"],
+      status: "met",
+      satisfiedBy: "CMSC133",
       attempts: 1,
     });
   });

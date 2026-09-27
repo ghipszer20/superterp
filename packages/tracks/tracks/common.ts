@@ -30,15 +30,12 @@ const cat = (requirement: Requirement, source: string, extra: Extra = {}): Track
 // UMD's general chemistry is split around organic chemistry: CHEM131/132 (Chemistry I and lab)
 // come first, and CHEM271/272 (General Chemistry and Energetics, and lab) come after organic.
 
-// CHEM146/CHEM177 (the chemistry/biochemistry majors' first-semester alternative) aren't in the
-// Spring 2027 Schedule of Classes, the only Schedule of Classes snapshot cached in this repo (no
-// fall term is cached), and no other fetched source names them either (MAPPING_NOTES.genChem);
-// not being in one term's schedule doesn't make a course number invalid, so they're kept here
-// with a reviewNote asking the owner to confirm the numbers themselves.
+// CHEM146/CHEM177 (the chemistry/biochemistry majors' first-semester alternative) are confirmed
+// by UMD's Chemistry major catalog page (MAPPING_NOTES.genChem).
 export const GEN_CHEM_1_OPTIONS = [
   ["CHEM131", "CHEM132"],
   ["CHEM135", "CHEM136"], // engineering students
-  ["CHEM146", "CHEM177"], // chemistry/biochemistry majors; unconfirmed, see MAPPING_NOTES.genChem
+  ["CHEM146", "CHEM177"], // chemistry/biochemistry majors
 ];
 export const GEN_CHEM_2_OPTIONS = [
   ["CHEM271", "CHEM272"],
@@ -55,14 +52,13 @@ export const genChem2 = (source: string, extra?: Extra) =>
 
 export const ORGANIC_CHEM_1_OPTIONS = [["CHEM231", "CHEM232"], ["CHEM237"]];
 
-// CHEM247 (the second half of the chemistry/biochemistry majors' organic sequence) isn't in the
-// Spring 2027 Schedule of Classes and no other fetched source names it (MAPPING_NOTES.organic);
-// kept anyway with a reviewNote, since one term's schedule not listing it doesn't make it invalid.
+// CHEM237/CHEM247 (the chemistry/biochemistry majors' organic sequence) are confirmed by UMD's
+// Chemistry major catalog page (MAPPING_NOTES.organic).
 export const organicChem = (source: string, extra?: Extra) =>
   cat(
     sets("organic-chem", "Organic chemistry I and II with labs", [
       ["CHEM231", "CHEM232", "CHEM241", "CHEM242"],
-      ["CHEM237", "CHEM247"], // chemistry/biochemistry majors; unconfirmed, see MAPPING_NOTES.organic
+      ["CHEM237", "CHEM247"], // chemistry/biochemistry majors
     ]),
     source,
     extra,
@@ -296,32 +292,48 @@ export const CPR_MILESTONE: Milestone = {
   detail: "Most programs require current CPR certification (often BLS for Healthcare Providers) at the time you apply or matriculate.",
 };
 
+// Re-checked against HPAO's published pages (this builder, fetched 2026-09-27): the AP/IB page
+// (https://prehealth.umd.edu/prospective-students/ap-ib-credit) and the explore-careers pages for
+// medicine, pharmacy, occupational-therapy, genetic-counseling, dental-hygiene, dentistry,
+// optometry, podiatry, physical-therapy, nursing, anesthesiologist-assistant and
+// physician-assistant (each at https://prehealth.umd.edu/explore-careers/<slug>), plus the BIOE
+// sample pre-med plan (https://bioe.umd.edu/sites/bioe.umd.edu/files/resource_documents/PreHealth%20Sample%20Plan%20(New%20Curric)%20-%20Update060216.pdf)
+// and the NEUR pre-med benchmark plan (HPAO.neurPlan). None of the mappings below disagreed with
+// what these pages say; each note below records what was checked and cites the page. Where a page
+// names no UMD course number for a category (most of them -- HPAO deliberately names categories,
+// not course numbers, and points students to 4yearplans.umd.edu / their advisor instead), the
+// existing course choice is kept and flagged as SuperTerp's own reading, not HPAO's. (CHEM146/177
+// and CHEM237/247 are the one exception already resolved above, confirmed by the main session
+// against the Chemistry major catalog page, not by this fetch pass.)
 export const MAPPING_NOTES = {
   genChem:
-    "General chemistry (\"8 credits of inorganic chemistry with labs\") = CHEM131 & CHEM132 then CHEM271 & CHEM272, UMD's two general chemistry courses, split around organic chemistry (Bio major supporting courses; HPAO AP page). Engineering CHEM135 & CHEM136 and majors' CHEM276 & CHEM277 are accepted as alternatives (assumed). Majors' first-semester alternative, CHEM146 & CHEM177, is also accepted, but **it's the weakest-sourced alternative in this package**: it isn't in the Spring 2027 Schedule of Classes (the only Schedule of Classes snapshot cached in this repo; no fall term is cached) and no other fetched source names it either — the owner should confirm these are current, correct course numbers before relying on them.",
+    "General chemistry (\"8 credits of inorganic chemistry with labs\") = CHEM131 & CHEM132 then CHEM271 & CHEM272, UMD's two general chemistry courses, split around organic chemistry (Bio major supporting courses; HPAO AP/IB page). Engineering CHEM135 & CHEM136 and majors' CHEM276 & CHEM277 are accepted as alternatives (assumed). Majors' first-semester alternative, CHEM146 & CHEM177, is also accepted -- confirmed by UMD's Chemistry major catalog page (main session, 2026-09-27). Re-checked against the AP/IB page (https://prehealth.umd.edu/prospective-students/ap-ib-credit, fetched 2026-09-27): it recommends CHEM231/232, 241/242, 271/272 for a 4-5 AP score rather than starting at CHEM131/132, which matches genChem1's examCreditAdvice; it says nothing about CHEM146/177 or the 276/277 alternative one way or the other.",
   organic:
-    "Organic chemistry = CHEM231 & CHEM232 and CHEM241 & CHEM242, or majors' CHEM237 & CHEM247 (a one-semester CHEM237 alone is also accepted as an alternative to CHEM231 & CHEM232, ORGANIC_CHEM_1_OPTIONS). CHEM247 isn't in the Spring 2027 Schedule of Classes and no other fetched source names it; kept as an alternative, but flagged (with CHEM146/CHEM177 above) as needing the owner's direct confirmation that the number is current.",
-  biochem: "Biochemistry = BCHM461 or BCHM463 (HPAO AP page names both).",
+    "Organic chemistry = CHEM231 & CHEM232 and CHEM241 & CHEM242, or majors' CHEM237 & CHEM247 (a one-semester CHEM237 alone is also accepted as an alternative to CHEM231 & CHEM232, ORGANIC_CHEM_1_OPTIONS) -- CHEM237/CHEM247 confirmed by UMD's Chemistry major catalog page (main session, 2026-09-27). The AP/IB page (fetched 2026-09-27) folds organic into the same CHEM241/242 recommendation as general chemistry above; it doesn't mention CHEM237/247 separately.",
+  biochem:
+    "Biochemistry = BCHM461 or BCHM463 (HPAO's AP/IB page, https://prehealth.umd.edu/prospective-students/ap-ib-credit, names both; the medicine and pharmacy career pages, https://prehealth.umd.edu/explore-careers/medicine and /pharmacy, also list \"Biochemistry\" as its own category, with no course number, fetched 2026-09-27).",
   introBio:
-    "Introductory biology with lab = BSCI160, BSCI170 and BSCI180, or the older BSCI160/161 and BSCI170/171 (Bio major catalog page: BSCI180 replaced BSCI161 and BSCI171 in Fall 2026, and they may count for it). BSCI161/171 aren't in the Spring 2027 Schedule of Classes and aren't being scheduled for new students, but the Biological Sciences catalog page names them directly, so they're kept as an alternative for a student with older transfer or AP credit under those numbers, rather than dropped for not being in one term's schedule.",
+    "Introductory biology with lab = BSCI160, BSCI170 and BSCI180, or the older BSCI160/161 and BSCI170/171 (Bio major catalog page: BSCI180 replaced BSCI161 and BSCI171 in Fall 2026, and they may count for it). BSCI161/171 aren't in the Spring 2027 Schedule of Classes and aren't being scheduled for new students, but the Biological Sciences catalog page names them directly, so they're kept as an alternative for a student with older transfer or AP credit under those numbers, rather than dropped for not being in one term's schedule. The NEUR pre-med benchmark plan (fetched 2026-09-27) independently lists the same BSCI160/161 and BSCI170/171 pairing as Benchmark 1 requirements, confirming the numbers.",
   upperBio:
-    "HPAO's \"8–12 credits of biology with labs\" and \"nearly all medical schools require at least two biology courses with formal laboratories\" are encoded as intro biology plus one upper-level biology course with a lab: BSCI223, BSCI330 (now BSCI331 + BSCI332 lab, kept as an alternative), BSCI222, BSCI201 or BSCI202. HPAO's AP page names BSCI223 and BSCI330; BSCI330 itself isn't in the Spring 2027 schedule, but the Biological Sciences (Universities at Shady Grove) catalog page names it directly (\"Cell Biology and Physiology Laboratory\"), so it's kept rather than dropped. That BSCI222 includes a lab is assumed from its 4 credits.",
+    "HPAO's \"8–12 credits of biology with labs\" and \"nearly all medical schools require at least two biology courses with formal laboratories\" are encoded as intro biology plus one upper-level biology course with a lab: BSCI223, BSCI330 (now BSCI331 + BSCI332 lab, kept as an alternative), BSCI222, BSCI201 or BSCI202. HPAO's AP/IB page (https://prehealth.umd.edu/prospective-students/ap-ib-credit, fetched 2026-09-27) names BSCI223 and BSCI330 as \"recommended starting points\"; BSCI330 itself isn't in the Spring 2027 schedule, but the Biological Sciences (Universities at Shady Grove) catalog page names it directly (\"Cell Biology and Physiology Laboratory\"), so it's kept rather than dropped. That BSCI222 includes a lab is assumed from its 4 credits; HPAO names neither BSCI222, BSCI201 nor BSCI202.",
   physics:
-    "Physics with labs = PHYS131 & 132 (life sciences), PHYS121 & 122, PHYS141 & 142, or engineering PHYS161 + PHYS261 lab and PHYS260 + PHYS271 lab (BIOE sample plan). PHYS141/142 aren't in the Spring 2027 schedule, but the Biological Sciences catalog page names them directly (\"PHYS131 or 141, PHYS132 or 142\"), so they're kept rather than dropped for not being in one term's schedule; majors' PHYS171/272/273 sequence is not included.",
+    "Physics with labs = PHYS131 & 132 (life sciences), PHYS121 & 122, PHYS141 & 142, or engineering PHYS161 + PHYS261 lab and PHYS260 + PHYS271 lab (BIOE sample plan). PHYS141/142 aren't in the Spring 2027 schedule, but the Biological Sciences catalog page names them directly (\"PHYS131 or 141, PHYS132 or 142\"), so they're kept rather than dropped for not being in one term's schedule; majors' PHYS171/272/273 sequence is not included. Re-checked 2026-09-27: HPAO's AP/IB page (https://prehealth.umd.edu/prospective-students/ap-ib-credit) names PHYS121/122 specifically (\"even if two semesters of AP credit are awarded\"); the NEUR pre-med benchmark plan (https://neur.umd.edu/sites/neur.umd.edu/files/Four-Year%20Plans/NEUR%20Pre-Med%20Sample%204%20Year%20Plan%2011_06_20_0.pdf) uses PHYS131/132; the BIOE sample pre-med plan (https://bioe.umd.edu/sites/bioe.umd.edu/files/resource_documents/PreHealth%20Sample%20Plan%20(New%20Curric)%20-%20Update060216.pdf) uses PHYS161, then PHYS260/261, then PHYS271 -- all three already-encoded options are independently confirmed by a source.",
   calculus:
-    "Calculus = MATH120, MATH136 or MATH140. MATH135 (Discrete Mathematics for Life Sciences) is not calculus. MATH120 is closed to science majors but is calculus.",
+    "Calculus = MATH120, MATH136 or MATH140. MATH135 (Discrete Mathematics for Life Sciences) is not calculus. MATH120 is closed to science majors but is calculus. HPAO's AP/IB page (https://prehealth.umd.edu/prospective-students/ap-ib-credit, fetched 2026-09-27) only says schools accepting math generally accept AP/IB credit for it; it names no specific UMD calculus course, so this list stays SuperTerp's own reading of \"calculus\" at UMD.",
   statistics:
-    "Statistics = BIOM301, EPIB315, PSYC200, STAT400 or STAT464 (the NEUR pre-med plan's approved list) plus STAT100, which is on no UMD pre-health list (assumed acceptable).",
+    "Statistics = BIOM301, EPIB315, PSYC200, STAT400 or STAT464 (the NEUR pre-med plan's approved list) plus STAT100, which is on no UMD pre-health list (assumed acceptable). Re-checked directly against the NEUR pre-med benchmark plan (https://neur.umd.edu/sites/neur.umd.edu/files/Four-Year%20Plans/NEUR%20Pre-Med%20Sample%204%20Year%20Plan%2011_06_20_0.pdf, fetched 2026-09-27): its \"Approved Statistics Courses\" note reads verbatim \"BIOM301 or EPIB315 or PSYC200 or STAT400 or STAT464\", an exact match; HPAO's own career pages list \"Statistics\" as a category but name no course.",
   english:
-    "English (\"6 credits\") = ENGL101 plus one ENGL390–398 (HPAO AP page: \"If you have received AP credit for ENGL 101, you may complete just 39X\"). AP credit here is noted, not warned about.",
+    "English (\"6 credits\") = ENGL101 plus one ENGL390–398 (HPAO AP/IB page: \"If you have received AP credit for ENGL 101, you may complete just 39X\"). AP credit here is noted, not warned about. Re-checked 2026-09-27 against https://prehealth.umd.edu/prospective-students/ap-ib-credit: the wording is unchanged.",
   grades:
     "Minimum grade C (HPAO: \"a C (not a C-)\"): a completed course below C doesn't count, and a low-grade warning is shown. Pass/fail (P/S) courses do count in the audit but get a warning; AP/IB credit counts but gets a warning, except calculus and English, where HPAO says it is accepted.",
   fixture:
-    "test/fixtures/umd-courses.json is built from the Spring 2027 Schedule of Classes (packages/course-data/.cache/soc-202701.json in the main checkout), the only Schedule of Classes snapshot cached anywhere in this repo. A course not being offered that one term doesn't make its number invalid, so courses this package names that the Spring 2027 schedule doesn't confirm (CHEM146, CHEM177, CHEM247, BSCI161, BSCI171, BSCI330, PHYS141, PHYS142, PHIL170) are still in both the fixture and the requirement options above, each with its own reviewNote; most of them (BSCI161/171/330, PHYS141/142, PHIL170) are independently confirmed by another already-fetched UMD page (the Biological Sciences catalog page, or the Pre-Law timeline document), but CHEM146/CHEM177/CHEM247 have no confirming source at all and need the owner's direct verification.",
+    "test/fixtures/umd-courses.json is built from the Spring 2027 Schedule of Classes (packages/course-data/.cache/soc-202701.json in the main checkout), the only Schedule of Classes snapshot cached anywhere in this repo. A course not being offered that one term doesn't make its number invalid, so courses this package names that the Spring 2027 schedule doesn't confirm (CHEM146, CHEM177, CHEM247, BSCI161, BSCI171, BSCI330, PHYS141, PHYS142, PHIL170) are still in both the fixture and the requirement options above; each is independently confirmed by another UMD page (CHEM146/177/237/247 by the Chemistry major catalog page, main session, 2026-09-27; BSCI161/171/330, PHYS141/142, PHIL170 by the Biological Sciences catalog page or the Pre-Law timeline document).",
   collegeAlgebra:
-    "\"College Algebra\" (Dental Hygiene) = MATH113 (College Algebra and Trigonometry), UMD's actual college-algebra course, or MATH115 (Precalculus), a more advanced course that assumedly covers the same ground and more. Unlike dentistry's and PT's \"College Algebra or Calculus\", HPAO's Dental Hygiene page offers no calculus alternative, so the CALCULUS courses aren't included here.",
+    "\"College Algebra\" (Dental Hygiene) = MATH113 (College Algebra and Trigonometry), UMD's actual college-algebra course, or MATH115 (Precalculus), a more advanced course that assumedly covers the same ground and more. Unlike dentistry's and PT's \"College Algebra or Calculus\", HPAO's Dental Hygiene page offers no calculus alternative, so the CALCULUS courses aren't included here. Re-checked directly against that page (https://prehealth.umd.edu/explore-careers/dental-hygiene, fetched 2026-09-27): the math requirement reads exactly \"College Algebra\", with no calculus alternative offered and no UMD course number named.",
   advancedGenetics:
-    "\"Advanced Genetics\" (Genetic Counseling) = BSCI410 (Molecular Genetics), whose own catalog description calls it \"An advanced genetics course emphasizing the molecular basis of gene structure and function\" — the clearest match for HPAO's wording. BSCI416 (Human Genetics), which requires BSCI410 first (a minimum grade of C- in it, or concurrent enrollment), is kept as a further alternative. BSCI222 (Principles of Genetics), the introductory course both of these build on, is NOT used here: it's the prerequisite for \"advanced\" genetics, not the advanced course itself, and it's already used elsewhere in this package (upperBioLab).",
+    "\"Advanced Genetics\" (Genetic Counseling) = BSCI410 (Molecular Genetics), whose own catalog description calls it \"An advanced genetics course emphasizing the molecular basis of gene structure and function\" — the clearest match for HPAO's wording. BSCI416 (Human Genetics), which requires BSCI410 first (a minimum grade of C- in it, or concurrent enrollment), is kept as a further alternative. BSCI222 (Principles of Genetics), the introductory course both of these build on, is NOT used here: it's the prerequisite for \"advanced\" genetics, not the advanced course itself, and it's already used elsewhere in this package (upperBioLab). Re-checked directly against HPAO's Genetic Counseling page (https://prehealth.umd.edu/explore-careers/genetic-counseling, fetched 2026-09-27): it lists \"Advanced Genetics\" as its own category but names no UMD course, so BSCI410/416 stays SuperTerp's own reading.",
+  socialScience:
+    "Sociology (SOCY100 or SOCY105), human growth and development (EDHD320 or PSYC355) and nutrition (NFSC100) each map to UMD's most general course in the area. Checked directly against HPAO's Occupational Therapy page (https://prehealth.umd.edu/explore-careers/occupational-therapy: \"Sociology\", \"Human Growth and Development\") and Nursing page (https://prehealth.umd.edu/explore-careers/nursing: \"Nutrition\", \"Human Growth and Development\"), both fetched 2026-09-27: both name the category but no UMD course number for any of the three, so these three mappings stay SuperTerp's own reading, same as microeconomics/communications above.",
 };
 
 export const HPAO = {

@@ -138,6 +138,28 @@ describe("auditProgram", () => {
       const r = await auditProgram(program, took("CMSC420", "CMSC421", "CMSC422", "CMSC423", "MATH141"));
       expect(r.requirements[0]).toMatchObject({ status: "missing" });
     });
+
+    it("ignores an individually excluded course even when its department is otherwise eligible", async () => {
+      const excludingProgram: Program = {
+        id: "cs",
+        name: "CS",
+        requirements: [
+          {
+            kind: "concentration",
+            id: "conc",
+            name: "Upper-level concentration",
+            credits: 12,
+            minNumber: 300,
+            maxNumber: 499,
+            excludeDepartments: ["CMSC"],
+            exclude: ["MATH410"],
+          } satisfies Requirement,
+        ],
+      };
+      const r = await auditProgram(excludingProgram, took("MATH401", "MATH403", "MATH410", "MATH411"));
+      expect(r.requirements[0]).toMatchObject({ status: "partial" });
+      expect(r.requirements[0]!.assigned).not.toContain("MATH410");
+    });
   });
 
   describe("pick one set (Math: a depth sequence, or a supporting sequence)", () => {

@@ -5,8 +5,9 @@
 // - Matriculated Fall 2024 (202408) or later: every gateway course B- or
 //   better, cumulative UMD GPA 3.0 or higher.
 // - Matriculated Summer 2024 (202405) or earlier: C- or better, GPA 2.7.
-// Gateway courses: MATH140, CMSC131 (or CMSC141), CMSC132 (or CMSC142).
+// Gateway courses: MATH140, CMSC131 (or CMSC141 or CMSC133), CMSC132 (or CMSC142).
 // The substitutes match cmsc-major-2026-27.ts.
+// CMSC133 also satisfies the CMSC131 gateway (CS department-page answers, owner, 2026-09-27).
 //
 // Kept separate from audit.ts. The major's program uses a single C- minimum,
 // while the gateway minimum depends on when the student matriculated.
@@ -25,7 +26,7 @@ const NEW_RULE_FROM_TERM = 202408;
 
 const GATEWAY_COURSES = [
   { id: "MATH140", name: "Calculus I", options: ["MATH140"] },
-  { id: "CMSC131", name: "Object-Oriented Programming I", options: ["CMSC131", "CMSC141"] },
+  { id: "CMSC131", name: "Object-Oriented Programming I", options: ["CMSC131", "CMSC141", "CMSC133"] },
   { id: "CMSC132", name: "Object-Oriented Programming II", options: ["CMSC132", "CMSC142"] },
 ];
 

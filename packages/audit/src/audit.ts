@@ -54,6 +54,8 @@ export type RequirementRule =
       minNumber: number;
       maxNumber: number;
       excludeDepartments?: string[];
+      /** Individually-ineligible courses, e.g. a course "credit only granted for" one in the excluded department. */
+      exclude?: string[];
     }
   /**
    * Every course of one set, e.g. Math's depth sequence "MATH410 & MATH411 or MATH403 & MATH404";
@@ -214,7 +216,7 @@ function pairsFor(req: Requirement, p: number, r: number, course: StudentCourse,
   if (req.kind === "choose") return matchesFilter(req.from, course) ? plain(req.credits ? course.credits : 1) : [];
   if (req.kind === "concentration") {
     const m = COURSE_ID.exec(course.id);
-    if (!m || req.excludeDepartments?.includes(m[1]!)) return [];
+    if (!m || req.excludeDepartments?.includes(m[1]!) || req.exclude?.includes(course.id)) return [];
     const n = Number(m[2]);
     if (n < req.minNumber || n > req.maxNumber) return [];
     return [{ p, c, r, area: null, department: m[1]!, name: base, weight: course.credits }];

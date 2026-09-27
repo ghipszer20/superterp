@@ -10,6 +10,7 @@ export const preGeneticCounseling: Track = {
   schools: "Genetic Counseling master's programs",
   minGrade: "C",
   minGradeNote: "HPAO: schools generally require a minimum of a C (not a C-) in all prerequisite courses.",
+  usesScienceGpa: true,
   entry: { kind: "after-degree" },
   categories: [
     statistics("Statistics"),

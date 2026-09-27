@@ -7,9 +7,20 @@
 // stays out of the main bundle's solver code; only lib/advisor/analysis.ts (code-split) imports
 // the full "@superterp/tracks" (checkTrack, scienceGpa).
 
+import type { Track } from "@superterp/tracks/list";
+
 export { examMilestone, TRACKS, type Track } from "@superterp/tracks/list";
 
 /** Adds or removes a track id, keeping the others' order. */
 export function toggleTrack(selected: string[], id: string): string[] {
   return selected.includes(id) ? selected.filter((x) => x !== id) : [...selected, id];
+}
+
+/**
+ * Whether to show the BCPM science GPA on this track's card. Owner ruling (Tracks, 2026-09-27):
+ * only health tracks show it (pre-law doesn't) -- driven by the track's own `usesScienceGpa`
+ * flag, not a hard-coded track id.
+ */
+export function showsScienceGpa(track: Pick<Track, "usesScienceGpa">): boolean {
+  return track.usesScienceGpa === true;
 }
