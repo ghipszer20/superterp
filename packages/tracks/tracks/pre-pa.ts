@@ -66,7 +66,7 @@ export const prePa: Track = {
     MAPPING_NOTES.grades,
     "\"General biology with lab\" is mapped as one semester (BSCI170/180 or BSCI160/180), matching HPAO's \"general biology with lab\" (singular), unlike medicine's 8-12 credit requirement.",
     "\"General chemistry with lab\" and \"organic chemistry with lab\" are mapped as one semester each (genChem1, organicChem1), matching HPAO's singular wording, unlike medicine's two-semester sequences.",
-    "Abnormal psychology: HPAO names \"Adult Psychopathology (PSYC353) and Child Psychopathology (PSYC330)\" together; this reuses the shared abnormal-psych category (PSYC353 or PSYC330), so only one is required here. The owner should confirm whether PA programs want both.",
+    "Abnormal psychology: HPAO names \"Adult Psychopathology (PSYC353) and Child Psychopathology (PSYC330)\" together; this reuses the shared abnormal-psych category (PSYC353 or PSYC330), so only one is required here. Re-checked directly against HPAO's PA page (https://prehealth.umd.edu/explore-careers/physician-assistant, fetched 2026-09-27): it presents the two courses as UMD's own two-stage split of one \"Abnormal Psychology\" prerequisite, not a request for both, so oneOf (either course) is correct as encoded.",
     "Developmental psychology maps to PSYC355, HPAO's own citation, reusing the shared developmental-psych category.",
     "Medical terminology: HPAO names it but UMD's course isn't identified (offered only in winter per the HPAO nursing page); the student confirms it themselves.",
     "No admission test (MCAT, GRE) is treated as exam content for these categories: HPAO doesn't tie PA prerequisites to a specific test, and very few PA programs require the PA-CAT.",

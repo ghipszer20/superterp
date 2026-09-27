@@ -63,6 +63,7 @@ export const preOt: Track = {
     MAPPING_NOTES.grades,
     "\"Physics with lab\" is mapped as one semester (physicsOneSemester); HPAO's OT page doesn't say how many credits.",
     MAPPING_NOTES.statistics,
+    MAPPING_NOTES.socialScience,
     "Abnormal psychology (PSYC353/PSYC330) and developmental psychology (PSYC355) reuse the same shared categories as pre-PA, per HPAO's own citation of those course numbers on the OT page.",
     "Medical terminology: HPAO says UMD offers it in winter term, but names no course, so the student confirms it themselves.",
     "No admission test is tied to these categories as exam content: OT programs don't require the MCAT or DAT, and HPAO's OT page doesn't describe the GRE's content.",

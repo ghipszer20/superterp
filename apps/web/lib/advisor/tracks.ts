@@ -7,8 +7,9 @@
 // stays out of the main bundle's solver code; only lib/advisor/analysis.ts (code-split) imports
 // the full "@superterp/tracks" (checkTrack, scienceGpa).
 
-export { examMilestone, TRACKS, type Track } from "@superterp/tracks/list";
 import type { Track } from "@superterp/tracks/list";
+
+export { examMilestone, TRACKS, type Track } from "@superterp/tracks/list";
 
 /** Adds or removes a track id, keeping the others' order. */
 export function toggleTrack(selected: string[], id: string): string[] {
