@@ -105,6 +105,7 @@ function createArrowIcon(): ImageData {
 function applyHighlight(map: MapLibreMap, selectedRoute: string | null, routes: MapRoute[]): void {
   map.setFilter("routes-casing", ["==", ["get", "routeId"], selectedRoute ?? ""]);
   map.setFilter("routes-line", ["==", ["get", "routeId"], selectedRoute ?? ""]);
+  map.setFilter("routes-arrows-casing", ["==", ["get", "routeId"], selectedRoute ?? ""]);
   map.setFilter("routes-arrows", ["==", ["get", "routeId"], selectedRoute ?? ""]);
   const route = routes.find((r) => r.id === selectedRoute);
   map.setPaintProperty("routes-line", "line-color", route ? route.color : "#6e6e73");
@@ -293,25 +294,36 @@ export function MapView({
       // line at a fixed spacing, each one rotated to the line's actual bearing at that point --
       // see createArrowIcon's comment for how that rotation-from-shape-order works. The halo
       // (casingColor(), same as the line's own casing) is what keeps them visible against both
-      // the light and dark basemap styles.
+      // the light and dark basemap styles -- as a second, larger, casing-colored icon layer
+      // underneath the colored one (icon-halo-* needs the image to actually be a distance
+      // field to feather properly; this plain filled shape isn't one, so icon-color recolor,
+      // the same mechanism routes-casing/routes-line already rely on, is what's used instead).
       map.addImage("route-arrow", createArrowIcon(), { sdf: true });
+      const arrowLayout = {
+        "icon-image": "route-arrow",
+        "symbol-placement": "line",
+        "symbol-spacing": 70,
+        "icon-rotation-alignment": "map",
+        "icon-pitch-alignment": "map",
+        "icon-keep-upright": false,
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+      } as const;
+      map.addLayer({
+        id: "routes-arrows-casing",
+        type: "symbol",
+        source: "routes",
+        filter: ["==", ["get", "routeId"], ""],
+        layout: { ...arrowLayout, "icon-size": 1.3 },
+        paint: { "icon-color": casingColor() },
+      });
       map.addLayer({
         id: "routes-arrows",
         type: "symbol",
         source: "routes",
         filter: ["==", ["get", "routeId"], ""],
-        layout: {
-          "icon-image": "route-arrow",
-          "icon-size": 0.9,
-          "symbol-placement": "line",
-          "symbol-spacing": 70,
-          "icon-rotation-alignment": "map",
-          "icon-pitch-alignment": "map",
-          "icon-keep-upright": false,
-          "icon-allow-overlap": true,
-          "icon-ignore-placement": true,
-        },
-        paint: { "icon-color": "#6e6e73", "icon-halo-color": casingColor(), "icon-halo-width": 1 },
+        layout: { ...arrowLayout, "icon-size": 0.9 },
+        paint: { "icon-color": "#6e6e73" },
       });
 
       map.addSource("stops", {

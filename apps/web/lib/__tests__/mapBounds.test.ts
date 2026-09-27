@@ -114,6 +114,13 @@ describe("findRouteExits", () => {
     const [exit] = findRouteExits([[[5, 5], [12, 5], [20, 5], [5, 5]]], box);
     expect(exit!.farthest).toEqual([20, 5]);
   });
+
+  it("picks the truly farthest point of an out-and-back excursion, not just the last one", () => {
+    // Leaves east, goes out to x=20, loops back toward (but not into) campus, then re-enters.
+    // The last point before re-entry (12,6) is much closer to the crossing than (20,5) is.
+    const [exit] = findRouteExits([[[5, 5], [12, 5], [20, 5], [12, 6], [5, 5]]], box);
+    expect(exit!.farthest).toEqual([20, 5]);
+  });
 });
 
 describe("nearestOffCampusStop", () => {

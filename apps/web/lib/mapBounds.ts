@@ -114,17 +114,25 @@ export function findRouteExits(lines: LonLat[][], bounds: CampusBounds): RouteEx
       const scaledDx = dx * Math.cos((a[1] * Math.PI) / 180);
       const bearingDeg = (Math.atan2(scaledDx, dy) * 180) / Math.PI;
 
-      // Walk forward while the line stays outside the bounds, to find how far out it goes.
-      let farthestIdx = i + 1;
-      while (farthestIdx + 1 < line.length && !isInCampusBounds(line[farthestIdx + 1]!, bounds)) farthestIdx++;
+      // Walk forward while the line stays outside the bounds, then take the point in that run
+      // that's actually farthest from the crossing -- not simply the last one. On an
+      // out-and-back excursion (out to a real destination, then partway back before crossing
+      // back in) the last point before re-entry can be much closer to campus than the trip's
+      // actual far end.
+      let runEnd = i + 1;
+      while (runEnd + 1 < line.length && !isInCampusBounds(line[runEnd + 1]!, bounds)) runEnd++;
+      let farthest = line[i + 1]!;
+      let farthestDist = -Infinity;
+      for (let j = i + 1; j <= runEnd; j++) {
+        const p = line[j]!;
+        const dist = (p[0] - lon) ** 2 + (p[1] - lat) ** 2;
+        if (dist > farthestDist) {
+          farthestDist = dist;
+          farthest = p;
+        }
+      }
 
-      exits.push({
-        lon,
-        lat,
-        bearingDeg: (bearingDeg + 360) % 360,
-        edge: winner.edge,
-        farthest: line[farthestIdx]!,
-      });
+      exits.push({ lon, lat, bearingDeg: (bearingDeg + 360) % 360, edge: winner.edge, farthest });
     }
   }
   return exits;
