@@ -42,6 +42,7 @@ function fakeSources(fail: Partial<Record<keyof CampusSources, boolean>> = {}) {
     libraryHours: 0,
     recWellAreas: 0,
     shuttleGtfs: 0,
+    buildings: 0,
   };
   const roomsHtml = fixture("rooms-stem.html");
   const run = <T,>(name: keyof CampusSources, value: () => T): Promise<T> => {
@@ -62,6 +63,11 @@ function fakeSources(fail: Partial<Record<keyof CampusSources, boolean>> = {}) {
     libraryHours: () => run("libraryHours", () => parseLibCalHours(JSON.parse(fixture("libcal-hours.json")) as LibCalHoursFeed)),
     recWellAreas: () => run("recWellAreas", () => parseRecWellTab(fixture("recwell-eppley.csv"), "indoor")),
     shuttleGtfs: () => run("shuttleGtfs", () => ({ ...GTFS })),
+    buildings: () =>
+      run("buildings", () => [
+        { id: "432", name: "Brendan Iribe Center", lat: 38.9891607057353, lon: -76.9364438800535 },
+        { id: "026", name: "South Campus Dining Hall", lat: 38.983048, lon: -76.9436837393588 },
+      ]),
   };
   return { sources, calls };
 }
@@ -90,6 +96,7 @@ describe("buildSnapshots", () => {
       "libraries/hours",
       "recwell/areas",
       "buses/gtfs",
+      "buildings",
     ];
     for (const key of keys) {
       expect((await store.get(key))?.updatedAt, key).toBe("2026-09-25T13:00:00.000Z");
@@ -266,7 +273,13 @@ describe("pruneSnapshots", () => {
   });
 
   it("never touches undated keys", async () => {
-    const undated = [snapshotKeys.roomCatalog, snapshotKeys.libraryHours, snapshotKeys.recWellAreas, snapshotKeys.shuttleGtfs];
+    const undated = [
+      snapshotKeys.roomCatalog,
+      snapshotKeys.libraryHours,
+      snapshotKeys.recWellAreas,
+      snapshotKeys.shuttleGtfs,
+      snapshotKeys.buildings,
+    ];
     for (const key of undated) await store.put(key, { updatedAt: NOW.toISOString(), data: 1 });
 
     const result = await pruneSnapshots(store, NOW);

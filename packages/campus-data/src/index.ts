@@ -1,3 +1,4 @@
+export * from "./buildings.ts";
 export * from "./buses.ts";
 export * from "./dates.ts";
 export * from "./dining.ts";
