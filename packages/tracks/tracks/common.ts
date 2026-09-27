@@ -30,15 +30,12 @@ const cat = (requirement: Requirement, source: string, extra: Extra = {}): Track
 // UMD's general chemistry is split around organic chemistry: CHEM131/132 (Chemistry I and lab)
 // come first, and CHEM271/272 (General Chemistry and Energetics, and lab) come after organic.
 
-// CHEM146/CHEM177 (the chemistry/biochemistry majors' first-semester alternative) aren't in the
-// Spring 2027 Schedule of Classes, the only Schedule of Classes snapshot cached in this repo (no
-// fall term is cached), and no other fetched source names them either (MAPPING_NOTES.genChem);
-// not being in one term's schedule doesn't make a course number invalid, so they're kept here
-// with a reviewNote asking the owner to confirm the numbers themselves.
+// CHEM146/CHEM177 (the chemistry/biochemistry majors' first-semester alternative) are confirmed
+// by UMD's Chemistry major catalog page (MAPPING_NOTES.genChem).
 export const GEN_CHEM_1_OPTIONS = [
   ["CHEM131", "CHEM132"],
   ["CHEM135", "CHEM136"], // engineering students
-  ["CHEM146", "CHEM177"], // chemistry/biochemistry majors; unconfirmed, see MAPPING_NOTES.genChem
+  ["CHEM146", "CHEM177"], // chemistry/biochemistry majors
 ];
 export const GEN_CHEM_2_OPTIONS = [
   ["CHEM271", "CHEM272"],
@@ -55,14 +52,13 @@ export const genChem2 = (source: string, extra?: Extra) =>
 
 export const ORGANIC_CHEM_1_OPTIONS = [["CHEM231", "CHEM232"], ["CHEM237"]];
 
-// CHEM247 (the second half of the chemistry/biochemistry majors' organic sequence) isn't in the
-// Spring 2027 Schedule of Classes and no other fetched source names it (MAPPING_NOTES.organic);
-// kept anyway with a reviewNote, since one term's schedule not listing it doesn't make it invalid.
+// CHEM237/CHEM247 (the chemistry/biochemistry majors' organic sequence) are confirmed by UMD's
+// Chemistry major catalog page (MAPPING_NOTES.organic).
 export const organicChem = (source: string, extra?: Extra) =>
   cat(
     sets("organic-chem", "Organic chemistry I and II with labs", [
       ["CHEM231", "CHEM232", "CHEM241", "CHEM242"],
-      ["CHEM237", "CHEM247"], // chemistry/biochemistry majors; unconfirmed, see MAPPING_NOTES.organic
+      ["CHEM237", "CHEM247"], // chemistry/biochemistry majors
     ]),
     source,
     extra,
@@ -298,9 +294,9 @@ export const CPR_MILESTONE: Milestone = {
 
 export const MAPPING_NOTES = {
   genChem:
-    "General chemistry (\"8 credits of inorganic chemistry with labs\") = CHEM131 & CHEM132 then CHEM271 & CHEM272, UMD's two general chemistry courses, split around organic chemistry (Bio major supporting courses; HPAO AP page). Engineering CHEM135 & CHEM136 and majors' CHEM276 & CHEM277 are accepted as alternatives (assumed). Majors' first-semester alternative, CHEM146 & CHEM177, is also accepted, but **it's the weakest-sourced alternative in this package**: it isn't in the Spring 2027 Schedule of Classes (the only Schedule of Classes snapshot cached in this repo; no fall term is cached) and no other fetched source names it either — the owner should confirm these are current, correct course numbers before relying on them.",
+    "General chemistry (\"8 credits of inorganic chemistry with labs\") = CHEM131 & CHEM132 then CHEM271 & CHEM272, UMD's two general chemistry courses, split around organic chemistry (Bio major supporting courses; HPAO AP page). Engineering CHEM135 & CHEM136 and majors' CHEM276 & CHEM277 are accepted as alternatives (assumed). Majors' first-semester alternative, CHEM146 & CHEM177, is also accepted -- confirmed by UMD's Chemistry major catalog page (main session, 2026-09-27).",
   organic:
-    "Organic chemistry = CHEM231 & CHEM232 and CHEM241 & CHEM242, or majors' CHEM237 & CHEM247 (a one-semester CHEM237 alone is also accepted as an alternative to CHEM231 & CHEM232, ORGANIC_CHEM_1_OPTIONS). CHEM247 isn't in the Spring 2027 Schedule of Classes and no other fetched source names it; kept as an alternative, but flagged (with CHEM146/CHEM177 above) as needing the owner's direct confirmation that the number is current.",
+    "Organic chemistry = CHEM231 & CHEM232 and CHEM241 & CHEM242, or majors' CHEM237 & CHEM247 (a one-semester CHEM237 alone is also accepted as an alternative to CHEM231 & CHEM232, ORGANIC_CHEM_1_OPTIONS) -- CHEM237/CHEM247 confirmed by UMD's Chemistry major catalog page (main session, 2026-09-27).",
   biochem: "Biochemistry = BCHM461 or BCHM463 (HPAO AP page names both).",
   introBio:
     "Introductory biology with lab = BSCI160, BSCI170 and BSCI180, or the older BSCI160/161 and BSCI170/171 (Bio major catalog page: BSCI180 replaced BSCI161 and BSCI171 in Fall 2026, and they may count for it). BSCI161/171 aren't in the Spring 2027 Schedule of Classes and aren't being scheduled for new students, but the Biological Sciences catalog page names them directly, so they're kept as an alternative for a student with older transfer or AP credit under those numbers, rather than dropped for not being in one term's schedule.",
@@ -317,7 +313,7 @@ export const MAPPING_NOTES = {
   grades:
     "Minimum grade C (HPAO: \"a C (not a C-)\"): a completed course below C doesn't count, and a low-grade warning is shown. Pass/fail (P/S) courses do count in the audit but get a warning; AP/IB credit counts but gets a warning, except calculus and English, where HPAO says it is accepted.",
   fixture:
-    "test/fixtures/umd-courses.json is built from the Spring 2027 Schedule of Classes (packages/course-data/.cache/soc-202701.json in the main checkout), the only Schedule of Classes snapshot cached anywhere in this repo. A course not being offered that one term doesn't make its number invalid, so courses this package names that the Spring 2027 schedule doesn't confirm (CHEM146, CHEM177, CHEM247, BSCI161, BSCI171, BSCI330, PHYS141, PHYS142, PHIL170) are still in both the fixture and the requirement options above, each with its own reviewNote; most of them (BSCI161/171/330, PHYS141/142, PHIL170) are independently confirmed by another already-fetched UMD page (the Biological Sciences catalog page, or the Pre-Law timeline document), but CHEM146/CHEM177/CHEM247 have no confirming source at all and need the owner's direct verification.",
+    "test/fixtures/umd-courses.json is built from the Spring 2027 Schedule of Classes (packages/course-data/.cache/soc-202701.json in the main checkout), the only Schedule of Classes snapshot cached anywhere in this repo. A course not being offered that one term doesn't make its number invalid, so courses this package names that the Spring 2027 schedule doesn't confirm (CHEM146, CHEM177, CHEM247, BSCI161, BSCI171, BSCI330, PHYS141, PHYS142, PHIL170) are still in both the fixture and the requirement options above; each is independently confirmed by another UMD page (CHEM146/177/237/247 by the Chemistry major catalog page, main session, 2026-09-27; BSCI161/171/330, PHYS141/142, PHIL170 by the Biological Sciences catalog page or the Pre-Law timeline document).",
   collegeAlgebra:
     "\"College Algebra\" (Dental Hygiene) = MATH113 (College Algebra and Trigonometry), UMD's actual college-algebra course, or MATH115 (Precalculus), a more advanced course that assumedly covers the same ground and more. Unlike dentistry's and PT's \"College Algebra or Calculus\", HPAO's Dental Hygiene page offers no calculus alternative, so the CALCULUS courses aren't included here.",
   advancedGenetics:
