@@ -137,6 +137,16 @@ describe("CS major 2026–27", () => {
     expect(concentration.status).toBe("partial");
   });
 
+  // Footnote 5: no course in or cross-listed with CMSC counts toward the concentration, so the
+  // CMSC cross-lists barred from the MATH/AMSC/STAT elective are barred here too.
+  it("does not count a CMSC cross-list (MATH456) toward the upper-level concentration", async () => {
+    const plan = [...without("MATH410"), c("MATH456")];
+    const result = await auditProgram(cmscMajor, plan);
+    const concentration = result.requirements.find((r) => r.id === "concentration")!;
+    expect(concentration.assigned).not.toContain("MATH456");
+    expect(concentration.status).toBe("partial");
+  });
+
   // Footnote 2 (catalog) / Math Requirements table (department page): MATH456 (= CMSC456) is a
   // confirmed CMSC cross-list (Testudo/Coursicle) and stays excluded from the MATH/AMSC/STAT
   // elective. Isolate MATH456 as the only possible mathxxx candidate: drop every other
