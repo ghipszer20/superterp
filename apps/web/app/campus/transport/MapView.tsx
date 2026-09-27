@@ -54,6 +54,30 @@ function casingColor(): string {
   return currentTheme() === "dark" ? "#000000" : "#ffffff";
 }
 
+// Paints the selected route's line(s) and the stops it serves; "no route
+// selected" is its own case (routeId "" never matches a real route, so
+// nothing is highlighted). Called both right after the style loads --
+// otherwise a theme switch mid-selection would reset to "no route" until
+// the student clicked a chip again -- and whenever the selection changes.
+function applyHighlight(map: MapLibreMap, selectedRoute: string | null, routes: MapRoute[]): void {
+  map.setFilter("routes-casing", ["==", ["get", "routeId"], selectedRoute ?? ""]);
+  map.setFilter("routes-line", ["==", ["get", "routeId"], selectedRoute ?? ""]);
+  const route = routes.find((r) => r.id === selectedRoute);
+  map.setPaintProperty("routes-line", "line-color", route ? route.color : "#6e6e73");
+  map.setPaintProperty(
+    "stops-circle",
+    "circle-color",
+    selectedRoute
+      ? ["case", ["in", selectedRoute, ["get", "routeIds"]], route?.color ?? DEFAULT_STOP_COLOR, DEFAULT_STOP_COLOR]
+      : DEFAULT_STOP_COLOR,
+  );
+  map.setPaintProperty(
+    "stops-circle",
+    "circle-radius",
+    selectedRoute ? ["case", ["in", selectedRoute, ["get", "routeIds"]], 7, 4] : 5,
+  );
+}
+
 function hasWebGl(): boolean {
   try {
     const canvas = document.createElement("canvas");
@@ -168,6 +192,10 @@ export function MapView({
           "circle-stroke-color": "#ffffff",
         },
       });
+      // Re-apply the current selection: on a theme switch this is a rebuilt
+      // map with a selection already in React state but none of it painted
+      // yet.
+      applyHighlight(map, selectedRoute, routes);
 
       const onClick = (e: MapMouseEvent & { features?: MapGeoJSONFeature[] }) => {
         const id = e.features?.[0]?.properties?.id;
@@ -181,42 +209,25 @@ export function MapView({
     return () => {
       map.remove();
       mapRef.current = null;
+      // The marker (if any) was added to *this* map and was destroyed with
+      // it; drop the stale reference so the "here" effect below creates a
+      // fresh one on the map rebuilt for the new theme, instead of calling
+      // setLngLat() on a marker with no map underneath it.
+      hereMarkerRef.current = null;
     };
     // Rebuilding on themeTick swaps the basemap for Light/Dark; routes/stops/stopRoutes
     // come from a server fetch for "today" and don't change while this page is open.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [themeTick, unsupported]);
 
-  // Highlight the selected route's line(s) and the stops it serves.
+  // Highlight the selected route's line(s) and the stops it serves. (A
+  // theme switch is also handled: applyHighlight runs again once the
+  // rebuilt map's style has loaded, in the effect above.)
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !map.getLayer("routes-line")) return;
-    if (selectedRoute) {
-      map.setFilter("routes-casing", ["==", ["get", "routeId"], selectedRoute]);
-      map.setFilter("routes-line", ["==", ["get", "routeId"], selectedRoute]);
-    } else {
-      map.setFilter("routes-casing", ["==", ["get", "routeId"], ""]);
-      map.setFilter("routes-line", ["==", ["get", "routeId"], ""]);
-    }
-    const route = routes.find((r) => r.id === selectedRoute);
-    map.setPaintProperty(
-      "routes-line",
-      "line-color",
-      route ? route.color : "#6e6e73",
-    );
-    map.setPaintProperty(
-      "stops-circle",
-      "circle-color",
-      selectedRoute
-        ? ["case", ["in", selectedRoute, ["get", "routeIds"]], route?.color ?? DEFAULT_STOP_COLOR, DEFAULT_STOP_COLOR]
-        : DEFAULT_STOP_COLOR,
-    );
-    map.setPaintProperty(
-      "stops-circle",
-      "circle-radius",
-      selectedRoute ? ["case", ["in", selectedRoute, ["get", "routeIds"]], 7, 4] : 5,
-    );
-  }, [selectedRoute, routes, themeTick]);
+    applyHighlight(map, selectedRoute, routes);
+  }, [selectedRoute, routes]);
 
   // Fetch scheduled departures for the tapped stop. `board` is tagged with
   // the stop it was fetched for, so switching stops (or closing the card)
