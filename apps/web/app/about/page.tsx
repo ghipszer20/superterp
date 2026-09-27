@@ -25,11 +25,11 @@ export default function AboutPage() {
 
       <Section title="Report an issue">
         <Card className={styles.card}>
-          <ReportForm contactEmail={about.contactEmail} />
+          <ReportForm contactEmail={about.contactEmail} issuesUrl={about.issuesUrl} />
         </Card>
         {about.issuesUrl ? (
           <Card className={styles.card}>
-            <Row title="GitHub Issues" subtitle="Browse or file an issue on GitHub" href={about.issuesUrl} external />
+            <Row title="GitHub Issues" subtitle="File an issue on GitHub" href={about.issuesUrl} external />
           </Card>
         ) : (
           <Notice>GitHub Issues link coming soon.</Notice>

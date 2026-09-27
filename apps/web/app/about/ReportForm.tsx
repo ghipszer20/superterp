@@ -10,7 +10,7 @@ import styles from "./about.module.css";
  * still a placeholder (owner hasn't set one up), the form has nothing to
  * send to, so it shows "coming soon" instead of a dead Send button.
  */
-export function ReportForm({ contactEmail }: { contactEmail: string | null }) {
+export function ReportForm({ contactEmail, issuesUrl }: { contactEmail: string | null; issuesUrl: string | null }) {
   const [what, setWhat] = useState("");
   const [page, setPage] = useState("");
   const [replyEmail, setReplyEmail] = useState("");
@@ -63,7 +63,9 @@ export function ReportForm({ contactEmail }: { contactEmail: string | null }) {
             Send
           </button>
         ) : (
-          <p className={styles.comingSoon}>Email reporting is coming soon. Use GitHub Issues below for now.</p>
+          <p className={styles.comingSoon}>
+            Email reporting is coming soon.{issuesUrl ? " Use GitHub Issues below for now." : ""}
+          </p>
         )}
       </div>
     </form>
