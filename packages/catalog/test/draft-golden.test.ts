@@ -92,7 +92,16 @@ type Pair = {
 /** A hand requirement with no drafted counterpart: the table row went to review with this reason, or it isn't in the table at all. */
 type Missing = { hand: string; why: string; review: ReviewReason | null; row?: string };
 
-type Golden = { draft: Draft; hand: Program; pairs: Pair[]; missing: Missing[] };
+type Golden = {
+  draft: Draft;
+  hand: Program;
+  pairs: Pair[];
+  missing: Missing[];
+  /** The program's expected program-wide minGrade ("C-" for every program so far), or undefined
+   * for a program with no single program-wide floor (e.g. one requirement needs a looser minGrade
+   * of its own) -- always set explicitly (never defaulted) so a program can't silently skip this. */
+  handMinGrade: string | undefined;
+};
 
 const FOOTNOTE_1_HONORS = "footnote 1 (honors MATH340–MATH341) is prose; the table lists only the standard course";
 const OWNER_CMSC141 = "owner-confirmed 2026-09-25: CMSC141/CMSC142 substitute for CMSC131/CMSC132; not in the catalog table";
@@ -107,9 +116,30 @@ const goldens: Record<string, Golden> = {
   "Computer Science Major": {
     draft: draftProgram(fixture("cs-major.html"), { ...meta, id: "cmsc-major", list: 0 }),
     hand: cmscMajor,
+    // No single program-wide minGrade: department-vs-catalog difference (owner ruling: follow the
+    // department page) -- the department's Upper Level Concentration page allows a D grade in the
+    // concentration specifically (GPA >= 1.7), looser than the catalog's blanket "C- or better".
+    // Every requirement sets its own minGrade instead ("C-", except the concentration's "D-").
+    handMinGrade: undefined,
     pairs: [
-      { draft: "cmsc131", hand: "cmsc131", why: OWNER_CMSC141, extraOptions: ["CMSC141"] },
+      {
+        draft: "cmsc131",
+        hand: "cmsc131",
+        why:
+          `${OWNER_CMSC141}; department-vs-catalog difference (owner ruling: follow the department page): the department's main ` +
+          "requirements page offers 'CMSC131 or CMSC133' (an accelerated 2-credit alternative); the catalog table lists only CMSC131",
+        extraOptions: ["CMSC141", "CMSC133"],
+      },
       { draft: "cmsc132", hand: "cmsc132", why: OWNER_CMSC141, extraOptions: ["CMSC142"] },
+      {
+        draft: "areas-cmsc411",
+        hand: "areas",
+        why:
+          "department-vs-catalog difference (owner ruling: follow the department page): the department's General Track and " +
+          "Cybersecurity specialization pages list CMSC431 (Privacy Engineering) under Area 3; the catalog's Area 3 table (and " +
+          "its Cybersecurity table) omit it. Added to Area 3 -- not checked further by this golden test, which doesn't diff " +
+          "distribution areas course-by-course.",
+      },
     ],
     missing: [
       { hand: "stat4xx", why: "'STAT4xx' is an unlinked course pattern; the draft suggests the filter but doesn't guess", review: "course-pattern", row: "STAT4xx" },
@@ -126,6 +156,7 @@ const goldens: Record<string, Golden> = {
   "Mathematics Major (Traditional Track)": {
     draft: draftProgram(fixture("math-major.html"), { ...meta, id: "math-major", list: 0 }),
     hand: mathMajorTraditional,
+    handMinGrade: "C-",
     pairs: [
       {
         draft: "math240",
@@ -181,6 +212,7 @@ const goldens: Record<string, Golden> = {
   "Mathematics Major (Applied Mathematics Track)": {
     draft: draftProgram(fixture("math-major.html"), { ...meta, id: "math-major", list: 1 }),
     hand: mathMajorApplied,
+    handMinGrade: "C-",
     pairs: [
       {
         draft: "math240",
@@ -241,7 +273,7 @@ const goldens: Record<string, Golden> = {
   },
 };
 
-describe.each(Object.entries(goldens))("draft of %s vs the hand encoding", (_, { draft, hand, pairs, missing }) => {
+describe.each(Object.entries(goldens))("draft of %s vs the hand encoding", (_, { draft, hand, pairs, missing, handMinGrade }) => {
   const draftById = new Map(draft.program.requirements.map((r) => [r.id, r]));
   const handById = new Map(hand.requirements.map((r) => [r.id, r]));
   const handMeanings = new Set(hand.requirements.map(meaning));
@@ -282,6 +314,6 @@ describe.each(Object.entries(goldens))("draft of %s vs the hand encoding", (_, {
   it("is unverified, and leaves program-wide rules from prose (minimum grade) to the owner", () => {
     expect(draft.program.verified).toBe(false);
     expect(draft.program.minGrade).toBeUndefined();
-    expect(hand.minGrade).toBe("C-");
+    expect(hand.minGrade).toBe(handMinGrade);
   });
 });
