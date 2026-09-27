@@ -181,7 +181,7 @@ export function TripPlanner({
   onSelect: (i: number) => void;
 }) {
   return (
-    <Card className={styles.card}>
+    <Card className={styles.card} clipNone>
       <p className={styles.title}>Plan a trip</p>
       <div className={styles.fields}>
         <Field

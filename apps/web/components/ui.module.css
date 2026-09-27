@@ -64,6 +64,13 @@
   overflow: hidden;
 }
 
+/* Opt out of the clip above for cards that need content (e.g. an autocomplete
+   dropdown) to escape the card's bounds. Compound selector so it reliably
+   beats the bare .card rule regardless of CSS Modules' source order. */
+.card.cardClipNone {
+  overflow: visible;
+}
+
 .row {
   display: flex;
   align-items: center;
