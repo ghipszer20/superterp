@@ -12,7 +12,8 @@
     "./catalog": "./src/catalog.ts",
     "./catalog-file": "./src/catalog-file.ts",
     "./notices": "./src/notices.ts",
-    "./what-if": "./src/what-if.ts"
+    "./what-if": "./src/what-if.ts",
+    "./degrees": "./src/degrees.ts"
   },
   "scripts": {
     "test": "vitest run",
