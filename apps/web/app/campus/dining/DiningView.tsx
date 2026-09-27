@@ -5,7 +5,7 @@ import type { DietTag, Station } from "@superterp/campus-data";
 import { Chip, Segmented } from "@/components/Segmented";
 import { ExternalIcon } from "@/components/icons";
 import { Card, EmptyState, Section, SkeletonCard } from "@/components/ui";
-import { resolveMeal, type DiningSlice } from "@/lib/dining";
+import { resolveMeal, stationDisplayName, type DiningSlice } from "@/lib/dining";
 import { FILLER } from "@/lib/status";
 import styles from "./dining.module.css";
 
@@ -131,7 +131,7 @@ export function DiningView({ date, halls, initial, preferredMeal }: Props) {
           {stations.map((s) => (
             <Section key={s.name}>
               <Card className={styles.stationCard}>
-                <h2 className={styles.station}>{s.name}</h2>
+                <h2 className={styles.station}>{stationDisplayName(s.name)}</h2>
                 <ul className={styles.items}>
                   {s.items.map((item, i) => (
                     <li key={`${i}-${item.name}`}>

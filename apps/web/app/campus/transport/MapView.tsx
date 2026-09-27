@@ -6,9 +6,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Map as MapLibreMap, Marker, NavigationControl, setWorkerUrl } from "maplibre-gl";
-import type { MapGeoJSONFeature, MapMouseEvent } from "maplibre-gl";
+import type { GeoJSONSource, MapGeoJSONFeature, MapMouseEvent } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { formatMinutes } from "@superterp/campus-data/hours";
+import type { Itinerary, Place } from "@superterp/campus-data";
 import { LocationIcon } from "@/components/icons";
 import { Card, EmptyState } from "@/components/ui";
 import {
@@ -23,6 +24,7 @@ import {
   type BoundsEdge,
 } from "@/lib/mapBounds";
 import type { MapRoute, MapStop } from "./TransportMap";
+import type { PickMode } from "./TripPlanner";
 import busStyles from "./buses.module.css";
 import styles from "./map.module.css";
 
@@ -41,6 +43,33 @@ const DARK_STYLE = "https://tiles.openfreemap.org/styles/dark";
 
 const DEFAULT_STOP_COLOR = "#6e6e73";
 const HERE_COLOR = "#0a84ff";
+const FROM_COLOR = "#34c759";
+const TO_COLOR = "#bf0c2f";
+const WALK_LINE_COLOR = "#6e6e73";
+
+/**
+ * A selected itinerary's legs as GeoJSON lines: walk legs are a straight-line estimate (dashed,
+ * neutral gray -- they're the haversine x1.3 estimate, not a routed path), bus legs a straight
+ * line between the board and alight stop in the route's own color (solid). Simple, honest lines
+ * rather than tracing the road, which the planner doesn't know either.
+ */
+function itineraryToGeoJson(itinerary: Itinerary | null): GeoJSON.FeatureCollection<GeoJSON.LineString, { color: string; dashed: boolean }> {
+  const features: GeoJSON.Feature<GeoJSON.LineString, { color: string; dashed: boolean }>[] =
+    itinerary?.legs.map((leg) =>
+      leg.kind === "walk"
+        ? {
+            type: "Feature",
+            geometry: { type: "LineString", coordinates: [[leg.from.lon, leg.from.lat], [leg.to.lon, leg.to.lat]] },
+            properties: { color: WALK_LINE_COLOR, dashed: true },
+          }
+        : {
+            type: "Feature",
+            geometry: { type: "LineString", coordinates: [[leg.boardLon, leg.boardLat], [leg.alightLon, leg.alightLat]] },
+            properties: { color: leg.route.color, dashed: false },
+          },
+    ) ?? [];
+  return { type: "FeatureCollection", features };
+}
 
 // How far past what's actually shown on load a student can still pan/zoom out (see the maxBounds
 // comment below for why this is computed from the fitted view rather than being CAMPUS_BOUNDS
@@ -180,15 +209,30 @@ export function MapView({
   routes,
   stops,
   stopRoutes,
+  pickMode = null,
+  onMapPick,
+  from = null,
+  to = null,
+  itinerary = null,
 }: {
   routes: MapRoute[];
   stops: MapStop[];
   stopRoutes: Record<string, string[]>;
+  /** When set, the next map tap sets this trip-planner field instead of opening a stop card. */
+  pickMode?: PickMode;
+  onMapPick?: (place: Place) => void;
+  /** The trip planner's current endpoints, shown as markers. */
+  from?: Place | null;
+  to?: Place | null;
+  /** The itinerary to draw: walk legs dashed, bus legs in their route color. */
+  itinerary?: Itinerary | null;
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const hereMarkerRef = useRef<Marker | null>(null);
   const exitMarkersRef = useRef<Marker[]>([]);
+  const fromMarkerRef = useRef<Marker | null>(null);
+  const toMarkerRef = useRef<Marker | null>(null);
   const [unsupported] = useState(() => !hasWebGl());
   const [failed, setFailed] = useState(false);
   const [themeTick, setThemeTick] = useState(0);
@@ -198,6 +242,16 @@ export function MapView({
   const [here, setHere] = useState<{ lat: number; lon: number } | null>(null);
   const [locating, setLocating] = useState(false);
   const [locError, setLocError] = useState<string | null>(null);
+
+  // Read from the "load" handler's persistent closures (registered once per map instance, see
+  // the effect below), which would otherwise capture whatever pickMode/onMapPick were on the
+  // very first render.
+  const pickModeRef = useRef(pickMode);
+  const onMapPickRef = useRef(onMapPick);
+  useEffect(() => {
+    pickModeRef.current = pickMode;
+    onMapPickRef.current = onMapPick;
+  }, [pickMode, onMapPick]);
 
   // The student's Light/Dark choice can change after the map is up; rebuild it
   // with the matching basemap when it does.
@@ -352,6 +406,22 @@ export function MapView({
           "circle-stroke-color": "#ffffff",
         },
       });
+      // The trip planner's selected itinerary: a dashed line per walk leg, a solid one per bus
+      // leg in that route's color. Empty at first paint; the effect below fills it in once a
+      // trip is planned (and re-fills it here after a theme rebuild).
+      map.addSource("trip-plan", { type: "geojson", data: itineraryToGeoJson(itinerary) });
+      map.addLayer({
+        id: "trip-plan-line",
+        type: "line",
+        source: "trip-plan",
+        layout: { "line-cap": "round", "line-join": "round" },
+        paint: {
+          "line-color": ["get", "color"],
+          "line-width": 4,
+          "line-dasharray": ["case", ["get", "dashed"], ["literal", [0.2, 1.6]], ["literal", [1, 0]]],
+        },
+      });
+
       // Re-apply the current selection: on a theme switch this is a rebuilt
       // map with a selection already in React state but none of it painted
       // yet.
@@ -359,12 +429,27 @@ export function MapView({
       updateExitMarkers(map, exitMarkersRef, selectedRoute, routes, stops);
 
       const onClick = (e: MapMouseEvent & { features?: MapGeoJSONFeature[] }) => {
-        const id = e.features?.[0]?.properties?.id;
+        const feature = e.features?.[0];
+        const id = feature?.properties?.id;
+        if (pickModeRef.current && typeof id === "string" && typeof feature?.properties?.name === "string") {
+          const [lon, lat] = (feature.geometry as GeoJSON.Point).coordinates;
+          onMapPickRef.current?.({ lat: lat!, lon: lon!, label: feature.properties.name });
+          return;
+        }
         if (typeof id === "string") setSelectedStop(id);
       };
       map.on("click", "stops-circle", onClick);
       map.on("mouseenter", "stops-circle", () => (map.getCanvas().style.cursor = "pointer"));
-      map.on("mouseleave", "stops-circle", () => (map.getCanvas().style.cursor = ""));
+      map.on("mouseleave", "stops-circle", () => (map.getCanvas().style.cursor = pickModeRef.current ? "crosshair" : ""));
+
+      // Tapping anywhere else while picking a trip-planner endpoint sets a custom point there
+      // (queried against stops-circle first, so a tap on an actual stop is handled above instead).
+      map.on("click", (e: MapMouseEvent) => {
+        if (!pickModeRef.current) return;
+        const onStop = map.queryRenderedFeatures(e.point, { layers: ["stops-circle"] }).length > 0;
+        if (onStop) return;
+        onMapPickRef.current?.({ lat: e.lngLat.lat, lon: e.lngLat.lng, label: "Custom point" });
+      });
     });
 
     return () => {
@@ -375,6 +460,8 @@ export function MapView({
       map.remove();
       mapRef.current = null;
       hereMarkerRef.current = null;
+      fromMarkerRef.current = null;
+      toMarkerRef.current = null;
     };
     // Rebuilding on themeTick swaps the basemap for Light/Dark; routes/stops/stopRoutes
     // come from a server fetch for "today" and don't change while this page is open.
@@ -442,6 +529,49 @@ export function MapView({
     }
     map.flyTo({ center: [here.lon, here.lat], zoom: 16 });
   }, [here, themeTick]);
+
+  // The trip planner's From/To markers -- created, moved, or removed as those fields change
+  // (and re-created after a theme rebuild, the same way hereMarkerRef is).
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    if (from) {
+      if (!fromMarkerRef.current) fromMarkerRef.current = new Marker({ color: FROM_COLOR }).setLngLat([from.lon, from.lat]).addTo(map);
+      else fromMarkerRef.current.setLngLat([from.lon, from.lat]);
+    } else {
+      fromMarkerRef.current?.remove();
+      fromMarkerRef.current = null;
+    }
+  }, [from, themeTick]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    if (to) {
+      if (!toMarkerRef.current) toMarkerRef.current = new Marker({ color: TO_COLOR }).setLngLat([to.lon, to.lat]).addTo(map);
+      else toMarkerRef.current.setLngLat([to.lon, to.lat]);
+    } else {
+      toMarkerRef.current?.remove();
+      toMarkerRef.current = null;
+    }
+  }, [to, themeTick]);
+
+  // The selected itinerary's line(s) (also re-painted after a theme rebuild, in the "load"
+  // handler above, which seeds the source from the current `itinerary` prop).
+  useEffect(() => {
+    const map = mapRef.current;
+    const source = map?.getSource("trip-plan") as GeoJSONSource | undefined;
+    if (!source) return;
+    source.setData(itineraryToGeoJson(itinerary));
+  }, [itinerary, themeTick]);
+
+  // A crosshair while picking a From/To point on the map; mouseenter/leave on stops-circle
+  // (above) keep the pointer cursor working over an actual stop while picking.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    map.getCanvas().style.cursor = pickMode ? "crosshair" : "";
+  }, [pickMode, themeTick]);
 
   const stop = stops.find((s) => s.id === selectedStop);
   // null while no stop is selected, or while `board` still holds the

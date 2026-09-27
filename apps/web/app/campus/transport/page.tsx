@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { connection } from "next/server";
 import { campusDate, campusMinutes } from "@superterp/campus-data";
 import { Notice, Page, Section, SkeletonCard, SourceError } from "@/components/ui";
-import { getBusStops, getCampusMap, getRoutesOn, safe } from "@/lib/campus";
+import { getBuildings, getBusStops, getCampusMap, getRoutesOn, safe } from "@/lib/campus";
 import { BusBoard } from "./BusBoard";
 import { TransportMap } from "./TransportMap";
 
@@ -34,9 +34,16 @@ export default function TransportPage() {
 async function MapSection() {
   await connection();
   const today = campusDate();
-  const map = await safe(() => getCampusMap(today));
+  const [map, buildings] = await Promise.all([safe(() => getCampusMap(today)), safe(() => getBuildings())]);
   if (!map.ok) return <SourceError source="Shuttle-UM" />;
-  return <TransportMap routes={map.data.routes} stops={map.data.stops} stopRoutes={map.data.stopRoutes} />;
+  return (
+    <TransportMap
+      routes={map.data.routes}
+      stops={map.data.stops}
+      stopRoutes={map.data.stopRoutes}
+      buildings={buildings.ok ? buildings.data : []}
+    />
+  );
 }
 
 async function Board() {

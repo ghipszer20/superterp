@@ -134,3 +134,19 @@ export const AdvisorIcon = (p: IconProps) => (
     <path d="M21 9.5V15" />
   </Icon>
 );
+
+/** Swaps the "From" and "To" fields in the trip planner. */
+export const SwapIcon = (p: IconProps) => (
+  <Icon size={18} {...p}>
+    <path d="M7 4v13M7 17l-3.5-3.5M7 17l3.5-3.5" />
+    <path d="M17 20V7M17 7l3.5 3.5M17 7l-3.5 3.5" />
+  </Icon>
+);
+
+/** A stop tapped onto the map instead of picked from search. */
+export const MapPinIcon = (p: IconProps) => (
+  <Icon size={16} {...p}>
+    <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" />
+    <circle cx="12" cy="10" r="2.3" />
+  </Icon>
+);
