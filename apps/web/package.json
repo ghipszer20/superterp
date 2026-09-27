@@ -23,6 +23,7 @@
     "@superterp/tracks": "*",
     "maplibre-gl": "^6.11.2",
     "next": "16.3.6",
+    "pdfjs-dist": "^6.3.289",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
