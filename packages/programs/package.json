@@ -1,13 +1,13 @@
 {
-  "name": "@superterp/catalog",
+  "name": "@superterp/programs",
   "version": "0.1.0",
   "private": true,
-  "description": "UMD Academic Catalog program requirements (majors, minors, programs), extracted from academiccatalog.umd.edu. Framework-free.",
+  "description": "Registry of every encoded UMD program (majors, minors, certificates, special programs) with lazy loaders, plus the sample-plan validation harness. Framework-free.",
   "license": "Apache-2.0",
   "type": "module",
   "exports": {
-    ".": "./src/index.ts",
-    "./special-programs/*": "./special-programs/*"
+    ".": "./src/registry.ts",
+    "./harness": "./src/harness.ts"
   },
   "scripts": {
     "test": "vitest run",
@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@superterp/audit": "*",
-    "@superterp/campus-data": "*",
-    "cheerio": "1.2.0"
+    "@superterp/catalog": "*",
+    "@superterp/plan": "*"
   },
   "devDependencies": {
     "@types/node": "^22.20.4",
