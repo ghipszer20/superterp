@@ -83,6 +83,28 @@ describe("course classification", () => {
     expect(cmsc250.currentStatus).toBe("unused");
   });
 
+  it("never lets a failed/withdrawn attempt's credits fill the credit floor, or push a later real course out of it", async () => {
+    // Floor is 9 credits. X1 (F, 4cr) earns no credit and must not consume floor space: without
+    // that fix its phantom 4 credits would push X4 past the 9-credit floor into "unused".
+    const plan: Plan = {
+      terms: [
+        {
+          name: "Fall 2026",
+          courses: [
+            { id: "X1", status: "completed", grade: "F", credits: 4 },
+            { id: "X2", status: "completed", credits: 4 },
+            { id: "X3", status: "completed", credits: 4 },
+            { id: "X4", status: "completed", credits: 4 },
+          ],
+        },
+      ],
+    };
+    const result = await whatIf(plan, catalog, [], [], [universityish]);
+    const of = (id: string) => result.courses.find((c) => c.id === id)!;
+    expect(of("X1").currentStatus).toBe("unused");
+    expect(of("X4").currentStatus).toBe("elective");
+  });
+
   it("fills the credit floor chronologically: prior credit, then term order", async () => {
     const plan: Plan = {
       priorCredit: [{ id: "L1:Transfer", credits: 6, source: "Transfer credit" }],
@@ -248,6 +270,23 @@ describe("retakes", () => {
     expect(counted.filter((c) => c.currentStatus === "counts")).toHaveLength(1);
     expect(counted.filter((c) => c.currentStatus === "unused")).toHaveLength(1);
   });
+
+  it("attributes 'counts' to the passing retake, not the earlier failed attempt, when the program has no minimum grade", async () => {
+    // majorA has no minGrade at all, unlike gradedMajor above -- this is the case the audit's own
+    // meetsGrade bug missed (no minGrade meant "always counts"), so it must land on the retake here.
+    const plan: Plan = {
+      terms: [
+        { name: "Fall 2026", courses: [{ id: "CMSC131", status: "completed", grade: "F" }] },
+        { name: "Spring 2027", courses: [{ id: "CMSC131", status: "completed", grade: "B" }] },
+      ],
+    };
+    const result = await whatIf(plan, catalog, [majorA], [majorA], []);
+    const [first, second] = result.courses.filter((c) => c.id === "CMSC131");
+    expect(first!.currentStatus).toBe("unused");
+    expect(first!.currentPrograms).toEqual([]);
+    expect(second!.currentStatus).toBe("counts");
+    expect(second!.currentPrograms).toEqual(["a-major"]);
+  });
 });
 
 describe("graduation clamp", () => {
@@ -260,6 +299,20 @@ describe("graduation clamp", () => {
       terms: [
         { name: "Fall 2026", courses: [{ id: "CMSC132" }] },
         { name: "Spring 2027", courses: [{ id: "CMSC250" }] },
+      ],
+    };
+    const result = await whatIf(plan, catalog, [majorB], [], [universityish]);
+    expect(result.graduation.deltaTerms).toBe(0);
+  });
+
+  it("never lets a failed/withdrawn attempt's credits loosen the clamp (they aren't credits earned)", async () => {
+    // A failed CMSC131 (4cr) plus the 8 planned credits of majorB (CMSC132 + CMSC250). Dropping
+    // majorB frees 8 credits, but only the real 8 planned credits are "in the plan" toward the
+    // 9-credit floor -- the failed attempt's 4 credits must not count as headroom above the floor.
+    const plan: Plan = {
+      terms: [
+        { name: "Fall 2026", courses: [{ id: "CMSC131", status: "completed", grade: "F" }] },
+        { name: "Spring 2027", courses: [{ id: "CMSC132" }, { id: "CMSC250" }] },
       ],
     };
     const result = await whatIf(plan, catalog, [majorB], [], [universityish]);

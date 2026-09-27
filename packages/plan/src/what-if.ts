@@ -3,7 +3,7 @@
 // student's current declared majors vs a proposed set. Async and solver-backed (@superterp/audit),
 // like notices.ts -- run it after edits settle, not on every keystroke.
 
-import { auditPrograms, checkCsGateway, type AuditResult, type GatewayResult, type Program, type StudentCourse } from "@superterp/audit";
+import { auditPrograms, checkCsGateway, earnsCredit, type AuditResult, type GatewayResult, type Program, type StudentCourse } from "@superterp/audit";
 import type { PlanCatalog } from "./catalog.ts";
 import type { Plan } from "./check.ts";
 import { planCourses, shortfall } from "./notices.ts";
@@ -98,9 +98,11 @@ function meetsProgramGrade(course: StudentCourse, minGrade: string | undefined):
  * retake can put two entries of the same course id in `courses` (owner ruling: a course may
  * appear twice only after a failed or withdrawn attempt); `AuditResult.assigned` names only ids,
  * so a naive id match can't tell a used retake from its unused failed attempt. A grade-ineligible
- * occurrence never receives a pair from the solver at all (see meetsProgramGrade), so it's
- * excluded outright; the remaining assigned slots go to the earliest eligible occurrences in plan
- * order (the order `courses` is already in).
+ * occurrence never receives a pair from the solver at all (see meetsProgramGrade and earnsCredit),
+ * so it's excluded outright; the remaining assigned slots go to the earliest eligible occurrences
+ * in plan order (the order `courses` is already in). earnsCredit matters even when the program has
+ * no minGrade at all: an F/W attempt earns no credit regardless, so without this check it could
+ * wrongly grab "counts" ahead of the passing retake that follows it.
  */
 function usedIndices(program: Program, result: AuditResult, courses: StudentCourse[]): Set<number> {
   const nonOverlayAssigned = result.requirements.flatMap((r, i) => (program.requirements[i]!.overlay ? [] : r.assigned));
@@ -109,7 +111,7 @@ function usedIndices(program: Program, result: AuditResult, courses: StudentCour
   const used = new Set<number>();
   courses.forEach((c, i) => {
     const left = remaining.get(c.id) ?? 0;
-    if (left <= 0 || !meetsProgramGrade(c, program.minGrade)) return;
+    if (left <= 0 || !earnsCredit(c) || !meetsProgramGrade(c, program.minGrade)) return;
     remaining.set(c.id, left - 1);
     used.add(i);
   });
@@ -120,13 +122,16 @@ function usedIndices(program: Program, result: AuditResult, courses: StudentCour
  * term in order) that fall within a layer's credit floor. A course counts toward the floor only
  * if the credits before it are still under the floor -- matching the audit's own "a credit
  * requirement may overshoot by less than one course" rule (its cap is need + the largest single
- * course's weight - 1, so a course that starts under the floor may still push a little over it). */
+ * course's weight - 1, so a course that starts under the floor may still push a little over it).
+ * A failed/withdrawn attempt earns no credit (earnsCredit), so it neither fills the floor itself
+ * nor consumes floor space that a later real course would otherwise fall within. */
 function creditFloorIndices(courses: StudentCourse[], floors: number[]): Set<number> {
   const within = new Set<number>();
   if (floors.length === 0) return within;
   const need = Math.max(...floors);
   let before = 0;
   courses.forEach((c, i) => {
+    if (!earnsCredit(c)) return;
     if (before < need) within.add(i);
     before += c.credits;
   });
@@ -269,7 +274,7 @@ function graduationEstimate(
   // Clamp: freeing credits can't be assumed to shorten the plan below what a layer's own credit
   // floor (e.g. the university's total-credit minimum) needs.
   const floorNeed = floorCredits.length > 0 ? Math.max(...floorCredits) : 0;
-  const totalCredits = courses.reduce((t, c) => t + c.credits, 0);
+  const totalCredits = courses.filter(earnsCredit).reduce((t, c) => t + c.credits, 0);
   const clampedFreed = floorNeed > 0 ? Math.min(freedCredits, Math.max(0, totalCredits - floorNeed)) : freedCredits;
 
   const net = extraNeeded - clampedFreed;
