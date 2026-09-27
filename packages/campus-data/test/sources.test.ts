@@ -49,6 +49,17 @@ describe("RecWell sheet", () => {
   it("fails loudly if the sheet layout changes", () => {
     expect(() => parseRecWellTab("totally,different\nlayout,here", "indoor")).toThrow(SourceError);
   });
+
+  it('strips "(Informal Rec)" from area names, including inside other parentheses', () => {
+    const csv = [
+      "I,days,THU",
+      "Eppley Tennis & Pickleball Courts,URLs,1/1/2026",
+      "Pickleball (Informal Rec),https://recwell.umd.edu/eppley-tennis-and-pickleball-courts,6am to 9pm",
+      "Gym (Volleyball Informal Rec),https://recwell.umd.edu/eppley-recreation-center-0,6am to 9pm",
+    ].join("\n");
+    const informal = parseRecWellTab(csv, "outdoor");
+    expect(informal.map((a) => a.name)).toEqual(["Pickleball", "Gym (Volleyball)"]);
+  });
 });
 
 describe("LibCal hours feed", () => {

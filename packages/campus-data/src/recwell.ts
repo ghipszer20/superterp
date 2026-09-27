@@ -28,6 +28,24 @@ export type RecWellArea = {
 
 export type RecWellAreaToday = Omit<RecWellArea, "hoursByDate"> & { hours: DayHours };
 
+// RecWell's sheet tags some areas' names with an "informal rec" marker
+// (open-use time, as opposed to a reserved league/class) -- e.g.
+// "Pickleball (informal rec)" or "Gym (Volleyball informal rec)". It's
+// sheet-internal scheduling jargon, not something a student needs to see, so
+// it's stripped at parse time. When it's the parenthetical's only content
+// the whole "(...)" is dropped; otherwise only the marker is removed and the
+// rest of the parenthetical is kept (e.g. "(Volleyball informal rec)" ->
+// "(Volleyball)").
+function stripInformalRec(name: string): string {
+  return name
+    .replace(/\(([^()]*)\)/g, (_match, inner: string) => {
+      const cleaned = inner.replace(/\s*informal rec\s*/i, " ").trim();
+      return cleaned ? `(${cleaned})` : "";
+    })
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 /**
  * Parse one sheet tab. Layout (observed 2026-09-24):
  *   row: "I", "days", "THU", "FRI", ...            ← weekday header, ignored
@@ -59,7 +77,7 @@ export function parseRecWellTab(csv: string, setting: RecWellSetting): RecWellAr
     });
     areas.push({
       group,
-      name,
+      name: stripInformalRec(name),
       url: /^https?:\/\//.test(second) ? second : null,
       setting,
       hoursByDate,

@@ -41,18 +41,33 @@
 
 .grid {
   display: grid;
-  gap: 0 16px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 16px;
 }
 
 @media (min-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: start;
   }
 }
 
 .grid > section {
-  margin-top: 16px;
+  /* Row/column spacing comes entirely from the grid's own gap now -- a
+     margin here would add on top of the align-items: stretch height and
+     make this row's cards overlap the next row's (the bug that shipped
+     first: 0 visible gap, borders running together). This also cancels
+     the shared Section component's own margin-top. */
+  margin-top: 0;
+  height: 100%;
+}
+
+.stationCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--card-border);
 }
 
 .station {

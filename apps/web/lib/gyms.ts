@@ -31,7 +31,7 @@ export function gymRowTitle(group: string, name: string): string {
   return `${GROUP_SHORT_NAME[group] ?? group} ${name}`;
 }
 
-export type EppleySubsection = "Aquatics" | "Climbing (behind Eppley)" | "Pickleball Courts";
+export type EppleySubsection = "Aquatics" | "Climbing" | "Pickleball Courts";
 
 export type RegroupedArea = RecWellAreaToday & { subsection?: EppleySubsection };
 
@@ -75,7 +75,7 @@ export function regroupEppleyAreas(areas: RecWellAreaToday[]): RegroupedArea[] {
       return {
         ...a,
         group: "Eppley Recreation Center",
-        subsection: "Climbing (behind Eppley)",
+        subsection: "Climbing",
         url: CLIMBING_WALL_URL,
       };
     }
@@ -94,7 +94,7 @@ export const EPPLEY_SUBSECTION_FALLBACK: Record<EppleySubsection, { description:
     description: "Indoor pools at the Natatorium and the seasonal Outdoor Aquatic Center.",
     url: "https://recwell.umd.edu/natatorium",
   },
-  "Climbing (behind Eppley)": {
+  Climbing: {
     description: "Outdoor climbing wall and bouldering grotto on the level behind the ERC.",
     url: CLIMBING_WALL_URL,
   },

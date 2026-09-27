@@ -88,7 +88,7 @@ describe("regroupEppleyAreas", () => {
     const boulder = result.find((a) => a.name === "Bouldering Zone")!;
 
     expect(wall.group).toBe("Eppley Recreation Center");
-    expect(wall.subsection).toBe("Climbing (behind Eppley)");
+    expect(wall.subsection).toBe("Climbing");
     expect(wall.url).toBe("https://recwell.umd.edu/programs-activities/adventure-program/climbing-wall-bouldering-grotto");
 
     expect(course.group).toBe("Adventure Program");

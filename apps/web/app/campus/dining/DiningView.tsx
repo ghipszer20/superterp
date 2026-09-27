@@ -130,7 +130,7 @@ export function DiningView({ date, halls, initial, preferredMeal }: Props) {
         <div className={styles.grid}>
           {stations.map((s) => (
             <Section key={s.name}>
-              <Card>
+              <Card className={styles.stationCard}>
                 <h2 className={styles.station}>{s.name}</h2>
                 <ul className={styles.items}>
                   {s.items.map((item, i) => (
