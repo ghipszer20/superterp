@@ -7,6 +7,7 @@ import type { Program } from "@superterp/audit";
 import { genEd, university } from "@superterp/audit/programs/gen-ed-2026-27.ts";
 import type { College } from "@superterp/plan/credit-caps";
 import type { ProgramCandidate } from "@superterp/plan/notices";
+import { MAJOR_COURSE_SETS } from "@superterp/programs/course-sets";
 import { findProgram, loadPrograms, majorKey, PROGRAMS, type ProgramEntry } from "@superterp/programs";
 
 export type ProgramOption = ProgramEntry;
@@ -47,13 +48,51 @@ export async function auditedPrograms(selected: string[]): Promise<Program[]> {
   return [...(await majorPrograms(selected)), ...AUTOMATIC_PROGRAMS];
 }
 
+/** An undeclared major only clears the double-major notice pre-filter when at least this share of
+ * the plan's courses appear in its listed courses (course-sets.generated.ts). The audit
+ * (HiGHS-backed) is the expensive step, so this needs to run cheaply against every major in the
+ * registry -- a plain set intersection, no Program load. The owner may retune this. */
+export const NOTICE_OVERLAP_THRESHOLD = 0.3;
+
+/** At most this many undeclared majors get audited for a double-major notice, even if more clear
+ * NOTICE_OVERLAP_THRESHOLD -- with ~100 majors in the registry, auditing every match would still
+ * be too many HiGHS runs per analysis. */
+export const MAX_NOTICE_CANDIDATES = 5;
+
+function overlapShare(planCourseIds: readonly string[], courseSet: readonly string[] | undefined): number {
+  if (!courseSet?.length || planCourseIds.length === 0) return 0;
+  const set = new Set(courseSet);
+  return planCourseIds.filter((id) => set.has(id)).length / planCourseIds.length;
+}
+
+/**
+ * Which undeclared majors are worth auditing for a double-major notice: those where the plan's
+ * courses overlap enough with the major's own listed courses (courseSets, keyed by major id --
+ * MAJOR_COURSE_SETS in production), best overlap first, capped at MAX_NOTICE_CANDIDATES. Exported
+ * so the threshold and cap can be tested against synthetic majors, without the real registry
+ * needing ~100 entries to exercise the cap.
+ */
+export function rankNoticeCandidates(
+  options: readonly ProgramOption[],
+  planCourseIds: readonly string[],
+  courseSets: Record<string, readonly string[]> = MAJOR_COURSE_SETS,
+): ProgramOption[] {
+  return options
+    .map((o) => ({ o, share: overlapShare(planCourseIds, courseSets[o.id]) }))
+    .filter((x) => x.share >= NOTICE_OVERLAP_THRESHOLD)
+    .sort((a, b) => b.share - a.share)
+    .slice(0, MAX_NOTICE_CANDIDATES)
+    .map((x) => x.o);
+}
+
 /**
  * Majors for the double-major / dual-degree notices: the chosen majors (declared, in order), then
- * the default track of each major the student hasn't chosen. Another track of a chosen major is
- * never a candidate, since two tracks of one major aren't a double major; minors and special
- * programs never take part.
+ * the default track of each major the student hasn't chosen -- pre-filtered by rankNoticeCandidates
+ * against the plan's own courses (planCourseIds), so only majors worth auditing get loaded and run
+ * through the (HiGHS-backed) audit. Another track of a chosen major is never a candidate, since two
+ * tracks of one major aren't a double major; minors and special programs never take part.
  */
-export async function noticeCandidates(selected: string[]): Promise<ProgramCandidate[]> {
+export async function noticeCandidates(selected: string[], planCourseIds: readonly string[] = []): Promise<ProgramCandidate[]> {
   const mine = chosen(selected).filter((o) => o.kind === "major");
   if (mine.length === 0) return [];
   const majors = new Set(mine.map(majorKey));
@@ -63,7 +102,8 @@ export async function noticeCandidates(selected: string[]): Promise<ProgramCandi
     majors.add(majorKey(o));
     others.push(o);
   }
-  const [declared, undeclared] = await Promise.all([loadPrograms(mine.map((o) => o.id)), loadPrograms(others.map((o) => o.id))]);
+  const filtered = rankNoticeCandidates(others, planCourseIds);
+  const [declared, undeclared] = await Promise.all([loadPrograms(mine.map((o) => o.id)), loadPrograms(filtered.map((o) => o.id))]);
   return [...declared.map((program) => ({ program, declared: true })), ...undeclared.map((program) => ({ program, declared: false }))];
 }
 
@@ -78,5 +118,5 @@ export function collegeOf(selected: string[]): College | undefined {
 
 export function programsLabel(selected: string[]): string {
   const names = chosen(selected).map((o) => o.short ?? o.name);
-  return names.length ? names.join(" + ") : "No major chosen";
+  return names.length ? names.join(" + ") : "No program chosen";
 }
