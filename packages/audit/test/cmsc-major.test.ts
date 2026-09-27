@@ -130,8 +130,8 @@ describe("CS major 2026–27", () => {
   });
 
   // Department page (upper-level-concentration): "Courses with a grade of D can be used for the
-  // ULC as long as the cumulative GPA for the ULC is at least 1.7" -- stricter than the catalog's
-  // blanket "C- or better in all major requirements", but the department page wins. The
+  // ULC as long as the cumulative GPA for the ULC is at least 1.7" -- looser than the catalog's
+  // blanket "C- or better in all major requirements", and the department page wins. The
   // concentration has zero slack in completePlan (exactly 12 credits), so a D in one of its four
   // courses must not drop it below satisfied.
   it("accepts a D grade in the concentration (department page: D allowed if GPA stays >= 1.7)", async () => {

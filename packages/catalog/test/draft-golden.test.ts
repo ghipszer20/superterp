@@ -118,7 +118,7 @@ const goldens: Record<string, Golden> = {
     hand: cmscMajor,
     // No single program-wide minGrade: department-vs-catalog difference (owner ruling: follow the
     // department page) -- the department's Upper Level Concentration page allows a D grade in the
-    // concentration specifically (GPA >= 1.7), stricter than the catalog's blanket "C- or better".
+    // concentration specifically (GPA >= 1.7), looser than the catalog's blanket "C- or better".
     // Every requirement sets its own minGrade instead ("C-", except the concentration's "D-").
     handMinGrade: undefined,
     pairs: [
