@@ -1,0 +1,117 @@
+// Every encoded UMD program the Advisor offers: one line each, with the metadata the picker needs
+// and a lazy loader for the Program itself, so a page that lists ~270 programs never bundles their
+// requirements (each `import()` below becomes its own chunk). Adding a program = one program file
+// (packages/audit/programs/<id>-<year>.ts) + one line here; see docs/project/program-batches.md.
+//
+// Lives in its own package because it sits above both @superterp/audit (the majors) and
+// @superterp/catalog (the special programs), which depends on audit.
+
+import type { Program } from "@superterp/audit";
+import type { College } from "@superterp/plan/credit-caps";
+
+export type ProgramKind = "major" | "minor" | "certificate" | "special";
+
+export type ProgramEntry = {
+  /** The Program's own id. */
+  id: string;
+  /** The Program's own name (a test keeps the two in sync). */
+  name: string;
+  /** Short name for headers, e.g. "Math (Applied)". Defaults to `name`. */
+  short?: string;
+  kind: ProgramKind;
+  /** The college that owns the program's catalog page (`colleges-schools/<slug>/` in its URL);
+   * the Advisor's default for the credit-cap check. Special programs run by Undergraduate
+   * Studies or the Honors College use UGST. */
+  college: College;
+  catalogYear: string;
+  /** Mirrors Program.verified: only owner-verified programs lose the "Unverified" label. */
+  verified: boolean;
+  /** Tracks of one major share this key; a student has one track per major. Defaults to `id`. */
+  major?: string;
+  /** Name of the track within its major, if any. */
+  track?: string;
+  /** The catalog page and the department's own page (the department page wins where they differ). */
+  sources: { catalog?: string; department?: string };
+  load: () => Promise<Program>;
+};
+
+const CMNS = "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences";
+
+/** Majors, then minors, then certificates, then special programs; each major's default track first. */
+export const PROGRAMS: ProgramEntry[] = [
+  // Majors
+  { id: "cmsc-major", name: "Computer Science Major", short: "Computer Science", kind: "major", college: "CMNS", catalogYear: "2026-27", verified: false, sources: { catalog: `${CMNS}/computer-science/computer-science-major/`, department: "https://undergrad.cs.umd.edu/degree-requirements-cs-major" }, load: () => import("@superterp/audit/programs/cmsc-major-2026-27.ts").then((m) => m.cmscMajor) },
+  { id: "math-major-traditional", name: "Mathematics Major (Traditional Track)", short: "Math (Traditional)", kind: "major", major: "math", track: "Traditional", college: "CMNS", catalogYear: "2026-27", verified: false, sources: { catalog: `${CMNS}/mathematics/mathematics-major/`, department: "https://www-math.umd.edu/course-requirements.html" }, load: () => import("@superterp/audit/programs/math-major-2026-27.ts").then((m) => m.mathMajorTraditional) },
+  { id: "math-major-applied", name: "Mathematics Major (Applied Mathematics Track)", short: "Math (Applied)", kind: "major", major: "math", track: "Applied Mathematics", college: "CMNS", catalogYear: "2026-27", verified: false, sources: { catalog: `${CMNS}/mathematics/mathematics-major/`, department: "https://www-math.umd.edu/course-requirements.html" }, load: () => import("@superterp/audit/programs/math-major-applied-2026-27.ts").then((m) => m.mathMajorApplied) },
+
+  // Special programs (packages/catalog/special-programs: honors, LLPs, Scholars, departmental honors)
+  { id: "dept-honors-aero", name: "Departmental Honors: Aerospace Engineering", kind: "special", college: "ENGR", catalogYear: "2026-27", verified: false, sources: { department: "https://aero.umd.edu/undergraduate/ae-honors-program" }, load: () => import("@superterp/catalog/special-programs/dept-aero-2026-27.ts").then((m) => m.deptAero) },
+  { id: "dept-honors-amst", name: "Departmental Honors: American Studies", kind: "special", college: "ARHU", catalogYear: "2026-27", verified: false, sources: { department: "https://amst.umd.edu/academic-programs/undergraduate/honors-program" }, load: () => import("@superterp/catalog/special-programs/dept-amst-2026-27.ts").then((m) => m.deptAmst) },
+  { id: "dept-honors-anth", name: "Departmental Honors: Anthropology", kind: "special", college: "BSOS", catalogYear: "2026-27", verified: false, sources: { department: "https://anth.umd.edu/undergraduate/honors-program" }, load: () => import("@superterp/catalog/special-programs/dept-anth-2026-27.ts").then((m) => m.deptAnth) },
+  { id: "dept-honors-art", name: "Departmental Honors: Art", kind: "special", college: "ARHU", catalogYear: "2026-27", verified: false, sources: { department: "https://art.umd.edu/academic-programs/honors-programs" }, load: () => import("@superterp/catalog/special-programs/dept-art-2026-27.ts").then((m) => m.deptArt) },
+  { id: "dept-honors-arth", name: "Departmental Honors: Art History & Archaeology", kind: "special", college: "ARHU", catalogYear: "2026-27", verified: false, sources: { department: "https://arthistory.umd.edu/academics/undergraduate/honors" }, load: () => import("@superterp/catalog/special-programs/dept-arth-2026-27.ts").then((m) => m.deptArth) },
+  { id: "dept-honors-bioe", name: "Departmental Honors: Bioengineering", kind: "special", college: "ENGR", catalogYear: "2026-27", verified: false, sources: { department: "https://bioe.umd.edu/undergraduate/honors" }, load: () => import("@superterp/catalog/special-programs/dept-bioe-2026-27.ts").then((m) => m.deptBioe) },
+  { id: "dept-honors-biol", name: "Departmental Honors: Biology", kind: "special", college: "CMNS", catalogYear: "2026-27", verified: false, sources: { department: "https://biology.umd.edu/undergraduate/current-students/honors/program-requirements" }, load: () => import("@superterp/catalog/special-programs/dept-biol-2026-27.ts").then((m) => m.deptBiol) },
+  { id: "dept-honors-cbmg", name: "Departmental Honors: Cell Biology & Molecular Genetics", kind: "special", college: "CMNS", catalogYear: "2026-27", verified: false, sources: { department: "https://cbmg.umd.edu/education/undergraduate/undergrad-honors/" }, load: () => import("@superterp/catalog/special-programs/dept-cbmg-2026-27.ts").then((m) => m.deptCbmg) },
+  { id: "dept-honors-chem", name: "Departmental Honors: Chemistry and Biochemistry", kind: "special", college: "CMNS", catalogYear: "2026-27", verified: false, sources: { department: "https://www.chem.umd.edu/undergraduateprogram/current-students/chemistry-biochemistry-honors-program" }, load: () => import("@superterp/catalog/special-programs/dept-chem-2026-27.ts").then((m) => m.deptChem) },
+  { id: "dept-honors-comm", name: "Departmental Honors: Communication", kind: "special", college: "ARHU", catalogYear: "2026-27", verified: false, sources: { department: "https://communication.umd.edu/academics/undergraduate/honors" }, load: () => import("@superterp/catalog/special-programs/dept-comm-2026-27.ts").then((m) => m.deptComm) },
+  { id: "dept-honors-econ", name: "Departmental Honors: Economics", kind: "special", college: "BSOS", catalogYear: "2026-27", verified: false, sources: { department: "https://www.econ.umd.edu/undergraduate/departmental-honors-program" }, load: () => import("@superterp/catalog/special-programs/dept-econ-2026-27.ts").then((m) => m.deptEcon) },
+  { id: "dept-honors-eng", name: "Departmental Honors: Engineering (Clark School)", kind: "special", college: "ENGR", catalogYear: "2026-27", verified: false, sources: { department: "https://www.eng.umd.edu/current/honors-program" }, load: () => import("@superterp/catalog/special-programs/dept-eng-2026-27.ts").then((m) => m.deptEng) },
+  { id: "dept-honors-engl", name: "Departmental Honors: English", kind: "special", college: "ARHU", catalogYear: "2026-27", verified: false, sources: { department: "https://www.english.umd.edu/academics/undergraduate/honors" }, load: () => import("@superterp/catalog/special-programs/dept-engl-2026-27.ts").then((m) => m.deptEngl) },
+  { id: "dept-honors-ensp", name: "Departmental Honors: Environmental Science and Policy", kind: "special", college: "AGNR", catalogYear: "2026-27", verified: false, sources: { department: "https://www.ensp.umd.edu/research/honors-ensp" }, load: () => import("@superterp/catalog/special-programs/dept-ensp-2026-27.ts").then((m) => m.deptEnsp) },
+  { id: "dept-honors-entm", name: "Departmental Honors: Entomology", kind: "special", college: "AGNR", catalogYear: "2026-27", verified: false, sources: { department: "https://entomology.umd.edu/honors-program.html" }, load: () => import("@superterp/catalog/special-programs/dept-entm-2026-27.ts").then((m) => m.deptEntm) },
+  { id: "dept-honors-geol", name: "Departmental Honors: Geology", kind: "special", college: "CMNS", catalogYear: "2026-27", verified: false, sources: { department: "https://www.geol.umd.edu/undergraduate/ugdhonors.php" }, load: () => import("@superterp/catalog/special-programs/dept-geol-2026-27.ts").then((m) => m.deptGeol) },
+  { id: "dept-honors-gers", name: "Departmental Honors: Germanic Studies", kind: "special", college: "ARHU", catalogYear: "2026-27", verified: false, sources: { department: "https://sllc.umd.edu/fields/german/undergraduate/honors" }, load: () => import("@superterp/catalog/special-programs/dept-gers-2026-27.ts").then((m) => m.deptGers) },
+  { id: "dept-honors-gvpt", name: "Departmental Honors: Government & Politics", kind: "special", college: "BSOS", catalogYear: "2026-27", verified: false, sources: { department: "https://gvpt.umd.edu/undergraduate/gvpt-honors-program" }, load: () => import("@superterp/catalog/special-programs/dept-gvpt-2026-27.ts").then((m) => m.deptGvpt) },
+  { id: "dept-honors-hist", name: "Departmental Honors: History", kind: "special", college: "ARHU", catalogYear: "2026-27", verified: false, sources: { department: "https://history.umd.edu/academics/undergraduate/honors" }, load: () => import("@superterp/catalog/special-programs/dept-hist-2026-27.ts").then((m) => m.deptHist) },
+  { id: "dept-honors-knes", name: "Departmental Honors: Kinesiology", kind: "special", college: "SPHL", catalogYear: "2026-27", verified: false, sources: { department: "https://sph.umd.edu/academics/departments-units/department-kinesiology/student-resources-kinesiology/kinesiology-honors-program" }, load: () => import("@superterp/catalog/special-programs/dept-knes-2026-27.ts").then((m) => m.deptKnes) },
+  { id: "dept-honors-math", name: "Departmental Honors: Mathematics", kind: "special", college: "CMNS", catalogYear: "2026-27", verified: false, sources: { department: "https://www-math.umd.edu/undergraduate/opportunities.html?id=101" }, load: () => import("@superterp/catalog/special-programs/dept-math-2026-27.ts").then((m) => m.deptMath) },
+  { id: "dept-honors-phys", name: "Departmental Honors: Physics", kind: "special", college: "CMNS", catalogYear: "2026-27", verified: false, sources: { department: "https://umdphysics.umd.edu/academics/undergraduate/ugrad-phys-honors.html" }, load: () => import("@superterp/catalog/special-programs/dept-phys-2026-27.ts").then((m) => m.deptPhys) },
+  { id: "dept-honors-psyc", name: "Departmental Honors: Psychology", kind: "special", college: "BSOS", catalogYear: "2026-27", verified: false, sources: { department: "https://psyc.umd.edu/undergraduate/psyc-honors-program" }, load: () => import("@superterp/catalog/special-programs/dept-psyc-2026-27.ts").then((m) => m.deptPsyc) },
+  { id: "dept-honors-span", name: "Departmental Honors: Spanish & Portuguese", kind: "special", college: "ARHU", catalogYear: "2026-27", verified: false, sources: { department: "https://sllc.umd.edu/fields/spanish/undergraduate/honors" }, load: () => import("@superterp/catalog/special-programs/dept-span-2026-27.ts").then((m) => m.deptSpan) },
+  { id: "dept-honors-wgss", name: "Departmental Honors: Women, Gender, and Sexuality Studies", kind: "special", college: "ARHU", catalogYear: "2026-27", verified: false, sources: { department: "https://wgss.umd.edu/academic-programs/undergraduate/experiential-learning" }, load: () => import("@superterp/catalog/special-programs/dept-wgss-2026-27.ts").then((m) => m.deptWgss) },
+  { id: "honors-aces", name: "Advanced Cybersecurity Experience for Students (ACES)", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://aces.umd.edu/llp-course-requirements" }, load: () => import("@superterp/catalog/special-programs/honors-aces-2026-27.ts").then((m) => m.honorsAces) },
+  { id: "honors-dcc", name: "Design Cultures & Creativity", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://dcc.umd.edu/learning/curriculum/" }, load: () => import("@superterp/catalog/special-programs/honors-dcc-2026-27.ts").then((m) => m.honorsDcc) },
+  { id: "honors-gemstone", name: "Gemstone", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://www.gemstone.umd.edu/current-students/earning-gemstone-citation" }, load: () => import("@superterp/catalog/special-programs/honors-gemstone-2026-27.ts").then((m) => m.honorsGemstone) },
+  { id: "honors-hglo", name: "Honors Global Challenges & Solutions", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://hglo.umd.edu/currentstudents/academicrequirements" }, load: () => import("@superterp/catalog/special-programs/honors-hglo-2026-27.ts").then((m) => m.honorsHglo) },
+  { id: "honors-humanities", name: "Honors Humanities", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://arhu.umd.edu/academics/undergraduate-studies/living-and-learning-programs/honors-humanities/prospective-students/academics" }, load: () => import("@superterp/catalog/special-programs/honors-humanities-2026-27.ts").then((m) => m.honorsHumanities) },
+  { id: "honors-ibh", name: "Interdisciplinary Business Honors", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://ibh.umd.edu/academics" }, load: () => import("@superterp/catalog/special-programs/honors-ibh-2026-27.ts").then((m) => m.honorsIbh) },
+  { id: "honors-ils", name: "Integrated Life Sciences", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://www.ils.umd.edu/courses" }, load: () => import("@superterp/catalog/special-programs/honors-ils-2026-27.ts").then((m) => m.honorsIls) },
+  { id: "honors-uh", name: "University Honors", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://universityhonors.umd.edu/curriculum/" }, load: () => import("@superterp/catalog/special-programs/honors-uh-2026-27.ts").then((m) => m.honorsUh) },
+  { id: "llp-carillon", name: "Carillon Communities", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://carillon.umd.edu/carillon-experience/year-carillon" }, load: () => import("@superterp/catalog/special-programs/llp-carillon-2026-27.ts").then((m) => m.carillon) },
+  { id: "llp-language-house", name: "Language House", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://sllc.umd.edu/special-programs/language-house/info-current-students-mentors" }, load: () => import("@superterp/catalog/special-programs/llp-language-house-2026-27.ts").then((m) => m.languageHouse) },
+  { id: "llp-writers-house", name: "Jiménez-Porter Writers' House", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://arhu.umd.edu/academics/undergraduate-studies/living-and-learning-programs/jimenez-porter-writers-house/current-students/handbook" }, load: () => import("@superterp/catalog/special-programs/llp-writers-house-2026-27.ts").then((m) => m.writersHouse) },
+  { id: "scholars-arts", name: "College Park Scholars: Arts", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsArts2026.pdf" }, load: () => import("@superterp/catalog/special-programs/scholars-arts-2026-27.ts").then((m) => m.scholarsArts) },
+  { id: "scholars-bse", name: "College Park Scholars: Business, Society and Entrepreneurship", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsBSE2026_0.pdf" }, load: () => import("@superterp/catalog/special-programs/scholars-bse-2026-27.ts").then((m) => m.scholarsBse) },
+  { id: "scholars-cesg", name: "College Park Scholars: Civic Engagement for Social Good", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsCESG2026_0.pdf" }, load: () => import("@superterp/catalog/special-programs/scholars-cesg-2026-27.ts").then((m) => m.scholarsCesg) },
+  { id: "scholars-dj", name: "College Park Scholars: Data Justice", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsDJ2026_1.pdf" }, load: () => import("@superterp/catalog/special-programs/scholars-dj-2026-27.ts").then((m) => m.scholarsDj) },
+  { id: "scholars-ete", name: "College Park Scholars: Environment, Technology and Economy", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsETE2026_0.pdf" }, load: () => import("@superterp/catalog/special-programs/scholars-ete-2026-27.ts").then((m) => m.scholarsEte) },
+  { id: "scholars-gph", name: "College Park Scholars: Global Public Health", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsGPH2026.pdf" }, load: () => import("@superterp/catalog/special-programs/scholars-gph-2026-27.ts").then((m) => m.scholarsGph) },
+  { id: "scholars-is", name: "College Park Scholars: International Studies", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsIS2026.pdf" }, load: () => import("@superterp/catalog/special-programs/scholars-is-2026-27.ts").then((m) => m.scholarsIs) },
+  { id: "scholars-jlt", name: "College Park Scholars: Justice and Legal Thought", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsJLT2026.pdf" }, load: () => import("@superterp/catalog/special-programs/scholars-jlt-2026-27.ts").then((m) => m.scholarsJlt) },
+  { id: "scholars-ls", name: "College Park Scholars: Life Sciences", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsLS2026.pdf" }, load: () => import("@superterp/catalog/special-programs/scholars-ls-2026-27.ts").then((m) => m.scholarsLs) },
+  { id: "scholars-media", name: "College Park Scholars: Media, Self and Society", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsMedia2026.pdf" }, load: () => import("@superterp/catalog/special-programs/scholars-media-2026-27.ts").then((m) => m.scholarsMedia) },
+  { id: "scholars-pl", name: "College Park Scholars: Public Leadership", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsPL2026_0.pdf" }, load: () => import("@superterp/catalog/special-programs/scholars-pl-2026-27.ts").then((m) => m.scholarsPl) },
+  { id: "scholars-sgc", name: "College Park Scholars: Science and Global Change", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsSGC2026_0.pdf" }, load: () => import("@superterp/catalog/special-programs/scholars-sgc-2026-27.ts").then((m) => m.scholarsSgc) },
+  { id: "scholars-sts", name: "College Park Scholars: Science, Technology and Society", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsSTS2026.pdf" }, load: () => import("@superterp/catalog/special-programs/scholars-sts-2026-27.ts").then((m) => m.scholarsSts) },
+  { id: "special-fire", name: "FIRE: First-Year Innovation & Research Experience", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://www.fire.umd.edu/about" }, load: () => import("@superterp/catalog/special-programs/special-fire-2026-27.ts").then((m) => m.fire) },
+  { id: "special-umd-fellows", name: "UMD Fellows Program", kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: { department: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/" }, load: () => import("@superterp/catalog/special-programs/special-umd-fellows-2026-27.ts").then((m) => m.umdFellows) },
+  { id: "llp-flexus", name: "Flexus: Women in Engineering", kind: "special", college: "ENGR", catalogYear: "2026-27", verified: false, sources: { department: "https://eng.umd.edu/women/current-students/communities/flexus" }, load: () => import("@superterp/catalog/special-programs/llp-flexus-virtus-2026-27.ts").then((m) => m.flexus) },
+  { id: "llp-virtus", name: "Virtus: Men in Engineering", kind: "special", college: "ENGR", catalogYear: "2026-27", verified: false, sources: { department: "https://eng.umd.edu/women/current-students/communities/virtus" }, load: () => import("@superterp/catalog/special-programs/llp-flexus-virtus-2026-27.ts").then((m) => m.virtus) },];
+
+const byId = new Map(PROGRAMS.map((p) => [p.id, p]));
+
+export const findProgram = (id: string): ProgramEntry | undefined => byId.get(id);
+
+/** The major key tracks of one major share. */
+export const majorKey = (entry: ProgramEntry): string => entry.major ?? entry.id;
+
+export async function loadProgram(id: string): Promise<Program | undefined> {
+  return findProgram(id)?.load();
+}
+
+/** Loads several programs in the order given, skipping unknown ids. */
+export async function loadPrograms(ids: string[]): Promise<Program[]> {
+  const programs = await Promise.all(ids.map(loadProgram));
+  return programs.filter((p): p is Program => p !== undefined);
+}

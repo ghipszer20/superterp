@@ -20,7 +20,8 @@ export async function runWhatIf(
   gpa: number | undefined,
 ): Promise<WhatIfResult> {
   const matriculationTerm = matriculationTermId(startTerm);
-  return whatIf(plan, catalog, majorPrograms(currentProgramIds), majorPrograms(proposedProgramIds), AUTOMATIC_PROGRAMS, {
+  const [current, proposed] = await Promise.all([majorPrograms(currentProgramIds), majorPrograms(proposedProgramIds)]);
+  return whatIf(plan, catalog, current, proposed, AUTOMATIC_PROGRAMS, {
     ...(matriculationTerm ? { matriculationTerm } : {}),
     ...(gpa !== undefined ? { cumulativeGpa: gpa } : {}),
   });

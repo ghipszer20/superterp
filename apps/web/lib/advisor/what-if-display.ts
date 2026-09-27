@@ -48,7 +48,7 @@ export function addedProgramNotes(currentIds: string[], proposedIds: string[]): 
     .filter((id) => !current.has(id))
     .map((id) => PROGRAM_OPTIONS.find((o) => o.id === id))
     .filter((o): o is (typeof PROGRAM_OPTIONS)[number] => o !== undefined)
-    .map((o) => ({ id: o.id, name: o.program.name, catalogYear: o.program.catalogYear, verified: o.program.verified === true }));
+    .map((o) => ({ id: o.id, name: o.name, catalogYear: o.catalogYear, verified: o.verified }));
 }
 
 export type CompletedCreditTotals = { counts: number; elective: number; unused: number };

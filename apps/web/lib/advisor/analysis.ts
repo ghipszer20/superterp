@@ -75,11 +75,8 @@ export async function runAnalysis(input: { plan: AdvisorPlan; catalog: PlanCatal
   const t = performance.now();
   const plan = checkerPlan(input.plan, input.priorCourses);
   const courses = planCourses(plan, input.catalog);
-  const programs = auditedPrograms(input.plan.programs);
-  const [results, notices] = await Promise.all([
-    auditPrograms(programs, courses),
-    programNotices(plan, input.catalog, noticeCandidates(input.plan.programs)),
-  ]);
+  const [programs, candidates] = await Promise.all([auditedPrograms(input.plan.programs), noticeCandidates(input.plan.programs)]);
+  const [results, notices] = await Promise.all([auditPrograms(programs, courses), programNotices(plan, input.catalog, candidates)]);
   const catalogList = [...input.catalog.values()].map((c) => ({ id: c.id, genEd: c.genEd }));
   const audits = programs.map((program, p): ProgramAudit => {
     const requirements = program.requirements.map((requirement, r) => {

@@ -4,13 +4,14 @@ import { auditedPrograms, collegeOf, noticeCandidates, PROGRAM_OPTIONS, programs
 const ids = (list: { id: string }[]) => list.map((p) => p.id);
 
 describe("program options", () => {
-  it("offers the encoded majors, all unverified for now", () => {
-    expect(ids(PROGRAM_OPTIONS)).toEqual(["cmsc-major", "math-major-traditional", "math-major-applied"]);
-    expect(PROGRAM_OPTIONS.every((o) => o.program.verified !== true)).toBe(true);
+  it("offers every registered program, majors first, all unverified for now", () => {
+    expect(ids(PROGRAM_OPTIONS.filter((o) => o.kind === "major"))).toEqual(["cmsc-major", "math-major-traditional", "math-major-applied"]);
+    expect(PROGRAM_OPTIONS.length).toBeGreaterThan(3);
+    expect(PROGRAM_OPTIONS.every((o) => !o.verified)).toBe(true);
   });
 
-  it("names each program's college, from its catalog page", () => {
-    expect(PROGRAM_OPTIONS.every((o) => o.college === "CMNS")).toBe(true);
+  it("carries no Program: requirements load only when a program is audited", () => {
+    expect(PROGRAM_OPTIONS.every((o) => !("program" in o) && typeof o.load === "function")).toBe(true);
   });
 });
 
@@ -19,7 +20,15 @@ describe("collegeOf", () => {
     expect(collegeOf(["cmsc-major", "math-major-applied"])).toBe("CMNS");
   });
 
-  it("is undefined with no majors chosen", () => {
+  it("prefers a major over a special program chosen first", () => {
+    expect(collegeOf(["dept-honors-engl", "cmsc-major"])).toBe("CMNS");
+  });
+
+  it("falls back to the first program when no major is chosen", () => {
+    expect(collegeOf(["dept-honors-engl"])).toBe("ARHU");
+  });
+
+  it("is undefined with no programs chosen", () => {
     expect(collegeOf([])).toBeUndefined();
   });
 
@@ -38,16 +47,21 @@ describe("toggleProgram", () => {
     expect(toggleProgram(["math-major-traditional", "cmsc-major"], "math-major-applied")).toEqual(["math-major-applied", "cmsc-major"]);
   });
 
+  it("adds a non-major alongside majors", () => {
+    expect(toggleProgram(["cmsc-major"], "honors-aces")).toEqual(["cmsc-major", "honors-aces"]);
+  });
+
   it("ignores unknown ids", () => {
     expect(toggleProgram(["cmsc-major"], "nope")).toEqual(["cmsc-major"]);
   });
 });
 
 describe("auditedPrograms", () => {
-  it("checks the chosen majors, then Gen Ed and the university rules", () => {
-    expect(ids(auditedPrograms(["math-major-applied", "cmsc-major"]))).toEqual([
+  it("loads the chosen programs, then Gen Ed and the university rules", async () => {
+    expect(ids(await auditedPrograms(["math-major-applied", "cmsc-major", "honors-aces"]))).toEqual([
       "math-major-applied",
       "cmsc-major",
+      "honors-aces",
       "gen-ed",
       "university",
     ]);
@@ -55,30 +69,35 @@ describe("auditedPrograms", () => {
 });
 
 describe("noticeCandidates", () => {
-  it("passes chosen majors as declared, in order, and other majors as undeclared", () => {
-    const c = noticeCandidates(["math-major-applied"]);
+  it("passes chosen majors as declared, in order, and other majors as undeclared", async () => {
+    const c = await noticeCandidates(["math-major-applied"]);
     expect(c.map((x) => [x.program.id, x.declared])).toEqual([
       ["math-major-applied", true],
       ["cmsc-major", false],
     ]);
   });
 
-  it("never offers another track of a chosen major (that isn't a double major)", () => {
-    expect(noticeCandidates(["math-major-applied", "cmsc-major"]).map((x) => x.program.id)).toEqual(["math-major-applied", "cmsc-major"]);
+  it("never offers another track of a chosen major (that isn't a double major)", async () => {
+    expect((await noticeCandidates(["math-major-applied", "cmsc-major"])).map((x) => x.program.id)).toEqual(["math-major-applied", "cmsc-major"]);
   });
 
-  it("offers one track of an unchosen major, the default", () => {
-    expect(noticeCandidates(["cmsc-major"]).map((x) => x.program.id)).toEqual(["cmsc-major", "math-major-traditional"]);
+  it("offers one track of an unchosen major, the default", async () => {
+    expect((await noticeCandidates(["cmsc-major"])).map((x) => x.program.id)).toEqual(["cmsc-major", "math-major-traditional"]);
   });
 
-  it("never offers Gen Ed or the university rules", () => {
-    expect(noticeCandidates([]).map((x) => x.program.id)).toEqual([]);
+  it("only majors take part: a chosen special program is never a double major", async () => {
+    expect((await noticeCandidates(["cmsc-major", "honors-aces"])).map((x) => x.program.id)).toEqual(["cmsc-major", "math-major-traditional"]);
+  });
+
+  it("never offers Gen Ed or the university rules", async () => {
+    expect((await noticeCandidates([])).map((x) => x.program.id)).toEqual([]);
   });
 });
 
 describe("programsLabel", () => {
-  it("names the chosen majors briefly", () => {
+  it("names the chosen programs briefly", () => {
     expect(programsLabel(["math-major-applied", "cmsc-major"])).toBe("Math (Applied) + Computer Science");
+    expect(programsLabel(["honors-aces"])).toBe("Advanced Cybersecurity Experience for Students (ACES)");
     expect(programsLabel([])).toBe("No major chosen");
   });
 });
