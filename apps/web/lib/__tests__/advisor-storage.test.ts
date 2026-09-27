@@ -96,4 +96,23 @@ describe("plan storage", () => {
     expect(back).not.toHaveProperty("examTerms");
     expect(back).not.toHaveProperty("expectedGrades");
   });
+
+  it("round-trips a course's grad credit tag, and drops an unknown one", () => {
+    let p = plan();
+    p = planReducer(p, { type: "set-grad-tag", term: "Fall 2026", id: "CMSC131", gradTag: "graduate-only" });
+    expect(parsePlan(serializePlan(p))!.terms[0]!.courses[0]).toMatchObject({ gradTag: "graduate-only" });
+    const raw = JSON.parse(serializePlan(p));
+    raw.terms[0].courses[0].gradTag = "not-a-tag";
+    expect(parsePlan(JSON.stringify(raw))!.terms[0]!.courses[0]).not.toHaveProperty("gradTag");
+  });
+
+  it("round-trips master's credits, and drops a non-positive or non-numeric value", () => {
+    const p = { ...plan(), mastersCredits: 30 };
+    expect(parsePlan(serializePlan(p))!.mastersCredits).toBe(30);
+    const raw = JSON.parse(serializePlan(p));
+    raw.mastersCredits = 0;
+    expect(parsePlan(JSON.stringify(raw))).not.toHaveProperty("mastersCredits");
+    raw.mastersCredits = "thirty";
+    expect(parsePlan(JSON.stringify(raw))).not.toHaveProperty("mastersCredits");
+  });
 });

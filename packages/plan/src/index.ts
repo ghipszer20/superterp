@@ -4,3 +4,4 @@ export * from "./check.ts";
 export * from "./notices.ts";
 export * from "./what-if.ts";
 export * from "./degrees.ts";
+export * from "./grad-courses.ts";

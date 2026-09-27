@@ -378,6 +378,23 @@
   font-weight: 600;
 }
 
+/* A grad course (600-897, not 799) on the plan grid or course sheet -- @superterp/plan/grad-courses. */
+.gradBadge {
+  flex: none;
+  padding: 1px 7px;
+  border-radius: var(--r-pill);
+  background: var(--soon-tint);
+  color: var(--soon);
+  font: var(--t-caption);
+  font-weight: 600;
+}
+
+.courseIdRow {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
 .actions {
   display: flex;
   justify-content: flex-end;

@@ -81,6 +81,10 @@ export function planCourses(plan: Plan, catalog: PlanCatalog): StudentCourse[] {
       if (seen.has(c.id) && !retakable.has(c.id)) continue;
       retakable.delete(c.id);
       seen.add(c.id);
+      // Graduate-only credit (grad-courses.ts) is master's credit only: it never counts toward
+      // the undergrad degree, so it's left out of the audit's course list entirely (not just its
+      // credits) -- it can't satisfy a program requirement either.
+      if (c.gradTag === "graduate-only") continue;
       const info = catalog.get(c.id);
       courses.push({
         id: c.id,
