@@ -6,27 +6,32 @@ import type { LonLat } from "@superterp/campus-data";
 
 export type CampusBounds = { west: number; south: number; east: number; north: number };
 
-// The campus footprint, not a box drawn around every bus stop: this is the bounding box of
-// OpenStreetMap's "University of Maryland, College Park" university-amenity relation
-// (osm_type=relation, osm_id=14718558), fetched from Nominatim on 2026-09-26:
-//   https://nominatim.openstreetmap.org/search?q=University+of+Maryland+College+Park&format=json
-//   -> boundingbox: ["38.9671728","39.0075665","-76.9658076","-76.9184134"]
-// That polygon covers the university's own property line (academic core, the golf course at
-// the north edge, North/South Campus housing, and the ROTC/ag fields near the Metro station),
-// which is the right shape for "only need UMD campus" -- a shuttle stop just past that line
-// (e.g. across Route 1 or Adelphi Rd) is genuinely off campus, not merely off the mall.
+// The campus footprint, not a box drawn around every bus stop. OpenStreetMap's "University of
+// Maryland, College Park" relation (osm_type=relation, osm_id=14718558) is a MultiPolygon of 32
+// separate parcels -- the main campus plus disjoint outlying university land (the golf course
+// north of campus, the M-Square research park across the Beltway, and other small lots). Just
+// taking the bounding box of the whole relation sweeps in all of that, plus, incidentally, the
+// College Park Metro station a few blocks away. This is instead the bounding box of that
+// relation's single largest ring (377 vertices; the other 31 are all well under half its size)
+// -- the contiguous academic/residential/athletic core that's actually "campus" for a student
+// walking or riding around it. Computed on 2026-09-26 via:
+//   curl "https://nominatim.openstreetmap.org/search?q=University+of+Maryland+College+Park&format=json&polygon_geojson=1&limit=1"
+// then taking the bbox of geojson.coordinates[0][0] (the largest of the MultiPolygon's rings).
+// A shuttle stop past this line (Route 1 downtown College Park, the Metro, Adelphi Rd) is
+// genuinely off campus, not merely off the mall.
 export const CAMPUS_BOUNDS: CampusBounds = {
-  west: -76.9658076,
-  south: 38.9671728,
-  east: -76.9184134,
-  north: 39.0075665,
+  west: -76.9555028,
+  south: 38.9804153,
+  east: -76.934508,
+  north: 39.0003805,
 };
 
 // A floor under how far a student can zoom out, on top of maxBounds itself. maxBounds already
 // stops the camera from *panning* past the campus edge, but a sensible minZoom keeps a very
 // wide/short viewport from rendering a lot of dead space around a tiny campus box. The campus
-// box is roughly 4.5km (E-W) x 4.5km (N-S); zoom 13 comfortably fits that within a phone-width
-// map card, so nothing shorter than that is useful here.
+// box is roughly 1.8km (E-W) x 2.2km (N-S); it fits within a phone-width map card at about
+// zoom 14.3 (with room for the fitBounds padding), so zoom 13 -- one full level looser -- is a
+// generous floor rather than a tight one, leaving slack for wider/shorter desktop cards too.
 export const CAMPUS_MIN_ZOOM = 13;
 
 /** MapLibre's `LngLatBoundsLike` tuple order: `[[west, south], [east, north]]`. */
