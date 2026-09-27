@@ -35,6 +35,7 @@ One builder per batch, run 2 at a time, in order: **CMNS → ENGR → BSOS → A
 9. **Section recommendations** (roadmap Phase 3 MVP piece): for a planned term, suggest sections ranked by grade distribution / professor rating / open seats and the workday filters, reusing the builder's generator.
 10. **Schedule builder leftovers:** `.ics` export, share link, walking time between buildings, and class-aware "leave by" times on Transport (feature modules 3 and 9).
 11. **Grades in the audit:** imported grades checked against minimum-grade and GPA rules, including science GPA (BCPM) on track cards. The builder checks what already exists first.
+11b. **Advising export** (owner ruling 2026-09-27, rulings.md): 4-year plan as a formatted `.xlsx` that opens in Google Sheets, plus a PDF "advising takeout" (plan, audit with citations, flags, prior credit, tracks), generated in the browser.
 12. **Owner's test students:** a sophomore major switch, a double major, a double degree, a BS/MS student, a dropped minor, and Math Applied + CS as both a double major and a double degree. Kept as fixtures, and all must pass.
 
 ## Wave 4: deployment (the owner creates the Vercel and Supabase accounts when this wave starts)
