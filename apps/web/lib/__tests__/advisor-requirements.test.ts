@@ -40,7 +40,12 @@ describe("describeGap", () => {
     const r = req(cmscMajor, "cmsc351");
     expect(describeGap(r, result(r, "missing"), ctx())).toEqual({ need: "Take CMSC351.", suggestions: ["CMSC351"] });
     const r2 = req(cmscMajor, "cmsc131");
-    expect(describeGap(r2, result(r2, "missing"), ctx())).toEqual({ need: "Take CMSC131 or CMSC141.", suggestions: ["CMSC131", "CMSC141"] });
+    // Department page (undergrad.cs.umd.edu/degree-requirements-cs-major): CMSC133 is an
+    // accelerated alternative to CMSC131, alongside the owner-confirmed CMSC141.
+    expect(describeGap(r2, result(r2, "missing"), ctx())).toEqual({
+      need: "Take CMSC131, CMSC141 or CMSC133.",
+      suggestions: ["CMSC131", "CMSC141", "CMSC133"],
+    });
   });
 
   it("lists a long option list as 'one of'", () => {
@@ -52,8 +57,10 @@ describe("describeGap", () => {
 
   it("describes a filter and suggests catalog courses that fit and aren't in the plan", () => {
     const r = req(cmscMajor, "stat4xx");
+    // Footnote 2 / department page: "cannot be cross-listed with CMSC" -- STAT426 is excluded
+    // (cross-listed as CMSC320); see CMSC_CROSSLISTS in cmsc-major-2026-27.ts.
     expect(describeGap(r, result(r, "missing"), ctx(taken("STAT400")))).toEqual({
-      need: "1 more STAT course numbered 400–499.",
+      need: "1 more STAT course numbered 400–499 (not AMSC460, AMSC466, MATH456, MATH475 or STAT426).",
       suggestions: ["STAT401", "STAT410", "STAT420", "STAT464"],
     });
   });
@@ -102,8 +109,10 @@ describe("describeGap", () => {
 
   it("explains a concentration in one department", () => {
     const r = req(cmscMajor, "concentration");
+    // Department page ("Upper Level Concentration", "Not Eligible for ULC"): Data Science,
+    // Honors, Information Science and College Park Scholars are also never the ULC discipline.
     expect(describeGap(r, result(r, "partial", ["ECON305"]), ctx(taken("ECON305")))).toEqual({
-      need: "9 more credits of courses numbered 300–499, all in one department (not CMSC).",
+      need: "9 more credits of courses numbered 300–499, all in one department (not CMSC, DATA, HONR, HNUH, INST or CPSP).",
       suggestions: [],
     });
   });

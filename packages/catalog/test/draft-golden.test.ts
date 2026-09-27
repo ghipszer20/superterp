@@ -108,8 +108,24 @@ const goldens: Record<string, Golden> = {
     draft: draftProgram(fixture("cs-major.html"), { ...meta, id: "cmsc-major", list: 0 }),
     hand: cmscMajor,
     pairs: [
-      { draft: "cmsc131", hand: "cmsc131", why: OWNER_CMSC141, extraOptions: ["CMSC141"] },
+      {
+        draft: "cmsc131",
+        hand: "cmsc131",
+        why:
+          `${OWNER_CMSC141}; department-vs-catalog difference (owner ruling: follow the department page): the department's main ` +
+          "requirements page offers 'CMSC131 or CMSC133' (an accelerated 2-credit alternative); the catalog table lists only CMSC131",
+        extraOptions: ["CMSC141", "CMSC133"],
+      },
       { draft: "cmsc132", hand: "cmsc132", why: OWNER_CMSC141, extraOptions: ["CMSC142"] },
+      {
+        draft: "areas-cmsc411",
+        hand: "areas",
+        why:
+          "department-vs-catalog difference (owner ruling: follow the department page): the department's General Track and " +
+          "Cybersecurity specialization pages list CMSC431 (Privacy Engineering) under Area 3; the catalog's Area 3 table (and " +
+          "its Cybersecurity table) omit it. Added to Area 3 -- not checked further by this golden test, which doesn't diff " +
+          "distribution areas course-by-course.",
+      },
     ],
     missing: [
       { hand: "stat4xx", why: "'STAT4xx' is an unlinked course pattern; the draft suggests the filter but doesn't guess", review: "course-pattern", row: "STAT4xx" },

@@ -72,4 +72,50 @@ describe("CS major 2026–27", () => {
     const unfinished = [statuses.areas, statuses.electives].filter((s) => s !== "satisfied");
     expect(unfinished).toHaveLength(1);
   });
+
+  // Department page (undergrad.cs.umd.edu/degree-requirements-cs-major, Math Requirements /
+  // Computer Science Requirements tables): "CMSC131 (4) Object-Oriented Programming I* or
+  // CMSC133 (2) Object-Oriented Programming I Beyond Fundamentals" -- the academic catalog's
+  // required-courses table lists only CMSC131. Department page wins (docs/project/rulings.md).
+  it("accepts CMSC133 for CMSC131 (department page: 'CMSC131 or CMSC133')", async () => {
+    const plan = [...without("CMSC131"), c("CMSC133", 2)];
+    expect((await statusOf(plan)).cmsc131).toBe("satisfied");
+  });
+
+  // Department page (general-track-degree-requirements, Area 3) and the Cybersecurity
+  // specialization page both list "CMSC431 (3) Privacy Engineering (formerly CMSC498G)" under
+  // Area 3; the academic catalog's Area 3 table (and its Cybersecurity table) omit it.
+  // Department page wins. Isolate CMSC431 as the only Area 3 candidate: drop CMSC451 (Theory)
+  // and swap the CMSC433 (Area 3) elective for a non-area elective, so only CMSC431 can fill
+  // Area 3 -- this must fail before the fix (only 2 areas: Systems, Info Processing).
+  it("counts CMSC431 (Privacy Engineering) toward Area 3 (department page addition, missing from the catalog)", async () => {
+    const plan = [...without("CMSC451", "CMSC433"), c("CMSC431"), c("CMSC335")];
+    const statuses = await statusOf(plan);
+    expect(statuses.areas).toBe("satisfied");
+  });
+
+  // Footnote 2 (catalog) / Math Requirements table (department page) for the STAT4xx and
+  // MATH/AMSC/STAT elective slots: "cannot be cross-listed with CMSC". AMSC460 is cross-listed
+  // as CMSC460 (confirmed: the department's Upper Level Concentration page lists "AMSC 460 -
+  // Computational Methods" as not acceptable for exactly this reason, and the Machine Learning
+  // specialization page writes it as "CMSC/AMSC 460"). Neither source disagrees here -- this is
+  // an engine gap the catalog and department page both call for; STAT426 (cross-listed/"credit
+  // only granted for" CMSC320) and MATH456/MATH475 (cross-listed with CMSC456/CMSC475) are the
+  // same gap. Only mathxxx is tested directly; stat4xx gets the matching STAT426 exclusion.
+  it("does not accept a CMSC-cross-listed course (AMSC460) for the MATH/AMSC/STAT elective", async () => {
+    const plan = [...without("MATH240"), c("AMSC460")];
+    const result = await auditProgram(cmscMajor, plan);
+    const mathxxx = result.requirements.find((r) => r.id === "mathxxx")!;
+    expect(mathxxx.assigned).not.toContain("AMSC460");
+  });
+
+  // Department page (upper-level-concentration, "Not Eligible for ULC"): Data Science (DATA),
+  // Honors (HONR/HNUH), Information Science (INST) and College Park Scholars (CPSP) may never
+  // be the outside-CMSC concentration discipline. The academic catalog's footnote 5 only says
+  // "no course in or cross-listed with CMSC"; it doesn't mention these. Department page wins.
+  it("does not accept Data Science (DATA) courses for the upper-level concentration", async () => {
+    const plan = [...without("MATH310", "MATH401", "MATH403", "MATH410"), c("DATA310"), c("DATA320"), c("DATA330"), c("DATA340")];
+    const statuses = await statusOf(plan);
+    expect(statuses.concentration).not.toBe("satisfied");
+  });
 });
