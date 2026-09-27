@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { formatMinutes } from "@superterp/campus-data/hours";
 import { Chip, Segmented } from "@/components/Segmented";
 import { Card, EmptyState, Section, StatusPill } from "@/components/ui";
+import { roomFitsSize } from "@/lib/rooms";
 import { useCampusMinutes } from "@/lib/useCampusMinutes";
 import styles from "./rooms.module.css";
 
@@ -48,7 +49,7 @@ export function RoomsView({
 
   const list = useMemo(() => {
     return rooms
-      .filter((r) => (library === 0 || r.locationId === library) && (r.capacity ?? 1) >= size)
+      .filter((r) => (library === 0 || r.locationId === library) && roomFitsSize(r.capacity, size))
       .map((r) => {
         const windows = r.open
           .map((w) => ({ start: toMinutes(w.start, today), end: toMinutes(w.end, today) }))
@@ -76,7 +77,7 @@ export function RoomsView({
           </Chip>
           {SIZES.map((s) => (
             <Chip key={s} pressed={size === s} onClick={() => setSize(s)}>
-              {s === 1 ? "Any size" : `${s}+ people`}
+              {s === 1 ? "1 person" : `${s}+ people`}
             </Chip>
           ))}
         </div>

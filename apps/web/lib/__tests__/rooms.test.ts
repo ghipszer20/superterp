@@ -1,5 +1,19 @@
 import { describe, expect, it } from "vitest";
-import { shortLibraryName } from "../rooms";
+import { roomFitsSize, shortLibraryName } from "../rooms";
+
+describe("roomFitsSize", () => {
+  it("fits a solo student (size 1) into every room, even one with unknown capacity", () => {
+    expect(roomFitsSize(null, 1)).toBe(true);
+    expect(roomFitsSize(1, 1)).toBe(true);
+    expect(roomFitsSize(8, 1)).toBe(true);
+  });
+
+  it("requires a known capacity at least the requested size for a group", () => {
+    expect(roomFitsSize(4, 4)).toBe(true);
+    expect(roomFitsSize(3, 4)).toBe(false);
+    expect(roomFitsSize(null, 4)).toBe(false);
+  });
+});
 
 describe("shortLibraryName", () => {
   it("drops the building the library sits inside", () => {
