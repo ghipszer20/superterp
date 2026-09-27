@@ -125,7 +125,7 @@ Code comments that cite "PROJECT_MEMORY section 17" (e.g. "open question 1") ref
 - **CI:** GitHub Actions runs `npm ci`, test, typecheck, lint and build on every push; the web `typecheck` script runs `next typegen` first.
 
 ## 18. How work is split (owner rule, 2026-09-25; efficiency rules 2026-09-26)
-- **Ask the owner before starting any subagent** (owner, 2026-09-27): name the task, model and branch and wait for a yes. Whether this also applies in overtime mode is still to be confirmed with the owner.
+- **Ask the owner before starting any subagent** (owner, 2026-09-27): name the task, model and branch and wait for a yes. Not in overtime mode: there, dispatch without asking (section 16).
 - **Every implementation task goes to a subagent**, each in its own git worktree and branch, test-first, pushing to its branch.
 - **The main session only talks with the owner, reviews, and merges.** Review = read the diff, check screenshots for UI work, then merge into the working branch and push. The main session does not write feature code itself unless the owner says so for a specific task (e.g. the credit-package fixes, 2026-09-25).
 - **Trimmed verification (owner rule, 2026-09-25):** one local test run (tests, typecheck, lint, build) plus CI on GitHub. Don't re-run the suite after merging; CI on the merged branch covers it.
