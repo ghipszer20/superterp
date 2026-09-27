@@ -73,6 +73,30 @@ function casingColor(): string {
   return currentTheme() === "dark" ? "#000000" : "#ffffff";
 }
 
+// A small east-pointing chevron, registered as an SDF image (map.addImage(..., { sdf: true })
+// below) so it can be recolored per route via icon-color/icon-halo-color like a normal paint
+// property, the same way the route line itself is. Drawn pointing east/right specifically
+// because that's the reference direction "icon-rotation-alignment: map" rotates *from*: with
+// symbol-placement: "line", MapLibre then turns it to match each line segment's actual bearing,
+// in the order the GTFS shape's points come in -- i.e. the real direction of travel, not just
+// "whichever way reads upright" (icon-keep-upright: false, set on the layer, turns that off).
+function createArrowIcon(): ImageData {
+  const size = 20;
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d")!;
+  ctx.fillStyle = "#000";
+  ctx.beginPath();
+  ctx.moveTo(4, 3);
+  ctx.lineTo(17, 10);
+  ctx.lineTo(4, 17);
+  ctx.lineTo(8, 10);
+  ctx.closePath();
+  ctx.fill();
+  return ctx.getImageData(0, 0, size, size);
+}
+
 // Paints the selected route's line(s) and the stops it serves; "no route
 // selected" is its own case (routeId "" never matches a real route, so
 // nothing is highlighted). Called both right after the style loads --
@@ -81,8 +105,10 @@ function casingColor(): string {
 function applyHighlight(map: MapLibreMap, selectedRoute: string | null, routes: MapRoute[]): void {
   map.setFilter("routes-casing", ["==", ["get", "routeId"], selectedRoute ?? ""]);
   map.setFilter("routes-line", ["==", ["get", "routeId"], selectedRoute ?? ""]);
+  map.setFilter("routes-arrows", ["==", ["get", "routeId"], selectedRoute ?? ""]);
   const route = routes.find((r) => r.id === selectedRoute);
   map.setPaintProperty("routes-line", "line-color", route ? route.color : "#6e6e73");
+  map.setPaintProperty("routes-arrows", "icon-color", route ? route.color : "#6e6e73");
   map.setPaintProperty(
     "stops-circle",
     "circle-color",
@@ -261,6 +287,31 @@ export function MapView({
         source: "routes",
         filter: ["==", ["get", "routeId"], ""],
         paint: { "line-color": "#6e6e73", "line-width": 4 },
+      });
+
+      // Direction-of-travel arrows along the route line (owner request): repeated along the
+      // line at a fixed spacing, each one rotated to the line's actual bearing at that point --
+      // see createArrowIcon's comment for how that rotation-from-shape-order works. The halo
+      // (casingColor(), same as the line's own casing) is what keeps them visible against both
+      // the light and dark basemap styles.
+      map.addImage("route-arrow", createArrowIcon(), { sdf: true });
+      map.addLayer({
+        id: "routes-arrows",
+        type: "symbol",
+        source: "routes",
+        filter: ["==", ["get", "routeId"], ""],
+        layout: {
+          "icon-image": "route-arrow",
+          "icon-size": 0.9,
+          "symbol-placement": "line",
+          "symbol-spacing": 70,
+          "icon-rotation-alignment": "map",
+          "icon-pitch-alignment": "map",
+          "icon-keep-upright": false,
+          "icon-allow-overlap": true,
+          "icon-ignore-placement": true,
+        },
+        paint: { "icon-color": "#6e6e73", "icon-halo-color": casingColor(), "icon-halo-width": 1 },
       });
 
       map.addSource("stops", {
