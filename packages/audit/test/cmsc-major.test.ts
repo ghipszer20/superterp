@@ -109,14 +109,51 @@ describe("CS major 2026–27", () => {
     expect(mathxxx.assigned).not.toContain("AMSC460");
   });
 
-  // STAT426: the department's Upper Level Concentration page cites it as its own example of a
-  // "credit only granted for" CMSC course. Applied to the STAT4xx major requirement's "not
-  // cross-listed with CMSC" wording by interpretation (see the review notes for the caveat).
-  it("does not accept STAT426 ('credit only granted for' a CMSC course) for the STAT4xx requirement", async () => {
+  // Owner ruling (CS department-page answers, 2026-09-27): STAT426 is NOT cross-listed with
+  // CMSC, so it can fill the STAT4xx slot. It stays ineligible for the Upper Level Concentration
+  // (see the concentration test below) -- the department's ULC page lists it as "credit only
+  // granted for" a CMSC course, a different requirement than this one.
+  it("accepts STAT426 for the STAT4xx requirement", async () => {
     const plan = [...without("STAT400"), c("STAT426")];
+    const statuses = await statusOf(plan);
+    expect(statuses.stat4xx).toBe("satisfied");
     const result = await auditProgram(cmscMajor, plan);
     const stat4xx = result.requirements.find((r) => r.id === "stat4xx")!;
-    expect(stat4xx.assigned).not.toContain("STAT426");
+    expect(stat4xx.assigned).toContain("STAT426");
+  });
+
+  // Owner ruling (CS department-page answers, 2026-09-27): STAT426 stays ineligible for the
+  // Upper Level Concentration (department ULC page: "credit only granted for" a CMSC course).
+  // A STAT-only concentration plan isolates STAT426 as the only possible concentration course,
+  // so the solver can't just move a different STAT course in to cover for it.
+  it("does not count STAT426 toward the upper-level concentration", async () => {
+    // STAT400 (already in the plan, filling stat4xx) plus STAT410/STAT420 give at most 3
+    // concentration-eligible STAT courses (9 credits) once STAT426 is excluded -- never enough
+    // for the 12-credit concentration, however the solver assigns the four STAT courses.
+    const plan = [...without("MATH310", "MATH401", "MATH403", "MATH410"), c("STAT426"), c("STAT410"), c("STAT420")];
+    const result = await auditProgram(cmscMajor, plan);
+    const concentration = result.requirements.find((r) => r.id === "concentration")!;
+    expect(concentration.assigned).not.toContain("STAT426");
+    expect(concentration.status).toBe("partial");
+  });
+
+  // Footnote 2 (catalog) / Math Requirements table (department page): MATH456 (= CMSC456) is a
+  // confirmed CMSC cross-list (Testudo/Coursicle) and stays excluded from the MATH/AMSC/STAT
+  // elective. Isolate MATH456 as the only possible mathxxx candidate: drop every other
+  // MATH/AMSC/STAT course (including STAT400, which the mathxxx filter also matches) and move
+  // the concentration to a non-MATH/STAT department, so the solver can't cover the elective, or
+  // the concentration, from elsewhere.
+  it("does not accept MATH456 (cross-listed as CMSC456) for the MATH/AMSC/STAT elective", async () => {
+    const plan = [
+      ...without("MATH240", "MATH310", "MATH401", "MATH403", "MATH410", "STAT400"),
+      c("MATH456"),
+      c("ECON310"),
+      c("ECON401"),
+      c("ECON403"),
+      c("ECON410"),
+    ];
+    const statuses = await statusOf(plan);
+    expect(statuses.mathxxx).not.toBe("satisfied");
   });
 
   // Department page (upper-level-concentration, "Not Eligible for ULC"): Data Science (DATA),
