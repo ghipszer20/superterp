@@ -7,11 +7,12 @@
 // analysis (AdvisorApp.tsx's useAnalysis).
 
 import { useEffect, useRef, useState } from "react";
-import type { GatewayCourseStatus, GatewayOverallStatus } from "@superterp/audit";
+import type { GatewayCourseStatus, GatewayOverallStatus, GatewayResult } from "@superterp/audit";
 import { checkerPlan } from "@/lib/advisor/checker";
 import type { AdvisorPlan } from "@/lib/advisor/plan-state";
 import type { PriorCreditResult } from "@/lib/advisor/prior-credit";
 import { PROGRAM_OPTIONS, programsLabel, toggleProgram } from "@/lib/advisor/programs";
+import { addedProgramNotes, completedCreditTotals, gatewayRuleText } from "@/lib/advisor/what-if-display";
 import type { CourseWhatIf, WhatIfResult } from "@/lib/advisor/what-if";
 import type { CatalogState } from "./data";
 import { dispatchPlan } from "./store";
@@ -159,6 +160,9 @@ function CompareResult({ compare, current, proposed }: { compare: CompareState; 
   const changedCourses = r.courses.filter((c) => c.currentStatus !== c.proposedStatus);
   const droppedPrograms = current.filter((id) => !proposed.includes(id)).map(programName);
   const addedPrograms = proposed.filter((id) => !current.includes(id));
+  const addedNotes = addedProgramNotes(current, proposed);
+  const totals = completedCreditTotals(r.courses);
+  const hasExisting = totals.counts + totals.elective + totals.unused > 0;
 
   return (
     <div aria-busy={compare.status === "running"}>
@@ -173,6 +177,36 @@ function CompareResult({ compare, current, proposed }: { compare: CompareState; 
               }.`}
         </p>
       </section>
+
+      {hasExisting ? (
+        <section className={styles.card}>
+          <h2 className={styles.cardTitle}>Your existing credits</h2>
+          <p className={styles.cardNote}>
+            Of the credits you&apos;ve already earned (completed courses and prior credit), under {programsLabel(proposed)}
+            {": "}
+            {totals.counts} count toward a requirement, {totals.elective} become electives, and {totals.unused} go unused.
+          </p>
+        </section>
+      ) : null}
+
+      {addedNotes.length > 0 ? (
+        <section className={styles.card}>
+          <h2 className={styles.cardTitle}>Catalog year</h2>
+          <ul className={styles.reqList}>
+            {addedNotes.map((n) => (
+              <li key={n.id} className={styles.reqRow}>
+                <div className={styles.reqHead}>
+                  <span className={styles.reqName}>
+                    {n.name}
+                    {!n.verified ? <span className={styles.unverified}> Unverified</span> : null}
+                  </span>
+                  <span className={styles.reqStatus}>{n.catalogYear ? `Catalog ${n.catalogYear.replace("-", "–")}` : "Catalog year not on file"}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       {r.freedCredits > 0 ? (
         <section className={styles.card}>
@@ -211,10 +245,8 @@ function CompareResult({ compare, current, proposed }: { compare: CompareState; 
 
       {r.gateway ? (
         <section className={styles.card} aria-label="CS gateway">
-          <h2 className={styles.cardTitle}>CS gateway</h2>
-          <p className={styles.reqStatus} data-status={OVERALL_TONE[r.gateway.overall]}>
-            {OVERALL_LABEL[r.gateway.overall]}
-          </p>
+          <h2 className={styles.cardTitle}>CS gateway (Limited Enrollment Program)</h2>
+          <p className={styles.cardNote}>{gatewayRuleText(r.gateway.rule)}</p>
           <ul className={styles.reqList}>
             {r.gateway.courses.map((c) => (
               <li key={c.id} className={styles.reqRow}>
@@ -227,6 +259,13 @@ function CompareResult({ compare, current, proposed }: { compare: CompareState; 
               </li>
             ))}
           </ul>
+          <p className={styles.cardNote} data-severity={r.gateway.gpa === "below" ? "warning" : undefined}>
+            GPA: {GPA_LABEL[r.gateway.gpa]}
+            {r.gateway.gpa === "unknown" ? " -- enter it on the Audit tab." : ""}
+          </p>
+          <p className={styles.reqStatus} data-status={OVERALL_TONE[r.gateway.overall]}>
+            {OVERALL_LABEL[r.gateway.overall]}
+          </p>
         </section>
       ) : null}
 
@@ -298,3 +337,4 @@ const OVERALL_LABEL: Record<GatewayOverallStatus, string> = {
   ineligible: "Not eligible as your record stands",
 };
 const OVERALL_TONE: Record<GatewayOverallStatus, "satisfied" | "partial" | "missing"> = { eligible: "satisfied", "not-yet": "partial", ineligible: "missing" };
+const GPA_LABEL: Record<GatewayResult["gpa"], string> = { met: "Meets the minimum", below: "Below the minimum", unknown: "Not entered" };
