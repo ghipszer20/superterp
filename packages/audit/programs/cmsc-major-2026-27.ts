@@ -52,7 +52,9 @@ export const cmscMajor: Program = {
   source:
     "UMD Academic Catalog 2026–27, Computer Science Major; " +
     "Department of Computer Science, https://undergrad.cs.umd.edu/degree-requirements-cs-major (fetched 2026-09-26)",
-  minGrade: "C-",
+  // No program-wide minGrade: the concentration's D-grade allowance (department page; see review
+  // notes) needs its own, looser minGrade, so every other requirement below sets minGrade: "C-"
+  // individually instead.
   verified: false,
   reviewNotes: [
     "Footnote 2 ('MATH/AMSC/STAT xxx' must have MATH141 or higher as a prerequisite, not cross-listed with CMSC) is approximated as any MATH/AMSC/STAT course numbered 240+. Needs the real prerequisite check. The department page's own Math Requirements table says 'MATH/STATXXX' (no AMSC) for this slot, but its LEP Benchmarks section on the same page says 'MATH/AMSC/STAT course' for the equivalent 75-credit checkpoint -- the department page disagrees with itself, so this isn't a clean department-vs-catalog case. AMSC is kept (catalog's reading; flagged for the owner as unclear wording rather than acted on).",
@@ -61,6 +63,7 @@ export const cmscMajor: Program = {
     "Footnote 4 (credit for only one of CMSC460/CMSC466) is not enforced yet.",
     "Upper-level electives: footnote 3 says 6 credits at the 300/400 level, including 1-credit winter courses and independent study; encoded as 6 credits of CMSC 300–499 excluding CMSC330 and CMSC351. The department's General Track page lists specific eligible electives (CMSC320, 335, 388/389/398 STICs, 395, 396, 401, 425, 437, 473, 475, 476, 477, 488A, 498, 498A, 499A) -- all within this range, so no widening or narrowing needed. CMSC395 (TAs only) and CMSC396 (Dept Honors only) have eligibility gates the audit can't check (no TA/Honors data on StudentCourse); not enforced.",
     "Department-vs-catalog difference (owner ruling: follow the department page): the department's main requirements page lists 'CMSC131 (4) Object-Oriented Programming I* or CMSC133 (2) Object-Oriented Programming I Beyond Fundamentals'; the academic catalog's required-courses table lists only CMSC131. CMSC133 is added to cmsc131's options, alongside the owner-confirmed CMSC141. Flagged for the owner: gateway.ts's GATEWAY_COURSES comment says 'The substitutes match cmsc-major-2026-27.ts' but only lists CMSC131/CMSC141 for the LEP gateway -- CMSC133 now diverges from that comment (gateway.ts is out of scope here; not changed).",
+    "Department-vs-catalog difference (owner ruling: follow the department page): the department's Upper Level Concentration page allows 'a grade of D ... as long as the cumulative GPA for the ULC is at least 1.7', stricter than the catalog's blanket 'C- or better in all major requirements' (footnote 5 doesn't mention D grades at all). This is encoded (the concentration requirement gets its own minGrade: 'D-'; every other requirement keeps minGrade: 'C-' individually, since the audit engine now has no program-wide minGrade -- see the requirements list below). This surfaces in the UI: apps/web/lib/advisor/words.ts reads a requirement's own minGrade to print '<grade> or better' next to it, so every CS requirement now shows this note (previously none did, since only the removed program-level minGrade enforced it silently). Edge case, not fixed: a D-then-passing-retake of the SAME course (e.g. CMSC330 D, then B) can be mis-displayed by packages/plan/src/what-if.ts's usedIndices, which marks 'used' occurrences by walking the plan in order without knowing which specific occurrence the solver actually assigned; it could tag the D attempt as 'counts' instead of the passing retake. Low-stakes in practice: the owner's own rule only allows a retake after an F or W, so a D-then-B retake is already flagged as an error by the repeat checker regardless of this display quirk.",
     "Department-vs-catalog difference (owner ruling: follow the department page): the department's General Track distributive-areas page and its Cybersecurity specialization page both list 'CMSC431 (3) Privacy Engineering (formerly CMSC498G)' under Area 3; the academic catalog's Area 3 table (and its Cybersecurity table) omit it. Added to Area 3.",
     "The department's distributive-area lists also count several CMSC498* 'Selected Topics' sections toward specific areas, but only for the semester(s) each was offered (e.g. 'CMSC498C ... Spring 2024, Spring 2025, Spring 2026, and Fall 2026 only'). StudentCourse has no term field, so the audit can't check when a course was taken; these semester-limited area credits are not encoded. Manual check until StudentCourse gains a term.",
     "Department-vs-catalog difference (owner ruling: follow the department page): the department's Upper Level Concentration page ('Not Eligible for ULC') excludes Data Science (DATA), Honors (HONR/HNUH), Information Science (INST) and College Park Scholars (CPSP) from ever being the outside-CMSC discipline; the academic catalog's footnote 5 only says 'no course in or cross-listed with CMSC'. Added to the concentration's excludeDepartments. The same page also lists 'Computer Engineering' and 'Quantum Science Engineering' as ineligible disciplines, but doesn't give them a distinct course prefix (their courses are largely ENEE/PHYS, which the page bans only course-by-course, not wholesale) -- not encoded; manual check. INST's narrow exception (declared in one of two specific Shady Grove minors) also isn't encoded -- INST is excluded outright here.",
@@ -70,28 +73,29 @@ export const cmscMajor: Program = {
     "Department-vs-catalog-adjacent gap the engine can't express (not a disagreement -- the catalog says nothing about discipline groups at all): the department's Upper Level Concentration page says 'Students using Math or Statistics courses for the ULC are able to mix and match their courses between MATH and STAT' (and the same for LGBT/WGSS courses). The concentration requirement here treats every department strictly on its own, so a MATH+STAT (or LGBT+WGSS) split is wrongly reported as spanning two disciplines. Not encoded (would need a 'discipline group' concept in the concentration type); listed as a follow-up. This matters for the owner's own verification target (Math Applied + CS), whose concentration is very likely MATH/STAT.",
     "LEP Benchmarks (department page): a 45-credit checkpoint (CMSC131, CMSC132, MATH140, each C- or better, 2.0 cumulative GPA) and a 75-credit checkpoint (CMSC330, CMSC351, one of STAT4xx/MATH-AMSC-STAT xxx, C- or better, 2.0 cumulative GPA). This is a progress-checkpoint concept (tied to credits-earned-so-far) the audit engine doesn't model at all (it only reports gaps against the finished requirement list, not by checkpoint); not encoded. Flagged for the owner: this page's 2.0 GPA differs from gateway.ts's Fall-2024-or-later rule of a 3.0 cumulative GPA -- gateway.ts is out of scope here (not changed), but the two pages may describe different things (an ongoing-major benchmark vs. LEP admission) or one may be stale; worth the owner's attention.",
     "No CS-specific residency requirement is stated on the department's requirements pages (only the general university residency policy would apply, which the audit engine doesn't model at all).",
-    "Minimum grade C- applies to all major courses here; gateway courses need B- for students who started Fall 2024 or later (CS tracking sheet), handled separately by the gateway check. Exception the engine can't safely express yet: the Upper Level Concentration page allows a D grade in the concentration specifically ('Courses with a grade of D can be used for the ULC as long as the cumulative GPA for the ULC is at least 1.7'), stricter than the catalog's blanket 'C- or better'. The audit engine's minGrade is checked at the program level before any per-requirement minGrade (audit.ts: `meetsGrade(course, program.minGrade)` gates every requirement, so a requirement's own minGrade can only tighten the program floor, never loosen it) -- giving the concentration requirement its own looser minGrade would need that check changed to `req.minGrade ?? program.minGrade`. That change alone would be safe (every other program leaves requirement-level minGrade unset, so it's a no-op for them), but packages/plan/src/what-if.ts's `usedIndices` independently re-derives which occurrences 'count' using only `program.minGrade` (it doesn't look at which specific requirement each occurrence was assigned to), so it would keep treating a D-grade concentration course as not-earning-credit even after an audit.ts fix, silently disagreeing with the audit. Fixing this correctly needs a coordinated change to audit.ts and what-if.ts, both outside this program file; not done here. Flagged for the owner as a real gap (not a code fix in this branch) -- see the final report.",
+    "Minimum grade C- applies to every requirement except the concentration (see above); gateway courses need B- for students who started Fall 2024 or later (CS tracking sheet), handled separately by the gateway check.",
     "Specializations (Cybersecurity, Data Science, Machine Learning, Quantum Information) are separate programs, not encoded yet (see report/follow-ups). The academic catalog's tables for these are also stale relative to the department's specialization pages: Cybersecurity's 'choose four' list is missing CMSC431; Data Science's 'choose two' list is missing CMSC431 and CMSC471; and the department adds MATH461 and MATH341 as Linear Algebra options alongside MATH240 for Data Science, Machine Learning and Quantum Information (the catalog only lists MATH240 for these tracks' supporting math).",
   ],
   requirements: [
     // Required lower-level courses (unless exempt by proficiency exam, footnote 1)
-    { kind: "course", id: "math140", name: "Calculus I", options: ["MATH140"] },
-    { kind: "course", id: "math141", name: "Calculus II", options: ["MATH141"] },
+    { kind: "course", id: "math140", name: "Calculus I", options: ["MATH140"], minGrade: "C-" },
+    { kind: "course", id: "math141", name: "Calculus II", options: ["MATH141"], minGrade: "C-" },
     // Owner-confirmed 2026-09-25: CMSC141 counts for CMSC131 and CMSC142 for CMSC132.
     // CMSC133 (department page, see review notes): "CMSC131 or CMSC133".
-    { kind: "course", id: "cmsc131", name: "Object-Oriented Programming I", options: ["CMSC131", "CMSC141", "CMSC133"] },
-    { kind: "course", id: "cmsc132", name: "Object-Oriented Programming II", options: ["CMSC132", "CMSC142"] },
-    { kind: "course", id: "cmsc216", name: "Introduction to Computer Systems", options: ["CMSC216"] },
-    { kind: "course", id: "cmsc250", name: "Discrete Structures", options: ["CMSC250"] },
+    { kind: "course", id: "cmsc131", name: "Object-Oriented Programming I", options: ["CMSC131", "CMSC141", "CMSC133"], minGrade: "C-" },
+    { kind: "course", id: "cmsc132", name: "Object-Oriented Programming II", options: ["CMSC132", "CMSC142"], minGrade: "C-" },
+    { kind: "course", id: "cmsc216", name: "Introduction to Computer Systems", options: ["CMSC216"], minGrade: "C-" },
+    { kind: "course", id: "cmsc250", name: "Discrete Structures", options: ["CMSC250"], minGrade: "C-" },
     // Additional required courses
-    { kind: "course", id: "cmsc330", name: "Organization of Programming Languages", options: ["CMSC330"] },
-    { kind: "course", id: "cmsc351", name: "Algorithms", options: ["CMSC351"] },
+    { kind: "course", id: "cmsc330", name: "Organization of Programming Languages", options: ["CMSC330"], minGrade: "C-" },
+    { kind: "course", id: "cmsc351", name: "Algorithms", options: ["CMSC351"], minGrade: "C-" },
     {
       kind: "choose",
       id: "stat4xx",
       name: "STAT 400-level course",
       count: 1,
       from: { departments: ["STAT"], minNumber: 400, maxNumber: 499, exclude: STAT_CROSSLISTS },
+      minGrade: "C-",
     },
     {
       kind: "choose",
@@ -104,17 +108,31 @@ export const cmscMajor: Program = {
         maxNumber: 499,
         exclude: [...AMSC_CROSSLISTS, ...MATH_CROSSLISTS, ...STAT_CROSSLISTS],
       },
+      minGrade: "C-",
     },
     // Upper level: five 400-level courses from at least three areas, at most three per area (footnote 3)
-    { kind: "distribution", id: "areas", name: "Five 400-level CMSC courses across three areas", count: 5, minAreas: 3, maxPerArea: 3, areas: AREAS },
+    {
+      kind: "distribution",
+      id: "areas",
+      name: "Five 400-level CMSC courses across three areas",
+      count: 5,
+      minAreas: 3,
+      maxPerArea: 3,
+      areas: AREAS,
+      minGrade: "C-",
+    },
     {
       kind: "choose",
       id: "electives",
       name: "Upper-level CMSC electives (6 credits)",
       credits: 6,
       from: { departments: ["CMSC"], minNumber: 300, maxNumber: 499, exclude: ["CMSC330", "CMSC351"] },
+      minGrade: "C-",
     },
-    // Upper-level concentration (footnote 5; department page: "Upper Level Concentration")
+    // Upper-level concentration (footnote 5; department page: "Upper Level Concentration").
+    // minGrade "D-" (not "C-"): the department page allows a D grade here specifically (see
+    // review notes) -- D- is the lowest grade above F, so F/W attempts still earn no credit
+    // (audit.ts's earnsCredit excludes them universally regardless of minGrade).
     {
       kind: "concentration",
       id: "concentration",
@@ -125,6 +143,7 @@ export const cmscMajor: Program = {
       // CMSC excluded by both sources; DATA/HONR/HNUH/INST/CPSP excluded by the department
       // page only (see review notes above).
       excludeDepartments: ["CMSC", "DATA", "HONR", "HNUH", "INST", "CPSP"],
+      minGrade: "D-",
     },
   ],
 };

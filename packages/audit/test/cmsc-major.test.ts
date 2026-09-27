@@ -128,4 +128,24 @@ describe("CS major 2026–27", () => {
     const statuses = await statusOf(plan);
     expect(statuses.concentration).not.toBe("satisfied");
   });
+
+  // Department page (upper-level-concentration): "Courses with a grade of D can be used for the
+  // ULC as long as the cumulative GPA for the ULC is at least 1.7" -- stricter than the catalog's
+  // blanket "C- or better in all major requirements", but the department page wins. The
+  // concentration has zero slack in completePlan (exactly 12 credits), so a D in one of its four
+  // courses must not drop it below satisfied.
+  it("accepts a D grade in the concentration (department page: D allowed if GPA stays >= 1.7)", async () => {
+    const plan = completePlan.map((x) => (x.id === "MATH403" ? { ...x, grade: "D" } : x));
+    expect((await statusOf(plan)).concentration).toBe("satisfied");
+  });
+
+  // Every other requirement keeps the catalog's blanket "C- or better" (only the concentration is
+  // looser, per the department page above); a requirement missing this would silently let D
+  // grades through everywhere, not just the concentration.
+  it("requires C- on every requirement except the concentration", () => {
+    for (const r of cmscMajor.requirements) {
+      if (r.id === "concentration") expect(r.minGrade).toBe("D-");
+      else expect(r.minGrade).toBe("C-");
+    }
+  });
 });

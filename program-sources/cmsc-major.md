@@ -2,8 +2,7 @@ Source: https://undergrad.cs.umd.edu/degree-requirements-cs-major (Department of
 Fetched by Claude (builder): 2026-09-26
 
 The sections below are each page's body text, pasted verbatim (site navigation and the
-"Contact Our Office" footer stripped; otherwise unedited, including the pages' own typos
-such as "MATH340 [must complete MATH340 first]" for MATH341). Claude's own notes are kept
+"Contact Our Office" footer stripped; otherwise unedited). Claude's own notes are kept
 separate, in the "Notes (Claude)" section at the end -- nothing below that heading is from
 the department.
 
