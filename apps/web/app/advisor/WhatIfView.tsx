@@ -157,7 +157,7 @@ function CompareResult({ compare, current, proposed }: { compare: CompareState; 
   }
   const r = compare.result;
   const changedCourses = r.courses.filter((c) => c.currentStatus !== c.proposedStatus);
-  const droppedPrograms = current.filter((id) => !proposed.includes(id));
+  const droppedPrograms = current.filter((id) => !proposed.includes(id)).map(programName);
   const addedPrograms = proposed.filter((id) => !current.includes(id));
 
   return (
@@ -265,6 +265,12 @@ function CompareResult({ compare, current, proposed }: { compare: CompareState; 
 /** "A", "A and B", "A, B and C" */
 function listing(items: string[]): string {
   return items.length <= 1 ? (items[0] ?? "") : `${items.slice(0, -1).join(", ")} and ${items.at(-1)}`;
+}
+
+/** A program id's full name, e.g. "the Computer Science Major"; falls back to the id itself for
+ * one this session's PROGRAM_OPTIONS doesn't recognize. */
+function programName(id: string): string {
+  return `the ${PROGRAM_OPTIONS.find((o) => o.id === id)?.program.name ?? id}`;
 }
 
 const STATUS_LABEL: Record<CourseWhatIf["currentStatus"], string> = { counts: "Counts", elective: "Elective", unused: "Unused" };
