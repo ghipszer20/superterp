@@ -70,7 +70,7 @@ export function MapView({
   const [themeTick, setThemeTick] = useState(0);
   const [selectedRoute, setSelectedRoute] = useState<string | null>(null);
   const [selectedStop, setSelectedStop] = useState<string | null>(null);
-  const [board, setBoard] = useState<Board | null>(null);
+  const [board, setBoard] = useState<{ stopId: string; data: Board } | null>(null);
   const [here, setHere] = useState<{ lat: number; lon: number } | null>(null);
   const [locating, setLocating] = useState(false);
   const [locError, setLocError] = useState<string | null>(null);
@@ -95,7 +95,11 @@ export function MapView({
         zoom: DEFAULT_ZOOM,
       });
     } catch {
-      setFailed(true);
+      // Deferred: react-hooks/set-state-in-effect flags a setState call made
+      // synchronously as the effect runs; this rare construction failure
+      // (e.g. WebGL context lost between the hasWebGl() check and here) is
+      // reported a tick later instead.
+      queueMicrotask(() => setFailed(true));
       return;
     }
     mapRef.current = map;
@@ -204,21 +208,20 @@ export function MapView({
     );
   }, [selectedRoute, routes, themeTick]);
 
-  // Fetch scheduled departures for the tapped stop.
+  // Fetch scheduled departures for the tapped stop. `board` is tagged with
+  // the stop it was fetched for, so switching stops (or closing the card)
+  // shows "Loading..." from the render-time check below rather than a
+  // setState call at the top of the effect (avoids a same-tick re-render).
   useEffect(() => {
-    if (!selectedStop) {
-      setBoard(null);
-      return;
-    }
-    setBoard(null);
+    if (!selectedStop) return;
     let cancelled = false;
     fetch(`/api/buses/departures?stops=${encodeURIComponent(selectedStop)}`)
       .then((res) => (res.ok ? res.json() : Promise.reject(new Error(String(res.status)))))
       .then((json: { departures: Board }) => {
-        if (!cancelled) setBoard(json.departures);
+        if (!cancelled) setBoard({ stopId: selectedStop, data: json.departures });
       })
       .catch(() => {
-        if (!cancelled) setBoard([]);
+        if (!cancelled) setBoard({ stopId: selectedStop, data: [] });
       });
     return () => {
       cancelled = true;
@@ -258,6 +261,9 @@ export function MapView({
   }, [here, themeTick]);
 
   const stop = stops.find((s) => s.id === selectedStop);
+  // null while no stop is selected, or while `board` still holds the
+  // previous stop's departures and the new fetch hasn't landed yet.
+  const activeBoard = selectedStop && board?.stopId === selectedStop ? board.data : null;
   const servingRoutes = selectedStop
     ? (stopRoutes[selectedStop] ?? []).map((id) => routes.find((r) => r.id === id)).filter((r): r is MapRoute => Boolean(r))
     : [];
@@ -329,12 +335,12 @@ export function MapView({
             </div>
           ) : null}
           <div className={styles.departures}>
-            {board === null ? (
+            {activeBoard === null ? (
               <div className={busStyles.loading}>Loading departures…</div>
-            ) : (board[0]?.departures.length ?? 0) === 0 ? (
+            ) : (activeBoard[0]?.departures.length ?? 0) === 0 ? (
               <EmptyState title="No more buses today" />
             ) : (
-              board![0]!.departures.map((d) => (
+              activeBoard[0]!.departures.map((d) => (
                 <div key={`${d.tripId}-${d.minutes}`} className={busStyles.dep}>
                   <span className={busStyles.badge} style={{ background: d.color, color: d.textColor }}>
                     {d.route}
