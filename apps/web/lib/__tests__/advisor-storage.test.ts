@@ -41,6 +41,14 @@ describe("plan storage", () => {
     expect(parsePlan(JSON.stringify(raw))).not.toHaveProperty("college");
   });
 
+  it("round-trips double major vs double degree, and drops an unknown value", () => {
+    const p = { ...plan(), degreeMode: "double-degree" as const };
+    expect(parsePlan(serializePlan(p))!.degreeMode).toBe("double-degree");
+    const raw = JSON.parse(serializePlan(p));
+    raw.degreeMode = "triple";
+    expect(parsePlan(JSON.stringify(raw))).not.toHaveProperty("degreeMode");
+  });
+
   it("returns null for nothing, junk, or another version", () => {
     expect(parsePlan(null)).toBeNull();
     expect(parsePlan("{not json")).toBeNull();

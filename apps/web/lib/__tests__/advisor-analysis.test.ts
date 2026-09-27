@@ -32,6 +32,20 @@ describe("checkerPlan", () => {
 });
 
 describe("runAnalysis", () => {
+  it("checks the owner plan as a double major by default, and as a double degree when chosen", async () => {
+    const a = await runAnalysis({ plan, catalog, priorCourses: prior.courses });
+    expect(a.degrees?.mode).toBe("double-major");
+    expect(a.degrees?.issues.filter((i) => i.kind !== "declaration-deadline")).toEqual([]);
+    const b = await runAnalysis({ plan: { ...plan, degreeMode: "double-degree" }, catalog, priorCourses: prior.courses });
+    expect(b.degrees?.mode).toBe("double-degree");
+    expect(b.degrees?.issues.map((i) => i.kind)).toContain("double-degree-credits");
+  });
+
+  it("has no degree check with one major", async () => {
+    const a = await runAnalysis({ plan: { ...plan, programs: ["cmsc-major"] }, catalog, priorCourses: prior.courses });
+    expect(a.degrees).toBeNull();
+  });
+
   it("finds the double major, audits every layer and checks the CS gateway", async () => {
     const a = await runAnalysis({ plan, catalog, priorCourses: prior.courses });
     expect(a.notices.map((n) => n.message)).toContain(

@@ -5,6 +5,7 @@ import { auditPrograms, checkCsGateway, type GatewayResult, type Program, type R
 import type { CreditCourse } from "@superterp/credit";
 import type { PlanCatalog } from "@superterp/plan/catalog";
 import type { Plan } from "@superterp/plan/check";
+import { checkDegrees, type DegreeCheck } from "@superterp/plan/degrees";
 import { planCourses, programNotices, type ProgramNotice } from "@superterp/plan/notices";
 // The heavy, solver-backed half of @superterp/tracks (checkTrack calls auditProgram); this file is
 // already loaded with import() (see AdvisorApp.tsx), so it's fine for it to pull in HiGHS, the way
@@ -25,7 +26,7 @@ import {
 } from "@superterp/tracks";
 import { checkerPlan } from "./checker";
 import type { AdvisorPlan } from "./plan-state";
-import { auditedPrograms, noticeCandidates } from "./programs";
+import { AUTOMATIC_PROGRAMS, auditedPrograms, degreeModeOf, noticeCandidates, studentDegrees } from "./programs";
 import { describeGap, type Gap } from "./requirements";
 import { matriculationTermId } from "./terms";
 import { resolvedPlan } from "./track-plan";
@@ -50,6 +51,8 @@ export type TrackAudit = {
 
 export type Analysis = {
   notices: ProgramNotice[];
+  /** Double major / double degree check (two or more majors chosen), else null. */
+  degrees: DegreeCheck | null;
   audits: ProgramAudit[];
   /** Only when the Computer Science major is chosen. */
   gateway: GatewayResult | null;
@@ -76,7 +79,12 @@ export async function runAnalysis(input: { plan: AdvisorPlan; catalog: PlanCatal
   const plan = checkerPlan(input.plan, input.priorCourses);
   const courses = planCourses(plan, input.catalog);
   const [programs, candidates] = await Promise.all([auditedPrograms(input.plan.programs), noticeCandidates(input.plan.programs)]);
-  const [results, notices] = await Promise.all([auditPrograms(programs, courses), programNotices(plan, input.catalog, candidates)]);
+  const mode = degreeModeOf(input.plan.programs, input.plan.degreeMode);
+  const [results, notices, degrees] = await Promise.all([
+    auditPrograms(programs, courses),
+    programNotices(plan, input.catalog, candidates),
+    mode ? studentDegrees(input.plan.programs, mode).then((d) => checkDegrees(plan, input.catalog, d, AUTOMATIC_PROGRAMS, { today: new Date() })) : null,
+  ]);
   const catalogList = [...input.catalog.values()].map((c) => ({ id: c.id, genEd: c.genEd }));
   const audits = programs.map((program, p): ProgramAudit => {
     const requirements = program.requirements.map((requirement, r) => {
@@ -116,5 +124,5 @@ export async function runAnalysis(input: { plan: AdvisorPlan; catalog: PlanCatal
     }),
   );
 
-  return { notices, audits, gateway, tracks, scienceGpa: scienceGpa(gradedCourses(trackPlan)), ms: performance.now() - t };
+  return { notices, degrees, audits, gateway, tracks, scienceGpa: scienceGpa(gradedCourses(trackPlan)), ms: performance.now() - t };
 }
