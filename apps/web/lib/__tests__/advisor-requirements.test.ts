@@ -77,6 +77,29 @@ describe("describeGap", () => {
     expect(gap.suggestions.slice(0, 2)).toEqual(["CMSC412", "CMSC433"]);
   });
 
+  it("still suggests a required course whose only completed attempt was graded F (it earns no credit)", () => {
+    const r = req(cmscMajor, "cmsc351");
+    const failed: StudentCourse[] = [{ id: "CMSC351", credits: 3, status: "completed", grade: "F" }];
+    expect(describeGap(r, result(r, "missing"), ctx(failed))).toEqual({ need: "Take CMSC351.", suggestions: ["CMSC351"] });
+  });
+
+  it("still names a fixed set course missing, and doesn't let a failed filter-member attempt fill the count, when only F/W attempts exist", () => {
+    const r: Requirement = {
+      kind: "sets",
+      id: "twelve",
+      name: "Sequence Twelve",
+      options: [["AOSC200", "AOSC201", { count: 2, from: { departments: ["AOSC"], minNumber: 400, maxNumber: 499 } }]],
+    };
+    const courses: StudentCourse[] = [
+      { id: "AOSC200", credits: 3, status: "completed", grade: "F" },
+      { id: "AOSC201", credits: 3, status: "completed", grade: "B" },
+      { id: "AOSC431", credits: 3, status: "completed", grade: "B" },
+      { id: "AOSC432", credits: 3, status: "completed", grade: "W" },
+    ];
+    const gap = describeGap(r, result(r, "missing"), ctx(courses))!;
+    expect(gap.suggestions).toEqual(["AOSC200"]);
+  });
+
   it("explains a concentration in one department", () => {
     const r = req(cmscMajor, "concentration");
     expect(describeGap(r, result(r, "partial", ["ECON305"]), ctx(taken("ECON305")))).toEqual({

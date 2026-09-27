@@ -114,6 +114,32 @@ describe("close to another major", () => {
     it("gives no notice once the set is complete", async () => {
       expect(await notices(planWith("AOSC200", "AOSC201", "AOSC431", "AOSC432"))).toEqual([]);
     });
+
+    /** Like planWith, but every course is completed with the given grade (an F/W attempt earns no credit). */
+    const planGraded = (courses: [string, string][]): Plan => ({
+      terms: [{ name: "Fall 2026", courses: courses.map(([id, grade]) => ({ id, credits: 3, status: "completed" as const, grade })) }],
+    });
+
+    it("still names a fixed course missing when its only attempt is graded F", async () => {
+      const plan = planGraded([
+        ["AOSC200", "F"],
+        ["AOSC201", "B"],
+        ["AOSC431", "B"],
+        ["AOSC432", "B"],
+      ]);
+      expect((await notices(plan)).map((n) => n.message)).toEqual(["You're 1 course from the Z Major: AOSC200."]);
+    });
+
+    it("doesn't let a failed filter-member attempt fill the filter's count", async () => {
+      const plan = planGraded([
+        ["AOSC200", "B"],
+        ["AOSC201", "B"],
+        ["AOSC431", "B"],
+        ["AOSC432", "F"],
+      ]);
+      const [notice] = await notices(plan);
+      expect(notice).toMatchObject({ coursesShort: 1, missing: ["1 more for Sequence Twelve"] });
+    });
   });
 });
 
@@ -177,6 +203,15 @@ describe("dual degree", () => {
     expect(notice?.message).toBe(
       "Your plan completes both the X Major and the Y Major. A dual degree (two degrees) also needs 150 credits in all: 10 more credits to reach 150.",
     );
+  });
+
+  it("doesn't let a failed/withdrawn attempt's credits count toward the dual-degree total", async () => {
+    // Same 140-credit plan as above, plus a 10-credit course graded F: it must not push the total
+    // to 150 (or shrink creditsShort), since a failed attempt earns no credit.
+    const plan = planWith(140);
+    plan.terms.push({ name: "Winter 2028", courses: [{ id: "CMSC420", status: "completed", grade: "F", credits: 10 }] });
+    const [notice] = of(await programNotices(plan, catalog, candidates), "dual-degree");
+    expect(notice).toMatchObject({ eligible: false, totalCredits: 140, creditsShort: 10 });
   });
 
   it("counts unique credits from the assignment that shares the fewest courses", async () => {
