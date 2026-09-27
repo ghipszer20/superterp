@@ -1,7 +1,7 @@
 # SuperTerp — Project Memory
 
 > Single source of truth for project context. Update this file whenever a decision changes.
-> Last updated: 2026-09-26 (slimmed: history, feature rulings, legal and roadmap moved to `docs/project/`).
+> Last updated: 2026-09-27 (trimmed under 20 KB again; trip planner merged).
 > Read by the main session at the start of every session (builders don't read it; CLAUDE.md), so keep it under ~20 KB (section 18).
 
 ## 1. Vision
@@ -16,7 +16,8 @@ What sets it apart from Jupiterp, Coursicle and PlanetTerp is the **degree audit
 
 ## 2. Owner decisions and preferences (do not re-litigate)
 - **Open source, no LLC** (owner, 2026-09-24): SuperTerp is open source, with no LLC unless it is absolutely necessary. The code license (MIT or Apache-2.0, not yet chosen) disclaims warranty on the code. The hosted app relies on the clickwrap terms. Secrets (API keys, LibCal/DOTS credentials) stay out of the repo.
-- **Name:** "SuperTerp" is decided (owner, 2026-09-24). It's free, open-source and a student project, the same pattern as PlanetTerp and Jupiterp, so trademark risk is low. Backup: "Scute". **The project will never make money** (owner, 2026-09-24): no ads and no paid tier (donations allowed, only to cover running costs: owner 2026-09-26), so the Trademarks email is optional. This also keeps Reddit, PlanetTerp and Libraries/DOTS data requests in the non-commercial category. superterp.com is registered but dead (a 404 on old GitHub Pages servers). superterp.app and getsuperterp.com didn't resolve, so they're likely available.
+- **Name:** "SuperTerp" is decided (owner, 2026-09-24). It's free, open-source and a student project, the same pattern as PlanetTerp and Jupiterp, so trademark risk is low. Backup: "Scute". **The project will never make money** (owner, 2026-09-24): no ads and no paid tier (donations allowed, only to cover running costs: owner 2026-09-26), so the Trademarks email is optional, and Reddit, PlanetTerp and Libraries/DOTS data requests stay non-commercial.
+- **No lawyer review** (owner, 2026-09-24): a disclaimer is enough; Claude drafts plain-language disclaimer, terms and privacy text. Team: solo owner + Claude.
 - **Every major must work**, not only CS. Every minor, specialization and special program with course requirements must also be included: Honors College LLPs, Gemstone, College Park Scholars, CIVICUS, other LLPs, citations, certificates, notations, departmental honors, combined BS/MS, ROTC, and **every pre-professional track with its requirements** (pre-med, pre-law, pre-dental, pre-PA, pre-vet, pre-pharmacy, pre-nursing, and others; see module 1).
 - **No student-correction button or review queue.** Requirement data is verified before launch by comparing each program with its department's requirements page (owner, 2026-09-26: the owner decides only flagged items; the review tool was dropped). No 🧪 labels in production. After launch, a support email is fine.
 - **Seat alerts were NOT requested by the owner.** Claude suggested them. They're treated as an investigation spike only.
@@ -59,7 +60,6 @@ See the package.json files: Next.js web app (apps/web), TypeScript packages, HiG
   - **Schedule**: the schedule builder, plus course and professor info (replaces the old Explore idea).
   - **Advisor**: the 4-year plan / degree audit plus LLM advising.
   - **Today** summary is the home page (`/`), reached from the SuperTerp logo; it's not a tab.
-  - **Accent red #BA0C2F approved** by the owner.
 - **Onboarding** in under 60 seconds: major and year → transcript → audit.
 - Don't use Testudo or UMD logos. Logo idea: abstract hexagon or shell plates.
 - The website gets a desktop layout, not a stretched phone app.
@@ -68,17 +68,13 @@ See the package.json files: Next.js web app (apps/web), TypeScript packages, HiG
 Moved to `docs/project/roadmap.md` (phases 0–6, MVP recommendation, hour and calendar estimates, launch schedule: Jan 2027 Campus tab beta → Mar–Apr 2027 schedule builder → Summer 2027 audit + verification → Nov 2027 first verified colleges → Spring 2028 everything + iOS).
 
 ## 10. Open to-dos and questions
-- [ ] Optional: a courtesy heads-up email to UMD Trademarks & Licensing (not a blocker). Required only if the project starts making money.
-- [x] No lawyer review (owner decision, 2026-09-24): a disclaimer is enough. Claude drafts plain-language disclaimer, terms and privacy text.
+- [ ] Optional: a courtesy email to UMD Trademarks & Licensing (required only if the project makes money).
 - [ ] Email UMD Libraries requesting LibCal API credentials.
 - [ ] Email UMD DOTS requesting Shuttle-UM real-time data access (a Swiftly GTFS-RT key).
-- [ ] Claim a domain (superterp.app or getsuperterp.com), the App Store name and social handles.
+- [ ] Claim a domain (superterp.app or getsuperterp.com looked free on 2026-09-24; superterp.com is taken but dead), the App Store name and social handles.
 - [ ] Decide whether to reuse or partner with Jupiterp (open source; check license).
-- [ ] Confirm Expo's native-component support. (Credit caps: owner ruled they vary by college and term; `feat/credit-caps` queued.)
+- [ ] Confirm Expo's native-component support (for the later iOS app).
 - [ ] Decide: launch everything at once, or in waves by college.
-- [x] ~~Expo vs SwiftUI~~: decided website-first with Next.js (section 13); iOS later.
-- [x] Monetization: never (section 2). Team: solo owner + Claude.
-- [x] Repo created: github.com/ghipszer20/superterp (private, Apache-2.0), local at C:\Users\24GHi\Code\SuperTerp. Git uses HTTPS with the gh credential helper (SSH host key isn't set up in this shell).
 - [ ] Before making the repo public: scrub personal details from PROJECT_MEMORY.md (owner's program plans, personal notes) and review git history.
 
 ## 11. Legal and trust notes
@@ -87,25 +83,19 @@ Moved to `docs/project/legal.md`. Read it before building the disclaimer, accoun
 ## 13. Build decisions (owner, 2026-09-24): locked for the start
 - **Platform:** website first. Next.js installable web app (PWA). The rules engine, scrapers and data are separate packages, so an iOS app can reuse them later.
 - **First build:** the Campus tab (dining, library hours, RecWell, buses, study-room availability). It also sets up the repo, design system and scraper infrastructure.
-- **Repo:** private at `ghipszer20/superterp` until launch, then public. License **Apache-2.0**.
+- **Repo:** github.com/ghipszer20/superterp, private until launch, then public. License **Apache-2.0**. Local: C:\Users\24GHi\Code\SuperTerp. Git uses HTTPS with the gh credential helper (no SSH host key in this shell).
 - **Hosting:** free tiers only. Vercel (web), Supabase (DB and auth), GitHub Actions (scheduled scrapers). The owner creates the accounts when deployment needs them.
 - **Workflow (updated 2026-09-24):** NO PR reviews. Claude works autonomously on long-running branches with draft PRs; the owner merges whenever they like, without reviewing (Claude can never push or merge to main). Check in with the owner ONLY for: (1) any **major UI change**, which the owner must approve (show screenshots or a local preview first); (2) design or functionality changes the owner wants; (3) problems or blockers; (4) something turning out infeasible; (5) a good new idea. Everything else: decide, note the assumption, keep going. PRs still explain web-specific choices, since the owner knows Python and less web.
-- **Design:** Claude drafts an Apple-style design system; the owner reviews visually and approves. Accent color: **(PRODUCT)RED iPhone red, `#BA0C2F`** (owner approved 2026-09-24). Full strength only on buttons, active tabs and highlights; pale tints for backgrounds; a brighter variant in dark mode for contrast. Soft whites and grays, light and dark mode.
+- **Design:** Apple-style design system, approved visually by the owner. Accent **`#BA0C2F`** ((PRODUCT)RED, owner approved 2026-09-24): full strength only on buttons, active tabs and highlights; pale tints for backgrounds; brighter in dark mode. Soft whites and grays, light and dark mode.
 - **Owner profile:** Math major, CS minor, adding a CS dual degree. **First verification target: Math + CS double major.** Also build a Math + CS double-degree test student.
 - **Transcript:** the owner will provide their unofficial transcript during the Phase 2 parser work. It stays local only and is never committed (gitignored).
 - **Tooling on the owner's PC:** git, gh (logged in as ghipszer20), Node 24, npm, Python 3.13 via `py` (no `python` or `python3` on PATH), no Docker (so use hosted Supabase, not local).
 
-## 14. Current state (replace, don't append; full history in `docs/project/status-log.md`)
-Update this section in place when work merges or plans change. Put the dated narrative (what merged, conflicts, process notes) in `docs/project/status-log.md`.
+## 14. Current state (replace in place, never append; dated narrative goes in `docs/project/status-log.md`)
 - **Branches:** PR #1 `feat/campus-foundation` (draft); PR #2 `feat/course-data` (draft, stacked on #1) is the working branch everything merges into. CI green as of 2026-09-26 evening.
-- **Built (all unverified by the owner unless noted):**
-  - About page (`/about`; link at the bottom of the sidebar and an info icon in the phone header). Owner to fill `apps/web/lib/about.ts`: `creatorBio`, `githubUrl`, `donationUrl`, `contactEmail` (sections show "Coming soon" until then).
-  - Campus tab: dining (aligned food-area grid), libraries (all 6 on Today), study rooms (4 bookable libraries, exact-room Book links), RecWell gyms (Eppley sub-sections: Aquatics, Climbing, Pickleball; SPH gym on Today), Shuttle-UM buses and a Transport tab with a campus-only stop/route map (direction arrows, exit markers where routes leave campus, no tilt; MapLibre + OpenFreeMap; old /campus/transit and /campus/buses redirect); daily snapshots with pruning.
-  - Schedule tab: builder (gallery, workday filters, side-panel editor with ghosts and grade bars, Plan A/B/C, Build my own), linked to the 4-year plan by course with an "Update your plan?" confirmation.
-  - Advisor tab: typed-name disclaimer, College picker with per-college credit caps (`docs/project/credit-caps.md`), What-if (switch/add/drop a major: existing credits count/elective/unused, catalog year, graduation date, CS gateway rule and GPA, Apply with Undo), setup, AP/IB/dual-enrollment credit, plan grid, checks and notices, audit with CS gateway, course sheet with grades, 14 pre-professional tracks (`@superterp/tracks`).
-  - Data and engine: SOC parser, prerequisites, catalog parser + drafter (66.3% of rule rows), HiGHS audit, CS (follows the CS department page; specializations not yet) / Math Traditional / Math Applied (both follow the Math department page) / Gen Ed encoded, 61 special programs (LLPs, Scholars, Honors, 25 Departmental Honors), grade summaries.
-- **In progress (2 Sonnet builders):** trip planner + dining "Breakfast Area" (`feat/trip-planner`, `../SuperTerp-wt-trip`). Transcript upload (`feat/transcript-import`, `../SuperTerp-wt-transcript`; the owner's PDF is copied into its gitignored `transcripts/`).
-- **Queue (in order; details and rulings in `docs/project/rulings.md`, task notes in `docs/project/roadmap.md` "Queue notes"):** program batches from department pages (CMNS first); older AP/IB charts; honors retry (`feat/honors-retry`: its worktree has the OLD CLAUDE.md, merge `feat/course-data` into it first); grad courses as an undergrad.
+- **Built** (full list in `docs/project/built.md`; all unverified by the owner unless noted): About page; Campus tab (dining, libraries, study rooms, gyms, Transport map + trip planner); Schedule builder linked to the 4-year plan; Advisor tab (disclaimer, setup, credit caps, What-if, AP/IB credit, plan grid, checks, audit, 14 pre-professional tracks); CS / Math Traditional / Math Applied / Gen Ed and 61 special programs encoded.
+- **In progress:** none running. Transcript upload (`feat/transcript-import`, worktree `../SuperTerp-wt-transcript`, the owner's PDF in its gitignored `transcripts/`) was dispatched but pushed nothing; restart from that worktree.
+- **Queue (in order; details and rulings in `docs/project/rulings.md`, task notes in `docs/project/roadmap.md` "Queue notes"):** transcript upload (restart); trip-planner follow-up (estimate labels, icons, dev-overlay issue); program batches from department pages (CMNS first); older AP/IB charts; honors retry (fresh worktree from `feat/course-data`; the old branch has no unique commits); grad courses as an undergrad.
 - **Waiting on the owner:** see `docs/project/owner-review.md` (include it in every progress report; add new items there).
 - **Known to-dos:** email a copy of each signed Advisor agreement to the owner's records address (with deployment; address from the owner as an env var); the GTFS feed ends 2026-12-24 (warn in the UI and in a scheduled check first); check the GTFS license before public launch; show last good data when a source is down (needs a database); deployment (Vercel + Supabase accounts from the owner) with pre-warmed data.
 
@@ -118,15 +108,12 @@ Update this section in place when work merges or plans change. Put the dated nar
 - Removing a worktree can fail on long `node_modules` paths: use the `\\?\` long-path prefix.
 
 ## 16. Overtime mode (owner, 2026-09-24/25; renamed from "overnight mode" 2026-09-25)
-- **Activation:** only when the owner says to turn on overtime mode, at any time of day or night. It ends when the owner sends their next message (usually "progress report") or the project is finished. When it's off, work normally and check in as usual.
-- The rules below apply whenever overtime mode is active.
-- **Never ask the owner for permission** for anything while overtime mode is active. Nothing may stop work: no approval requests, no clarifying questions, no waiting.
-- **Nothing but the owner's next message or the project being finished ends overtime mode.** Keep building continuously. The owner's return message is usually **"progress report"**: answer with a concise report of everything done since the last report, decisions made (with assumptions), and items for the owner to review.
-- The owner will turn it on repeatedly (days and nights) until the project is complete.
-- **UI changes:** the owner normally approves major UI changes. In overtime mode, build them anyway (on a separate branch/PR when practical, with `npm run ui-check` screenshots) and list them in the progress report for approval after the fact. Never block on approval.
-- Unclear choices: pick the most reasonable option, record the assumption in this file, keep going. Brainstorming questions go into the progress report.
-- Use superpowers skills (TDD etc.) and mattpocock domain-modeling per CLAUDE.md.
-- Commit and push often to feature branches (never main). Keep section 14 (current state) and `docs/project/status-log.md` current so nothing is lost if context is summarized.
+- **Activation:** only when the owner says to turn on overtime mode (any time of day). **Only** the owner's next message (usually "progress report") or the project being finished ends it. When it's off, work normally and check in as usual. The owner turns it on repeatedly until the project is complete.
+- **While active, never ask the owner for anything:** no approval requests, no clarifying questions, no waiting. Keep building continuously.
+- **"Progress report":** a concise report of everything done since the last report, decisions made (with assumptions), and items for the owner to review.
+- **UI changes:** build major UI changes anyway (separate branch/PR when practical, with `npm run ui-check` screenshots) and list them in the progress report for approval after the fact.
+- Unclear choices: pick the most reasonable option, record the assumption, keep going. Brainstorming questions go into the progress report.
+- Commit and push often to feature branches (never main). Keep section 14 and `docs/project/status-log.md` current so nothing is lost if context is summarized.
 - **Usage limits (owner, 2026-09-26):** follow the builder budget in section 18. Start each overtime run in a fresh main session that reads this file, rather than continuing a long session. If a limit stops work, record in section 14 and the status log which builders were running and what they had pushed, so the next run can resume.
 
 ## 17. Owner rulings (cross-cutting only; full text in `docs/project/rulings.md`)
