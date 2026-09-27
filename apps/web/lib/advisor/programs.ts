@@ -1,95 +1,82 @@
-// The Programs a student can pick (for now, the encoded ones; only Verified Programs will ship),
-// plus the Requirement Layers every student gets: Gen Ed and the university rules.
+// The Programs a student can pick -- every entry in the program registry (@superterp/programs;
+// only Verified Programs will ship) -- plus the Requirement Layers every student gets: Gen Ed and
+// the university rules. The options carry metadata only; a Program's requirements load with
+// import() when it's audited (runAnalysis, runWhatIf), so the picker never bundles them.
 
 import type { Program } from "@superterp/audit";
-import { cmscMajor } from "@superterp/audit/programs/cmsc-major-2026-27.ts";
 import { genEd, university } from "@superterp/audit/programs/gen-ed-2026-27.ts";
-import { mathMajorTraditional } from "@superterp/audit/programs/math-major-2026-27.ts";
-import { mathMajorApplied } from "@superterp/audit/programs/math-major-applied-2026-27.ts";
 import type { College } from "@superterp/plan/credit-caps";
 import type { ProgramCandidate } from "@superterp/plan/notices";
+import { findProgram, loadPrograms, majorKey, PROGRAMS, type ProgramEntry } from "@superterp/programs";
 
-export type ProgramOption = {
-  id: string;
-  /** Tracks of one major share this key; a student has one track per major. */
-  major: string;
-  /** Short name for headers, e.g. "Math (Applied)". */
-  short: string;
-  /** Name of the track within its major, if any. */
-  track?: string;
-  program: Program;
-  /**
-   * The college that owns this major's catalog page, for the credit-cap check
-   * (packages/plan/src/credit-caps.ts). New entries: read it off the major's catalog URL's
-   * `colleges-schools/<slug>/` segment.
-   */
-  college: College;
-};
+export type ProgramOption = ProgramEntry;
 
-/** Listed with each major's default track first. All three are hand-encoded from catalog pages
- * under colleges-schools/computer-mathematical-natural-sciences/. */
-export const PROGRAM_OPTIONS: ProgramOption[] = [
-  { id: cmscMajor.id, major: "cmsc", short: "Computer Science", program: cmscMajor, college: "CMNS" },
-  { id: mathMajorTraditional.id, major: "math", short: "Math (Traditional)", track: "Traditional", program: mathMajorTraditional, college: "CMNS" },
-  { id: mathMajorApplied.id, major: "math", short: "Math (Applied)", track: "Applied Mathematics", program: mathMajorApplied, college: "CMNS" },
-];
+/** Majors, then minors, certificates and special programs, each major's default track first. */
+export const PROGRAM_OPTIONS: ProgramOption[] = PROGRAMS;
 
 /** Every student is checked against these too. */
 export const AUTOMATIC_PROGRAMS: Program[] = [genEd, university];
 
 export const CATALOG_YEARS = ["2026-27"] as const;
 
-const option = (id: string) => PROGRAM_OPTIONS.find((o) => o.id === id);
-
 /** Adds or removes a program. Picking another track of a chosen major replaces it in place. */
 export function toggleProgram(selected: string[], id: string): string[] {
-  const picked = option(id);
+  const picked = findProgram(id);
   if (!picked) return selected;
   if (selected.includes(id)) return selected.filter((x) => x !== id);
-  const sameMajor = selected.findIndex((x) => option(x)?.major === picked.major);
+  const key = majorKey(picked);
+  const sameMajor = selected.findIndex((x) => {
+    const o = findProgram(x);
+    return o !== undefined && majorKey(o) === key;
+  });
   if (sameMajor >= 0) return selected.map((x, i) => (i === sameMajor ? id : x));
   return [...selected, id];
 }
 
-const chosen = (selected: string[]) => selected.map(option).filter((o): o is ProgramOption => o !== undefined);
+const chosen = (selected: string[]) => selected.map(findProgram).filter((o): o is ProgramOption => o !== undefined);
 
-/** The chosen majors alone, without Gen Ed or the university rules -- what a what-if comparison
- * calls "current" or "proposed" (its `layers` are always AUTOMATIC_PROGRAMS). */
-export function majorPrograms(selected: string[]): Program[] {
-  return chosen(selected).map((o) => o.program);
+/** The chosen programs alone (majors, minors, special programs), without Gen Ed or the university
+ * rules -- what a what-if comparison calls "current" or "proposed" (its `layers` are always
+ * AUTOMATIC_PROGRAMS). */
+export function majorPrograms(selected: string[]): Promise<Program[]> {
+  return loadPrograms(chosen(selected).map((o) => o.id));
 }
 
-/** The chosen majors, then Gen Ed and the university rules. */
-export function auditedPrograms(selected: string[]): Program[] {
-  return [...majorPrograms(selected), ...AUTOMATIC_PROGRAMS];
+/** The chosen programs, then Gen Ed and the university rules. */
+export async function auditedPrograms(selected: string[]): Promise<Program[]> {
+  return [...(await majorPrograms(selected)), ...AUTOMATIC_PROGRAMS];
 }
 
 /**
- * Majors for the double-major / dual-degree notices: the chosen ones (declared, in order), then
+ * Majors for the double-major / dual-degree notices: the chosen majors (declared, in order), then
  * the default track of each major the student hasn't chosen. Another track of a chosen major is
- * never a candidate, since two tracks of one major aren't a double major.
+ * never a candidate, since two tracks of one major aren't a double major; minors and special
+ * programs never take part.
  */
-export function noticeCandidates(selected: string[]): ProgramCandidate[] {
-  const mine = chosen(selected);
-  const majors = new Set(mine.map((o) => o.major));
+export async function noticeCandidates(selected: string[]): Promise<ProgramCandidate[]> {
+  const mine = chosen(selected).filter((o) => o.kind === "major");
+  if (mine.length === 0) return [];
+  const majors = new Set(mine.map(majorKey));
   const others: ProgramOption[] = [];
   for (const o of PROGRAM_OPTIONS) {
-    if (majors.has(o.major)) continue;
-    majors.add(o.major);
+    if (o.kind !== "major" || majors.has(majorKey(o))) continue;
+    majors.add(majorKey(o));
     others.push(o);
   }
-  if (mine.length === 0) return [];
-  return [...mine.map((o) => ({ program: o.program, declared: true })), ...others.map((o) => ({ program: o.program, declared: false }))];
+  const [declared, undeclared] = await Promise.all([loadPrograms(mine.map((o) => o.id)), loadPrograms(others.map((o) => o.id))]);
+  return [...declared.map((program) => ({ program, declared: true })), ...undeclared.map((program) => ({ program, declared: false }))];
 }
 
-/** The Advisor's default college: the first declared major's college, in the order chosen.
- * Undefined with no majors (or only unknown ids); the student can pick a different one in setup
- * ("College" in SetupView), stored on the plan and never recomputed once set. */
+/** The Advisor's default college: the first declared major's college, in the order chosen (or the
+ * first program's, with no major). Undefined with nothing chosen (or only unknown ids); the
+ * student can pick a different one in setup ("College" in SetupView), stored on the plan and never
+ * recomputed once set. */
 export function collegeOf(selected: string[]): College | undefined {
-  return chosen(selected)[0]?.college;
+  const mine = chosen(selected);
+  return (mine.find((o) => o.kind === "major") ?? mine[0])?.college;
 }
 
 export function programsLabel(selected: string[]): string {
-  const names = chosen(selected).map((o) => o.short);
+  const names = chosen(selected).map((o) => o.short ?? o.name);
   return names.length ? names.join(" + ") : "No major chosen";
 }

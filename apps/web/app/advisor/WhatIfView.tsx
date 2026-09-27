@@ -12,6 +12,7 @@ import { checkerPlan } from "@/lib/advisor/checker";
 import type { AdvisorPlan } from "@/lib/advisor/plan-state";
 import type { PriorCreditResult } from "@/lib/advisor/prior-credit";
 import { PROGRAM_OPTIONS, programsLabel, toggleProgram } from "@/lib/advisor/programs";
+import { ProgramPicker } from "./ProgramPicker";
 import { addedProgramNotes, completedCreditTotals, gatewayAttemptLimitNote, gatewayRuleText } from "@/lib/advisor/what-if-display";
 import type { CourseWhatIf, WhatIfResult } from "@/lib/advisor/what-if";
 import type { CatalogState } from "./data";
@@ -57,32 +58,10 @@ export function WhatIfView({ plan, catalog, prior }: { plan: AdvisorPlan; catalo
       <section className={styles.panel}>
         <h2 className={styles.panelTitle}>What if…</h2>
         <p className={styles.panelNote}>
-          Switch a major, add one, or drop one to see the effect on your plan before committing to it. Your real plan (
+          Switch a major, add a major or minor, or drop one to see the effect on your plan before committing to it. Your real plan (
           {programsLabel(plan.programs)}) doesn&apos;t change until you press Apply.
         </p>
-        <div className={styles.optionList} role="group" aria-label="Proposed majors">
-          {PROGRAM_OPTIONS.map((o) => {
-            const on = proposed.includes(o.id);
-            return (
-              <button
-                key={o.id}
-                type="button"
-                className={styles.option}
-                aria-pressed={on}
-                onClick={() => setProposed((p) => toggleProgram(p, o.id))}
-              >
-                <span className={styles.optionCheck} aria-hidden="true">
-                  {on ? "✓" : ""}
-                </span>
-                <span className={styles.optionText}>
-                  <span className={styles.optionTitle}>{o.program.name.replace(/ \(.*\)$/, "")}</span>
-                  <span className={styles.optionSub}>{o.track ? `${o.track} track` : "B.S."}</span>
-                </span>
-                {!o.program.verified ? <span className={styles.unverified}>Unverified</span> : null}
-              </button>
-            );
-          })}
-        </div>
+        <ProgramPicker label="Proposed programs" selected={proposed} onToggle={(id) => setProposed((p) => toggleProgram(p, id))} />
 
         {undoPrograms ? (
           <p className={styles.banner}>
@@ -314,7 +293,7 @@ function listing(items: string[]): string {
 /** A program id's full name, e.g. "the Computer Science Major"; falls back to the id itself for
  * one this session's PROGRAM_OPTIONS doesn't recognize. */
 function programName(id: string): string {
-  return `the ${PROGRAM_OPTIONS.find((o) => o.id === id)?.program.name ?? id}`;
+  return `the ${PROGRAM_OPTIONS.find((o) => o.id === id)?.name ?? id}`;
 }
 
 const STATUS_LABEL: Record<CourseWhatIf["currentStatus"], string> = { counts: "Counts", elective: "Elective", unused: "Unused" };

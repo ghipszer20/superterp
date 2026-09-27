@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import { newPlan, planReducer, type AdvisorPlan } from "@/lib/advisor/plan-state";
-import { AUTOMATIC_PROGRAMS, CATALOG_YEARS, collegeOf, PROGRAM_OPTIONS, toggleProgram } from "@/lib/advisor/programs";
+import { AUTOMATIC_PROGRAMS, CATALOG_YEARS, collegeOf, toggleProgram } from "@/lib/advisor/programs";
 import { defaultTerms, startTermOptions } from "@/lib/advisor/terms";
 import { examMilestone, toggleTrack, TRACKS, type Track } from "@/lib/advisor/tracks";
 import { COLLEGES, type College } from "@superterp/plan/credit-caps";
 import type { Milestone } from "@superterp/tracks/list";
 import styles from "./advisor.module.css";
+import { ProgramPicker } from "./ProgramPicker";
 
 const GRADES = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F"];
 
@@ -60,33 +61,9 @@ export function SetupView({ plan, onDone, onCancel }: { plan: AdvisorPlan | null
       </header>
 
       <section className={styles.panel}>
-        <h2 className={styles.panelTitle}>Your majors</h2>
-        <p className={styles.panelNote}>Pick every major you have or want. Tracks of one major replace each other.</p>
-        <div className={styles.optionList} role="group" aria-label="Majors">
-          {PROGRAM_OPTIONS.map((o) => {
-            const on = programs.includes(o.id);
-            return (
-              <button
-                key={o.id}
-                type="button"
-                className={styles.option}
-                aria-pressed={on}
-                onClick={() => setPrograms((p) => toggleProgram(p, o.id))}
-              >
-                <span className={styles.optionCheck} aria-hidden="true">
-                  {on ? "✓" : ""}
-                </span>
-                <span className={styles.optionText}>
-                  <span className={styles.optionTitle}>{o.program.name.replace(/ \(.*\)$/, "")}</span>
-                  <span className={styles.optionSub}>{o.track ? `${o.track} track` : "B.S."}</span>
-                </span>
-                <span className={styles.unverified} title="The owner hasn't reviewed these requirements against the catalog yet.">
-                  Unverified
-                </span>
-              </button>
-            );
-          })}
-        </div>
+        <h2 className={styles.panelTitle}>Your programs</h2>
+        <p className={styles.panelNote}>Pick every major, minor or program you have or want. Tracks of one major replace each other.</p>
+        <ProgramPicker label="Programs" selected={programs} onToggle={(id) => setPrograms((p) => toggleProgram(p, id))} />
         <p className={styles.panelNote}>
           Always included: {AUTOMATIC_PROGRAMS.map((p) => p.name).join(" and ")}.
         </p>
@@ -153,7 +130,7 @@ export function SetupView({ plan, onDone, onCancel }: { plan: AdvisorPlan | null
           {plan ? "Save" : "Build my plan"}
         </button>
       </div>
-      {programs.length === 0 ? <p className={styles.fine}>Pick at least one major to continue.</p> : null}
+      {programs.length === 0 ? <p className={styles.fine}>Pick at least one program to continue.</p> : null}
     </main>
   );
 }

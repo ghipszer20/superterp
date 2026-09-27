@@ -1188,3 +1188,60 @@
   flex-direction: column;
   gap: 3px;
 }
+
+/* ---------- Program picker ---------- */
+
+.picker {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 4px 4px 10px;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  font: var(--t-foot);
+  font-weight: 600;
+}
+
+.chipRemove {
+  width: 22px;
+  height: 22px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.pickerGroup + .pickerGroup {
+  margin-top: 6px;
+}
+
+.pickerGroupTitle {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pickerGroup .optionList {
+  margin-top: 6px;
+}

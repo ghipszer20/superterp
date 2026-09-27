@@ -11,6 +11,8 @@ const nextConfig: NextConfig = {
     "@superterp/course-data",
     "@superterp/credit",
     "@superterp/plan",
+    "@superterp/programs",
+    "@superterp/catalog",
     "@superterp/ratings",
     "@superterp/tracks",
   ],
