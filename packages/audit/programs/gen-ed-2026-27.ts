@@ -15,6 +15,7 @@ const one = (id: string, name: string, codes: string[]) =>
 export const genEd: Program = {
   id: "gen-ed",
   name: "General Education",
+  layer: "gen-ed",
   catalogYear: "2026-27",
   source: "UMD Academic Catalog 2026–27, General Education Requirements",
   verified: false,
@@ -50,6 +51,7 @@ export const genEd: Program = {
 export const university: Program = {
   id: "university",
   name: "University requirements",
+  layer: "university",
   catalogYear: "2026-27",
   source: "UMD Academic Catalog 2026–27",
   verified: false,

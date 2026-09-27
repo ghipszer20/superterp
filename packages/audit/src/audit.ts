@@ -77,7 +77,20 @@ export type Program = {
   verified?: boolean;
   /** Interpretations the owner must check before verifying. */
   reviewNotes?: string[];
+  /**
+   * Sharing Limits this program sets (the rule format's `max_shared_with`): at most `courses`
+   * courses, and/or `credits` credits, of this program may also count toward the named other
+   * programs (by id), or toward every other program when `programs` is omitted. Requirement
+   * Layers (Gen Ed, university, college rules) never count as sharing. Overlay requirements don't
+   * use courses up, so they're outside these limits (as with `maxSharedCourses`).
+   * E.g. a minor's "at most 2 courses may also count toward the major": [{ courses: 2 }].
+   */
+  maxSharedWith?: SharingLimit[];
+  /** Set on a Requirement Layer (rules every student in scope gets, not a declared program). */
+  layer?: "university" | "gen-ed" | "college";
 };
+
+export type SharingLimit = { programs?: string[]; courses?: number; credits?: number };
 
 export type StudentCourse = {
   id: string;
@@ -209,6 +222,20 @@ const sum = (ps: Pair[]) => ps.map((q) => `${q.weight} ${q.name}`).join(" + ");
 export type AuditOptions = {
   /** How many courses may count toward more than one program (a Sharing Limit). Unlimited if omitted. */
   maxSharedCourses?: number;
+  /**
+   * A Double Degree: the program indices each Degree holds (its majors, minors and its own college
+   * rules). Programs in no group (Gen Ed, the university rules) belong to every degree at once.
+   * With `minUniqueCredits`, the audit prefers an assignment that gives every degree at least that
+   * many credits used by it and not by any other degree (worth as much as one requirement).
+   */
+  degrees?: number[][];
+  minUniqueCredits?: number;
+};
+
+export type StudentAudit = {
+  results: AuditResult[];
+  /** Per degree (only with `degrees`): credits its programs use that no other degree uses. */
+  uniqueCredits?: number[];
 };
 
 /**
@@ -230,6 +257,21 @@ export async function auditPrograms(
   courses: StudentCourse[],
   options: AuditOptions = {},
 ): Promise<AuditResult[]> {
+  return (await auditStudent(programs, courses, options)).results;
+}
+
+/**
+ * auditPrograms plus per-program Sharing Limits (Program.maxSharedWith) and, for a Double Degree,
+ * each degree's unique credits. One integer program over every program at once; see auditPrograms.
+ *   t[p,l,c] = 1 when course c counts toward program p and a program its limit l names
+ *   q[g,c]   = 1 when course c counts toward degree g and no other degree
+ *   u[g]     = 1 when degree g has at least minUniqueCredits of those credits
+ */
+export async function auditStudent(
+  programs: Program[],
+  courses: StudentCourse[],
+  options: AuditOptions = {},
+): Promise<StudentAudit> {
   const pairs = programs.flatMap((program, p) =>
     courses.flatMap((course, c) =>
       meetsGrade(course, program.minGrade)
@@ -265,6 +307,56 @@ export async function auditPrograms(
       constraints.push(` share_${c}: ${uses.map((q) => q.name).join(" + ")} - ${programs.length - 1} ${s} <= 1`);
     });
     if (shares.length > 0) constraints.push(` shared: ${shares.join(" + ")} <= ${options.maxSharedCourses}`);
+  }
+
+  // Consuming uses of course c by program p (at most one, by the "once" rule above).
+  const usesOf = (p: number, c: number) => pairs.filter((q) => q.p === p && q.c === c && consumes(q));
+
+  // Per-program Sharing Limits (maxSharedWith).
+  programs.forEach((program, p) =>
+    program.maxSharedWith?.forEach((limit, l) => {
+      const others = programs
+        .map((o, i) => ({ o, i }))
+        .filter(({ o, i }) => i !== p && !o.layer && (limit.programs ? limit.programs.includes(o.id) : true))
+        .map(({ i }) => i);
+      const shared: { t: string; credits: number }[] = [];
+      courses.forEach((course, c) => {
+        const mine = usesOf(p, c);
+        if (mine.length === 0) return;
+        const theirs = others.map((i) => usesOf(i, c)).filter((u) => u.length > 0);
+        if (theirs.length === 0) return;
+        const t = `t_${p}_${l}_${c}`;
+        binaries.push(t);
+        shared.push({ t, credits: course.credits });
+        theirs.forEach((u, k) => constraints.push(` lim_${p}_${l}_${c}_${k}: ${[...mine, ...u].map((q) => q.name).join(" + ")} - ${t} <= 1`));
+      });
+      if (shared.length === 0) return;
+      if (limit.courses !== undefined) constraints.push(` limc_${p}_${l}: ${shared.map((x) => x.t).join(" + ")} <= ${limit.courses}`);
+      if (limit.credits !== undefined) constraints.push(` limk_${p}_${l}: ${shared.map((x) => `${x.credits} ${x.t}`).join(" + ")} <= ${limit.credits}`);
+    }),
+  );
+
+  // Double Degree: each degree's unique credits (see StudentAudit).
+  const degrees = options.degrees ?? [];
+  const uniqueGoal: string[] = [];
+  if (options.minUniqueCredits !== undefined) {
+    degrees.forEach((group, g) => {
+      const outside = programs.map((_, i) => i).filter((i) => !group.includes(i) && degrees.some((d) => d.includes(i)));
+      const terms: string[] = [];
+      courses.forEach((course, c) => {
+        const mine = group.flatMap((p) => usesOf(p, c));
+        if (mine.length === 0 || course.credits <= 0) return;
+        const q = `q_${g}_${c}`;
+        binaries.push(q);
+        terms.push(`${course.credits} ${q}`);
+        constraints.push(` uq_${g}_${c}: ${q} - ${mine.map((x) => x.name).join(" - ")} <= 0`);
+        outside.flatMap((i) => usesOf(i, c)).forEach((x, k) => constraints.push(` ux_${g}_${c}_${k}: ${q} + ${x.name} <= 1`));
+      });
+      const u = `u_${g}`;
+      binaries.push(u);
+      uniqueGoal.push(u);
+      constraints.push(terms.length > 0 ? ` uniq_${g}: ${terms.join(" + ")} - ${options.minUniqueCredits} ${u} >= 0` : ` uniq_${g}: ${u} <= 0`);
+    });
   }
 
   programs.forEach((program, p) =>
@@ -362,6 +454,7 @@ export async function auditPrograms(
   const objective = [
     ...programs.flatMap((pr, p) => pr.requirements.map((_, r) => `1000 ${y(p, r)}`)),
     ...pairs.map((q) => `1 ${q.name}`),
+    ...uniqueGoal.map((u) => `1000 ${u}`),
   ].join(" + ");
   const model = ["Maximize", ` obj: ${objective || "0 y_0_0"}`, "Subject To", ...constraints, "Binary", ` ${binaries.join(" ")}`, "End"];
 
@@ -370,7 +463,7 @@ export async function auditPrograms(
   if (solution.Status !== "Optimal") throw new Error(`Audit solver ended with status ${solution.Status}`);
   const chosen = (name: string) => (solution.Columns[name]?.Primal ?? 0) > 0.5;
 
-  return programs.map((program, p) => {
+  const results = programs.map((program, p) => {
     const used = new Set<number>();
     const requirements = program.requirements.map((req, r): RequirementResult => {
       const assigned = pairs.filter((q) => q.p === p && q.r === r && chosen(q.name));
@@ -386,6 +479,14 @@ export async function auditPrograms(
     });
     return { requirements, unused: courses.filter((_, c) => !used.has(c)).map((c) => c.id) };
   });
+
+  if (degrees.length === 0) return { results };
+  // Unique credits from the chosen assignment: used (not as an overlay) by the degree, by no other.
+  const byDegree = degrees.map((group) => new Set(pairs.filter((q) => group.includes(q.p) && consumes(q) && chosen(q.name)).map((q) => q.c)));
+  const uniqueCredits = byDegree.map((mine, g) =>
+    [...mine].filter((c) => byDegree.every((other, h) => h === g || !other.has(c))).reduce((t, c) => t + courses[c]!.credits, 0),
+  );
+  return { results, uniqueCredits };
 }
 
 export async function auditProgram(program: Program, courses: StudentCourse[]): Promise<AuditResult> {
