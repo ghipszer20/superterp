@@ -57,7 +57,7 @@ describe("the owner's Math (Applied) + CS plan", () => {
         kind: "credit-load",
         severity: "error",
         term: "Spring 2027",
-        message: "Spring 2027 has 24 credits, over the 20-credit limit for a spring term. Going over usually needs approval from your college.",
+        message: "Spring 2027 has 24 credits, over the 20-credit limit for a spring term. Going over 20 credits needs your dean's approval.",
       },
     ]);
   });

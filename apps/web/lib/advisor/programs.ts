@@ -6,6 +6,7 @@ import { cmscMajor } from "@superterp/audit/programs/cmsc-major-2026-27.ts";
 import { genEd, university } from "@superterp/audit/programs/gen-ed-2026-27.ts";
 import { mathMajorTraditional } from "@superterp/audit/programs/math-major-2026-27.ts";
 import { mathMajorApplied } from "@superterp/audit/programs/math-major-applied-2026-27.ts";
+import type { College } from "@superterp/plan/credit-caps";
 import type { ProgramCandidate } from "@superterp/plan/notices";
 
 export type ProgramOption = {
@@ -17,13 +18,21 @@ export type ProgramOption = {
   /** Name of the track within its major, if any. */
   track?: string;
   program: Program;
+  /**
+   * The college that owns this major's catalog page, for the credit-cap check
+   * (packages/plan/src/credit-caps.ts). New entries: read it off the major's catalog URL's
+   * `colleges-schools/<slug>/` segment (see packages/catalog/src/review.ts's HAND_ENCODED list,
+   * which already records that URL for each hand-encoded program).
+   */
+  college: College;
 };
 
-/** Listed with each major's default track first. */
+/** Listed with each major's default track first. All three are hand-encoded from catalog pages
+ * under colleges-schools/computer-mathematical-natural-sciences/ (packages/catalog/src/review.ts). */
 export const PROGRAM_OPTIONS: ProgramOption[] = [
-  { id: cmscMajor.id, major: "cmsc", short: "Computer Science", program: cmscMajor },
-  { id: mathMajorTraditional.id, major: "math", short: "Math (Traditional)", track: "Traditional", program: mathMajorTraditional },
-  { id: mathMajorApplied.id, major: "math", short: "Math (Applied)", track: "Applied Mathematics", program: mathMajorApplied },
+  { id: cmscMajor.id, major: "cmsc", short: "Computer Science", program: cmscMajor, college: "CMNS" },
+  { id: mathMajorTraditional.id, major: "math", short: "Math (Traditional)", track: "Traditional", program: mathMajorTraditional, college: "CMNS" },
+  { id: mathMajorApplied.id, major: "math", short: "Math (Applied)", track: "Applied Mathematics", program: mathMajorApplied, college: "CMNS" },
 ];
 
 /** Every student is checked against these too. */
@@ -72,6 +81,13 @@ export function noticeCandidates(selected: string[]): ProgramCandidate[] {
   }
   if (mine.length === 0) return [];
   return [...mine.map((o) => ({ program: o.program, declared: true })), ...others.map((o) => ({ program: o.program, declared: false }))];
+}
+
+/** The Advisor's default college: the first declared major's college, in the order chosen.
+ * Undefined with no majors (or only unknown ids); the student can pick a different one in setup
+ * ("College" in SetupView), stored on the plan and never recomputed once set. */
+export function collegeOf(selected: string[]): College | undefined {
+  return chosen(selected)[0]?.college;
 }
 
 export function programsLabel(selected: string[]): string {

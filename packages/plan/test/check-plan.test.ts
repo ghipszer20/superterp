@@ -258,7 +258,7 @@ describe("credit load", () => {
         kind: "credit-load",
         severity: "error",
         term: "Fall 2026",
-        message: "Fall 2026 has 22 credits, over the 20-credit limit for a fall term. Going over usually needs approval from your college.",
+        message: "Fall 2026 has 22 credits, over the 20-credit limit for a fall term. Going over 20 credits needs your dean's approval.",
       },
     ]);
   });
@@ -267,6 +267,27 @@ describe("credit load", () => {
     const p = plan({ "Fall 2026": ["CMSC131", "CMSC132", "MATH240", "HIST200"], "Winter 2027": ["PHIL140", "ARTH200"] }, AP_CALC);
     expect(of(checkPlan(p, catalog), "credit-load").map((i) => i.term)).toEqual(["Winter 2027"]);
     expect(of(checkPlan(p, catalog, { maxCredits: { Fall: 12, Winter: 6 } }), "credit-load").map((i) => i.term)).toEqual(["Fall 2026"]);
+  });
+
+  it("uses a college's own, lower cap and names it in the message", () => {
+    const heavy = plan({ "Fall 2026": ["CMSC131", "CMSC132", "MATH240", "MATH241", "HIST200", "PHIL140"] }, AP_CALC); // 22 credits
+    expect(of(checkPlan(heavy, catalog, { college: "CMNS" }), "credit-load")).toEqual([
+      {
+        kind: "credit-load",
+        severity: "error",
+        term: "Fall 2026",
+        message:
+          "Fall 2026 has 22 credits, over Computer, Mathematical, and Natural Sciences's 17-credit limit for a fall term. Going over 17 credits needs your dean's approval.",
+      },
+    ]);
+  });
+
+  it("an explicit maxCredits override still wins over a college's cap", () => {
+    // 19 credits: over CMNS's 17-credit cap, but under the campus default (20).
+    const p = plan({ "Fall 2026": ["CMSC131", "CMSC132", "MATH240", "MATH241", "HIST200"] }, AP_CALC);
+    expect(of(checkPlan(p, catalog), "credit-load")).toEqual([]);
+    expect(of(checkPlan(p, catalog, { college: "CMNS" }), "credit-load").map((i) => i.term)).toEqual(["Fall 2026"]);
+    expect(of(checkPlan(p, catalog, { college: "CMNS", maxCredits: { Fall: 25 } }), "credit-load")).toEqual([]);
   });
 
   it("notes a fall or spring term under 12 credits, as information only", () => {

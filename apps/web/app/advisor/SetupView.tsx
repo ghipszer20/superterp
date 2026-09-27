@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { newPlan, planReducer, type AdvisorPlan } from "@/lib/advisor/plan-state";
-import { AUTOMATIC_PROGRAMS, CATALOG_YEARS, PROGRAM_OPTIONS, toggleProgram } from "@/lib/advisor/programs";
+import { AUTOMATIC_PROGRAMS, CATALOG_YEARS, collegeOf, PROGRAM_OPTIONS, toggleProgram } from "@/lib/advisor/programs";
 import { defaultTerms, startTermOptions } from "@/lib/advisor/terms";
 import { examMilestone, toggleTrack, TRACKS, type Track } from "@/lib/advisor/tracks";
+import { COLLEGES, type College } from "@superterp/plan/credit-caps";
 import type { Milestone } from "@superterp/tracks/list";
 import styles from "./advisor.module.css";
 
@@ -19,13 +20,14 @@ export function SetupView({ plan, onDone, onCancel }: { plan: AdvisorPlan | null
   const [programs, setPrograms] = useState<string[]>(plan?.programs ?? []);
   const [catalogYear, setCatalogYear] = useState<string>(plan?.catalogYear ?? CATALOG_YEARS[0]);
   const [startTerm, setStartTerm] = useState(plan?.startTerm ?? `Fall ${thisYear}`);
+  const [college, setCollege] = useState<College>(plan?.college ?? collegeOf(plan?.programs ?? []) ?? COLLEGES[0]!.code);
   const [tracks, setTracks] = useState<string[]>(plan?.tracks ?? []);
   const [examTerms, setExamTerms] = useState<Record<string, string>>(plan?.examTerms ?? {});
   const [expectedGrades, setExpectedGrades] = useState<Record<string, Record<string, string>>>(plan?.expectedGrades ?? {});
   const moves = plan !== null && plan.startTerm !== startTerm && plan.terms.some((t) => t.courses.length > 0);
 
   const done = () => {
-    const setup = { programs, catalogYear, startTerm, tracks, examTerms, expectedGrades };
+    const setup = { programs, catalogYear, startTerm, tracks, examTerms, expectedGrades, college };
     onDone(plan ? planReducer(plan, { type: "setup", ...setup }) : newPlan(setup));
   };
 
@@ -112,9 +114,20 @@ export function SetupView({ plan, onDone, onCancel }: { plan: AdvisorPlan | null
               ))}
             </select>
           </label>
+          <label className={styles.field}>
+            <span className={styles.fieldLabel}>College</span>
+            <select className={styles.input} value={college} onChange={(e) => setCollege(e.target.value as College)}>
+              {COLLEGES.map((c) => (
+                <option key={c.code} value={c.code}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
         <p className={styles.panelNote}>
-          The catalog year is usually the year you started or declared. Only 2026–27 is available so far.
+          The catalog year is usually the year you started or declared. Only 2026–27 is available so far. Your college sets
+          how many credits you can take in a term before you need approval to go over.
         </p>
         {moves ? <p className={styles.banner} data-tone="warning">Changing your first term moves every course to the matching term.</p> : null}
       </section>

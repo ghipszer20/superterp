@@ -3,6 +3,7 @@
 
 import { checkRequirement, type CourseRecord, type Requirement } from "@superterp/course-data/prereqs";
 import type { PlanCatalog } from "./catalog.ts";
+import { collegeName, creditCap, type College } from "./credit-caps.ts";
 
 /** A course in one term of the Plan: planned by default, or completed (from the transcript). */
 export type PlanCourse = {
@@ -44,9 +45,10 @@ export type PlanIssue = {
 export type Season = "Fall" | "Winter" | "Spring" | "Summer";
 
 /**
- * Most credits a term may have before `credit-load` flags it. UNCONFIRMED: the owner still has
- * to confirm UMD's per-term cap (PROJECT_MEMORY open to-do). 20 for fall and spring and 4 for
- * winter are the commonly cited UMD limits; summer's 16 is a loose bound across its sessions.
+ * The campus-wide credit-load cap, used when no college is given. Superseded by `creditCap`
+ * (./credit-caps.ts), which also knows each college's own override (e.g. CMNS, ENGR) and cites a
+ * source for every number -- see docs/project/credit-caps.md. Kept here only because it's the
+ * fallback baked into `options.maxCredits`'s type below.
  */
 export const DEFAULT_MAX_CREDITS: Record<Season, number> = { Fall: 20, Winter: 4, Spring: 20, Summer: 16 };
 
@@ -54,7 +56,11 @@ export const DEFAULT_MAX_CREDITS: Record<Season, number> = { Fall: 20, Winter: 4
 export const FULL_TIME_CREDITS = 12;
 
 export type CheckOptions = {
-  /** Per-season caps; seasons left out use DEFAULT_MAX_CREDITS. */
+  /** The student's college, for `creditCap`'s per-college caps (./credit-caps.ts). Ignored for a
+   * season `maxCredits` overrides. */
+  college?: College;
+  /** Per-season cap overrides, taking priority over `creditCap`/`college`. Seasons left out use
+   * `creditCap(college, season)`. */
   maxCredits?: Partial<Record<Season, number>>;
 };
 
@@ -145,7 +151,6 @@ export function allowsRetake(c: PlanCourse): boolean {
 
 export function checkPlan(plan: Plan, catalog: PlanCatalog, options: CheckOptions = {}): PlanIssue[] {
   const issues: PlanIssue[] = [];
-  const maxCredits = { ...DEFAULT_MAX_CREDITS, ...options.maxCredits };
   const prior = new Map((plan.priorCredit ?? []).map((c) => [c.id, c]));
   const creditsOf = (c: PlanCourse) => c.credits ?? catalog.get(c.id)?.credits.min ?? 0;
 
@@ -240,13 +245,16 @@ export function checkPlan(plan: Plan, catalog: PlanCatalog, options: CheckOption
     const season = seasonOf(term.name);
     if (!season) return;
     const credits = term.courses.reduce((t, c) => t + creditsOf(c), 0);
-    const cap = maxCredits[season];
+    const info = creditCap(options.college, season);
+    const cap = options.maxCredits?.[season] ?? info.max;
     if (credits > cap) {
+      const limitLabel = options.college ? `${collegeName(options.college)}'s ${cap}-credit limit` : `the ${cap}-credit limit`;
+      const approvalText = info.approval === "dean" ? "your dean's approval" : info.approval === "advisor" ? "your advisor's approval" : "approval";
       issues.push({
         kind: "credit-load",
         severity: "error",
         term: term.name,
-        message: `${term.name} has ${credits} credits, over the ${cap}-credit limit for a ${season.toLowerCase()} term. Going over usually needs approval from your college.`,
+        message: `${term.name} has ${credits} credits, over ${limitLabel} for a ${season.toLowerCase()} term. Going over ${cap} credits needs ${approvalText}.`,
       });
     } else if ((season === "Fall" || season === "Spring") && credits < FULL_TIME_CREDITS) {
       issues.push({

@@ -35,6 +35,11 @@ describe("newPlan", () => {
     expect(plan.tracks).toEqual(["pre-med"]);
     expect(plan.examTerms).toEqual({ mcat: "Spring 2030" });
   });
+
+  it("accepts a chosen college; omitted, the plan has none (Advisor derives a default)", () => {
+    expect(newPlan({ programs: ["cmsc-major"], catalogYear: "2026-27", startTerm: "Fall 2026", college: "ENGR" }).college).toBe("ENGR");
+    expect(base()).not.toHaveProperty("college");
+  });
 });
 
 describe("planReducer: courses", () => {
@@ -164,6 +169,30 @@ describe("planReducer: setup", () => {
     });
     expect(plan.programs).toEqual(["math-major-applied"]);
     expect(courses(plan, "Fall 2026")).toEqual(["CMSC131"]);
+  });
+
+  it("sets the college when the setup action gives one; leaves it alone when it doesn't", () => {
+    let plan = planReducer(base(), {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2026",
+      tracks: [],
+      examTerms: {},
+      expectedGrades: {},
+      college: "CMNS",
+    });
+    expect(plan.college).toBe("CMNS");
+    plan = planReducer(plan, {
+      type: "setup",
+      programs: ["cmsc-major"],
+      catalogYear: "2026-27",
+      startTerm: "Fall 2026",
+      tracks: [],
+      examTerms: {},
+      expectedGrades: {},
+    });
+    expect(plan.college).toBe("CMNS"); // untouched: no college in this action
   });
 
   it("shifts every course with a new start term, keeping each course's position in the sequence", () => {

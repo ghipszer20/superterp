@@ -33,6 +33,14 @@ describe("plan storage", () => {
     expect(parsePlan(serializePlan(p))).toEqual(p);
   });
 
+  it("round-trips a chosen college, and drops an unknown one", () => {
+    const p = { ...plan(), college: "ENGR" as const };
+    expect(parsePlan(serializePlan(p))!.college).toBe("ENGR");
+    const raw = JSON.parse(serializePlan(p));
+    raw.college = "NOPE";
+    expect(parsePlan(JSON.stringify(raw))).not.toHaveProperty("college");
+  });
+
   it("returns null for nothing, junk, or another version", () => {
     expect(parsePlan(null)).toBeNull();
     expect(parsePlan("{not json")).toBeNull();

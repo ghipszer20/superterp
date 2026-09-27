@@ -3,6 +3,7 @@
 
 // TRACKS comes from "@superterp/tracks/list", which has no runtime @superterp/audit import (no
 // HiGHS), so validating a saved track id here doesn't pull the solver into the main bundle.
+import { COLLEGES, type College } from "@superterp/plan/credit-caps";
 import { TRACKS } from "@superterp/tracks/list";
 import type { AdvisorPlan, ApInput, DualInput, IbInput, PlannedCourse, PlanTermState, PriorInputs } from "./plan-state";
 import { parseTerm } from "./terms";
@@ -50,6 +51,8 @@ function prior(x: unknown): PriorInputs {
 }
 
 const KNOWN_TRACK_IDS = new Set(TRACKS.map((t) => t.id));
+const KNOWN_COLLEGES = new Set(COLLEGES.map((c) => c.code));
+const college = (x: unknown): College | undefined => (str(x) && KNOWN_COLLEGES.has(x as College) ? (x as College) : undefined);
 
 /** Chosen track ids, unknown ones dropped; undefined when none are left. */
 function tracks(x: unknown): string[] | undefined {
@@ -98,6 +101,8 @@ export function parsePlan(raw: string | null): AdvisorPlan | null {
     prior: prior(data.prior),
   };
   if (num(data.gpa)) plan.gpa = data.gpa;
+  const c = college(data.college);
+  if (c) plan.college = c;
   const t = tracks(data.tracks);
   if (t) plan.tracks = t;
   const et = examTerms(data.examTerms);
