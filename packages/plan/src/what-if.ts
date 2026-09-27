@@ -59,6 +59,9 @@ export type WhatIfResult = {
   newlyMissing: MissingRequirement[];
   /** Credits of not-yet-completed courses that stop being required by any proposed program. */
   freedCredits: number;
+  /** Courses (ids, plan order) that count toward something now -- a program or a layer -- and
+   * toward nothing under the proposed programs ("courses that now count toward nothing"). */
+  orphaned: string[];
   graduation: GraduationEstimate;
   /** Only when cmsc-major is one of the current or proposed programs. */
   gateway?: GatewayResult;
@@ -243,6 +246,8 @@ export async function whatIf(
     0,
   );
 
+  const orphaned = courseResults.filter((c) => c.currentStatus !== "unused" && c.proposedStatus === "unused").map((c) => c.id);
+
   const graduation = graduationEstimate(plan, catalog, newlyMissing, freedCredits, floorCredits, courses);
 
   const cmscInvolved = currentIds.has("cmsc-major") || proposedIds.has("cmsc-major");
@@ -255,7 +260,7 @@ export async function whatIf(
         })
       : undefined;
 
-  return { courses: courseResults, newlyMissing, freedCredits, graduation, ...(gateway ? { gateway } : {}) };
+  return { courses: courseResults, newlyMissing, freedCredits, orphaned, graduation, ...(gateway ? { gateway } : {}) };
 }
 
 function graduationEstimate(
