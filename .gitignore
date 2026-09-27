@@ -167,6 +167,3 @@ next-env.d.ts
 apps/web/public/data/
 # maplibre-gl's worker bundle, copied from node_modules by postinstall (apps/web/scripts/copy-maplibre-worker.mjs)
 apps/web/public/vendor/
-# UMD degree audits pasted by the owner (contain personal academic records; stay on this machine only)
-degree-audits/*
-!degree-audits/README.md
