@@ -258,16 +258,17 @@ describe("auditProgram", () => {
     });
 
     it("still counts a planned course, a completed course with no grade (transfer/AP/IB), and a passing grade including P/S", async () => {
-      // 9 credits so the cap allows all three 3-credit courses (see the "counts credits" test above).
-      const nineCredits: Program = { ...university, requirements: [{ ...university.requirements[0]!, credits: 9 } as Requirement] };
+      // 12 credits so the cap allows all four 3-credit courses (see the "counts credits" test above).
+      const twelveCredits: Program = { ...university, requirements: [{ ...university.requirements[0]!, credits: 12 } as Requirement] };
       const courses: StudentCourse[] = [
         { id: "CMSC131", credits: 3, status: "planned" },
         { id: "CMSC132", credits: 3, status: "completed" },
         { id: "CMSC216", credits: 3, status: "completed", grade: "P" },
+        { id: "CMSC250", credits: 3, status: "completed", grade: "S" },
       ];
-      const r = await auditProgram(nineCredits, courses);
+      const r = await auditProgram(twelveCredits, courses);
       expect(r.requirements[0]).toMatchObject({ status: "satisfied" });
-      expect(r.requirements[0]!.assigned).toHaveLength(3);
+      expect(r.requirements[0]!.assigned).toHaveLength(4);
       expect(r.unused).toEqual([]);
     });
 

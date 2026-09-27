@@ -1,7 +1,7 @@
 // What would satisfy an unmet Requirement (a Gap), in words, with example courses. Used by the
 // audit view, which loads with the solver, so importing @superterp/audit here is fine.
 
-import { matchesFilter, type Requirement, type RequirementResult, type SetMember, type StudentCourse } from "@superterp/audit";
+import { earnsCredit, matchesFilter, type Requirement, type RequirementResult, type SetMember, type StudentCourse } from "@superterp/audit";
 import { filterText, listing } from "./words";
 
 export { filterText, genEdName, prerequisiteText } from "./words";
@@ -24,7 +24,9 @@ function memberText(m: SetMember): string {
 
 export function describeGap(req: Requirement, result: RequirementResult, ctx: GapContext): Gap | null {
   if (result.status === "satisfied") return null;
-  const have = new Set(ctx.courses.map((c) => c.id));
+  // A failed/withdrawn attempt earns no credit, so it's never "have" here -- the student still
+  // needs a passing attempt of it, and it shouldn't count toward filling a filter member below.
+  const have = new Set(ctx.courses.filter(earnsCredit).map((c) => c.id));
   const credits = new Map(ctx.courses.map((c) => [c.id, c.credits]));
   const fromCatalog = (test: (c: { id: string; genEd: string[] }) => boolean) =>
     ctx.catalog.filter((c) => !have.has(c.id) && test(c)).slice(0, MAX_SUGGESTIONS).map((c) => c.id);
@@ -73,7 +75,7 @@ export function describeGap(req: Requirement, result: RequirementResult, ctx: Ga
         let size = [...fixed].filter((id) => !have.has(id)).length;
         for (const m of set) {
           if (typeof m === "string") continue;
-          const matching = ctx.courses.filter((c) => !fixed.has(c.id) && matchesFilter(m.from, c)).length;
+          const matching = ctx.courses.filter((c) => !fixed.has(c.id) && earnsCredit(c) && matchesFilter(m.from, c)).length;
           size += Math.max(0, m.count - matching);
         }
         return { set, size, missing: [...fixed].filter((id) => !have.has(id)) };

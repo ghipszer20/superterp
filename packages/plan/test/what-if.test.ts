@@ -284,6 +284,8 @@ describe("retakes", () => {
     const [first, second] = result.courses.filter((c) => c.id === "CMSC131");
     expect(first!.currentStatus).toBe("unused");
     expect(first!.currentPrograms).toEqual([]);
+    expect(first!.earnsCredit).toBe(false);
+    expect(second!.earnsCredit).toBe(true);
     expect(second!.currentStatus).toBe("counts");
     expect(second!.currentPrograms).toEqual(["a-major"]);
   });
