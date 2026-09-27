@@ -41,18 +41,27 @@
 
 .grid {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0 16px;
+  align-items: stretch;
 }
 
 @media (min-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: start;
   }
 }
 
 .grid > section {
   margin-top: 16px;
+  height: 100%;
+}
+
+.stationCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--card-border);
 }
 
 .station {
