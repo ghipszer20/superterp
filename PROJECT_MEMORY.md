@@ -67,6 +67,9 @@ See the package.json files: Next.js web app (apps/web), TypeScript packages, HiG
 ## 9. Phases and time estimate
 Moved to `docs/project/roadmap.md` (phases 0–6, MVP recommendation, hour and calendar estimates, launch schedule: Jan 2027 Campus tab beta → Mar–Apr 2027 schedule builder → Summer 2027 audit + verification → Nov 2027 first verified colleges → Spring 2028 everything + iOS).
 
+## 9b. First-draft plan (owner-approved 2026-09-27)
+`docs/project/first-draft-plan.md` is the build order to the first draft: MVP scope (Campus, Schedule, Advisor audit/planner, transcript import, what-if, section recommendations; no reviews, LLM advisor, optimizer or iOS), all ~270 programs encoded, deployed on Vercel + Supabase. Waves: 0 in-flight → 1 program infrastructure → 2 program batches by college → 3 MVP gaps → 4 deployment. Queue follows it.
+
 ## 10. Open to-dos and questions
 - [ ] Optional: a courtesy email to UMD Trademarks & Licensing (required only if the project makes money).
 - [ ] Email UMD Libraries requesting LibCal API credentials.
@@ -94,7 +97,7 @@ Moved to `docs/project/legal.md`. Read it before building the disclaimer, accoun
 ## 14. Current state (replace in place, never append; dated narrative goes in `docs/project/status-log.md`)
 - **Branches:** PR #1 `feat/campus-foundation` (draft); PR #2 `feat/course-data` (draft, stacked on #1) is the working branch everything merges into. CI green as of 2026-09-26 evening.
 - **Built** (full list in `docs/project/built.md`; all unverified by the owner unless noted): About page; Campus tab (dining, libraries, study rooms, gyms, Transport map + trip planner); Schedule builder linked to the 4-year plan; Advisor tab (disclaimer, setup, credit caps, What-if, AP/IB credit, plan grid, checks, audit, 14 pre-professional tracks); CS / Math Traditional / Math Applied / Gen Ed and 61 special programs encoded.
-- **In progress:** trip-planner follow-up finished with no changes (badge not reproducible, dropped). Transcript import builder (Sonnet, `feat/transcript-import`, worktree `../SuperTerp-wt-transcript`): text PDF + paste + on-device OCR fallback (rulings.md); samples in gitignored `transcripts/` of the main checkout.
+- **In progress:** trip-planner follow-up finished with no changes (badge not reproducible, dropped). Transcript import builder and trip dropdown-fix builder (both Sonnet, paused by plan mode, resumed after plan approval); transcript: (Sonnet, `feat/transcript-import`, worktree `../SuperTerp-wt-transcript`): text PDF + paste + on-device OCR fallback (rulings.md); samples in gitignored `transcripts/` of the main checkout.
 - **Queue (in order; next after these: older AP chart, sample now in `transcripts/`; details and rulings in `docs/project/rulings.md`, task notes in `docs/project/roadmap.md` "Queue notes"):** transcript upload (resume); trip-planner dropdown clipping fix; program batches from department pages (CMNS first); older AP/IB charts; honors retry (fresh worktree from `feat/course-data`; the old branch has no unique commits); grad courses as an undergrad.
 - **Waiting on the owner:** see `docs/project/owner-review.md` (include it in every progress report; add new items there).
 - **Known to-dos:** email a copy of each signed Advisor agreement to the owner's records address (with deployment; address from the owner as an env var); the GTFS feed ends 2026-12-24 (warn in the UI and in a scheduled check first); check the GTFS license before public launch; show last good data when a source is down (needs a database); deployment (Vercel + Supabase accounts from the owner) with pre-warmed data.
