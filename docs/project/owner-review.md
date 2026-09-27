@@ -4,7 +4,7 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 
 - Schedule builder: gallery mini-calendar blocks carry no text; Build-my-own design; Plan A/B/C slots. Final look at the Campus navigation (PR #1).
 - Advisor: disclaimer wording (`apps/web/lib/advisor/consent.ts`).
-- Tracks: optometry reusing the med/dental committee milestones OK? Genetic Counseling "Advanced Genetics" = BSCI410 (BSCI416 as alternative) OK?
+- Tracks: optometry reusing the med/dental committee milestones OK? Genetic Counseling "Advanced Genetics" = BSCI410 (BSCI416 as alternative) OK? HPAO's pages name categories but not these courses, so they're SuperTerp's own reading: STAT100, CHEM135/136 and 276/277, BSCI222's lab, the calculus list, MATH115 as college algebra, ECON200/COMM107, SOCY100/105, EDHD320, NFSC100, pre-PA's PSYC353-or-330. OK as is?
 - Campus: Sauna/Steam under Aquatics; Challenge Course stays in Adventure Program; RecWell sheet swaps the Climbing Wall/Challenge Course URLs; Architecture's room not listed (not bookable online); "Performing Arts Library" label; Today gym skeleton shows 2 rows vs 3.
 - Transport: phones show two location buttons ("Show my location" above the map, "Stops near me" below it); the map attribution covers the bottom of the map on phones.
 - Transport: exit-marker labels (e.g. "To Graduate Hills at 3404 Tulane Drive") are large on phones and cover part of the map; shrink or shorten?
