@@ -1,0 +1,38 @@
+{
+  "programId": "bioe-major",
+  "source": "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/bioe_fall_2026_gradplan_0.pdf",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "Fall 2026 Bioengineering Graduation Plan (Clark School resource_documents PDF). Gen Ed, ENGL101, Professional Writing, Oral Communication and free-elective slots are left out: only the major is audited.",
+    "BIOE Foundational I & II, BIOE Elective I-IV, Biological Science Elective II and the Breadth Elective are not encoded as Program requirements (no approved-course list in the source; see docs/project/owner-review.md), so those slots are also left out of this plan.",
+    "Biological Science Elective I (BSCI 2xx) is filled with BSCI222 (Principles of Genetics), a real 200-level BSCI course, to satisfy the encoded departments/number-range requirement. The department's term sheet lists this slot at 4 credits.",
+    "Chemistry lecture sequence taken as CHEM135 (the plan's own default); CHEM131 & CHEM134 is the encoded department-page alternative, not used here.",
+    "Cell Biology & Physiology taken as BSCI331 & BSCI332 (the plan's own default); BSCI330 is the encoded catalog alternative, not used here."
+  ],
+  "credits": {
+    "CHEM136": 1,
+    "MATH140": 4,
+    "MATH141": 4,
+    "BIOE121": 1,
+    "CHEM232": 1,
+    "MATH241": 4,
+    "MATH243": 4,
+    "PHYS261": 1,
+    "BIOE221": 1,
+    "BSCI222": 4,
+    "BSCI332": 1,
+    "BIOE340": 4,
+    "BIOE457": 4
+  },
+  "terms": [
+    { "term": "Freshman Fall", "courses": ["ENES100", "CHEM135", "CHEM136", "MATH140"] },
+    { "term": "Freshman Spring", "courses": ["BIOE241", "MATH141", "PHYS161", "BIOE120", "BIOE121"] },
+    { "term": "Sophomore Fall", "courses": ["CHEM231", "CHEM232", "MATH241", "MATH243", "PHYS260", "PHYS261", "BIOE221"] },
+    { "term": "Sophomore Spring", "courses": ["BIOE232", "ENES102", "BIOE246", "BSCI222", "ENES200"] },
+    { "term": "Junior Fall", "courses": ["BIOE331", "BIOE372", "BSCI331", "BSCI332"] },
+    { "term": "Junior Spring", "courses": ["BIOE340", "BIOE457"] },
+    { "term": "Senior Fall", "courses": ["BIOE485"] },
+    { "term": "Senior Spring", "courses": ["BIOE486"] }
+  ]
+}
