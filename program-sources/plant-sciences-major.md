@@ -2,7 +2,6 @@
 # Plant Sciences Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/plant-sciences-landscape-architecture/plant-sciences-major/
 Source: https://psla.umd.edu/undergraduate/plant-sciences
-Source: https://agnr.umd.edu/academics/advising/four-year-plans
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -304,78 +303,3 @@ Department of Plant Science & Landscape Architecture. For a tour of the Departme
 College of Agriculture & Natural Resources. Contact AGNR staff for an appointment at futureagnr@umd.edu!
 University of Maryland Tours. Don’t forget to schedule a campus tour! Also, check out the AGNR Prospective Students page for useful resources including information on financial aid and scholarships.
 Contact us today! Schedule a campus tour Visit with the College of AGNR
-
-## Sample plan (https://agnr.umd.edu/academics/advising/four-year-plans)
-
-Four Year Plans
-All students in the College of Agriculture and Natural Resources must develop a graduation plan (also called a "4-year plan") to map out all courses needed to graduate within an intended major and any minors, second majors, or special programs the student wishes to complete. In the drop down menus below, there is a curriculum workbook for each major containing three sheets:
-A summary curriculum worksheet -an overview of both general education requirements and major-required courses
-A summary curriculum worksheet -an overview of both general education requirements and major-required courses
-A listing of the major-required courses by course number and name
-A listing of the major-required courses by course number and name
-A sample graduation plan for that major (an example of a plan that would meet all general education and major requirements)
-A sample graduation plan for that major (an example of a plan that would meet all general education and major requirements)
-The information in the curriculum workbooks is provided as advising tool to help students in planning their education and monitoring their progress to a degree. Factors such as the semester in which a student enters a particular major, changes in course sequence or offering times, availability of courses, satisfactory progress, and the like might necessitate changes to a student's plan. No guarantee is offered or implied by the creation and use of a four-year plan.
-Students, if you have questions about the developing your plan or using the materials provided here, please talk to your academic advisor or your department's undergraduate program coordinator.
-Sample Blank Four Year Plan General Education Information
-AGNR Four Year Plans
-Agricultural and Resource Economics
-AREC Concentration (click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Agribusiness | 0111C | Curriculum Workbook
-Environmental and Resource Economics | 0111D | Curriculum Workbook
-Agricultural and Resource Economics | 01110 | Curriculum Workbook
-AREC Concentration Page
-Agricultural Science and Technology
-AGST Specialization (click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Agricultural & Extension Education | 0101E | Curriculum Workbook: Double major - teaching certificate Curriculum Workbook: Extension & industry
-Agronomy | 0101A | Curriculum Workbook
-Environmental Horticulture | 0101B | Curriculum Workbook
-Link to AGST Concentration Page
-Animal and Avian Sciences
-ANSC Concentration (click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Animal Care and Management | 0104A | Curriculum Workbook (Entered Spring 2024 and earlier) Curriculum Workbook (Entered Fall 2024 and later)
-Science/Pre-professional | 0104E | Curriculum Workbook (Entered Spring 2024 and earlier) Curriculum Workbook (Entered Fall 2024 and later)
-Combined Ag-Veterinary Medicine** | 1299D | Curriculum Workbook (Entered Spring 2024 and earlier) Curriculum Workbook (Entered Fall 2024 and later)
-**This option is for students who are able to gain admission to veterinary school after completing a majority of the requirements for the ANSC major (typically after the third year). This option mirrors the Science/Pre-professional option.
-Link to ANSC Concentration Page
-Environmental Science and Policy
-ENSP Concentration(click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Environment and Agriculture (AGNR) | 2299T | Curriculum Workbook
-Environmental Economics (AGNR) | 2299D | Curriculum Workbook
-Soil, Water, and Land Resources (AGNR) | 2299L | Curriculum Workbook
-Global Environmental Change (BSOS) | 2299V | Pdf
-Land Use (BSOS) | 2299I | Pdf
-Marine and Coastal Management (BSOS) | 2299X | Pdf
-Environmental Politics and Policy (BSOS) | 2299H | Pdf
-Culture and the Environment (BSOS) | 2299Z | Pdf
-Environmental Geosciences & Restoration (BSOS) | 2299C | Pdf
-Wildlife Ecology and Management (ENST) | 2299W | Curriculum Workbook
-Biodiversity and Conservation Biology (Limited Enrollment Program) (BSCI) | 2299B | Pdf
-Environmental Justice (SPHL) | 22999 | Curriculum Workbook
-Undecided (AGNR) | 2299S/2299P | Pdf
-Link to ENSP Concentration Page
-Environmental Science and Technology
-ENST Concentration(click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Ecological Technology Design | 0199A | Curriculum Workbook
-Ecosystem Health | 0199B | Curriculum Workbook
-Soil and Watershed Science | 0199C | Curriculum Workbook
-Natural Resources Management | 0199D | Curriculum Workbook
-Link to ENST Concentration Page
-Landscape Architecture
-Concentration (click for more information) | Major Code | General Education 4 Year Plan
-Landscape Architecture | 02040 | Curriculum Workbook (for students who started in LARC in Fall 2023 or earlier Curriculum Workbook (for students who started in LARC in Spring 2024 or later)
-Link to Landscape Architecture Page
-Nutrition and Food Science
-NFSC Concentration(click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Dietetics | 1307D | Curriculum Workbook
-Food Science | 01130 | Curriculum Workbook
-Nutritional Science | 1306H | Curriculum Workbook
-Fermentation Science | 01131 | Curriculum Workbook
-Link to NFSC Concentration Page
-Plant Science
-PLSC Concentration (click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Plant Biology | 0107D | Curriculum Workbook
-Turf and Golf Course Management | 0107E | Curriculum Workbook
-Urban Forestry | 0107F | Curriculum Workbook
-Landscape management | Discontinued
-Link to PLSC Concentration Page

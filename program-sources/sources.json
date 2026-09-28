@@ -75,9 +75,7 @@
   "agricultural-resource-economics-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/agricultural-resource-economics/agricultural-resource-economics-major/",
     "department": [],
-    "samplePlan": [
-      "https://agnr.umd.edu/academics/advising/four-year-plans"
-    ]
+    "samplePlan": []
   },
   "agricultural-science-technology-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/plant-sciences-landscape-architecture/agricultural-science-technology-major/",
@@ -85,9 +83,7 @@
       "https://psla.umd.edu/",
       "https://agnr.umd.edu/about/directory/melissa-welsh"
     ],
-    "samplePlan": [
-      "https://agnr.umd.edu/academics/advising/four-year-plans"
-    ]
+    "samplePlan": []
   },
   "agricultural-science-technology-minor": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/plant-sciences-landscape-architecture/agricultural-science-technology-minor/",
@@ -112,9 +108,7 @@
   "animal-sciences-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/animal-sciences/animal-sciences-major/",
     "department": [],
-    "samplePlan": [
-      "https://agnr.umd.edu/academics/advising/four-year-plans"
-    ]
+    "samplePlan": []
   },
   "anthropology-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/anthropology/anthropology-major/",
@@ -776,7 +770,13 @@
       "https://ensp.umd.edu/"
     ],
     "samplePlan": [
-      "https://agnr.umd.edu/academics/advising/four-year-plans"
+      "https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20GlobalEnvChange.pdf",
+      "https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20LandUse.pdf",
+      "https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20MarineCoastal.pdf",
+      "https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20PoliticsPolicy.pdf",
+      "https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20Culture%20%26%20Environ.pdf",
+      "https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSPFourYrPlan_CMNS%20EnvGeoscience.pdf",
+      "https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_CMNS_%20Biodiversity.pdf"
     ]
   },
   "environmental-science-policy-sustainability-studies-minor": {
@@ -799,9 +799,7 @@
     "department": [
       "https://enst.umd.edu/"
     ],
-    "samplePlan": [
-      "https://agnr.umd.edu/academics/advising/four-year-plans"
-    ]
+    "samplePlan": []
   },
   "family-health-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-health/family-science/family-health-major/",
@@ -818,9 +816,7 @@
   "fermentation-science-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/nutrition-food-science/fermentation-science-major/",
     "department": [],
-    "samplePlan": [
-      "https://agnr.umd.edu/academics/advising/four-year-plans"
-    ]
+    "samplePlan": []
   },
   "finance-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/finance/finance-major/",
@@ -1302,9 +1298,7 @@
       "https://agnr.umd.edu/about/directory/david-n-myers",
       "https://agnr.umd.edu/about/directory/deni-ruggeri"
     ],
-    "samplePlan": [
-      "https://agnr.umd.edu/academics/advising/four-year-plans"
-    ]
+    "samplePlan": []
   },
   "landscape-management-minor": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/plant-sciences-landscape-architecture/landscape-management-minor/",
@@ -1621,9 +1615,7 @@
   "nutrition-food-science-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/nutrition-food-science/nutrition-food-science-major/",
     "department": [],
-    "samplePlan": [
-      "https://agnr.umd.edu/academics/advising/four-year-plans"
-    ]
+    "samplePlan": []
   },
   "operations-management-business-analytics-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/decision-operations-information-technologies/operations-management-business-analytics-major/",
@@ -1691,9 +1683,7 @@
     "department": [
       "https://psla.umd.edu/undergraduate/plant-sciences"
     ],
-    "samplePlan": [
-      "https://agnr.umd.edu/academics/advising/four-year-plans"
-    ]
+    "samplePlan": []
   },
   "portuguese-brazilian-studies-minor": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/portuguese-brazilian-studies-minor/",

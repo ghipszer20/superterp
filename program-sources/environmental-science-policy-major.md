@@ -2,7 +2,13 @@
 # Environmental Science and Policy Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/environmental-science-policy/environmental-science-policy-major/
 Source: https://ensp.umd.edu/
-Source: https://agnr.umd.edu/academics/advising/four-year-plans
+Source: https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20GlobalEnvChange.pdf
+Source: https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20LandUse.pdf
+Source: https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20MarineCoastal.pdf
+Source: https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20PoliticsPolicy.pdf
+Source: https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20Culture%20%26%20Environ.pdf
+Source: https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSPFourYrPlan_CMNS%20EnvGeoscience.pdf
+Source: https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_CMNS_%20Biodiversity.pdf
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -354,77 +360,805 @@ the Student Academic Success-Degree Completion Policy section of this catalog
 
 Welcome to the Environmental Science & Policy Program at University of Maryland!
 
-## Sample plan (https://agnr.umd.edu/academics/advising/four-year-plans)
+## Sample plan (https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20GlobalEnvChange.pdf)
 
-Four Year Plans
-All students in the College of Agriculture and Natural Resources must develop a graduation plan (also called a "4-year plan") to map out all courses needed to graduate within an intended major and any minors, second majors, or special programs the student wishes to complete. In the drop down menus below, there is a curriculum workbook for each major containing three sheets:
-A summary curriculum worksheet -an overview of both general education requirements and major-required courses
-A summary curriculum worksheet -an overview of both general education requirements and major-required courses
-A listing of the major-required courses by course number and name
-A listing of the major-required courses by course number and name
-A sample graduation plan for that major (an example of a plan that would meet all general education and major requirements)
-A sample graduation plan for that major (an example of a plan that would meet all general education and major requirements)
-The information in the curriculum workbooks is provided as advising tool to help students in planning their education and monitoring their progress to a degree. Factors such as the semester in which a student enters a particular major, changes in course sequence or offering times, availability of courses, satisfactory progress, and the like might necessitate changes to a student's plan. No guarantee is offered or implied by the creation and use of a four-year plan.
-Students, if you have questions about the developing your plan or using the materials provided here, please talk to your academic advisor or your department's undergraduate program coordinator.
-Sample Blank Four Year Plan General Education Information
-AGNR Four Year Plans
-Agricultural and Resource Economics
-AREC Concentration (click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Agribusiness | 0111C | Curriculum Workbook
-Environmental and Resource Economics | 0111D | Curriculum Workbook
-Agricultural and Resource Economics | 01110 | Curriculum Workbook
-AREC Concentration Page
-Agricultural Science and Technology
-AGST Specialization (click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Agricultural & Extension Education | 0101E | Curriculum Workbook: Double major - teaching certificate Curriculum Workbook: Extension & industry
-Agronomy | 0101A | Curriculum Workbook
-Environmental Horticulture | 0101B | Curriculum Workbook
-Link to AGST Concentration Page
-Animal and Avian Sciences
-ANSC Concentration (click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Animal Care and Management | 0104A | Curriculum Workbook (Entered Spring 2024 and earlier) Curriculum Workbook (Entered Fall 2024 and later)
-Science/Pre-professional | 0104E | Curriculum Workbook (Entered Spring 2024 and earlier) Curriculum Workbook (Entered Fall 2024 and later)
-Combined Ag-Veterinary Medicine** | 1299D | Curriculum Workbook (Entered Spring 2024 and earlier) Curriculum Workbook (Entered Fall 2024 and later)
-**This option is for students who are able to gain admission to veterinary school after completing a majority of the requirements for the ANSC major (typically after the third year). This option mirrors the Science/Pre-professional option.
-Link to ANSC Concentration Page
-Environmental Science and Policy
-ENSP Concentration(click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Environment and Agriculture (AGNR) | 2299T | Curriculum Workbook
-Environmental Economics (AGNR) | 2299D | Curriculum Workbook
-Soil, Water, and Land Resources (AGNR) | 2299L | Curriculum Workbook
-Global Environmental Change (BSOS) | 2299V | Pdf
-Land Use (BSOS) | 2299I | Pdf
-Marine and Coastal Management (BSOS) | 2299X | Pdf
-Environmental Politics and Policy (BSOS) | 2299H | Pdf
-Culture and the Environment (BSOS) | 2299Z | Pdf
-Environmental Geosciences & Restoration (BSOS) | 2299C | Pdf
-Wildlife Ecology and Management (ENST) | 2299W | Curriculum Workbook
-Biodiversity and Conservation Biology (Limited Enrollment Program) (BSCI) | 2299B | Pdf
-Environmental Justice (SPHL) | 22999 | Curriculum Workbook
-Undecided (AGNR) | 2299S/2299P | Pdf
-Link to ENSP Concentration Page
-Environmental Science and Technology
-ENST Concentration(click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Ecological Technology Design | 0199A | Curriculum Workbook
-Ecosystem Health | 0199B | Curriculum Workbook
-Soil and Watershed Science | 0199C | Curriculum Workbook
-Natural Resources Management | 0199D | Curriculum Workbook
-Link to ENST Concentration Page
-Landscape Architecture
-Concentration (click for more information) | Major Code | General Education 4 Year Plan
-Landscape Architecture | 02040 | Curriculum Workbook (for students who started in LARC in Fall 2023 or earlier Curriculum Workbook (for students who started in LARC in Spring 2024 or later)
-Link to Landscape Architecture Page
-Nutrition and Food Science
-NFSC Concentration(click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Dietetics | 1307D | Curriculum Workbook
-Food Science | 01130 | Curriculum Workbook
-Nutritional Science | 1306H | Curriculum Workbook
-Fermentation Science | 01131 | Curriculum Workbook
-Link to NFSC Concentration Page
-Plant Science
-PLSC Concentration (click for more information) | Major Code | General Education 4 Year Plan (After Fall 2012)
-Plant Biology | 0107D | Curriculum Workbook
-Turf and Golf Course Management | 0107E | Curriculum Workbook
-Urban Forestry | 0107F | Curriculum Workbook
-Landscape management | Discontinued
-Link to PLSC Concentration Page
+Year 1
+Credit Grade Credit Grade
+Benchmark Requirements ENSP101(NS) 3 ENSP102(HS1) 3
+Completed by 2 semesters MATH120 or 140 (AR)** 3 or 4 MATH121** 3
+GEOG201/211(NL) 4 BSCI160/161 4
+ENSP101 or 102 ENGL101(AW) 3 I-Series (IS1) 3
+MATH220 or 140 Humanties (HU1)* 3 Oral Comm (OC) 3
+And two of AREC240 or ECON200;
+BSCI160/161; CHEM131/132; or
+Earth Science TOTAL 16 TOTAL 16
+Year 2
+Benchmark 2 Requirements Social Science (HS2) 4 PHYS121** 4
+Completed by 4 semesters GEOL100 3 GEOL102 4
+ENSP101 and 102 CHEM131/132 4 CHEM231/232 4
+Two ENSP Core Lab Sciences Humanities (HU2) 3 Diversity (UP) 3
+Three of MATH121 or 141;
+CHEM231/232; PHYS121; declare
+concentration.
+I-Series (IS2) 3
+TOTAL 17 TOTAL 15
+Year 3
+GEOG306 3 Restricted Elective #1*** 3
+GEOG373 (Tech&Meth #1) 3 GEOG272 (Tech & Meth #2) 3
+UL Requirement #1*** 3 UL Requirement #3*** 3
+UL Requirement #2*** 3 UL Requirement #4*** 3
+Schol in Prac (SP1) 3 Diversity (UP/CC) 3
+TOTAL 15 TOTAL 15
+Year 4
+Restricted Elective #2*** 3 Restricted Elective #3*** 3
+Tech & Meth #3*** 3 Prof Wrtg (PW) 3
+UL Requirement #5*** 3 Elective 3
+ENSP386 3 Elective 3
+ENSP400 (SP2) 3 Elective 3
+TOTAL 15 TOTAL 15
+*All students must complete two Distributive Studies courses that are approved for I-Series courses. Courses for
+Understanding Plural Societies and Cultural Competence may also fulfill a distributive studies requirement.
+** Students who plan to attend graduate school in climate science should go on to take MATH140, MATH141, PHYS141, and
+PHYS142; for others, the MATH120-121 and PHYS121-122 series are sufficient.
+*** For the lists of courses comprising "Depth and Focus," "Techniques and Methods," and "Upper Level Requirements," go
+to: http://www.ensp.umd.edu
+Environmental Science and Policy: Global Environmental Change (2299V) -
+Four Year Academic Plan
+Fall
+Fall
+Fall
+Fall Spring
+Spring
+Spring
+Spring
+Requirements Credits Grade
+Requirements: __credits Course Credits Grade
+Academic Writing AW ENGL101 3 ENSP101 or ENSP 102 3
+Professional Writing PW 3 MATH120 or 140 3 or 4
+Oral Communication OC 3
+Two of: ENSP Econ, GEOG201/211,
+BSCI160/161, CHEM131/132
+8
+Math MA
+Analytic Reasoning AR
+MATH120 or
+140 3 or 4
+ENSP101 and 102 6
+Requirements: __credits Course Credits Grade Two ENSP Core Lab Sciences 8
+Natural Science Lab NL GEOG201/211 4
+Three of MATH121 or 141;
+CHEM231/232; PHYS121; declare
+concentration.
+11
+Natural Sciences NS ENSP101 3
+History/Social Sciences HS ENSP102 3
+History/Social Sciences HS 3
+Humanities HU 3
+Humanities HU 3 ENSP101, 102 6
+Scholarship in Practice SP ENSP400 3 MATH120 and 121; or 140 and 141 6 or 8
+Scholarship in Practice SP (non major) 3 GEOG306, AREC240 or 241 7
+BSCI160/161 and; PHYS121 or 141 8
+GEOG 201/211, 272, and 373 10
+Requirements: __credits Course Credits Grade ENSP Core GEOG 3
+I-Series IS 3 GEOL100 and; GEOL102 or ENST200 7
+I-Series IS 3 CHEM131/132 and 231/232 8
+BSCI361 4
+GEOG331 and 398B 6
+Requirements: __credits Course Credits Grade GVPT306 or AREC332 3
+Understanding Plural Soc. UP 3 or 6 One of: GEOG 442, GEOG 445,
+AOSC400, GEOL437
+3
+Understanding Plural Soc. UP or Cultural
+Competence CC 0 or 3 Tech & Methods 1 3
+Tech & Methods 2 3
+Tech & Methods 3 3
+Requirements: __credits Course Credits Grade ENSP386 (internship) 3
+ENSP400 3
+Requirements for Graduation: Restricted Elective 1 3
+Restricted Elective 2 3
+Restricted Elective 3 3
+Distributive Studies
+(overlap permitted with Distributive Studies and/or I-series)
+Students must earn a minimum of 120 credits to complete a degree.
+Environmental Science and Policy: Global Environmental Change
+Major Requirements
+(Grade of (C-) 1.7 or higher is required)
+Benchmark 1 Requirements
+Benchmark 2 Requirements
+(Grade of (D-) 0.7 or higher is required)
+General Education Requirements
+Fundamental Studies
+Major Requirements
+Major Supporting Sequence (9 credits)
+(overlap permitted with Distributive Studies and/or Diversity)
+Diversity
+Cumulative average of these courses must be 2.0
+I-Series
+An internship (ENSP386) is required in this concentration.
+At least 30 credits must be earned at UMD
+Experiential Learning - optional
+(overlap permitted with other requirements/courses)
+
+## Sample plan (https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20LandUse.pdf)
+
+Year 1
+Credit Grade Credit Grade
+Benchmark 1 Requirements ENSP101(NS) 3 ENSP102 (HS1) 3
+Completed by 2 semesters GEOG201/211(NL) 4 GEOG202 (CC) 3
+ENSP101 or ENSP102 MATH120 or 140 (AR) 3 BSCI160/161 4
+MATH120 or 140 ENGL101(AW) 3 LL Focus** 3
+Two of BSCI160/161,
+CHEM131/132, GEOG201/211; and
+AREC240 or 241 or ECON200
+Humanties(HU1)* 3 Oral Comm (OC) 3
+TOTAL 16 TOTAL 16
+Year 2
+Benchmark 2 Requirements Social Science (HS2) 4 GEOG306 3
+Completed by 4 semesters I-Series (IS1) 3 Humanities(HU2)* 3
+ENSP101 and ENSP102 Sch in Practice (SP1) 3 I-Series (IS2) 3
+MATH120 or 140 Diversity (UP) 3 Restricted Elec #1** 3
+Two of BSCI160/161;
+CHEM131/132; GEOG201/211; Elective 3 Elective 3
+All of: AREC240 or 241, Statistics,
+declare concentration. TOTAL 16 TOTAL 15
+Year 3
+Restricted Elec #2** 3 Restricted Elec #4** 3
+Restricted Elec #3** 3 Restricted Elec #5** 3
+ENSP330 or 340 3 Restricted Elec #6** 3
+GEOG373 3 GEOG272 3
+Elective 3 Elective 3
+TOTAL 15 TOTAL 15
+Year 4
+ProfWrtg (PW) 3 ENSP400 (SP2) 3
+ENSP386 3 Elective 3
+GEOG431 3 Elective 3
+Elective 3 Restricted Elec #7** 3
+Elective 3 Restricted Elec #8** 3
+TOTAL 15 TOTAL 15
+Environmental Science and Policy: Land Use (2299I) - Four Year Academic
+Plan SpringFall
+Fall
+Fall
+** For the list of approved "Lower Level Focus" and "Upper Level Restricted Electives," go to: http://www.ensp.umd.edu
+Fall
+Spring
+Spring
+Spring
+*All students must complete two Distributive Studies courses that are approved for I-Series courses. Courses for
+Understanding Plural Societies and Cultural Competence may also fulfill a distributive studies requirement.
+Requirements Credits Grade
+Requirements: __credits Course Credits Grade
+Academic Writing AW ENGL101 3 ENSP101 or ENSP102 3
+Professional Writing PW 3 MATH120 or 140 3 or 4
+Oral Communication OC 3
+Two of BSCI160/161;
+CHEM131/132; GEOG201/211;
+AREC240 or 241
+8
+Math MA
+Analytic Reasoning AR MATH120 or 140 3 or 4
+ENSP101 and ENSP102 4
+Requirements: __credits Course Credits Grade MATH120 or 140 3 or 4
+Natural Sciences Lab NL GEOG201/211 4
+Natural Sciences NS ENSP101 3
+History/Social Sciences HS ENSP102 3 All of: AREC240 or 241, GEOG306,
+declare concentration 7
+History/Social Sciences HS GEOG202 3
+Humanities HU 3
+Humanities HU 3 ENSP101 and ENSP102 4
+Scholarship in Practice SP ENSP400 3 MATH120 or 140 3 or 4
+Scholarship in Practice SP (non major) 3 BSCI160/161 4
+GEOG201/211 and GEOG202 7
+Requirements: __credits Course Credits Grade
+I-Series IS AREC240 or 241 4
+I-Series IS Lower level focus course 3 or 4
+GEOG306, 272, and 373 9
+GEOG431 3
+Requirements: __credits Course Credits Grade ENSP386 (internship) 3
+Understanding Plural Soc. UP 3 or 6 ENSP400 3
+Understanding Plural Soc. UP or Cultural
+Competence CC 0-3
+Restricted elective 1 3
+Requirements: __credits Course Credits Grade Restricted elective 2 3
+Restricted elective 3 3
+Restricted elective 4 3
+Students must earn a minimum of 120 credits
+to complete a degree. Restricted elective 5 3
+Requirements for Graduation: Restricted elective 6 3
+Restricted elective 7 3
+Restricted elective 8 3
+Fundamental Studies
+Experiential Learning - optional
+Environmental Science and Policy Program: Land Use
+Major Requirements
+(Grade of (C-) 1.7 or higher is required)
+Benchmark Year 1 Requirements
+Diversity
+Distributive Studies
+Benchmark Year 2 Requirements
+Cumulative average of these courses must be 2.0
+(Grade of (D-) 0.7 or higher is required)
+General Education Requirements
+Major Requirements
+One of: CHEM131/132 or ENSP Core
+GVPT 3 or 4
+Two of BSCI160/161; GEOG201/211;
+CHEM231/232
+An internship (ENSP386) is required in this concentration.
+I-Series
+(overlap permitted with other requirements/courses)
+(overlap permitted with Distributive Studies and/or I-Series)
+(overlap permitted with Distributive Studies and/or Diversity)
+8
+At least 30 credits must be earned at UMD
+Major Supporting Sequence (24 credits)
+
+## Sample plan (https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20MarineCoastal.pdf)
+
+Year 1
+Credit Grade Credit Grade
+Benchmark Requirements ENSP101 (NS) 3 ENSP102 (HS1) 3
+Completed by 2 semesters GEOG201/211 (NL) 4 BSCI160/161 4
+MATH120 or 140 (AR) 4 Oral Comm (OC) 3
+ENSP101 or 102 ENGL101 (AW) 3 AOSC200/201 (IS1) 4
+MATH140 Elective 1
+And two of AREC240; BSCI160/161;
+CHEM131/132; or GEOG201/211
+TOTAL 15 TOTAL 14
+Year 1
+Benchmark 2 Requirements CHEM131/132 4 Elective** 3
+Completed by 4 semesters GEOG140 (IS2) 3 GEOG306 3
+ENSP101 and 102 Elective ** 3 Elective 3
+Two ENSP Core Sciences Restricted Elec #1*** 3 Humanities (HU1)* 3
+All of AREC240; BSCI160/161;
+CHEM131/132; GEOG201/211;
+declare concentration.
+Diversity (UP)
+3
+Social Science (HS2)
+4
+TOTAL 16 TOTAL 16
+Year 3
+AOSC375 3 GEOG441 3
+ENST450 3 ENSP342 3
+GEOG373 3 GEOG272 3
+Sch in Prac (SP1) 3 Humanities (HU2) 3
+Restricted Elec #2*** 3 Restricted Elec #3*** 3
+TOTAL 15 TOTAL 15
+Year 4
+ProfWrtg (PW) 3 ENSP400 (SP2) 3
+ENSP386 3 Restricted Elec #5*** 3
+Restricted Elec #4*** 3 Elective** 3
+Diversity (UP/CC) 3 Elective 3
+Elective 3 Elective 3
+15 15
+*** For the complete list of Restricted Electives, go to: http://www.ensp.umd.edu
+Environmental Science and Policy: Marine and Coastal Management
+(2299X) - Four Year Academic Plan
+Fall
+Fall
+Fall
+Fall Spring
+Spring
+Spring
+Spring
+*All students must complete two Distributive Studies courses that are approved for I-Series courses. Courses for
+Understanding Plural Societies and Cultural Competence may also fulfill a distributive studies requirement.
+** Students who plan to go to graduate school in marine science should continue on to MATH141, CHEM231/232,
+PHYS141, etc.
+Requirements Credits Grade
+Requirements: __credits Course Credits Grade
+Academic Writing AW 3 ENSP101 or ENSP 102 3
+Professional Writing PW 3 MATH120 or 140 4
+Oral Comm.unication OC 3 Two of: AREC240 or 241,
+GEOG201/211, BSCI160/161,
+8
+Math MA
+Analytic Reasoning AR MATH120 or 140 4
+ENSP101 and 102 6
+Requirements: __credits Course Credits Grade Two ENSP Core Sciences 8
+Natural Sciences Lab NL ENSP101 3 15
+Natural Sciences NS GEOG201/211 4
+History/Social Sciences HS ENSP102 3
+History/Social Sciences HS 4
+Humanities HU 3
+Humanities HU 3 ENSP101 and 102 6
+Scholarship in Practice SP ENSP400 3 MATH140 and GEOG306 7
+Scholarship in Practice SP (non major)
+3 BSCI160/161 and
+CHEM131/132
+8
+Requirements: __credits Course Credits Grade AREC240 or 241 4
+I-Series IS GEOG140 3 AOSC375 or GEOL375 3
+I-Series IS AOSC200 3 ENSP342 3
+ENST450 3
+GEOG441 3
+Requirements: __credits Course Credits Grade GEOG272 3
+Understanding Plural Soc. UP 3 or 6 GEOG373 3
+Understanding Plural Soc. UP or Cultural
+Competence CC 0-3 ENSP386 (internship) 3
+ENSP400 3
+Requirements: __credits Course Credits Grade
+Restricted Elective 1 3
+Restricted Elective 2 3
+Students must earn a minimum of
+120 credits to complete a degree.
+Restricted Elective 3 3
+Restricted Elective 4 3
+Restricted Elective 5 3
+Environmental Science and Policy: Marine and Coastal Management
+Major Requirements
+(Grade of (C-) 1.7 or higher is required)
+Benchmark 1 Requirements
+Diversity
+Benchmark 2 Requirements
+(Grade of (D-) 0.7 or higher is required)
+Distributive Studies
+GEOG140; GEOG201/211; and
+AOSC200/201
+11I-Series
+General Education Requirements
+Fundamental Studies
+(overlap permitted with Distributive Studies and/or Diversity)
+All of AREC240; GEOG306;
+BSCI160/161; CHEM131/132;
+GEOG201/211;
+Cumulative average of these courses must be 2.0
+Major Requirements
+Experiential Learning- optional
+(overlap permitted with other requirements/courses)
+(overlap permitted with Distributive Studies and/or I-series)
+At least 30 credits must be earned at UMD
+Requirements for Graduation:
+An internship (ENSP386) is required in this concentration
+Major Supporting Sequence (15 credits)
+
+## Sample plan (https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20PoliticsPolicy.pdf)
+
+Year 1
+Credit Grade Credit Grade
+Benchmark Requirements MATH120 or 140 (AR) 3 ECON200 or AREC240(HS) 4
+Completed by 2 semesters ENSP101(NS) 3 ENSP102(HS) 3
+ENSP101 or ENSP102 GEOG201/211(NL) 4 Oral Comm (OC) 3
+MATH120 or 140 ENGL101(AW) 3 Humanities (HU1)* 3
+Two of BSCI106, GEOG201/211;
+and AREC240 or ECON200
+GVPT170 3 Elective 3
+TOTAL 16 TOTAL 16
+Year2
+Benchmark 2 Requirements Diversity (UP) 3 ECON201 4
+Completed by 4 semesters Elective 3 PSYC200 or other Stats 3
+ENSP101 and ENSP102 GVPT200 3 Humanities (HU2)* 3
+MATH120 or 140 BSCI160/161 4 GVPT choice 3
+Two of BSCI160/161;
+CHEM131/132; GEOG201/211; Sch in Prac (SP1) 3 Restricted Elec #1** 3
+All of: AREC240, Statistics, declare
+concentration. TOTAL 17 TOTAL 16
+Year 3
+GVPT306 3 Restricted Elec #2** 3
+GVPT280 3 Restricted Elec #3** 3
+Diversity (UP/CC) 3 Restricted Elec #4** 3
+Elective 3 ENSP330 3
+Elective 3 Elective 3
+TOTAL 15 TOTAL 15
+Year 4
+GVPT417 3 Prof Wrtg (PW) 3
+ENSP400 (SP2) 3 Restricted Elec #6** 3
+Restricted Elec #5** 3 Elective 3
+Elective 3 Elective 3
+Elective 3 Elective 3
+TOTAL 15 TOTAL 15
+** For the list of "automatic approvals" for Restricted Electives, go to: http://www.ensp.umd.edu Students may propose
+additional upper-level restricted electives if they are related to a well-defined area of interest,
+*All students must complete two Distributive Studies courses that are approved for I-Series courses. Courses for
+Understanding Plural Societies and Cultural Competence may also fulfill a distributive studies requirement.
+Spring
+Enviromental Science and Policy: Environmental Politics and Policy
+(2299H) - Four Year Academic Plan
+Fall
+Fall
+Fall
+Fall Spring
+Spring
+Spring
+Requirements Credits Grade
+Requirements: __credits Course Credits Grade
+Academic Writing AW ENGL101 3 ENSP101 or ENSP102 3
+Professional Writing PW 3 MATH120 or 140 3 or 4
+Oral Communication OC 3
+Two of BSCI160/161; CHEM131/132;
+GEOG201/211; AREC240, AREC241, or
+ECON200
+8
+Math MA
+Analytic Reasoning AR MATH120 or 140 3 or 4
+ENSP101 and ENSP102 6
+Requirements: __credits Course Credits Grade MATH120 or 140 3 or 4
+Natural Science Lab NL GEOG201/211 4
+Two of BSCI160/161; CHEM131/132;
+GEOG201/211; ENST200
+8
+Natural Sciences NS ENSP101 3 All of: AREC240 or 241, Statistics,
+declare concentration.
+7
+History/Social Sciences HS ENSP102 3
+History/Social Sciences HS 4
+Humanities HU 3
+Humanities HU 3 ENSP101 and ENSP102 6
+Scholarship in Practice SP ENSP400 3 MATH120 or 140 3 or 4
+Scholarship in Practice SP (non major) 3
+PSYC200 or SOCY201 3 or 4
+Requirements: __credits Course Credits Grade ECON200 or AREC240 4
+I-Series IS 3 ENSP Core GEOG 3
+I-Series IS 3 ECON201 8
+GVPT170, 200, GVPT choice & 280 12
+GVPT306 and 417 6
+Requirements: __credits Course Credits Grade ENSP330 3
+Understanding Plural Soc. UP 3 ENSP400 3
+Understanding Plural Soc. UP or Cultural
+Competence CC
+3
+Restricted Elective 1
+Requirements: __credits Course Credits Grade Restricted Elective 2
+Restricted Elective 3
+Restricted Elective 4
+Students must earn a minimum of
+120 credits to complete a degree.
+Restricted Elective 5
+Requirements for Graduation: Restricted Elective 6
+At least 30 credits must be earned at UMD
+Major Supporting Sequence (18 credits)Experiential Learning - optional
+(overlap permitted with other requirements/courses)
+(overlap permitted with Distributive Studies and/or I-Series)
+(overlap permitted with Distributive Studies and/or Diversity)
+Environmental Science and Policy Program: Environmental Politics and Policy
+Major Requirements
+(Grade of (C-) 1.7 or higher is required)
+Benchmark 1 Requirements
+Diversity
+Benchmark 2 Requirements
+Cumulative average of these courses must be 2.0
+(Grade of (D-) 0.7 or higher is required)
+Distributive Studies
+I-Series
+General Education Requirements
+Fundamental Studies
+Major Requirements
+Two of BSCI160/161; CHEM131/132;
+GEOG201/211; or other Earth Sci 8
+
+## Sample plan (https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_BSOS%20Culture%20%26%20Environ.pdf)
+
+Year 1
+Credit Grade Credit Grade
+Benchmark Requirements MATH120 or 140 (AR) 3 AREC240 (HS1) or 241 (IS) 4
+Completed by 2 semesters ENSP101(NS) 3 ENSP102(HS2) 3
+ENSP101 or ENSP102 GEOG130 (SP1) 4 Oral Comm (OC) 3
+MATH120 or 140 ENGL101(AW) 3 Humanities (HU1) 3
+Two of BSCI160/161,
+CHEM131/132, GEOG201/211; and
+AREC240, AREC241, or ECON200
+ANTH222 (UP1) 4 GEOG201/211 (NL) 4
+TOTAL 17 TOTAL 17
+Year2
+Benchmark 2 Requirements ANTH240 or 260 (HS2, UP2) 3 ANTH340 or 360 3
+Completed by 4 semesters Elective 3 PSYC200 or SOCY 201 (AR) 3 or 4
+ENSP101 and ENSP102 BSCI160/161 (NL) 3 Humanities (HU2) 3
+MATH120 or 140 RE outside ANTH 1 3 RE outside ANTH 2 3
+Two of BSCI160/161;
+CHEM131/132; GEOG201/211; IS1 3 IS2 3
+All of: AREC240, Statistics, declare
+concentration. TOTAL 16 TOTAL 15 or 16
+Year 3
+ANTH322 3 ENSP 305,330,340 or 342 3
+RE in ANTH1 3 RE in ANTH2 3
+RE outside ANTH 3 (UL) 3 RE outside ANTH 4 (UL) 3
+Elective 3 Elective 3
+Elective 3 Elective 3
+TOTAL 15 TOTAL 15
+Year 4
+ENSP400 (SP2) 3 Prof Writ (PW) 3
+RE outside ANTH 5 (UL) 3 Elective 3
+RE in ANTH 3 (UL) 3 RE in ANTH 4 (UL) 3
+Elective 3 Elective 3
+Appl Field Meth 3
+TOTAL 15 TOTAL 12
+All students must complete two Distributive Studies courses that are approved for I-Series courses. Courses for
+Understanding Plural Societies and Cultural Competence may also fulfill a distributive studies requirement.
+Spring
+Enviromental Science and Policy: Culture & Environment (2299Z) - Four
+Year Academic Plan
+Fall
+Fall
+Fall
+Fall Spring
+Spring
+Spring
+Requirements Credits Grade
+Requirements: __credits Course Credits Grade
+Academic Writing AW ENGL101 3 ENSP101 or ENSP102 3
+Professional Writing PW 3 MATH120 or 140 3 or 4
+Oral Communication OC 3
+Two of BSCI160/161; CHEM131/132;
+GEOG201/211; AREC240, AREC241, or
+ECON200
+7 or 8
+Math MA
+Analytic Reasoning AR MATH120 or 140 3 or 4
+ENSP101 and ENSP102 6
+Requirements: __credits Course Credits Grade MATH120 or 140 3 or 4
+Natural Science Lab NL GEOG201/211 4
+Two of BSCI160/161; CHEM131/132;
+GEOG201/211;
+8
+Natural Sciences NS ENSP101 3 All of: Economics, Statistics, and 6
+credits in ANTH
+12
+History/Social Sciences HS ENSP102 3
+History/Social Sciences HS 4
+Humanities HU 3
+Humanities HU 3 ENSP101 and ENSP102 6
+Scholarship in Practice SP ENSP400 3 MATH120 or 140 3 or 4
+Scholarship in Practice SP (non major) 3
+PSYC200 or SOCY201 3 or 4
+Requirements: __credits Course Credits Grade AREC240, 241, or ECON200 3 or 4
+I-Series IS 3 ENSP Core GEOG 3
+I-Series IS 3 ANTH222 and 322 7
+ANTH 240/340 or 260/360 6
+Four RE in ANTH (incl 2 UL) 12
+Requirements: __credits Course Credits Grade Applied Field Meth 3
+Understanding Plural Soc. UP ANTH222 4 ENSP305, 330, 340, or 342 3
+Understanding Plural Soc. UP or Cultural
+Competence CC
+ANTH240 or 260 3 ENSP400 3
+RE outside ANTH 1
+Requirements: __credits Course Credits Grade RE outside ANTH 2
+RE outside ANTH 3 (UL)
+RE outside ANTH 4 (UL)
+Students must earn a minimum of 120
+credits to complete a degree.
+RE outside ANTH 5 (UL)
+Requirements for Graduation:
+At least 30 credits must be earned at UMD
+Environmental Science and Policy Program: Culture & Environment
+Major Requirements
+(Grade of (C-) 1.7 or higher is required)
+Benchmark 1 Requirements
+Diversity
+Benchmark 2 Requirements
+Cumulative average of these courses must be 2.0
+(Grade of (D-) 0.7 or higher is required)
+Distributive Studies
+I-Series
+General Education Requirements
+Fundamental Studies
+Major Requirements
+Two of BSCI160/161; CHEM131/132;
+GEOG201/211; or other Earth Sci 8
+RE's outside ANTH (15 credits)Experiential Learning - optional
+(overlap permitted with other requirements/courses)
+(overlap permitted with Distributive Studies and/or I-Series)
+(overlap permitted with Distributive Studies and/or Diversity)
+
+## Sample plan (https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSPFourYrPlan_CMNS%20EnvGeoscience.pdf)
+
+Year 1
+Credit Grade Credit Grade
+Benchmark 1 Requirements ENSP101 (NS) 3 ENSP102 (HS1) 3
+ENSP101 or ENSP102 MATH140 (MA) 4 MATH141 4
+MATH140 GEOL100/110 (NL) 4 ENGL101 (AW) 3
+Two of: ENSP Econ, BSCI160/161,
+CHEM131/132; BSCI160/161 4 Oral Comm (OC) 3
+GEOL100/110. Sch in Prac (SP1) 3
+TOTAL 15 TOTAL 16
+Year2
+Benchmark 2 Requirements CHEM131/132 4 CHEM231/232 4
+ENSP101 and 102 Social Science (HS2) 4 PHYS 161/174 4
+Three of: CHEM231/232, MATH141,
+PHYS141, declare concentration Diversity (UP) 3 Humanities (HU1) 3
+I-Series (IS1) 3 BSCI361 4
+Statistics (AR) 3
+TOTAL 17 TOTAL 15
+Year3
+ENST200 4 GEOL340 4
+Depth - 1 3 Humanities (HU2) 3
+Depth - 2 3 to 4 Depth - 3 3 to 4
+Diversity (UP/CC) 3 ENSP330 or ENSP340 3
+FREE ELECTIVE 3 FREE ELECTIVE 3
+TOTAL 16-17 TOTAL 16-17
+Year 4
+GEOL452 3 ENSP400 (SP 2) 3
+GEOL453 3 Depth - 4 3 to 4
+I-Series-2 3 Depth - 5 3
+ENSP386 3 Prof Writing (PW) 3
+FREE ELECTIVE 3 FREE ELECTIVE 3
+TOTAL 15 TOTAL 15-16
+*All students must complete two Distributive Studies courses that I-series courses; and two Diversity courses, which may also
+fill a Distributive Studies category.
+*** For the list of Restricted Electives, go to: http://www.ensp.umd.edu
+Environmental Science and Policy: Environmental Geosciences and
+Restoration (2299C) - Four Year Academic Plan
+Fall
+Fall
+Fall
+Fall Spring
+Spring
+Spring
+Spring
+Requirements Credits Grade
+Requirements: __credits Course Credits Grade
+Academic Writing WR ENGL101 3 ENSP101 or ENSP 102 3
+Professional Writing PR MATH140 4
+Oral Comm. OC Two of: ENSP Econ, GEOL100/110,
+BSCI160/161, CHEM131/132
+8
+Math MA MATH140 4
+Analytic Reasoning AR GEOG306 3
+Requirements: __credits Course Credits Grade ENSP101 and ENSP102 6
+Natural Science Lab NL GEOL100/110 4
+Three of: MATH141, CHEM231/232,
+PHYS161/174, declare concentratoin
+8 to 12
+Natural Sciences NS ENSP101 3
+History/Social Sciences HS ENSP102 3
+History/Social Sciences HS
+Humanities HU
+Humanities HU ENSP101 and 102 6
+Scholarship in Practice SP ENSP400 3 MATH140 and 141 8
+Scholarship in Practice SP (non major) GEOG306 or BIOM301 3
+BSCI160/161 4
+ENST200 4
+Requirements: __credits Course Credits Grade GEOL100/110 or 120/110 4
+I-Series IS CHEM131/132 and 231/232 8
+I-Series IS PHYS161/174 or higher 4
+ENSP Core ECON or GVPT 4 or 3
+BSCI361 4
+Requirements: __credits Course Credits Grade GEOL340 4
+Understanding Plural Soc. UP GEOL451 or GEOL452 3
+Understanding Plural Soc. UP or Cultural
+Competency CC GEOL453 3
+ENSP386 (internship) 3
+ENSP400 3
+Requirements: __credits Course Credits Grade
+Restricted Elective 1
+Restricted Elective 2
+Students must earn a minimum of
+120 credits to complete a degree. Restricted Elective 3
+Requirements for Graduation: Restricted Elective 4
+Restricted Elective 5
+Environmental Science and Policy: Environmental Geosciences and Restoration
+Major Requirements
+(Grade of (C-) 1.7 or higher is required)
+Benchmark 1 Requirements
+Diversity
+Benchmark 2 Requirements
+Cumulative average of these courses must be 2.0
+General Education Requirements
+Fundamental Studies
+Major Requirements
+(overlap permitted with Distributive Studies and/or Diversity)
+At least 30 credits must be earned at UMD
+(Grade of (D-) 0.7 or higher is required)
+Distributive Studies
+I-Series
+Major Supporting Sequence (15 credits)
+An internship (ENSP386) is required in this concentration.
+Experiential Learning- optional
+(overlap permitted withother requirements/courses)
+(overlap permitted with Distributive Studies and/or I-series)
+
+## Sample plan (https://agnr.umd.edu/sites/agnr.umd.edu/files/files/documents/ENSP%20FourYrPlan_CMNS_%20Biodiversity.pdf)
+
+Year 1 Credit Grade Credit Grade
+Benchmark Requirements ENSP101 (NS) 3 ENSP102 (HS1) 3
+Completed by 2 semesters MATH120, 135 or 140 (AR 3 to 4 CHEM131/132 4
+BSCI160/161 (NL) 4 BSCI170/171 4
+ENSP101 or 102 Humanities (HU1)* 3 MATH121, 136 or 141 3 to 4
+MATH120, 135 or 140 ENGL101 (AW) 3
+And two of AREC240 or ECON200;
+BSCI160/161; CHEM131/132; or
+Earth Science TOTAL 17 TOTAL 15
+Year 2
+Benchmark 2 Requirements GEOG201/211 4 Rest Elec 1** 3
+Completed by 4 semesters CHEM231/232 4 CHEM241/242 4
+ENSP101 and 102 BSCI207 3 Diversity (UP/CC1) 3
+Two ENSP Core Lab Sciences Humanities (HU1) 3 HS2 3
+Three of BSCI207,Calc II, BSCI222;
+CHEM231/232; declare
+concentration.
+Oral Comm (OC) 3
+TOTAL 17 TOTAL 14
+Year 3
+Rest Elec 2** 3 BIOM301 (AR) 3
+BSCI222 4 BSCI363 3
+Humanities (HU2) 3 Elective 3
+Schol in Prac (SP1) 3 Diversity UP2 or CC 3
+BSCI361 4 I-Series 2 3
+TOTAL 17 TOTAL 15
+Year 4
+BSCI370 3 Rest Elec 5** 3
+Rest Elec 3** 3 ENSP400 (SP2) 3
+Rest Elec 4 lab** 4 Elective 3
+Prof Writ (PW) 3 Elective 3
+App Sci & Pol 3
+TOTAL 16 TOTAL 12
+**For the lists comprising Restricted Electives, go to: http://www.ensp.umd.edu
+Environmental Science and Policy: Biodiversity and Conservation Biology
+(2299B)- Four Year Academic Plan
+Fall
+Fall
+Fall
+Fall Spring
+Spring
+Spring
+Spring
+* All students must complete two Distributive Studies courses that are approved for I-Series courses. Courses for
+Understanding Plural Societies and Cultural Competence may also fulfill a distributive studies requirement.
+Requirements Credits Grade
+Requirements: __credits Course Credits Grade
+Academic Writing AW 3 ENSP101 or ENSP 102 3
+Professional Writing PW 3 MATH120, 135 or 140 3 or 4
+Oral Communication OC 3 Two of: ENSP Econ, ENST200,
+BSCI160/161, CHEM131/132
+8
+Math MA
+Analytic Reasoning AR MATH120 or
+140
+3 or 4
+ENSP101 and 102 6
+Requirements: __credits Course Credits Grade Two ENSP Core Lab Sciences 8
+Natural Science Lab NL
+BSCI160/1
+61 4
+Three of BSCI207,Calc II, BSCI222;
+CHEM231/232; declare concentration.
+11 or 12
+Natural Sciences NS ENSP101 3
+History/Social Sciences HS ENSP102 3
+History/Social Sciences HS 3
+Humanities HU 3
+Humanities HU 3 ENSP101 and ENSP102 6
+Scholarship in Practice SP ENSP400 3 MATH120, 135 or 140 3 or 4
+Scholarship in Practice SP (non major)
+3 GEOG306 or BIOM301 3
+Requirements: __credits Course Credits Grade BSCI170/171, 160/161, 222, 361.
+363. 370
+22
+I-Series IS 3 CHEM131/132 4
+I-Series IS 3 CHEM 231/232 4
+CHEM241/242 4
+Calc II 4
+Requirements: __credits Course Credits Grade ENSP400 4
+Understanding Plural Soc. UP 3 or 6
+Understanding Plural Soc. UP or Cultural
+Competence CC 0-3
+Requirements: __credits Course Credits Grade
+Restricted Elective 1 3
+Restricted Elective 2 3
+Restricted Elective 3 3
+Restricted Elective 4 3
+At least 30 credits must be earned at UMD Restricted Elective 5 3
+I-Series
+Experiential Learning- optional
+Diversity
+An internship (ENSP386) is required in this concentration
+Requirements for Graduation:
+(overlap permitted with Distributive Studies and/or I-series)
+(overlap permitted with other requirements/courses)
+Students must earn a minimum of 120 credits to complete a degree.
+Major Supporting Sequence (15 credits)
+Two of: ENSP Core ECON,
+GVPT, or GEOG
+6 or 7
+Environmental Science and Policy: Biodiversity and Conservation Biology
+Major Requirements
+(Grade of (C-) 1.7 or higher is required)
+Benchmark 1 Requirements
+Benchmark 2 Requirements
+(overlap permitted with Distributive Studies and/or Diversity)
+Cumulative average of these courses must be 2.0
+(Grade of (D-) 0.7 or higher is required)
+Major Requirements
+General Education Requirements
+Fundamental Studies
+Distributive Studies
