@@ -225,7 +225,7 @@ export async function getRoutesOn(isoDate: string) {
   };
 }
 
-export type MapStop = { id: string; name: string; lat: number; lon: number };
+type MapStop = { id: string; name: string; lat: number; lon: number };
 export type CampusMap = { routes: RouteWithMap[]; stops: MapStop[]; stopRoutes: Record<string, string[]> };
 
 /** Route lines and stops for the Transport map, for the routes running that day. */

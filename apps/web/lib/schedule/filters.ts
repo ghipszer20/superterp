@@ -4,7 +4,7 @@
 import type { DayRule, ScheduleFilters, Weekday } from "@superterp/course-data/schedules";
 import type { EmptyExplanation, FilterConstraint } from "@superterp/course-data/explain";
 import type { SortKey } from "@superterp/course-data/sort";
-import { clock, DAY_NAME, WEEKDAYS } from "./calendar";
+import { DAY_NAME, WEEKDAYS } from "./calendar";
 
 export type FilterState = {
   /** Days left out are unrestricted. */
@@ -113,6 +113,3 @@ export function relaxConstraint(state: FilterState, c: FilterConstraint): Filter
   delete days[c.day];
   return { ...state, days };
 }
-
-/** "Mon 8am–1pm" style summary of one window, for labels. */
-export const windowLabel = (r: { from: number; to: number }) => `${clock(r.from)}–${clock(r.to)}`;

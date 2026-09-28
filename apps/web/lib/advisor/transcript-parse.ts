@@ -34,7 +34,7 @@ export type ParsedApLine = {
   raw: string;
 };
 
-export type UnparsedLine = { raw: string; reason: string };
+type UnparsedLine = { raw: string; reason: string };
 
 export type ParsedTranscript = {
   studentName: string | null;

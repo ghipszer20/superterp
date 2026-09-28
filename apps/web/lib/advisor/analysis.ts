@@ -31,7 +31,7 @@ import { describeGap, type Gap } from "./requirements";
 import { matriculationTermId } from "./terms";
 import { resolvedPlan } from "./track-plan";
 
-export type ProgramAudit = {
+type ProgramAudit = {
   program: Program;
   requirements: { requirement: Requirement; result: RequirementResult; gap: Gap | null }[];
   satisfied: number;
@@ -40,7 +40,7 @@ export type ProgramAudit = {
 /** A chosen Track's audit, plain-language issues and requirement status -- never a degree
  * requirement (owner ruling): built alongside the major audits above, but from its own
  * trackProgram, and never fed into auditedPrograms or noticeCandidates. */
-export type TrackAudit = {
+type TrackAudit = {
   track: Track;
   result: TrackCheckResult;
   requirements: { requirement: Requirement; result: RequirementResult; gap: Gap | null }[];

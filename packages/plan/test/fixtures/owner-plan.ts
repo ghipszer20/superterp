@@ -5,7 +5,7 @@ import { creditForAp, toStudentCourses } from "@superterp/credit";
 import type { Plan } from "../../src/check.ts";
 
 /** AP Calculus BC 5: MATH140 and MATH141 (UMD's AP chart awards both for a 4 or 5). */
-export const AP_CALCULUS_BC = toStudentCourses([creditForAp("Calculus BC", 5)]).courses;
+const AP_CALCULUS_BC = toStudentCourses([creditForAp("Calculus BC", 5)]).courses;
 
 const planned = (...ids: string[]) => ids.map((id) => ({ id }));
 

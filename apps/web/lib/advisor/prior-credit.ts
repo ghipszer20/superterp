@@ -22,7 +22,7 @@ export type Earn =
   | { kind: "choice"; credits: number; options: string[]; picked: string | null }
   | { kind: "generic"; label: string; credits: number; genEd: string[] };
 
-export type EntryStatus = "counted" | "no-credit" | "not-counted" | "overkill" | "error";
+type EntryStatus = "counted" | "no-credit" | "not-counted" | "overkill" | "error";
 
 export type PriorEntry = {
   key: string;
@@ -37,7 +37,7 @@ export type PriorEntry = {
   error?: string;
 };
 
-export type NotCountedItem = { source: string; kind: "overkill" | "not-counted"; reason: string };
+type NotCountedItem = { source: string; kind: "overkill" | "not-counted"; reason: string };
 
 export type PriorCreditResult = {
   entries: PriorEntry[];
