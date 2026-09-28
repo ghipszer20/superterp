@@ -1,0 +1,31 @@
+{
+  "programId": "mse-major",
+  "source": "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/materials_fall_2026_gradplan.pdf",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "A. James Clark School of Engineering official Fall 2026 Materials Science and Engineering graduation plan. General-education slots (ENGL101, Oral Communication, Professional Writing, Scholarship in Practice, Humanities, History/Social Sciences) are left out: only the program's own requirements are audited here (they're covered by gen-ed-2026-27.ts).",
+    "The chemistry lecture sequence (Year 1 Fall) is filled with CHEM135 (the plan's own scheduled course), not the CHEM131/CHEM134 alternate.",
+    "The 'CHEM231 & CHEM232 or CHEM481' slot (Year 2 Spring) is filled with CHEM231 and CHEM232, as printed first on the graduation plan; CHEM481 alone would satisfy the requirement equally.",
+    "The 'ENES200 or ENEE200' slot (Year 2 Fall) is filled with ENES200, as printed on the graduation plan and catalog table; ENEE200 would satisfy the requirement equally.",
+    "The two 'ENMA312 OR Upper Level Science Elective' slots (Year 3 Fall and Spring) are filled with ENMA312 (Year 3 Fall, the specific required course) and CHEM461 (Year 3 Spring, an illustrative upper-level science elective -- no enumerable list of eligible courses exists per source, so this slot isn't audited as a program requirement; any qualifying upper-level science course would do).",
+    "The five 'Specialization Elective' slots (Year 3 Fall/Spring, Year 4 Fall, Year 4 Spring x2) are filled with ENMA410, ENMA421, ENMA422, ENMA426 and ENMA481, all from the department's 'Materials Science' specialization list, none of them already required elsewhere in the program.",
+    "The two 'Technical Elective (at or above 300 level)' slots (Year 4 Fall and Spring) are filled with MATH461 and CHEM425, illustrative choices only -- no enumerable list of eligible technical electives exists per source, so this slot isn't audited as a program requirement."
+  ],
+  "credits": {
+    "MATH140": 4, "MATH141": 4, "MATH241": 4,
+    "CHEM136": 1, "CHEM232": 1,
+    "PHYS261": 1, "PHYS271": 1,
+    "ENMA180": 1, "ENMA457": 4, "ENMA487": 1
+  },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["ENES100", "MATH140", "CHEM135", "CHEM136", "ENMA180"] },
+    { "term": "Year 1 Spring", "courses": ["ENMA165", "MATH141", "PHYS161"] },
+    { "term": "Year 2 Fall", "courses": ["MATH241", "PHYS260", "PHYS261", "ENMA300", "ENES200"] },
+    { "term": "Year 2 Spring", "courses": ["MATH246", "PHYS270", "PHYS271", "ENMA301", "CHEM231", "CHEM232"] },
+    { "term": "Year 3 Fall", "courses": ["ENMA312", "ENMA457", "ENMA460", "ENMA410"] },
+    { "term": "Year 3 Spring", "courses": ["CHEM461", "ENMA461", "ENMA465", "ENMA470", "ENMA421"] },
+    { "term": "Year 4 Fall", "courses": ["ENMA441", "ENMA471", "ENMA487", "ENMA422", "MATH461"] },
+    { "term": "Year 4 Spring", "courses": ["ENMA490", "ENMA426", "ENMA481", "CHEM425"] }
+  ]
+}
