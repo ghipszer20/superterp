@@ -143,6 +143,53 @@ export const lgbtMinor: Program = {
   ],
 };
 
+// Black Women's Studies Minor. Cross-listed: the same requirement table is published under WGSS (ARHU) and
+// AAAS (BSOS); encoded once, here, under its main college. Catalog: .../arts-humanities/
+// women-gender-sexuality-studies/black-womens-studies-minor/ (fetched 2026-09-28).
+export const bwsMinor: Program = {
+  id: "wgss-minor-black-womens-studies",
+  name: "Black Women's Studies Minor",
+  catalogYear: "2026-27",
+  source:
+    "UMD Academic Catalog 2026–27, Black Women's Studies Minor " +
+    `(${CATALOG_BASE}black-womens-studies-minor/), cross-listed with African American and Africana Studies; ` +
+    "wgss.umd.edu, aasd.umd.edu and arhu.umd.edu minors page (no requirements); all fetched 2026-09-28",
+  minGrade: "C-",
+  verified: false,
+  maxSharedWith: [{ programs: ["aaas-major-general", "aaas-major-public-policy", "wgss-major"], courses: 2 }],
+  reviewNotes: [
+    "Cross-listed: the same requirement table appears under WGSS (ARHU) and AAAS (BSOS); a diff of the two fetched pages shows only the college label and catalog URL differ. Encoded once here under WGSS/ARHU (the ARHU minors page lists it).",
+    "Department pages not checked: wgss.umd.edu and aasd.umd.edu are homepages with no requirements, and the ARHU minors page only lists the minor as OPEN. Encoded from the catalog alone.",
+    "OPEN SLOT: 9 credits of electives (at least two at 300/400 level, one 300/400 level course Comparative or non-U.S.); catalog says 'see program for approved electives' and the list (wgss.umd.edu/academic-programs/courses) was not among the sources. The 300/400 and non-U.S. conditions are manual.",
+    "Second foundation slot: the catalog lists 'AASP398 ... (AASP389G: Gender, Labor, and Racial Identity in Diasporic Communities)'; the parenthetical code AASP389G looks like a typo for AASP398G, so AASP398 (any topic) is accepted. WGSS314/AASP313 are cross-listed; either id counts.",
+    "Catalog states C- minimum: encoded as minGrade C-. 'No more than two courses may count toward a major in African American Studies or Women's Studies' is maxSharedWith courses: 2 against aaas-major-general, aaas-major-public-policy and wgss-major (sds-major-aaas not named).",
+    "Not encoded: overall 2.0 minor GPA, advisor consultation.",
+  ],
+  requirements: [
+    {
+      kind: "choose",
+      id: "bws-foundation-1",
+      name: "Foundation: one of WGSS/AASP263, WGSS/AASP265, WGSS/AASP/LGBT264",
+      count: 1,
+      from: { courses: ["WGSS263", "AASP263", "WGSS265", "AASP265", "WGSS264", "AASP264", "LGBT264"] },
+    },
+    {
+      kind: "choose",
+      id: "bws-foundation-2",
+      name: "Foundation: one of WGSS314/AASP313, HIST360, AASP398",
+      count: 1,
+      from: { courses: ["WGSS314", "AASP313", "HIST360", "AASP398"] },
+    },
+  ],
+};
+
+export const bwsMinorMeta: ProgramMeta = {
+  kind: "minor",
+  college: "ARHU",
+  short: "Black Women's Studies",
+  sources: { catalog: `${CATALOG_BASE}black-womens-studies-minor/`, department: "https://wgss.umd.edu/" },
+};
+
 export const wgssMinorMeta: ProgramMeta = {
   kind: "minor",
   college: "ARHU",
