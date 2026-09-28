@@ -32,7 +32,10 @@ describe("sample plans", () => {
       const v = await validateSamplePlan(await entry.load(), plan);
       expect(v.unsatisfied).toEqual(KNOWN_FAILURES[id] ?? []);
       expect(v.mutants.filter((m) => !m.broke || m.fillerCounted)).toEqual([]);
-      expect(v.mutants.length).toBeGreaterThan(0);
+      // A program whose source names no courses (every slot an OPEN SLOT reviewNote) has no
+      // requirements to mutate.
+      const openSlotsOnly = (await entry.load()).requirements.length === 0;
+      if (!openSlotsOnly) expect(v.mutants.length).toBeGreaterThan(0);
     });
   });
 });
