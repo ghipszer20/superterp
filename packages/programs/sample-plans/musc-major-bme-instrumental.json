@@ -1,0 +1,23 @@
+{
+  "programId": "musc-major-bme-instrumental",
+  "source": "https://drive.google.com/uc?export=download&id=1KG9zVt2VyHnytYFlROSaHHcsPHenO7lF#Music-Education---Instrumental",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "School of Music official Music - Bachelor of Music Education - Instrumental Four Year Academic Plan. Gen Ed and general-elective slots are left out (only the major is audited).",
+    "MUSC229 (large ensemble) and MUSC099 (recital attendance) are repeatable 1-credit courses, entered multiple times per the plan's own '(1 cr. x N semesters)' legend lines.",
+    "'27 credits MUED class instruments and field experience' filled with 9 MUED courses named in the plan's own legend (MUED186, 187, 213, 215, 216, 217, 311, 320, 322), 3 credits each -- the source gives no course-by-course credit breakdown.",
+    "The '1 semester of 400-level music history elective' generic slot is filled with MUSC460, from the Academic Catalog's approved MUSC course list (the source names no specific course)."
+  ],
+  "credits": { "MUSC229": 1, "MUSC099": 1 },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["MUSP109", "MUSC102", "MUSC150", "MUSC229", "MUED186", "MUSC099"] },
+    { "term": "Year 1 Spring", "courses": ["MUSP110", "MUSC103", "MUSC151", "MUSC229", "MUED187", "MUSC099"] },
+    { "term": "Year 2 Fall", "courses": ["MUSP207", "MUSC250", "MUSC229", "MUED213", "MUSC099"] },
+    { "term": "Year 2 Spring", "courses": ["MUSP208", "MUSC251", "MUSC229", "MUED217", "MUSC099"] },
+    { "term": "Year 3 Fall", "courses": ["MUSP305", "MUSC360", "MUSC229", "MUED215", "MUSC099"] },
+    { "term": "Year 3 Spring", "courses": ["MUSP306", "MUSC361", "MUSC229", "MUED216", "MUSC099"] },
+    { "term": "Year 4 Fall", "courses": ["MUSP410", "MUSC260", "MUSC229", "MUED311", "EDHD413", "TLPL360", "MUED474"] },
+    { "term": "Year 4 Spring", "courses": ["MUSC460", "MUED320", "MUED322", "EDHD426", "MUED484", "MUED494"] }
+  ]
+}
