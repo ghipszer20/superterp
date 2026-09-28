@@ -32,7 +32,7 @@ export const socyMajor: Program = {
     "Department-vs-catalog difference: the Gateway Math options. The catalog text lists " +
       "'MATH107/MATH111/MATH120/MATH140, or STAT100' but the college checklist (department source, " +
       "'SOCY Major Requirements' / Benchmark 1) lists only 'MATH107, 120 [113], 140 [115] or STAT100+' -- " +
-      "MATH111 is absent from the department page. The department page wins: encoded without MATH111.",
+      "MATH111 is absent from the checklist, but the checklist (dated 2024) is older than the 2026-27 catalog, so the catalog is followed: MATH111 is accepted (main session, 2026-09-28).",
     "The 'Select two 400 level SOCY Research Courses' requirement (catalog footnote 2 / checklist's " +
       "'400 Level SOCY Research Courses of Choice') references 'a list maintained by the Sociology " +
       "Undergraduate Advising Office' that is not included in either source. Approximated with a " +
@@ -52,8 +52,8 @@ export const socyMajor: Program = {
     {
       kind: "course",
       id: "gateway-math",
-      name: "Gateway Math (MATH107, MATH120, MATH140, or STAT100)",
-      options: ["MATH107", "MATH120", "MATH140", "STAT100"],
+      name: "Gateway Math (MATH107, MATH111, MATH120, MATH140, or STAT100)",
+      options: ["MATH107", "MATH111", "MATH120", "MATH140", "STAT100"],
     },
     { kind: "course", id: "socy100", name: "Introduction to Sociology", options: ["SOCY100"] },
     { kind: "course", id: "socy201", name: "Introductory Statistics for Sociology", options: ["SOCY201"] },
