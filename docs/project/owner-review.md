@@ -427,3 +427,11 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Music and Culture (`musc-minor-culture`): the department page is only a summary (five academic courses, four ensemble semesters); encoded from the catalog. The 2xx list is closed to the five named courses (other courses need Ethnomusicology Coordinator approval), the three 400-level courses accept any MUSC 400-499, and the MUSC438 area-studies minimum lists the catalog's recent letters only (other topics may count with approval).
 - Music and Culture: "ensembles from at least two culture areas", "no course may count toward another minor", and the minor GPA are manual notes. The six-credit cap on major overlap is encoded.
 - Music Performance (`musc-minor-performance`): audition and School of Music application are not encodable; the "approved large ensembles" list is not published, so MUSC129/229/329 are all accepted. No sharing cap is stated in either source, so none is set.
+
+## `feat/minors-sllc-rom` (2026-09-28): minors French Studies, Italian Language and Culture, Portuguese and Brazilian Studies; all sample plans constructed, `official: false`
+
+- All three (`fren-minor`, `ital-minor`, `port-minor`): the department pages fetched (sllc.umd.edu/french, /italian, /fields/portuguese) are program homepages with no requirements, so department page not checked; encoded from the catalog. No sharing caps stated, none set.
+- French Studies: the catalog "select three" table is garbled; read as three courses (21 credits total) with one required 4xx-level FREN. The sources name no 4xx FREN course, so the sample plan FREN401 is a placeholder number.
+- Italian: the extra course is accepted as any ITAL 300-499; "taught in Italian" is a manual note. ITAL203 is a prerequisite, not encoded.
+- Portuguese: the catalog list has untitled rows (PORT223, PORT224); all 22 listed courses form one pool. The "6 credits taught in Portuguese" rule is a manual note; the 9 upper-level credits are an overlay.
+- All three: minor GPA 2.0, transfer/study-abroad credit caps and native-speaker substitutions are manual notes.
