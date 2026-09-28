@@ -1,0 +1,22 @@
+{
+  "programId": "gers-major",
+  "source": "https://drive.google.com/uc?export=download&id=1hDoLft_mRqAwKEzh2voKvNnt32zj761n#German-Studies",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities official four-year academic plan for German Studies. The PDF-to-text conversion of the term grid is garbled (a per-benchmark sidebar and the Fall/Spring columns are interleaved on each line), but reading it as 3 columns (sidebar, Fall, Spring) recovers exactly 12 GERS slots -- 3 core, 2 Language-area, 2 Literature-area, 2 Culture-area, 3 elective ('Additional German') -- in an order matching the plan's own 'Major Requirements' legend, with no leftovers. Exact term placement below is reconstructed from that column reading, not read verbatim -- flagged in docs/project/owner-review.md.",
+    "Year 1 has no major courses: GERS204 requires GERS103 and GERS203 (or equivalent) as prerequisites, which are the pre-major language sequence, not part of the major's own 36 credits, so Gen Ed and that prerequisite sequence are left out per the pattern used by other programs' sample plans (only the major is audited).",
+    "The 3 'GERS Elective 2xx-4xx' slots filled with GERS255, GERS339, and GERS385 (all named directly in the catalog's own elective-course list).",
+    "The 2 'GERS Language 3xx-4xx' slots filled with GERS315 and GERS402 (named directly in the catalog's Area I language-course list).",
+    "The 2 'GERS Literature 3xx-4xx' slots filled with GERS320 and GERS322 (named directly in the catalog's Area II literature-course list).",
+    "The 2 'GERS Culture 3xx-4xx' slots filled with GERS356 and GERS441 (named directly in the catalog's Area III culture-course list)."
+  ],
+  "terms": [
+    { "term": "Year 2 Fall", "courses": ["GERS204"] },
+    { "term": "Year 2 Spring", "courses": ["GERS301", "GERS255"] },
+    { "term": "Year 3 Fall", "courses": ["GERS302", "GERS339"] },
+    { "term": "Year 3 Spring", "courses": ["GERS320", "GERS356"] },
+    { "term": "Year 4 Fall", "courses": ["GERS315", "GERS441"] },
+    { "term": "Year 4 Spring", "courses": ["GERS402", "GERS322", "GERS385"] }
+  ]
+}
