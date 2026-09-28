@@ -1,11 +1,12 @@
-// Mathematics Minor and Actuarial Mathematics Minor, 2026–27 UMD Academic Catalog.
-// Sources: academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/mathematics/mathematics-minor/
-// and .../mathematics/actuarial-mathematics-minor/ (fetched 2026-09-27); Department of Mathematics,
-// https://www-math.umd.edu/undergraduate/math-minors.html (fetched 2026-09-27; covers both minors,
-// plus the Statistics minor). Owner ruling (docs/project/rulings.md): where the department page and
-// the catalog disagree, follow the department page; each such difference is recorded below citing
-// both. Neither minor has an official published sample plan (built from the requirements below;
-// see docs/project/owner-review.md).
+// Mathematics Minor, Actuarial Mathematics Minor, and Statistics Minor, 2026–27 UMD Academic
+// Catalog.
+// Sources: academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/mathematics/mathematics-minor/,
+// .../mathematics/actuarial-mathematics-minor/, and .../mathematics/statistics-minor/ (fetched
+// 2026-09-27); Department of Mathematics, https://www-math.umd.edu/undergraduate/math-minors.html
+// (fetched 2026-09-27; covers all three). Owner ruling (docs/project/rulings.md): where the
+// department page and the catalog disagree, follow the department page; each such difference is
+// recorded below citing both. None of the three minors has an official published sample plan
+// (built from the requirements below; see docs/project/owner-review.md).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
 import type { Program } from "../src/audit.ts";
@@ -70,5 +71,44 @@ export const mathMinorActuarial: Program = {
     },
     { kind: "course", id: "linalg", name: "Linear Algebra", options: ["MATH461", "MATH240"] },
     { kind: "course", id: "actuarial", name: "Actuarial Mathematics", options: ["STAT470"] },
+  ],
+};
+
+export const statisticsMinor: Program = {
+  id: "stat-minor",
+  name: "Statistics Minor",
+  catalogYear: "2026-27",
+  source: SOURCE_MATH_MINORS,
+  minGrade: "C-",
+  verified: false,
+  maxSharedWith: [{ courses: 2 }],
+  reviewNotes: [
+    "Department-vs-catalog difference (owner ruling: follow the department page): the catalog's calculus requirement is 'MATH241 or MATH340'; the department's minors page states it plainly as 'Math 241' with no honors alternative, the same omission as the Mathematics and Actuarial Mathematics minors above. MATH340 is dropped.",
+    "Both sources agree on the rest: one probability/statistics pair (STAT400+401, STAT410+420, or STAT410+401), STAT430, and one more elective (a third pair course if not already taken, or STAT422/426/440/470/MATH424). The elective's 'third course from the pairs' option is encoded by including all four pair course codes (STAT400/401/410/420) in the elective's own option list -- the audit's default one-requirement-per-course behavior means a pair-course already used for probStatPair can't also satisfy the elective, but an extra one beyond the pair (e.g. a student who took all of STAT400/401/410) correctly can.",
+    "'Not open to Mathematics majors': an eligibility gate, not enforced (no declared-major concept in the engine).",
+    "'A student may use a maximum of 2 courses to satisfy the requirements of both a major and the minor' -> maxSharedWith: [{ courses: 2 }].",
+    "'At least a C- (1.7) in each minor course and an overall minor GPA of 2.0': the C- floor is the Program's minGrade; the 2.0 minor GPA is a manual check (no GPA-average concept).",
+    "'No more than one 400-level course, and no more than 2 courses total, may be taken elsewhere': a transfer/residency rule, not encoded.",
+  ],
+  requirements: [
+    { kind: "course", id: "calc3", name: "Calculus III", options: ["MATH241"] },
+    {
+      kind: "sets",
+      id: "probStat",
+      name: "Probability and statistics pair",
+      options: [
+        ["STAT400", "STAT401"],
+        ["STAT410", "STAT420"],
+        ["STAT410", "STAT401"],
+      ],
+    },
+    { kind: "course", id: "computing", name: "Introduction to Statistical Computing with SAS", options: ["STAT430"] },
+    {
+      kind: "choose",
+      id: "elective",
+      name: "Elective",
+      count: 1,
+      from: { courses: ["STAT400", "STAT401", "STAT410", "STAT420", "STAT422", "STAT426", "STAT440", "STAT470", "MATH424"] },
+    },
   ],
 };

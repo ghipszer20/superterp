@@ -1,13 +1,14 @@
-// Atmospheric Chemistry Minor, Atmospheric Sciences Minor, and Climate Change Fluency Minor,
-// 2026–27 UMD Academic Catalog (all Department of Atmospheric & Oceanic Science).
+// Atmospheric Chemistry Minor, Atmospheric Sciences Minor, Climate Change Fluency Minor, and
+// Meteorology Minor, 2026–27 UMD Academic Catalog (all Department of Atmospheric & Oceanic
+// Science).
 // Sources: academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/atmospheric-oceanic-science/
-// atmospheric-chemistry-minor/, atmospheric-sciences-minor/, and climate-change-fluency-minor/
-// (fetched 2026-09-27); Department of Atmospheric & Oceanic Science,
-// https://aosc.umd.edu/undergraduate/minor (fetched 2026-09-27; covers the Chemistry and Sciences
-// minors, not Climate Change Fluency -- no separate department page for that one was found, see
-// docs/project/owner-review.md). Owner ruling (docs/project/rulings.md): where the department page
-// and the catalog disagree, follow the department page. No official published sample plans (built
-// from the requirements below; see docs/project/owner-review.md).
+// atmospheric-chemistry-minor/, atmospheric-sciences-minor/, climate-change-fluency-minor/, and
+// meteorology-minor/ (fetched 2026-09-27); Department of Atmospheric & Oceanic Science,
+// https://aosc.umd.edu/undergraduate/minor (fetched 2026-09-27; covers the Chemistry, Sciences,
+// and Meteorology minors, not Climate Change Fluency -- no separate department page for that one
+// was found, see docs/project/owner-review.md). Owner ruling (docs/project/rulings.md): where the
+// department page and the catalog disagree, follow the department page. No official published
+// sample plans (built from the requirements below; see docs/project/owner-review.md).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
 import type { Program } from "../src/audit.ts";
@@ -132,6 +133,40 @@ export const aoscMinorClimateFluency: Program = {
           "GEOG440",
         ],
       },
+    },
+  ],
+};
+
+export const aoscMinorMeteorology: Program = {
+  id: "aosc-minor-meteorology",
+  name: "Meteorology Minor",
+  catalogYear: "2026-27",
+  source:
+    "UMD Academic Catalog 2026–27, Meteorology Minor (catalog-generated PDF, dated 2026-08-21); " +
+    "Department of Atmospheric & Oceanic Science, https://aosc.umd.edu/undergraduate/minor (fetched 2026-09-27)",
+  minGrade: "C-",
+  verified: false,
+  reviewNotes: [
+    "Both sources agree exactly: 2 electives (AOSC123, AOSC200, or any 400-level AOSC course), AOSC400 + AOSC401 required, 1 additional elective from any 400-level AOSC course or GEOL437/GEOL452/GEOG472.",
+    "The department's general minor page adds two more ineligible groups beyond the catalog's 'not open to AOSC majors' -- 'physical sciences majors with a concentration in meteorology' and 'physics majors with a concentration in meteorology physics' [manual]: eligibility gates, not enforced (no declared-major/concentration concept in the engine).",
+    "Neither source states a sharing cap with another program; none is set.",
+  ],
+  requirements: [
+    {
+      kind: "choose",
+      id: "generalElectives",
+      name: "General electives (AOSC123, AOSC200, or a 400-level AOSC course)",
+      count: 2,
+      from: { courses: ["AOSC123", "AOSC200"], departments: ["AOSC"], minNumber: 400, maxNumber: 499 },
+    },
+    { kind: "course", id: "physicalMet", name: "Physical Meteorology", options: ["AOSC400"] },
+    { kind: "course", id: "climateDynamics", name: "Climate Dynamics and Earth System Science", options: ["AOSC401"] },
+    {
+      kind: "choose",
+      id: "additional",
+      name: "Additional elective",
+      count: 1,
+      from: { courses: ["GEOL437", "GEOL452", "GEOG472"], departments: ["AOSC"], minNumber: 400, maxNumber: 499 },
     },
   ],
 };

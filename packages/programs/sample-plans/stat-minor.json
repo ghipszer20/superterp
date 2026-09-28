@@ -1,0 +1,16 @@
+{
+  "programId": "stat-minor",
+  "source": "https://www-math.umd.edu/undergraduate/math-minors.html",
+  "fetched": "2026-09-27",
+  "official": false,
+  "notes": [
+    "UMD publishes no sample plan for this minor. Built from the requirements: MATH241, the STAT400+STAT401 pair, STAT430, and STAT422 as the elective (distinct from the pair courses). Flagged in docs/project/owner-review.md."
+  ],
+  "credits": { "MATH241": 4 },
+  "terms": [
+    { "term": "Term 1", "courses": ["MATH241"] },
+    { "term": "Term 2", "courses": ["STAT400"] },
+    { "term": "Term 3", "courses": ["STAT401", "STAT430"] },
+    { "term": "Term 4", "courses": ["STAT422"] }
+  ]
+}
