@@ -5,9 +5,10 @@
   "official": false,
   "notes": [
     "No usable 4-year/2-year plan exists: the Feller Center's 'BS PSYC - Two Year Plan' PDF (linked from the checklist) failed to convert. This plan is constructed from the department's own requirements page and the checklist's requirement rows instead (docs/project/owner-review.md flags this). Gen Ed courses, and the B.S.'s own unencoded Additional Math and Science Requirement (no approved course list in the fetched sources -- see psyc-major-bs-2026-27.ts's reviewNotes), are left out; only the checkable major requirements are audited.",
-    "Multicultural course filled with PSYC336 (Psychology of Women), one of the department page's own named multicultural options (a different pick than the B.A. plan's PSYC354, to keep the two constructed plans distinct).",
+    "Multicultural course filled with PSYC336 (Psychology of Women), one of the department page's own named multicultural options (a different pick than the B.A. plan's PSYC354, to keep the two constructed plans distinct); PSYC336 is also Theme II (Mental Health & Interventions) per the department's PSYC Courses & PSYC Syllabi page.",
     "PSYC 400-Level Non-Lab slots filled with PSYC404 and PSYC406; the 400-Level Lab slot filled with PSYC420 -- real, currently-approved PSYC courses (from the builder brief's approved-course list), chosen only to fill the count/credit requirement since neither source names specific 400-level courses. PSYC420 is treated as a 4-credit lab course here (see credits map); this hasn't been verified against a live course catalog and should be confirmed or substituted with an advisor's actual picks.",
-    "The remaining PSYC credits needed to reach the major's 35-credit/11-course total (psyc-total-credits) -- standing in for the two un-enumerable Thematic Courses areas' remaining courses -- are filled with PSYC307, PSYC310, PSYC318 and PSYC319, real PSYC courses from the same approved list, picked only to reach the credit total and not for topical/thematic fit.",
+    "Thematic Courses: PSYC307, PSYC310, PSYC404 and PSYC406 satisfy Theme I (Mind, Brain & Behavior); PSYC336 and PSYC344 satisfy Theme II (Mental Health & Interventions); PSYC420 and PSYC361 satisfy Theme III (Social, Developmental & Organizational Studies) -- all per the department's PSYC Courses & PSYC Syllabi page.",
+    "The plan previously filled remaining credits with PSYC318 and PSYC319 to reach the major's 35-credit/11-course total; both were dropped because they are not current PSYC course numbers in the fetched sources (the courses page shows the department renumbered the old 318D/319D special topics as PSYC381/PSYC391). Replaced with PSYC344 and PSYC361, real PSYC courses chosen for Theme II/III coverage, which also bring the total back to exactly 35 credits / 11 courses.",
     "Math gateway filled with MATH140; MATH120 would satisfy the requirement equally."
   ],
   "credits": { "PSYC300": 4, "BSCI170": 4, "MATH140": 4, "PSYC420": 4 },
@@ -16,9 +17,9 @@
     { "term": "Freshman Spring", "courses": ["BSCI170", "PSYC200"] },
     { "term": "Sophomore Fall", "courses": ["PSYC300", "PSYC307"] },
     { "term": "Sophomore Spring", "courses": ["PSYC310", "PSYC336"] },
-    { "term": "Junior Fall", "courses": ["PSYC404", "PSYC318"] },
+    { "term": "Junior Fall", "courses": ["PSYC404", "PSYC344"] },
     { "term": "Junior Spring", "courses": ["PSYC406"] },
-    { "term": "Senior Fall", "courses": ["PSYC319"] },
+    { "term": "Senior Fall", "courses": ["PSYC361"] },
     { "term": "Senior Spring", "courses": ["PSYC420"] }
   ]
 }
