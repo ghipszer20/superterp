@@ -7,6 +7,9 @@ import { describe, expect, it } from "vitest";
 import { auditProgram, type Program, type StudentCourse } from "@superterp/audit";
 import { deptHist } from "../special-programs/dept-hist-2026-27.ts";
 import { deptMath } from "../special-programs/dept-math-2026-27.ts";
+import { deptCcjs } from "../special-programs/dept-ccjs-2026-27.ts";
+import { deptHesp } from "../special-programs/dept-hesp-2026-27.ts";
+import { deptNeur } from "../special-programs/dept-neur-2026-27.ts";
 
 const c = (id: string, credits = 3, grade = "A"): StudentCourse => ({ id, credits, status: "completed", grade });
 
@@ -75,5 +78,57 @@ describe("Departmental Honors: Mathematics (2026-27)", () => {
   it("doesn't accept two ordinary breadth-list courses as the non-thesis depth (needs a 600-level course)", async () => {
     const notDepth = [c("MATH403"), c("MATH432"), c("MATH446"), c("MATH407")];
     expect((await statuses(deptMath, notDepth)).depth).not.toBe("satisfied");
+  });
+});
+
+describe("Departmental Honors: Criminology & Criminal Justice (2026-27)", () => {
+  const plan = [c("CCJS388H"), c("CCJS389H"), c("CCJS489H", 3), c("CCJS489H", 3)];
+
+  it("passes a complete plan", async () => expectAllSatisfied(deptCcjs, plan));
+
+  it("needs both semesters of CCJS489H (6 credits), not one", async () => {
+    const short = [c("CCJS388H"), c("CCJS389H"), c("CCJS489H", 3)];
+    expect((await statuses(deptCcjs, short)).ccjs489h).toBe("partial");
+  });
+
+  it("doesn't count a grade below the program's B minimum", async () => {
+    const lowGrade = [c("CCJS388H", 3, "C"), c("CCJS389H"), c("CCJS489H", 3), c("CCJS489H", 3)];
+    expect((await statuses(deptCcjs, lowGrade)).ccjs388h).toBe("missing");
+  });
+});
+
+describe("Departmental Honors: Hearing & Speech Sciences (2026-27)", () => {
+  const plan = [c("HESP468H", 3), c("HESP499H", 3), c("HESP469A", 3), c("HESP469B", 3), c("PSYC200")];
+
+  it("passes a complete plan", async () => expectAllSatisfied(deptHesp, plan));
+
+  it("misses the thesis writing course when HESP469B is dropped", async () => {
+    expect((await statuses(deptHesp, replace(plan, "HESP469B", null))).hesp469b).toBe("missing");
+  });
+
+  it("accepts any of the three approved statistics courses", async () => {
+    const withEdms = replace(plan, "PSYC200", c("EDMS451"));
+    await expectAllSatisfied(deptHesp, withEdms);
+  });
+
+  it("needs 3 credits of the honors seminar, not 1", async () => {
+    const short = replace(plan, "HESP468H", c("HESP468H", 1));
+    expect((await statuses(deptHesp, short)).hesp468h).toBe("partial");
+  });
+});
+
+describe("Departmental Honors: Neuroscience (2026-27)", () => {
+  const plan = [c("NEUR379H", 3), c("NEUR379H", 3), c("NEUR479H", 3), c("NEUR398H")];
+
+  it("passes a complete plan", async () => expectAllSatisfied(deptNeur, plan));
+
+  it("needs 9 total research credits, not 6", async () => {
+    const short = [c("NEUR379H", 3), c("NEUR479H", 3), c("NEUR398H")];
+    expect((await statuses(deptNeur, short)).neurResearch).toBe("partial");
+  });
+
+  it("doesn't count non-honors NEUR379/479 research credits", async () => {
+    const wrong = [c("NEUR379", 3), c("NEUR379", 3), c("NEUR479", 3), c("NEUR398H")];
+    expect((await statuses(deptNeur, wrong)).neurResearch).toBe("missing");
   });
 });
