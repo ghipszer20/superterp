@@ -2,20 +2,20 @@
 # Music Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/music/music-major/
 Source: https://music.umd.edu/admissions/undergraduate
-Source: https://drive.google.com/uc?export=download&id=1gsAwruL7JiOj3BHkKkix16YOPS4NhbMT#Music-Liberal-Arts---Choral
-Source: https://drive.google.com/uc?export=download&id=1KG9zVt2VyHnytYFlROSaHHcsPHenO7lF#Music-Liberal-Arts---Instrumental
+Source: https://drive.google.com/uc?export=download&id=1gsAwruL7JiOj3BHkKkix16YOPS4NhbMT#Music-Education---Choral
+Source: https://drive.google.com/uc?export=download&id=1KG9zVt2VyHnytYFlROSaHHcsPHenO7lF#Music-Education---Instrumental
 Source: https://drive.google.com/uc?export=download&id=1g8J24Bz68wwqpZDqN_O19lIzJwle4FkX#Music-Liberal-Arts---Jazz-Studies
 Source: https://drive.google.com/uc?export=download&id=1w2YlzMQT2kVfHveaxuIsWW0K2WCqseIL#Music-Liberal-Arts---Piano
-Source: https://drive.google.com/uc?export=download&id=1YMxqNvmPxryb9_R0765_pYGFvMeSnxpS#Music-Performance---Strings
-Source: https://drive.google.com/uc?export=download&id=1K6l4dzfqSSkBtQ18uhr6HpPY__Xjw1mP#Music-Performance---Voice
-Source: https://drive.google.com/uc?export=download&id=1DDiNX6QWhGPlxsxE_YJGaGBlvgbAQms2#Music-Performance---Wind-&-Percussion
+Source: https://drive.google.com/uc?export=download&id=1YMxqNvmPxryb9_R0765_pYGFvMeSnxpS#Music-Liberal-Arts---Strings
+Source: https://drive.google.com/uc?export=download&id=1K6l4dzfqSSkBtQ18uhr6HpPY__Xjw1mP#Music-Liberal-Arts---Voice
+Source: https://drive.google.com/uc?export=download&id=1DDiNX6QWhGPlxsxE_YJGaGBlvgbAQms2#Music-Liberal-Arts---Wind-&-Percussion
 Source: https://drive.google.com/uc?export=download&id=1du3_qWLtmXz5ISfDcZPZqbfk3j_i8VU-#Music-Performance---Composition
 Source: https://drive.google.com/uc?export=download&id=1nlVRA54LPKzrofWqjOwEozZ-NI3Aajnq#Music-Performance---Jazz
 Source: https://drive.google.com/uc?export=download&id=1ynFMU1Wj48gXVxKtkrrReC2KKerzQDCO#Music-Performance---Piano
 Source: https://drive.google.com/uc?export=download&id=1KKQburfg7BLqxm2EnshvLLnm0SckYw0i#Music-Performance---Strings
-Source: https://drive.google.com/uc?export=download&id=1JxSZQ1DN7HKJUNvUtr0foVUAm-Rm-pmn#Theory
-Source: https://drive.google.com/uc?export=download&id=1HGZC7G4ULXXPlXEB6QrN3Fp0RJ5-ZpWL#Voice
-Source: https://drive.google.com/uc?export=download&id=1pg0VkRRx43VVi85Y8_xmmvXXM5XpOumi#Wind-&-Percussion
+Source: https://drive.google.com/uc?export=download&id=1JxSZQ1DN7HKJUNvUtr0foVUAm-Rm-pmn#Music-Performance---Theory
+Source: https://drive.google.com/uc?export=download&id=1HGZC7G4ULXXPlXEB6QrN3Fp0RJ5-ZpWL#Music-Performance---Voice
+Source: https://drive.google.com/uc?export=download&id=1pg0VkRRx43VVi85Y8_xmmvXXM5XpOumi#Music-Performance---Wind-&-Percussion
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -255,7 +255,7 @@ Log In
 Privacy Policy
 Web Accessibility
 
-## Sample plan (https://drive.google.com/uc?export=download&id=1gsAwruL7JiOj3BHkKkix16YOPS4NhbMT#Music-Liberal-Arts---Choral)
+## Sample plan (https://drive.google.com/uc?export=download&id=1gsAwruL7JiOj3BHkKkix16YOPS4NhbMT#Music-Education---Choral)
 
 Music - Bachelor of Music Educaon - Choral/General Four Year Academic Plan
 Year 1
@@ -398,7 +398,7 @@ At least 30 credits must be earned at UMD
 ARHU 158 or equivalent (if applicable) MUED 186
 Some courses for the major may also count toward General Educaon requirements.
 
-## Sample plan (https://drive.google.com/uc?export=download&id=1KG9zVt2VyHnytYFlROSaHHcsPHenO7lF#Music-Liberal-Arts---Instrumental)
+## Sample plan (https://drive.google.com/uc?export=download&id=1KG9zVt2VyHnytYFlROSaHHcsPHenO7lF#Music-Education---Instrumental)
 
 Music - Bachelor of Music Educaon - Instrumental Four Year Academic Plan
 Year 1
@@ -679,7 +679,7 @@ Global Engagement
 Students must take four semesters of MUSC 099.
 Some courses for the major may also count toward General Educaon requirements.
 
-## Sample plan (https://drive.google.com/uc?export=download&id=1YMxqNvmPxryb9_R0765_pYGFvMeSnxpS#Music-Performance---Strings)
+## Sample plan (https://drive.google.com/uc?export=download&id=1YMxqNvmPxryb9_R0765_pYGFvMeSnxpS#Music-Liberal-Arts---Strings)
 
 Music - Bachelor of Arts - Strings Four Year Academic Plan
 Year 1
@@ -795,7 +795,7 @@ Global Engagement
 Students must take four semesters of MUSC 099.
 Some courses for the major may also count toward General Educaon requirements.
 
-## Sample plan (https://drive.google.com/uc?export=download&id=1K6l4dzfqSSkBtQ18uhr6HpPY__Xjw1mP#Music-Performance---Voice)
+## Sample plan (https://drive.google.com/uc?export=download&id=1K6l4dzfqSSkBtQ18uhr6HpPY__Xjw1mP#Music-Liberal-Arts---Voice)
 
 Music - Bachelor of Arts - Voice Four Year Academic Plan
 Year 1
@@ -911,7 +911,7 @@ Global Engagement
 Students must take four semesters of MUSC 099.
 Some courses for the major may also count toward General Educaon requirements.
 
-## Sample plan (https://drive.google.com/uc?export=download&id=1DDiNX6QWhGPlxsxE_YJGaGBlvgbAQms2#Music-Performance---Wind-&-Percussion)
+## Sample plan (https://drive.google.com/uc?export=download&id=1DDiNX6QWhGPlxsxE_YJGaGBlvgbAQms2#Music-Liberal-Arts---Wind-&-Percussion)
 
 Music - Bachelor of Arts - Winds and Percussion Four Year Academic Plan
 Year 1
@@ -1429,7 +1429,7 @@ At least 30 credits must be earned at UMD
 ARHU 158 or equivalent (if applicable)
 Some courses for the major may also count toward General Educaon requirements.
 
-## Sample plan (https://drive.google.com/uc?export=download&id=1JxSZQ1DN7HKJUNvUtr0foVUAm-Rm-pmn#Theory)
+## Sample plan (https://drive.google.com/uc?export=download&id=1JxSZQ1DN7HKJUNvUtr0foVUAm-Rm-pmn#Music-Performance---Theory)
 
 Music - Bachelor of Music - Theory Four Year Academic Plan
 Year 1
@@ -1547,7 +1547,7 @@ At least 30 credits must be earned at UMD
 ARHU 158 or equivalent (if applicable)
 Some courses for the major may also count toward General Educaon requirements.
 
-## Sample plan (https://drive.google.com/uc?export=download&id=1HGZC7G4ULXXPlXEB6QrN3Fp0RJ5-ZpWL#Voice)
+## Sample plan (https://drive.google.com/uc?export=download&id=1HGZC7G4ULXXPlXEB6QrN3Fp0RJ5-ZpWL#Music-Performance---Voice)
 
 Music - Bachelor of Music - Voice Four Year Academic Plan
 Year 1
@@ -1681,7 +1681,7 @@ ARHU 158 or equivalent (if applicable)
 Some courses for the major may also count toward General Educaon
 requirements.
 
-## Sample plan (https://drive.google.com/uc?export=download&id=1pg0VkRRx43VVi85Y8_xmmvXXM5XpOumi#Wind-&-Percussion)
+## Sample plan (https://drive.google.com/uc?export=download&id=1pg0VkRRx43VVi85Y8_xmmvXXM5XpOumi#Music-Performance---Wind-&-Percussion)
 
 Music - Bachelor of Music - Winds and Percussion Four Year Academic Plan
 Year 1

@@ -1245,7 +1245,7 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/jewish-studies/jewish-studies-major/",
     "department": [],
     "samplePlan": [
-      "https://drive.google.com/uc?export=download&id=1PDQm3Yaw9ilNtPnjFPwD6U-3It5SrZ32#Music-Education---Jewish-Studies"
+      "https://drive.google.com/uc?export=download&id=1PDQm3Yaw9ilNtPnjFPwD6U-3It5SrZ32#Jewish-Studies"
     ]
   },
   "jewish-studies-minor": {
@@ -1386,8 +1386,8 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/linguistics/linguistics-major/",
     "department": [],
     "samplePlan": [
-      "https://drive.google.com/uc?export=download&id=1N4Sf-yodBQvBImqf8enLGN1g3ookBpCy#Music-Education---Language",
-      "https://drive.google.com/uc?export=download&id=1KT5gd9SfMR4YB1Kh_S3P9-yCgpQmBBRG#Music-Liberal-Arts---Grammars-and-Cognition"
+      "https://drive.google.com/uc?export=download&id=1N4Sf-yodBQvBImqf8enLGN1g3ookBpCy#Language",
+      "https://drive.google.com/uc?export=download&id=1KT5gd9SfMR4YB1Kh_S3P9-yCgpQmBBRG#Grammars-and-Cognition"
     ]
   },
   "linguistics-minor": {
@@ -1553,20 +1553,20 @@
       "https://music.umd.edu/admissions/undergraduate"
     ],
     "samplePlan": [
-      "https://drive.google.com/uc?export=download&id=1gsAwruL7JiOj3BHkKkix16YOPS4NhbMT#Music-Liberal-Arts---Choral",
-      "https://drive.google.com/uc?export=download&id=1KG9zVt2VyHnytYFlROSaHHcsPHenO7lF#Music-Liberal-Arts---Instrumental",
+      "https://drive.google.com/uc?export=download&id=1gsAwruL7JiOj3BHkKkix16YOPS4NhbMT#Music-Education---Choral",
+      "https://drive.google.com/uc?export=download&id=1KG9zVt2VyHnytYFlROSaHHcsPHenO7lF#Music-Education---Instrumental",
       "https://drive.google.com/uc?export=download&id=1g8J24Bz68wwqpZDqN_O19lIzJwle4FkX#Music-Liberal-Arts---Jazz-Studies",
       "https://drive.google.com/uc?export=download&id=1w2YlzMQT2kVfHveaxuIsWW0K2WCqseIL#Music-Liberal-Arts---Piano",
-      "https://drive.google.com/uc?export=download&id=1YMxqNvmPxryb9_R0765_pYGFvMeSnxpS#Music-Performance---Strings",
-      "https://drive.google.com/uc?export=download&id=1K6l4dzfqSSkBtQ18uhr6HpPY__Xjw1mP#Music-Performance---Voice",
-      "https://drive.google.com/uc?export=download&id=1DDiNX6QWhGPlxsxE_YJGaGBlvgbAQms2#Music-Performance---Wind-&-Percussion",
+      "https://drive.google.com/uc?export=download&id=1YMxqNvmPxryb9_R0765_pYGFvMeSnxpS#Music-Liberal-Arts---Strings",
+      "https://drive.google.com/uc?export=download&id=1K6l4dzfqSSkBtQ18uhr6HpPY__Xjw1mP#Music-Liberal-Arts---Voice",
+      "https://drive.google.com/uc?export=download&id=1DDiNX6QWhGPlxsxE_YJGaGBlvgbAQms2#Music-Liberal-Arts---Wind-&-Percussion",
       "https://drive.google.com/uc?export=download&id=1du3_qWLtmXz5ISfDcZPZqbfk3j_i8VU-#Music-Performance---Composition",
       "https://drive.google.com/uc?export=download&id=1nlVRA54LPKzrofWqjOwEozZ-NI3Aajnq#Music-Performance---Jazz",
       "https://drive.google.com/uc?export=download&id=1ynFMU1Wj48gXVxKtkrrReC2KKerzQDCO#Music-Performance---Piano",
       "https://drive.google.com/uc?export=download&id=1KKQburfg7BLqxm2EnshvLLnm0SckYw0i#Music-Performance---Strings",
-      "https://drive.google.com/uc?export=download&id=1JxSZQ1DN7HKJUNvUtr0foVUAm-Rm-pmn#Theory",
-      "https://drive.google.com/uc?export=download&id=1HGZC7G4ULXXPlXEB6QrN3Fp0RJ5-ZpWL#Voice",
-      "https://drive.google.com/uc?export=download&id=1pg0VkRRx43VVi85Y8_xmmvXXM5XpOumi#Wind-&-Percussion"
+      "https://drive.google.com/uc?export=download&id=1JxSZQ1DN7HKJUNvUtr0foVUAm-Rm-pmn#Music-Performance---Theory",
+      "https://drive.google.com/uc?export=download&id=1HGZC7G4ULXXPlXEB6QrN3Fp0RJ5-ZpWL#Music-Performance---Voice",
+      "https://drive.google.com/uc?export=download&id=1pg0VkRRx43VVi85Y8_xmmvXXM5XpOumi#Music-Performance---Wind-&-Percussion"
     ]
   },
   "music-performance-minor": {
