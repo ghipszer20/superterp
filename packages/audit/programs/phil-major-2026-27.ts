@@ -20,6 +20,7 @@ export const philMajor: Program = {
   minGrade: "C-",
   verified: false,
   reviewNotes: [
+    "Main session, 2026-09-28: requirements restructured to one 12-course PHIL total plus overlays for the level and topic minimums. The logic overlay uses PHIL170/171/470 (logic courses in the Academic Catalog list; the catalog names none, flagged). The notes below that describe 100/200/300 bands refer to the builder's earlier encoding.",
     "12 PHIL courses (36 credits) distributed per the catalog: one in logic (any level); two or more each " +
       "(2xx-level or above) in history of pre-twentieth-century philosophy, value theory, and metaphysics/" +
       "epistemology (>=6 combined); and 'five additional courses in the major' (the department plan's own " +
@@ -66,31 +67,49 @@ export const philMajor: Program = {
       "300-400 level', '12 upper level major credits at UMD'); and the 120-credit graduation minimum.",
   ],
   requirements: [
+    // Main session, 2026-09-28: the catalog is "12 PHIL courses distributed as follows", so one
+    // consuming 12-course PHIL requirement carries the total and each distribution rule is an
+    // overlay (checked, not consumed). This replaces the builder's disjoint 100/200/300 bands,
+    // which would have failed real students (e.g. a 4xx metaphysics course counting as a topic).
+    {
+      kind: "choose",
+      id: "phil-courses",
+      name: "12 courses in philosophy (36 credits)",
+      count: 12,
+      from: { departments: ["PHIL"], minNumber: 100, maxNumber: 499 },
+    },
+    {
+      kind: "choose",
+      id: "phil-3xx",
+      name: "Four courses at 3xx-level or above",
+      overlay: true,
+      count: 4,
+      from: { departments: ["PHIL"], minNumber: 300, maxNumber: 499 },
+    },
+    {
+      kind: "choose",
+      id: "phil-4xx",
+      name: "Two courses at 4xx-level or above",
+      overlay: true,
+      count: 2,
+      from: { departments: ["PHIL"], minNumber: 400, maxNumber: 499 },
+    },
     {
       kind: "choose",
       id: "logic",
-      name: "One course in logic (any level; approximated here to PHIL 100-199 -- see reviewNotes)",
+      name: "One course in logic at any level (PHIL170, PHIL171 or PHIL470; see reviewNotes)",
+      overlay: true,
       count: 1,
-      from: { departments: ["PHIL"], minNumber: 100, maxNumber: 199 },
+      from: { courses: ["PHIL170", "PHIL171", "PHIL470"] },
     },
     {
       kind: "choose",
       id: "history-value-metaphysics",
-      name: "Six or more courses at 2xx-level or above combining history of pre-twentieth-century philosophy, " +
-        "value theory (including aesthetics and political philosophy as well as ethics), and metaphysics or " +
-        "epistemology (including philosophy of science, philosophy of mind, and philosophy of religion, as " +
-        "well as metaphysics and theory of knowledge) -- approximated here to PHIL 200-299, see reviewNotes",
+      name: "Six courses at 2xx-level or above: two each in history of pre-twentieth-century philosophy, " +
+        "value theory, and metaphysics or epistemology (the per-area split is not checked; see reviewNotes)",
+      overlay: true,
       count: 6,
-      from: { departments: ["PHIL"], minNumber: 200, maxNumber: 299 },
-    },
-    {
-      kind: "choose",
-      id: "phil-electives",
-      name: "Five additional courses in the major (up to 3 credits may be PHIL386; up to nine credits total " +
-        "from outside PHIL upon departmental approval, not enforced here; approximated here to PHIL 300-499 " +
-        "-- see reviewNotes)",
-      count: 5,
-      from: { departments: ["PHIL"], minNumber: 300, maxNumber: 499 },
+      from: { departments: ["PHIL"], minNumber: 200, maxNumber: 499 },
     },
   ],
 };
