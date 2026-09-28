@@ -1,0 +1,17 @@
+{
+  "programId": "paleobiology-minor",
+  "source": "https://www.geol.umd.edu/undergraduate/Geology_Minors.php",
+  "fetched": "2026-09-27",
+  "official": false,
+  "notes": [
+    "UMD publishes no sample plan for this minor. Built from the requirements: BSCI160+BSCI161 for the fundamental courses, GEOL100+GEOL110 for the geology foundation, GEOL102 for the life-history course, GEOL331 for the upper-level paleobiology requirement, and BSCI334+GEOL437 as the two electives (one Biology, one Geology, though the encoding doesn't enforce that split). Flagged in docs/project/owner-review.md."
+  ],
+  "credits": { "BSCI160": 3, "BSCI161": 1, "GEOL100": 3, "GEOL110": 1, "GEOL102": 4 },
+  "terms": [
+    { "term": "Term 1", "courses": ["BSCI160", "BSCI161"] },
+    { "term": "Term 2", "courses": ["GEOL100", "GEOL110"] },
+    { "term": "Term 3", "courses": ["GEOL102"] },
+    { "term": "Term 4", "courses": ["GEOL331"] },
+    { "term": "Term 5", "courses": ["BSCI334", "GEOL437"] }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "programId": "geol-minor-geophysics",
+  "source": "https://www.geol.umd.edu/undergraduate/Geology_Minors.php",
+  "fetched": "2026-09-27",
+  "official": false,
+  "notes": [
+    "UMD publishes no sample plan for this minor. Built from the requirements: GEOL100+GEOL110 for the foundation, GEOL446+GEOL447 for the two-course core, and GEOL341+GEOL455 as the two additional electives. Flagged in docs/project/owner-review.md."
+  ],
+  "credits": { "GEOL100": 3, "GEOL110": 1 },
+  "terms": [
+    { "term": "Term 1", "courses": ["GEOL100", "GEOL110"] },
+    { "term": "Term 2", "courses": ["GEOL446", "GEOL447"] },
+    { "term": "Term 3", "courses": ["GEOL341", "GEOL455"] }
+  ]
+}
