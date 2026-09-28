@@ -8,7 +8,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 export const geolMajorEarthEnvironmental: Program = {
   id: "geol-major-earth-environmental",
@@ -66,3 +66,5 @@ export const geolMajorEarthEnvironmental: Program = {
     { kind: "sets", id: "physics", name: "Physics sequence", options: [["PHYS161", "PHYS261"], ["PHYS171", "PHYS261"]] },
   ],
 };
+
+export const geolMajorEarthEnvironmentalMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Geology (Earth & Env. Sciences)", major: "geol", track: "Earth and Environmental Sciences", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/geology-major/", department: "https://www.geol.umd.edu/undergraduate/majoreaestrack2308.php" } };

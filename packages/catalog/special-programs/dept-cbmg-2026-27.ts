@@ -1,7 +1,7 @@
 // Departmental Honors: Cell Biology & Molecular Genetics.
 // Source: https://cbmg.umd.edu/education/undergraduate/undergrad-honors/ (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://cbmg.umd.edu/education/undergraduate/undergrad-honors/";
@@ -24,3 +24,5 @@ export const deptCbmg: Program = {
     { kind: "choose", id: "bsci378h", name: "BSCI378H: Honors Seminar (3 credits, 3 semesters)", credits: 3, from: { courses: ["BSCI378H"] } },
   ],
 };
+
+export const deptCbmgMeta: ProgramMeta = { kind: "special", college: "CMNS", sources: { department: "https://cbmg.umd.edu/education/undergraduate/undergrad-honors/" } };

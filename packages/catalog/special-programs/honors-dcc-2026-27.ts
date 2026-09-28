@@ -1,7 +1,7 @@
 // Honors College: Design Cultures & Creativity (DCC).
 // Source: https://dcc.umd.edu/learning/curriculum/ ("Academic Program Requirements"; fetched 2026-09-25). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR, HONORS_CITATION_NOTES } from "./common.ts";
 
 export const SOURCE = "https://dcc.umd.edu/learning/curriculum/";
@@ -31,3 +31,5 @@ export const honorsDcc: Program = {
     { kind: "course", id: "three-credit-option", name: "3-credit option (independent study or DCC abroad)", options: ["HDCC379", "HDCC378"] },
   ],
 };
+
+export const honorsDccMeta: ProgramMeta = { kind: "special", college: "UGST", sources: { department: "https://dcc.umd.edu/learning/curriculum/" } };

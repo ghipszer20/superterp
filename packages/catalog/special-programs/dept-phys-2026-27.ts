@@ -2,7 +2,7 @@
 // Source: https://umdphysics.umd.edu/academics/undergraduate/ugrad-phys-honors.html (fetched 2026-09-26).
 // Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://umdphysics.umd.edu/academics/undergraduate/ugrad-phys-honors.html";
@@ -23,3 +23,5 @@ export const deptPhys: Program = {
     { kind: "choose", id: "research-course", name: "Research course (3 credits)", credits: 3, from: { courses: ["PHYS386", "PHYS389", "PHYS399", "PHYS499"] } },
   ],
 };
+
+export const deptPhysMeta: ProgramMeta = { kind: "special", college: "CMNS", sources: { department: "https://umdphysics.umd.edu/academics/undergraduate/ugrad-phys-honors.html" } };

@@ -7,7 +7,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 // Either BSCI424 (w/Lab, 4cr) or BSCI348J (3cr) satisfies this pool member.
 const MICB_AREA = ["BSCI348M", "BSCI411", "BSCI417", "BSCI422", "BSCI423", "BSCI424", "BSCI348J", "BSCI437", "BSCI464"];
@@ -59,3 +59,5 @@ export const bsciMajorMicb: Program = {
     { kind: "choose", id: "enrichment", name: "Enrichment (3 credits)", credits: 3, from: { departments: ["BSCI", "CHEM", "BCHM"], minNumber: 300, maxNumber: 499 } },
   ],
 };
+
+export const bsciMajorMicbMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Bio Sci (Microbiology)", major: "bsci", track: "Microbiology", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/biological-sciences/", department: "https://bsci.umd.edu/s/MICB-Curriculum-2026.pdf" } };

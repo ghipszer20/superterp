@@ -9,7 +9,7 @@
 // (built from the requirements below; see docs/project/owner-review.md).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 const SOURCE_MATH_MINORS =
   "UMD Academic Catalog 2026–27, Mathematics Minor / Actuarial Mathematics Minor; " +
@@ -112,3 +112,9 @@ export const statisticsMinor: Program = {
     },
   ],
 };
+
+export const mathMinorActuarialMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/mathematics/actuarial-mathematics-minor/", department: "https://www-math.umd.edu/undergraduate/math-minors.html" } };
+
+export const mathMinorMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/mathematics/mathematics-minor/", department: "https://www-math.umd.edu/undergraduate/math-minors.html" } };
+
+export const statisticsMinorMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/mathematics/statistics-minor/", department: "https://www-math.umd.edu/undergraduate/math-minors.html" } };

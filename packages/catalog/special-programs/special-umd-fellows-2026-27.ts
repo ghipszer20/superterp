@@ -3,7 +3,7 @@
 // (the program site fellowsprogram.umd.edu renders its content with JavaScript only).
 // Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/";
@@ -43,3 +43,5 @@ export const umdFellows: Program = {
     { kind: "course", id: "internship", name: "UMD Fellows internship", options: ["FGSM398", "HNUH398P"] },
   ],
 };
+
+export const umdFellowsMeta: ProgramMeta = { kind: "special", college: "UGST", sources: { department: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/" } };

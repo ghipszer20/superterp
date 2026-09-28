@@ -2,7 +2,7 @@
 // Sources: https://eng.umd.edu/women/current-students/communities/flexus and …/virtus
 // (fetched 2026-09-25). Both pages list the same four seminars. Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const FLEXUS_SOURCE = "https://eng.umd.edu/women/current-students/communities/flexus";
@@ -32,3 +32,7 @@ function engineeringLlp(id: string, name: string, source: string, community: str
 
 export const flexus = engineeringLlp("llp-flexus", "Flexus: Women in Engineering", FLEXUS_SOURCE, "Flexus");
 export const virtus = engineeringLlp("llp-virtus", "Virtus: Men in Engineering", VIRTUS_SOURCE, "Virtus");
+
+export const flexusMeta: ProgramMeta = { kind: "special", college: "ENGR", sources: { department: "https://eng.umd.edu/women/current-students/communities/flexus" } };
+
+export const virtusMeta: ProgramMeta = { kind: "special", college: "ENGR", sources: { department: "https://eng.umd.edu/women/current-students/communities/virtus" } };

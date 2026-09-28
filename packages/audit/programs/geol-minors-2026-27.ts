@@ -11,7 +11,7 @@
 // below; see docs/project/owner-review.md).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 const SOURCE_GEOL_MINORS =
   "UMD Academic Catalog 2026–27, Geological, Environmental, and Planetary Sciences minors; " +
@@ -152,3 +152,11 @@ export const geolMinorGeochemistry: Program = {
     },
   ],
 };
+
+export const geolMinorChesapeakeBayMeta: ProgramMeta = { kind: "minor", college: "CMNS", short: "Chesapeake Bay", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/chesapeake-bay-watersheds-water-resources-minor/", department: "https://www.geol.umd.edu/undergraduate/Geology_Minors.php" } };
+
+export const geolMinorEarthHistoryMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/earth-history-minor/", department: "https://www.geol.umd.edu/undergraduate/Geology_Minors.php" } };
+
+export const geolMinorEarthMaterialPropertiesMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/earth-material-properties-minor/", department: "https://www.geol.umd.edu/undergraduate/Geology_Minors.php" } };
+
+export const geolMinorGeochemistryMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/geochemistry-minor/", department: "https://www.geol.umd.edu/undergraduate/Geology_Minors.php" } };

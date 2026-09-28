@@ -8,7 +8,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 export const chemMajorBs: Program = {
   id: "chem-major-bs",
@@ -76,3 +76,5 @@ export const chemMajorBs: Program = {
     },
   ],
 };
+
+export const chemMajorBsMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Chemistry (B.S.)", major: "chem", track: "B.S.", defaultTrack: true, sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/chemistry-biochemistry/chemistry-major/", department: "https://chem.umd.edu/sites/default/files/chemistrybs-checksheet-f26.pdf" } };

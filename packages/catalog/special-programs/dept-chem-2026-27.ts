@@ -2,7 +2,7 @@
 // Source: https://www.chem.umd.edu/undergraduateprogram/current-students/chemistry-biochemistry-honors-program
 // (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://www.chem.umd.edu/undergraduateprogram/current-students/chemistry-biochemistry-honors-program";
@@ -24,3 +24,5 @@ export const deptChem: Program = {
     { kind: "course", id: "chem398", name: "CHEM398: Honors thesis (final semester)", options: ["CHEM398"] },
   ],
 };
+
+export const deptChemMeta: ProgramMeta = { kind: "special", college: "CMNS", sources: { department: "https://www.chem.umd.edu/undergraduateprogram/current-students/chemistry-biochemistry-honors-program" } };

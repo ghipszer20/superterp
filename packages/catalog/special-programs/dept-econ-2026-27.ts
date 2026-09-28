@@ -1,7 +1,7 @@
 // Departmental Honors: Economics.
 // Source: https://www.econ.umd.edu/undergraduate/departmental-honors-program (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://www.econ.umd.edu/undergraduate/departmental-honors-program";
@@ -23,3 +23,5 @@ export const deptEcon: Program = {
     { kind: "course", id: "econ397", name: "ECON397: Honors Thesis", options: ["ECON397"] },
   ],
 };
+
+export const deptEconMeta: ProgramMeta = { kind: "special", college: "BSOS", sources: { department: "https://www.econ.umd.edu/undergraduate/departmental-honors-program" } };

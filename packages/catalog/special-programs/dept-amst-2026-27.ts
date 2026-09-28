@@ -1,7 +1,7 @@
 // Departmental Honors: American Studies.
 // Source: https://amst.umd.edu/academic-programs/undergraduate/honors-program (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://amst.umd.edu/academic-programs/undergraduate/honors-program";
@@ -20,3 +20,5 @@ export const deptAmst: Program = {
   ],
   requirements: [{ kind: "choose", id: "amst388", name: "AMST388: Honors Thesis and Research (6 credits)", credits: 6, from: { courses: ["AMST388"] } }],
 };
+
+export const deptAmstMeta: ProgramMeta = { kind: "special", college: "ARHU", sources: { department: "https://amst.umd.edu/academic-programs/undergraduate/honors-program" } };

@@ -6,7 +6,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 const AOSC_400_ELECTIVES = ["AOSC400", "AOSC401", "AOSC420", "AOSC424", "AOSC433", "AOSC434", "AOSC447", "AOSC470", "AOSC472", "AOSC484"];
 // "Required Supporting Electives" (department page): named cross-department courses, plus any
@@ -59,3 +59,5 @@ export const aoscMajor: Program = {
     { kind: "choose", id: "supporting-elective", name: "Supporting electives (6 credits)", credits: 6, from: { courses: SUPPORTING_ELECTIVES, departments: ["AOSC"], minNumber: 400, maxNumber: 499 } },
   ],
 };
+
+export const aoscMajorMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "AOSC", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/atmospheric-oceanic-science/atmospheric-oceanic-science-major/", department: "https://aosc.umd.edu/education/undergrad-major/current-students/major" } };

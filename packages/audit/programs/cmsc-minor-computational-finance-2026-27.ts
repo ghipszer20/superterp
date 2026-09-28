@@ -9,7 +9,7 @@
 // requirements below).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 export const cmscMinorComputationalFinance: Program = {
   id: "cmsc-minor-computational-finance",
@@ -40,3 +40,5 @@ export const cmscMinorComputationalFinance: Program = {
     },
   ],
 };
+
+export const cmscMinorComputationalFinanceMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/computer-science/computational-finance-minor/", department: "https://sites.google.com/umd.edu/compfinminor/home" } };

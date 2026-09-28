@@ -1,7 +1,7 @@
 // Departmental Honors: Aerospace Engineering.
 // Source: https://aero.umd.edu/undergraduate/ae-honors-program (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://aero.umd.edu/undergraduate/ae-honors-program";
@@ -25,3 +25,5 @@ export const deptAero: Program = {
     { kind: "choose", id: "enae398h", name: "ENAE398H: Honors Research Project (3 credits)", credits: 3, from: { courses: ["ENAE398H"] } },
   ],
 };
+
+export const deptAeroMeta: ProgramMeta = { kind: "special", college: "ENGR", sources: { department: "https://aero.umd.edu/undergraduate/ae-honors-program" } };

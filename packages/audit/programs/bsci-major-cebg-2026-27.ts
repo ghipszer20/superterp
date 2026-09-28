@@ -8,7 +8,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 const CEBG_CELL_BIOLOGY_GROUP = [
   "BSCI343", "BSCI353", "BSCI404", "BSCI406", "BSCI417", "BSCI422", "BSCI423", "BSCI430", "BSCI432", "BSCI433", "BSCI436", "BSCI442", "BSCI443", "BSCI455",
@@ -67,3 +67,5 @@ export const bsciMajorCebg: Program = {
     { kind: "choose", id: "enrichment", name: "Enrichment (3 credits)", credits: 3, from: { departments: ["BSCI", "CHEM", "BCHM"], minNumber: 300, maxNumber: 499 } },
   ],
 };
+
+export const bsciMajorCebgMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Bio Sci (Cell Biology & Genetics)", major: "bsci", track: "Cell Biology and Genetics", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/biological-sciences/", department: "https://bsci.umd.edu/s/CEBG-Curriculum-2026.pdf" } };

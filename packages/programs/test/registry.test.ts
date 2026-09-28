@@ -1,46 +1,50 @@
+// Invariants the registry (src/registry.generated.ts, built from every program file's own
+// ProgramMeta -- see scripts/build-registry.ts) must hold whatever programs it lists, so this file
+// never needs rewriting when a program batch adds, removes or reorders entries. Staleness and
+// migration-content checks live in registry-generated.test.ts and registry-migration.test.ts.
 import { describe, expect, it } from "vitest";
-import { findProgram, loadProgram, PROGRAMS } from "../src/registry.ts";
+import { findProgram, loadProgram, majorKey, PROGRAMS } from "../src/registry.ts";
+
+const KIND_RANK: Record<string, number> = { major: 0, minor: 1, certificate: 2, special: 3 };
 
 describe("program registry", () => {
-  it("lists the hand-encoded majors, each major's tracks sharing one major key", () => {
-    const majors = PROGRAMS.filter((p) => p.kind === "major");
-    expect(majors.map((p) => p.id)).toEqual([
-      "astr-major-astrophysics",
-      "astr-major-data-science",
-      "astr-major-physical-science",
-      "aosc-major",
-      "bsci-major-genb",
-      "bsci-major-cebg",
-      "bsci-major-ecev",
-      "bsci-major-micb",
-      "bsci-major-phnb",
-      "bchm-major",
-      "cmsc-major",
-      "cmsc-major-cybersecurity",
-      "cmsc-major-data-science",
-      "cmsc-major-machine-learning",
-      "cmsc-major-quantum-information",
-      "math-major-traditional",
-      "math-major-applied",
-      "chem-major-bs",
-      "chem-major-ba",
-      "geol-major-professional",
-      "geol-major-geophysics",
-      "geol-major-earth-environmental",
-      "neur-major",
-      "phys-major",
-    ]);
-    expect(findProgram("math-major-applied")).toMatchObject({ major: "math", track: "Applied Mathematics", college: "CMNS" });
-    expect(findProgram("cmsc-major")).toMatchObject({ major: "cs", track: "General", college: "CMNS" });
-    expect(findProgram("cmsc-major-cybersecurity")).toMatchObject({ major: "cs", track: "Cybersecurity", college: "CMNS" });
+  it("is not empty", () => {
+    expect(PROGRAMS.length).toBeGreaterThan(0);
   });
 
   it("has unique ids", () => {
     expect(new Set(PROGRAMS.map((p) => p.id)).size).toBe(PROGRAMS.length);
   });
 
-  it("includes the hand-drafted special programs", () => {
-    expect(findProgram("honors-aces")).toMatchObject({ kind: "special", college: "UGST" });
+  it("lists majors, then minors, then certificates, then special programs", () => {
+    const ranks = PROGRAMS.map((p) => KIND_RANK[p.kind]!);
+    const sorted = [...ranks].sort((a, b) => a - b);
+    expect(ranks).toEqual(sorted);
+  });
+
+  it("has at least one major and one special program", () => {
+    expect(PROGRAMS.some((p) => p.kind === "major")).toBe(true);
+    expect(PROGRAMS.some((p) => p.kind === "special")).toBe(true);
+  });
+
+  it("keeps every major's tracks together, sharing one major key", () => {
+    const majors = PROGRAMS.filter((p) => p.kind === "major");
+    const seen = new Set<string>();
+    let previousKey: string | null = null;
+    for (const p of majors) {
+      const key = majorKey(p);
+      if (key !== previousKey) {
+        expect(seen.has(key)).toBe(false); // a majorKey's tracks must be contiguous
+        seen.add(key);
+        previousKey = key;
+      }
+    }
+  });
+
+  it("findProgram finds every entry by id", () => {
+    for (const entry of PROGRAMS) {
+      expect(findProgram(entry.id)).toBe(entry);
+    }
   });
 
   it("loads unknown ids as undefined", async () => {

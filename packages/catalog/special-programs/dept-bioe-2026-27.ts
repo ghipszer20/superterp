@@ -2,7 +2,7 @@
 // Source: https://bioe.umd.edu/undergraduate/honors ("Undergraduate Honors Program"; fetched 2026-09-26).
 // Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://bioe.umd.edu/undergraduate/honors";
@@ -25,3 +25,5 @@ export const deptBioe: Program = {
     { kind: "choose", id: "bioe489h", name: "BIOE489H, three semesters", count: 3, from: { courses: ["BIOE489H"] } },
   ],
 };
+
+export const deptBioeMeta: ProgramMeta = { kind: "special", college: "ENGR", sources: { department: "https://bioe.umd.edu/undergraduate/honors" } };

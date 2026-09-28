@@ -2,7 +2,7 @@
 // Source: "HGLO Advising Guide for First-Year Students (entering Fall 2026)", a Google Doc linked from
 // https://hglo.umd.edu/currentstudents/academicrequirements (fetched 2026-09-25). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR, HONORS_CITATION_NOTES } from "./common.ts";
 
 export const SOURCE = "https://hglo.umd.edu/currentstudents/academicrequirements";
@@ -36,3 +36,5 @@ export const honorsHglo: Program = {
     { kind: "course", id: "second-year-spring", name: "Second-year spring track course", options: ["HGLO298", "HGLO396", "HGLO397", "FGSM398F", "FGSM398"] },
   ],
 };
+
+export const honorsHgloMeta: ProgramMeta = { kind: "special", college: "UGST", sources: { department: "https://hglo.umd.edu/currentstudents/academicrequirements" } };

@@ -6,7 +6,7 @@
 // department page; each such difference is recorded below citing both sources.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 const MATH_400_LEVEL = { departments: ["MATH", "AMSC", "STAT"], minNumber: 400, maxNumber: 499 };
 // Footnote 3: electives may not include these.
@@ -139,3 +139,5 @@ export const mathMajorApplied: Program = {
     },
   ],
 };
+
+export const mathMajorAppliedMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Math (Applied)", major: "math", track: "Applied Mathematics", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/mathematics/mathematics-major/", department: "https://www-math.umd.edu/course-requirements.html" } };

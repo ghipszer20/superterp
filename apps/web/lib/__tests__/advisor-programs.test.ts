@@ -13,38 +13,17 @@ import {
   toggleProgram,
 } from "../advisor/programs";
 import type { ProgramOption } from "../advisor/programs";
+import { PROGRAMS } from "@superterp/programs";
 
 const ids = (list: { id: string }[]) => list.map((p) => p.id);
 
 describe("program options", () => {
-  it("offers every registered program, majors first, all unverified for now", () => {
-    expect(ids(PROGRAM_OPTIONS.filter((o) => o.kind === "major"))).toEqual([
-      "astr-major-astrophysics",
-      "astr-major-data-science",
-      "astr-major-physical-science",
-      "aosc-major",
-      "bsci-major-genb",
-      "bsci-major-cebg",
-      "bsci-major-ecev",
-      "bsci-major-micb",
-      "bsci-major-phnb",
-      "bchm-major",
-      "cmsc-major",
-      "cmsc-major-cybersecurity",
-      "cmsc-major-data-science",
-      "cmsc-major-machine-learning",
-      "cmsc-major-quantum-information",
-      "math-major-traditional",
-      "math-major-applied",
-      "chem-major-bs",
-      "chem-major-ba",
-      "geol-major-professional",
-      "geol-major-geophysics",
-      "geol-major-earth-environmental",
-      "neur-major",
-      "phys-major",
-    ]);
+  it("is the registry's own list, majors first (registry.test.ts covers the full ordering)", () => {
+    expect(PROGRAM_OPTIONS).toBe(PROGRAMS);
     expect(PROGRAM_OPTIONS.length).toBeGreaterThan(3);
+    const firstNonMajor = PROGRAM_OPTIONS.findIndex((o) => o.kind !== "major");
+    expect(firstNonMajor).toBeGreaterThan(0);
+    expect(PROGRAM_OPTIONS.slice(0, firstNonMajor).every((o) => o.kind === "major")).toBe(true);
     expect(PROGRAM_OPTIONS.every((o) => !o.verified)).toBe(true);
   });
 
@@ -137,91 +116,92 @@ describe("degreeModeOf", () => {
   });
 });
 
-// cmsc-major's course set (course-sets.generated.ts) includes MATH140/141, CMSC131/132; the math
-// majors' sets include MATH140/141/240/241. With the CMNS batch-1 majors now in the registry, both
-// plans below clear NOTICE_OVERLAP_THRESHOLD against several majors at once (they all need
-// MATH140/141), so these tests assert the full ranked (share descending, ties in registry order)
-// and MAX_NOTICE_CANDIDATES-capped candidate lists, not just the one major each plan was chosen for.
-const CS_LEANING_PLAN = ["MATH140", "MATH141", "CMSC131", "CMSC132"];
-const MATH_LEANING_PLAN = ["MATH140", "MATH141", "MATH240", "MATH241"];
+// Synthetic majors and course sets, standing in for the real registry so these tests don't
+// hardcode it (and need rewriting whenever a program batch changes the majors or their course
+// sets). `major` takes an explicit majorKey so more than one "track" can share it, and an optional
+// `loaded` callback to prove a filtered-out major is never loaded. noticeCandidates and
+// rankNoticeCandidates both take `options`/`courseSets` explicitly for exactly this reason.
+const major = (id: string, opts: { major?: string; loaded?: () => void } = {}): ProgramOption =>
+  ({
+    id,
+    name: id,
+    kind: "major",
+    major: opts.major,
+    college: "CMNS",
+    catalogYear: "2026-27",
+    verified: false,
+    sources: {},
+    load: async () => {
+      opts.loaded?.();
+      return { id, name: id, requirements: [] };
+    },
+  }) as ProgramOption;
+
+const special = (id: string): ProgramOption =>
+  ({ id, name: id, kind: "special", college: "UGST", catalogYear: "2026-27", verified: false, sources: {}, load: async () => ({ id, name: id, requirements: [] }) }) as ProgramOption;
 
 describe("noticeCandidates", () => {
+  const PLAN = ["A", "B", "C", "D"];
+  const csGeneral = major("cs-general", { major: "cs" });
+  const csMl = major("cs-ml", { major: "cs" });
+  const mathMajor = major("math");
+  const bio = major("bio");
+  const chem = major("chem"); // no course set on record: never clears the overlap threshold
+  let astroLoaded = false;
+  const astro = major("astro", { loaded: () => (astroLoaded = true) });
+  const OPTIONS = [csGeneral, csMl, mathMajor, astro, bio, chem, special("special-x")];
+  const COURSE_SETS = { "cs-general": ["A", "B", "C", "D"], "cs-ml": ["A", "B", "C", "D"], math: ["A", "B"], astro: ["A"], bio: ["A", "B", "C"] };
+
   it("passes chosen majors as declared, in order, and other majors as undeclared", async () => {
-    const c = await noticeCandidates(["math-major-applied"], CS_LEANING_PLAN);
+    const c = await noticeCandidates(["math"], PLAN, OPTIONS, COURSE_SETS);
     expect(c.map((x) => [x.program.id, x.declared])).toEqual([
-      ["math-major-applied", true],
-      // Undeclared majors, ranked by share of the plan's 4 courses they list: cmsc-major 4/4,
-      // aosc-major 3/4, then a 2/4 tie broken by registry order (astr, bsci-genb, bchm).
-      ["cmsc-major", false],
-      ["aosc-major", false],
-      ["astr-major-astrophysics", false],
-      ["bsci-major-genb", false],
-      ["bchm-major", false],
+      ["math", true],
+      // Undeclared majors, ranked by share of the plan's courses they list: cs (via its first/
+      // default track, cs-general) 4/4, bio 3/4; astro's 1/4 misses NOTICE_OVERLAP_THRESHOLD and
+      // chem has no course set on record, so neither is offered.
+      ["cs-general", false],
+      ["bio", false],
     ]);
   });
 
   it("never offers another track of a chosen major (that isn't a double major)", async () => {
-    expect((await noticeCandidates(["math-major-applied", "cmsc-major"], CS_LEANING_PLAN)).map((x) => x.program.id)).toEqual([
-      "math-major-applied",
-      "cmsc-major",
-      // Undeclared, cmsc-major itself excluded now that it's chosen: aosc-major 3/4, then the 2/4
-      // tie (astr, bsci-genb, bchm, chem-major-bs -- registry order; the CMNS batch-2 majors also
-      // list MATH140/141, but only chem-major-bs's default track fits before MAX_NOTICE_CANDIDATES).
-      "aosc-major",
-      "astr-major-astrophysics",
-      "bsci-major-genb",
-      "bchm-major",
-      "chem-major-bs",
+    expect((await noticeCandidates(["cs-general", "math"], PLAN, OPTIONS, COURSE_SETS)).map((x) => x.program.id)).toEqual([
+      "cs-general",
+      "math",
+      // cs-ml excluded: it shares cs-general's major key, and two tracks of one major aren't a
+      // double major.
+      "bio",
     ]);
   });
 
-  it("offers one track of an unchosen major, the default", async () => {
-    // Every remaining major lists MATH240 and MATH241 except the two Biological Sciences and
-    // Biochemistry majors sampled here (no MATH241 or MATH240 respectively), so it's a 4/4 tie
-    // (astr, aosc, math-major-traditional, and now phys-major, whose MATH243-or-MATH240+MATH246
-    // choice lists both -- registry order) then a 3/4 tie (bsci-genb, bchm, chem-major-bs), capped
-    // before geol-major-professional and neur-major's 2/4 ties are reached.
-    expect((await noticeCandidates(["cmsc-major"], MATH_LEANING_PLAN)).map((x) => x.program.id)).toEqual([
-      "cmsc-major",
-      "astr-major-astrophysics",
-      "aosc-major",
-      "math-major-traditional",
-      "phys-major",
-      "bsci-major-genb",
-    ]);
+  it("offers one track of an unchosen major: whichever comes first among that major's options", async () => {
+    const csMlFirst = [csMl, csGeneral, mathMajor, astro, bio, chem];
+    expect((await noticeCandidates(["math"], PLAN, csMlFirst, COURSE_SETS)).map((x) => x.program.id)).toEqual(["math", "cs-ml", "bio"]);
   });
 
   it("only majors take part: a chosen special program is never a double major", async () => {
-    expect((await noticeCandidates(["cmsc-major", "honors-aces"], MATH_LEANING_PLAN)).map((x) => x.program.id)).toEqual([
-      "cmsc-major",
-      "astr-major-astrophysics",
-      "aosc-major",
-      "math-major-traditional",
-      "phys-major",
-      "bsci-major-genb",
+    expect((await noticeCandidates(["cs-general", "special-x"], PLAN, OPTIONS, COURSE_SETS)).map((x) => x.program.id)).toEqual([
+      "cs-general",
+      "bio",
+      "math",
     ]);
   });
 
   it("never offers Gen Ed or the university rules", async () => {
-    expect((await noticeCandidates([])).map((x) => x.program.id)).toEqual([]);
+    expect((await noticeCandidates([], [], OPTIONS, COURSE_SETS)).map((x) => x.program.id)).toEqual([]);
   });
 
   it("drops an undeclared major the plan barely overlaps with, without loading it", async () => {
-    // Neither course appears in math-major-traditional's course set (CMSC330/351 are cmsc-major's
-    // own advanced requirements), so it never clears the overlap threshold and is filtered out
-    // before noticeCandidates would load it.
-    expect((await noticeCandidates(["cmsc-major"], ["CMSC330", "CMSC351"])).map((x) => x.program.id)).toEqual(["cmsc-major"]);
+    astroLoaded = false;
+    const result = await noticeCandidates(["cs-general"], PLAN, OPTIONS, COURSE_SETS);
+    expect(result.map((x) => x.program.id)).toEqual(["cs-general", "bio", "math"]);
+    expect(astroLoaded).toBe(false);
   });
 
   it("defaults to no plan courses, so an undeclared major is never offered with nothing to compare", async () => {
-    expect((await noticeCandidates(["cmsc-major"])).map((x) => x.program.id)).toEqual(["cmsc-major"]);
+    expect((await noticeCandidates(["cs-general"], undefined, OPTIONS, COURSE_SETS)).map((x) => x.program.id)).toEqual(["cs-general"]);
   });
 });
-
-// Synthetic majors, standing in for the ~100-major registry the real cap has to hold up against
-// (only 3 majors exist today, too few to exercise MAX_NOTICE_CANDIDATES on their own).
-const major = (id: string): ProgramOption =>
-  ({ id, name: id, kind: "major", college: "CMNS", catalogYear: "2026-27", verified: false, sources: {}, load: async () => ({ id, name: id, requirements: [] }) }) as ProgramOption;
 
 describe("rankNoticeCandidates", () => {
   it("keeps only majors clearing the overlap threshold, best overlap first", () => {

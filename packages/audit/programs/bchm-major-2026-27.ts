@@ -8,7 +8,7 @@
 // difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 export const bchmMajor: Program = {
   id: "bchm-major",
@@ -88,3 +88,5 @@ export const bchmMajor: Program = {
     },
   ],
 };
+
+export const bchmMajorMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Biochemistry", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/chemistry-biochemistry/biochemistry-major/", department: "https://chem.umd.edu/sites/default/files/biochemistrybs-checksheet-f26.pdf" } };

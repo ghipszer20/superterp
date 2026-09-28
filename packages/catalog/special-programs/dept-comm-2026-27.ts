@@ -1,7 +1,7 @@
 // Departmental Honors: Communication.
 // Source: https://communication.umd.edu/academics/undergraduate/honors (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://communication.umd.edu/academics/undergraduate/honors";
@@ -21,3 +21,5 @@ export const deptComm: Program = {
   ],
   requirements: [{ kind: "choose", id: "comm399", name: "COMM399: Honors Thesis (6 credits)", credits: 6, from: { courses: ["COMM399"] } }],
 };
+
+export const deptCommMeta: ProgramMeta = { kind: "special", college: "ARHU", sources: { department: "https://communication.umd.edu/academics/undergraduate/honors" } };

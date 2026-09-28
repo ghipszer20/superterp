@@ -11,7 +11,7 @@
 // published sample plan (built from the requirements below; see docs/project/owner-review.md).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 export const rasMinor: Program = {
   id: "ras-minor",
@@ -57,3 +57,5 @@ export const rasMinor: Program = {
     },
   ],
 };
+
+export const rasMinorMeta: ProgramMeta = { kind: "minor", college: "CMNS", short: "Robotics & Autonomous Systems", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/computer-science/robotics-autonomous-systems-minor/", department: "https://robotics.umd.edu/minor" } };

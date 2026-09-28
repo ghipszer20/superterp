@@ -1,7 +1,7 @@
 // Honors College: Advanced Cybersecurity Experience for Students (ACES) living-learning program.
 // Source: https://aces.umd.edu/llp-course-requirements (and /curriculum-llp; fetched 2026-09-25). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR, HONORS_CITATION_NOTES } from "./common.ts";
 
 export const SOURCE = "https://aces.umd.edu/llp-course-requirements";
@@ -29,3 +29,5 @@ export const honorsAces: Program = {
     { kind: "choose", id: "experiential", name: "Experiential learning (3 credits)", credits: 3, from: { courses: ["HACS287", "HACS297"] } },
   ],
 };
+
+export const honorsAcesMeta: ProgramMeta = { kind: "special", college: "UGST", sources: { department: "https://aces.umd.edu/llp-course-requirements" } };

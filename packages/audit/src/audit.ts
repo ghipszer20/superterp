@@ -100,6 +100,38 @@ export type Program = {
 
 export type SharingLimit = { programs?: string[]; courses?: number; credits?: number };
 
+/**
+ * Picker metadata a program file declares next to each exported Program: everything ProgramEntry
+ * (@superterp/programs) needs beyond the Program itself (id/name/catalogYear/verified come from
+ * the Program). The registry generator (packages/programs/scripts/build-registry.ts) pairs a
+ * `<name>Meta` export with the `<name>` Program export in the same module.
+ *
+ * Lives here (not in @superterp/programs, which depends on @superterp/audit and @superterp/catalog)
+ * so program files in both packages can import it without a circular package dependency. `college`
+ * repeats @superterp/plan's `College` union rather than importing it, for the same reason (plan
+ * depends on audit).
+ */
+export type ProgramMeta = {
+  kind: "major" | "minor" | "certificate" | "special";
+  /** The college that owns the program's catalog page (`colleges-schools/<slug>/` in its URL);
+   * the Advisor's default for the credit-cap check. Special programs run by Undergraduate Studies
+   * or the Honors College use UGST. */
+  college: "AGNR" | "ARCH" | "ARHU" | "BSOS" | "BMGT" | "CMNS" | "EDUC" | "ENGR" | "INFO" | "JOUR" | "SPHL" | "UGST";
+  /** Short name for headers, e.g. "Math (Applied)". Defaults to the Program's own name. */
+  short?: string;
+  /** Tracks of one major share this key; a student has one track per major. Defaults to the
+   * Program's own id. */
+  major?: string;
+  /** Name of the track within its major, if any. */
+  track?: string;
+  /** Set on exactly one track per major that has more than one: the registry generator lists it
+   * first among that major's tracks (the Advisor's default track for a major before the student
+   * has picked one, e.g. which track an undeclared-major notice offers). */
+  defaultTrack?: true;
+  /** The catalog page and the department's own page (the department page wins where they differ). */
+  sources: { catalog?: string; department?: string };
+};
+
 export type StudentCourse = {
   id: string;
   credits: number;

@@ -7,7 +7,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 // ASTR320 plus the 9 named 400-level ASTR courses (same 9 as astr-major-astrophysics's
 // ASTR_400_LEVEL): this specialization's pool doesn't require ASTR320 on its own, so it's folded
@@ -59,3 +59,5 @@ export const astrMajorDataScience: Program = {
     },
   ],
 };
+
+export const astrMajorDataScienceMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Astronomy (Data Science)", major: "astr", track: "Astronomy - Data Science", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/astronomy/astronomy-major/", department: "https://www.astro.umd.edu/sites/default/files/undergrad/bs-astronomy-data-science_requirements-and-4-year-plan.pdf" } };

@@ -1,7 +1,7 @@
 // Departmental Honors: Art History & Archaeology.
 // Source: https://arthistory.umd.edu/academics/undergraduate/honors (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://arthistory.umd.edu/academics/undergraduate/honors";
@@ -22,3 +22,5 @@ export const deptArth: Program = {
     { kind: "choose", id: "arth499", name: "ARTH499: Honors Thesis", credits: 3, from: { courses: ["ARTH499"] } },
   ],
 };
+
+export const deptArthMeta: ProgramMeta = { kind: "special", college: "ARHU", sources: { department: "https://arthistory.umd.edu/academics/undergraduate/honors" } };

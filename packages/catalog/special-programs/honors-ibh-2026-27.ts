@@ -1,7 +1,7 @@
 // Honors College: Interdisciplinary Business Honors (IBH).
 // Source: https://ibh.umd.edu/academics (fetched 2026-09-25). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR, HONORS_CITATION_NOTES } from "./common.ts";
 
 export const SOURCE = "https://ibh.umd.edu/academics";
@@ -27,3 +27,5 @@ export const honorsIbh: Program = {
     { kind: "course", id: "elective", name: "IBH elective (internship reflection)", options: ["HBUS307"] },
   ],
 };
+
+export const honorsIbhMeta: ProgramMeta = { kind: "special", college: "UGST", sources: { department: "https://ibh.umd.edu/academics" } };

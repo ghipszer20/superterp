@@ -1,7 +1,7 @@
 // Departmental Honors: English.
 // Source: https://www.english.umd.edu/academics/undergraduate/honors (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://www.english.umd.edu/academics/undergraduate/honors";
@@ -26,3 +26,5 @@ export const deptEngl: Program = {
     { kind: "choose", id: "engl428", name: "Honors Seminar (ENGL428), taken twice", count: 2, from: { courses: ["ENGL428"] } },
   ],
 };
+
+export const deptEnglMeta: ProgramMeta = { kind: "special", college: "ARHU", sources: { department: "https://www.english.umd.edu/academics/undergraduate/honors" } };
