@@ -1,0 +1,21 @@
+{
+  "programId": "gvpt-major-ba",
+  "source": "https://gvpt.umd.edu/undergraduate/government-and-politics-major-requirements-bachelor-arts",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "No published 4-year plan exists for this track: the Feller Center's graduation-plans page linked from the catalog failed to fetch (site unreachable). This plan is constructed from the department's own B.A. requirements page instead of an official term-by-term grid (docs/project/owner-review.md flags this for both GVPT tracks). Gen Ed, foreign language and quantitative/additional-skills courses are left out: the fetched sources give no enumerable approved-course lists for those, so no requirement enforces them here (see the program's reviewNotes).",
+    "GVPT Courses of Choice: the sources name no specific elective course list ('Students may take classes from any topic'), so the 3 any-level and 6 upper-level slots are filled with illustrative GVPT course numbers (GVPT200/280/282 for any-level; GVPT320/373/403/441/445/459 for upper-level) rather than sourced ones -- please confirm or substitute an advisor's actual picks.",
+    "Math/Statistics Benchmark filled with STAT100; any of the eight listed options would satisfy the requirement equally."
+  ],
+  "terms": [
+    { "term": "Freshman Fall", "courses": ["GVPT170", "STAT100"] },
+    { "term": "Freshman Spring", "courses": ["GVPT200"] },
+    { "term": "Sophomore Fall", "courses": ["GVPT241", "ECON200"] },
+    { "term": "Sophomore Spring", "courses": ["GVPT201", "GVPT280"] },
+    { "term": "Junior Fall", "courses": ["GVPT282", "GVPT320"] },
+    { "term": "Junior Spring", "courses": ["GVPT373", "GVPT403"] },
+    { "term": "Senior Fall", "courses": ["GVPT441", "GVPT445"] },
+    { "term": "Senior Spring", "courses": ["GVPT459"] }
+  ]
+}
