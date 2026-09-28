@@ -8,9 +8,13 @@
 // department page; each such difference is recorded below citing both sources.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, Requirement } from "../src/audit.ts";
 
-const AREAS = [
+// Shared by every specialization (cmsc-specializations-2026-27.ts): the department's General
+// Track / Distributive Areas page says its area and elective lists "can be used by all 4 CS
+// specialization tracks" (program-sources/cmsc-major.md, line 55), and the Upper Level
+// Concentration is identical "regardless of specialization" (same source, line 35).
+export const AREAS = [
   { name: "Area 1: Systems", courses: ["CMSC411", "CMSC412", "CMSC414", "CMSC416", "CMSC417"] },
   {
     name: "Area 2: Information Processing",
@@ -30,19 +34,45 @@ const AREAS = [
 // own Upper Level Concentration page (its own worked example: "courses cross-listed with CMSC
 // courses (e.g., AMSC460)"; its course table lists "AMSC: 460, 466") -- both sources call for this
 // exclusion, so it's an engine gap, not a disagreement between them.
-const AMSC_CROSSLISTS = ["AMSC460", "AMSC466"];
+export const AMSC_CROSSLISTS = ["AMSC460", "AMSC466"];
 // MATH456 (= CMSC456/ENEE456) and MATH475 (= CMSC475) are cross-listed per Testudo/Coursicle
 // schedule-of-classes listings (web search, 2026-09-26) -- the department's ULC page lists
 // MATH456/475 as ULC-ineligible but doesn't say cross-listed-with-CMSC is the reason for each one
 // individually, so this pairing is confirmed by a different source than AMSC460/466 above.
 // Owner-confirmed as real cross-lists (CS department-page answers, 2026-09-27).
-const MATH_CROSSLISTS = ["MATH456", "MATH475"];
+export const MATH_CROSSLISTS = ["MATH456", "MATH475"];
 // STAT426 is NOT cross-listed with CMSC (owner ruling, CS department-page answers, 2026-09-27):
 // it never counts as a CMSC course, so it's free to fill the STAT4xx requirement or the
 // MATH/AMSC/STAT elective below. It stays ineligible for the Upper Level Concentration --
 // the department's ULC page lists it as "credit only granted for" a CMSC course, which is a
 // different requirement with its own exclusion (see the concentration requirement's `exclude`).
-const CONCENTRATION_CREDIT_ONLY_FOR_CMSC = ["STAT426"];
+export const CONCENTRATION_CREDIT_ONLY_FOR_CMSC = ["STAT426"];
+
+// Upper Level Concentration: identical for every specialization (see the module comment above).
+// disciplineGroups: the ULC "Things to Note" page (program-sources/cmsc-major.md, line ~173 on)
+// says students "are able to mix and match their courses between MATH and STAT" and, separately,
+// "between LGBT and WGSS" -- so those pairs count as one discipline, not two, for the "one
+// discipline outside CMSC" rule (owner ruling; engine support: Requirement's `disciplineGroups`).
+export const CONCENTRATION_REQUIREMENT: Requirement = {
+  kind: "concentration",
+  id: "concentration",
+  name: "12 credits of 300–400 level courses in one discipline outside CMSC",
+  credits: 12,
+  minNumber: 300,
+  maxNumber: 499,
+  // CMSC excluded by both sources; DATA/HONR/HNUH/INST/CPSP excluded by the department
+  // page only (see review notes above). STAT426 is individually excluded: the department's
+  // ULC page lists it as "credit only granted for" a CMSC course (owner ruling, 2026-09-27),
+  // even though STAT itself isn't an excluded department here. The CMSC cross-lists are
+  // excluded too (footnote 5: "no course in or cross-listed with CMSC").
+  excludeDepartments: ["CMSC", "DATA", "HONR", "HNUH", "INST", "CPSP"],
+  exclude: [...AMSC_CROSSLISTS, ...MATH_CROSSLISTS, ...CONCENTRATION_CREDIT_ONLY_FOR_CMSC],
+  disciplineGroups: [
+    ["MATH", "STAT"],
+    ["LGBT", "WGSS"],
+  ],
+  minGrade: "D-",
+};
 
 export const cmscMajor: Program = {
   id: "cmsc-major",
@@ -69,7 +99,7 @@ export const cmscMajor: Program = {
     "The same Upper Level Concentration page gives a worked example that a course 'cross-listed as CMSC' is ineligible even outside the CMSC department (e.g. AMSC460) and lists dozens more course-specific exclusions across AOSC, AREC, BIOE, BSCI, BMGT, ECON, ENEE, ENGL, GEOG, GEOL, IMDM, MATH, PHIL, PHPE, PHYS, PSYC and STAT -- explicitly captioned 'not exhaustive; updated with new courses regularly' and 'send the syllabus to your advisor for review'. The concentration requirement now supports a per-course `exclude` as well as `excludeDepartments` (added to encode STAT426, see below), but this table is advisor-maintained and far larger than one course; the rest of it is still not encoded. Manual check (see program-sources/cmsc-major.md for the full list as fetched). The confirmed CMSC cross-lists (AMSC460/466, MATH456/475) are in the concentration's `exclude` too (footnote 5).",
     "Both sources require a minimum GPA in the outside-CMSC concentration coursework, but disagree on the number: the department's Upper Level Concentration page says 'a cumulative GPA of 1.7 or higher'; the academic catalog's footnote 5 says 'an overall 2.0 average'. Department-vs-catalog difference (owner ruling: follow the department page) -- 1.7 is the number to use once the engine can check it. The audit engine has no GPA-average concept, only per-course minGrade, so this stays a manual check either way.",
     "Footnote 5 / the concentration page also require: each course at least 3 credits, at most one independent-study/experiential-learning course, up to 6 transfer credits, and no course also used for the CS major (the last one is already true by construction -- a course counts toward at most one non-overlay requirement per program). None of the credit/count limits are enforced; manual check.",
-    "Department-vs-catalog-adjacent gap the engine can't express (not a disagreement -- the catalog says nothing about discipline groups at all): the department's Upper Level Concentration page says 'Students using Math or Statistics courses for the ULC are able to mix and match their courses between MATH and STAT' (and the same for LGBT/WGSS courses). The concentration requirement here treats every department strictly on its own, so a MATH+STAT (or LGBT+WGSS) split is wrongly reported as spanning two disciplines. Not encoded (would need a 'discipline group' concept in the concentration type); listed as a follow-up. This matters for the owner's own verification target (Math Applied + CS), whose concentration is very likely MATH/STAT.",
+    "Resolved: the department's Upper Level Concentration page says 'Students using Math or Statistics courses for the ULC are able to mix and match their courses between MATH and STAT' (and the same for LGBT/WGSS courses). The concentration requirement type now supports `disciplineGroups` (packages/audit/src/audit.ts); CONCENTRATION_REQUIREMENT groups MATH+STAT and LGBT+WGSS. This matters for the owner's own verification target (Math Applied + CS), whose concentration is very likely MATH/STAT.",
     "LEP Benchmarks (department page): a 45-credit checkpoint (CMSC131, CMSC132, MATH140, each C- or better, 2.0 cumulative GPA) and a 75-credit checkpoint (CMSC330, CMSC351, one of STAT4xx/MATH-AMSC-STAT xxx, C- or better, 2.0 cumulative GPA). This is a progress-checkpoint concept (tied to credits-earned-so-far) the audit engine doesn't model at all (it only reports gaps against the finished requirement list, not by checkpoint); not encoded. Resolved (CS department-page answers, owner, 2026-09-27): the 3.0 cumulative GPA in gateway.ts's Fall-2024-or-later rule is correct; this page's 2.0 figure is out of date.",
     "No CS-specific residency requirement is stated on the department's requirements pages (only the general university residency policy would apply, which the audit engine doesn't model at all).",
     "Minimum grade C- applies to every requirement except the concentration (see above); gateway courses need B- for students who started Fall 2024 or later (CS tracking sheet), handled separately by the gateway check.",
@@ -132,21 +162,6 @@ export const cmscMajor: Program = {
     // minGrade "D-" (not "C-"): the department page allows a D grade here specifically (see
     // review notes) -- D- is the lowest grade above F, so F/W attempts still earn no credit
     // (audit.ts's earnsCredit excludes them universally regardless of minGrade).
-    {
-      kind: "concentration",
-      id: "concentration",
-      name: "12 credits of 300–400 level courses in one discipline outside CMSC",
-      credits: 12,
-      minNumber: 300,
-      maxNumber: 499,
-      // CMSC excluded by both sources; DATA/HONR/HNUH/INST/CPSP excluded by the department
-      // page only (see review notes above). STAT426 is individually excluded: the department's
-      // ULC page lists it as "credit only granted for" a CMSC course (owner ruling, 2026-09-27),
-      // even though STAT itself isn't an excluded department here. The CMSC cross-lists are
-      // excluded too (footnote 5: "no course in or cross-listed with CMSC").
-      excludeDepartments: ["CMSC", "DATA", "HONR", "HNUH", "INST", "CPSP"],
-      exclude: [...AMSC_CROSSLISTS, ...MATH_CROSSLISTS, ...CONCENTRATION_CREDIT_ONLY_FOR_CMSC],
-      minGrade: "D-",
-    },
+    CONCENTRATION_REQUIREMENT,
   ],
 };
