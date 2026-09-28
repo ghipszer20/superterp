@@ -12,7 +12,7 @@
   "terms": [
     { "term": "Year 1 Fall", "courses": ["ARTT100", "ARTT110", "ARTT150"] },
     { "term": "Year 1 Spring", "courses": ["ARTT200", "ARTT210", "ARTT255"] },
-    { "term": "Year 2 Fall", "courses": ["ARTH351", "ARTT355", "ARTT356"] },
+    { "term": "Year 2 Fall", "courses": ["ARTH351", "ARTH200", "ARTT355", "ARTT356"] },
     { "term": "Year 2 Spring", "courses": ["ARTT357", "ARTT361", "ARTT350", "ARTT351"] },
     { "term": "Year 3 Fall", "courses": ["ARTT454", "ARTT386"] },
     { "term": "Year 3 Spring", "courses": ["ARTT455", "ARTT458", "ARTT456"] },

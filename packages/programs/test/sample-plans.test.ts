@@ -12,9 +12,6 @@ const file = (id: string) => new URL(`../sample-plans/${id}.json`, import.meta.u
 
 /** Program id -> requirement ids its sample plan is known to leave unsatisfied (flagged). */
 const KNOWN_FAILURES: Record<string, string[]> = {
-  "artt-major-studio": ["support-arth-diversity-2"],
-  "artt-major-advanced-specialization": ["support-arth-diversity-2"],
-  "artt-major-graphic-design": ["support-arth-diversity-2"],
 };
 
 describe("sample plans", () => {
