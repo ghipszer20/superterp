@@ -51,6 +51,7 @@ Order: the tiny bundles first (fastest registry growth, and they prove the brief
 college by college. At most 3 builders run at once, and the next one starts whenever one is merged.
 
 ## Status
-- Merged (2026-09-28): t-bsos2 (85k tokens), t-bsos1 (80k), t-educ (88k). 13 minors.
-- Running: t-sph-jour, t-rotc, t-engr.
-- Rule added after round 1: slots with no published list are left out of `requirements` and tagged `OPEN SLOT:` in reviewNotes (see roadmap Known to-dos).
+- Merged 2026-09-28 (37 programs from 36 catalog minors): t-bsos2 (85k tokens), t-bsos1 (80k), t-educ (88k), t-sph-jour (78k; Video Production skipped, source has no requirements), t-engr (89k), t-rotc (78k), t-info-usg (86k; ACES encoded as 3 pathway programs).
+- Running at pause request (owner, 2026-09-28: "after the minors in project, pause"): t-arhu, t-clas, t-agnr-arch. Merge those, then stop; resume from the batch table order (medium batches) when the owner says so.
+- Rules added: slots with no published list are left out and tagged `OPEN SLOT:` (roadmap Known to-dos); college keys come from the ProgramMeta union (UGST, not USG).
+- Merging: this session merges in its own detached worktree `C:/Users/24GHi/Code/st-minors-merge` and pushes `HEAD:feat/course-data`, because other sessions commit in the main checkout. Review-doc conflicts: `git merge-file --union`; registry: regenerate.
