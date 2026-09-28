@@ -1,0 +1,22 @@
+{
+  "programId": "pers-major",
+  "source": "https://drive.google.com/uc?export=download&id=1oulxmIQPz-P4OVNev8Vz1UTs5iFtNuzZ#Persian-Studies",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities official four-year academic plan for Persian Studies. The PDF-to-text conversion of the term grid is badly garbled (a benchmark sidebar and Gen Ed columns appear interleaved with the PERS course cells), but the plan's own checklist section (Core Language Sequence, Foundation Requirements, Electives) is legible and names exactly the courses needed to satisfy every requirement, and those same course numbers appear individually, legibly, in the term grid. Gen Ed and general-elective slots (ENGL 101, ARHU 158, Math, 'Elective 1xx-4xx', etc.) are left out entirely, per the pattern: only the major is audited.",
+    "The Foundation Requirements' three named slots ('One PERS Foundation Requirement' by end of Year 2, 'A second PERS Foundation Requirement' by end of Year 3, plus one named directly in Year 1) are filled with PERS251 (Year 1, named directly as 'PERS 251 (Foundation Requirement)'), PERS283 (Year 2, named directly as 'PERS 283 (Foundation Requirement)') and PERS371 (Year 3, named directly as 'PERS 371 (Foundation Requirement)') -- 3 of the catalog's 4 Foundation options, matching 'Select three (3) courses'.",
+    "The Electives requirement's five named slots are filled with PERS301, PERS302, PERS311, PERS312 and PERS498, all named directly by course number in the Year 3 and Year 4 grid cells -- matching the catalog's 'Select five (5) courses' and summing with the Core (12 credits) and Foundation (9 credits) courses to the catalog's 36 total credits.",
+    "Exact term placement (which year/semester) for the Foundation and Elective courses is reconstructed rather than read verbatim, because the source's term-grid OCR is garbled beyond a reliable column-by-column parse; the requirement-satisfying set of 12 courses and their identities are read directly from the source's own labels ('(Foundation Requirement)' tags and bare course numbers), only their exact term slotting is estimated from surrounding benchmark-sidebar text ('must be completed by the end of N semesters'). Flagged in docs/project/owner-review.md."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["PERS103"] },
+    { "term": "Year 1 Spring", "courses": ["PERS104", "PERS251"] },
+    { "term": "Year 2 Fall", "courses": ["PERS201"] },
+    { "term": "Year 2 Spring", "courses": ["PERS202", "PERS283"] },
+    { "term": "Year 3 Fall", "courses": ["PERS301"] },
+    { "term": "Year 3 Spring", "courses": ["PERS302", "PERS371"] },
+    { "term": "Year 4 Fall", "courses": ["PERS311"] },
+    { "term": "Year 4 Spring", "courses": ["PERS312", "PERS498"] }
+  ]
+}
