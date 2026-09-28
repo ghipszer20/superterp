@@ -1,0 +1,25 @@
+{
+  "programId": "cpse-major-hardware",
+  "source": "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/cyber-physical_fall_2026_gradplan.pdf",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "A. James Clark School of Engineering official Fall 2026 Cyber-Physical Systems Engineering graduation plan. Gen Ed slots are left out: only the program's own requirements are audited here (they're covered by gen-ed-2026-27.ts). The plan's own Year 1/Year 2 grid is a blank template (students complete these terms before Shady Grove admission, at College Park or elsewhere), so Years 1-2 here are constructed from the plan's own 'Major Requirements' side panel (Basic Sciences, Engineering Sciences, Programming Course) rather than copied from a term-by-term grid.",
+    "The Programming Requirement (ENEE140, CMSC131, CMSC106, or CMSC141) is filled with CMSC131, as commonly taken at College Park before transfer; any qualifying course would satisfy the requirement equally.",
+    "The 'MATH246/241/240' slot is filled with MATH241 (Calculus III); any of the three would satisfy the requirement equally.",
+    "Track choice: Hardware Track. The plan's four generic 'ENEB 4XX' Year 4 Spring slots are filled with the track's required course (ENEB455) plus three more electives (ENEB443, ENEB451, ENEB452); combined with ENEB352 (Year 3 Spring, a prerequisite for ENEB451), that's the track's required 4 electives. Any four electives from the pool would satisfy the requirement equally."
+  ],
+  "credits": {
+    "MATH140": 4, "MATH141": 4, "MATH241": 4, "CMSC131": 4,
+    "PHYS261": 1, "ENEB302": 4, "ENEB344": 4
+  },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["ENES100", "MATH140", "CHEM135", "ENGL101"] },
+    { "term": "Year 1 Spring", "courses": ["MATH141", "PHYS161", "CMSC131"] },
+    { "term": "Year 2 Fall", "courses": ["PHYS260", "PHYS261", "MATH241"] },
+    { "term": "Year 3 Fall", "courses": ["ENEB302", "ENEB340", "ENEB341", "ENEB344", "ENEB354"] },
+    { "term": "Year 3 Spring", "courses": ["ENEB304", "ENEB352", "ENEB353", "ENEB355", "ENEB345"] },
+    { "term": "Year 4 Fall", "courses": ["ENEB408A", "ENEB454", "ENEB444", "ENEB346", "ENGL393"] },
+    { "term": "Year 4 Spring", "courses": ["ENEB408B", "ENEB455", "ENEB443", "ENEB451", "ENEB452"] }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "programId": "amst-major",
+  "source": "https://drive.google.com/uc?export=download&id=1nOsCTmVM4dhwKglqMEblqO2pCujWAY_I#American-Studies",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities' American Studies Four Year Academic Plan. The source PDF's term grid converts to garbled, column-interleaved text (Fall/Spring cells for four years run together), so exact per-slot Fall/Spring placement could not be reliably reconstructed; flagged in docs/project/owner-review.md. Term placement here follows the plan's clearly-legible signals (AMST101 in Year 1, AMST340/AMST450 in Year 4 Fall/Spring respectively per the plan and catalog footnote 3) and otherwise spreads the remaining major requirements across Years 1-4 in the same order the plan lists them. Gen Ed and general-elective slots are left out: only the major is audited.",
+    "'Select one AMST 1xx or 2xx level course' filled with AMST202, from the catalog's own named list.",
+    "Americanist Foundation (2 courses) filled with AASP100 and SOCY200, both real 1xx/2xx courses in departments the catalog footnote names as examples (AASP, SOCY); the department's own approved list is not published in either source (see reviewNotes on the Program).",
+    "Select four 3xx or 4xx-level AMST courses filled with AMST310, AMST312, AMST315, and AMST320, all from the Academic Catalog list of real AMST courses.",
+    "Focus Area (12 credits, one non-AMST department) filled with SOCY310, SOCY320, SOCY335, and SOCY410 -- real SOCY courses already used elsewhere in this codebase (socy-major-2026-27.ts and its sample plan, sds-major-socy.json) -- chosen only to satisfy the single-department/level/credit shape."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["AMST101"] },
+    { "term": "Year 1 Spring", "courses": ["AMST202"] },
+    { "term": "Year 2 Fall", "courses": ["AAAS100"] },
+    { "term": "Year 2 Spring", "courses": ["SOCY200"] },
+    { "term": "Year 3 Fall", "courses": ["AMST310", "SOCY310"] },
+    { "term": "Year 3 Spring", "courses": ["AMST312", "SOCY320"] },
+    { "term": "Year 4 Fall", "courses": ["AMST315", "SOCY335", "AMST340"] },
+    { "term": "Year 4 Spring", "courses": ["AMST320", "SOCY410", "AMST450"] }
+  ]
+}

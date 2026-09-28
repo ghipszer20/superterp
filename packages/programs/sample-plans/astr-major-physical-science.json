@@ -1,0 +1,26 @@
+{
+  "programId": "astr-major-physical-science",
+  "source": "https://www.astro.umd.edu/sites/default/files/undergrad/bs-astronomy-physical-science_requirements-and-4-year-plan.pdf",
+  "fetched": "2026-09-27",
+  "official": true,
+  "notes": [
+    "Four-year Plan for BS Astronomy - Physical Science Specialization. Gen Ed and ENGL slots are left out: only the major is audited.",
+    "The plan's three 'Complementary Sci' placeholders are filled with AOSC401, GEOL322 and ENST405 (>= 9 credits total, per the department page).",
+    "The plan's three 'ASTR 3/4**' placeholders are filled with ASTR406, ASTR422 and ASTR450.",
+    "The plan's two 'Comm/Societal/Applications' placeholders are filled with PLCY301 (Societal Implications) and COMM341 (Communication), two different areas."
+  ],
+  "credits": {
+    "MATH140": 4, "MATH141": 4, "PHYS275": 2, "ASTR232": 4, "MATH241": 4, "PHYS276": 2,
+    "MATH243": 4, "ASTR310": 4, "GEOL322": 4
+  },
+  "terms": [
+    { "term": "First Year Fall", "courses": ["ASTR130", "MATH140"] },
+    { "term": "First Year Spring", "courses": ["ASTR131", "MATH141", "PHYS171", "PHYS275"] },
+    { "term": "Second Year Fall", "courses": ["ASTR232", "MATH241", "PHYS272", "PHYS265"] },
+    { "term": "Second Year Spring", "courses": ["PHYS273", "PHYS276", "MATH243", "AOSC401"] },
+    { "term": "Third Year Fall", "courses": ["ASTR310", "PLCY301"] },
+    { "term": "Third Year Spring", "courses": ["ASTR406", "GEOL322"] },
+    { "term": "Fourth Year Fall", "courses": ["ASTR422", "ENST405"] },
+    { "term": "Fourth Year Spring", "courses": ["ASTR450", "COMM341"] }
+  ]
+}

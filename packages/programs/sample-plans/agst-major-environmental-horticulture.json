@@ -1,0 +1,21 @@
+{
+  "programId": "agst-major-environmental-horticulture",
+  "source": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/plant-sciences-landscape-architecture/agricultural-science-technology-major/",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "No published 4-year plan exists for this specialization: the catalog's 'Catalog four-year plan' section only links out to the College of Agriculture and Natural Resources' general roadmap page (4yearplans.umd.edu), with no AGST-specific term grid. This plan is CONSTRUCTED from the catalog's own requirement rows instead (docs/project/owner-review.md flags this). Gen Ed courses are left out; only the major is audited.",
+    "Organic Chemistry gateway filled with PLSC275; CHEM231 & CHEM232 would satisfy it equally. Plant Protection gateway filled with BSCI487; BSCI337 or BSCI497 would satisfy it equally. Biology Laboratory (BSCI170's lab) filled with BSCI180; BSCI171 would satisfy it equally.",
+    "Introductory Course filled with INAG250, one of thirteen named options. Lower-level restricted electives filled with PLSC125 and PLSC203, two of the named options. Agriculture Business/Economics/Management/Marketing course filled with AREC306. Upper-level restricted electives filled with ENST411 and PLSC400, both named directly in this specialization's own list. Career Preparation choice filled with PLSC389; PLSC399 would satisfy it equally."
+  ],
+  "terms": [
+    { "term": "Freshman Fall", "courses": ["CHEM131", "PLSC201", "MATH115", "INAG250"] },
+    { "term": "Freshman Spring", "courses": ["CHEM132", "PLSC206", "AREC250", "PLSC110"] },
+    { "term": "Sophomore Fall", "courses": ["PLSC275", "ENST200", "BSCI170", "PLSC111"] },
+    { "term": "Sophomore Spring", "courses": ["BSCI487", "BSCI180", "PLSC271"] },
+    { "term": "Junior Fall", "courses": ["PLSC420", "PLSC125", "PLSC203"] },
+    { "term": "Junior Spring", "courses": ["PLSC453", "AREC306", "PLSC432"] },
+    { "term": "Senior Fall", "courses": ["PLSC433", "ENST411", "PLSC400"] },
+    { "term": "Senior Spring", "courses": ["PLSC389", "PLSC460"] }
+  ]
+}

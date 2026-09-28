@@ -1,0 +1,26 @@
+{
+  "programId": "biocomp-major",
+  "source": "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/biocomp_fall_2026_gradplan.pdf",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "A. James Clark School of Engineering official Fall 2026 Biocomputational Engineering graduation plan. ENGL101 (Academic Writing) and the generic Gen Ed slots are left out: only the program's own prerequisite and required courses are audited.",
+    "Year 3's PDF-converted term grid lists ENBC322 (Algorithms) at the end of the Fall column with no explicit column marker; assigned to Fall here since the printed Fall total (16) only matches with it included (the printed Spring total, 14, matches its own five listed courses without it).",
+    "The printed term grid shows only two 'Elective' slots (Year 4 Spring, 6 credits), while the same document's own overview page lists four Technical Elective slots (12 credits) and the grid's own term totals sum to 113 credits -- 7 short of the plan's stated 'minimum of 120 credits' (see docs/project/owner-review.md). Two more electives are added to Year 4 Spring here so this fixture reflects the full 12-credit requirement.",
+    "The four Technical Elective slots are filled with ENBC403 (Research Methods in Biological Data Mining), ENBC411 (Advanced Programming in Python), ENBC423 (Applied Computer Vision) and ENBC455 (Bioinformatics Engineering), all from the catalog's 'Possible technical electives' list; any four of the ten listed electives would satisfy the requirement."
+  ],
+  "credits": {
+    "MATH140": 4, "MATH141": 4, "MATH241": 4, "CHEM136": 1, "PHYS261": 1,
+    "ENBC301": 1, "ENBC352": 2
+  },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["MATH140", "CHEM135", "CHEM136"] },
+    { "term": "Year 1 Spring", "courses": ["ENES100", "BIOE120", "MATH141", "PHYS161"] },
+    { "term": "Year 2 Fall", "courses": ["MATH241", "BIOE241"] },
+    { "term": "Year 2 Spring", "courses": ["PHYS260", "PHYS261"] },
+    { "term": "Year 3 Fall", "courses": ["ENBC301", "ENBC311", "ENBC331", "ENBC332", "ENBC341", "ENBC322"] },
+    { "term": "Year 3 Spring", "courses": ["ENBC312", "ENBC351", "ENBC342", "ENBC352", "ENBC321"] },
+    { "term": "Year 4 Fall", "courses": ["ENBC353", "ENBC431", "ENBC425", "ENGL393"] },
+    { "term": "Year 4 Spring", "courses": ["ENBC441", "ENBC491", "ENBC403", "ENBC411", "ENBC423", "ENBC455"] }
+  ]
+}

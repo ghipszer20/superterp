@@ -1,0 +1,21 @@
+{
+  "programId": "ital-major",
+  "source": "https://drive.google.com/uc?export=download&id=1DTZOYr6ZR0khHL4nxetKE9C1NGiK6_uu#Italian-Studies",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities official four-year academic plan for Italian Studies. The PDF-to-text conversion of the term grid is garbled (a benchmark sidebar and the Fall/Spring columns appear interleaved on each line), but the ITAL course numbers and their relative order are legible (ITAL204, then ITAL207, then ITAL252/261 with ITAL301, then ITAL311 with ITAL361, then ITAL362/ITAL401 with the first ITAL4xx/478x pair, then the remaining two ITAL4xx/478x pairs). Exact year/semester placement below is reconstructed from that order, not read verbatim -- flagged in docs/project/owner-review.md.",
+    "Year 1 has no major courses: ITAL204 requires ITAL203 (or equivalent, per the catalog prerequisite 'successful completion of Italian language through intermediate level'), which is the pre-major language sequence (ITAL103/121, ITAL122/203), not part of the major's own 36 credits, so Gen Ed and that prerequisite sequence are left out per the pattern used by other programs' sample plans (only the major is audited).",
+    "'ITAL252 or ITAL261' filled with ITAL252 (named first in the catalog's own option list).",
+    "The three 'ITAL4xx' elective slots filled with ITAL411, ITAL421, and ITAL431 (all on the Academic Catalog's approved ITAL plan-slot course list; the source names no specific ITAL4xx courses). Each is paired with one ITAL478 colloquium section in the same term, per the catalog's footnote that every 4xx course requires an associated 1-credit ITAL478; the engine does not check that pairing, so ITAL478 is entered here three times as a repeatable 1-credit course."
+  ],
+  "credits": { "ITAL478": 1 },
+  "terms": [
+    { "term": "Year 2 Fall", "courses": ["ITAL204"] },
+    { "term": "Year 2 Spring", "courses": ["ITAL207"] },
+    { "term": "Year 3 Fall", "courses": ["ITAL252", "ITAL301"] },
+    { "term": "Year 3 Spring", "courses": ["ITAL311", "ITAL361"] },
+    { "term": "Year 4 Fall", "courses": ["ITAL362", "ITAL401", "ITAL411", "ITAL478"] },
+    { "term": "Year 4 Spring", "courses": ["ITAL421", "ITAL478", "ITAL431", "ITAL478"] }
+  ]
+}

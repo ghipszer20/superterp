@@ -1,14 +1,26 @@
 "use client";
 
-import { useState } from "react";
-import type { DietTag, Meal } from "@superterp/campus-data";
+import { useRef, useState } from "react";
+import type { DietTag, Station } from "@superterp/campus-data";
 import { Chip, Segmented } from "@/components/Segmented";
 import { ExternalIcon } from "@/components/icons";
-import { Card, EmptyState, Section } from "@/components/ui";
-import { currentMealName, FILLER } from "@/lib/status";
+import { Card, EmptyState, Section, SkeletonCard } from "@/components/ui";
+import { resolveMeal, stationDisplayName, type DiningSlice } from "@/lib/dining";
+import { FILLER } from "@/lib/status";
 import styles from "./dining.module.css";
 
-type Hall = { id: number; name: string; meals: Meal[] | null };
+/** A hall and the names of the meals it serves today (null: its menu couldn't be loaded). */
+type Hall = { id: number; name: string; meals: string[] | null };
+
+type Props = {
+  date: string;
+  halls: Hall[];
+  /** The one hall + meal rendered with the page. */
+  initial: DiningSlice & { hallId: number };
+  preferredMeal: string;
+};
+
+const sliceKey = (hallId: number, meal: string) => `${hallId}|${meal}`;
 
 const DIETS: { tag: DietTag; label: string }[] = [
   { tag: "vegetarian", label: "Vegetarian" },
@@ -19,16 +31,39 @@ const DIETS: { tag: DietTag; label: string }[] = [
 // Allergen flags as nutrition.umd.edu labels them ("Contains …").
 const ALLERGENS = ["dairy", "gluten", "egg", "soy", "nuts", "sesame", "fish", "shellfish", "pork"];
 
-export function DiningView({ halls, initialMinutes }: { halls: Hall[]; initialMinutes: number }) {
-  const [hallId, setHallId] = useState(halls[0]!.id);
-  const [mealName, setMealName] = useState<string>(currentMealName(initialMinutes));
+export function DiningView({ date, halls, initial, preferredMeal }: Props) {
+  const [hallId, setHallId] = useState(initial.hallId);
+  const [mealName, setMealName] = useState(preferredMeal);
   const [diets, setDiets] = useState<DietTag[]>([]);
   const [avoid, setAvoid] = useState<string[]>([]);
+  // Stations per hall + meal, filled on tap; "error" when that request failed.
+  const [slices, setSlices] = useState<Record<string, Station[] | "error">>(() =>
+    initial.meal ? { [sliceKey(initial.hallId, initial.meal)]: initial.stations } : {},
+  );
+  const loading = useRef(new Set<string>());
 
   const hall = halls.find((h) => h.id === hallId)!;
-  const meal = hall.meals?.find((m) => m.name === mealName) ?? hall.meals?.[0];
+  const meal = resolveMeal(hall.meals, mealName);
+  const loaded = meal ? slices[sliceKey(hallId, meal)] : [];
 
-  const stations = (meal?.stations ?? [])
+  function show(nextHallId: number, nextMeal: string) {
+    setHallId(nextHallId);
+    setMealName(nextMeal);
+    const m = resolveMeal(halls.find((h) => h.id === nextHallId)!.meals, nextMeal);
+    if (!m) return;
+    const key = sliceKey(nextHallId, m);
+    const have = slices[key];
+    if ((have !== undefined && have !== "error") || loading.current.has(key)) return;
+    loading.current.add(key);
+    const params = new URLSearchParams({ date, hall: String(nextHallId), meal: m });
+    fetch(`/api/dining?${params}`)
+      .then((res) => (res.ok ? (res.json() as Promise<DiningSlice>) : Promise.reject(new Error(`HTTP ${res.status}`))))
+      .then((slice) => setSlices((s) => ({ ...s, [key]: slice.stations })))
+      .catch(() => setSlices((s) => ({ ...s, [key]: "error" })))
+      .finally(() => loading.current.delete(key));
+  }
+
+  const stations = (Array.isArray(loaded) ? loaded : [])
     .map((s) => ({
       ...s,
       items: s.items.filter(
@@ -48,14 +83,14 @@ export function DiningView({ halls, initialMinutes }: { halls: Hall[]; initialMi
           label="Dining hall"
           options={halls.map((h) => ({ value: h.id, label: h.name }))}
           value={hallId}
-          onChange={setHallId}
+          onChange={(id) => show(id, mealName)}
         />
         {hall.meals && hall.meals.length > 0 ? (
           <Segmented
             label="Meal"
-            options={hall.meals.map((m) => ({ value: m.name, label: m.name }))}
-            value={meal?.name ?? ""}
-            onChange={setMealName}
+            options={hall.meals.map((m) => ({ value: m, label: m }))}
+            value={meal ?? ""}
+            onChange={(m) => show(hallId, m)}
           />
         ) : null}
         <div className={styles.chips} aria-label="Diet">
@@ -79,10 +114,12 @@ export function DiningView({ halls, initialMinutes }: { halls: Hall[]; initialMi
         </details>
       </div>
 
-      {hall.meals === null ? (
+      {hall.meals === null || loaded === "error" ? (
         <Card>
           <EmptyState title={`Couldn’t load ${hall.name}`}>UMD Dining didn&apos;t respond. Try again in a few minutes.</EmptyState>
         </Card>
+      ) : loaded === undefined ? (
+        <SkeletonCard rows={8} />
       ) : stations.length === 0 ? (
         <Card>
           <EmptyState title={meal ? "Nothing matches your filters" : "No menu posted"}>
@@ -93,8 +130,8 @@ export function DiningView({ halls, initialMinutes }: { halls: Hall[]; initialMi
         <div className={styles.grid}>
           {stations.map((s) => (
             <Section key={s.name}>
-              <Card>
-                <h2 className={styles.station}>{s.name}</h2>
+              <Card className={styles.stationCard}>
+                <h2 className={styles.station}>{stationDisplayName(s.name)}</h2>
                 <ul className={styles.items}>
                   {s.items.map((item, i) => (
                     <li key={`${i}-${item.name}`}>

@@ -79,10 +79,18 @@ export function parseRooms(html: string): Room[] {
       categoryId,
       locationId,
       categoryName: jsString(block, "grouping") ?? "",
-      bookingUrl: `${LIBCAL}${jsString(block, "url") ?? `/space/${id}`}`,
+      // Always build this from the room's own eid — never trust the feed's
+      // "url" field, which can point at a category or availability page
+      // instead of this specific room's booking screen.
+      bookingUrl: `${LIBCAL}/space/${id}`,
     });
   }
   return rooms;
+}
+
+/** A room's own LibCal booking screen, pre-filled to one date. */
+export function roomBookingUrl(roomId: number, isoDate: string): string {
+  return `${LIBCAL}/space/${roomId}?date=${isoDate}`;
 }
 
 /** Merge a room's open half-hour slots into contiguous windows. */
@@ -159,4 +167,17 @@ export async function fetchCategoryAvailability(
     rooms.filter((r) => r.categoryId === categoryId),
     grid,
   );
+}
+
+// Not study space for students: equipment loans and faculty-only offices.
+const EXCLUDED_CATEGORY = /equipment|faculty/i;
+
+/** Each study-room category (by library) once, in catalog order. */
+export function studyRoomCategories(rooms: Room[]): { locationId: number; categoryId: number }[] {
+  const seen = new Map<number, { locationId: number; categoryId: number }>();
+  for (const r of rooms) {
+    if (EXCLUDED_CATEGORY.test(r.categoryName) || seen.has(r.categoryId)) continue;
+    seen.set(r.categoryId, { locationId: r.locationId, categoryId: r.categoryId });
+  }
+  return [...seen.values()];
 }

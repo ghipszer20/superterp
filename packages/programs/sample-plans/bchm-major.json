@@ -1,0 +1,30 @@
+{
+  "programId": "bchm-major",
+  "source": "https://chem.umd.edu/sites/default/files/chembiochbachelorprograms-f26.pdf",
+  "fetched": "2026-09-27",
+  "official": true,
+  "notes": [
+    "Comparison of Sample Plans Leading to Bachelor's degrees in CHEM BS, BCHM BS and CHEM BA programs (effective Fall 2026), BCHM BS column. Gen Ed, ENGL and free-elective slots are left out: only the major is audited.",
+    "Semester 3's 'BSCI LL' placeholder (Take at least one lower-level BSCI course, 3-4 credits) is filled with BSCI222 (Principles of Genetics, 4 credits).",
+    "Semester 5's 'BSCI UL' placeholder (Take at least one upper-level BSCI course, 3-4 credits) is filled with BSCI353 (Principles of Neuroscience, 3 credits)."
+  ],
+  "credits": {
+    "CHEM146": 3, "CHEM177": 2, "MATH140": 4, "MATH141": 4, "MATH241": 4,
+    "CHEM237": 4, "CHEM247": 4, "PHYS161": 3, "BSCI180": 1, "BSCI222": 4,
+    "CHEM276": 2, "CHEM277": 3, "PHYS260": 3, "PHYS261": 1,
+    "BCHM461": 3, "CHEM481": 3, "BSCI353": 3,
+    "BCHM485": 3, "CHEM483": 2, "CHEM395": 1,
+    "BCHM462": 3, "CHEM425": 4,
+    "BCHM465": 3, "BCHM464": 3
+  },
+  "terms": [
+    { "term": "Freshman Fall", "courses": ["CHEM146", "CHEM177", "MATH140", "UNIV100"] },
+    { "term": "Freshman Spring", "courses": ["CHEM237", "BSCI170", "MATH141"] },
+    { "term": "Sophomore Fall", "courses": ["CHEM247", "PHYS161", "BSCI180", "BSCI222"] },
+    { "term": "Sophomore Spring", "courses": ["CHEM276", "CHEM277", "PHYS260", "PHYS261", "MATH241"] },
+    { "term": "Junior Fall", "courses": ["BCHM461", "CHEM481", "BSCI353"] },
+    { "term": "Junior Spring", "courses": ["BCHM485", "CHEM483", "CHEM395"] },
+    { "term": "Senior Fall", "courses": ["BCHM462", "CHEM425"] },
+    { "term": "Senior Spring", "courses": ["BCHM465", "BCHM464"] }
+  ]
+}

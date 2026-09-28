@@ -1,0 +1,26 @@
+{
+  "programId": "phys-major-education",
+  "source": "https://www.umdphysics.umd.edu/academics/undergraduate/ugrad-requirements.html",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "UMD publishes no per-specialization sample graduation plan reachable from the fetched sources for the Education Physics specialization (the CMNS four-year-plans page only links out to the department's general Physics page). Built from the department's own requirements page and the catalog. Flagged in docs/project/owner-review.md.",
+    "'One of PHYS401, PHYS404, PHYS410, PHYS413' is filled with PHYS410 (Classical Mechanics).",
+    "The 'PHYS4XY Advanced Physics Elective' slot is filled with PHYS474 (Computational Physics), a real 400-level PHYS elective not otherwise required in this track."
+  ],
+  "credits": {
+    "PHYS170": 1, "PHYS275": 2, "PHYS276": 2,
+    "MATH140": 4, "MATH141": 4, "MATH241": 4, "MATH243": 4,
+    "TLPL101": 1, "TLPL102": 2, "PHYS313": 4
+  },
+  "terms": [
+    { "term": "Freshman Fall", "courses": ["MATH140", "PHYS170", "TLPL101"] },
+    { "term": "Freshman Spring", "courses": ["MATH141", "PHYS171", "PHYS275", "TLPL102"] },
+    { "term": "Sophomore Fall", "courses": ["MATH241", "PHYS272", "PHYS265"] },
+    { "term": "Sophomore Spring", "courses": ["MATH243", "PHYS273", "PHYS276"] },
+    { "term": "Junior Fall", "courses": ["PHYS313", "PHYS371", "TLPL401"] },
+    { "term": "Junior Spring", "courses": ["PHYS375", "TLPL414", "EDHD426"] },
+    { "term": "Senior Fall", "courses": ["TLPL415", "PHYS410"] },
+    { "term": "Senior Spring", "courses": ["PHYS474"] }
+  ]
+}

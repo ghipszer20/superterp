@@ -3,7 +3,7 @@
    something. Accent is (PRODUCT)RED iPhone red, #BA0C2F. */
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 
   /* Surfaces */
   --bg: #f5f5f7;
@@ -12,6 +12,7 @@
   --surface-pressed: #e8e8ed;
   --separator: rgb(60 60 67 / 0.14);
   --material: rgb(250 250 252 / 0.72); /* frosted bars */
+  --segment-active: #ffffff;
 
   /* Text */
   --text: #1d1d1f;
@@ -54,19 +55,80 @@
   --content: 1080px;
   --shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 16px rgb(0 0 0 / 0.04);
 
+  /* Schedule builder: one pastel per course (fill / ink), for blocks, swatches and panels. */
+  --course-0-bg: #ffe1e6; --course-0-fg: #8a0a24;
+  --course-1-bg: #dcecff; --course-1-fg: #0b4a8f;
+  --course-2-bg: #e3f5e1; --course-2-fg: #1f6b2a;
+  --course-3-bg: #fff0d1; --course-3-fg: #7a4a00;
+  --course-4-bg: #efe4ff; --course-4-fg: #5b2a9e;
+  --course-5-bg: #d8f3f1; --course-5-fg: #0d5e58;
+  --course-6-bg: #ffe6d9; --course-6-fg: #9a3b0a;
+  --course-7-bg: #e6e9f0; --course-7-fg: #374151;
+  /* PlanetTerp rating badges */
+  --rating-good: #248a3d;
+  --rating-fair: #b25000;
+  --rating-low: #c0392b;
+  --rating-none: #8e8e93;
+  /* A real border on every card, so cards stay distinct when shadows are flattened (dark-mode extensions). */
+  --card-border: rgb(60 60 67 / 0.18);
+
   /* Motion */
   --spring: cubic-bezier(0.32, 0.72, 0, 1);
   --fast: 160ms;
 }
 
+/* Dark palette. The student's Light/Dark choice sets data-theme on <html>
+   (lib/theme.ts, applied before first paint); without it, follow the device. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --bg: #000000;
     --surface: #1c1c1e;
     --surface-2: #2c2c2e;
     --surface-pressed: #3a3a3c;
     --separator: rgb(84 84 88 / 0.5);
     --material: rgb(22 22 24 / 0.72);
+    --segment-active: #3a3a3c;
+    --text: #f5f5f7;
+    --text-2: #a1a1a6;
+    --text-3: #8e8e93;
+    --accent: #ff4f6d;
+    --accent-hover: #ff6b84;
+    --accent-tint: rgb(255 79 109 / 0.14);
+    --accent-tint-2: rgb(255 79 109 / 0.22);
+    --on-accent: #1c0006;
+    --open: #30d158;
+    --open-tint: rgb(48 209 88 / 0.14);
+    --soon: #ff9f0a;
+    --soon-tint: rgb(255 159 10 / 0.14);
+    --closed-tint: rgb(142 142 147 / 0.18);
+    --shadow: none;
+
+    --course-0-bg: #4a1522; --course-0-fg: #ffc2cf;
+    --course-1-bg: #10304f; --course-1-fg: #b9d9ff;
+    --course-2-bg: #173a1c; --course-2-fg: #bfe8b8;
+    --course-3-bg: #3f2e0b; --course-3-fg: #ffd98a;
+    --course-4-bg: #301c50; --course-4-fg: #dcc6ff;
+    --course-5-bg: #0d3634; --course-5-fg: #a6ece6;
+    --course-6-bg: #47220f; --course-6-fg: #ffc9a8;
+    --course-7-bg: #282d38; --course-7-fg: #d1d6e0;
+    --rating-good: #2a9d48;
+    --rating-fair: #c25a00;
+    --rating-low: #d0453a;
+    --rating-none: #636366;
+    --card-border: rgb(235 235 245 / 0.16);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #000000;
+    --surface: #1c1c1e;
+    --surface-2: #2c2c2e;
+    --surface-pressed: #3a3a3c;
+    --separator: rgb(84 84 88 / 0.5);
+    --material: rgb(22 22 24 / 0.72);
+    --segment-active: #3a3a3c;
 
     --text: #f5f5f7;
     --text-2: #a1a1a6;
@@ -86,7 +148,20 @@
     --closed-tint: rgb(142 142 147 / 0.18);
 
     --shadow: none;
-  }
+
+    --course-0-bg: #4a1522; --course-0-fg: #ffc2cf;
+    --course-1-bg: #10304f; --course-1-fg: #b9d9ff;
+    --course-2-bg: #173a1c; --course-2-fg: #bfe8b8;
+    --course-3-bg: #3f2e0b; --course-3-fg: #ffd98a;
+    --course-4-bg: #301c50; --course-4-fg: #dcc6ff;
+    --course-5-bg: #0d3634; --course-5-fg: #a6ece6;
+    --course-6-bg: #47220f; --course-6-fg: #ffc9a8;
+    --course-7-bg: #282d38; --course-7-fg: #d1d6e0;
+    --rating-good: #2a9d48;
+    --rating-fair: #c25a00;
+    --rating-low: #d0453a;
+    --rating-none: #636366;
+    --card-border: rgb(235 235 245 / 0.16);
 }
 
 *,

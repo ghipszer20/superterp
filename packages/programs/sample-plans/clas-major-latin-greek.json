@@ -1,0 +1,21 @@
+{
+  "programId": "clas-major-latin-greek",
+  "source": "https://drive.google.com/uc?export=download&id=1Go4fyz59qBM5GgDt7xvqJXxnuWw3b3WO",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "Department's official Classics - Latin & Greek four-year plan; the PDF-to-text conversion garbled the term grid's column alignment (Fall/Spring columns interleaved illegibly). Courses are placed by legible signals only (year headers, benchmark notes, and each course's 'primary lang.'/'secondary lang.' annotations); the exact term each falls in is reconstructed, not verbatim -- flagged as reconstructed placement. Gen Ed slots are left out: only the major is audited.",
+    "The plan itself leaves the primary/secondary language choice generic ('LATN 101 or GREK 101 (primary lang.)'); this plan picks Latin as the primary (18-credit) language and Greek as the secondary (12-credit) language, matching the catalog's Option 1. LATN101, LATN102, LATN201, LATN301, LATN302, LATN405 (18 credits); GREK101, GREK102, GREK201, GREK211 (12 credits).",
+    "Supporting courses (9 credits) filled with the two courses named directly in the catalog's own footnote example (CLAS170, HIST110) plus one more real CLAS course (CLAS308, Academic Catalog's approved list), since no specific 'Greek or Roman history' course number is named or on an approved list."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["LATN101", "CLAS170"] },
+    { "term": "Year 1 Spring", "courses": ["GREK101"] },
+    { "term": "Year 2 Fall", "courses": ["LATN102", "HIST110"] },
+    { "term": "Year 2 Spring", "courses": ["GREK102", "LATN201"] },
+    { "term": "Year 3 Fall", "courses": ["LATN301", "GREK201"] },
+    { "term": "Year 3 Spring", "courses": ["LATN302", "GREK211"] },
+    { "term": "Year 4 Fall", "courses": ["LATN405"] },
+    { "term": "Year 4 Spring", "courses": ["CLAS308"] }
+  ]
+}

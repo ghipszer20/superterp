@@ -1,0 +1,21 @@
+{
+  "programId": "fpe-major",
+  "source": "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/fire_protection_fall_2026_gradplan.pdf",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "A. James Clark School of Engineering official Fall 2026 Fire Protection Engineering graduation plan. General-education slots (ENGL101, Oral Communication, Professional Writing, Scholarship in Practice, Humanities, History/Social Sciences, Big Question, Understanding Plural Societies/Cultural Competency) are left out: only the program's own requirements are audited here (they're covered by gen-ed-2026-27.ts).",
+    "The 'MATH 240 or 241' slot (Year 2 Fall) is filled with MATH241 (Calculus III), as printed first on the graduation plan's own overview page; MATH240 would satisfy the requirement equally, but MATH241 avoids a real-world credit conflict with the MATH461 technical elective below (per the course catalog, credit is only granted for one of MATH240, MATH341 or MATH461).",
+    "The four generic 'Technical Elective**' slots (Year 3 Fall/Spring, Year 4 Fall/Spring) are filled with MATH461 (Linear Algebra for Scientists and Engineers, satisfying the 3-credit MATH400+/STAT400+ bucket), ENFP464 (satisfying the 3-credit ENFP400+ bucket, distinct from the 9 ENFP courses already required), and CHEM425 plus CHEM474 (satisfying the 6-credit CHEM/CMSC/MATH/PHYS 400+ bucket). These four are real UMD courses already cited as approved technical electives for a neighboring ENGR major in this repo (chbe-major-2026-27.ts); no source for this major names specific technical-elective course numbers, so any courses satisfying the three buckets in fpe-major-2026-27.ts would equally work -- see its reviewNotes."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["ENES100", "MATH140", "CHEM135"] },
+    { "term": "Year 1 Spring", "courses": ["ENES102", "MATH141", "PHYS161"] },
+    { "term": "Year 2 Fall", "courses": ["ENFP250", "ENES221", "MATH241", "PHYS260", "PHYS261"] },
+    { "term": "Year 2 Spring", "courses": ["ENFP201", "ENES220", "ENES232", "MATH246"] },
+    { "term": "Year 3 Fall", "courses": ["ENFP300", "ENFP440", "MATH461"] },
+    { "term": "Year 3 Spring", "courses": ["ENFP310", "ENFP312", "ENFP350", "ENFP413", "ENFP464"] },
+    { "term": "Year 4 Fall", "courses": ["ENFP405", "ENFP410", "ENFP415", "ENFP425", "CHEM425"] },
+    { "term": "Year 4 Spring", "courses": ["ENFP411", "ENFP420", "ENFP426", "CHEM474"] }
+  ]
+}

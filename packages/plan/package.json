@@ -1,0 +1,33 @@
+{
+  "name": "@superterp/plan",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Checks a student's four-year Plan term by term: prerequisites, corequisites, repeats, credit load, unknown courses, and double-major or dual-degree notices. Framework-free; runs in the browser.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./check": "./src/check.ts",
+    "./credit-caps": "./src/credit-caps.ts",
+    "./catalog": "./src/catalog.ts",
+    "./catalog-file": "./src/catalog-file.ts",
+    "./notices": "./src/notices.ts",
+    "./what-if": "./src/what-if.ts",
+    "./degrees": "./src/degrees.ts",
+    "./grad-courses": "./src/grad-courses.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@superterp/credit": "*",
+    "@types/node": "^22.20.4",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.1"
+  },
+  "dependencies": {
+    "@superterp/audit": "*",
+    "@superterp/course-data": "*"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "programId": "chem-major-ba",
+  "source": "https://chem.umd.edu/sites/default/files/chembiochbachelorprograms-f26.pdf",
+  "fetched": "2026-09-27",
+  "official": true,
+  "notes": [
+    "Comparison of Sample Plans Leading to Bachelor's degrees in CHEM BS, BCHM BS and CHEM BA programs (effective Fall 2026), CHEM BA column. Gen Ed, ENGL and free-elective slots are left out: only the major is audited. The chart's own text linearization interleaves its three columns in places, so exact semester boundaries here are reconstructed from the checksheet's requirement list rather than copied cell-by-cell; the course list and total credits match the chart.",
+    "The checksheet's 'BSCI LL' 100-200 level STEM elective placeholder (3-4 credits) is filled with MATH240 (Introduction to Linear Algebra, 4 credits), a course named on the checksheet's own approved list.",
+    "The 'Elements of Physical Chemistry I -or- Physical Chemistry 1+2' choice is filled with CHEM480 alone (the lighter option). The 'Required Upper Level Laboratory' choice is filled with CHEM425 (Instrumental Methods of Analysis). The 3-credit upper-level CHEM/BCHM elective is filled with CHEM403 (Radiochemistry)."
+  ],
+  "credits": {
+    "CHEM146": 3, "CHEM177": 2, "MATH135": 4, "UNIV100": 1,
+    "CHEM237": 4, "MATH136": 4,
+    "CHEM247": 4, "PHYS131": 4, "MATH240": 4,
+    "CHEM276": 2, "CHEM272": 2, "PHYS132": 4,
+    "CHEM480": 3, "BCHM461": 3,
+    "CHEM425": 4, "CHEM395": 1,
+    "CHEM401": 3,
+    "CHEM403": 3
+  },
+  "terms": [
+    { "term": "Freshman Fall", "courses": ["CHEM146", "CHEM177", "MATH135", "UNIV100"] },
+    { "term": "Freshman Spring", "courses": ["CHEM237", "MATH136"] },
+    { "term": "Sophomore Fall", "courses": ["CHEM247", "PHYS131", "MATH240"] },
+    { "term": "Sophomore Spring", "courses": ["CHEM276", "CHEM272", "PHYS132"] },
+    { "term": "Junior Fall", "courses": ["CHEM480", "BCHM461"] },
+    { "term": "Junior Spring", "courses": ["CHEM425", "CHEM395"] },
+    { "term": "Senior Fall", "courses": ["CHEM401"] },
+    { "term": "Senior Spring", "courses": ["CHEM403"] }
+  ]
+}

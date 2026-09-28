@@ -1,0 +1,60 @@
+// The course facts the plan checker needs, parsed once from Schedule of Classes records so that
+// checking a Plan on every edit does no text parsing.
+
+import type { Course } from "@superterp/course-data";
+import { parsePrerequisite, type Requirement } from "@superterp/course-data/prereqs";
+
+/**
+ * Whether a course may be taken again for credit. Testudo states it only for some courses
+ * ("Repeatable to 6 credits if content differs"); it never says a course is NOT repeatable,
+ * so "unknown" is the usual case.
+ */
+export type Repeatability = { kind: "unknown" } | { kind: "repeatable"; maxCredits?: number };
+
+export type CatalogCourse = {
+  id: string;
+  title: string;
+  credits: { min: number; max: number };
+  genEd: string[];
+  prerequisite: Requirement | null;
+  corequisite: Requirement | null;
+  repeat: Repeatability;
+};
+
+export type PlanCatalog = ReadonlyMap<string, CatalogCourse>;
+
+// Phrasings seen in the Spring 2027 snapshot. Bare "repeat" is not enough: GVPT390 teaches
+// "repeated games" and STAT741 "repeated measures".
+const REPEAT_WITH_LIMIT = [/\brepeatable to (\d+) credits?/i, /\bmay (?:be )?repeat(?:ed)?\b[^.]*?\bmaximum of (\d+) credits?/i];
+const REPEAT_NO_LIMIT = [/\bthe course is repeatable\b/i, /\bmay be repeated\b/i];
+
+function repeatability(course: Course): Repeatability {
+  const text = [course.description, ...Object.values(course.texts.other)].join("\n");
+  for (const pattern of REPEAT_WITH_LIMIT) {
+    const m = pattern.exec(text);
+    if (m) return { kind: "repeatable", maxCredits: Number(m[1]) };
+  }
+  return REPEAT_NO_LIMIT.some((p) => p.test(text)) ? { kind: "repeatable" } : { kind: "unknown" };
+}
+
+/**
+ * One catalog from one or more terms' Schedule of Classes courses. A term's snapshot lists only
+ * the courses offered that term, so pass several terms to know more courses; when a course
+ * appears more than once, the first record wins.
+ */
+export function buildCatalog(...lists: Course[][]): PlanCatalog {
+  const catalog = new Map<string, CatalogCourse>();
+  for (const course of lists.flat()) {
+    if (catalog.has(course.id)) continue;
+    catalog.set(course.id, {
+      id: course.id,
+      title: course.title,
+      credits: course.credits,
+      genEd: course.genEd,
+      prerequisite: parsePrerequisite(course.texts.prerequisite),
+      corequisite: parsePrerequisite(course.texts.corequisite),
+      repeat: repeatability(course),
+    });
+  }
+  return catalog;
+}

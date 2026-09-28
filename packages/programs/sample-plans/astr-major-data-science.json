@@ -1,0 +1,25 @@
+{
+  "programId": "astr-major-data-science",
+  "source": "https://www.astro.umd.edu/sites/default/files/undergrad/bs-astronomy-data-science_requirements-and-4-year-plan.pdf",
+  "fetched": "2026-09-27",
+  "official": true,
+  "notes": [
+    "Four-year Plan for BS Astronomy - Data Science Specialization + Data Science Minor. Gen Ed, ENGL and Data Science Minor-only slots (DATA110/120, DATA200, DATA400, STAT100) are left out: only the major is audited.",
+    "The plan's three 'ASTR 3/4**' placeholders (three upper-level Astronomy courses) are filled with ASTR406, ASTR421 and ASTR430.",
+    "The plan's three 'MATH/STAT 4**' placeholders are filled with MATH416, MATH464 and STAT401."
+  ],
+  "credits": {
+    "MATH140": 4, "MATH141": 4, "PHYS275": 2, "ASTR232": 4, "MATH241": 4, "PHYS276": 2,
+    "MATH243": 4, "ASTR310": 4
+  },
+  "terms": [
+    { "term": "First Year Fall", "courses": ["ASTR130", "MATH140"] },
+    { "term": "First Year Spring", "courses": ["ASTR131", "MATH141", "PHYS171", "PHYS275"] },
+    { "term": "Second Year Fall", "courses": ["ASTR232", "MATH241", "PHYS272", "PHYS265"] },
+    { "term": "Second Year Spring", "courses": ["PHYS273", "PHYS276", "MATH243"] },
+    { "term": "Third Year Fall", "courses": ["ASTR310"] },
+    { "term": "Third Year Spring", "courses": ["ASTR406", "DATA350", "MATH416"] },
+    { "term": "Fourth Year Fall", "courses": ["ASTR421", "DATA320", "MATH464"] },
+    { "term": "Fourth Year Spring", "courses": ["ASTR430", "STAT401"] }
+  ]
+}

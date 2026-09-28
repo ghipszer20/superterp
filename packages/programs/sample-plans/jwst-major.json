@@ -1,0 +1,24 @@
+{
+  "programId": "jwst-major",
+  "source": "https://drive.google.com/uc?export=download&id=1PDQm3Yaw9ilNtPnjFPwD6U-3It5SrZ32#Music-Education---Jewish-Studies",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities' Jewish Studies Four Year Academic Plan. The source PDF's term grid converts to garbled, column-interleaved text (the by-term grid and the separate requirements-checklist table run together), so exact per-slot Fall/Spring placement could not be reliably reconstructed; flagged in docs/project/owner-review.md. Term placement here follows the plan's legible signals (JWST187/171 in Year 1, JWST history/literature/thought Foundations courses across Years 1-2, JWST409/ISRL448 -- the Capstone -- in Year 4, and the General Jewish Studies Track's Area of Emphasis/electives in Years 3-4 as the plan lists them) and otherwise spreads the remaining major requirements across Years 2-4 in plan order. Gen Ed and general-elective slots are left out: only the major is audited.",
+    "Big Question filled with JWST187, named directly by the catalog and the plan.",
+    "Foundations (three courses from at least two areas) filled with JWST231 (History), JWST272 (Literature and/or Film), and JWST250 (Thought, Culture, and/or Religion), all named by the catalog.",
+    "Capstone filled with JWST409, named directly by the catalog and the plan.",
+    "Area of Emphasis (four 300-400 level courses, General Track) filled with JWST304, JWST309, JWST314, and JWST315, all real JWST courses from the Academic Catalog's approved-course list, chosen only to satisfy the level/credit shape (no per-area upper-level list is published; see Program reviewNotes).",
+    "In-Major Electives (three courses in Jewish Studies) filled with JWST219, JWST225, and JWST230, all real JWST courses from the Academic Catalog's approved-course list."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["JWST187"] },
+    { "term": "Year 1 Spring", "courses": ["JWST231"] },
+    { "term": "Year 2 Fall", "courses": ["JWST272"] },
+    { "term": "Year 2 Spring", "courses": ["JWST250"] },
+    { "term": "Year 3 Fall", "courses": ["JWST304", "JWST219"] },
+    { "term": "Year 3 Spring", "courses": ["JWST309", "JWST225"] },
+    { "term": "Year 4 Fall", "courses": ["JWST314", "JWST230"] },
+    { "term": "Year 4 Spring", "courses": ["JWST315", "JWST409"] }
+  ]
+}

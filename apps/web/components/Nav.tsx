@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AdvisorIcon, CampusIcon, ScheduleIcon, TodayIcon } from "./icons";
+import { AdvisorIcon, CampusIcon, InfoIcon, ScheduleIcon, TodayIcon } from "./icons";
+import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Nav.module.css";
 
 // Three main tabs (owner decision). Today lives at "/" and is reached from the logo.
@@ -25,6 +26,17 @@ export function Nav() {
         <Link href="/" className={styles.wordmark} aria-current={pathname === "/" ? "page" : undefined}>
           Super<span>Terp</span>
         </Link>
+        <div className={styles.topBarControls}>
+          <Link
+            href="/about"
+            className={styles.aboutIconLink}
+            aria-label="About SuperTerp"
+            aria-current={pathname === "/about" ? "page" : undefined}
+          >
+            <InfoIcon size={22} />
+          </Link>
+          <ThemeToggle />
+        </div>
       </header>
       <nav className={styles.nav} aria-label="Main">
         <Link href="/" className={styles.brand} aria-current={pathname === "/" ? "page" : undefined}>
@@ -47,6 +59,17 @@ export function Nav() {
             );
           })}
         </ul>
+        <div className={styles.appearance}>
+          <Link
+            href="/about"
+            className={styles.aboutLink}
+            data-active={pathname === "/about"}
+            aria-current={pathname === "/about" ? "page" : undefined}
+          >
+            About
+          </Link>
+          <ThemeToggle />
+        </div>
         <p className={styles.fine}>Unofficial. Not affiliated with the University of Maryland.</p>
       </nav>
     </>

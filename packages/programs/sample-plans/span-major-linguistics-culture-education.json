@@ -1,0 +1,23 @@
+{
+  "programId": "span-major-linguistics-culture-education",
+  "source": "https://drive.google.com/uc?export=download&id=139qrMn2SvwHU7jkbVgDX6hNFt6wFi9Hj#Linguistics,-Culture,-and-Education",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities' Linguistics, Culture, and Education Four Year Academic Plan. The PDF-to-text conversion of the term grid is garbled (Fall/Spring columns and the Gen Ed/Major-Requirements legend appear column-interleaved), but the major course list and its relative order are legible (SPAN103/203/204 prerequisites, then SPAN207/206, SPAN301/306, SPAN303, SPAN311/316, SPAN331/361, SPAN332/362, SPAN325, SPAN425, SPAN426, SPAN333/363, two 4xx Literature/Culture/Media courses, and a Supporting Area). Exact year/semester placement below is reconstructed from that order, not read verbatim -- flagged in docs/project/owner-review.md.",
+    "Prerequisites SPAN103/203/204 are not part of the major's own 45 credits (see span-shared-2026-27.ts) but are included here since the plan places them in Year 1 alongside Gen Ed.",
+    "Core-sequence choice: SPAN331/332/333 (Spanish sequence) chosen for this Linguistics-track plan, matching the plan's own 'SPAN 331 (HU)' Year-3 entry and 'SPAN 332 (HU)' Year-2 entry.",
+    "Track: 'Select two 4xx-level courses in Spanish or Latin American Literature, Culture, and Media' filled with SPAN401 and SPAN450, both on the Academic Catalog's approved SPAN course list (the source names no specific SPAN4xx courses here).",
+    "Supporting Area (9 credits, single department other than Spanish, approval of advisor) filled with HIST304, HIST306, HIST307 (a real, plausible non-Spanish department sequence; the source names no specific supporting-area courses)."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["SPAN103"] },
+    { "term": "Year 1 Spring", "courses": ["SPAN203"] },
+    { "term": "Year 2 Fall", "courses": ["SPAN301", "SPAN204"] },
+    { "term": "Year 2 Spring", "courses": ["SPAN207", "SPAN332", "HIST304"] },
+    { "term": "Year 3 Fall", "courses": ["SPAN303", "HIST306"] },
+    { "term": "Year 3 Spring", "courses": ["SPAN311", "SPAN331", "HIST307"] },
+    { "term": "Year 4 Fall", "courses": ["SPAN325", "SPAN425", "SPAN401"] },
+    { "term": "Year 4 Spring", "courses": ["SPAN426", "SPAN333", "SPAN450"] }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "programId": "socy-major",
+  "source": "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/SOCY%20Major%20Checklist%20050724%20writable.pdf",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "No published term-by-term 4-year plan names every course a student would take (the department's own graduation plan grid leaves Gen Ed/elective slots as generic categories), so this plan is constructed (docs/project/owner-review.md flags this as constructed). It follows the department plan's own term placement for the named required courses. Gen Ed and elective slots are left out entirely: only the major is audited.",
+    "Gateway Math filled with MATH107, matching the department plan's own Year 1 Fall placement.",
+    "SOCY200/SOCY241/SOCY441 filled with SOCY241, matching the department plan's own Year 3 Spring choice.",
+    "Substantive Course Requirement (300 or 400 level) filled with SOCY310, a real SOCY course from the Academic Catalog's approved list.",
+    "Substantive Course Requirement (400 level) filled with SOCY410, a real SOCY course from the Academic Catalog's approved list.",
+    "The two 400 Level SOCY Research Courses of Choice are filled with SOCY411 and SOCY412, both real SOCY courses from the Academic Catalog's approved list, chosen only to satisfy the level/count requirement -- the actual approved research-methods list maintained by the Sociology Undergraduate Advising Office is not in the source (see reviewNotes on the Program)."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["MATH107", "SOCY100"] },
+    { "term": "Year 1 Spring", "courses": ["SOCY230"] },
+    { "term": "Year 2 Fall", "courses": ["SOCY201"] },
+    { "term": "Year 2 Spring", "courses": ["SOCY202"] },
+    { "term": "Year 3 Fall", "courses": ["SOCY203"] },
+    { "term": "Year 3 Spring", "courses": ["SOCY241"] },
+    { "term": "Year 4 Fall", "courses": ["SOCY310", "SOCY411"] },
+    { "term": "Year 4 Spring", "courses": ["SOCY410", "SOCY412"] }
+  ]
+}

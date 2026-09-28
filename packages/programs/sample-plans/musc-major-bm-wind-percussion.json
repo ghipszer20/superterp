@@ -1,0 +1,22 @@
+{
+  "programId": "musc-major-bm-wind-percussion",
+  "source": "https://drive.google.com/uc?export=download&id=1pg0VkRRx43VVi85Y8_xmmvXXM5XpOumi#Music-Performance---Wind-&-Percussion",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "School of Music official Music - Bachelor of Music - Winds and Percussion Four Year Academic Plan. Gen Ed and general-elective slots are left out (only the major is audited).",
+    "MUSC229 (large ensemble), MUSC129 (small ensemble) and MUSC099 (recital attendance) are repeatable 1-credit courses, entered multiple times per the plan's own '(1 cr. x N semesters)' legend lines; see the program's reviewNotes.",
+    "The '1 semester of 400-level music history elective' generic slot is filled with MUSC467, and the plan's own 5-credit music-elective total with MUSC461 and MUSC464, all real MUSC course numbers named elsewhere in the fetched plan text (this area's own plan names no specific course for either)."
+  ],
+  "credits": { "MUSC229": 1, "MUSC129": 1, "MUSC099": 1 },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["MUSP119", "MUSC102", "MUSC150", "MUSC229", "MUSC129", "MUSC099"] },
+    { "term": "Year 1 Spring", "courses": ["MUSP120", "MUSC103", "MUSC151", "MUSC229", "MUSC129", "MUSC099"] },
+    { "term": "Year 2 Fall", "courses": ["MUSP217", "MUSC250", "MUSC260", "MUSC229", "MUSC129", "MUSC099"] },
+    { "term": "Year 2 Spring", "courses": ["MUSP218", "MUSC251", "MUSC360", "MUSC229", "MUSC129", "MUSC099"] },
+    { "term": "Year 3 Fall", "courses": ["MUSP315", "MUSC361", "MUSC229", "MUSC129", "MUSC099", "MUSC467"] },
+    { "term": "Year 3 Spring", "courses": ["MUSP316", "MUSC450", "MUSC229", "MUSC129", "MUSC099"] },
+    { "term": "Year 4 Fall", "courses": ["MUSP419", "MUSC229", "MUSC444", "MUSC490", "MUSC461"] },
+    { "term": "Year 4 Spring", "courses": ["MUSP420", "MUSC229", "MUSC448W", "MUSC464"] }
+  ]
+}

@@ -1,0 +1,1272 @@
+/* Advisor: the 4-year plan. Same tokens as the rest of the app; dense on phones, roomier on
+   desktop. Severity colors are shared across checks, notices, requirement status and prior
+   credit: error (accent/red), warning (soon/orange), confirm (neutral/gray), info (open/green,
+   also used for "satisfied"). */
+
+.page {
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 16px var(--gutter) calc(96px + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 900px) {
+  .page {
+    padding: 36px 32px 48px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.headerText {
+  min-width: 0;
+}
+
+.eyebrow {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.title {
+  font: var(--t-large);
+  letter-spacing: -0.02em;
+}
+
+.skeleton {
+  height: 200px;
+  border-radius: var(--r-md);
+  background: var(--surface-2);
+}
+
+.tabs {
+  margin-bottom: 16px;
+  max-width: 420px;
+}
+
+.banner {
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border: 1px solid var(--soon);
+  border-radius: var(--r-md);
+  background: var(--soon-tint);
+  font: var(--t-sub);
+}
+
+.footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 0.5px solid var(--separator);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--text-3);
+  font: var(--t-foot);
+}
+
+.ghostButton {
+  flex: none;
+  padding: 8px 14px;
+  border: 0.5px solid var(--separator);
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  color: var(--text);
+  font: var(--t-sub);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ---------- Generic controls ---------- */
+
+.primaryButton {
+  padding: 9px 18px;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: var(--accent);
+  color: var(--on-accent);
+  font: var(--t-sub);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--fast) ease, opacity var(--fast) ease;
+}
+
+.primaryButton:hover {
+  background: var(--accent-hover);
+}
+
+.primaryButton:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.dangerButton {
+  align-self: flex-start;
+  padding: 8px 14px;
+  border: 0.5px solid var(--separator);
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  color: var(--accent);
+  font: var(--t-sub);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.linkButton {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--accent);
+  font: var(--t-sub);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.smallButton {
+  padding: 5px 12px;
+  border: 0.5px dashed var(--separator);
+  border-radius: var(--r-pill);
+  background: none;
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.iconButton {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--text-2);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.fieldLabel {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 600;
+}
+
+.fieldRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px 14px;
+}
+
+.input {
+  padding: 8px 10px;
+  border: 0.5px solid var(--separator);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  color: var(--text);
+  font: var(--t-sub);
+}
+
+.input::placeholder {
+  color: var(--text-3);
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: var(--t-sub);
+}
+
+.checkRow input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+
+.error {
+  color: var(--accent);
+  font: var(--t-sub);
+  font-weight: 500;
+}
+
+.fine {
+  color: var(--text-3);
+  font: var(--t-foot);
+}
+
+.tag {
+  padding: 1px 8px;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  color: var(--text-2);
+  font: var(--t-caption);
+}
+
+.courseLink {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ---------- Cards (checks, notices, audit, prior credit) ---------- */
+
+.card {
+  min-width: 0;
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  border: 0.5px solid var(--separator);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow-wrap: anywhere;
+}
+
+.cardTitle {
+  font: var(--t-headline);
+  margin-bottom: 6px;
+}
+
+.cardNote {
+  color: var(--text-2);
+  font: var(--t-sub);
+}
+
+.cardNote[data-severity="warning"] {
+  color: var(--soon);
+}
+
+/* ---------- Disclaimer gate ---------- */
+
+.gate {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gateIntro {
+  font: var(--t-sub);
+  color: var(--text-2);
+}
+
+.gatePoints {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+  font: var(--t-sub);
+}
+
+.gatePoints strong {
+  color: var(--text);
+}
+
+.gateDate {
+  color: var(--text-2);
+  font: var(--t-foot);
+}
+
+/* ---------- Setup ---------- */
+
+.panel {
+  margin-bottom: 20px;
+}
+
+.panelTitle {
+  font: var(--t-headline);
+  margin-bottom: 4px;
+}
+
+.panelNote {
+  color: var(--text-2);
+  font: var(--t-foot);
+  margin: 6px 0;
+}
+
+.optionList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 0.5px solid var(--separator);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--fast) ease, border-color var(--fast) ease;
+}
+
+.option[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent-tint);
+}
+
+.optionCheck {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid var(--separator);
+  color: var(--on-accent);
+  background: var(--surface);
+  font-size: 13px;
+}
+
+.option[aria-pressed="true"] .optionCheck {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.optionText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.optionTitle {
+  font: var(--t-sub);
+  font-weight: 600;
+}
+
+.optionSub {
+  color: var(--text-2);
+  font: var(--t-foot);
+}
+
+.unverified {
+  flex: none;
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  background: var(--soon-tint);
+  color: var(--soon);
+  font: var(--t-caption);
+  font-weight: 600;
+}
+
+/* A grad course (600-897, not 799) on the plan grid or course sheet -- @superterp/plan/grad-courses. */
+.gradBadge {
+  flex: none;
+  padding: 1px 7px;
+  border-radius: var(--r-pill);
+  background: var(--soon-tint);
+  color: var(--soon);
+  font: var(--t-caption);
+  font-weight: 600;
+}
+
+.courseIdRow {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.trackGpaProtection {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 0.5px solid var(--separator);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ---------- Plan grid ---------- */
+
+.planLayout {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 16px;
+}
+
+@media (min-width: 1000px) {
+  .planLayout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .planSide {
+    flex: none;
+    width: 320px;
+    position: sticky;
+    top: 16px;
+  }
+  .planMain {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.summaryBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: var(--r-md);
+  background: var(--surface-2);
+  font: var(--t-sub);
+}
+
+.year {
+  margin-bottom: 20px;
+}
+
+.yearTitle {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font: var(--t-headline);
+  margin-bottom: 10px;
+}
+
+.yearTitle span {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 400;
+}
+
+.terms {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 700px) {
+  .terms {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.term {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border: 0.5px solid var(--separator);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: background var(--fast) ease, border-color var(--fast) ease;
+}
+
+.term[data-optional] {
+  border-style: dashed;
+}
+
+.term[data-over] {
+  border-color: var(--accent);
+  background: var(--accent-tint);
+}
+
+.termHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.termName {
+  flex: 1;
+  min-width: 0;
+  font: var(--t-headline);
+  font-size: 15px;
+}
+
+.termCredits {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-variant-numeric: tabular-nums;
+}
+
+.termCredits[data-severity="error"] {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.inlineIssue {
+  padding: 6px 8px;
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+  font: var(--t-foot);
+}
+
+.inlineIssue[data-severity="error"] {
+  background: var(--accent-tint);
+  color: var(--accent);
+}
+
+.inlineIssue[data-severity="warning"] {
+  background: var(--soon-tint);
+  color: var(--soon);
+}
+
+.inlineIssue[data-severity="confirm"] {
+  background: var(--closed-tint);
+  color: var(--text-2);
+}
+
+.inlineIssue[data-severity="info"] {
+  background: var(--open-tint);
+  color: var(--open);
+}
+
+.courseList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.courseCard {
+  border-radius: var(--r-sm);
+  border-left: 3px solid transparent;
+  background: var(--surface-2);
+}
+
+.courseCard[data-severity="error"] {
+  border-left-color: var(--accent);
+}
+
+.courseCard[data-severity="warning"] {
+  border-left-color: var(--soon);
+}
+
+.courseCard[data-severity="confirm"] {
+  border-left-color: var(--text-3);
+}
+
+.courseCard[data-severity="info"] {
+  border-left-color: var(--open);
+}
+
+.courseButton {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 10px;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.courseTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.courseId {
+  font: var(--t-sub);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.courseCredits {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-variant-numeric: tabular-nums;
+}
+
+.courseTitle {
+  color: var(--text-2);
+  font: var(--t-foot);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.courseIssue {
+  font: var(--t-caption);
+  color: var(--text-2);
+}
+
+.courseIssue[data-severity="error"] {
+  color: var(--accent);
+}
+
+.courseIssue[data-severity="warning"] {
+  color: var(--soon);
+}
+
+.addCourse {
+  padding: 8px;
+  border: 0.5px dashed var(--separator);
+  border-radius: var(--r-sm);
+  background: none;
+  color: var(--accent);
+  font: var(--t-sub);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.addTerm {
+  margin-top: 4px;
+  padding: 10px;
+  border: 0.5px dashed var(--separator);
+  border-radius: var(--r-md);
+  background: none;
+  color: var(--accent);
+  font: var(--t-sub);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.optionalTerms {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 220px;
+  overflow-y: auto;
+  border: 0.5px solid var(--separator);
+  border-radius: var(--r-sm);
+}
+
+.result {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 9px;
+  border: 0;
+  background: var(--surface);
+  text-align: left;
+  cursor: pointer;
+}
+
+.result:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.result + .result {
+  box-shadow: inset 0 0.5px 0 var(--separator);
+}
+
+.resultTitle {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: var(--t-foot);
+}
+
+.noResults {
+  padding: 8px 9px;
+  color: var(--text-3);
+  font: var(--t-foot);
+}
+
+/* ---------- Checks and notices ---------- */
+
+.severityCounts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.severityCount {
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  font: var(--t-caption);
+  font-weight: 600;
+}
+
+.severityCount[data-severity="error"] {
+  background: var(--accent-tint);
+  color: var(--accent);
+}
+
+.severityCount[data-severity="warning"] {
+  background: var(--soon-tint);
+  color: var(--soon);
+}
+
+.severityCount[data-severity="confirm"] {
+  background: var(--closed-tint);
+  color: var(--text-2);
+}
+
+.severityCount[data-severity="info"] {
+  background: var(--open-tint);
+  color: var(--open);
+}
+
+.issueList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.issueRow {
+  border-left: 3px solid transparent;
+  padding-left: 8px;
+}
+
+.issueRow[data-severity="error"] {
+  border-left-color: var(--accent);
+}
+
+.issueRow[data-severity="warning"] {
+  border-left-color: var(--soon);
+}
+
+.issueRow[data-severity="confirm"] {
+  border-left-color: var(--text-3);
+}
+
+.issueRow[data-severity="info"] {
+  border-left-color: var(--open);
+}
+
+.issueButton {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 0;
+  background: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.issueSeverity {
+  align-self: flex-start;
+  padding: 1px 8px;
+  border-radius: var(--r-pill);
+  font: var(--t-caption);
+  font-weight: 600;
+}
+
+.issueSeverity[data-severity="error"] {
+  background: var(--accent-tint);
+  color: var(--accent);
+}
+
+.issueSeverity[data-severity="warning"] {
+  background: var(--soon-tint);
+  color: var(--soon);
+}
+
+.issueSeverity[data-severity="confirm"] {
+  background: var(--closed-tint);
+  color: var(--text-2);
+}
+
+.issueSeverity[data-severity="info"] {
+  background: var(--open-tint);
+  color: var(--open);
+}
+
+.issueText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font: var(--t-sub);
+}
+
+.issueWhere {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 600;
+}
+
+.noticeList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notice {
+  padding: 8px 10px;
+  border-radius: var(--r-sm);
+  background: var(--open-tint);
+  color: var(--text);
+  font: var(--t-sub);
+}
+
+/* ---------- Track checks (grouped under the track's name, in the Checks card) ---------- */
+
+.trackGroup {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 0.5px solid var(--separator);
+}
+
+.trackGroupTitle {
+  font: var(--t-sub);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* ---------- Course sheet ---------- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  /* Phone: the sheet stretches full width and sits at the bottom. */
+  align-items: stretch;
+  justify-content: flex-end;
+  background: rgb(0 0 0 / 0.4);
+  padding: 0;
+}
+
+@media (min-width: 700px) {
+  .overlay {
+    /* Desktop: the sheet caps at max-width and centers both ways. */
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+}
+
+.sheet {
+  /* A viewport unit, not a percentage: percentage width on this flex item
+     was observed to resolve wider than the viewport in headless mobile
+     Chromium (position:fixed + inset:0 + display:flex ancestor), clipping
+     content off the right edge. vw isn't subject to that. */
+  width: 100vw;
+  min-width: 0;
+  max-width: 560px;
+  max-height: 92vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 18px calc(18px + env(safe-area-inset-bottom));
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+@media (min-width: 700px) {
+  .sheet {
+    border-radius: var(--r-lg);
+  }
+}
+
+.sheetHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sheetId {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 600;
+}
+
+.sheetTitle {
+  font: var(--t-title);
+  font-size: 20px;
+}
+
+.sheetMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  color: var(--text-2);
+  font: var(--t-sub);
+}
+
+.sheetIssues {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sheetSection {
+  padding-top: 10px;
+  border-top: 0.5px solid var(--separator);
+}
+
+.sheetHeading {
+  font: var(--t-headline);
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.sheetText {
+  color: var(--text);
+  font: var(--t-sub);
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+
+.sheetFacts {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.sheetFact {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  font: var(--t-sub);
+  overflow-wrap: anywhere;
+}
+
+.sheetFact dt {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 600;
+}
+
+.sheetFact dd {
+  margin: 0;
+}
+
+.sheetActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.gradeSummary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  color: var(--text-2);
+  font: var(--t-foot);
+  margin-bottom: 8px;
+}
+
+.gradeBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 100px;
+}
+
+.gradeBar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  height: 100%;
+}
+
+.gradeBarFill {
+  width: 100%;
+  min-height: 2px;
+  border-radius: 3px 3px 0 0;
+  background: var(--accent);
+}
+
+.gradeBarLabel {
+  color: var(--text-2);
+  font: var(--t-caption);
+}
+
+.gradeBarShare {
+  color: var(--text-3);
+  font: var(--t-caption);
+}
+
+/* ---------- Audit ---------- */
+
+.auditLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auditHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.reqList {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reqRow {
+  padding: 8px 0;
+}
+
+.reqRow + .reqRow {
+  border-top: 0.5px solid var(--separator);
+}
+
+.reqHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.reqName {
+  font: var(--t-sub);
+  font-weight: 600;
+}
+
+.reqStatus {
+  flex: none;
+  padding: 2px 9px;
+  border-radius: var(--r-pill);
+  font: var(--t-caption);
+  font-weight: 600;
+}
+
+.reqStatus[data-status="satisfied"] {
+  background: var(--open-tint);
+  color: var(--open);
+}
+
+.reqStatus[data-status="partial"] {
+  background: var(--soon-tint);
+  color: var(--soon);
+}
+
+.reqStatus[data-status="missing"] {
+  background: var(--accent-tint);
+  color: var(--accent);
+}
+
+.reqAssigned {
+  margin-top: 4px;
+  color: var(--text-2);
+  font: var(--t-foot);
+}
+
+.reqGap {
+  margin-top: 4px;
+  color: var(--text-2);
+  font: var(--t-foot);
+}
+
+/* ---------- Tracks (audit view) ---------- */
+
+.trackSection {
+  margin-top: 22px;
+  padding-top: 6px;
+  border-top: 0.5px solid var(--separator);
+}
+
+.trackSectionTitle {
+  font: var(--t-large);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.milestoneTimeline {
+  margin-top: 10px;
+}
+
+.milestoneBucket {
+  margin-top: 8px;
+}
+
+.milestoneBucketLabel {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* ---------- Prior credit ---------- */
+
+.creditLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (min-width: 900px) {
+  .creditLayout {
+    max-width: 640px;
+  }
+}
+
+.entryList {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.entryRow {
+  padding: 8px 0;
+}
+
+.entryRow + .entryRow {
+  border-top: 0.5px solid var(--separator);
+}
+
+.entryHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.entrySource {
+  flex: 1;
+  min-width: 0;
+  font: var(--t-sub);
+  font-weight: 600;
+}
+
+.earnList {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  color: var(--text-2);
+  font: var(--t-foot);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* ---------- Program picker ---------- */
+
+.picker {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 4px 4px 10px;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  font: var(--t-foot);
+  font-weight: 600;
+}
+
+.chipRemove {
+  width: 22px;
+  height: 22px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.pickerGroup + .pickerGroup {
+  margin-top: 6px;
+}
+
+.pickerGroupTitle {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pickerGroup .optionList {
+  margin-top: 6px;
+}
+
+/* ---------- Setup: double major vs double degree ---------- */
+.degreeChoice {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}

@@ -1,0 +1,25 @@
+{
+  "programId": "thet-major",
+  "source": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/theatre-dance-performance-studies/theatre-major/",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "CONSTRUCTED from the catalog's own requirement list. The department's official four-year plan PDF converted to unreadable font-remapped text (no legible course codes or term headers at all); see docs/project/owner-review.md.",
+    "Production Practicum (TDPS479) taken as four separate 1-credit registrations, per the catalog's own 'Production Practicum (4-1 credit courses)' language; the plan's `credits` override sets it to 1 (its real catalog value is higher, used for a single generic practicum in other majors).",
+    "Performance Area (3 credits) filled with THET285 (The Art of Communication and Presentation) rather than one of the area's several audition-gated courses, since auditions aren't modeled by the engine and this keeps the plan realistic for any student.",
+    "Design/Production Area (6 credits) filled with THET371 (Scenic Design I) and THET377 (Lighting Design for Performance), both 3xx level, which also satisfies the area's own '3 of the 6 at the 3xx or 4xx level' sub-minimum.",
+    "History/Theory Area's 'one additional course at the 4xx level' slot filled with THET489 (Special Topics in Theatre History from 1800 to Present), which the catalog names directly (unlike THET408, it carries no seminar permission-gate footnote).",
+    "Supporting Courses (15 credits) has no named courses in the source; filled with THET274 (Introduction to Stage Management, 2xx) plus THET326, THET327, THET328 and THET340 (all 3xx), real courses from the Academic Catalog's approved THET-course list, giving 12 of the 15 credits at the 3xx/4xx level as the footnote requires."
+  ],
+  "credits": { "TDPS479": 1 },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["TDPS201", "THET222"] },
+    { "term": "Year 1 Spring", "courses": ["THET116", "THET223"] },
+    { "term": "Year 2 Fall", "courses": ["TDPS479", "THET285"] },
+    { "term": "Year 2 Spring", "courses": ["TDPS479", "THET390"] },
+    { "term": "Year 3 Fall", "courses": ["TDPS479", "THET391"] },
+    { "term": "Year 3 Spring", "courses": ["TDPS479", "THET371", "THET377"] },
+    { "term": "Year 4 Fall", "courses": ["THET489", "THET274", "THET326"] },
+    { "term": "Year 4 Spring", "courses": ["THET327", "THET328", "THET340"] }
+  ]
+}

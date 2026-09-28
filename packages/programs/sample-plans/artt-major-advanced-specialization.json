@@ -1,0 +1,22 @@
+{
+  "programId": "artt-major-advanced-specialization",
+  "source": "https://drive.google.com/uc?export=download&id=1KOTZOsCIo1SGWpzG31tUPuXOK9ZphGaY",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "Department's official Advanced Specialization (Track 2) four-year plan; the PDF-to-text conversion garbled the term grid (Fall/Spring columns interleaved illegibly, and the specialization area itself isn't legible in the grid -- it only shows generic 'ARTT 4xx Specialization' / 'ARTT481' rows). Courses are placed by legible signals only (year headers, benchmark notes, portfolio-application marker before Year 3); flagged as reconstructed placement. Gen Ed slots are left out: only the major is audited.",
+    "Digital Media was picked (arbitrarily, since the grid doesn't legibly indicate which of the five areas) to fill the unenumerated Advanced Specialization slot: ARTT479 taken twice (the repeatable 6-credit studio) plus one of its elective options (ARTT353) for the remaining 3 credits, plus the shared ARTT481 seminar.",
+    "Advanced Courses 3xx/4xx electives and Supporting Area 'ARTH or Art Theory' electives filled the same way as the Studio Art track's plan (ARTT350; ARTT409, ARTT460; ARTT462, ARTT468) -- see that program's notes.",
+    "Supporting Area 'ARTH 200+ satisfying GenEd Diversity' (2 required): as with the Studio Art track, only ARTH351 is named anywhere in the fetched source, so only one of the two slots (support-arth-diversity-1) is filled; the second (support-arth-diversity-2) is left unsatisfied on purpose and flagged in docs/project/owner-review.md and KNOWN_FAILURES."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["ARTT100", "ARTT110", "ARTT150"] },
+    { "term": "Year 1 Spring", "courses": ["ARTT200", "ARTT210", "ARTT255"] },
+    { "term": "Year 2 Fall", "courses": ["ARTH351", "ARTH200", "ARTT320"] },
+    { "term": "Year 2 Spring", "courses": ["ARTT330", "ARTT370", "ARTT350"] },
+    { "term": "Year 3 Fall", "courses": ["ARTT409", "ARTT479"] },
+    { "term": "Year 3 Spring", "courses": ["ARTT460", "ARTT479", "ARTT481"] },
+    { "term": "Year 4 Fall", "courses": ["ARTT462", "ARTT353"] },
+    { "term": "Year 4 Spring", "courses": ["ARTT468"] }
+  ]
+}

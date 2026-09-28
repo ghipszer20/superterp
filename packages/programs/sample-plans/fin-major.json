@@ -1,0 +1,25 @@
+{
+  "programId": "fin-major",
+  "source": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/finance/finance-major/",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "No Finance-specific 4-year plan was reachable from the fetched source (the catalog's 'Catalog four-year plan' section only links to the Smith School's general roadmaps page and 4yearplans.umd.edu; the college's own general BS 'Typical Program' table stops after the sophomore year with no Finance-specific courses placed). This plan is CONSTRUCTED from the catalog's own College Requirements and Finance-major requirement tables; flagged in docs/project/owner-review.md. Gen Ed slots are left out: only the major is audited.",
+    "Calculus gateway filled with MATH140 (Calculus I); Business Statistics gateway filled with BMGT230 (Business Statistics); Oral Communication filled with COMM107 (Oral Communication: Principles and Practices) -- all named directly in the catalog's own option lists, not invented.",
+    "Upper Level Economics Requirement filled with ECON330 (Money and Banking), the first-named option on the Finance major's own requirements table.",
+    "The 12-credit 'select four' elective is filled with BMGT342 (Wall Street Finance), BMGT347 (Quantitative Financial Analysis), BMGT441 (Fixed Income), and BMGT445 (Banking and Financial Institutions) -- four courses named directly in that slot's own catalog list, none from the catalog's unenforced 'maximum of one' sub-group (BMGT349/BMGT448/BMGT449).",
+    "The 3-credit 'select one' requirement is filled with BMGT310 (Intermediate Accounting I), named directly in that slot's own catalog list.",
+    "Course placement (year/term) is constructed, not sourced from a published plan: BMGT220/BMGT221 (Principles of Accounting I/II) placed sophomore year matching the college's own Freshman-Sophomore School Requirements grouping; BMGT343/BMGT440 (the major's two fixed finance courses), the four finance electives, the select-one course, and the economics requirement are placed junior/senior year, after their Freshman-Sophomore prerequisites-in-spirit, since the source gives no term-by-term sequencing for them."
+  ],
+  "credits": { "BMGT367": 1 },
+  "terms": [
+    { "term": "Freshman Fall", "courses": ["BMGT110", "MATH140"] },
+    { "term": "Freshman Spring", "courses": ["ECON200", "COMM107"] },
+    { "term": "Sophomore Fall", "courses": ["BMGT220", "ECON201"] },
+    { "term": "Sophomore Spring", "courses": ["BMGT221", "BMGT230"] },
+    { "term": "Junior Fall", "courses": ["BMGT301", "BMGT340", "BMGT343"] },
+    { "term": "Junior Spring", "courses": ["BMGT350", "BMGT364", "BMGT440"] },
+    { "term": "Senior Fall", "courses": ["BMGT367", "BMGT380", "ECON330", "BMGT342", "BMGT347"] },
+    { "term": "Senior Spring", "courses": ["BMGT495", "BMGT441", "BMGT445", "BMGT310"] }
+  ]
+}

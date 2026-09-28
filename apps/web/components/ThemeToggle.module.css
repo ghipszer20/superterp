@@ -1,0 +1,14 @@
+.toggle {
+  width: 150px;
+  font-size: 13px;
+}
+
+/* Until the current theme is known, hide the selection so it never shows the wrong one. */
+.toggle[data-ready="false"] {
+  visibility: hidden;
+}
+
+.toggle :global(button) {
+  padding: 5px 10px;
+  font-size: 13px;
+}

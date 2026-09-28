@@ -1,0 +1,25 @@
+{
+  "name": "@superterp/tracks",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pre-professional tracks (pre-med, pre-law, …): prerequisite courses in the audit's format, milestones, timing and grade warnings, and the AMCAS-style science GPA. Framework-free.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./list": "./src/list.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.1"
+  },
+  "dependencies": {
+    "@superterp/audit": "*",
+    "@superterp/plan": "*"
+  }
+}

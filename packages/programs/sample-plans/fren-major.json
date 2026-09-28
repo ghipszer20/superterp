@@ -1,0 +1,20 @@
+{
+  "programId": "fren-major",
+  "source": "https://drive.google.com/uc?export=download&id=17UqV14aynMTWEgyBOex0GzaajjhDtcjc#French",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities official four-year academic plan for French. The PDF-to-text conversion of the term grid is garbled (the Fall/Spring grid and the Gen Ed/Major-Requirements legend appear column-interleaved), but the 12 major courses/slots and their relative order are legible (FREN204, FREN250, then FREN301 with FREN352, then FREN387 with elective #1, then FREN351 with elective #2 and the four FREN4xx courses near the end). Exact year/semester placement below is reconstructed from that order, not read verbatim -- flagged in docs/project/owner-review.md.",
+    "Year 1 has no major courses: FREN204 requires FREN103 and FREN203 (or equivalent) as prerequisites, which are the pre-major language sequence, not part of the major's own 36 credits, so Gen Ed and that prerequisite sequence are left out per the pattern used by other programs' sample plans (only the major is audited).",
+    "'Select two of: FREN302, FREN306, FREN312, FREN313, FREN399' filled with FREN302 and FREN312 (named directly in the requirement's own option list).",
+    "The four 'additional FREN4xx' slots filled with FREN413, FREN421, FREN459, and FREN472 (all on the Academic Catalog's approved FREN plan-slot course list; the source names no specific FREN4xx courses)."
+  ],
+  "terms": [
+    { "term": "Year 2 Fall", "courses": ["FREN204"] },
+    { "term": "Year 2 Spring", "courses": ["FREN250"] },
+    { "term": "Year 3 Fall", "courses": ["FREN301", "FREN352"] },
+    { "term": "Year 3 Spring", "courses": ["FREN387", "FREN302"] },
+    { "term": "Year 4 Fall", "courses": ["FREN351", "FREN312", "FREN413"] },
+    { "term": "Year 4 Spring", "courses": ["FREN421", "FREN459", "FREN472"] }
+  ]
+}

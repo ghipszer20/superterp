@@ -1,6 +1,10 @@
 /* Phone: wordmark at the top + frosted bottom tab bar. Desktop (≥ 900px): sidebar. */
 
 .topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding: calc(10px + env(safe-area-inset-top)) var(--gutter) 0;
 }
 
@@ -13,6 +17,25 @@
 
 .wordmark span,
 .brand span {
+  color: var(--accent);
+}
+
+.topBarControls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.aboutIconLink {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: -10px 0;
+  color: var(--text-2);
+}
+
+.aboutIconLink[aria-current="page"] {
   color: var(--accent);
 }
 
@@ -29,6 +52,7 @@
 
 .brand,
 .fine,
+.appearance,
 .nav .todayLink {
   display: none;
 }
@@ -136,9 +160,36 @@
     }
   }
 
+  .appearance {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding: 0 12px 14px;
+  }
+
+  .aboutLink {
+    color: var(--text-2);
+    font: var(--t-sub);
+    font-weight: 500;
+  }
+
+  .aboutLink[data-active="true"] {
+    color: var(--accent);
+  }
+
+  @media (hover: hover) {
+    .aboutLink:hover {
+      color: var(--text);
+    }
+    .aboutLink[data-active="true"]:hover {
+      color: var(--accent);
+    }
+  }
+
   .fine {
     display: block;
-    margin-top: auto;
     padding: 0 12px;
     color: var(--text-3);
     font: var(--t-foot);

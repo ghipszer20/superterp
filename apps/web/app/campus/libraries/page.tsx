@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { connection } from "next/server";
-import { campusDate, campusMinutes } from "@superterp/campus-data";
+import { campusDate, campusMinutes, orderLibraries } from "@superterp/campus-data";
 import { LiveStatus } from "@/components/LiveStatus";
 import { RoomIcon } from "@/components/icons";
 import { Card, IconTile, Notice, Page, Row, Section, SkeletonCard, SourceError } from "@/components/ui";
 import { getLibraryHours, safe } from "@/lib/campus";
+import { compactLibraryName } from "@/lib/libraries";
 
 export const metadata: Metadata = { title: "Libraries" };
 
@@ -42,7 +43,7 @@ async function LibraryList() {
   if (!res.ok) return <SourceError source="UMD Libraries" />;
 
   const groups = [
-    { title: "Libraries", items: res.data.filter((l) => l.kind === "library") },
+    { title: "Libraries", items: orderLibraries(res.data.filter((l) => l.kind === "library")) },
     { title: "Collections & spaces", items: res.data.filter((l) => l.kind === "department") },
   ];
 
@@ -53,7 +54,7 @@ async function LibraryList() {
           {g.items.map((lib) => (
             <Row
               key={lib.id}
-              title={lib.name}
+              title={compactLibraryName(lib.name)}
               subtitle={<LiveStatus hours={lib.days[today]} initialMinutes={minutes} inline />}
               trailing={lib.days[today]?.kind === "ranges" ? lib.days[today].label : undefined}
               href={lib.url}

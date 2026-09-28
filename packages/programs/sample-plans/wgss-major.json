@@ -1,0 +1,26 @@
+{
+  "programId": "wgss-major",
+  "source": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/women-gender-sexuality-studies/womens-gender-sexuality-studies-major/",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "College of Arts and Humanities' Women, Gender, and Sexuality Studies four-year plan (Google Drive PDF) converts to unreadable binary-looking text with no recoverable course numbers or term grid, unlike other ARHU builds where the same conversion is only partially garbled. Constructed instead from the Academic Catalog's own requirement table, per the main session's brief for an unreadable plan; flagged in docs/project/owner-review.md. Gen Ed and general-elective slots are left out: only the major is audited.",
+    "Introductory Course filled with WGSS200, from the catalog's own named Introductory Course list.",
+    "Lower Level Core (LLC) filled with WGSS263, from the catalog's own named LLC list.",
+    "Lower Level Elective (LLE)-or-second-course slot filled with WGSS211, from the catalog's own named LLE list.",
+    "Foundation Courses (WGSS301, WGSS487) are both named explicitly by the catalog.",
+    "Upper Level Core (ULC, 9 credits) filled with WGSS302, WGSS370, WGSS410, all from the catalog's own named ULC list.",
+    "Upper Level Elective (ULE, 6 credits) filled with WGSS325, WGSS452, both from the catalog's own named ULE list.",
+    "Upper Level Core-or-Elective (remaining 3 credits) filled with WGSS468, from the catalog's own named ULC list."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["WGSS200"] },
+    { "term": "Year 1 Spring", "courses": ["WGSS263"] },
+    { "term": "Year 2 Fall", "courses": ["WGSS211"] },
+    { "term": "Year 2 Spring", "courses": ["WGSS301"] },
+    { "term": "Year 3 Fall", "courses": ["WGSS302", "WGSS325"] },
+    { "term": "Year 3 Spring", "courses": ["WGSS370", "WGSS452"] },
+    { "term": "Year 4 Fall", "courses": ["WGSS410", "WGSS468"] },
+    { "term": "Year 4 Spring", "courses": ["WGSS487"] }
+  ]
+}

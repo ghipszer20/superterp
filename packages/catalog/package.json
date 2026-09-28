@@ -1,0 +1,29 @@
+{
+  "name": "@superterp/catalog",
+  "version": "0.1.0",
+  "private": true,
+  "description": "UMD Academic Catalog program requirements (majors, minors, programs), extracted from academiccatalog.umd.edu. Framework-free.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./special-programs/*": "./special-programs/*"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "fetch:sources": "node scripts/fetch-sources.ts"
+  },
+  "dependencies": {
+    "@superterp/audit": "*",
+    "@superterp/campus-data": "*",
+    "cheerio": "1.2.0",
+    "domhandler": "^5.0.3",
+    "pdfjs-dist": "^6.3.289"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.1"
+  }
+}

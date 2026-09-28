@@ -1,0 +1,25 @@
+{
+  "programId": "psyc-major-ba",
+  "source": "https://psyc.umd.edu/undergraduate/degree-requirements-bs-and-ba",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "No usable 4-year/2-year plan exists: the Feller Center's 'BA PSYC - Two Year Plan' PDF (linked from the checklist) failed to convert. This plan is constructed from the department's own requirements page and the checklist's requirement rows instead (docs/project/owner-review.md flags this). Gen Ed courses are left out; only the major is audited.",
+    "Multicultural course filled with PSYC354 (Multicultural Psychology), one of the department page's own named multicultural options; PSYC354 is also Theme III (Social, Developmental & Organizational Studies) per the department's PSYC Courses & PSYC Syllabi page.",
+    "PSYC 400-Level Non-Lab slots filled with PSYC401 and PSYC403; the 400-Level Lab slot filled with PSYC424 -- real, currently-approved PSYC courses (from the builder brief's approved-course list), chosen only to fill the count/credit requirement since neither source names specific 400-level courses. PSYC424 is treated as a 4-credit lab course here (see credits map); this hasn't been verified against a live course catalog and should be confirmed or substituted with an advisor's actual picks.",
+    "Thematic Courses: PSYC301, PSYC401, PSYC403 and PSYC304 satisfy Theme I (Mind, Brain & Behavior); PSYC330 and PSYC353 satisfy Theme II (Mental Health & Interventions); PSYC354 and PSYC424 satisfy Theme III (Social, Developmental & Organizational Studies) -- all per the department's PSYC Courses & PSYC Syllabi page. PSYC330 and PSYC353 were chosen for Theme II coverage only (both have just a PSYC100 prerequisite); not verified for topical fit beyond the department's own theme listing.",
+    "The plan previously filled remaining credits with PSYC302 and PSYC303 to reach the major's 35-credit/11-course total; PSYC302 was dropped as redundant (Theme I was already covered) and PSYC303 was dropped because the department's PSYC Courses & PSYC Syllabi page lists it under courses that 'do not apply towards degree requirements'. PSYC330 and PSYC353 (added for Theme II) bring the total back to exactly 35 credits / 11 courses.",
+    "Math gateway filled with MATH120; MATH140 would satisfy the requirement equally."
+  ],
+  "credits": { "PSYC300": 4, "BSCI170": 4, "PSYC424": 4 },
+  "terms": [
+    { "term": "Freshman Fall", "courses": ["PSYC100", "MATH120"] },
+    { "term": "Freshman Spring", "courses": ["BSCI170", "PSYC200"] },
+    { "term": "Sophomore Fall", "courses": ["PSYC300", "PSYC301"] },
+    { "term": "Sophomore Spring", "courses": ["PSYC330", "PSYC354"] },
+    { "term": "Junior Fall", "courses": ["PSYC401", "PSYC353"] },
+    { "term": "Junior Spring", "courses": ["PSYC403"] },
+    { "term": "Senior Fall", "courses": ["PSYC304"] },
+    { "term": "Senior Spring", "courses": ["PSYC424"] }
+  ]
+}

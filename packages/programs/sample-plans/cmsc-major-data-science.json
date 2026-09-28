@@ -1,0 +1,20 @@
+{
+  "programId": "cmsc-major-data-science",
+  "source": "https://undergrad.cs.umd.edu/data-science-degree-requirements",
+  "fetched": "2026-09-27",
+  "official": false,
+  "notes": [
+    "UMD publishes a blank 'Data Science Academic Plan Template' (linked from degree-requirements-cs-major), not a filled sample plan. Built by hand from the specialization page's own requirements: Linear Algebra -> MATH240; required STAT400, CMSC320, CMSC422, CMSC424; choose one (AI) -> CMSC421; choose one (theory) -> CMSC451; choose two (systems) -> CMSC411, CMSC430; upper-level concentration (12 credits, one discipline) -> ECON300, ECON305, ECON310, ECON410. Gen Ed slots are left out: only the major is audited."
+  ],
+  "credits": { "MATH140": 4, "MATH141": 4, "MATH240": 4, "CMSC131": 4, "CMSC132": 4, "CMSC216": 4, "CMSC250": 4 },
+  "terms": [
+    { "term": "Fall 1", "courses": ["MATH140", "CMSC131"] },
+    { "term": "Spring 1", "courses": ["MATH141", "CMSC132"] },
+    { "term": "Fall 2", "courses": ["CMSC216", "CMSC250", "MATH240"] },
+    { "term": "Spring 2", "courses": ["CMSC330", "CMSC351", "STAT400"] },
+    { "term": "Fall 3", "courses": ["CMSC320", "CMSC422", "ECON300"] },
+    { "term": "Spring 3", "courses": ["CMSC424", "CMSC421", "ECON305"] },
+    { "term": "Fall 4", "courses": ["CMSC451", "CMSC411", "ECON310"] },
+    { "term": "Spring 4", "courses": ["CMSC430", "ECON410"] }
+  ]
+}

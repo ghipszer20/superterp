@@ -30,8 +30,22 @@ export function Section({ title, action, children }: { title?: string; action?: 
   );
 }
 
-export function Card({ children, className }: { children: ReactNode; className?: string }) {
-  return <div className={`${styles.card} ${className ?? ""}`}>{children}</div>;
+export function Card({
+  children,
+  className,
+  clipNone,
+}: {
+  children: ReactNode;
+  className?: string;
+  /** Opt out of the card's overflow:hidden clip, e.g. for a dropdown that must escape it. */
+  clipNone?: boolean;
+}) {
+  return <div className={`${styles.card} ${clipNone ? styles.cardClipNone : ""} ${className ?? ""}`}>{children}</div>;
+}
+
+/** A label for a sub-group of rows inside one Section's Card(s) -- smaller than a Section title. */
+export function SubHeading({ children }: { children: ReactNode }) {
+  return <p className={styles.subHeading}>{children}</p>;
 }
 
 type RowProps = {

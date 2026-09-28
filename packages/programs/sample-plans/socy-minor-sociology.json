@@ -1,0 +1,15 @@
+{
+  "programId": "socy-minor-sociology",
+  "source": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/sociology/sociology-minor/",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "UMD publishes no sample plan for this minor. Built from the requirements: SOCY100, SOCY200, SOCY241, and three 300-400 level electives (SOCY335, SOCY412, SOCY413, real courses from the Demography minor's list). Flagged in docs/project/owner-review.md."
+  ],
+  "credits": { "SOCY200": 4 },
+  "terms": [
+    { "term": "Term 1", "courses": ["SOCY100", "SOCY200"] },
+    { "term": "Term 2", "courses": ["SOCY241", "SOCY335"] },
+    { "term": "Term 3", "courses": ["SOCY412", "SOCY413"] }
+  ]
+}

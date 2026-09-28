@@ -1,0 +1,25 @@
+{
+  "programId": "astr-major-astrophysics",
+  "source": "https://www.astro.umd.edu/sites/default/files/undergrad/bs-astrophysics_requirements-and-4-year-plan.pdf",
+  "fetched": "2026-09-27",
+  "official": true,
+  "notes": [
+    "Four-year Plan for BS Astrophysics Specialization. Gen Ed and ENGL slots are left out: only the major is audited.",
+    "Third-year spring's and fourth-year's 'ASTR 4**' placeholders (three 400-level Astronomy courses) are filled with ASTR406, ASTR421 and ASTR430.",
+    "Third-year spring's and fourth-year fall's 'PHYS 401 or 404 or 410' placeholders (two of the three) are filled with PHYS404 and PHYS410."
+  ],
+  "credits": {
+    "MATH140": 4, "MATH141": 4, "PHYS275": 2, "ASTR232": 4, "MATH241": 4, "PHYS276": 2,
+    "MATH243": 4, "ASTR310": 4, "PHYS313": 4
+  },
+  "terms": [
+    { "term": "First Year Fall", "courses": ["ASTR130", "MATH140"] },
+    { "term": "First Year Spring", "courses": ["ASTR131", "MATH141", "PHYS171", "PHYS275"] },
+    { "term": "Second Year Fall", "courses": ["ASTR232", "MATH241", "PHYS272", "PHYS265"] },
+    { "term": "Second Year Spring", "courses": ["PHYS273", "PHYS276", "MATH243"] },
+    { "term": "Third Year Fall", "courses": ["ASTR310", "PHYS313", "PHYS371"] },
+    { "term": "Third Year Spring", "courses": ["ASTR320", "ASTR406", "PHYS404"] },
+    { "term": "Fourth Year Fall", "courses": ["ASTR421", "ASTR498", "PHYS410"] },
+    { "term": "Fourth Year Spring", "courses": ["ASTR430"] }
+  ]
+}

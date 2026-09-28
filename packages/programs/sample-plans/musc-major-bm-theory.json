@@ -1,0 +1,23 @@
+{
+  "programId": "musc-major-bm-theory",
+  "source": "https://drive.google.com/uc?export=download&id=1JxSZQ1DN7HKJUNvUtr0foVUAm-Rm-pmn#Music-Performance---Theory",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "School of Music official Music - Bachelor of Music - Theory Four Year Academic Plan. Gen Ed and general-elective slots are left out (only the major is audited).",
+    "The plan's own private-lesson sequence is only 5 courses (MUSP109/110/207/208/305) and its own ensemble slot only 5 semesters of MUSC229-or-MUSC329 -- both shorter than the generic BM track's, per the department page; MUSC229 is used here for the ensemble slot (the plan offers either).",
+    "MUSC229 and MUSC099 are repeatable 1-credit courses entered per the plan's own legend lines; see the program's reviewNotes.",
+    "The 'MUSC460 or MUSC472' choice is filled with MUSC472; the two 400-level Music Theory elective slots (no specific course named) are filled with MUSC444 and MUSC467; the generic 400-level music-history-elective slot with MUSC443; and the 3-5 credit music-electives floor with MUSC490 -- all real MUSC course numbers named elsewhere in the fetched plan text."
+  ],
+  "credits": { "MUSC229": 1, "MUSC099": 1 },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["MUSP109", "MUSC102", "MUSC150", "MUSC229", "MUSC099"] },
+    { "term": "Year 1 Spring", "courses": ["MUSP110", "MUSC103", "MUSC151", "MUSC229", "MUSC099"] },
+    { "term": "Year 2 Fall", "courses": ["MUSP207", "MUSC250", "MUSC260", "MUSC229", "MUSC099"] },
+    { "term": "Year 2 Spring", "courses": ["MUSP208", "MUSC251", "MUSC360", "MUSC229", "MUSC099"] },
+    { "term": "Year 3 Fall", "courses": ["MUSP305", "MUSC361", "MUSC229", "MUSC099", "MUSC461"] },
+    { "term": "Year 3 Spring", "courses": ["MUSC450", "MUSC099", "MUSC464"] },
+    { "term": "Year 4 Fall", "courses": ["MUSC472", "MUSC444", "MUSC443"] },
+    { "term": "Year 4 Spring", "courses": ["MUSC467", "MUSC490"] }
+  ]
+}

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Nav } from "@/components/Nav";
+import { THEME_INIT_SCRIPT } from "@/lib/theme";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -23,7 +24,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en">
+    // The pre-paint script sets data-theme on <html> before React loads, so the
+    // attribute legitimately differs from the server render.
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body>
         <Nav />
         <div className="app-content">{children}</div>

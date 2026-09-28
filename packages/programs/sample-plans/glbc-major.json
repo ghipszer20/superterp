@@ -1,0 +1,22 @@
+{
+  "programId": "glbc-major",
+  "source": "https://drive.google.com/uc?export=download&id=1xtu7OAIvMXD0bcWacqte__1eZ0dsGsN1#Global-Culture-and-Thought",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "UMD's official four-year plan PDF for this major converts to completely garbled, font-remapped text with no legible course codes, term headers, or any other course-level signal (no 'GLBC' substring anywhere in the converted text). Unlike other ARHU plans where the term grid was merely column-interleaved but still legible, nothing here could be read, so this plan is CONSTRUCTED from the catalog and department page alone. Flagged in docs/project/owner-review.md.",
+    "Language Study (12 credits, 200-level or above in one language) and Upper-Division Electives (15 credits, 300-level or above in one SLLC program) are both filled with French. Neither GLBC source names any specific language or elective course numbers (only prefix lists), so these slots are filled with real FREN course numbers already encoded from the Academic Catalog in fren-major-2026-27.ts: FREN204, FREN301, FREN302 (Language Study, plus FREN250) and FREN306, FREN312, FREN313, FREN351, FREN352 (Upper-Division Electives), chosen so the two requirements use disjoint courses (the catalog forbids double-counting the same course toward two of this major's requirements). Flagged in docs/project/owner-review.md for confirmation that reusing another major's course list is appropriate here.",
+    "Experiential Learning (6 credits) is not part of this plan: the Program doesn't encode that requirement (no course list in either source), so no courses are assigned to it. See reviewNotes on the Program.",
+    "Gen Ed and general-elective slots are left out: only the major is audited."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["GLBC200"] },
+    { "term": "Year 1 Spring", "courses": ["FREN204"] },
+    { "term": "Year 2 Fall", "courses": ["FREN250", "GLBC360"] },
+    { "term": "Year 2 Spring", "courses": ["FREN301"] },
+    { "term": "Year 3 Fall", "courses": ["FREN302", "FREN306"] },
+    { "term": "Year 3 Spring", "courses": ["FREN312", "FREN313"] },
+    { "term": "Year 4 Fall", "courses": ["FREN351"] },
+    { "term": "Year 4 Spring", "courses": ["FREN352"] }
+  ]
+}

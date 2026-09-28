@@ -3,7 +3,7 @@
 // column per date for the whole year. We read the same sheet as CSV.
 
 import { parseCsv } from "./csv.ts";
-import { fromUsDate } from "./dates.ts";
+import { addDays, fromUsDate } from "./dates.ts";
 import { parseHours, type DayHours } from "./hours.ts";
 import { fetchText, SourceError } from "./http.ts";
 
@@ -27,6 +27,24 @@ export type RecWellArea = {
 };
 
 export type RecWellAreaToday = Omit<RecWellArea, "hoursByDate"> & { hours: DayHours };
+
+// RecWell's sheet tags some areas' names with an "informal rec" marker
+// (open-use time, as opposed to a reserved league/class) -- e.g.
+// "Pickleball (informal rec)" or "Gym (Volleyball informal rec)". It's
+// sheet-internal scheduling jargon, not something a student needs to see, so
+// it's stripped at parse time. When it's the parenthetical's only content
+// the whole "(...)" is dropped; otherwise only the marker is removed and the
+// rest of the parenthetical is kept (e.g. "(Volleyball informal rec)" ->
+// "(Volleyball)").
+function stripInformalRec(name: string): string {
+  return name
+    .replace(/\(([^()]*)\)/g, (_match, inner: string) => {
+      const cleaned = inner.replace(/\s*informal rec\s*/i, " ").trim();
+      return cleaned ? `(${cleaned})` : "";
+    })
+    .replace(/\s+/g, " ")
+    .trim();
+}
 
 /**
  * Parse one sheet tab. Layout (observed 2026-09-24):
@@ -59,7 +77,7 @@ export function parseRecWellTab(csv: string, setting: RecWellSetting): RecWellAr
     });
     areas.push({
       group,
-      name,
+      name: stripInformalRec(name),
       url: /^https?:\/\//.test(second) ? second : null,
       setting,
       hoursByDate,
@@ -90,4 +108,13 @@ export function recWellOnDate(areas: RecWellArea[], isoDate: string): RecWellAre
     const raw = hoursByDate[isoDate];
     return raw === undefined ? [] : [{ ...area, hours: parseHours(raw) }];
   });
+}
+
+/** The areas with hours for `days` days starting at `startIsoDate` (the sheet covers a whole year). */
+export function recWellWindow(areas: RecWellArea[], startIsoDate: string, days: number): RecWellArea[] {
+  const dates = new Set(Array.from({ length: days }, (_, i) => addDays(startIsoDate, i)));
+  return areas.map((a) => ({
+    ...a,
+    hoursByDate: Object.fromEntries(Object.entries(a.hoursByDate).filter(([d]) => dates.has(d))),
+  }));
 }

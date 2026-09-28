@@ -1,7 +1,8 @@
 # SuperTerp — Project Memory
 
 > Single source of truth for project context. Update this file whenever a decision changes.
-> Last updated: 2026-09-24 (initial planning session).
+> Last updated: 2026-09-27 (registry generated from program files; batches waiting on the source-extraction decision).
+> Read by the main session at the start of every session (builders don't read it; CLAUDE.md), so keep it under ~20 KB (section 18).
 
 ## 1. Vision
 An all-in-one iOS app + website for UMD students. It combines:
@@ -15,9 +16,10 @@ What sets it apart from Jupiterp, Coursicle and PlanetTerp is the **degree audit
 
 ## 2. Owner decisions and preferences (do not re-litigate)
 - **Open source, no LLC** (owner, 2026-09-24): SuperTerp is open source, with no LLC unless it is absolutely necessary. The code license (MIT or Apache-2.0, not yet chosen) disclaims warranty on the code. The hosted app relies on the clickwrap terms. Secrets (API keys, LibCal/DOTS credentials) stay out of the repo.
-- **Name:** "SuperTerp" is decided (owner, 2026-09-24). It's free, open-source and a student project, the same pattern as PlanetTerp and Jupiterp, so trademark risk is low. Backup: "Scute". **The project will never make money** (owner, 2026-09-24): no ads and no paid tier, so the Trademarks email is optional. This also keeps Reddit, PlanetTerp and Libraries/DOTS data requests in the non-commercial category. superterp.com is registered but dead (a 404 on old GitHub Pages servers). superterp.app and getsuperterp.com didn't resolve, so they're likely available.
+- **Name:** "SuperTerp" is decided (owner, 2026-09-24). It's free, open-source and a student project, the same pattern as PlanetTerp and Jupiterp, so trademark risk is low. Backup: "Scute". **The project will never make money** (owner, 2026-09-24): no ads and no paid tier (donations allowed, only to cover running costs: owner 2026-09-26), so the Trademarks email is optional, and Reddit, PlanetTerp and Libraries/DOTS data requests stay non-commercial.
+- **No lawyer review** (owner, 2026-09-24): a disclaimer is enough; Claude drafts plain-language disclaimer, terms and privacy text. Team: solo owner + Claude.
 - **Every major must work**, not only CS. Every minor, specialization and special program with course requirements must also be included: Honors College LLPs, Gemstone, College Park Scholars, CIVICUS, other LLPs, citations, certificates, notations, departmental honors, combined BS/MS, ROTC, and **every pre-professional track with its requirements** (pre-med, pre-law, pre-dental, pre-PA, pre-vet, pre-pharmacy, pre-nursing, and others; see module 1).
-- **No student-correction button or review queue.** The owner personally tests and verifies all requirement data before launch. Only programs the owner has signed off (✅) ship, with no 🧪 labels in production. After launch, a support email is fine.
+- **No student-correction button or review queue.** Requirement data is verified before launch by comparing each program with its department's requirements page (owner, 2026-09-26: the owner decides only flagged items; the review tool was dropped). No 🧪 labels in production. After launch, a support email is fine.
 - **Seat alerts were NOT requested by the owner.** Claude suggested them. They're treated as an investigation spike only.
 - **The UI must be incredibly sleek and easy to understand, Apple-style quality.** 4-year plan grid styled like the UMD CS 4-year plan, but with lighter, friendlier colors.
 - Grade upload is wanted so the LLM can give personalized course-selection feedback.
@@ -28,101 +30,10 @@ What sets it apart from Jupiterp, Coursicle and PlanetTerp is the **degree audit
 - Must handle switching majors, grad courses as an undergrad, double majors, double degrees, and adding or dropping majors and minors (see module 1).
 
 ## 3. Feature modules
-1. **Degree audit and 4-year planner.**
-   - Layered rules: University → Gen Ed → College → Major → Specialization → Minor, second major and special programs.
-   - Matching-based assignment that respects double-count rules. Flags missing requirements (with courses that satisfy them), prerequisite and ordering errors, overshoot, and credit caps.
-   - Manual ☐ items for things it can't check (thesis, auditions).
-   - Catalog-year versioning. Handles AP/transfer credit and the CS limited-enrollment gateway.
-   - **Program changes (owner requirement):** switching majors, grad courses as an undergrad, double majors, double degrees, adding and dropping majors and minors.
-     - **Data model:** a Student holds Degrees, and each Degree holds Programs (major, minor, certificate, LLP, and so on). Each Program has its own catalog year and a status (declared / planned / what-if / dropped). Gen Ed and university rules apply once; college rules apply per degree.
-     - **Double major:** 1 degree, 2 majors, 120-credit minimum. Courses may count toward both majors unless a program's rules limit sharing.
-     - **Double degree:** 2 degrees, **150-credit minimum**, and **at least 18 credits in each degree not used for the other**. Satisfies both degrees' requirements in full, including college rules.
-     - **Declaration deadline:** a double major or double degree must be declared at least 1 full academic year before graduation. The app warns ahead of it.
-     - **Sharing limits** between programs are part of the rule format (e.g. `max_shared_with`). The matching step (ILP) enforces them across every program at once.
-     - **Switching majors:** always run it as a what-if first. Show how existing credits apply to the new major (count / become electives / unused), the change in graduation date, the catalog year for the new major, and the internal-transfer requirements (gateway courses and GPA) for limited-enrollment majors. Then commit, with undo.
-     - **Adding or dropping a program:** re-run matching. Show freed credits ("drop the minor → graduate a semester early?") and courses that now count toward nothing.
-     - **Grad courses as an undergrad:**
-       - 600–897 (not 799) are allowed, subject to the offering department's rules.
-       - Each grad course is tagged by how its credit counts: undergrad credit / graduate-only (max 9 credits, a petition can add up to 3) / double-counted in a combined BS/MS.
-       - A combined BS/MS double-counts up to 35% of the master's credits, only 600+ courses with a grade of B- or better.
-       - Grad courses get a badge on the plan grid. Permission-only prerequisites become manual ☐ items.
-     - The owner's hand-built test students must include: a major switch in sophomore year, a double major, a double degree, a BS/MS student, and a dropped minor.
-   - **Pre-professional tracks (owner requirement):** pre-med (MD/DO), pre-dental, pre-PA, pre-vet, pre-pharmacy, pre-optometry, pre-PT, pre-OT, pre-nursing, pre-law, and others. They're a separate layer type called a "track": prerequisites for applying to a professional school, **not** degree requirements. Tracks can be added to any major, and what-if audits cover them.
-     - **Course categories map to UMD courses.** HPAO's medicine list: 8 cr general chem + lab, 8 cr organic chem + lab, biochem, 8–12 cr bio + lab, calculus, statistics, 8 cr physics + lab, 6 cr English. HPAO publishes categories, not UMD codes, so the owner builds the category → UMD course mapping from 4yearplans.umd.edu pre-health plans and HPAO pages, then verifies it.
-     - **Optional target-school layer:** add specific schools with their own extra requirements (e.g. a PA school that needs anatomy and physiology; pharmacy from AACP's school table). A later addition; the generic HPAO list comes first.
-     - **Transfer tracks** (pre-nursing = 2 years at UMD, then apply to a BSN program elsewhere) get requirements from the UMD catalog's Pre-Health Professions page.
-     - **Pre-law:** there are no required courses. The track shows milestones (LSAT timing, application cycle), suggested skill-building courses, and **GPA protection**: it warns when a planned semester's predicted grades could hurt GPA.
-     - **Things that aren't courses** become milestone ☐ items on the plan timeline: MCAT/DAT/OAT/GRE/LSAT, clinical, shadowing, research and volunteer hours, and the HPAO committee letter and application cycle. Use HPAO's timeline and dates, verified by the owner.
-     - **Timing:** the optimizer gets a deadline rule, e.g. finish MCAT content courses before the planned MCAT term. Gap-year plans are supported.
-     - **GPA:** compute overall and **science GPA (BCPM: biology, chemistry, physics, math, AMCAS-style)** from the transcript.
-     - **Warnings:** AP credit or pass/fail used for a professional-school prerequisite (many schools won't accept these), and grades below the usual C minimum.
-     - Disclaimer: "Confirm with HPAO and each target school."
-2. **Prerequisite graph.**
-   - Prose from Testudo parsed into AND/OR trees, with corequisites kept separate.
-   - A hand-edited overrides file.
-   - Which terms each course is offered.
-3. **Schedule builder (Coursicle-style).**
-   - Week grid, section switching, conflict and gap detection, walking time between buildings.
-   - Auto-generator with filters (no 8am classes, days off), ranked by professor rating, GPA or open seats.
-   - Plan A/B/C, .ics export, sharing.
-   - **Two-way sync with the 4-year plan (owner requirement).** There is one plan model. The builder for a term is a view of that term in the 4-year plan, plus the chosen sections, so there are no copies to keep in sync.
-     - **Plan → builder:** a term's planned courses pre-load in the builder with their sections.
-     - **Builder → plan:** adding, removing or swapping a course edits that term in the plan immediately.
-     - Only the **active** schedule (A/B/C) writes to the plan. The alternatives are sandboxes, and switching the active one applies the difference.
-     - Every change re-runs the audit and the prerequisite check for later terms. If something breaks (e.g. dropping CMSC351 breaks 3 later courses), show one-tap fixes from the optimizer (move to summer, shift later courses). Show a change summary ("Plan updated · audit still ✅") and allow undo.
-     - Each course in the builder shows what it counts toward (e.g. "DSHU") and what happens to the audit if it's swapped. If a planned course has no sections this term, or they're all full, suggest alternatives that satisfy the same requirement.
-     - Past terms are locked (from the transcript). The current term is marked "registered" by the student, since there's no Testudo login. Section-level building works only for terms whose Schedule of Classes is published; later terms are course-level only.
-4. **Advising.**
-   - 4-year level: what-if audits (minor, major switch, graduate early, abroad), timeline warnings, optimizer.
-   - Semester level: which courses to take, which sections, a registration-day priority plan, workload check.
-   - Rule: **the rules engine is the source of truth, and the LLM only explains** (via tool use).
-5. **Grades and personalization.**
-   - Import from the unofficial transcript PDF, pasted Testudo text, or manual entry, with a confirmation screen.
-   - Imported grades auto-fill the audit and are checked against minimum-grade and GPA rules.
-   - Strength profile = grade relative to the course's PlanetTerp average, grouped by skill area. Grade predictions are shown as ranges. Difficulty scores are personalized.
-   - LLM feedback: encouraging tone and honest about how little data it's based on.
-   - Privacy: stored on the device by default, explicit consent before anything goes to the LLM, no name or UID sent, one-tap delete.
-6. **Difficulty and professors.**
-   - Course score from PlanetTerp average GPA, W/F rate and review sentiment. Semester score from total difficulty and credit load.
-   - LLM professor summaries cached each term and linked to the current Schedule of Classes.
-7. **Reviews (student-written).**
-   - Sign-in limited to umd.edu/terpmail addresses; reviews displayed anonymously.
-   - One review per course, professor and term for each account.
-   - LLM pre-screen, report, block and contact options, as Apple Guideline 1.2 requires.
-   - Terms of service covering defamation.
-8. **Campus tab.**
-   - Dining menus, library hours, RecWell hours and fitness classes.
-   - A study-room availability grid covering every library and room type.
-9. **Buses (Shuttle-UM, Transit-app style).**
-   - Opens to nearby stops, with large countdowns and a clear "live" vs "scheduled" label.
-   - Favorite routes, service alerts, and route colors and shapes drawn on the map.
-   - Event routes (football, Maryland Day, Commencement) appear only on the days they run.
-   - **Class-aware "leave by" times:** "Leave by 9:42 to make CMSC351 in IRB."
-   - iOS Live Activity and Dynamic Island countdown for the next bus, plus a widget. Link out to Transit for extras.
-10. **Seat and waitlist (spike).**
-   - Monitor tracked sections during one registration window.
-   - Ship waitlist check-in reminders regardless of the spike's outcome.
+Moved to `docs/project/feature-modules.md`. Read it before designing or building any feature.
 
 ## 4. Verified data sources (checked 2026-09-24)
-| Data | Source | Notes |
-|---|---|---|
-| Courses/sections/seats | Testudo Schedule of Classes (app.testudo.umd.edu/soc) | Primary source; umd.io (student-run) is the fallback only |
-| Requirements | academiccatalog.umd.edu, 2026–27 catalog | Structured HTML course lists, "select N" groups, footnotes, Graduation Plans tab |
-| Sample plans | 4yearplans.umd.edu | Used as golden tests: each official plan must pass |
-| Grades/profs/reviews | PlanetTerp API, api.planetterp.com/v1 | No auth; endpoints: courses, professors, grades, search. Credit them, and ask before heavy use |
-| Reddit | Reddit Data API | Free only for non-commercial use, needs manual approval (2–4 weeks); optional or dropped |
-| Dining | nutrition.umd.edu `longmenu.aspx` | Hall/date/meal/station; items link to `label.aspx?RecNumAndPort=…`. No update feed, so poll every ~30 min and push only when a content hash changes |
-| Dining (confirmed 2026-09-24) | `GET https://nutrition.umd.edu/?locationNum={16 South Campus, 19 Yahentamitsi, 51 251 North}&dtdate={M/D/YYYY}` | Meals are tab panes `#pane-1/2/3` (Breakfast/Lunch/Dinner; titles from `.nav-link`). Stations are `.card` with `h3.card-title`. Items are `.menu-item-row` → `a.menu-item-name` (href `label.aspx?RecNumAndPort=…`) plus `img.nutri-icon` alt text (e.g. "Contains pork"). The date dropdown is filled by JS, so generate dates yourself |
-| Room availability (confirmed 2026-09-24) | `POST https://umd.libcal.com/spaces/availability/grid`, form `lid, gid, eid=-1, seat=0, seatId=0, zone=0, start=YYYY-MM-DD, end=YYYY-MM-DD, pageIndex=0, pageSize=18`, header `Referer` = the category page | Returns `{slots:[{start,end,itemId,checksum,className?}]}`. A `className` of `s-lc-eq-checkout` means booked; no className means open. Room metadata is embedded in the category page HTML (e.g. `/reserve/mckeldin/carrels-4hr`) as JS objects: `title` ("7209 (Capacity 2)"), `url` `/space/{eid}` (the booking deep link), `eid`, `gid`, `lid`, `grouping`, `capacity`. Undocumented endpoint: read-only, cache it, keep request rates low |
-| Library hours | umd.libcal.com/hours (LibCal) | 10 locations, weeks of hours ahead |
-| Study rooms | umd.libcal.com/reserve | Booking needs a UMD email, not a password. Location ids: McKeldin 2552, Art 14005, Performing Arts 14006, STEM 6745. McKeldin categories: TLC Group Study 23065, Carrels 23067, Family Room 23082, Faculty Office 23071, Podcasting Lab 30085, Conversation Room 40070 |
-| RecWell hours | Public Google Sheet `1y3-5AE7FBNL0JFi4LW459WaBQzYVOdWMvtOVr0DZCmM` | CSV via `/export?format=csv&gid=…`. Indoor gids: 1320933735, 1321604209, 354755843, 83449240, 1348172338, 883167948, 628324683, 180872438. Outdoor gids: 1601669223, 1656075107, 849246933, 836576797. One row per facility or area, one column per date for the whole year. Needs a layout check that alerts the owner when it breaks |
-| Group fitness | Semester PDF on recwell.umd.edu | Extract once per semester, then owner review |
-| Gym occupancy | Not found publicly | Don't plan on it |
-| Bus schedules (static) | Shuttle-UM GTFS `https://feed.actionfigure.ai/university-of-maryland-shuttle-um.zip` (Transitland `f-shuttleum~md~us`) | Downloaded 2026-09-24: 37 routes (including event routes), 361 stops, ~3,050 trips, with shapes. Valid 2026-05-19 to 2026-12-24, so re-fetch every day and alert if the feed nears expiry. Transitland/Interline license |
-| Bus real-time | Not public. DOTS uses Swiftly, which powers the official Transit app | Ask DOTS for a Swiftly GTFS-RT key (non-commercial student app). Until then, show scheduled times plus a link out to Transit |
-| Metro/regional | WMATA developer API (free key); Metrobus/TheBus GTFS | Optional: College Park Metro connections |
-| Waitlist rules | registrar.umd.edu waitlist-hold-file | Opened seats go to the waitlist automatically; daily check-in is mandatory or you lose your spot |
+Moved to `docs/project/data-sources.md`. Read it before touching a scraper or data source.
 
 ## 5. Study-room booking plan
 - **Level 1 (no permission needed):** a unified availability grid plus smart search. Each slot deep-links to the exact room and date on LibCal.
@@ -134,17 +45,13 @@ What sets it apart from Jupiterp, Coursicle and PlanetTerp is the **degree audit
 2. Parse the tables with ordinary code.
 3. Use an LLM to extract footnotes and prose into the rule format, with confidence flags.
 4. Validate: official plans must pass, and mutation tests (plans broken on purpose) must fail.
-5. Owner reviews in a side-by-side review tool and signs off (✅).
+5. Compare with the department's requirements page (department page wins); the owner decides only flagged items.
 6. Re-scrape the catalog each year and diff the changes.
 
 Scale: about 200–300+ programs, roughly 200–300 hours of owner review. Launching in waves by college is an open option.
 
-## 7. Tech stack (current recommendation)
-- TypeScript monorepo with a shared rules-engine package.
-- **Expo** (react-native-web) for iOS and web, using native iOS parts: native tabs, SF Symbols, sheets, haptics, the glass look.
-- Alternative: SwiftUI + Next.js, decided after the design-phase prototype.
-- Supabase (Postgres + Auth, umd.edu email magic links) and Python scrapers on a schedule.
-- Claude for LLM features. OR-Tools CP-SAT for the optimizer.
+## 7. Tech stack
+See the package.json files: Next.js web app (apps/web), TypeScript packages, HiGHS for the audit. Decisions behind the stack are in section 13.
 
 ## 8. UI / design
 - **Principles:** show the answer, not the data; one main action per screen; plain language (e.g. "Humanities (DSHU)"); color only when it means something (white and gray, one accent, a pastel for each requirement category); an instant feel (cached data, skeleton loading, springs, haptics); accessibility (Dynamic Type, VoiceOver, dark mode, AA contrast).
@@ -153,94 +60,84 @@ Scale: about 200–300+ programs, roughly 200–300 hours of owner review. Launc
   - **Schedule**: the schedule builder, plus course and professor info (replaces the old Explore idea).
   - **Advisor**: the 4-year plan / degree audit plus LLM advising.
   - **Today** summary is the home page (`/`), reached from the SuperTerp logo; it's not a tab.
-  - **Accent red #BA0C2F approved** by the owner.
 - **Onboarding** in under 60 seconds: major and year → transcript → audit.
 - Don't use Testudo or UMD logos. Logo idea: abstract hexagon or shell plates.
 - The website gets a desktop layout, not a stretched phone app.
 
-## 9. Phases
-| # | Scope |
-|---|---|
-| 0 | Data: Testudo, catalog (all programs), PlanetTerp, dining, LibCal, RecWell, Shuttle-UM GTFS |
-| 0.5 | Design system, Figma prototypes, watching ~5 students use them, performance targets (<100 ms interactions) |
-| 1 | Schedule builder and generator + Campus tab (dining, libraries, gyms, room availability, buses with scheduled times and "leave by" times) |
-| 2 | Audit and 4-year planner for every program + transcript import + validation harness + review tool |
-| 2b | Owner verification pass (can overlap with 3–4) |
-| 3 | Advising v1 (what-if audits, semester and section recommendations, strength profile) |
-| 4 | Accounts, reviews and moderation, professor summaries, LLM advisor and grade feedback |
-| 5 | Optimizer (easier, front-loaded, summer), registration-day plan |
-| 6 | iOS extras: widgets, Live Activities for the next bus, dining/booking/waitlist reminders; add live bus data once DOTS grants access |
-| Spike | Seat and waitlist monitoring during a registration window |
+## 9. Phases and time estimate
+Moved to `docs/project/roadmap.md` (phases 0–6, MVP recommendation, hour and calendar estimates, launch schedule: Jan 2027 Campus tab beta → Mar–Apr 2027 schedule builder → Summer 2027 audit + verification → Nov 2027 first verified colleges → Spring 2028 everything + iOS).
 
-MVP recommendation: Phases 0–2 plus what-if audits and section recommendations from Phase 3.
+## 9b. First-draft plan (owner-approved 2026-09-27)
+`docs/project/first-draft-plan.md` is the build order to the first draft: MVP scope (Campus, Schedule, Advisor audit/planner, transcript import, what-if, section recommendations; no reviews, LLM advisor, optimizer or iOS), all ~270 programs encoded, deployed on Vercel + Supabase. Waves: 0 in-flight → 1 program infrastructure → 2 program batches by college → 3 MVP gaps → 4 deployment. Queue follows it.
 
 ## 10. Open to-dos and questions
-- [ ] Optional: a courtesy heads-up email to UMD Trademarks & Licensing (not a blocker). Required only if the project starts making money.
-- [x] No lawyer review (owner decision, 2026-09-24): a disclaimer is enough. Claude drafts plain-language disclaimer, terms and privacy text.
+- [ ] Optional: a courtesy email to UMD Trademarks & Licensing (required only if the project makes money).
 - [ ] Email UMD Libraries requesting LibCal API credentials.
 - [ ] Email UMD DOTS requesting Shuttle-UM real-time data access (a Swiftly GTFS-RT key).
-- [ ] Claim a domain (superterp.app or getsuperterp.com), the App Store name and social handles.
+- [ ] Claim a domain (superterp.app or getsuperterp.com looked free on 2026-09-24; superterp.com is taken but dead), the App Store name and social handles.
 - [ ] Decide whether to reuse or partner with Jupiterp (open source; check license).
-- [ ] Confirm UMD's per-semester credit cap and Expo's native-component support.
+- [ ] Confirm Expo's native-component support (for the later iOS app).
 - [ ] Decide: launch everything at once, or in waves by college.
-- [x] ~~Expo vs SwiftUI~~: decided website-first with Next.js (section 13); iOS later.
-- [x] Monetization: never (section 2). Team: solo owner + Claude.
-- [x] Repo created: github.com/ghipszer20/superterp (private, Apache-2.0), local at C:\Users\24GHi\Code\SuperTerp. Git uses HTTPS with the gh credential helper (SSH host key isn't set up in this shell).
 - [ ] Before making the repo public: scrub personal details from PROJECT_MEMORY.md (owner's program plans, personal notes) and review git history.
 
 ## 11. Legal and trust notes
-- **Required liability agreement for the 4-year plan / audit (owner requirement, 2026-09-24).**
-  - A clickwrap gate before first use. The student must scroll through a short, plain-language notice, tick the box, **type their full name as a signature** and see the date. There's no way to skip it.
-  - Content:
-    - Unofficial; not affiliated with UMD; not academic advising.
-    - May contain errors or outdated catalog data.
-    - The student is responsible for checking with their advisor and UMD's official degree audit before registering or changing programs.
-    - No warranty, and limitation of liability (e.g. for extra semesters or costs).
-    - Covers the advisor, optimizer, LLM feedback and pre-professional tracks too.
-  - **Proof of consent:** store the agreement version, timestamp, account, and a hash of the typed name on the server. So the planner **requires a umd.edu account** (a change from "no account needed"; other tabs stay usable without one). Ask for re-consent when the wording changes materially.
-  - **Protection inside the product too, not only the signature:**
-    - Every audit result cites its catalog rule and catalog year.
-    - "Verify with your advisor" prompts at high-stakes moments: committing a program change or dropping a course that delays graduation.
-    - Exported PDFs carry a disclaimer footer and are laid out to take to an advisor.
-  - **No lawyer review and no LLC** (owner decision, 2026-09-24): the disclaimer is enough. Assumption: the typed-name agreement stays, since it is the disclaimer in its strongest form; confirm with the owner if in doubt. Claude writes the wording. A signature reduces risk but doesn't remove it, especially for negligence. **Accuracy plus the owner's verification pass is the real protection.**
-- Show a "not official advising" disclaimer and the catalog year used.
-- No UMD marks: no Testudo, no official logos, no official color scheme that suggests affiliation. Show "Not affiliated with the University of Maryland" in the app, on the website and in the App Store listing.
-- Never ask for or store Testudo credentials, and never auto-register students.
-- Be polite when scraping: cache results, back off on errors, and poll only what's needed.
-
-## 12. Time estimate (2026-09-24; assumes solo + AI coding help)
-- Total ≈ 1,500–2,300 hrs: data 175–270, design 60–120, schedule builder + Campus tab + basics 220–330, audit engine + planner 420–660, **owner verification 250–350 (critical path, can't be delegated)**, advising 80–120, reviews + LLM 120–180, optimizer 80–120, iOS polish 100–150.
-- Calendar time: 15 hrs/wk ≈ 2–3 yrs; 25 hrs/wk ≈ 1.2–1.8 yrs; full-time summers + ~15/wk ≈ 18–24 months.
-- Launch schedule: Jan 2027 Campus tab web beta → Mar–Apr 2027 schedule builder (Fall 2027 registration) → Summer 2027 audit engine + verification → Nov 2027 audit for first verified colleges → Spring 2028 all colleges, reviews, AI advisor, optimizer, iOS on the App Store.
-- Re-estimate once the Campus tab ships.
+Moved to `docs/project/legal.md`. Read it before building the disclaimer, accounts, exports or scrapers. The essentials: the 4-year plan / audit needs a typed-name clickwrap agreement first (so the planner needs a umd.edu account); every audit result cites its catalog rule and year; no UMD marks and "Not affiliated with the University of Maryland" everywhere; never ask for or store Testudo credentials; scrape politely.
 
 ## 13. Build decisions (owner, 2026-09-24): locked for the start
 - **Platform:** website first. Next.js installable web app (PWA). The rules engine, scrapers and data are separate packages, so an iOS app can reuse them later.
-- **First build:** the Campus tab (dining, library hours, RecWell, buses, study-room availability). It also sets up the repo, design system and scraper infrastructure.
-- **Repo:** private at `ghipszer20/superterp` until launch, then public. License **Apache-2.0**.
+- **Repo:** github.com/ghipszer20/superterp, private until launch, then public. License **Apache-2.0**. Local: C:\Users\24GHi\Code\SuperTerp. Git uses HTTPS with the gh credential helper (no SSH host key in this shell).
 - **Hosting:** free tiers only. Vercel (web), Supabase (DB and auth), GitHub Actions (scheduled scrapers). The owner creates the accounts when deployment needs them.
 - **Workflow (updated 2026-09-24):** NO PR reviews. Claude works autonomously on long-running branches with draft PRs; the owner merges whenever they like, without reviewing (Claude can never push or merge to main). Check in with the owner ONLY for: (1) any **major UI change**, which the owner must approve (show screenshots or a local preview first); (2) design or functionality changes the owner wants; (3) problems or blockers; (4) something turning out infeasible; (5) a good new idea. Everything else: decide, note the assumption, keep going. PRs still explain web-specific choices, since the owner knows Python and less web.
-- **Design:** Claude drafts an Apple-style design system; the owner reviews visually and approves. Accent color: **(PRODUCT)RED iPhone red, `#BA0C2F`** (owner approved 2026-09-24). Full strength only on buttons, active tabs and highlights; pale tints for backgrounds; a brighter variant in dark mode for contrast. Soft whites and grays, light and dark mode.
+- **Design:** Apple-style design system, approved visually by the owner. Accent **`#BA0C2F`** ((PRODUCT)RED, owner approved 2026-09-24): full strength only on buttons, active tabs and highlights; pale tints for backgrounds; brighter in dark mode. Soft whites and grays, light and dark mode.
 - **Owner profile:** Math major, CS minor, adding a CS dual degree. **First verification target: Math + CS double major.** Also build a Math + CS double-degree test student.
 - **Transcript:** the owner will provide their unofficial transcript during the Phase 2 parser work. It stays local only and is never committed (gitignored).
 - **Tooling on the owner's PC:** git, gh (logged in as ghipszer20), Node 24, npm, Python 3.13 via `py` (no `python` or `python3` on PATH), no Docker (so use hosted Supabase, not local).
 
-## 14. Status log
-- **2026-09-24, PR #1 (`feat/campus-foundation`, draft):** repo foundation + Campus tab.
-  - `packages/campus-data`: dining, libraries (LibCal JSON feed `api_hours_grid.php?iid=1504`), RecWell sheet, study rooms (LibCal catalog + grid), Shuttle-UM GTFS. 38 fixture tests; `npm run smoke` checks the live sites (all 5 passed 2026-09-24).
-  - `apps/web` (Next.js 16, Cache Components): Today, Campus hub, Dining, Study Rooms, Buses, Libraries, Gyms & Rec, plus placeholder Schedule/Plan/Explore. `next build`, `tsc` and ESLint are clean; `npm run ui-check` (headless Edge over DevTools at iPhone size) shows 0 console errors on all 8 pages.
-  - Owner approved the red and set the navigation (Campus · Schedule · Advisor, with Today at `/`). Implemented 2026-09-24: Campus sub-nav, Dining · Transit · Libraries (+ study rooms) · Gyms; redirects from /plan, /explore, /campus/buses.
-  - **Waiting on owner:** a final look at the restructured navigation (screenshots in `apps/web/.ui-check/`).
-  - **Review to-dos (not blocking PR 1):**
-    - The GTFS feed ends 2026-12-24. `validUntil` is parsed but not shown, so after it expires the app would say "No Shuttle-UM service". Warn in the UI and in a scheduled check before that date.
-    - Before public launch, check the GTFS feed's license (Interline/actionfigure) for republishing schedules.
-    - Add GitHub Actions CI (test, lint, build). Web `tsc --noEmit` fails on a fresh clone until Next generates `LayoutProps` (run `next typegen` or build first).
-    - If a source is down, show the last good data (needs a database).
-  - **Next up (per plan):** Phase 1 schedule builder on the shared plan model; deploy to Vercel once the owner creates an account.
+## 14. Current state (replace in place, never append; dated narrative goes in `docs/project/status-log.md`)
+- **Branches:** PR #1 `feat/campus-foundation` (draft); PR #2 `feat/course-data` (draft, stacked on #1) is the working branch everything merges into. CI green as of 2026-09-26 evening.
+- **Built** (full list in `docs/project/built.md`; all unverified by the owner unless noted): About page; Campus tab (dining, libraries, study rooms, gyms, Transport map + trip planner); Schedule builder linked to the 4-year plan; Advisor tab (disclaimer, setup, credit caps, What-if, AP/IB credit, plan grid, checks, audit, 14 pre-professional tracks); CS / Math Traditional / Math Applied / Gen Ed and 61 special programs encoded.
+- **In progress (2026-09-28, owner: "continue with the majors"; SEPARATE owner sessions handle all minors and all certificates; this session must not touch minors or certificates, and the owner will say what those sessions take on next so this session avoids it (owner, 2026-09-28); both sessions merge into feat/course-data, so pull before merging and expect conflicts only in generated files and docs):** majors college by college, one per builder, 2 at a time (order: ENGR, BSOS, ARHU, BMGT, AGNR, SPHL, INFO, EDUC, JOUR, ARCH, PLCY, USG). Assumption: a major with no department page in `program-sources/` is encoded from the catalog alone and flagged "department page not checked" in owner-review; the main session fills department and plan URLs where a hub page lists them (as done for ENGR). ENGR: all 12 majors merged 2026-09-28. BSOS: all majors merged 2026-09-28 (Psych-Neuro = the encoded Neuroscience major). ARHU in progress, alphabetically, 2 at a time (official four-year plans for every major/track in program-sources; their term grids convert garbled, so placement is reconstructed and flagged): merged American Studies, Arabic, Art History, Art, Chinese, Cinema, Classics, Communication, Dance, English, French, German, Global Culture, History, HCAI, Immersive Media Design, Italian, Japanese, Jewish Studies, Linguistics, Persian, Music (BM per-area tracks queued as a follow-up); PPE, Philosophy; RAME, Romance Languages, Russian, Spanish, Theatre, WGSS. ARHU majors complete 2026-09-28. Business: Accounting (+ shared `bmgt-core-2026-27.ts`), Finance, Information Systems, International Business merged; next Management, Marketing, Operations Mgmt & Business Analytics, Supply Chain. AGNR: Agricultural and Resource Economics, Animal Sciences, Agricultural Science and Technology merged; next ENSP (7 concentration plans in sources), Environmental Science and Technology, Fermentation Science, Landscape Architecture, Nutrition and Food Science, Plant Sciences. Follow-ups done: Music BM areas, Psychology themes; running: re-check Anthropology/GVPT/IR against the BSOS checklists; queued: ANSC course-listing page, OCR the unreadable ARHU plans. Then PH, INFO, EDUC, JOUR, ARCH, PLCY, USG; then follow-ups: Psychology theme areas (PSYC courses page now in sources) and re-checking Anthropology, GVPT and IR against the BSOS major checklists (Feller Center PDFs via the Internet Archive, added to sources after they were built). Constructed plans: briefs list real courses from the catalog approved-course list (GVPT/IR/Anthropology pages fetched; AASD, CCJS, Economics, HESP, Sociology sites time out from here: catalog only). Merge helper: every program merge = merge, union doc conflicts, regenerate registry + course sets, programs tests, push; every ENGR major now has its department page and official Fall 2026 plan in `program-sources/`. Physics Education/Biophysics/Applied and knip cleanup merged 2026-09-28. Source-fetch script merged 2026-09-28 (`program-sources/`, gaps in `missing.md`; fill by adding URLs to `sources.json` and re-running). Registry from program files merged 2026-09-28 (adding a program = program file with `<name>Meta` + `npm run build:registry -w @superterp/programs`). AI major never encoded; BSCI Individualized Studies skipped; next programs: ENGR (skip `ras-minor`). Recently merged (details in `docs/project/status-log.md` and `built.md`): registry from program files, CMNS majors 1–2 (24 majors), CMNS minors 1–2 (23 minors), CS specializations, honors retry, grad courses, transcript import, multi-program rules.
+- **Minors (separate session; only this bullet is that session's, replace it in place):** encoding all 97 remaining minors (no majors or certificates) per `docs/project/minors-plan.md` (batch table + status), 3 Sonnet builders at once, merged into feat/course-data (registry regenerated on conflict, never hand-merged).
+- **Certificates session (owner, 2026-09-28; plan in `docs/project/rulings.md` "Certificates"):** 10 catalog certificates in 4 Sonnet builders, up to 3 at once: `feat/cert-pilot` (WGSS, LGBTQ, AAAS; runs alone first), then `feat/cert-area-studies` (East Asian Studies once, LACS), `feat/cert-edu-agnr` (Leadership, Secondary Ed, IANR), `feat/cert-iaa` (Applied Agriculture core + 8 tracks). Sources hand-captured and trimmed 2026-09-28. Certificates need only `build:registry` (no course sets).
+- **Queue (in order; follows `docs/project/first-draft-plan.md`; rulings in `docs/project/rulings.md`, task notes in `docs/project/roadmap.md` "Queue notes"):** (1) trim what builders load (optional; the owner prefers building) (measured 2026-09-28: 44.5k tokens for a do-nothing Sonnet builder, over the ~30k bar; see plugins, skills, MCP tools, instructions); (2) knip cleanup (Haiku: delete `ComingSoon.tsx`, ~15 unused exports, 2 unused internal deps, add unlisted `domhandler`/`tesseract.js-core`; keep the manual catalog scripts); then program work one program per builder (section 18), continuing by college; then Wave 3 (section recommendations, schedule leftovers, grades in audit, advising export, registration prep + deadlines, semester difficulty score, test students) and Wave 4 (deployment).
+- **Waiting on the owner:** see `docs/project/owner-review.md` (include it in every progress report; add new items there).
+- **Known to-dos:** see `docs/project/roadmap.md` "Known to-dos" (add new ones there).
 
 ## 15. Working notes for Claude
-- Git Bash on this PC rewrites leading-slash arguments into Windows paths: prefix commands with `MSYS_NO_PATHCONV=1` when passing URL paths.
-- In bash, `"$W\$1"` escapes the `$`; use forward slashes in Windows paths.
-- **Never kill processes by image name** (`taskkill /IM node.exe` kills every Node process on the owner's PC). Kill only by PID, e.g. from `netstat -ano | grep :PORT`.
-- Headless Edge `--screenshot` can't go below ~500px wide and fires before streamed content arrives. Use `apps/web/scripts/ui-check.mjs` (true mobile emulation, waits for JS).
-- Next 16 ships its docs in `node_modules/next/dist/docs/`. Read them before using new APIs (Cache Components, `use cache`, `cacheLife`, `connection()`).
+Shell and tooling gotchas (Git Bash path rewriting, never kill Node by image name, ui-check for screenshots, Next 16 docs, long worktree paths): `docs/project/working-notes.md`. Read it before running shell-heavy work.
+
+## 16. Overtime mode (owner, 2026-09-24/25; renamed from "overnight mode" 2026-09-25)
+- **Activation:** only when the owner says to turn on overtime mode (any time of day). **Only** the owner's next message (usually "progress report") or the project being finished ends it. When it's off, work normally and check in as usual. The owner turns it on repeatedly until the project is complete.
+- **While active, never ask the owner for anything:** no approval requests, no clarifying questions, no waiting. Keep building continuously.
+- **"Progress report":** a concise report of everything done since the last report, decisions made (with assumptions), and items for the owner to review.
+- **UI changes:** build major UI changes anyway (separate branch/PR when practical, with `npm run ui-check` screenshots) and list them in the progress report for approval after the fact.
+- Unclear choices: pick the most reasonable option, record the assumption, keep going. Brainstorming questions go into the progress report.
+- Commit and push often to feature branches (never main). Keep section 14 and `docs/project/status-log.md` current so nothing is lost if context is summarized.
+- **Usage limits (owner, 2026-09-26):** follow the builder budget in section 18. Start each overtime run in a fresh main session that reads this file, rather than continuing a long session. If a limit stops work, record in section 14 and the status log which builders were running and what they had pushed, so the next run can resume.
+
+## 17. Owner rulings (cross-cutting only; full text in `docs/project/rulings.md`)
+Feature-specific rulings (schedule builder design, plan checker, tracks, campus pages, theme, AP/IB credit, pre-warmed data, grade distributions) live only in `docs/project/rulings.md`. Read the relevant part before designing or reviewing that feature, and quote it in builder briefs. New feature rulings go there; only rulings that apply to all work go here.
+Code comments that cite "PROJECT_MEMORY section 17" (e.g. "open question 1") refer to the same text, now in `docs/project/rulings.md`.
+- **Superpowers TDD applies strictly** (owner, 2026-09-25), including deleting code written before a failing test and redoing it test-first. Exception: code written before the superpowers plugin was installed (e.g. the SOC course parser) is kept and fixed. Outside that rule, don't rebuild working code unless absolutely necessary; fix it first.
+- **Scale:** the site must support thousands of simultaneous users. Heavy work (schedule generation) runs in the browser; campus and course data are pre-built, CDN-cached snapshots; servers do no per-request scraping.
+- **Degree rules confirmed by the owner:** CMSC141 counts for CMSC131 and CMSC142 for CMSC132. CS gateway: Fall 2024+ entrants need B- in gateway courses and a 3.0 GPA, earlier entrants C- and 2.7. The owner is in Math **Applied** (verification target: Math Applied + CS; Traditional is the default track); C- minimum for Math major courses; CMSC131 may count for both the programming requirement and Sequence Four. A course may be retaken only after an F or a W.
+- **CI:** GitHub Actions runs `npm ci`, test, typecheck, lint and build on every push; the web `typecheck` script runs `next typegen` first.
+
+## 18. How work is split (owner rules 2026-09-25/26/27; token rules 2026-09-28)
+- **Ask the owner before starting any subagent** (owner, 2026-09-27): name the task, model and branch and wait for a yes. Not in overtime mode: there, dispatch without asking (section 16).
+- **Builders do real tasks; the main session does tiny edits itself** (owner, 2026-09-28). A tiny edit (about 20 lines or less, in files already known: a rename, a one-line fix, wording) is done directly by the main session, since a builder's brief, startup and review cost more than the edit. Everything else goes to a builder in its own worktree and branch, test-first, pushing to its branch.
+- **The main session talks with the owner, reviews and merges.** Review = read the diff, check screenshots for UI work, check the work against this file and `docs/project/rulings.md`, merge into the working branch, push, then run `graphify update .` (free, no LLM).
+- **Main session model (owner, 2026-09-28):** Sonnet by default; the owner switches to Opus (`/model`) for design discussions and tricky reviews (e.g. audit-engine semantics). `/clear` between groups of work, after updating section 14, so history doesn't pile up.
+- **Trimmed verification:** one local test run (tests, typecheck, lint, build) plus CI on GitHub. Don't re-run the suite after merging; CI covers it.
+- **Builder budget** (overrides superpowers subagent-driven-development / dispatching-parallel-agents defaults and CLAUDE.md where they conflict). Target: **under 100k tokens per builder**; record each builder's reported tokens in the status log.
+  - **Model:** Sonnet (`model: sonnet`); Haiku for trivial tasks the main session doesn't do itself; Opus only for hard reasoning (note why in the status log).
+  - **One agent per task, at most 2 at once.** No reviewer, advisor or second-opinion subagents or passes. Queue the rest; critical-path work first.
+  - **One feature or one program per brief.** Never bundle unrelated fixes. Program work: one program per builder, or at most 3 small minors from one department (owner, 2026-09-28; batches of 5–14 programs cost 200–400k tokens because every fetched page stays in context).
+  - **No research inside builders (owner, 2026-09-28).** Program sources (catalog page, department page, sample plan) are fetched beforehand by the source-fetch script (queue item 1) into `program-sources/<program>.md` as trimmed text; PDFs are converted to text, never read as documents. Builders don't use WebFetch or read PDFs; if a source is missing or unclear, they stop and report it. Briefs name the source file, the catalog drafter's output as the starting point, and one already-encoded program as the pattern to copy.
+  - **Tool-call cap: about 40 per builder.** At the cap: commit, push, and report what's done and what's left.
+  - **Short briefs (20–40 lines):** goal, files involved, the owner rulings that apply (quoted from `docs/project/rulings.md`), done criteria, branch name. Builders don't read this file (CLAUDE.md); they read other `docs/project/` files only when the brief points to them.
+  - **Put these in every brief:** quiet output (only the touched package's tests with `-- --reporter=dot` while iterating, long output through `tail -n 30`, the full test/typecheck/lint/build once at the end, report only pass/fail and failures); at most 2 screenshots, of changed pages only, each taken once; don't re-read unchanged files; navigate with the graphify graph (`graphify query/explain/affected --graph C:/Users/24GHi/Code/SuperTerp/graphify-out/graph.json`), then read only files being changed; don't regenerate course sets or rewrite registry-wide tests (the main session regenerates once after merging).
+  - **Resume, don't restart.** Before dispatching, run `git worktree list`; continue an existing worktree or branch for the task, after checking its CLAUDE.md is current (old ones imported all of this file into every request).
+  - **Push early:** after the first passing test and at each green step, so a stopped builder leaves recoverable work.
+  - **Measure the fixed starting cost once (queue item 2):** dispatch a builder whose whole task is "reply DONE" and record its reported tokens in the status log. If it's over about 30k, trim what builders load (plugins, skills, instructions).
+- **Keep this file small (owner, 2026-09-26).** The main session carries it in every request. Keep it under ~20 KB: section 14 is replaced in place, never appended to; dated history goes to `docs/project/status-log.md`; feature rulings to `docs/project/rulings.md`; detail to `docs/project/`. If it grows past ~20 KB, move content out before continuing.

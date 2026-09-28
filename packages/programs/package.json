@@ -1,0 +1,30 @@
+{
+  "name": "@superterp/programs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Registry of every encoded UMD program (majors, minors, certificates, special programs) with lazy loaders, plus the sample-plan validation harness. Framework-free.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/registry.ts",
+    "./harness": "./src/harness.ts",
+    "./course-sets": "./src/course-sets.generated.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "build:course-sets": "tsx scripts/build-course-sets.ts",
+    "build:registry": "tsx scripts/build-registry.ts"
+  },
+  "dependencies": {
+    "@superterp/audit": "*",
+    "@superterp/catalog": "*",
+    "@superterp/plan": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.1"
+  }
+}

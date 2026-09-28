@@ -45,11 +45,30 @@
   letter-spacing: -0.01em;
 }
 
+/* A label for a sub-group of rows inside one Section (e.g. Eppley's
+   Aquatics / Climbing / Pickleball sub-sections), smaller than sectionTitle
+   since it isn't a new top-level Section. */
+.subHeading {
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 16px 4px 8px;
+}
+
 .card {
   background: var(--surface);
   border-radius: var(--r-lg);
   box-shadow: var(--shadow);
   overflow: hidden;
+}
+
+/* Opt out of the clip above for cards that need content (e.g. an autocomplete
+   dropdown) to escape the card's bounds. Compound selector so it reliably
+   beats the bare .card rule regardless of CSS Modules' source order. */
+.card.cardClipNone {
+  overflow: visible;
 }
 
 .row {

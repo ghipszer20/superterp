@@ -2,7 +2,7 @@
 // after client JavaScript has run: collects console errors and page text,
 // and saves phone-sized screenshots. Windows-only helper for local checks.
 //
-//   node scripts/ui-check.mjs http://localhost:3000 /campus/buses /campus/dining [--dark] [--desktop] [--full]
+//   node scripts/ui-check.mjs http://localhost:3000 /campus/transport /campus/dining [--dark] [--desktop] [--full]
 //   --dark: prefers-color-scheme: dark   --desktop: 1280×820 instead of iPhone
 //   --full: capture the whole page (the fixed tab bar then appears mid-page)
 //
@@ -86,6 +86,13 @@ for (const path of paths.length ? paths : ["/"]) {
   errors.length = 0;
   await send("Page.navigate", { url: base + path });
   await sleep(7000);
+  // Optional interaction before capturing, e.g. UI_CHECK_EVAL='document.querySelector("button").click()'
+  // UI_CHECK_EVAL_WAIT overrides the default 800ms settle time after it runs, e.g. for a debounced,
+  // solver-backed comparison that needs longer than a click's usual repaint.
+  if (process.env.UI_CHECK_EVAL) {
+    await send("Runtime.evaluate", { expression: process.env.UI_CHECK_EVAL });
+    await sleep(Number(process.env.UI_CHECK_EVAL_WAIT ?? 800));
+  }
   const { result } = await send("Runtime.evaluate", {
     expression: "document.querySelector('main')?.innerText ?? document.body.innerText",
     returnByValue: true,
@@ -97,7 +104,7 @@ for (const path of paths.length ? paths : ["/"]) {
   writeFileSync(file, Buffer.from(shot.result.data, "base64"));
   console.log(`\n=== ${path}  (${file})`);
   console.log(`errors: ${errors.length ? errors.join("\n  ") : "none"}`);
-  console.log(`text: ${text.slice(0, 600)}`);
+  console.log(`text: ${text.slice(0, Number(process.env.TEXT_LIMIT ?? 600))}`);
 }
 
 ws.close();

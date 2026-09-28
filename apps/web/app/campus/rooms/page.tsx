@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { connection } from "next/server";
-import { campusDate, campusMinutes } from "@superterp/campus-data";
+import { campusDate, campusMinutes, roomBookingUrl } from "@superterp/campus-data";
 import { Notice, Page, SkeletonCard, SourceError } from "@/components/ui";
-import { getRoomAvailability, getRoomCatalog, safe } from "@/lib/campus";
+import { dataAge } from "@/lib/age";
+import { getStudyRooms, safe } from "@/lib/campus";
+import { shortLibraryName } from "@/lib/rooms";
 import { RoomsView, type RoomRow } from "./RoomsView";
 
 export const metadata: Metadata = { title: "Study Rooms" };
-
-// Not study space for students: equipment loans and faculty-only offices.
-const EXCLUDED_CATEGORY = /equipment|faculty/i;
 
 export default function RoomsPage() {
   return (
@@ -18,7 +17,11 @@ export default function RoomsPage() {
         <Rooms />
       </Suspense>
       <Notice>
-        Availability from UMD Libraries&apos; booking system, refreshed every few minutes. You book on the Libraries&apos;
+        Availability from UMD Libraries&apos; booking system, refreshed every few minutes
+        <Suspense fallback={null}>
+          <UpdatedAge />
+        </Suspense>
+        . You book on the Libraries&apos;
         site with your UMD email; SuperTerp never books for you.
       </Notice>
     </Page>
@@ -28,41 +31,27 @@ export default function RoomsPage() {
 async function Rooms() {
   await connection();
   const today = campusDate();
-  const catalog = await safe(getRoomCatalog);
-  if (!catalog.ok) return <SourceError source="UMD Libraries" />;
+  const res = await safe(() => getStudyRooms(today));
+  if (!res.ok) return <SourceError source="UMD Libraries" />;
 
-  const { locations, rooms } = catalog.data;
-  const categories = [
-    ...new Map(
-      rooms
-        .filter((r) => !EXCLUDED_CATEGORY.test(r.categoryName))
-        .map((r) => [r.categoryId, { locationId: r.locationId, categoryId: r.categoryId }]),
-    ).values(),
-  ];
-  const results = await Promise.all(
-    categories.map((c) => safe(() => getRoomAvailability(c.locationId, c.categoryId, today))),
-  );
-
-  const rows: RoomRow[] = results.flatMap((r) =>
-    r.ok
-      ? r.data.map((room) => ({
-          id: room.id,
-          name: room.name,
-          capacity: room.capacity,
-          library: locations.find((l) => l.id === room.locationId)?.name ?? "",
-          locationId: room.locationId,
-          category: room.categoryName,
-          bookingUrl: room.bookingUrl,
-          open: room.open,
-        }))
-      : [],
-  );
-  const failed = results.filter((r) => !r.ok).length;
+  const { catalog, rooms, failed } = res.data;
+  const rows: RoomRow[] = rooms.map((room) => ({
+    id: room.id,
+    name: room.name,
+    capacity: room.capacity,
+    library: catalog.locations.find((l) => l.id === room.locationId)?.name ?? "",
+    locationId: room.locationId,
+    category: room.categoryName,
+    // Built from the room's own id, not the snapshotted bookingUrl, so a
+    // stale snapshot can't leak a link without today's date on it.
+    bookingUrl: roomBookingUrl(room.id, today),
+    open: room.open,
+  }));
 
   return (
     <RoomsView
       rooms={rows}
-      libraries={locations.map((l) => ({ id: l.id, name: shortLibraryName(l.name) }))}
+      libraries={catalog.locations.map((l) => ({ id: l.id, name: shortLibraryName(l.name) }))}
       today={today}
       initialMinutes={campusMinutes()}
       partial={failed > 0}
@@ -70,9 +59,10 @@ async function Rooms() {
   );
 }
 
-function shortLibraryName(name: string) {
-  return name
-    .replace(/\s+in\s+.*$/i, "")
-    .replace(/^Michelle Smith\s+/i, "")
-    .replace(/\s+Library$/i, "");
+/** " (updated 3 min ago)" when the rooms come from a snapshot. */
+async function UpdatedAge() {
+  await connection();
+  const res = await safe(() => getStudyRooms(campusDate()));
+  if (!res.ok || !res.data.updatedAt) return null;
+  return ` (${dataAge(res.data.updatedAt, new Date())})`;
 }

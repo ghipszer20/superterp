@@ -4,12 +4,23 @@ const nextConfig: NextConfig = {
   // Cache Components: data is cached explicitly with 'use cache' + cacheLife,
   // each campus source at its own refresh rate (see lib/campus.ts).
   cacheComponents: true,
-  // The shared data package ships TypeScript source; let Next compile it.
-  transpilePackages: ["@superterp/campus-data"],
+  // The shared packages ship TypeScript source; let Next compile them.
+  transpilePackages: [
+    "@superterp/campus-data",
+    "@superterp/audit",
+    "@superterp/course-data",
+    "@superterp/credit",
+    "@superterp/plan",
+    "@superterp/programs",
+    "@superterp/catalog",
+    "@superterp/ratings",
+    "@superterp/tracks",
+  ],
   // Keep old links working after the tab restructure.
   async redirects() {
     return [
-      { source: "/campus/buses", destination: "/campus/transit", permanent: true },
+      { source: "/campus/buses", destination: "/campus/transport", permanent: true },
+      { source: "/campus/transit", destination: "/campus/transport", permanent: true },
       { source: "/plan", destination: "/advisor", permanent: true },
       { source: "/explore", destination: "/schedule", permanent: true },
     ];

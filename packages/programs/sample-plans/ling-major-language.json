@@ -1,0 +1,20 @@
+{
+  "programId": "ling-major-language",
+  "source": "https://drive.google.com/uc?export=download&id=1N4Sf-yodBQvBImqf8enLGN1g3ookBpCy#Music-Education---Language",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities' Linguistics - Language Four Year Academic Plan. The source PDF's term grid converts to garbled, column-interleaved text (Fall/Spring/benchmark-sidebar cells run together on each line), so exact per-slot Fall/Spring placement could not be reliably reconstructed; flagged in docs/project/owner-review.md. The plan's own legible signals confirm the full course list matches the catalog (LING200/240/311/321, 'two of LING312/322/410/440/444', 'LING 3xx-4xx' x3, and the language sequence described as 'Language Course #1 (1xx-4xx)', '#2 (1xx-4xx)', '#3 (1xx-4xx)', '#4 (2xx-4xx)' totaling 12 credits), so no course was invented to fill an unnamed placeholder beyond picking one real language department; only the term each falls in is a best-effort reconstruction, placed by the plan's stated slot order (Language Course #1 in Year 1 Fall, #2 in Year 1 Spring, #3 and #4 around Year 2).",
+    "'12 credits of a single chosen language' (no department named in either source; approximated in the requirement as a fixed list of language-department prefixes reused from glbc-major-2026-27.ts's own catalog footnote, plus LATN/GREK -- see ling-major-language-2026-27.ts) filled with French: FREN103, FREN203, FREN204, FREN301 (all real courses already used in fren-major-2026-27.ts). FREN301 is placed as 'Language Course #4 (2xx-4xx)', satisfying 'at least 3 of the 12 credits must be at or above the 2xx level' (FREN203/204/301 are all 2xx+, well over the 3-credit floor).",
+    "'Select two of LING312, LING322, LING320, LING410, LING440, LING444' filled with LING320 and LING440.",
+    "'Three 3xx-4xx level LING electives' (no course-to-slot list in either source) filled with LING330, LING410, LING460, all from the Academic Catalog's approved-course list the main session supplied for plan slots."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["LING200", "FREN103"] },
+    { "term": "Year 1 Spring", "courses": ["LING240", "FREN203"] },
+    { "term": "Year 2 Fall", "courses": ["LING311", "LING321", "FREN204"] },
+    { "term": "Year 2 Spring", "courses": ["LING320", "LING440", "FREN301"] },
+    { "term": "Year 3 Fall", "courses": ["LING330", "LING410"] },
+    { "term": "Year 3 Spring", "courses": ["LING460"] }
+  ]
+}

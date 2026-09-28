@@ -1,0 +1,40 @@
+# Roadmap: phases and time estimate
+
+Moved out of PROJECT_MEMORY.md (sections 9 and 12) on 2026-09-26 so it loads only when needed. Update it here when a decision changes.
+
+## Phases
+| # | Scope |
+|---|---|
+| 0 | Data: Testudo, catalog (all programs), PlanetTerp, dining, LibCal, RecWell, Shuttle-UM GTFS |
+| 0.5 | Design system, Figma prototypes, watching ~5 students use them, performance targets (<100 ms interactions) |
+| 1 | Schedule builder and generator + Campus tab (dining, libraries, gyms, room availability, buses with scheduled times and "leave by" times) |
+| 2 | Audit and 4-year planner for every program + transcript import + validation harness + review tool |
+| 2b | Owner verification pass (can overlap with 3–4) |
+| 3 | Advising v1 (what-if audits, semester and section recommendations, strength profile) |
+| 4 | Accounts, reviews and moderation, professor summaries, LLM advisor and grade feedback |
+| 5 | Optimizer (easier, front-loaded, summer), registration-day plan |
+| 6 | iOS extras: widgets, Live Activities for the next bus, dining/booking/waitlist reminders; add live bus data once DOTS grants access |
+| Spike | Seat and waitlist monitoring during a registration window |
+
+MVP recommendation: Phases 0–2 plus what-if audits and section recommendations from Phase 3.
+
+## Time estimate (2026-09-24; assumes solo + AI coding help)
+- Total ≈ 1,500–2,300 hrs: data 175–270, design 60–120, schedule builder + Campus tab + basics 220–330, audit engine + planner 420–660, **owner verification 250–350 (critical path, can't be delegated)**, advising 80–120, reviews + LLM 120–180, optimizer 80–120, iOS polish 100–150.
+- Calendar time: 15 hrs/wk ≈ 2–3 yrs; 25 hrs/wk ≈ 1.2–1.8 yrs; full-time summers + ~15/wk ≈ 18–24 months.
+- Launch schedule: Jan 2027 Campus tab web beta → Mar–Apr 2027 schedule builder (Fall 2027 registration) → Summer 2027 audit engine + verification → Nov 2027 audit for first verified colleges → Spring 2028 all colleges, reviews, AI advisor, optimizer, iOS on the App Store.
+- Re-estimate once the Campus tab ships.
+
+## Ideas (not scheduled; owner decides after current work)
+- **Syllabus → semester timeline (owner idea, 2026-09-26).** Students upload their class syllabi and get one semester schedule with every assignment/project due date and time, midterm and final dates and times, and TA/professor office hours with locations, for all their classes. Claude's feasibility notes (unverified): LLM extraction per upload; resolve "Week 5"-style dates using the student's sections and the UMD academic calendar; fill finals from UMD's published final exam schedule; show a timeline and export an .ics calendar. Risks: accuracy (cite the syllabus line, "check your syllabus", flag uncertain items), syllabi going stale (a student's ELMS/Canvas calendar feed link might keep dates current, if UMD allows it), privacy (keep uploads on-device or in the student's account). Proposed spike: extract from 3–5 of the owner's syllabi and count errors; check the ELMS calendar feed and where the final exam schedule is published.
+
+## Queue notes (moved from PROJECT_MEMORY section 14, 2026-09-27)
+- transcript upload (`feat/transcript-import`, TOP PRIORITY: Testudo unofficial transcript PDF parsed in the browser → completed courses, grades, terms, AP/transfer credit, confirm before applying; sample in gitignored `transcripts/`); department-page comparison for every program (find each department's requirements page, diff against the encoding, fix per "department page wins", flag contradictions; NOTE: only CS, Math Traditional/Applied and Gen Ed are hand-encoded and offered in the Advisor; the other ~267 catalog programs exist only as partial drafts, so for them this means encoding each program from its draft + department page, in batches by college); older AP/IB charts (`feat/credit-older-charts`: UMD's charts for exams before May 2023, chosen by exam year; the current tables cover May 2023–May 2026 only; owner's May 2024 AP PDF checked 2026-09-26, same equivalencies as the 2023–2026 chart minus Cybersecurity and Networking); honors retry for 4 unreachable department sites (Criminology's page is https://ccjs.umd.edu/undergraduate/undergraduate-honors-program, reachable 2026-09-26; Neuroscience's is https://neur.umd.edu/landingtopic/honors; Hearing & Speech's is https://hesp.umd.edu/undergraduate/honors-hearing-and-speech-sciences-undergraduate-students; Sociology: owner couldn't find one, builder searches socy.umd.edu and the Honors College directory and records "none found" if it has none) (`feat/honors-retry`, worktree exists); grad courses as an undergrad (600–897 rules, BS/MS double counting).
+- **Trip-planner follow-up:** done 2026-09-27 (dropdown clipping fixed via `Card clipNone`; other items dropped by the owner).
+
+## Known to-dos
+Moved out of PROJECT_MEMORY.md section 14 on 2026-09-28.
+- email a copy of each signed Advisor agreement to the owner's records address (with deployment; address from the owner as an env var); the GTFS feed ends 2026-12-24 (warn in the UI and in a scheduled check first); check the GTFS license before public launch; show last good data when a source is down (needs a database); deployment (Vercel + Supabase accounts from the owner) with pre-warmed data.
+- **OCR the unreadable ARHU plan PDFs** (2026-09-28): 18 of the 59 ARHU four-year plans (Google Drive PDFs) convert to garbled text (font obfuscation): Chinese, Cinema x2, Communication x5, Dance, Global Culture, HCAI, Immersive Media, Music Jazz Studies and Composition, Theatre, WGSS. Those majors use constructed plans (official: false). Render the pages to images and OCR them (tesseract.js is already a dependency) in fetch-sources, then re-check those plans.
+
+## History
+- **First build (2026-09-24, done):** the Campus tab (dining, library hours, RecWell, buses, study-room availability). It also sets up the repo, design system and scraper infrastructure.

@@ -1,0 +1,22 @@
+{
+  "programId": "ppe-major",
+  "source": "https://drive.google.com/uc?export=download&id=1GLntl2I-ebb7jVOIAnhkCy1F2Jvd5530#Philosophy,-Politics,-and-Economics",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities' Philosophy, Politics, and Economics Four Year Academic Plan. The source PDF's term grid converts to garbled, column-interleaved text (Fall/Spring cells for four years run together), so exact per-slot Fall/Spring placement could not be reliably reconstructed; flagged in docs/project/owner-review.md. Term placement follows the plan's clearly-legible signals (PHPE400 before PHPE401 before PHPE402, ending with PHPE402 as the sole 'Senior Capstone' course in the Year 4 portion of the grid; Disciplinary Foundations courses appear earliest in the grid) and otherwise spreads the remaining major requirements across Years 1-4 in the plan's listed order. Gen Ed slots (ENGL 101, Math, Natural Sciences, Oral/Professional/Academic Writing, etc.) are left out: only the major is audited.",
+    "The plan's many generic 'Elective 1xx-4xx' breadth-elective cells (not tied to any department by the major) are not fully replicated; three representative slots are filled with real PHIL/GVPT/ECON courses (PHIL170 in Year 2 Spring, GVPT200 in Year 3 Fall, ECON305 in Year 4 Fall) to illustrate the pattern, attributed to the Academic Catalog (not supplied by either source document; the owner supplied these lists for plan-slot use only). These three courses are not required by, and do not count toward, any audited requirement.",
+    "Select four courses (12 credits) elective requirement filled with PHIL341, ECON311, HIST450, and PHIL445, all from the catalog's own named elective list (source document), matching the plan's four 'PHPE Elective 3xx-4xx' grid cells.",
+    "WMST400, which appears as a bare, titleless line in the catalog's elective list, is not used anywhere in this plan or the Program's elective list -- see reviewNotes on the Program and docs/project/owner-review.md (department plan's elective list omits it; department page wins per owner ruling)."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["PHIL140", "GVPT170"] },
+    { "term": "Year 1 Spring", "courses": ["ECON200", "PLCY100"] },
+    { "term": "Year 2 Fall", "courses": ["ECON201", "PHIL245"] },
+    { "term": "Year 2 Spring", "courses": ["PHPE400", "PHIL170"] },
+    { "term": "Year 3 Fall", "courses": ["PHPE401", "GVPT200"] },
+    { "term": "Year 3 Spring", "courses": ["PHIL341", "ECON311"] },
+    { "term": "Year 4 Fall", "courses": ["PHPE402", "HIST450", "ECON305"] },
+    { "term": "Year 4 Spring", "courses": ["PHIL445"] }
+  ]
+}

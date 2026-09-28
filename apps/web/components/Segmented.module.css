@@ -28,18 +28,13 @@
 }
 
 .segment[aria-checked="true"] {
-  background: var(--surface);
+  background: var(--segment-active);
   box-shadow:
     0 1px 3px rgb(0 0 0 / 0.1),
     0 0 0 0.5px rgb(0 0 0 / 0.04);
   font-weight: 600;
 }
 
-@media (prefers-color-scheme: dark) {
-  .segment[aria-checked="true"] {
-    background: var(--surface-pressed);
-  }
-}
 
 .chip {
   padding: 7px 14px;

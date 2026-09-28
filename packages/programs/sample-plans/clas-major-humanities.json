@@ -1,0 +1,21 @@
+{
+  "programId": "clas-major-humanities",
+  "source": "https://drive.google.com/uc?export=download&id=18tFM357KN3rEkZqtASqHL4ZDB-z-2EYt",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "Department's official Classics - Humanities four-year plan; the PDF-to-text conversion garbled the term grid's column alignment (Fall/Spring columns interleaved illegibly). Courses are placed by legible signals only (year headers, benchmark notes, and each course's own row text); the exact term each falls in is reconstructed, not verbatim -- flagged as reconstructed placement. Gen Ed slots are left out: only the major is audited.",
+    "Foundation Courses (12 credits, 1xx-2xx level) filled with CLAS170, CLAS171, CLAS180, CLAS190 -- the plan's own 'CLAS 170 (HU)' and 'CLAS Supporting 1xx-2xx' / 'CLAS, LATN, or GREK 1xx-2xx' slots, all filled with real CLAS courses so the track doesn't require a language sequence (consistent with 'Classics in Translation').",
+    "Advanced Courses (8 courses, 3xx-4xx level, at least 4 CLAS including the CLAS409 capstone) filled with CLAS305, CLAS308, CLAS309, CLAS310, CLAS409, plus LATN301, LATN302 and GREK301 for the remaining non-Classics-required slots -- the plan's own 'Four CLAS, LATN, GREK, or supporting courses (3xx-4xx)' and 'CLAS Supporting 3xx-4xx' slots."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["CLAS170", "CLAS171"] },
+    { "term": "Year 1 Spring", "courses": ["CLAS180", "CLAS190"] },
+    { "term": "Year 2 Fall", "courses": ["CLAS305", "CLAS308"] },
+    { "term": "Year 2 Spring", "courses": ["CLAS309", "CLAS310"] },
+    { "term": "Year 3 Fall", "courses": ["LATN301", "GREK301"] },
+    { "term": "Year 3 Spring", "courses": ["LATN302"] },
+    { "term": "Year 4 Fall", "courses": ["CLAS409"] },
+    { "term": "Year 4 Spring", "courses": [] }
+  ]
+}

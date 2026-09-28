@@ -1,0 +1,22 @@
+{
+  "programId": "clas-major-latin",
+  "source": "https://drive.google.com/uc?export=download&id=1XOy6bx6sHIZ2Hkse1JrH1PCCMuFAFiKi",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "Department's official Classics - Latin four-year plan; the PDF-to-text conversion garbled the term grid's column alignment (Fall/Spring columns interleaved illegibly). Courses are placed by legible signals only (year headers, benchmark notes, and each course's own row text); the exact term each falls in is reconstructed, not verbatim -- flagged as reconstructed placement. Gen Ed slots (ENGL101, ARHU158, Math, HS, HU, NS, OC, AR, SP, PW, electives outside the major) are left out: only the major is audited.",
+    "LATN 2xx/3xx slot (18 credits) filled with LATN201, LATN203, LATN301, LATN302, LATN303, LATN304 -- the plan's own 'Two additional LATN courses' / 'Four additional LATN courses' slots.",
+    "LATN 4xx slot (12 credits) filled with LATN405, LATN415, and LATN472 taken twice (as a repeatable directed-study/topics course) -- only three real LATN 4xx course numbers are on the Academic Catalog's approved list, one short of the four 3-credit courses needed for 12 credits; see the program's reviewNotes.",
+    "'CLAS 271 or Supporting Area #2' is named directly in the department plan; used as-is (CLAS271 is not on the Academic Catalog's approved CLAS course-number list -- flagged in docs/project/owner-review.md). The remaining supporting credits are filled with CLAS170 (named directly in the plan) and CLAS308 (Academic Catalog's approved list)."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["LATN101", "CLAS170"] },
+    { "term": "Year 1 Spring", "courses": ["LATN102"] },
+    { "term": "Year 2 Fall", "courses": ["LATN201", "CLAS271"] },
+    { "term": "Year 2 Spring", "courses": ["LATN203", "LATN301"] },
+    { "term": "Year 3 Fall", "courses": ["LATN302", "LATN303"] },
+    { "term": "Year 3 Spring", "courses": ["LATN304", "LATN405"] },
+    { "term": "Year 4 Fall", "courses": ["LATN415", "LATN472"] },
+    { "term": "Year 4 Spring", "courses": ["LATN472", "CLAS308"] }
+  ]
+}
