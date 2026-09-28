@@ -112,7 +112,7 @@ async function extractPdfLines(bytes: Uint8Array): Promise<string[]> {
     let line = "";
     for (const item of content.items as { str?: string; hasEOL?: boolean }[]) {
       if (typeof item.str !== "string") continue;
-      line += item.str;
+      line += item.str.replace(/[0000-0008000B000C000E-001F]/g, "");
       if (item.hasEOL) {
         if (line.trim()) lines.push(line.trim());
         line = "";
