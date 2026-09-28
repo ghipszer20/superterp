@@ -1,0 +1,14 @@
+{
+  "programId": "geol-minor-chesapeake-bay",
+  "source": "https://www.geol.umd.edu/undergraduate/Geology_Minors.php",
+  "fetched": "2026-09-27",
+  "official": false,
+  "notes": [
+    "UMD publishes no sample plan for this minor. Built from the requirements: ENST333 and GEOL452 required, plus three electives (GEOL340, GEOL435, GEOL451). Flagged in docs/project/owner-review.md."
+  ],
+  "terms": [
+    { "term": "Term 1", "courses": ["ENST333", "GEOL452"] },
+    { "term": "Term 2", "courses": ["GEOL340", "GEOL435"] },
+    { "term": "Term 3", "courses": ["GEOL451"] }
+  ]
+}
