@@ -2,10 +2,20 @@ import { describe, expect, it } from "vitest";
 import { findProgram, loadProgram, PROGRAMS } from "../src/registry.ts";
 
 describe("program registry", () => {
-  it("lists the three hand-encoded majors, Math's tracks sharing one major key", () => {
+  it("lists the hand-encoded majors, CS's and Math's tracks each sharing one major key", () => {
     const majors = PROGRAMS.filter((p) => p.kind === "major");
-    expect(majors.map((p) => p.id)).toEqual(["cmsc-major", "math-major-traditional", "math-major-applied"]);
+    expect(majors.map((p) => p.id)).toEqual([
+      "cmsc-major",
+      "cmsc-major-cybersecurity",
+      "cmsc-major-data-science",
+      "cmsc-major-machine-learning",
+      "cmsc-major-quantum-information",
+      "math-major-traditional",
+      "math-major-applied",
+    ]);
     expect(findProgram("math-major-applied")).toMatchObject({ major: "math", track: "Applied Mathematics", college: "CMNS" });
+    expect(findProgram("cmsc-major")).toMatchObject({ major: "cs", track: "General", college: "CMNS" });
+    expect(findProgram("cmsc-major-cybersecurity")).toMatchObject({ major: "cs", track: "Cybersecurity", college: "CMNS" });
   });
 
   it("has unique ids", () => {

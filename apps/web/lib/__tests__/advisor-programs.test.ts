@@ -18,7 +18,15 @@ const ids = (list: { id: string }[]) => list.map((p) => p.id);
 
 describe("program options", () => {
   it("offers every registered program, majors first, all unverified for now", () => {
-    expect(ids(PROGRAM_OPTIONS.filter((o) => o.kind === "major"))).toEqual(["cmsc-major", "math-major-traditional", "math-major-applied"]);
+    expect(ids(PROGRAM_OPTIONS.filter((o) => o.kind === "major"))).toEqual([
+      "cmsc-major",
+      "cmsc-major-cybersecurity",
+      "cmsc-major-data-science",
+      "cmsc-major-machine-learning",
+      "cmsc-major-quantum-information",
+      "math-major-traditional",
+      "math-major-applied",
+    ]);
     expect(PROGRAM_OPTIONS.length).toBeGreaterThan(3);
     expect(PROGRAM_OPTIONS.every((o) => !o.verified)).toBe(true);
   });
