@@ -1,0 +1,22 @@
+{
+  "programId": "arec-major-agribusiness",
+  "source": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/agricultural-resource-economics/agricultural-resource-economics-major/",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "No published 4-year plan exists for this specialization: the catalog's 'Catalog four-year plan' section only links out to the College of Agriculture and Natural Resources' general roadmap page (4yearplans.umd.edu), with no AREC-specific term grid. This plan is CONSTRUCTED from the catalog's own requirement rows instead (docs/project/owner-review.md flags this). Gen Ed courses are left out; only the major is audited.",
+    "Microeconomics gateway filled with ECON200; AREC240 or AREC250 would satisfy it equally. Business/Applied Economic Statistics gateway filled with BMGT230; ECON230 would satisfy it equally. Elementary Statistics gateway filled with STAT100; MATH107 or STAT400 would satisfy it equally. Calculus gateway filled with MATH120; MATH140 would satisfy it equally.",
+    "Agribusiness's 'select five' slot is filled with AREC306, AREC405, AREC426, AREC430 and AREC433, all real, currently-approved AREC courses from the builder brief's approved-course list, picked from the catalog's own named list for this specialization.",
+    "The Field choice is filled with the Business Management field: BMGT340, BMGT350 and BMGT364 (3 of the field's 4 named courses; BMGT380 unused)."
+  ],
+  "terms": [
+    { "term": "Freshman Fall", "courses": ["ECON200", "MATH120"] },
+    { "term": "Freshman Spring", "courses": ["ECON201", "STAT100"] },
+    { "term": "Sophomore Fall", "courses": ["AREC326", "BMGT230"] },
+    { "term": "Sophomore Spring", "courses": ["AREC306", "AREC405"] },
+    { "term": "Junior Fall", "courses": ["AREC426", "AREC430"] },
+    { "term": "Junior Spring", "courses": ["AREC433", "BMGT340"] },
+    { "term": "Senior Fall", "courses": ["BMGT350"] },
+    { "term": "Senior Spring", "courses": ["BMGT364"] }
+  ]
+}
