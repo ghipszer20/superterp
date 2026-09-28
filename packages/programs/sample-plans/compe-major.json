@@ -1,0 +1,29 @@
+{
+  "programId": "compe-major",
+  "source": "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/computer_fall_2026_gradglan.pdf",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "A. James Clark School of Engineering official Fall 2026 Computer Engineering graduation plan. General-education slots (ENGL101, Oral Communication, Professional Writing, Scholarship in Practice, Humanities, History/Social Sciences) are left out: only the program's own requirements are audited here (they're covered by gen-ed-2026-27.ts). ENEE200 (Engineering Ethics) stays: the plan prints it in its Major Requirements column even though it also satisfies a Humanities/Big-Question gen-ed slot.",
+    "Chemistry is filled with CHEM135 alone (the option printed first on the plan's overview page), not the CHEM131+CHEM134 alternate.",
+    "The 'ENEE304 or ENEE322', 'ENEE324 or STAT400' and 'CMSC412 or ENEE447' choices are each filled with the option printed first on the plan.",
+    "The generic Technical Elective slots (Category A x2, B, C x2, D, E, F, and the Additional elective, totaling 26 credits) are filled with: Category A = MATH401, MATH402; Category B = CMSC420; Category C = ENEE420, ENEE425; Category D = ENEE445; Category E = CMSC435; Category F = MATH403; Additional = ENEE460. Any courses meeting each category's own minimum credits would satisfy the requirement equally."
+  ],
+  "credits": {
+    "MATH140": 4, "MATH141": 4,
+    "CMSC131": 4, "CMSC132": 4, "CMSC216": 4, "CMSC250": 4, "CMSC412": 4,
+    "ENEE205": 4, "ENEE222": 4, "ENEE290": 4,
+    "ENEE245": 2, "ENEE445": 2,
+    "PHYS261": 1
+  },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["CHEM135", "CMSC131", "ENEE101", "MATH140"] },
+    { "term": "Year 1 Spring", "courses": ["ENES100", "CMSC132", "PHYS161", "MATH141"] },
+    { "term": "Year 2 Fall", "courses": ["ENEE244", "ENEE290", "PHYS260", "PHYS261", "CMSC250"] },
+    { "term": "Year 2 Spring", "courses": ["ENEE222", "ENEE205", "CMSC216", "ENEE245"] },
+    { "term": "Year 3 Fall", "courses": ["ENEE200", "ENEE304", "ENEE350", "CMSC330", "MATH401"] },
+    { "term": "Year 3 Spring", "courses": ["ENEE324", "ENEE446", "CMSC351", "MATH402"] },
+    { "term": "Year 4 Fall", "courses": ["CMSC420", "ENEE420", "ENEE425", "MATH403"] },
+    { "term": "Year 4 Spring", "courses": ["ENEE445", "CMSC435", "CMSC412", "ENEE460"] }
+  ]
+}
