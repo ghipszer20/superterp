@@ -1,0 +1,20 @@
+{
+  "programId": "hcai-major-language-cognition",
+  "source": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/philosophy/human-centered-artificial-intelligence-major/",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "No usable four-year plan: the official Human-Centered Artificial Intelligence Four Year Academic Plan PDF decoded to garbled binary/glyph text, not readable plan text (see the Program's reviewNotes and docs/project/owner-review.md). This plan is constructed from the catalog's 16-course requirement list alone; term placement spreads the 9 core courses, 6 specialization courses and capstone across 8 terms in catalog order, with the capstone placed in the final term as the catalog specifies. Gen Ed and college-requirement (e.g. MATH115) slots are left out: only the major is audited.",
+    "Language and Cognition Specialization (catalog: at least 2 LING and 2 PHIL) filled with LING311 and LING312 (at-least-2-LING slot), PHIL202 and PHIL360 (at-least-2-PHIL slot), and LING440 and PHIL366 (the 2 additional-from-either slot), all real courses from the Academic Catalog's own list for this specialization."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["HCAI100", "HCAI120"] },
+    { "term": "Year 1 Spring", "courses": ["HCAI121", "WGSS115"] },
+    { "term": "Year 2 Fall", "courses": ["HCAI200", "INST204"] },
+    { "term": "Year 2 Spring", "courses": ["PHIL211", "LING311"] },
+    { "term": "Year 3 Fall", "courses": ["HCAI300", "LING312"] },
+    { "term": "Year 3 Spring", "courses": ["HCAI301", "PHIL202"] },
+    { "term": "Year 4 Fall", "courses": ["PHIL360", "LING440"] },
+    { "term": "Year 4 Spring", "courses": ["PHIL366", "HCAI490"] }
+  ]
+}
