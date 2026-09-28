@@ -6,8 +6,8 @@
   "notes": [
     "CONSTRUCTED per the builder brief (official: false, flagged in docs/project/owner-review.md). No full 8-term grid with course codes was fetched (the department's 4-year plan grid names Gen Ed categories and generic slots like 'HESP Elective' and 'HESP Disorder Course' but not specific electives), so this plan is built from the major's own requirement list, sequenced against the checklist's stated prerequisites and fall/spring-only offerings. Gen Ed courses and free electives are left out: only the major is audited.",
     "HESP305 is fall-only and HESP311/HESP407 are spring-only per the catalog; the term placement below respects that plus the checklist's bracketed prerequisites (HESP300/305/311 need HESP202; HESP400 needs HESP300; HESP403 needs HESP305; HESP407/HESP411 need HESP311; the Disorder course needs HESP400 and HESP305).",
-    "Disorder Course requirement filled with HESP406 (real course, named in both the catalog and department checklist, in the owner's approved plan-fill list).",
-    "HESP Elective requirement filled with HESP422 (real course, named in both sources, in the owner's approved plan-fill list).",
+    "Disorder Course requirement filled with HESP406 (real course, named in both the catalog and department checklist, in the Academic Catalog's approved plan-fill list).",
+    "HESP Elective requirement filled with HESP422 (real course, named in both sources, in the Academic Catalog's approved plan-fill list).",
     "Statistics Requirement filled with QMMS251 (the catalog's named option).",
     "Allied/Related Fields filled with PHYS102 and BSCI103, the catalog's own named examples for this requirement."
   ],

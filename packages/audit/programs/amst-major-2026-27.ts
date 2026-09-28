@@ -36,7 +36,7 @@ export const amstMajor: Program = {
     "'Select one AMST 1xx or 2xx level course' names an explicit example list (catalog footnote 1): " +
       "AMST202, AMST203, AMST204, AMST205, AMST207, AMST212, AMST260, AMST298. Encoded as a choose-one " +
       "from exactly that named list (AMST207 and AMST212 are named by the catalog itself but are not on " +
-      "the owner's separately-supplied AMST plan-slot whitelist; they are kept here because they come " +
+      "the Academic Catalog's AMST course list (supplied by the main session for plan slots); they are kept here because they come " +
       "from the source, not invented).",
       "'Select two Americanist Foundation courses' (catalog footnote 2) references 'a list of approved " +
       "choices...posted on the department's web site' that is not included in either source. Approximated, " +

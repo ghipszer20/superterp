@@ -6,8 +6,8 @@
   "notes": [
     "College of Arts and Humanities' Art History Four Year Academic Plan. The source PDF's term grid converts to garbled, column-interleaved text (Fall/Spring cells for four years run together), so exact per-slot Fall/Spring placement could not be reliably reconstructed; flagged in docs/project/owner-review.md. Term placement here follows the plan's legible signals: ARTH 2xx courses early (Years 1-2, before 3xx/4xx per the catalog's own sequencing note), ARTT100-or-110 in Year 2 (matches the plan's 'ARTT 100 or 110 (SP #1)' slot), ARTH488 last (Year 4 Spring, matching both the plan's late placement and the catalog's 75-credit enrollment gate), and the remaining 3xx/4xx and Supporting Area courses spread across Years 3-4 in the order the plan lists them. Gen Ed and general-elective slots are left out: only the major is audited.",
     "ARTT100 or ARTT110 filled with ARTT100.",
-    "Select three ARTH 2xx courses filled with ARTH200, ARTH230, and ARTH255, all from the owner-supplied list of real ARTH courses.",
-    "Select six additional ARTH 3xx/4xx courses filled with ARTH300, ARTH301, ARTH302, ARTH303, ARTH305, and ARTH313, all from the owner-supplied list of real ARTH courses.",
+    "Select three ARTH 2xx courses filled with ARTH200, ARTH230, and ARTH255, all from the Academic Catalog list of real ARTH courses.",
+    "Select six additional ARTH 3xx/4xx courses filled with ARTH300, ARTH301, ARTH302, ARTH303, ARTH305, and ARTH313, all from the Academic Catalog list of real ARTH courses.",
     "Supporting Area (3 courses, one non-ARTH department) filled with SOCY310, SOCY320, and SOCY335 -- real SOCY courses already used elsewhere in this codebase (socy-major-2026-27.ts, the amst-major plan, and sds-major-socy.json) -- chosen only to satisfy the single-department/level/credit shape."
   ],
   "terms": [

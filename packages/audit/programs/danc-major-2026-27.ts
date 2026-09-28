@@ -89,7 +89,7 @@ export const dancMajorPerformanceChoreography: Program = {
   reviewNotes: [
     ...DANC_SHARED_NOTES,
     "'DANC310' appears in the catalog's Performance and Choreography elective list with no title text (a likely " +
-      "PDF-table-conversion artifact) and is not on the owner's approved DANC plan-slot course list; kept because it " +
+      "PDF-table-conversion artifact) and is not on the Academic Catalog's approved DANC plan-slot course list; kept because it " +
       "is named directly in the source (department page wins per the owner ruling), flagged in " +
       "docs/project/owner-review.md for the owner to confirm the number is current.",
     "Footnote: 'A maximum of a total of 6 credits of DANC448 and DANC449 will count toward the 12 credit area " +
@@ -154,7 +154,7 @@ export const dancMajorProduction: Program = {
   reviewNotes: [
     ...DANC_SHARED_NOTES,
     "'DANC410' appears in the catalog's Production elective list with no title text (same PDF-conversion artifact " +
-      "as DANC310) and is not on the owner's approved DANC plan-slot course list; kept because it is named directly " +
+      "as DANC310) and is not on the Academic Catalog's approved DANC plan-slot course list; kept because it is named directly " +
       "in the source, flagged in docs/project/owner-review.md for the owner to confirm the number is current.",
     "The seven named THET courses (THET116, THET284, THET371, THET383, THET377, THET373, THET472, THET474) are all " +
       "footnoted 'Permission required courses' (an admission gate on each course, not a course requirement) -- not " +
