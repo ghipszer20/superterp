@@ -38,9 +38,11 @@
   },
   "aerospace-engineering-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/aerospace-engineering/aerospace-engineering-major/",
-    "department": [],
+    "department": [
+      "https://aero.umd.edu/undergraduate/degrees/bachelor-science"
+    ],
     "samplePlan": [
-      "https://eng.umd.edu/advising/four-year-plans"
+      "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/aerospace_fall_2026_gradplan.pdf"
     ]
   },
   "african-american-africana-studies-black-womens-studies-minor": {
@@ -340,7 +342,7 @@
       "https://biocomp.umd.edu/admissions"
     ],
     "samplePlan": [
-      "https://eng.umd.edu/advising/four-year-plans"
+      "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/biocomp_fall_2026_gradplan.pdf"
     ]
   },
   "bioengineering-major": {
@@ -349,7 +351,7 @@
       "https://bioe.umd.edu/undergraduate"
     ],
     "samplePlan": [
-      "https://eng.umd.edu/advising/four-year-plans"
+      "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/bioe_fall_2026_gradplan_0.pdf"
     ]
   },
   "biology-neuroscience-major": {
@@ -375,9 +377,11 @@
   },
   "chemical-biomolecular-engineering-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/chemical-biomolecular-engineering/chemical-biomolecular-engineering-major/",
-    "department": [],
+    "department": [
+      "https://chbe.umd.edu/undergraduate/degrees/bachelor-science"
+    ],
     "samplePlan": [
-      "https://eng.umd.edu/advising/four-year-plans"
+      "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/chemical_fall_2026_gradplan_1.pdf"
     ]
   },
   "chemistry-major": {
@@ -415,9 +419,11 @@
   },
   "civil-environmental-engineering-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/civil-environmental-engineering/civil-environmental-engineering-major/",
-    "department": [],
+    "department": [
+      "https://cee.umd.edu/undergraduate/degrees/bachelor-science"
+    ],
     "samplePlan": [
-      "https://eng.umd.edu/advising/four-year-plans"
+      "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/civil_fall_2026_gradplan.pdf"
     ]
   },
   "classical-languages-literature-archaeology-minor": {
@@ -471,9 +477,11 @@
   },
   "computer-engineering-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/electrical-and-computer/computer-engineering-major/",
-    "department": [],
+    "department": [
+      "https://ece.umd.edu/undergraduate/degrees/bs-computer-engineering"
+    ],
     "samplePlan": [
-      "https://eng.umd.edu/advising/four-year-plans"
+      "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/computer_fall_2026_gradglan.pdf"
     ]
   },
   "computer-engineering-minor": {
@@ -579,7 +587,7 @@
       "https://shadygrove.ece.umd.edu/program-admissions"
     ],
     "samplePlan": [
-      "https://eng.umd.edu/advising/four-year-plans"
+      "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/cyber-physical_fall_2026_gradplan.pdf"
     ]
   },
   "dance-major": {
@@ -641,8 +649,12 @@
   },
   "electrical-engineering-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/electrical-and-computer/electrical-engineering-major/",
-    "department": [],
-    "samplePlan": []
+    "department": [
+      "https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering"
+    ],
+    "samplePlan": [
+      "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/electrical_fall_2026_gradplan.pdf"
+    ]
   },
   "electrical-engineering-usmsm": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/college-of-southern-maryland/electrical-engineering-usmsm/",
@@ -799,7 +811,7 @@
       "https://fpe.umd.edu/undergraduate/degrees/bachelor-science"
     ],
     "samplePlan": [
-      "https://eng.umd.edu/advising/four-year-plans"
+      "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/fire_protection_fall_2026_gradplan.pdf"
     ]
   },
   "french-major": {
@@ -1375,9 +1387,11 @@
   },
   "materials-science-engineering-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/materials-science-engineering/materials-science-engineering-major/",
-    "department": [],
+    "department": [
+      "https://mse.umd.edu/undergraduate/degrees/bachelor-science"
+    ],
     "samplePlan": [
-      "https://eng.umd.edu/advising/four-year-plans"
+      "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/materials_fall_2026_gradplan.pdf"
     ]
   },
   "mathematics-data-science-minor": {
@@ -1411,9 +1425,11 @@
   },
   "mechanical-engineering-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/mechanical-engineering/mechanical-engineering-major/",
-    "department": [],
+    "department": [
+      "https://enme.umd.edu/undergraduate/degrees/bachelor-science"
+    ],
     "samplePlan": [
-      "https://eng.umd.edu/advising/four-year-plans"
+      "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/mechanical_fall_2026_gradplan.pdf"
     ]
   },
   "mechanical-engineering-usmsm": {
@@ -1439,7 +1455,7 @@
       "https://mechatronics.umd.edu/"
     ],
     "samplePlan": [
-      "https://eng.umd.edu/advising/four-year-plans"
+      "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/mechatronics_fall_2026_gradplan_0.pdf"
     ]
   },
   "media-technology-democracy-minor": {

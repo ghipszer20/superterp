@@ -5,7 +5,7 @@ Source: https://eng.umd.edu/transfer/external
 Source: https://lep.umd.edu/
 Source: https://shadygrove.ece.umd.edu/curriculum
 Source: https://shadygrove.ece.umd.edu/program-admissions
-Source: https://eng.umd.edu/advising/four-year-plans
+Source: https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/cyber-physical_fall_2026_gradplan.pdf
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -471,74 +471,74 @@ When ready, please submit your email to our department, and we will respond quic
 If you have any questions, please contact us using the information below:
 Phone: 240-665-6531Email: es-sg@umd.edu
 
-## Sample plan (https://eng.umd.edu/advising/four-year-plans)
+## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/cyber-physical_fall_2026_gradplan.pdf)
 
-Home
-Academics & Students
-Student Affairs & Academic Success Programs
-Engineering Academic Services
-Graduation Plans
-Graduation Plans
-All students in the Clark School of Engineering must develop a graduation plan, which maps out all courses needed to graduate within your intended major. This website includes sample plans listed below. You will be responsible for developing and maintaining your plans in consultation with your departmental advisor (once a major has been declared) or the Office of Engineering Academic Services (EAS) if you are a general engineering student.
-Graduation Plan Templates for The University of Maryland, College Park (UMD)
-Please use the templates below as a starting point to creating your own Graduation Plan. Each link is a PDF document that assumes the student will begin as a freshman who will take MATH140.
-*Note that years listed on the curriculum sheets below indicate the semester in which a student is admitted into the specific engineering major.
-For details, please contact your academic advisor.
-Aerospace Engineering
-General Education Graduation Plan: Fall 2025 - Present*
-General Education Graduation Plan: Spring 2025
-General Education Graduation Plan: Spring 2023
-General Education Graduation Plan: 2022 - 2023
-Bioengineering
-General Education Graduation Plan: Fall 2026*
-General Education Graduation Plan: Fall 2024
-General Education Graduation Plan: 2023 - Spring 2024
-Chemical Engineering
-General Education Graduation Plan: Fall 2021 - Present*
-General Education Graduation Plan: 2021
-General Education Graduation Plan: Fall 2018 - 2020
-Civil Engineering
-General Education Graduation Plan: 2025 - Present*
-General Education Graduation Plan: 2023
-Environmental/Water Resource Track
-Geotechnical/Structures Track
-Transportation Project Management Track
-General Education Graduation Plan: 2023 - Spring 2024
-Environmental/Water Resource Track
-Geotechnical/Structures Track
-Transportation Project Management Track
-General Education Graduation Plan: 2021 - 2023
-Environmental/Water Resource Track
-Geotechnical/Structures Track
-Transportation Project Management Track
-Computer Engineering
-General Education Graduation Plan: Fall 2024*
-General Education Graduation Plan: 2021 - Spring 2024
-General Education Graduation Plan: 2019 - 2020
-Electrical Engineering
-General Education Graduation Plan: Fall 2024*
-General Education Graduation Plan: 2021 - Spring 2024
-General Education Graduation Plan: 2019 - 2020
-Fire Protection Engineering
-General Education Graduation Plan: Fall 2021 - Present*
-General Education Graduation Plan: 2021
-General Education Graduation Plan: 2019 - 2020
-Materials Science and Engineering
-General Education Graduation Plan: Fall 2026*
-General Education Graduation Plan: 2023 - Present
-General Education Graduation Plan: 2022 - 2023
-Mechanical Engineering
-General Education Graduation Plan: Fall 2023 - Present
-General Education Graduation Plan: 2023 - Spring 2024
-General Education Graduation Plan: 2021 - 2023
-Graduation Plan Templates for The Universities at Shady Grove (USG)
-Please use the templates below as a starting point to creating your own Academic Plan. For details, please contact your academic advisor at The Universities at Shady Grove 9630 Gudelsky Drive, Rockville, MD 20850
-Biocomputational Engineering - biocomp@umd.edu Cyber-Physical Systems Engineering - es-sg@umd.edu Mechatronics - mechatronics@umd.edu
-Biocomputational Engineering
-Biocomputational Engineering: Fall 2024*
-Biocomputational Engineering Fall 2021
-Biocomputational Engineering Fall 2021 - 2022
-Cyber-Physical Systems Engineering
-Cyber-Physical Systems Engineering - Fall 2020 - Present*
-Mechatronics Engineering
-Mechatronics Engineering - Fall 2024*
+CYBER-PHYSICAL ENGINEERING
+NAME:
+UID:
+GENERAL EDUCATION REQUIREMENTS Major Requirements
+Fundamental Studies ENEB 302- Analog Circuits 4
+Academic Writing (AW) ENGL 101 3 ENEB 340- Inter Prgrmming /Embedded Systems 3
+Professional Writing (PW) ENGL 39X 3 ENEB 341 - Intro Internet of Things 3
+Oral Communication (OC) 3 ENEB 344 - Digital Logic Design Embedded Systems 4
+Mathmatics (MA) MATH 140 4 ENEB 345 - Probability & Statistical Inference 3
+Analytic Reasoning (AR) MATH 140 0 ENEB 346 - Linear Algebra for Machine Learning 3
+Distributive Studies ENEB 354 - Discrete math for Info Technology 3
+History/Social Sciences (HS*) 3 ENEB 304 - Microelectronics & Sensors 3
+History/Social Sciences (HS*) 3 ENEB 352 - Intro Networks & Protocols 3
+Humanities (HU*) 3 ENEB 353 - Computer Orgganization Embedded Sys 3
+Humanities (HU*) 3 ENEB 355 - Algorithms in Python 3
+Natural Sciences No Lab (NS) PHYS 161 3 ENEB 408A - Capstone Design Lab I 3
+Natural Sciences w/Lab (NL) PHYS 260/261 4 ENEB 408B - Capstone Design Lab II 3
+Scholarship in Practice (SP*) in major ENES 100 3 ENEB 444 - Operating Systems Embedded Systems 3
+Scholarship in Practice (SP*) out major 3 ENEB 454 - Embedded Systems 3
+Big Question Courses Hardware, Computational, Security, or General Track 12
+Big Question (SCIS*) 3
+Big Question (SCIS*) 3 Requirements for Graduation:
+Diversity • Final 30 credits must be earned at UMD
+Understanding Plural Societies (UP*) 3 • 15 of the final 30 credits must be earned at the 300-400 level
+Understanding Plural Societies (UP*) OR 3 • 12 upper level major credits must be earned at UMD
+Cultural Competency (CC*) • A minimum 2.00 cumulative UM GPA, and satisfactory
+MAJOR REQUIREMENTS completion of all degree requirements, is required for graduation
+Basic Sciences • Students matriculating in Fall 2012 or after must have a 2.0 minimum GPA for all
+CHEM 135-Chem Engr or 131 & 134 -Fund & Prin 3/3&1 degree requirements, minor requirements, and undergraduate certificate requirements
+PHYS 161 - General Physics I (NS) 0 (Major courses are defined as: departmental courses, basic sciences, engineering
+PHYS 260 and PHYS 261 - Gen Physics II & Lab (NL) 0 sciences, specified degree tracks, technical requirements/ technical electives and
+MATH 140- Calculus I (MA/AR) 0 Professional Writing (PW)
+MATH 141 - Calculus II 4 •A minimum of 120 credits is required to earn the degree
+MATH 241/246/240 3 or 4
+Programming Course 3
+Engineering Sciences
+ENES 100 - Intro to Eng Design (SP) 0
+* May satisfy more than one requirement. See www.gened.umd.edu
+**For a complete list of approved electives, please see:
+www.ece.umd.edu/home
+Updated Spring 2026
+Cyber-Physical Systems Engineering Graduation Plan
+Name: UID:
+Current Engineering Students: https://eng.umd.edu/services/academic-policies
+Prospective Engineering Students: https://lep.umd.edu/
+Year 1* Fall Spring
+Course Credit Grade Course Credit Grade
+Total 0 Total 0
+Year 2* Fall Spring
+Course Credit Grade Course Credit Grade
+Total 0 Total 0
+Year 3 Fall Spring
+Course Credit Grade Course Credit Grade
+ENEB 302 4 ENEB 304 3
+ENEB 340 3 ENEB 352 3
+ENEB 341 3 ENEB 353 3
+ENEB 344 4 ENEB 355 3
+ENEB 354 3 ENEB 345 3
+Total 17 Total 15
+Year 4 Fall Spring
+Course Credit Grade Course Credit Grade
+ENEB 408A 3 ENEB 408B 3
+ENEB 454 3 ENEB 4XX 3
+ENEB 444 3 ENEB 4XX 3
+ENEB 346 3 ENEB 4XX 3
+ENGL 3** (PW) 3 ENEB 4XX 3
+Total 15 Total 15
+*Students are expected to satisfy all general education requirements including fundamental studies, distributive studies, big question, and diversity courses,
+before entry into the CPSE major. Updated Spring 2026

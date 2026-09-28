@@ -2,7 +2,7 @@
 # Mechatronics Engineering Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/aerospace-engineering/mechatronics-engineering-major/
 Source: https://mechatronics.umd.edu/
-Source: https://eng.umd.edu/advising/four-year-plans
+Source: https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/mechatronics_fall_2026_gradplan_0.pdf
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -83,74 +83,87 @@ About the Field
 Mechatronics Engineering at Maryland is an interdisciplinary field of engineering that integrates concepts from across software, mechanical, electrical, and aerospace engineering to develop and design advanced systems from autonomous vehicles and robotics to manufacturing and automation and beyond.
 Request More Information
 
-## Sample plan (https://eng.umd.edu/advising/four-year-plans)
+## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/mechatronics_fall_2026_gradplan_0.pdf)
 
-Home
-Academics & Students
-Student Affairs & Academic Success Programs
-Engineering Academic Services
-Graduation Plans
-Graduation Plans
-All students in the Clark School of Engineering must develop a graduation plan, which maps out all courses needed to graduate within your intended major. This website includes sample plans listed below. You will be responsible for developing and maintaining your plans in consultation with your departmental advisor (once a major has been declared) or the Office of Engineering Academic Services (EAS) if you are a general engineering student.
-Graduation Plan Templates for The University of Maryland, College Park (UMD)
-Please use the templates below as a starting point to creating your own Graduation Plan. Each link is a PDF document that assumes the student will begin as a freshman who will take MATH140.
-*Note that years listed on the curriculum sheets below indicate the semester in which a student is admitted into the specific engineering major.
-For details, please contact your academic advisor.
-Aerospace Engineering
-General Education Graduation Plan: Fall 2025 - Present*
-General Education Graduation Plan: Spring 2025
-General Education Graduation Plan: Spring 2023
-General Education Graduation Plan: 2022 - 2023
-Bioengineering
-General Education Graduation Plan: Fall 2026*
-General Education Graduation Plan: Fall 2024
-General Education Graduation Plan: 2023 - Spring 2024
-Chemical Engineering
-General Education Graduation Plan: Fall 2021 - Present*
-General Education Graduation Plan: 2021
-General Education Graduation Plan: Fall 2018 - 2020
-Civil Engineering
-General Education Graduation Plan: 2025 - Present*
-General Education Graduation Plan: 2023
-Environmental/Water Resource Track
-Geotechnical/Structures Track
-Transportation Project Management Track
-General Education Graduation Plan: 2023 - Spring 2024
-Environmental/Water Resource Track
-Geotechnical/Structures Track
-Transportation Project Management Track
-General Education Graduation Plan: 2021 - 2023
-Environmental/Water Resource Track
-Geotechnical/Structures Track
-Transportation Project Management Track
-Computer Engineering
-General Education Graduation Plan: Fall 2024*
-General Education Graduation Plan: 2021 - Spring 2024
-General Education Graduation Plan: 2019 - 2020
-Electrical Engineering
-General Education Graduation Plan: Fall 2024*
-General Education Graduation Plan: 2021 - Spring 2024
-General Education Graduation Plan: 2019 - 2020
-Fire Protection Engineering
-General Education Graduation Plan: Fall 2021 - Present*
-General Education Graduation Plan: 2021
-General Education Graduation Plan: 2019 - 2020
-Materials Science and Engineering
-General Education Graduation Plan: Fall 2026*
-General Education Graduation Plan: 2023 - Present
-General Education Graduation Plan: 2022 - 2023
-Mechanical Engineering
-General Education Graduation Plan: Fall 2023 - Present
-General Education Graduation Plan: 2023 - Spring 2024
-General Education Graduation Plan: 2021 - 2023
-Graduation Plan Templates for The Universities at Shady Grove (USG)
-Please use the templates below as a starting point to creating your own Academic Plan. For details, please contact your academic advisor at The Universities at Shady Grove 9630 Gudelsky Drive, Rockville, MD 20850
-Biocomputational Engineering - biocomp@umd.edu Cyber-Physical Systems Engineering - es-sg@umd.edu Mechatronics - mechatronics@umd.edu
-Biocomputational Engineering
-Biocomputational Engineering: Fall 2024*
-Biocomputational Engineering Fall 2021
-Biocomputational Engineering Fall 2021 - 2022
-Cyber-Physical Systems Engineering
-Cyber-Physical Systems Engineering - Fall 2020 - Present*
-Mechatronics Engineering
-Mechatronics Engineering - Fall 2024*
+MECHATRONICS ENGINEERING
+NAME:
+UID:
+GENERAL EDUCATION REQUIREMENTS MAJOR SPECIFIC COURSES
+Fundamental Studies ENMT 301 - Structural Dynamics 3
+Academic Writing (AW) ENGL 101 3 ENMT 313 - Real Time Software Systems 3
+Professional Writing (PW) ENGL 39X 3 ENMT 322 - Discrete Signal Analysis 3
+Oral Communication (OC) 3 ENMT 332 - Classical Control Theory 3
+Mathmatics (MA) MATH140 4 ENMT 361 - Mechatronics & Controls Lab I 3
+Analytic Reasoning (AR) MATH140 0 ENMT 362 - Mechatronics & Controls Lab II 3
+Distributive Studies ENMT 372 - Robotic Systems 3
+History/Social Sciences (HS*) 3 ENMT 380 - Intro to Robotics 3
+History/Social Sciences (HS*) 3 ENMT 450 - Robotics Programming 3
+Humanities (HU*) 3 ENMT 471 - Manufacturing & Automation 3
+Humanities (HU*) 3 ENMT 473 - Motion Planning Autonomous 3
+Natural Sciences No Lab (NS) PHYS 161 3 ENMT 477 - Machine Learning Mechatronics 3
+Natural Sciences w/Lab (NL) PHYS 260/261 4 ENMT 483 - Mechatronic Systems I 3
+Scholarship in Practice (SP*) in major ENES 100 3 ENMT 484 - Mechatronics Systems II 3
+Scholarship in Practice (SP*) out major 3 Electives
+Big Question Courses Technical Elective 3
+Big Question (SCIS*) 0/3 Technical Elective 3
+Big Question (SCIS*) 0/3 Program Elective 3
+Diversity
+Understanding Plural Societies (UP*) 0/3
+Understanding Plural Societies (UP*) OR 0/3
+Cultural Competency (CC*) Requirements for Graduation:
+MAJOR REQUIREMENTS • Final 30 credits must be earned at UMD
+Basic Sciences • 15 of the final 30 credits must be earned at the 300-400 level
+CHEM 135 - Chem for Eng OR 131 & 134-Fund & Prin 3/3&1 • 12 of the final 30 credits must be upper level major coursework
+PHYS 161 - General Physics I (NS) 0 • A minimum 2.00 cumulative UM GPA and satisfactory completion of all degree
+PHYS 260 and PHYS 261 - Gen Physics II & Lab (NL) 0 requirements are required for graduation
+PHYS 270 and PHYS 271 - Gen Physics III & Lab 3 & 1 • Students matriculating after Fall 2012 must have a 2.0 minimum GPA for all
+MATH 140 - Calculus I (MA/AR) 0 major requirements, minor requirements, and undergraduate certificate requirements
+MATH 141 - Calculus II 4 (Major courses are defined as: departmental courses, basic sciences, engineering
+ENME/ENAE202 - Computing Engineers 3 sciences, specified degree tracks, technical requirements/ electives and
+MATH 241 - Calculus III 4 Professional Writing (PW)
+MATH 240 or MATH461 - Linear Algebra 4 or 3 • A minimum of 124 credits is required to earn the degree
+MATH 246 - Differential Equations 3
+Engineering Sciences
+ENES 100 - Intro to Eng Design (SP) 0
+ENES 102 - Mechanics I 3
+ENES 220 - Mechanics II 3
+ENES 232 - Thermodynamics 3
+* Can double/triple count with I-series and/or Diversity.
+** See Major-specific websites or advisors for appropriate electives.
+Updated Fall 2026
+Mechatronics Engineering Graduation Plan
+Name: UID:
+Year 1* Fall Spring
+Course Credit Grade Course Credit Grade
+MATH 140 (AR/MA) 4 MATH 141 4
+GenEd 3 PHYS 161 3
+CHEM 135 3 ENES 102 3
+ENES 100 (SP) 3 ENAE 202 3
+ENGL 101 (AW) 3 GenEd 3
+Total 16 Total 16
+Year 2* Fall Spring
+Course Credit Grade Course Credit Grade
+MATH 241 4 MATH 246 3
+PHYS 260 & PHYS 261 4 MATH 240 or MATH 461 4 or 3
+ENES 220 3 ENES 232 3
+GenEd 3 PHYS 270 & PHYS 271 4
+GenEd 3 GenEd 3
+Total 17 Total 16 or 17
+Year 3 Fall Spring
+Course Credit Grade Course Credit Grade
+ENMT 301 3 ENMT 313 3
+ENMT 322 3 ENMT 332 3
+ENMT 361 3 ENMT 362 3
+ENMT 380 3 ENMT 372 3
+GenEd 3 Professional Writing (PW) 3
+Total 15 Total 15
+Year 4 Fall Spring
+Course Credit Grade Course Credit Grade
+ENMT 450 3 ENMT 477 3
+ENMT 471 3 ENMT 484 3
+ENMT 473 3 ENMT 4xx 3
+ENMT 483 3 ENMT 4xx 3
+GenEd (as needed) 3 ENXX 4xx 3
+Total 15 Total 15
+*Students are expected to satisfy all general education requirements including fundamental studies, distributive studies, big question,
+and diversity courses, before entry into the Mechatronics major. Updated Fall 2026

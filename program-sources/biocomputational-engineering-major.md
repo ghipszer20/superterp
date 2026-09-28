@@ -2,7 +2,7 @@
 # Biocomputational Engineering Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/bioengineering/biocomputational-engineering-major/
 Source: https://biocomp.umd.edu/admissions
-Source: https://eng.umd.edu/advising/four-year-plans
+Source: https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/biocomp_fall_2026_gradplan.pdf
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -135,74 +135,85 @@ Financial aid and loans are also available for your student. Explore eligibility
 If you are an international or an undocumented student, please visit UMD’s International Student page for information and assistance. Plus, explore our Financial Resources for Immigrant and Undocumented Students.
 Yes! All graduates of our Biocomputational Engineering degree program earn their diploma from the University of Maryland, College Park. Although you will take your biocomputational engineering courses at the Universities at Shady Grove campus, your degree—and, thus, your diploma—will be granted by the University of Maryland, exactly as it would if you completed all four years at the College Park campus.
 
-## Sample plan (https://eng.umd.edu/advising/four-year-plans)
+## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/biocomp_fall_2026_gradplan.pdf)
 
-Home
-Academics & Students
-Student Affairs & Academic Success Programs
-Engineering Academic Services
-Graduation Plans
-Graduation Plans
-All students in the Clark School of Engineering must develop a graduation plan, which maps out all courses needed to graduate within your intended major. This website includes sample plans listed below. You will be responsible for developing and maintaining your plans in consultation with your departmental advisor (once a major has been declared) or the Office of Engineering Academic Services (EAS) if you are a general engineering student.
-Graduation Plan Templates for The University of Maryland, College Park (UMD)
-Please use the templates below as a starting point to creating your own Graduation Plan. Each link is a PDF document that assumes the student will begin as a freshman who will take MATH140.
-*Note that years listed on the curriculum sheets below indicate the semester in which a student is admitted into the specific engineering major.
-For details, please contact your academic advisor.
-Aerospace Engineering
-General Education Graduation Plan: Fall 2025 - Present*
-General Education Graduation Plan: Spring 2025
-General Education Graduation Plan: Spring 2023
-General Education Graduation Plan: 2022 - 2023
-Bioengineering
-General Education Graduation Plan: Fall 2026*
-General Education Graduation Plan: Fall 2024
-General Education Graduation Plan: 2023 - Spring 2024
-Chemical Engineering
-General Education Graduation Plan: Fall 2021 - Present*
-General Education Graduation Plan: 2021
-General Education Graduation Plan: Fall 2018 - 2020
-Civil Engineering
-General Education Graduation Plan: 2025 - Present*
-General Education Graduation Plan: 2023
-Environmental/Water Resource Track
-Geotechnical/Structures Track
-Transportation Project Management Track
-General Education Graduation Plan: 2023 - Spring 2024
-Environmental/Water Resource Track
-Geotechnical/Structures Track
-Transportation Project Management Track
-General Education Graduation Plan: 2021 - 2023
-Environmental/Water Resource Track
-Geotechnical/Structures Track
-Transportation Project Management Track
-Computer Engineering
-General Education Graduation Plan: Fall 2024*
-General Education Graduation Plan: 2021 - Spring 2024
-General Education Graduation Plan: 2019 - 2020
-Electrical Engineering
-General Education Graduation Plan: Fall 2024*
-General Education Graduation Plan: 2021 - Spring 2024
-General Education Graduation Plan: 2019 - 2020
-Fire Protection Engineering
-General Education Graduation Plan: Fall 2021 - Present*
-General Education Graduation Plan: 2021
-General Education Graduation Plan: 2019 - 2020
-Materials Science and Engineering
-General Education Graduation Plan: Fall 2026*
-General Education Graduation Plan: 2023 - Present
-General Education Graduation Plan: 2022 - 2023
-Mechanical Engineering
-General Education Graduation Plan: Fall 2023 - Present
-General Education Graduation Plan: 2023 - Spring 2024
-General Education Graduation Plan: 2021 - 2023
-Graduation Plan Templates for The Universities at Shady Grove (USG)
-Please use the templates below as a starting point to creating your own Academic Plan. For details, please contact your academic advisor at The Universities at Shady Grove 9630 Gudelsky Drive, Rockville, MD 20850
-Biocomputational Engineering - biocomp@umd.edu Cyber-Physical Systems Engineering - es-sg@umd.edu Mechatronics - mechatronics@umd.edu
-Biocomputational Engineering
-Biocomputational Engineering: Fall 2024*
-Biocomputational Engineering Fall 2021
-Biocomputational Engineering Fall 2021 - 2022
-Cyber-Physical Systems Engineering
-Cyber-Physical Systems Engineering - Fall 2020 - Present*
-Mechatronics Engineering
-Mechatronics Engineering - Fall 2024*
+BIOCOMPUTATIONAL ENGINEERING
+NAME: A.A., A.S., Post-Bac
+UID:
+GENERAL EDUCATION REQUIREMENTS Major Requirements @ USG
+Fundamental Studies ENBC 301 - Intro to Biocomputational Engineering 1
+Academic Writing (AW) ENGL 101 3 ENBC 311 - Python for Data Analysis 3
+Professional Writing (PW) @USG ENGL 393 3 ENBC 312 - Object Oriented Programming in C++ 3
+Oral Communication (OC) 3 ENBC 321 - Machine Learning for Data Analysis 3
+Mathmatics (MA) MATH 140 4 ENBC 322 - Algorithms 3
+Analytic Reasoning (AR) MATH 140 0 ENBC 331 - Applied Linear Systems and Diff Eqs 3
+Distributive Studies ENBC 332 - Statistics, Data Analysis, and Data Vis 3
+History/Social Sciences (HS*) 3 ENBC 341 - Biomolecular Engineering Thermo 3
+History/Social Sciences (HS*) 3 ENBC 342 - Comp Fluid Dynamics and Mass Transfer 3
+Humanities (HU*) 3 ENBC 351 - Quantitative Mol and Cell Biology 3
+Humanities (HU*) 3 ENBC 352 - Molecular Techniques Laboratory 2
+Natural Sciences No Lab (NS) PHYS 161 3 ENBC 353 - Synthetic Biology 3
+Natural Sciences w/Lab (NL) PHYS 260/261 4 ENBC 425 - Imaging and Image Processing 3
+Scholarship in Practice (SP*) in major ENES 100 3 ENBC 431 - Finite Element Analysis 3
+Scholarship in Practice (SP*) out of major 3 ENBC 441 - Computational Systems Biology 3
+Big Question Courses ENBC 491 - Senior Capstone Design in BCE 3
+Big Question (SCIS*) 0/3 Required Technical Electives (12 credits) ** @ USG
+Big Question (SCIS*) 0/3 ENBC Technical Elective I 3
+Diversity ENBC Technical Elective II 3
+Understanding Plural Societies (UP*) 0/3 ENBC Technical Elective III 3
+Understanding Plural Societies (UP*) OR 0/3 ENBC Technical Elective IV 3
+Cultural Competency (CC*)
+MAJOR REQUIREMENTS Requirements for Graduation:
+Basic Sciences • Final 30 credits must be earned at UMD
+CHEM 135- Chem Engr or CHEM 131+134 - Gen Chem+Princ 3/3&1 • 15 of the final 30 credits must be earned at the 300-400 level
+CHEM136 - Chemistry Lab for Engr 1 •12 upper level major credits must be earned at UMD
+PHYS 161 - General Physics I (NS) 0 • A minimum 2.00 cumulative UM GPA, and satisfactory completion of
+PHYS 260 and PHYS 261 - Gen Physics II & Lab (NL) 0 requirements, is required for graduation all degree
+MATH 140 - Calculus I (MA/AR) 0 • Students matriculating in Fall 2012 or after must have a 2.0 minimum GPA for all
+MATH 141 - Calculus II 4 degree requirements, minor requirements, and undergraduate certificate requirements
+MATH 241 - Calculus III 4 (Major courses are defined as: departmental courses, basic sciences, engineering
+Engineering Sciences sciences, specified degree tracks, technical requirements/ technical electives and
+ENES 100 - Intro to Eng Design (SP) 0 ENGL 393)
+BIOE 120 - Biology for Engr or BSCI170 - Prin of Mol & Cell Bio 3 • A minimum of 120 credits is required to earn the degree
+BIOE 241 - Biocomputational Methods or equivalent 3
+* May satisfy more than one requirement. See www.gened.umd.edu
+**See Biocomputational Engineering Advisor for electives: biocomp.umd.edu
+Updated Fall 2026
+BIOCOMPUTATIONAL ENGINEERING GRADUATION PLAN
+Name: UID:
+Current Engineering Students: https://eng.umd.edu/services/academic-policies
+Prospective Engineering Students: https://lep.umd.edu/
+Year 1 Fall Spring
+Course Credit Grade Course Credit Grade
+MATH140 4 ENES100 3
+CHEM135 3 BIOE120 3
+CHEM136 1 MATH141 4
+ENGL101 3 PHYS161 3
+General Ed Requirement I 3 General Ed Requirement III 3
+General Ed Requirement II 3
+Total 17 Total 16
+Year 2 Fall Spring
+Course Credit Grade Course Credit Grade
+MATH241 4 PHYS260 3
+BIOE241 3 PHYS261 1
+General Ed Requirement IV 3 General Ed Requirement VI 3
+General Ed Requirement V 3 General Ed Requirement VII 3
+General Ed Requirement VIII 3
+Total 13 Total 13
+Year 3 Fall @USG Spring @USG
+Course Credit Grade Course Credit Grade
+ENBC301 1 ENBC312 3
+ENBC311 3 ENBC351 3
+ENBC331 3 ENBC342 3
+ENBC332 3 ENBC352 2
+ENBC341 3 ENBC321 3
+ENBC322 3
+Total 16 Total 14
+Year 4 Fall @USG Spring @ USG
+Course Credit Grade Course Credit Grade
+ENBC353 3 Elective 3
+ENBC431 3 ENBC441 3
+ENBC425 3 ENBC491 3
+ENGL393 3 Elective 3
+Total 12 Total 12
+Updated Fall 2026
