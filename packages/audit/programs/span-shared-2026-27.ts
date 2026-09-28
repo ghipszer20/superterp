@@ -117,7 +117,11 @@ export const spanSupportingArea: Requirement = {
   id: "supporting-area",
   name: "Supporting Area: 9 credits in a single area other than Spanish (approval of the Spanish advisor required)",
   credits: 9,
-  minNumber: 300,
+  // Main session, 2026-09-28: any level (the catalog allows 3 of the 9 credits below 300); the
+  // "6 credits at 3xx-4xx" part is not checked (flagged). The harness's filler ids no longer look
+  // like a department, so this broader pool is still tested. The comment above describes the
+  // builder's earlier 300-level encoding.
+  minNumber: 100,
   maxNumber: 499,
   excludeDepartments: ["SPAN"],
 };

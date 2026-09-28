@@ -44,9 +44,11 @@ export function planCourses(plan: SamplePlan): StudentCourse[] {
   return plan.terms.flatMap((t) => t.courses.map((id): StudentCourse => ({ id, credits: plan.credits?.[id] ?? 3, status: "planned" })));
 }
 
-/** Course ids no program lists: valid-looking (four letters, three digits) but in no department. */
-const filler = (i: number, credits: number): StudentCourse => ({ id: `XXXX${100 + i}`, credits, status: "planned" });
-const isFiller = (id: string) => id.startsWith("XXXX");
+/** Course ids that are not course codes at all, so no requirement can count them: not a course list,
+ * and not a department filter (a department-shaped id like XXXX100 matched pools such as "any
+ * department except SPAN"). */
+const filler = (i: number, credits: number): StudentCourse => ({ id: `FILLER-${i}`, credits, status: "planned" });
+const isFiller = (id: string) => id.startsWith("FILLER-");
 
 /** How many rounds of removal before a requirement counts as unbreakable. */
 const MAX_ROUNDS = 12;
