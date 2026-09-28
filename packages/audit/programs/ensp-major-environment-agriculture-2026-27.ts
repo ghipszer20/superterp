@@ -47,6 +47,7 @@ export const enspMajorEnvironmentAgriculture: Program = {
     {
       kind: "course",
       id: "bio-lab-envag",
+      overlay: true,
       name: "Principles Biology Laboratory or Principles of Molecular & Cellular Biology Laboratory (BSCI180 or BSCI171)",
       options: ["BSCI180", "BSCI171"],
     },
@@ -56,7 +57,7 @@ export const enspMajorEnvironmentAgriculture: Program = {
       name: "Principles of Genetics or Plants, Genes and Biotechnology (BSCI222 or PLSC203)",
       options: ["BSCI222", "PLSC203"],
     },
-    { kind: "course", id: "chem131-envag", name: "Chemistry I - Fundamentals of General Chemistry (CHEM131)", options: ["CHEM131"] },
+    { kind: "course", id: "chem131-envag", overlay: true, name: "Chemistry I - Fundamentals of General Chemistry (CHEM131)", options: ["CHEM131"] },
     { kind: "course", id: "chem232-envag", name: "Organic Chemistry Laboratory I (CHEM232)", options: ["CHEM232"] },
     { kind: "course", id: "plsc112-envag", name: "Introductory Crop Science (PLSC112)", options: ["PLSC112"] },
     { kind: "course", id: "plsc113-envag", name: "Introductory Crop Science Laboratory (PLSC113)", options: ["PLSC113"] },

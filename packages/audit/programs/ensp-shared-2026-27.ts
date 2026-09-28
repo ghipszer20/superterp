@@ -8,7 +8,7 @@
 // disagree with the catalog for the Core (program-sources/environmental-science-policy-major.md).
 // Encoded by hand from the catalog alone. UNVERIFIED until owner sign-off.
 
-import type { Requirement } from "../src/audit.ts";
+import type { ProgramMeta, Requirement } from "../src/audit.ts";
 
 /** ENSP Core, identical across all areas of concentration (18-19 credits per the catalog). */
 export const enspCore: Requirement[] = [
@@ -108,3 +108,25 @@ export const enspCommonReviewNotes: string[] = [
     "for; no cumulative GPA or residency rule is stated on this catalog page beyond the C- grading " +
     "policy above.",
 ];
+
+/** One required course (or "X or Y" when several codes are given). */
+export const enspCourse = (id: string, name: string, ...options: string[]): Requirement => ({
+  kind: "course",
+  id,
+  name,
+  options,
+});
+
+/** Catalog URL every ENSP track cites. */
+export const enspCatalogUrl =
+  "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/environmental-science-policy/environmental-science-policy-major/";
+
+/** Picker metadata for one ENSP area of concentration. */
+export const enspPickerInfo = (college: ProgramMeta["college"], track: string): ProgramMeta => ({
+  kind: "major",
+  college,
+  short: `Environmental Science & Policy (${track})`,
+  major: "ensp",
+  track,
+  sources: { catalog: enspCatalogUrl, department: "https://ensp.umd.edu/" },
+});
