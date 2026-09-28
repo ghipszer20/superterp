@@ -48,3 +48,8 @@ Rules:
   other program; Gen Ed, university and college layers never count. The audit enforces it across all
   programs at once. Put nothing there when the catalog is silent (sharing is then unlimited).
 - Run `npm test -w @superterp/programs -- --reporter=dot` while working; the package must stay green.
+
+## Encode what the source says, never narrower (main session, 2026-09-28)
+- Never narrow a requirement (split number bands, one area's course numbers, a single example course) to make the sample plan or the mutation tests work. A narrower rule wrongly fails real students. Example: "12 PHIL courses, 4 at 3xx+, 2 at 4xx+" is one 12-course PHIL `choose` plus `overlay: true` chooses for each minimum (see `phil-major-2026-27.ts`); overlapping filters are fine.
+- When the source names only one area's or one instrument's courses for a slot that applies to everyone, accept the whole department range (see the MUSP lessons in `musc-major-*`) and flag it.
+- When a plan slot has no named course, fill it with a real course from the Academic Catalog's approved-course list rather than leaving a KNOWN_FAILURE.
