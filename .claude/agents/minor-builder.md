@@ -13,7 +13,7 @@ You encode UMD **minors** into SuperTerp. Your brief names the minors, their `pr
 
 ## What to build, per minor
 Follow `docs/project/program-batches.md` (read it once).
-- Program file in `packages/audit/programs/`, exporting a `Program` plus a sibling `<name>Meta: ProgramMeta` (`kind: "minor"`, `college` from the catalog URL's `colleges-schools/<slug>/`). Minors from one department share one file `<dept>-minors-2026-27.ts`. Patterns to copy: `geol-minors-2026-27.ts` (several minors in one file, sharing caps), `cmsc-minor-2026-27.ts` (gateway `minGrade`), `phil-major-2026-27.ts` (overlay chooses for level minimums).
+- Program file in `packages/audit/programs/`, exporting a `Program` plus a sibling `<name>Meta: ProgramMeta` (`kind: "minor"`, `college`: a key of the ProgramMeta college union, e.g. UGST for Undergraduate Studies, EDUC, SPHL; check the union in `packages/audit/src` before using one). Minors from one department share one file `<dept>-minors-2026-27.ts`. Patterns to copy: `geol-minors-2026-27.ts` (several minors in one file, sharing caps), `cmsc-minor-2026-27.ts` (gateway `minGrade`), `phil-major-2026-27.ts` (overlay chooses for level minimums).
 - Constructed sample plan `packages/programs/sample-plans/<id>.json` with `"official": false`, using real courses from the source.
 - After adding programs: `npm run build:registry -w @superterp/programs`. Do NOT run `build:course-sets` (majors only).
 

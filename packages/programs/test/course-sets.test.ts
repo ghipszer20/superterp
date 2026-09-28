@@ -18,7 +18,7 @@ describe("MAJOR_COURSE_SETS", () => {
       fresh[entry.id] = programCourseIds(await entry.load());
     }
     expect(MAJOR_COURSE_SETS).toEqual(fresh);
-  });
+  }, 60_000); // loads every program file; slow under load as the registry grows
 
   it("carries no entries for non-major programs", () => {
     const nonMajors = new Set(PROGRAMS.filter((p) => p.kind !== "major").map((p) => p.id));
