@@ -2,7 +2,11 @@
 # Geographical Sciences Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/geographical-sciences/geographical-sciences-major/
 Source: https://geog.umd.edu/
-Source: https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans
+Source: https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/GEOG%20Major%20Checklist%20042524%20Writable.pdf
+Source: https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/GEOG%20CEOS%20Major%20Checklist%20042524%20Writable.pdf
+Source: https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/GEOG%20Geospatial%20Data%20Science%20Major%20Checklist%20042924%20Writable.pdf
+Source: https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/2%20Year%20Plans/geographical_sciences_2yearplan.pdf
+Source: https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/2%20Year%20Plans/geographical_sciences_GDS_2yearplan.pdf
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -133,6 +137,459 @@ View all publications
 Profiles Showcase
 Our students, faculty, and alumni are making a difference in the world.
 
-## Sample plan (https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans)
+## Department page (https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/GEOG%20Major%20Checklist%20042524%20Writable.pdf)
 
-Not converted (fetch failed: fetch failed).
+GEOGRAPHICAL SCIENCES
+College of Behavioral and Social Sciences
+Feller Center - Advising & Career Planning
+As a University of Maryland student, you are an informed
+and active participant in your education. Therefore, you
+should:
+ Know your benchmark/gateway and degree requirements
+ Develop a graduation plan which leads to a timely
+graduation
+ Review your academic audit and evaluate your career
+planning progress during your junior year
+ Take appropriate actions to remove registration blocks and
+register on time
+ Adhere to University and College policies and deadlines
+ Be responsible for your academic actions and decisions
+Academic and Career Planning advisors are here to
+assist you in meeting your educational and professional
+goals. Therefore, the College is committed to the
+following:
+ Introducing you to major and University requirements
+upon your entrance to a BSOS major
+ Providing assistance during academic difficulty
+ Referring you to helpful campus resources
+ Providing academic and career advising throughout your
+undergraduate career
+Advising Resources
+Feller Center - Advising & Career Planning
+General questions, registration, exceptions to
+University policy, academic probation, limited
+enrollment questions, graduation concerns, career
+planning
+2nd Floor Tydings Hall
+(301) 405-1697
+Advising Email: BSOSAdvising@umd.edu
+Career Planning Email: BSOSCareers@umd.edu
+Department Advising
+Major requirements and courses, registration,
+internships, career questions, department permission
+for courses
+**All GEOG students have mandatory advising
+every semester**
+2181M LeFrak Hall
+(301) 405-4073
+geog-advise@umd.edu
+GEOG Major Benchmarks
+Benchmark Requirements: In accordance with University policy, the Department of Geographical Sciences has established
+benchmark requirements. Students are expected to demonstrate continuing progress in their majors by completing prerequisite
+or required courses with the appropriate grades within an established timeframe. Students who do not complete benchmark
+requirements will need to choose a new major and will not be permitted to return to the Geographical Sciences major at a later
+time.
+Benchmark 1: GEOG m ajors m ust com plete the following courses within two semesters of entering the major:
+
+
+
+
+
+
+Academic Writing with C– or higher
+Additional Gen Ed course 1 with D– or higher
+Additional Gen Ed course 2 with D– or higher
+MATH120, MATH140, or MATH136 with C– or higher (Seats in MATH136 are only available for students majoring in CMNS-Biological Sciences)
+GEOG201 & GEOG211 or GEOG202 with C– or higher
+Additional GEOG course of choice {excluding GEOG100} with C– or higher
+GEOGmc updated 4/25/24
+GEOG Major Requirements
+Requirements Credits Grade
+Benchmark 1 Requirements
+Academic Writing (C– or higher) —
+Additional Gen Ed course 1 (D– or higher)
+Additional Gen Ed course 2 (D– or higher) —
+MATH120, MATH140 or MATH136 (C– or higher)
+(Seats in MATH136 are only available for students
+majoring in CMNS-Biological Sciences)
+—
+Required Course 1 (C– or higher):
+GEOG201 & 211 or GEOG202 4 or 3
+Additional GEOG Course (C– or higher):
+{Excluding GEOG100, choose from options listed
+below, i.e., Quantitative, Human, Physical, etc.}
+3
+GEOG Required Courses (Grade of C– or higher)
+Required Course 2:
+{Choose course not taken for Benchmark Requirement}
+GEOG201 & 211 or GEOG202
+4 or 3
+GEOG212 1
+GEOG Human Gateway Requirement (Grade of C– or higher)
+GEOG _________ 3
+GEOG Physical Gateway Requirement (Grade of C– or higher)
+GEOG _________ 3
+GEOG Technique Gateway Requirement
+(Grade of C– or higher)
+GEOG372 or 373 3
+GEOG Quantitative Requirement (Grade of C– or higher)
+GEOG306 3
+GEOG Elective Courses (Grade of C– or higher)
+Refer to GEOG department for suggested courses
+GEOG Elective Course 1 3
+GEOG Elective Course 2 3
+GEOG Elective Course 3 3
+GEOG Elective Course 4 (400 level) 3
+GEOG Elective Course 5 (400 level) 3
+GEOG Major Supporting Sequence (15 credits)
+(Grade of C– or higher)
+Refer to GEOG department for specific requirement information
+MATH120/140/136 3/4
+Supporting Course 2 3
+Supporting Course 3 3
+Supporting Course 4 3
+Supporting Course 5 3
+GEOGRAPHY - BACHELOR OF SCIENCE
+General Education Requirements
+Fundamental Studies
+Requirements: 15 credits Course Credits Grade
+AW: Academic Writing ENGL101 3
+PW: Professional Writing — Taken after
+60 credits 3
+OC: Oral Communication 3
+MA: Fundamental Studies Math MATH
+120/140 3/4
+AR: Analytic Reasoning MATH
+120/140 3/4
+Distributive Studies
+Requirements: 25 credits Course Credits Grade
+NL: Natural Sciences Lab GEOG
+201/211 4
+NS: Natural Sciences 3/4
+HS: History and/or Social Sciences GEOG202 3
+HS: History and/or Social Sciences 3
+HU: Humanities 3
+HU: Humanities 3
+SP: Scholarship in Practice (overlap
+permitted with major requirement) 3
+SP: Scholarship in Practice (must be non
+-major requirement) 3
+Signature Courses (overlap permitted with Distributive Studies/Diversity)
+Requirements: 6 credits Course Credits Grade
+IS: Big Question —/3
+IS: Big Question —/3
+Diversity (overlap permitted with Distributive Studies/Signature Courses)
+Requirements: 4—6 credits Course Credits Grade
+UP: Understanding Plural Societies 3
+CC: Cultural Competency OR
+UP: Understanding Plural Societies GEOG202 1—3
+TOTAL General Education Credits
+General Education requirements must total at least 40 credits
+GEOGRAPHICAL SCIENCES- BS
+NAME: _____________________________________
+UID: __________________ DATE:______________
+Requirements for Graduation:
+ Earn a C– or higher in Academic Writing and all major requirements
+ Earn a D– or higher in every Gen Ed course except Academic Writing
+ Earn a 2.0 average in all courses used to satisfy major requirements
+ 15 of the final 30 credits must be earned at the 300-400 level
+ 12 upper level major credits must be earned at UMD
+ At least 30 credits must be earned at UMD
+ Earn a cumulative 2.0 GPA in all UMD coursework
+ Earn a minimum of 120 credits
+GEOGRAPHICAL SCIENCES—FOUR YEAR ACADEMIC PLAN
+Year 1 Fall Spring
+Complete your graduation plan!
+Benchmark 1 Requirements must be completed in
+2 semesters
+Academic Writing
+Gen Ed course 1
+Gen Ed course 2
+MATH 120,140, or 136
+GEOG 201 & 211 or GEOG 202
+Additional GEOG Course
+Course Credit Course Credit
+ENGL 101 (AW: Academic Writing) 3 OC (Oral Communication) 3
+MATH 120/140 (MA: Fundamental Studies Math and AR:
+Analytical Reasoning) (Supporting Sequence 1)
+3 HU (Humanities)* 3
+HU (Humanities)* 3 GEOG 202 (HS: History/Social Sciences and CC: Cultural
+Competence)
+3
+GEOG 201 &211 (NL: Natural Sciences Lab) 4 Elective 3
+UNIV 100 or UNIV361 1 Elective 3
+Elective 1
+Total 14 Total 16
+Year 2 Fall Spring
+Check in with your advisor regarding your
+benchmark or gateway progress!
+Course Credit Course Credit
+NS (Natural Sciences)* 3 GEOG 306 3
+HS (History/Social Sciences)* 3 GEOG Elective Course 1 3
+GEOG Physical Gateway Course 3 Supporting Sequence 2 3
+GEOG Human Gateway Course 3 Elective 3
+GEOG 212 1 Elective 3
+Elective 3
+Total 16 Total 15
+Year 3 Fall Spring
+When you’re between 75—89 credits, watch out for
+an email from your Advisors regarding your
+remaining degree requirements!
+Course Credit Course Credit
+ENGL 39X (PW: Professional Writing) 3 SP (Scholarship in Practice –non-major)* 3
+GEOG Technique Gateway Course 3 UP (Understanding Plural Societies)* 3
+Supporting Sequence 3 3 GEOG Elective Course 2 3
+Elective 3 Elective 3
+Elective 3 Elective 3
+Total 15 Total 15
+Year 4 SpringFall
+Apply for graduation! Course Credit Course Credit
+GEOG Elective Course 3 3 GEOG Elective Course 5 (400 level) 3
+GEOG Elective Course 4 (400 level) 3 Supporting Sequence 5 3
+Supporting Sequence 4 3 Elective 3
+Elective 3 Elective 3
+Elective 3 Elective 2
+Total 15 Total 14
+Cumulative Credits + Planned Credits = Total Credits 120
+Last Updated 4/25/24
+*Important Planning Notes:
+ All students must take two Distributive Studies courses
+that will also count for the SCIS: Big Question
+requirement. (Big Question courses are not listed
+separately in this plan)
+ Understanding Plural Societies courses may also fulfill a
+Distributive Studies category. GEOG 202 will count for
+the Cultural Competence requirement.
+
+## Department page (https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/GEOG%20CEOS%20Major%20Checklist%20042524%20Writable.pdf)
+
+Not converted (fetch failed: Invalid Root reference.).
+
+## Department page (https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/GEOG%20Geospatial%20Data%20Science%20Major%20Checklist%20042924%20Writable.pdf)
+
+GEOGRAPHICAL SCIENCES: GEOGSPATIAL DATA SCIENCE
+College of Behavioral and Social Sciences
+Feller Center - Advising & Career Planning
+Advising Resources
+Department Advising
+Major requirements and courses, registration,
+internships, career questions,
+department permission for courses
+**All Geospatial Data Science students have mandatory
+advising every semester**
+2181M LeFrak Hall
+(301) 405-4073
+geog-advise@umd.edu
+Geospatial Data Science Major Benchmarks
+Benchmark Requirements: In accor dance with Univer sity policy, the Depar tment of Geogr aphical Sciences
+has established benchmark requirements. Students are expected to demonstrate continuing progress in their majors
+by completing prerequisite or required courses with the appropriate grades within an established timeframe.
+Students who do not complete benchmark requirements will need to choose a new major and will not be permitted
+to return to the Geospatial Data Science major at a later time.
+Benchmark 1: Geospatial Data Science m ajors m ust com plete the following courses within two semesters of entering
+the major:
+ Academic Writing with C– or higher
+ Additional Gen Ed course 1 with D– or higher
+ Additional Gen Ed course 2 with D– or higher
+ MATH120, MATH140, or MATH136 with C– or higher (Seats in MATH136 are only available for students majoring in CMNS-Biological Sciences)
+ GEOG201 & GEOG211 or GEOG202 with C– or higher
+ Additional GEOG course of choice {excluding GEOG100} with C– or higher
+GISmc1ge updated 4/29/24
+As a University of Maryland student, you are an informed
+and active participant in your education. Therefore, you
+should:
+ Know your benchmark/gateway and degree requirements
+ Develop a graduation plan which leads to a timely
+graduation
+ Review your academic audit and evaluate your career
+planning progress during your junior year
+ Take appropriate actions to remove registration blocks
+and register on time
+ Adhere to University and College policies and deadlines
+ Be responsible for your academic actions and decisions
+Academic and Career Planning advisors are here to
+assist you in meeting your educational and professional
+goals. Therefore, the College is committed to the
+following:
+ Introducing you to major and University requirements
+upon your entrance to a BSOS major
+ Providing assistance during academic difficulty
+ Referring you to helpful campus resources
+ Providing academic and career advising throughout your
+undergraduate career
+Feller Center - Advising & Career Planning
+General questions, registration, exceptions to
+University policy, academic probation, limited
+enrollment questions, graduation concerns,
+career planning
+2nd Floor Tydings Hall
+(301) 405-1697
+Advising Email: BSOSAdvising@umd.edu
+Career Planning Email: BSOSCareers@umd.edu
+GEOGRAPHIC INFORMATION SCIENCE - BACHELOR OF SCIENCE
+Geospatial Data Science Major Requirements
+Requirements [Courses in brackets are prerequisite courses] Credits Grade
+Benchmark 1 Requirements
+Academic Writing (C– or higher) —
+Additional Gen Ed course 1 (D– or higher) —
+Additional Gen Ed course 2 (D– or higher) —
+MATH120, MATH140 or MATH136 [C– or higher]
+(Seats in MATH136 are only available for students majoring in
+CMNS-Biological Sciences)
+—
+Required Course 1 (C– or higher):
+GEOG201 & 211 or GEOG202 4 or 3
+Additional GEOG Course (C– or higher):
+{Excluding GEOG 100, choose from options listed
+below, i.e., Quantitative, Human, Physical, etc.}
+3
+GEOG Required Courses [Grade of C– or higher]
+Required Course 2:
+{Choose course not taken for Benchmark Requirement}
+GEOG201 & 211 or GEOG202
+4 or 3
+GEOG212 1
+GEOG Human Gateway Requirement (C-or higher)
+GEOG _________ 3
+GEOG Physical Gateway Requirement (C-or higher)
+GEOG _________ 3
+Additional GEOG Human or Physical (C– or higher)
+Refer to GEOG department for suggested courses (non-technical)
+GEOG Additional Course 1 UL 3
+GEOG Quantitative Requirement (C– or higher)
+Refer to GEOG department for suggested courses
+GEOG306 3
+GIS Technical Requirement (C– or higher)
+GEOG272 3
+GEOG276 3
+GEOG373 3
+GEOG 400 Level Technical Course 1 3
+GEOG 400 Level Technical Course 2 3
+GEOG Major Supporting Sequence (15 credits)
+[Grade of C– or higher]
+Refer to the department website for specific supporting area courses:
+http://www.geog.umd.edu/content/gis
+MATH120/140/136 3/4
+Supporting Course 2 3
+Supporting Course 3 3
+Supporting Course 4 3
+Supporting Course 5 3
+General Education Requirements
+Fundamental Studies
+Requirements: 15 credits Course Credits Grade
+AW: Academic Writing ENGL101 3
+PW: Professional Writing — Taken
+after 60 credits 3
+OC: Oral Communication 3
+MA: Fundamental Studies Math MATH
+120/140 3/4
+AR: Analytic Reasoning MATH
+120/140 3
+Distributive Studies
+Requirements: 25 credits Course Credits Grade
+NL: Natural Sciences Lab GEOG
+201/211 4
+NS: Natural Sciences 3/4
+HS: History and/or Social Sciences GEOG202 3
+HS: History and/or Social Sciences 3
+HU: Humanities 3
+HU: Humanities 3
+SP: Scholarship in Practice (overlap
+permitted with major requirement) 3
+SP: Scholarship in Practice (must be
+non-major requirement) 3
+Signature Courses (overlap permitted with Distributive Studies/Diversity)
+Requirements: 6 credits Course Credits Grade
+IS: Big Question —/3
+IS: Big Question —/3
+Diversity
+(overlap permitted with Distributive Studies/Signature Courses)
+Requirements: 4—6 credits Course Credits Grade
+UP: Understanding Plural Societies 3
+CC: Cultural Competency OR
+UP: Understanding Plural Societies GEOG202 1—3
+TOTAL General Education Credits
+General Education requirements must total at least 40 credits
+Geospatial Data Science- BS
+NAME: _____________________________________
+UID: __________________ DATE:______________
+Requirements for Graduation:
+ Earn a C– or higher in Academic Writing and all major requirements
+ Earn a D– or higher in every Gen Ed course except Academic Writing
+ Earn a 2.0 average in all courses used to satisfy major requirements
+ 15 of the final 30 credits must be earned at the 300-400 level
+ 12 upper level major credits must be earned at UMD
+ At least 30 credits must be earned at UMD
+ Earn a cumulative 2.0 GPA in all UMD coursework
+ Earn a minimum of 120 credits
+GEOSPATIAL DATA SCIENCE –GRADUATION PLAN
+Year 1 Fall Spring
+Complete your graduation plan!
+Benchmark 1 Requirements must be com-
+pleted in 2 semesters
+Academic Writing
+Gen Ed course 1
+Gen Ed course 2
+MATH120, 140, or 136
+GEOG 201 & 211 or GEOG 202
+Additional GEOG course
+Course Credit Course Credit
+ENGL 101 (AW: Academic Writing) 3 OC (Oral Communication) 3
+MATH 120/140 (MA: Fundamental Studies Math and AR:
+Analytical Reasoning) (Supporting Sequence 1)
+3 HU (Humanities)* 3
+HU (Humanities)* 3 GEOG 202 (HS: History/Social Sciences and CC: Cultural
+Competence)
+3
+GEOG 201 &211 (NL: Natural Sciences Lab) 4 GEOG212 1
+UNIV 100 or BSOS361 1 Elective 3
+Elective 3
+Total 14 Total 16
+Year 2 Fall Spring
+Check in with your advisor regarding your
+benchmark or gateway progress!
+Course Credit Course Credit
+NS (Natural Sciences)* 3 SP (Scholarship in Practice) * 3
+HS (History/Social Sciences)* 3 GEOG 373 3
+GEOG 272 3 GEOG Physical Gateway Course 3
+GEOG Human Gateway Course 3 Supporting Sequence 2 3
+Elective 3 Elective 3
+Total 15 Total 15
+Year 3 Fall Spring
+When you’re between 75—89 credits, watch
+out for an email from your Advisors
+regarding your remaining degree
+requirements!
+Course Credit Course Credit
+ENGL 39X (PW: Professional Writing) 3 SP (Scholarship in Practice –non-major)* 3
+GEOG 276 3 GEOG Additional Course 1 UL 3
+Supporting Sequence 3 3 GEOG 306 3
+UP (Understanding Plural Societies)* 3 Elective 3
+Elective 3 Elective 3
+Total 15 Total 15
+Year 4 SpringFall
+Apply for graduation! Course Credit Course Credit
+GEOG 400 Level Technical Course 1 3 GEOG 400 Level Technical Course 2 3
+Supporting Sequence 4 3 Supporting Sequence 5 3
+Elective 3 Elective 3
+Elective 3 Elective 3
+Elective 3 Elective 3
+Total 15 Total 15
+Cumulative Credits + Planned Credits = Total Credits 120
+Last Updated 4/29/24
+*Important Planning Notes:
+ All students must take two Distributive Studies courses
+that will also count for the SCIS: Big Question
+requirement. (Big Question courses are not listed
+separately in this plan)
+ Understanding Plural Societies courses may also fulfill a
+Distributive Studies category. GEOG 202 will count for
+the Cultural Competence requirement.
+
+## Sample plan (https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/2%20Year%20Plans/geographical_sciences_2yearplan.pdf)
+
+Not converted (fetch failed: Invalid Root reference.).
+
+## Sample plan (https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/2%20Year%20Plans/geographical_sciences_GDS_2yearplan.pdf)
+
+Not converted (fetch failed: Invalid Root reference.).

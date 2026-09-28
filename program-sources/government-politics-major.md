@@ -5,7 +5,8 @@ Source: https://gvpt.umd.edu/undergraduate/major-requirements
 Source: https://gvpt.umd.edu/undergraduate/government-and-politics-major-requirements-bachelor-arts
 Source: https://gvpt.umd.edu/undergraduate/government-and-politics-major-requirements-bachelor-science
 Source: https://gvpt.umd.edu/undergraduate/gvpt-major-requirements-no-concentration
-Source: https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans
+Source: https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BSOS%20Forms/GVPT%20Major%20Checklist%20060325.pdf
+Source: https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BSOS%20Forms/GVPT%20BS%20Checklist%20060325.pdf
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -397,6 +398,442 @@ Students proficient through the elementary or intermediate level of a foreign la
 If UMD does not offer the language, an option for native/heritage speakers to be exempt from the Elementary and Intermediate requirements is an oral interview through ACTFL; please see the following document for specific instructions (there is a fee for this service). The other option is to submit a letter or documentation from a non-family member testifying to the student’s language speaking abilities. Letters or documentation can be from religious or cultural leaders, government agents, ambassadors, etc. Such individuals can e-mail GVPT advisors directly or provide the student with a sealed letter to drop off at the GVPT advising office.
 For questions or to discuss other options for demonstrating proficiency, please speak with a GVPT advisor.
 
-## Sample plan (https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans)
+## Department page (https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BSOS%20Forms/GVPT%20Major%20Checklist%20060325.pdf)
 
-Not converted (fetch failed: fetch failed).
+GOVERNMENT & POLITICS
+Bachelor of Arts
+College of Behavioral and Social Sciences
+Feller Center - Advising & Career Planning
+As a University of Maryland student, you are an informed
+and active participant in your education. Therefore, you
+should:
+ Know your benchmark/gateway and degree requirements
+ Develop a graduation plan which leads to a timely
+graduation
+ Review your academic audit and evaluate your career
+planning progress during your junior year
+ Take appropriate actions to remove registration blocks
+and register on time
+ Adhere to University and College policies and deadlines
+ Be responsible for your academic actions and decisions
+Academic and Career Planning advisors are here to
+assist you in meeting your educational and professional
+goals. Therefore, the College is committed to the
+following:
+ Introducing you to major and University requirements
+upon your entrance to a BSOS major
+ Providing assistance during academic difficulty
+ Referring you to helpful campus resources
+ Providing academic and career advising throughout your
+undergraduate career
+Advising Resources
+Feller Center - Advising & Career Planning
+General questions, registration, exceptions to
+University policy, academic probation, limited
+enrollment questions, graduation concerns, career
+planning
+2nd Floor Tydings Hall
+(301) 405-1697
+Advising Email: BSOSAdvising@umd.edu
+Career Planning Email: BSOSCareers@umd.edu
+Department Advising
+Major requirements and courses, registration,
+internships, career questions, department permission for
+courses
+**All GVPT students will have mandatory advising after
+90 credits**
+3104 Tydings Hall
+(301) 405-4168
+gvptadvising@umd.edu
+Benchmark Requirements: In accordance with University policy, the Department of Government and Politics has
+established benchmark requirements. Students are expected to demonstrate continuing progress in their majors by completing
+prerequisite or required courses with the appropriate grades within an established timeframe. Students who do not complete
+benchmark requirements will need to choose a new major and will not be permitted to return to the Government and Politics
+major at a later time.
+Benchmark 1: Students must complete the following four courses within two semesters of entering the major:
+GVPT170 with a grade of C- or higher
+One 200-level GVPT course with a grade of C- or higher (may not be experiential learning)
+One of STAT100+, MATH 107,113,115,120,135,136, or 140 with a grade of C- or higher
+Academic Writing with a grade of C- or higher
+Note: At least one of the GVPT courses must not be from AP/IB/CLEP credit.
+** For GVPT majors, more than 3 GVPT courses per semester WILL NOT be permitted**
+GVPTmc1ge updated 6/3/25
+GVPT B.A. Major Benchmarks
++STAT100 preferred
+GVPT B.A. Major Requirements
+Requirements (see go.umd.edu/gvptmaj) Credits Grade
+Benchmark Requirements
+GVPT170 with a grade of C- or higher
+3/4One of STAT100+, MATH 107,113,115,120,135,136,
+or 140 with a grade of C- or higher
+3
+One 200-level GVPT course (may not be experiential
+learning) with a grade of C- or higher 3
+Academic Writing with a grade of C- or higher 3
+GVPT Theory Requirement (Grade of C– or higher)
+GVPT241 3
+GVPT Methods Requirement (Grade of C– or higher)
+GVPT201 3
+GVPT Courses of Choice (Grade of C– or higher)
+For approved options, refer to: go.umd.edu/gvptmaj
+GVPT Course of Choice 1 (Fulfilled by Benchmark) 3
+GVPT Course of Choice 2 3
+GVPT Course of Choice 3 3
+GVPT Course of Choice 4 300/400 Level 3
+GVPT Course of Choice 5 300/400 Level 3
+GVPT Course of Choice 6 300/400 Level 3
+GVPT Course of Choice 7 300/400 Level 3
+GVPT Course of Choice 8 300/400 Level 3
+GVPT Course of Choice 9 300/400 Level 3
+GVPT Skills Requirement (Grade of C– or higher)
+For approved options, refer to: go.umd.edu/gvptskills
+1. ECON200 3
+2. Foreign Language†: Choose one:
+a) Elementary level course(s)
+b) High school transcript
+c) Demonstrate proficiency through elementary level
+0-12
+3. Quantitative Skills 3
+4. Additional Skills: Choose one:
+a) Intermediate foreign language
+b) Additional Quantitative Skills
+3-4
+General Education Requirements
+Fundamental Studies
+Requirements: 15 credits Course Credits Grade
+AW: Academic Writing 3
+PW: Professional Writing — Taken
+after 60 credits 3
+OC: Oral Communication 3
+MA: Fundamental Studies Math Benchmark
+Math 3
+AR: Analytic Reasoning Could be met
+with Benchmark
+math 3
+Distributive Studies
+Requirements: 25 credits Course Credits Grade
+NL: Natural Sciences Lab 4
+NS: Natural Sciences 3/4
+HS: History and/or Social Sciences GVPT170 3
+HS: History and/or Social Sciences ECON200 3
+HU: Humanities 3
+HU: Humanities 3
+SP: Scholarship in Practice (overlap
+permitted with major requirement) GVPT241 3
+SP: Scholarship in Practice (must be
+non-major requirement) 3
+Signature Courses
+(overlap permitted with Distributive Studies/Diversity)
+Requirements: 6 credits Course Credits Grade
+IS: Big Question —/3
+IS: Big Question —/3
+Diversity
+(overlap permitted with Distributive Studies/Signature Courses)
+Requirements: 4—6 credits Course Credits Grade
+UP: Understanding Plural Societies 3
+CC: Cultural Competency OR
+UP: Understanding Plural Societies 1—3
+TOTAL General Education Credits
+General Education requirements must total at least 40 credits
++STAT100 preferred
+Requirements for Graduation:
+Earn a C– or higher in Academic Writing and all major requirements
+Earn a D– or higher in every Gen Ed course except Academic Writing
+Earn a 2.0 average in all courses used to satisfy major requirements
+15 of the final 30 credits must be earned at the 300-400 level
+12 upper level major credits must be earned at UMD
+At least 30 credits must be earned at UMD
+Earn a cumulative 2.0 GPA in all UMD coursework
+Earn a minimum of 120 credits
+GOVERNMENT & POLITICS - B.A.
+NAME: _____________________________________
+UID: __________________ DATE:______________
+Students are strongly encouraged to add a minor or double
+major, as well as participate in experiential learning opportunities
+such as internships, research, or study abroad.
+† Students may be eligible for an exemption from the Elementary level
+foreign language requirement if they completed foreign language
+study in high school (entire Level 3 with C– or higher) or can
+otherwise demonstrate proficiency.
+GOVERNMENT & POLITICS B.A.—Graduation Plan
+Year 1 Fall Spring
+Complete your graduation plan!
+Benchmark Requirements must be completed within
+two semesters of entering the major
+GVPT170 with a grade of C- or higher
+One 200-level GVPT course with a grade of C- or higher
+(may not be experiential learning)
+One of STAT100, MATH 107,113,115,120,135,136, or
+140 with a grade of C- or higher
+Academic Writing with a grade of C- or higher
+Note: At least one of the GVPT courses must not be from
+AP/IB/CLEP credit.
+Course Credit Course Credit
+ENGL101 (AW: Academic Writing) 3 AR (Analytic Reasoning) 3
+MA: Benchmark Math (Based on Placement/) 3/4 ECON200 (HS: History/Social Sciences) 3
+HU (Humanities)* 3 GVPT241 (SP: Scholarship in Practice
+and 200-level Benchmark course )
+3
+GVPT170 (HS: History/Social Sciences and Benchmark) 3 Elective 3
+UNIV100 or BSOS361 1 Elective 3
+Elective 3
+Total 16 Total 15
+Year 2 Fall Spring
+Course Credit Course Credit
+OC (Oral Communications) 3 NL (Natural Sciences Lab)* 4
+UP (Understanding Plural Societies) 3 CC (Cultural Competency)* 3
+NS (Natural Sciences)* 3 HU (Humanities)* 3
+GVPT201 3 GVPT Course of Choice 1 3
+Elective 3 Elementary Foreign Language Requirement 4
+Total 15 Total 17
+Year 3 Fall Spring
+When you’re between 75—89 credits, watch out for an email
+from your advisors regarding your remaining degree
+requirements!
+Course Credit Course Credit
+GVPT Course of Choice 2 3 SP: Scholarship in Practice (non –major)* 3
+GVPT Course of Choice 3 3 GVPT Course of Choice 4 UL 3
+Quantitative Skills Requirement 3 GVPT Course of Choice 5 UL 3
+Elective 3 Additional Skills Requirement 3
+Elective 3 Elective 3
+Total 15 Total 15
+Year 4 Fall Spring
+Apply for graduation! Course Credit Course Credit
+PW (Professional Writing) 3 GVPT Course of Choice 8 UL 3
+GVPT Course of Choice 6 UL 3 GVPT Course of Choice 9 UL 3
+GVPT Course of Choice 7 UL 3 Elective 3
+Elective 3 Elective 3
+Elective 3
+Total 15 Total 12
+Cumulative Credits + Planned Credits = Total Credits 120
+Last Updated:6/3/25
+*Important Planning Notes:
+All students must take two Distributive Studies courses
+that will also count for the SCIS: Big Question
+requirement. (Big Question courses are not listed
+separately in this plan)
+Understanding Plural Societies courses may also fulfill a
+Distributive Studies category.
+Check in with your advisor regarding your benchmark
+progress!
+
+## Department page (https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BSOS%20Forms/GVPT%20BS%20Checklist%20060325.pdf)
+
+*29(510(17 32/,7,&6
+%DFKHORURI6FLHQFH
+&ROOHJHRI%HKDYLRUDODQG6RFLDO6FLHQFHV
+)HOOHU&HQWHU-$GYLVLQJ &DUHHU3ODQQLQJ
+$VD8QLYHUVLW\RI0DU\ODQGVWXGHQW\RXDUHDQLQIRUPHG
+DQGDFWLYHSDUWLFLSDQWLQ\RXUHGXFDWLRQ7KHUHIRUH\RX
+VKRXOG
+· .QRZ\RXUEHQFKPDUNJDWHZD\DQGGHJUHHUHTXLUHPHQWV
+· 'HYHORSDJUDGXDWLRQSODQZKLFKOHDGVWRDWLPHO\
+JUDGXDWLRQ
+· 5HYLHZ\RXUDFDGHPLFDXGLWDQGHYDOXDWH\RXUFDUHHU
+SODQQLQJSURJUHVVGXULQJ\RXUMXQLRU\HDU
+· 7DNHDSSURSULDWHDFWLRQVWRUHPRYHUHJLVWUDWLRQEORFNV
+DQGUHJLVWHURQWLPH
+· $GKHUHWR8QLYHUVLW\DQG&ROOHJHSROLFLHVDQGGHDGOLQHV
+· %HUHVSRQVLEOHIRU\RXUDFDGHPLFDFWLRQVDQGGHFLVLRQV
+$FDGHPLFDQG&DUHHU3ODQQLQJDGYLVRUVDUHKHUHWR
+DVVLVW\RXLQPHHWLQJ\RXUHGXFDWLRQDODQGSURIHVVLRQDO
+JRDOV7KHUHIRUHWKH&ROOHJHLVFRPPLWWHGWRWKH
+IROORZLQJ
+· ,QWURGXFLQJ\RXWRPDMRUDQG8QLYHUVLW\UHTXLUHPHQWV
+XSRQ\RXUHQWUDQFHWRD%626PDMRU
+· 3URYLGLQJDVVLVWDQFHGXULQJDFDGHPLFGLIILFXOW\
+· 5HIHUULQJ\RXWRKHOSIXOFDPSXVUHVRXUFHV
+· 3URYLGLQJDFDGHPLFDQGFDUHHUDGYLVLQJWKURXJKRXW\RXU
+XQGHUJUDGXDWHFDUHHU
+$GYLVLQJ5HVRXUFHV
+)HOOHU&HQWHU-$GYLVLQJ &DUHHU3ODQQLQJ
+*HQHUDOTXHVWLRQVUHJLVWUDWLRQH[FHSWLRQVWR
+8QLYHUVLW\SROLF\DFDGHPLFSUREDWLRQOLPLWHG
+HQUROOPHQWTXHVWLRQVJUDGXDWLRQFRQFHUQVFDUHHU
+SODQQLQJ
+
+QG)ORRU7\GLQJV+DOO
+ -
+$GYLVLQJ(PDLO%626$GYLVLQJ#XPGHGX
+&DUHHU3ODQQLQJ(PDLO%626&DUHHUV#XPGHGX
+'HSDUWPHQW$GYLVLQJ
+0DMRUUHTXLUHPHQWVDQGFRXUVHVUHJLVWUDWLRQ
+LQWHUQVKLSVFDUHHUTXHVWLRQVGHSDUWPHQWSHUPLVVLRQIRU
+FRXUVHV
+$OO*937VWXGHQWVZLOOKDYHPDQGDWRU\DGYLVLQJDIWHU
+FUHGLWV
+7\GLQJV+DOO
+ -
+JYSWDGYLVLQJ#XPGHGX
+%HQFKPDUN5HTXLUHPHQWVIn accordance with University policy, the Department of Government and Politics has
+established benchmark requirements. Students are expected to demonstrate continuing progress in their majors by completing
+prerequisite or required courses with the appropriate grades within an established timeframe. Students who do not complete
+benchmark requirements will need to choose a new major and will not be permitted to return to the Government and Politics
+major at a later time.
+%HQFKPDUN6WXGHQWVPXVWFRPSOHWHWKHIROORZLQJIRXU
+FRXUVHVZLWKLQWZRVHPHVWHUVRIHQWHULQJWKHPDMRU
+o *937ZLWKDJUDGHRI&-RUKLJKHU
+o *937ZLWKDJUDGHRI&-RUKLJKHU
+o 2QHRI67$7+0$7+ 113,115,or
+ZLWKDJUDGHRI&-RUKLJKHU
+o $FDGHPLF:ULWLQJZLWKDJUDGHRI&-RUKLJKHU
+)RU*937PDMRUVPRUHWKDQ*937FRXUVHVSHUVHPHVWHU:,//127EHSHUPLWWHG
+*937%6PF XSGDWHG 6/35
+*937 B.S.0DMRU%HQFKPDUNV
+%HQFKPDUN6WXGHQWVPXVWFRPSOHWHWKHIROORZLQJ
+FRXUVHZLWKLQRQHVHPHVWHURIFRPSOHWLQJ%HQFKPDUN
+o *937ZLWKDJUDGHRI&-RUKLJKHU
+67$7SUHIHUUHG
+*937B.S. 0DMRU5HTXLUHPHQWV
+5HTXLUHPHQWV (see go.umd.edu/gvptbs) &UHGLWV *UDGH
+%HQFKPDUN5HTXLUHPHQWV
+*937with a grade of C- or higher 
+*937 with a grade of C- or higher 
+2QHRI67$7+0$7+ 113,115,1
+or with a grade of C- or higher 
+$FDGHPLF:ULWLQJwith a grade of C- or higher 
+%HQFKPDUN5HTXLUHPHQW
+*937 with a grade of C- or higher 
+*9370HWKRGV5HTXLUHPHQWV(*UDGHRI&–RUKLJKHU)
+For approved options, refer to:go.umd.edu/gvptbs
+*9370HWKRGV&RXUVH/HYHO 
+*9374XDQWLWDWLYH0HWKRGV&RXUVH1 /HYHO 
+*9374XDQWLWDWLYH0HWKRGV&RXUVH2 /HYHO 
+*937)RXQGDWLRQDO&RXUVH(*UDGHRI&–RUKLJKHU)
+2QHRI*937GVPTor GVPT 
+*937&RXUVHVRI&KRLFH(*UDGHRI&–RUKLJKHU)
+For approved options, refer to: go.umd.edu/gvptbs
+*937&RXUVHRI&KRLFH 
+*937&RXUVHRI&KRLFH 
+*937&RXUVHRI&KRLFH/HYHO 
+*937&RXUVHRI&KRLFH/HYHO 
+*937&RXUVHRI&KRLFH/HYHO 
+*9376NLOOV5HTXLUHPHQW(*UDGHRI&–RUKLJKHU) 
+For approved options, refer to: go.umd.edu/gvptskills 
+ECON200 
+ Foreign Language†: Choose one:
+a) Elementary level course(s)
+b) High school transcript
+c) Demonstrate proficiency through elementary level
+-
+4XDQWLWDWLYH6NLOOV1 -%6WUDFN -
+4XDQWLWDWLYH6NLlls 2 -%6WUDFN -
+*HQHUDO(GXFDWLRQ5HTXLUHPHQWV
+)XQGDPHQWDO6WXGLHV
+5HTXLUHPHQWVFUHGLWV &RXUVH &UHGLWV *UDGH
+$:$FDGHPLF:ULWLQJ 
+3:3URIHVVLRQDO:ULWLQJ—7DNHQ
+DIWHUFUHGLWV 
+2&2UDO&RPPXQLFDWLRQ 
+0$)XQGDPHQWDO6WXGLHV0DWK %HQFKPDUN
+0DWK 
+$5$QDO\WLF5HDVRQLQJ &RXOGEHPHW
+ZLWK%HQFKPDUN
+PDWK 
+'LVWULEXWLYH6WXGLHV
+5HTXLUHPHQWVFUHGLWV &RXUVH &UHGLWV *UDGH
+1/1DWXUDO6FLHQFHV/DE 
+161DWXUDO6FLHQFHV 
++6+LVWRU\DQGRU6RFLDO6FLHQFHV *937 
++6+LVWRU\DQGRU6RFLDO6FLHQFHV (&21 
++8+XPDQLWLHV 
++8+XPDQLWLHV 
+636FKRODUVKLSLQ3UDFWLFH RYHUODS
+SHUPLWWHGZLWKPDMRUUHTXLUHPHQW *937 
+636FKRODUVKLSLQ3UDFWLFH PXVWEH
+QRQ-PDMRUUHTXLUHPHQW 
+Signature Courses
+RYHUODSSHUPLWWHGZLWK'LVWULEXWLYH6WXGLHV'LYHUVLW\
+5HTXLUHPHQWVFUHGLWV &RXUVH &UHGLWV *UDGH
+,6Big Question —
+,6Big Question —
+'LYHUVLW\
+RYHUODSSHUPLWWHGZLWK'LVWULEXWLYH6WXGLHV/Signature Courses
+5HTXLUHPHQWV—FUHGLWV &RXUVH &UHGLWV *UDGH
+838QGHUVWDQGLQJ3OXUDO6RFLHWLHV 
+&&&XOWXUDO&RPSHWHQF\25
+838QGHUVWDQGLQJ3OXUDO6RFLHWLHV —
+727$/*HQHUDO(GXFDWLRQ&UHGLWV
+*HQHUDO(GXFDWLRQUHTXLUHPHQWVPXVWWRWDODWOHDVWFUHGLWV
+67$7SUHIHUUHG
+5HTXLUHPHQWVIRU*UDGXDWLRQ
+o (DUQD&–RUKLJKHULQ$FDGHPLF:ULWLQJDQGDOOPDMRUUHTXLUHPHQWV
+o (DUQD'–RUKLJKHULQHYHU\*HQ(GFRXUVHH[FHSW$FDGHPLF:ULWLQJ
+o (DUQDDYHUDJHLQDOOFRXUVHVXVHGWRVDWLVI\PDMRUUHTXLUHPHQWV
+o RIWKHILQDOFUHGLWVPXVWEHHDUQHGDWWKH-OHYHO
+o XSSHUOHYHOPDMRUFUHGLWVPXVWEHHDUQHGDW80'
+o $WOHDVWFUHGLWVPXVWEHHDUQHGDW80'
+o (DUQDFXPXODWLYH*3$LQDOO80'FRXUVHZRUN
+o (DUQDPLQLPXPRIFUHGLWV
+1$0(BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+8,'BBBBBBBBBBBBBBBBBB'$7(BBBBBBBBBBBBBB
+† Students may be eligible for an exemption from the Elementary level
+foreign language requirement if they completed foreign language study
+in high school (entire Level 3 with C– or higher) or can otherwise
+demonstrate proficiency.
+Students are strongly encouraged to add a minor or double major,
+as well as participate in experiential learning opportunities such as
+internships, research, or study abroad.
+GOVERNMENT & POLITICS - B.S.
+GOVERNMENT & POLITICS B.S.— Graduation Plan
+Year 1 Fall Spring
+Complete your graduation plan!
+Benchmark 1 Requirements must be completed
+within two semesters of entering the major:
+GVPT170 with a grade of C- or higher
+GVPT201 with a grade of C- or higher
+One of STAT100, MATH 107,113,115,120,135,
+136, or 140 with a grade of C- or higher
+Academic Writing with a grade of C- or higher
+Course Credit Course Credit
+ENGL101 (AW: Academic Writing ) 3 AR (Analytic Reasoning) 3
+MA: Benchmark Math (Based on Placement) 3/4 NS (Natural Sciences)* 3
+HU (Humanities)* 3 GVPT201 (SP: Scholarship in Practice) 3
+GVPT170 (HS: History/Social Sciences) 3 Elective 3
+UNIV100 or BSOS361 1 Elective 3
+Elective 3
+Total 16 Total 15
+Year 2 Fall Spring
+Check in with your advisor regarding your benchmark
+progress!
+Benchmark 2 Requirements must be completed
+within one semester of completing Benchmark 1:
+GVPT320 with a grade of C- or higher
+Course Credit Course Credit
+OC (Oral Communications) 3
+CC (Cultural Competency)*
+3UP (Understanding Plural Societies)*
+3 HU (Humanities)* 3GVPT320
+3 GVPT Methods Course UL 3ECON200 (HS: History/Social Sciences)
+3Foreign Language Requirement 4
+Elective 3 Elective 3
+Total 16 Total 15
+Year 3 Fall Spring
+When you’re between 75—89 credits, watch out
+for an email from your Advisors regarding your
+remaining degree requirements!
+Course Credit Course Credit
+GVPT200/280/282 3 GVPT Quantitative Methods Course 2 UL 3
+GVPT Quantitative Methods Course 1 UL 3 GVPT Course of Choice 1 3
+Quantitative Skills 1 Course 3 Quantitative Skills 2 Course 3
+NL (Natural Sciences Lab)* 4 SP: Scholarship in Practice (non-major)* 3
+Elective 3 Elective 3
+Total 16 Total 15
+Year 4 Fall Spring
+Apply for graduation! Course Credit Course Credit
+PW (Professional Writing) 3 GVPT Course of Choice 4 UL 3
+GVPT Course of Choice 2 3 GVPT Course of Choice 5 UL 3
+GVPT Course of Choice 3 UL 3 Elective 3
+3 Elective 3
+Elective 3
+Total 15 Total 12
+Cumulative Credits + Planned Credits = Total Credits 120
+Last Updated:6/3/25
+,PSRUWDQW3ODQQLQJ1RWHV
+·All students must take two Distributive Studies courses
+that will also count for the SCIS: Big Question
+requirement. (Big Question courses are not listed
+separately in this plan)
+·8QGHUVWDQGLQJ3OXUDO6RFLHWLHVFRXUVHVPD\DOVRIXOILOOD
+'LVWULEXWLYH6WXGLHVFDWHJRU\
+Elective

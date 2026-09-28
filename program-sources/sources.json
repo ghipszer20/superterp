@@ -61,10 +61,11 @@
   },
   "african-american-africana-studies-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/african-american-africana-studies/african-american-africana-studies-major/",
-    "department": [],
-    "samplePlan": [
-      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
-    ]
+    "department": [
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/AAAS%20Major%20Checklist%20050224%20Writable.pdf",
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/AAAS%20Public%20Policy%20Major%20Checklist%20040824%20writable.pdf"
+    ],
+    "samplePlan": []
   },
   "african-studies-minor": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/african-american-africana-studies/african-studies-minor/",
@@ -118,11 +119,11 @@
   "anthropology-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/anthropology/anthropology-major/",
     "department": [
-      "https://anth.umd.edu/undergraduate/how-become-anthropology-major"
+      "https://anth.umd.edu/undergraduate/how-become-anthropology-major",
+      "https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/ANTH%20BA%20Major%20Checklist%20050124%20Writable.pdf",
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/ANTH%20BS%20Major%20Checklist%20050224%20Writable%20(1).pdf"
     ],
-    "samplePlan": [
-      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
-    ]
+    "samplePlan": []
   },
   "anti-black-racism-minor": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/african-american-africana-studies/anti-black-racism-minor/",
@@ -315,10 +316,10 @@
   },
   "behavioral-social-sciences-social-data-science-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/social-data-science-major/",
-    "department": [],
-    "samplePlan": [
-      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
-    ]
+    "department": [
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/Final%20SDSC%20-%20General%20Course%20Sequence%20Requirements%20Guide%20current.pdf"
+    ],
+    "samplePlan": []
   },
   "biochemistry-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/chemistry-biochemistry/biochemistry-major/",
@@ -569,9 +570,11 @@
   },
   "criminology-criminal-justice-criminology-criminal-justice-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/criminology-criminal-justice/criminology-criminal-justice-major/",
-    "department": [],
+    "department": [
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/CCJS%20Major%20Checklist%20041824%20Writable.pdf"
+    ],
     "samplePlan": [
-      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/2%20Year%20Plans/CCJS_Draft%20TwoYear%20Plan%20(1).pdf"
     ]
   },
   "cyber-physical-systems-engineering": {
@@ -645,10 +648,11 @@
   },
   "economics-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/economics/economics-major/",
-    "department": [],
-    "samplePlan": [
-      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
-    ]
+    "department": [
+      "https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/ECON%20BA%20Major%20Checklist%20042324%20Writable.pdf",
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/ECON%20BS%20Major%20Checklist%20042424%20writable.pdf"
+    ],
+    "samplePlan": []
   },
   "economics-minor": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/economics/economics-minor/",
@@ -867,10 +871,14 @@
   "geographical-sciences-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/geographical-sciences/geographical-sciences-major/",
     "department": [
-      "https://geog.umd.edu/"
+      "https://geog.umd.edu/",
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/GEOG%20Major%20Checklist%20042524%20Writable.pdf",
+      "https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/GEOG%20CEOS%20Major%20Checklist%20042524%20Writable.pdf",
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/GEOG%20Geospatial%20Data%20Science%20Major%20Checklist%20042924%20Writable.pdf"
     ],
     "samplePlan": [
-      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+      "https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/2%20Year%20Plans/geographical_sciences_2yearplan.pdf",
+      "https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/2%20Year%20Plans/geographical_sciences_GDS_2yearplan.pdf"
     ]
   },
   "geological-environmental-planetary-sciences-chesapeake-bay-watersheds-water-resources-minor": {
@@ -989,11 +997,11 @@
       "https://gvpt.umd.edu/undergraduate/major-requirements",
       "https://gvpt.umd.edu/undergraduate/government-and-politics-major-requirements-bachelor-arts",
       "https://gvpt.umd.edu/undergraduate/government-and-politics-major-requirements-bachelor-science",
-      "https://gvpt.umd.edu/undergraduate/gvpt-major-requirements-no-concentration"
+      "https://gvpt.umd.edu/undergraduate/gvpt-major-requirements-no-concentration",
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BSOS%20Forms/GVPT%20Major%20Checklist%20060325.pdf",
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BSOS%20Forms/GVPT%20BS%20Checklist%20060325.pdf"
     ],
-    "samplePlan": [
-      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
-    ]
+    "samplePlan": []
   },
   "greek-language-culture-minor": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/classical-languages-literature/greek-language-culture-minor/",
@@ -1004,9 +1012,11 @@
   },
   "hearing-speech-sciences-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/hearing-speech-sciences/hearing-speech-sciences-major/",
-    "department": [],
+    "department": [
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BSOS%20Forms/HESP%20Major%20Checklist%20090425%20Writable.pdf"
+    ],
     "samplePlan": [
-      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+      "https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/2%20Year%20Plans/2024%20HESP%20Two-year%20Sample%20Academic%20Plan.pdf"
     ]
   },
   "hearing-speech-sciences-minor": {
@@ -1169,7 +1179,9 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/government-politics/international-relations-major/",
     "department": [
       "https://gvpt.umd.edu/undergraduate/international-relations-major-requirements-bachelor-arts",
-      "https://gvpt.umd.edu/undergraduate/international-relations-major-requirements-bachelor-science"
+      "https://gvpt.umd.edu/undergraduate/international-relations-major-requirements-bachelor-science",
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BSOS%20Forms/IR%20BA%20Major%20Checklist%20060325.pdf",
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BSOS%20Forms/IR%20BS%20Major%20Checklist%20060325.pdf"
     ],
     "samplePlan": []
   },
@@ -1680,12 +1692,12 @@
   "psychology-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/psychology/psychology-major/",
     "department": [
-      "https://psyc.umd.edu/",
-      "https://bsos.umd.edu/",
-      "https://psyc.umd.edu/undergraduate/program-learning-objectives"
+      "https://psyc.umd.edu/undergraduate/degree-requirements-bs-and-ba",
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/PSYC%20Major%20Checklist%20042324%20Writable.pdf"
     ],
     "samplePlan": [
-      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+      "https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BA%20PSYC%20-%20Two%20Year%20Plan.pdf",
+      "https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BS%20PSYC%20-%20Two%20Year%20Plan.pdf"
     ]
   },
   "psychology-neuroscience-major": {
@@ -1864,10 +1876,10 @@
   },
   "sociology-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/sociology/sociology-major/",
-    "department": [],
-    "samplePlan": [
-      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
-    ]
+    "department": [
+      "https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/SOCY%20Major%20Checklist%20050724%20writable.pdf"
+    ],
+    "samplePlan": []
   },
   "sociology-minor": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/sociology/sociology-minor/",

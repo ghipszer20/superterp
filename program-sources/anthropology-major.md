@@ -2,7 +2,8 @@
 # Anthropology Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/anthropology/anthropology-major/
 Source: https://anth.umd.edu/undergraduate/how-become-anthropology-major
-Source: https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans
+Source: https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/ANTH%20BA%20Major%20Checklist%20050124%20Writable.pdf
+Source: https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/ANTH%20BS%20Major%20Checklist%20050224%20Writable%20(1).pdf
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -180,6 +181,263 @@ Erik HansonAssistant Director of Undergraduate StudiesUndergraduate Advisor
 Department of Anthropology4302 Chapel Lane1111A Woods HallCollege Park, MD 20742
 ehanson@umd.edu(301) 405-1436
 
-## Sample plan (https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans)
+## Department page (https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/ANTH%20BA%20Major%20Checklist%20050124%20Writable.pdf)
 
-Not converted (fetch failed: fetch failed).
+Not converted (fetch failed: Invalid Root reference.).
+
+## Department page (https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/ANTH%20BS%20Major%20Checklist%20050224%20Writable%20(1).pdf)
+
+ANTHROPOLOGY
+Bachelor of Science
+College of Behavioral and Social Sciences
+Feller Center - Advising & Career Planning
+As a University of Maryland student, you are an informed
+and active participant in your education. Therefore, you
+should:
+ Know your benchmark/gateway and degree requirements
+ Develop a graduation plan which leads to a timely
+graduation
+ Review your academic audit and evaluate your career
+planning progress during your junior year
+ Take appropriate actions to remove registration blocks
+and register on time
+ Adhere to University and College policies and deadlines
+ Be responsible for your academic actions and decisions
+Academic and Career Planning advisors are here to
+assist you in meeting your educational and professional
+goals. Therefore, the College is committed to the
+following:
+ Introducing you to major and University requirements
+upon your entrance to a BSOS major
+ Providing assistance during academic difficulty
+ Referring you to helpful campus resources
+ Providing academic and career advising throughout your
+undergraduate career
+Advising Resources
+Feller Center - Advising & Career Planning
+General questions, registration, exceptions to
+University policy, academic probation, limited
+enrollment questions, graduation concerns, career
+planning
+2nd Floor Tydings Hall
+(301) 405-1697
+Advising Email: BSOSAdvising@umd.edu
+Career Planning Email: BSOSCareers@umd.edu
+Department Advising
+Major requirements and courses, registration,
+internships, career questions, department permission
+for courses
+Erik Hanson
+1111 Woods Hall
+(301) 405-1436
+ehanson@umd.edu
+ANTH Major Benchmarks
+Benchmark Requirements: In accordance with University policy, the Department of Anthropology has established
+benchmark requirements. Students are expected to demonstrate continuing progress in their majors by completing prerequisite
+or required courses with the appropriate grades within an established timeframe. Students who do not complete benchmark
+requirements will need to choose a new major and will not be permitted to return to the Anthropology major at a later time.
+Benchmark 1: A NTH m ajors m ust com plete the following
+courses within two semesters of entering the major:
+ Academic Writing with C– or higher
+ Fundamental Studies Math with D– or higher
+ Additional Gen Ed course 1 with D– or higher
+ Additional Gen Ed course 2 with D– or higher
+ Choose first ANTH Foundational Course: ANTH 210, 222,
+240, or 260 with C– or higher
+ Choose second ANTH Foundational Course: ANTH 210, 222,
+240, or 260 with C– or higher
+Benchmark 2: A NT H m ajors m ust com plete the following
+courses within one semester of meeting Benchmark 1:
+ Choose third ANTH Foundational Course: ANTH 210, 222,
+240, or 260 with C– or higher
+ANTHmc updated 5/2/24
+ANTH Major Requirements
+Requirements [Courses in brackets are prerequisite courses] Credits Grade
+Benchmark 1 Requirements
+Academic Writing (C– or higher) —
+Fundamental Studies Math (D– or higher) —
+Additional Gen Ed course 1 (D– or higher) —
+Additional Gen Ed course 2 (D– or higher) —
+Foundational Course 1 (C– or higher):
+ANTH 210, 222, 240, or 260
+— or
+3 or 4
+Foundational Course 2 (C– or higher):
+{Choose a course not taken for Foundational Course 1}
+ANTH210, 222, 240, or 260
+— or
+3 or 4
+Benchmark 2 Requirement
+Foundational Course 3 (C– or higher):
+{Choose a course not taken for Foundational Course 1 & 2}
+ANTH210, 222, 240, or 260
+— or
+3 or 4
+ANTH Method & Theory Courses (Grade of C– or higher)
+Choose 2 of the 4 following options, 1 of which must be in your area of focus
+Medical: ANTH310 [ANTH210]
+6
+Ecological: ANTH322 [ANTH222]
+Archaeology: ANTH340 [ANTH240]
+Socio-Cultural: ANTH360 [ANTH260]
+ANTH Courses of Choice: (Grade of C– or higher)
+A maximum of 6 credits of the following courses may be applied to this requirement:
+ANTH358, ANTH386, ANTH398A
+ANTH Course of Choice 1 3
+ANTH Course of Choice 2 3
+ANTH Course of Choice 3 UL 3
+ANTH Course of Choice 4 UL 3
+ANTH Quantitative Requirement (Grade of C– or higher)
+Choose two from the following list:
+MATH107, 135 or STAT100+, MATH120, 140
+or 136, and/or MATH121 or MATH141
+7/8
+ANTH Applied Field Methods Requirement (Grade of C– or higher)
+For this requirement refer to the following list: ter.ps/anthreq
+ANTH __________ 3
+ANTH Specialization Science Courses of Choice (9 credit minimum)
+(Grade of C– or higher)
+Must come from approved list: ter.ps/anthreq
+Science Course of Choice 1 3/4
+Science Course of Choice 2 3/4
+Science Course of Choice 3 3/4
+General Education Requirements
+Fundamental Studies
+Requirements: 15 credits Course Credits Grade
+AW: Academic Writing ENGL101 3
+PW: Professional Writing — Taken
+after 60 credits 3
+OC: Oral Communication 3
+MA: Fundamental Studies Math Benchmark Math 3
+AR: Analytic Reasoning ANTH Quant. 3
+Distributive Studies
+Requirements: 25 credits Course Credits Grade
+NL: Natural Sciences Lab Foundation Course
+Option: ANTH222 4
+NS: Natural Sciences 3/4
+HS: History and/or Social Sciences Foundation Course
+Option:
+ANTH210/240/260 3
+HS: History and/or Social Sciences Foundation Course
+Option:
+ANTH210/240/260 3
+HU: Humanities 3
+HU: Humanities 3
+SP: Scholarship in Practice (overlap
+permitted with major requirement) ANTH Field
+Methods may apply 3
+SP: Scholarship in Practice (must be
+non-major requirement) 3
+Signature Courses (overlap permitted with Distributive Studies/Diversity)
+Requirements: 6 credits Course Credits Grade
+IS: Big Question —/3
+IS: Big Question —/3
+Diversity (overlap permitted with Distributive Studies/Signature Courses)
+Requirements: 4—6 credits Course Credits Grade
+UP: Understanding Plural Societies Foundation Course
+Option:
+ANTH210/240/260 3
+UP: Understanding Plural Societies
+CC: Cultural Competency OR
+Foundation Course
+Option:
+ANTH210/240/260 3
+TOTAL General Education Credits
+General Education requirements must total at least 40 credits
+ANTHROPOLOGY - BS
+NAME: _____________________________________
+UID: __________________ DATE:______________
++STAT100 preferred
+Requirements for Graduation:
+ Earn a C– or higher in Academic Writing and all major requirements
+ Earn a D– or higher in every Gen Ed course except Academic Writing
+ Earn a 2.0 average in all courses used to satisfy major requirements
+ 15 of the final 30 credits must be earned at the 300-400 level
+ 12 upper level major credits must be earned at UMD
+ At least 30 credits must be earned at UMD
+ Earn a cumulative 2.0 GPA in all UMD coursework
+ Earn a minimum of 120 credits
+ANTHROPOLOGY BS— Four Year Academic Plan
+Year 1 Fall Spring
+Complete your graduation plan!
+Benchmark 1 Requirements must be
+completed in 2 semesters
+AW: Academic Writing
+MA: Math
+Gen Ed Course 1
+Gen Ed Course 2
+Choose one course from ANTH 210,
+222, 240 or 260
+Choose second course from ANTH
+210, 222, 240 or 260
+Course Credit Course Credit
+ENGL 101 (Academic Writing) 3 OC (Oral Communications) 3
+MA (Fundamental Studies Math-based on placement) 3 HU (Humanities ) * 3
+HU (Humanities ) * 3 ANTH Foundation Course 2: ANTH 222 (NL: Natural
+Science with Lab) OR ANTH210, 240, or 260 (HS:
+History/Social Science and UP: Understanding Plural
+Societies)
+3/4
+ANTH Foundation Course 1: 210, 240, or 260 (HS:
+History/Social Science and UP: Understanding Plural
+Societies)
+3 Elective or NL: Natural Science with Lab (if not completing
+ANTH222 for Foundation Course)
+3/4
+Elective 3 Elective 3
+UNIV 100 or BSOS361 1
+Total 16 Total 15—17
+Year 2 Fall Spring
+Check in with your advisor regarding
+your benchmark or gateway progress!
+Benchmark 2 Requirements must be
+completed within 1 semester of com-
+pleting Benchmark 1.
+Choose third course from ANTH 210,
+222, 240 or 260
+Course Credit Course Credit
+ANTH Quantitative Requirement 1 – depending on
+course chosen, could count for AR
+3/4 ANTH 310, 322, 340, or 360 3
+NS (Natural Science)* 3 ANTH Quantitative Requirement 2
+(AR: Analytic Reasoning)
+3/4
+ANTH Foundation Course 3: 210, 240, or 260 (HS:
+History/Social Science and UP: Understanding Plural
+Societies) OR ANTH 222 (NL: Natural Science with
+Lab)
+3/4 Science Course of Choice 1 3/4
+Elective 3 Elective 3
+Elective 3 Elective 3
+Total 15—17 Total 15—17
+Year 3 Fall Spring
+When you’re between 75—89 credits,
+watch out for an email from your
+Advisors regarding your remaining
+degree requirements!
+Course Credit Course Credit
+SP (Scholarship in Practice—non-major) * 3 PW (Professional Writing) 3
+ANTH Course 1 3 ANTH Course 2 3
+ANTH 310, 322, 340, or 360 3 Science Course of Choice 2 3/4
+Elective 3 Elective 3
+Elective 3 Elective 3
+Total 15 Total 15—16
+Year 4 Fall Spring
+Apply for graduation! Course Credit Course Credit
+SP (Scholarship in Practice– ANTH Field Methods
+may apply)
+3 ANTH Course 4 Upper Level 3
+ANTH Course 3 Upper Level 3 ANTH Applied Field Methods 3
+Science Course of Choice 3 3/4 Elective UL 3
+Elective UL 3 Elective UL 3
+Elective 3 Elective 1
+Total 15—16 Total 13
+Cumulative Credits + Planned Credits = Total Credits 120
+Last Updated 05/02/24
+*Important Planning Notes:
+ All students must take two Distributive Studies courses
+that will also count for the SCIS: Big Question
+requirement. (Big Question courses are not listed
+separately in this plan)
+ The Understanding Plural Societies requirement will be
+satisfied by ANTH 210, 240, and/or 260.
