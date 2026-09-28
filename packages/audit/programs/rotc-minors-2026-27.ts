@@ -108,19 +108,19 @@ export const rotcMinorNavalScience: Program = {
 
 export const rotcMinorArmyLeadershipMeta: ProgramMeta = {
   kind: "minor",
-  college: "USG",
+  college: "UGST",
   short: "Army Leadership Studies",
   sources: { catalog: `${CATALOG_BASE}army-leadership-studies-minor/` },
 };
 
 export const rotcMinorMilitaryStudiesMeta: ProgramMeta = {
   kind: "minor",
-  college: "USG",
+  college: "UGST",
   sources: { catalog: `${CATALOG_BASE}military-studies-minor/` },
 };
 
 export const rotcMinorNavalScienceMeta: ProgramMeta = {
   kind: "minor",
-  college: "USG",
+  college: "UGST",
   sources: { catalog: `${CATALOG_BASE}naval-science-minor/` },
 };
