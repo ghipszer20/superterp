@@ -1,13 +1,16 @@
-// Music Major, Bachelor of Music (BM), 2026-27 UMD Academic Catalog.
+// Music Major, Bachelor of Music (BM), 2026-27 UMD Academic Catalog -- this is the BM's generic/
+// degree-level track (Strings' plan matches it exactly, so Strings gets no track file of its own).
 // Sources: academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/music/music-major/;
 // the School of Music's official Music - Bachelor of Music - Strings Four Year Academic Plan
 // (department source), https://drive.google.com/uc?export=download&id=1KKQburfg7BLqxm2EnshvLLnm0SckYw0i#Music-Performance---Strings
 // (fetched 2026-09-28). The college publishes one BM plan per area (Composition, Jazz, Piano,
-// Strings, Theory, Voice, Wind & Percussion); per the batch brief, only this generic degree-level
-// track is encoded here (Strings' plan used for concreteness), not the per-area tracks -- see
-// reviewNotes. Owner ruling (docs/project/rulings.md, 2026-09-26): where the department page (the
-// college's own plan counts as one) and the Academic Catalog disagree, the department page wins.
-// Encoded by hand. UNVERIFIED until the owner signs off.
+// Strings, Theory, Voice, Wind & Percussion); five of the six other areas turned out to have
+// genuinely different required courses and are now their own tracks of this major key ("musc") --
+// see musc-major-bm-jazz/-piano/-theory/-voice/-wind-percussion-2026-27.ts. Composition's plan
+// could not be read (see reviewNotes) so it stays on this generic track. Owner ruling
+// (docs/project/rulings.md, 2026-09-26): where the department page (the college's own plan counts
+// as one) and the Academic Catalog disagree, the department page wins. Encoded by hand. UNVERIFIED
+// until the owner signs off.
 
 import type { Program, ProgramMeta } from "../src/audit.ts";
 import {
@@ -39,10 +42,16 @@ export const muscMajorBm: Program = {
       "form and analysis, 1 of conducting, 1 of music literature, 1 of music pedagogy, 3-5 elective " +
       "credits).",
     "'8 semesters of private lessons' encoded as the Strings plan's own " +
-      "MUSP119/120/217/218/315/316/419/420 sequence, used generically for every area per this batch's " +
-      "brief and musc-shared-2026-27.ts's scope note (per-area BM tracks -- Composition, Jazz, Piano, " +
-      "Strings, Theory, Voice, Wind & Percussion -- are NOT yet encoded); the Senior Recital the " +
-      "catalog attaches to the final lesson semester is not encoded (unencodable).",
+      "MUSP119/120/217/218/315/316/419/420 sequence; this remains this generic/degree-level track's " +
+      "own requirement (Strings' numbers, used as-is since Strings matches the generic structure " +
+      "exactly). Five other areas -- Jazz, Piano, Theory, Voice, Wind & Percussion -- turned out to " +
+      "have genuinely different required courses (area-specific lesson numbers, ensemble courses, " +
+      "and/or upper-division requirements) and are now encoded as their own tracks of this major key " +
+      "(\"musc\"); see musc-major-bm-jazz/-piano/-theory/-voice/-wind-percussion-2026-27.ts. " +
+      "Composition's plan could not be read at all (the fetched text decoded to garbled, non-course " +
+      "content with no recoverable MUSP/MUSC course numbers), so it is not broken out and stays on " +
+      "this generic track pending a re-fetch. The Senior Recital the catalog attaches to the final " +
+      "lesson semester is not encoded anywhere (unencodable).",
     "'8 semesters of large ensemble participation' and '6-8 semesters of small ensemble " +
       "participation' encoded as MUSC229 x8 and MUSC129 x6 (the plan's own two ensemble course " +
       "numbers); the small-ensemble range's upper bound (8) is not enforced, only the 6-semester floor.",

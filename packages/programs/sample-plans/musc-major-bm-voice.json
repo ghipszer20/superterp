@@ -1,0 +1,24 @@
+{
+  "programId": "musc-major-bm-voice",
+  "source": "https://drive.google.com/uc?export=download&id=1HGZC7G4ULXXPlXEB6QrN3Fp0RJ5-ZpWL#Music-Performance---Voice",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "School of Music official Music - Bachelor of Music - Voice Four Year Academic Plan. Gen Ed and general-elective slots are left out (only the major is audited).",
+    "MUSC329, MUSC379 and MUSC099 are repeatable 1-credit courses entered per the plan's own legend lines; see the program's reviewNotes.",
+    "The plan's own 'Choose two from FREN103, GERS103 and ITAL103' is filled with FREN103 and GERS103.",
+    "The '1 semester of music pedagogy' slot shows 'MUSC 400V' on the plan, reconstructed to MUSC400 (a section suffix, not a distinct course number).",
+    "The '1 semester of 400-level music history elective' generic slot is filled with MUSC464, and the '3-5 credits of music electives' slot with MUSC461, both real MUSC course numbers named elsewhere in the fetched plan text (this area's own plan names no specific course for either)."
+  ],
+  "credits": { "MUSC329": 1, "MUSC379": 1, "MUSC099": 1 },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["MUSP119B", "MUSC127", "MUSC102", "MUSC150", "MUSC329", "MUSC099"] },
+    { "term": "Year 1 Spring", "courses": ["MUSP120B", "MUSC126", "MUSC103", "MUSC151", "MUSC329", "MUSC099"] },
+    { "term": "Year 2 Fall", "courses": ["MUSP217B", "MUSC123", "MUSC202", "MUSC250", "MUSC260", "MUSC329", "MUSC099"] },
+    { "term": "Year 2 Spring", "courses": ["MUSP218B", "MUSC226", "MUSC251", "MUSC360", "MUSC329", "MUSC099"] },
+    { "term": "Year 3 Fall", "courses": ["MUSP315B", "MUSC227", "MUSC361", "MUSC329", "MUSC099", "FREN103"] },
+    { "term": "Year 3 Spring", "courses": ["MUSP316B", "MUSC450", "MUSC329", "MUSC099", "GERS103"] },
+    { "term": "Year 4 Fall", "courses": ["MUSP419B", "MUSC379", "MUSC443", "MUSC464", "MUSC329"] },
+    { "term": "Year 4 Spring", "courses": ["MUSP420B", "MUSC379", "MUSC400", "MUSC490", "MUSC461", "MUSC329"] }
+  ]
+}

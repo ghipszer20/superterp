@@ -1,0 +1,22 @@
+{
+  "programId": "musc-major-bm-piano",
+  "source": "https://drive.google.com/uc?export=download&id=1ynFMU1Wj48gXVxKtkrrReC2KKerzQDCO#Music-Performance---Piano",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "School of Music official Music - Bachelor of Music - Piano Four Year Academic Plan. Gen Ed and general-elective slots are left out (only the major is audited).",
+    "MUSC128/228/328 (2 cr. x 2 semesters each), MUSC329 (1 cr. x 4 semesters) and MUSC099 (recital attendance, 1 cr.) are repeatable/multi-credit courses entered per the plan's own legend lines; see the program's reviewNotes.",
+    "The '1 semester of 400-level music history elective' generic slot is filled with MUSC460, and the plan's own 7-credit music-elective total with MUSC229, MUSC129 and MUSC461, all real MUSC course numbers named elsewhere in the fetched plan text (this area's own plan names no specific course for either)."
+  ],
+  "credits": { "MUSC128": 2, "MUSC228": 2, "MUSC328": 2, "MUSC329": 1, "MUSC099": 1 },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["MUSP119A", "MUSC150", "MUSC128", "MUSC329", "MUSC099"] },
+    { "term": "Year 1 Spring", "courses": ["MUSP120A", "MUSC151", "MUSC128", "MUSC329", "MUSC099"] },
+    { "term": "Year 2 Fall", "courses": ["MUSP217A", "MUSC250", "MUSC260", "MUSC228", "MUSC329", "MUSC099"] },
+    { "term": "Year 2 Spring", "courses": ["MUSP218A", "MUSC251", "MUSC360", "MUSC228", "MUSC329", "MUSC099"] },
+    { "term": "Year 3 Fall", "courses": ["MUSP315A", "MUSC361", "MUSC328", "MUSC099", "MUSC467"] },
+    { "term": "Year 3 Spring", "courses": ["MUSP316A", "MUSC450", "MUSC328", "MUSC099", "MUSC460"] },
+    { "term": "Year 4 Fall", "courses": ["MUSP419A", "MUSC490", "MUSC492", "MUSC229"] },
+    { "term": "Year 4 Spring", "courses": ["MUSP420A", "MUSC129", "MUSC461"] }
+  ]
+}
