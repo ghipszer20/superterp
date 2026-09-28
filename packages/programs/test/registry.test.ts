@@ -5,6 +5,9 @@ describe("program registry", () => {
   it("lists the hand-encoded majors, Math's tracks sharing one major key", () => {
     const majors = PROGRAMS.filter((p) => p.kind === "major");
     expect(majors.map((p) => p.id)).toEqual([
+      "astr-major-astrophysics",
+      "astr-major-data-science",
+      "astr-major-physical-science",
       "bchm-major",
       "cmsc-major",
       "math-major-traditional",
