@@ -13,7 +13,79 @@ Fetched: 2026-09-28
 
 ## Department page (https://cidcm.umd.edu/)
 
-Not converted (fetch failed: fetch failed).
+About Us
+Overview
+Affiliated Chairs
+Research
+Basic Research
+Policy and Applied Research
+Related Activities
+People
+Research and Teaching Faculty
+Administration
+Visiting Scholars
+Post Doctoral Associates
+Publications
+Academic Publications
+Policy Publications
+Educational Programs
+FIRE
+MIDCM
+MAIR Program
+About Us
+Overview
+Affiliated Chairs
+Research
+Basic Research
+Policy and Applied Research
+Related Activities
+People
+Research and Teaching Faculty
+Administration
+Visiting Scholars
+Post Doctoral Associates
+Publications
+Academic Publications
+Policy Publications
+Educational Programs
+FIRE
+MIDCM
+MAIR Program
+Preventing conflict, promoting development
+$2.5M Grant Funds CIDCM Study on How Armed Conflicts—Present and Future—Are Likely to End
+Margaret M. Pearson Named a Non-Resident Senior Fellow at the Brookings Institution
+Associate Research Professor Stacy Kosko Recognized for Leadership in Global Education
+UMD Critical Issues Poll: Public Support for Ukraine Jumps
+New Master of Arts in International Affairs (MAIR) Launched and Open for Applications
+David and Kathleen Cunningham Receive National Science Foundation Grant
+Associate Professor Jennifer Hadden Receives National Science Foundation Grant
+Associate Professor John McCauley Receives $1.1 million U.S. State Department Grant
+MIDCM Student Santiago Rios Awarded 2020 Charles B. Rangel Graduate Fellowship
+News & Events
+Margaret M. Pearson Examines US and China Climate Change Dynamics in Brookings Article
+Distinguished Professor Margaret M. Pearson and her coauthor Michael R. Davidson, have published a new article in Brookings titled "Where are the US and China on addressing climate change?"
+Margaret M. Pearson Examines US and China Climate Change Dynamics in Brookings Article - Read more
+Professor Kathleen Cunningham Explores the Overlooked Legitimacy of Violent Non-State Actors in New Irregular Warfare Article
+Professor Kathleen Cunningham and Santiago Stocker, Program Director at the International Republican Institute (IRI), have published a new article in Irregular Warfare titled "The Peril of Ignoring the Legitimacy of Violent Non-State Actors."
+Professor Kathleen Cunningham Explores the Overlooked Legitimacy of Violent Non-State Actors in New Irregular Warfare Article - Read more
+Professor Sarah Croco Weighs in on Political Flip-Flopping in NPR Feature
+Professor Sarah Croco was featured in an NPR article discussing the impact of political flip-flopping in presidential debates. Professor Croco's research shows that voters often don't penalize candidates for changing positions as long as they agree with the new stance.
+Professor Sarah Croco Weighs in on Political Flip-Flopping in NPR Feature - Read more
+David and Kathleen Cunningham Receive National Science Foundation Grant
+Professor David Cunnigham and Associate Professor Kathleen Cunningham have received a two-year, $480,000 grant from the National Science Foundation Political Science program to conduct a systematic study of the effect of conflict prevention actions in a wide range of intrastate disputes.
+David and Kathleen Cunningham Receive National Science Foundation Grant - Read more
+Items of Interest
+CIDCM/IR Workshop
+Journal of Conflict Resolution
+Undergraduate Research
+GVPT Global
+Ted R. Gurr Distinguished Lecture Series
+Wilkenfeld Distinguished Lecture Series
+Center for International Development and Conflict Management 2117 Chincoteague Hall, University of Maryland, 7401 Preinkert Dr, College Park, MD 20742 Phone: 301-314-7703 ♦ Email: cidcminfo [at] umd.edu Contact Us
+Give to CIDCM
+UMD Directory
+UMD Web Accessibility
+Login / Logout
 
 ## Department page (https://ilp.umd.edu/coursework)
 

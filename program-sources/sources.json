@@ -17,10 +17,10 @@
   },
   "accounting-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/accounting/accounting-major/",
-    "department": [],
-    "samplePlan": [
-      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
-    ]
+    "department": [
+      "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/"
+    ],
+    "samplePlan": []
   },
   "actuarial-mathematics-minor": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/mathematics/actuarial-mathematics-minor/",
@@ -824,10 +824,10 @@
   },
   "finance-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/finance/finance-major/",
-    "department": [],
-    "samplePlan": [
-      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
-    ]
+    "department": [
+      "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/"
+    ],
+    "samplePlan": []
   },
   "fire-protection-engineering-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/fire-protection-engineering/fire-protection-engineering-major/",
@@ -1163,7 +1163,9 @@
   },
   "information-systems-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/decision-operations-information-technologies/information-systems-major/",
-    "department": [],
+    "department": [
+      "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/"
+    ],
     "samplePlan": []
   },
   "international-agriculture-natural-resources-certificate": {
@@ -1175,10 +1177,10 @@
   },
   "international-business-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/logistics-business-public-policy/international-business-major/",
-    "department": [],
-    "samplePlan": [
-      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
-    ]
+    "department": [
+      "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/"
+    ],
+    "samplePlan": []
   },
   "international-development-conflict-management-minor": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/government-politics/international-development-conflict-management-minor/",
@@ -1410,10 +1412,10 @@
   },
   "management-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/management/management-major/",
-    "department": [],
-    "samplePlan": [
-      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
-    ]
+    "department": [
+      "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/"
+    ],
+    "samplePlan": []
   },
   "marketing": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/business/marketing/",
@@ -1426,10 +1428,10 @@
   },
   "marketing-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/marketing/marketing-major/",
-    "department": [],
-    "samplePlan": [
-      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
-    ]
+    "department": [
+      "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/"
+    ],
+    "samplePlan": []
   },
   "materials-science-engineering-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/materials-science-engineering/materials-science-engineering-major/",
@@ -1625,10 +1627,10 @@
   },
   "operations-management-business-analytics-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/decision-operations-information-technologies/operations-management-business-analytics-major/",
-    "department": [],
-    "samplePlan": [
-      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
-    ]
+    "department": [
+      "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/"
+    ],
+    "samplePlan": []
   },
   "persian-studies-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/persian-studies/persian-studies-major/",
@@ -1967,10 +1969,10 @@
   },
   "supply-chain-management-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/logistics-business-public-policy/supply-chain-management-major/",
-    "department": [],
-    "samplePlan": [
-      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
-    ]
+    "department": [
+      "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/"
+    ],
+    "samplePlan": []
   },
   "surficial-geology-minor": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/surficial-geology-minor/",

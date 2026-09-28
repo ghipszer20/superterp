@@ -34,8 +34,167 @@ Students must have a minimum 2.0 cumulative grade point average across all cours
 
 ## Department page (https://hesp.umd.edu/)
 
-Not converted (fetch failed: fetch failed).
+Pinterest
+HESP InTERPretation Blog
+LinkedIn
+HESP YouTube
+Instagram
+About Us
+Welcome to HESP
+People
+HESP Initiatives
+Diversity and Inclusion Efforts in HESP
+Campus Location
+Department Policies
+Undergraduate
+Welcome to our Undergraduate Program!
+How To Declare
+Resources and Opportunities for Students
+Graduation and Preparation for Graduate School
+Graduate
+Prospective Students
+Admitted Students
+Current Students
+Alumni
+Continue Learning
+Research
+Applied Clinical Research
+Assistive Technology-Rehab for Speech, Language, and Hearing
+Cognitive Neuroscience and Communication Disorders
+Communication and Communication Disorders Across the Life Span
+Clinic
+About Us
+Welcome to HESP
+People
+HESP Initiatives
+Diversity and Inclusion Efforts in HESP
+Campus Location
+Department Policies
+Undergraduate
+Welcome to our Undergraduate Program!
+How To Declare
+Resources and Opportunities for Students
+Graduation and Preparation for Graduate School
+Graduate
+Prospective Students
+Admitted Students
+Current Students
+Alumni
+Continue Learning
+Research
+Applied Clinical Research
+Assistive Technology-Rehab for Speech, Language, and Hearing
+Cognitive Neuroscience and Communication Disorders
+Communication and Communication Disorders Across the Life Span
+Clinic
+Strengthening Communication, Improving Lives
+UMD Hearing and Speech Clinic Now Offering Otology Services
+Communication across the Lifespan at Maryland (CALM)
+Mid Atlantic CI Research Group Study Bulletin Board
+HESP Seminar Series
+Post-Master's Certificate in Bilingual Speech-Language Pathology
+2025 US News & World Report Rankings
+Cochlear Implant Emphasis Program (CI-EP)
+HESP InTerpretation
+What makes the UMD Hearing and Speech Clinic different?
+News & Events
+Anhelina Bilokon Awarded F32 Grant
+Anhelina Bilokon, AuD and PhD Candidate, has been awarded a post-doctoral fellowship award to study how sex as a biological variable impacts auditory processing.
+Anhelina Bilokon Awarded F32 Grant - Read more
+Danielle Powell Awarded K23 Grant
+Danielle Powell, AuD PhD, has been awarded a K23 grant to study hearing healthcare in older adults. Her project, HEAR-PC: Advancing Hearing Health in Aging: Multilevel Factors and Pragmatic Solutions in Primary Care, will investigate methods for improving access to care.
+Danielle Powell Awarded K23 Grant - Read more
+HESP Department Chair, Samira Anderson, Receives 2026 Distinguished Scholar-Teacher Award
+We are proud to congratulate Samira Anderson on receiving the University of Maryland’s Distinguished Scholar-Teacher Award, presented on Wednesday September 9th, during the Faculty and Staff Convocation ceremony.
+HESP Department Chair, Samira Anderson, Receives 2026 Distinguished Scholar-Teacher Award - Read more
+Beyond the Audiogram: What Extended High Frequency Hearing Reveals About Auditory Function
+Humans can hear well beyond the 8 kHz ceiling of the clinical audiogram, yet hearing at extended high frequencies (EHFs, 10 to 16 kHz) can be substantially impaired even when conventional thresholds are entirely normal.
+Beyond the Audiogram: What Extended High Frequency Hearing Reveals About Auditory Function - Read more
+Items of Interest
+Paid PhD Research Opportunity: CEBH
+Job Openings
+HESP Pre-requisites (HESPIE)
+Post-Master's Bilingual Certificate
+Continuing Education
+Accreditation and Outcomes
+Diversity and Inclusion Efforts in HESP
+Publications
+Low-frequency interaural time differences are resistant to across-frequency binaural interference across a range…
+Documented follow‑up to memory concerns reported at the Medicare Annual Wellness Visit
+Avoidance reduction therapy for stuttering: Case spotlights through an ARTS lens.
+Information load predicts stuttering events
+Inflectional morphology and word order in agrammatic production
+Department of Hearing and Speech Sciences University of Maryland, 0100 Samuel J. LeFrak Hall 7251 Preinkert Dr., College Park, MD 20742 Main Office: 301-405-4213 ♦ Clinic: 301-405-4218 Email: hesp_bus_request [at] umd.edu ♦ Contact Us ♦ Accreditation
+Give to Hearing and Speech Sciences
+Alumni Listserv & Newsletter
+HESP Research
+Meet Our Faculty
+College Directory
+UMD Web Accessibility
+Login / Logout
 
 ## Department page (https://hesp.umd.edu/landingtopic/advising)
 
-Not converted (fetch failed: fetch failed).
+Pinterest
+HESP InTERPretation Blog
+LinkedIn
+HESP YouTube
+Instagram
+About Us
+Welcome to HESP
+People
+HESP Initiatives
+Diversity and Inclusion Efforts in HESP
+Campus Location
+Department Policies
+Undergraduate
+Welcome to our Undergraduate Program!
+How To Declare
+Resources and Opportunities for Students
+Graduation and Preparation for Graduate School
+Graduate
+Prospective Students
+Admitted Students
+Current Students
+Alumni
+Continue Learning
+Research
+Applied Clinical Research
+Assistive Technology-Rehab for Speech, Language, and Hearing
+Cognitive Neuroscience and Communication Disorders
+Communication and Communication Disorders Across the Life Span
+Clinic
+About Us
+Welcome to HESP
+People
+HESP Initiatives
+Diversity and Inclusion Efforts in HESP
+Campus Location
+Department Policies
+Undergraduate
+Welcome to our Undergraduate Program!
+How To Declare
+Resources and Opportunities for Students
+Graduation and Preparation for Graduate School
+Graduate
+Prospective Students
+Admitted Students
+Current Students
+Alumni
+Continue Learning
+Research
+Applied Clinical Research
+Assistive Technology-Rehab for Speech, Language, and Hearing
+Cognitive Neuroscience and Communication Disorders
+Communication and Communication Disorders Across the Life Span
+Clinic
+Advising
+Information about academic advising can be found below.
+Department of Hearing and Speech Sciences University of Maryland, 0100 Samuel J. LeFrak Hall 7251 Preinkert Dr., College Park, MD 20742 Main Office: 301-405-4213 ♦ Clinic: 301-405-4218 Email: hesp_bus_request [at] umd.edu ♦ Contact Us ♦ Accreditation
+Give to Hearing and Speech Sciences
+Alumni Listserv & Newsletter
+HESP Research
+Meet Our Faculty
+College Directory
+UMD Web Accessibility
+Login / Logout

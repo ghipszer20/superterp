@@ -144,7 +144,85 @@ Web Accessibility
 
 ## Department page (https://aasd.umd.edu/)
 
-Not converted (fetch failed: fetch failed).
+Facebook
+Twitter
+Youtube
+Instagram
+About Us
+Welcome to AASD
+People
+Undergraduate
+Overview of Programs
+Academic and Career Opportunities
+Student Resources
+Research
+Urban and Community Studies
+Health and Family Wellbeing
+Race, Culture and Social Status
+Global and Comparative Studies
+Community
+Centers
+Department Blog
+Museums
+About Us
+Welcome to AASD
+People
+Undergraduate
+Overview of Programs
+Academic and Career Opportunities
+Student Resources
+Research
+Urban and Community Studies
+Health and Family Wellbeing
+Race, Culture and Social Status
+Global and Comparative Studies
+Community
+Centers
+Department Blog
+Museums
+Enhancing and Elevating the Black Experience
+UMD Researchers Merge Data and the Arts on the Streets of Nairobi
+The Diamondback: "To UMD community members, 100 years of Black History Month signifies strength, resilience"
+How Professor John Drabinski Wrote Three Books at Once
+Dr. Sangeetha Madhavan featured in The Standard!
+News
+The Diamondback: "To UMD community members, 100 years of Black History Month signifies strength, resilience"
+Our chair, Dr. Sharon Harley, was recently featured in UMD's student newspaper, The DiamondBack. The article highlights the importance of celebrating Black History month. Please read the entire article at https://dbknews.com/2026/02/26/100-years-black-history-month/.
+The Diamondback: "To UMD community members, 100 years of Black History Month signifies strength, resilience" - Read more
+How Professor John Drabinski Wrote Three Books at Once
+How Black vernacular culture, Baldwin and the Atlantic world shape his latest scholarship. Earlier this year, Professor of African American and Africana Studies and English John Drabinski finished a remarkable sprint, submitting three completed book manuscripts in just five days—a rare milestone in academic publishing.
+How Professor John Drabinski Wrote Three Books at Once - Read more
+Joseph Richardson Reflects on his MPower Professorship
+Joseph Richardson, a professor with a joint appointment in the Department of African American and Africana Studies and Department of Anthropology, was named one of eight inaugural recipients of the MPower Professorship—a program that launched in 2021 to recognize, incentivize and support collaboration among faculty at the University of Maryland, Baltimore (UMB) and the University of Maryland, C
+Joseph Richardson Reflects on his MPower Professorship - Read more
+New publication: Moving for Love: Interracial Marriage and Migration in Brazil
+Earlier this year, Associate Professor Chinyere K. Osuji published, "Moving for Love: Interracial Marriage and Migration in Brazil," which explores the relationship between migration and interracial marriage in Brazil. Dr.
+New publication: Moving for Love: Interracial Marriage and Migration in Brazil - Read more
+New Podcast Explores Past, Present & Future of Black Studies
+Ashley Newby and John Drabinski Rolled Out “The Black Studies Podcast” this Summer, with $100K in Support from the Mellon Foundation Most of the country’s African American studies departments celebrated their 50th anniversaries in 2020—or they would have, had COVID-19 not happened.
+New Podcast Explores Past, Present & Future of Black Studies - Read more
+AAAS Welcomes Dr. Odette Sangupamba Mwilu!
+AAAS welcomes our guest - Dr. Odette Sangupamba Mwilu, Dean and Professor at the College of Computer Sciences at the Catholic University of Congo in Kinshasa. She is no stranger to our department. Last year, she presented her lecture, "Young African Inventors in the 20th and 21st Century", as a part of our John B. Slaughter Lecture Series.
+AAAS Welcomes Dr. Odette Sangupamba Mwilu! - Read more
+Mira Morgan '22
+Mira Morgan is a Public Policy and African American Studies double major who graduated in the Spring of 2022.
+Cathryn Paul '16
+Cathryn Paul is the Public Policy Director at CASA, the largest immigrant rights organization in the region, where she leads immigrant advocacy campaigns on the local, state, and feder
+Chaz R. Ball '08
+Chaz came into College Park as a Government and Politics major and took on African American Studies as a second major after a great experience in an AASP class freshman year.
+Singleton McCallister '75
+Although she double majored in African American Studies and Government and Politics during her undergraduate career at the University of Maryland, Singleton McAllister is exc
+Harry Alford III '07
+Harry Alford III, the co-founder of a D.C.-based venture development firm, and an adjunct professor at UMD, was named Interim Director of the university’s Southe
+Omar Eaton-Martinez '96
+Omar recruits and manages 200+ interns and fellows who support a wide range of Museum projects. He promotes intern/fellows programs to colleges and universities and other institutions.
+Department of African American and Africana Studies University of Maryland 1119 Taliaferro Hall, 4280 Chapel Lane, College Park, MD 20742 Phone: 301-405-1158 Contact Us
+Give to African American and Africana Studies
+Join Our Listserv
+College Directory
+Alumni
+UMD Web Accessibility
+Login / Logout
 
 ## Department page (https://arhu.umd.edu/undergraduate/academics/minors)
 

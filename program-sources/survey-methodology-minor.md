@@ -72,4 +72,96 @@ The minor is designed to be completed during the junior and senior years, but st
 
 ## Department page (https://jpsm.umd.edu/)
 
-Not converted (fetch failed: fetch failed).
+Facebook
+Twitter
+Linked in
+Google Scholar
+About
+Program Overview
+Our Faculty
+Awards & Achievements
+JPSM PhD Alumni
+Academics
+Online Programs
+Onsite Programs
+Non-Degree Seeking Student
+Professional Development
+Admissions
+Admissions
+Courses
+Online Courses
+Onsite Courses
+All Courses
+Research Highlights
+Global COVID-19 Trends and Impact Survey, in partnership with Facebook
+The Global COVID-19 Trends and Impact Survey
+Improving the Measurement of Economic Activity
+Improving the Design of Mobile Surveys
+Improving the Analysis of Complex Data in Social & Bio-Medical Settings
+Improving Statistical Methodology with Multiple Complex Big Databases
+Resources
+Distinguished Lecture Archive
+General Information for Graduates
+General Program Information
+Graduate Student Rights and Responsibilities / Alumni Resources
+About
+Program Overview
+Our Faculty
+Awards & Achievements
+JPSM PhD Alumni
+Academics
+Online Programs
+Onsite Programs
+Non-Degree Seeking Student
+Professional Development
+Admissions
+Admissions
+Courses
+Online Courses
+Onsite Courses
+All Courses
+Research Highlights
+Global COVID-19 Trends and Impact Survey, in partnership with Facebook
+The Global COVID-19 Trends and Impact Survey
+Improving the Measurement of Economic Activity
+Improving the Design of Mobile Surveys
+Improving the Analysis of Complex Data in Social & Bio-Medical Settings
+Improving Statistical Methodology with Multiple Complex Big Databases
+Resources
+Distinguished Lecture Archive
+General Information for Graduates
+General Program Information
+Graduate Student Rights and Responsibilities / Alumni Resources
+Educating generations of survey methodologists and data scientists
+JPSM Ph.D. Student Ujjayini Das receives the ASA 2026 Edward C. Bryant Scholarship
+Multiple JPSM Student Award winners at AAPOR 2026!
+JPSM 2026 Distinguished Lecture Recap
+Prof. Partha Lahiri appointed President-Elect of the International Association of Survey Statisticians
+JPSM Students News
+JPSM-World Bank Training Program in Sampling Techniques
+Joseph Parsons, M.S. ’95, Appointed Administrator of USDA National Agricultural Statistics Service
+JPSM 30th Anniversary Celebration
+News & Events
+JPSM 2026 Distinguished Lecture Recap
+On April 9, 2026, the Joint Program in Survey Methodology (JPSM) hosted the 2026 JPSM Distinguished Lecture at the University of Maryland, College Park.
+JPSM 2026 Distinguished Lecture Recap - Read more
+Recording of 2025 JPSM Distinguished Lecture
+JPSM Distinguished Lecture 2025 Generalizing for Sampling and Causal Inference
+Recording of 2025 JPSM Distinguished Lecture - Read more
+Free UMD AI and Career Empowerment Certificate
+AI and Career Empowerment Certificate
+Free UMD AI and Career Empowerment Certificate - Read more
+Pathways Forward Resource Hub: Support for Maryland's Federal Workforce
+Pathways Forward Resource Hub: Support for Maryland's Federal Workforce - Read more
+Items of Interest
+JPSM MS Program
+Why Study Here?
+JPSM Overview
+Online Program
+JPSM Short Courses
+30th Anniversary Celebration
+Joint Program in Survey Methodology 1218 LeFrak Hall, 7251 Preinkert Dr., College Park, MD 20742 Phone: 301-314-7911 ♦ Fax: 301-314-7912 ♦ Contact Us
+Directory
+Alumni
+UMD Web Accessibility
+Login / Logout

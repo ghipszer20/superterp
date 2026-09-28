@@ -125,7 +125,15 @@ async function extractPdfLines(bytes: Uint8Array): Promise<string[]> {
 }
 
 const CONTENT_SELECTORS = ["#textcontainer", "main", "#main", "#content", ".main-content", "article", "body"];
+/** Catalog college/department pages keep their requirements in extra tabs after #textcontainer
+ * (e.g. the Smith School's shared business core is under "College Requirements"). */
+const CATALOG_EXTRA_TABS = ["#collegerequirementstextcontainer", "#requirementstextcontainer"];
 function extractGenericPage(html: string): string[] {
+  const overview = extractSection(html, "#textcontainer");
+  if (overview?.length) {
+    const extra = CATALOG_EXTRA_TABS.flatMap((selector) => extractSection(html, selector) ?? []);
+    return [...overview, ...extra];
+  }
   for (const selector of CONTENT_SELECTORS) {
     const blocks = extractSection(html, selector);
     if (blocks && blocks.length) return blocks;
