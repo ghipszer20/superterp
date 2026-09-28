@@ -30,7 +30,7 @@ export const agstMajorAgronomy: Program = {
       "'Education, Computer Science or Policy' (the table row itself says 'Computer Application', " +
       "the footnote says 'Computer Science' -- read as the footnote's wording since it is the more " +
       "specific of the two). No UMD subject prefix is named in the source for any of the three areas; " +
-      "encoded as departments EDCP (Education), CMSC (Computer Science) and PLCY (Policy) as the best-" +
+      "encoded as departments CHSE/EDCI/EDCP/EDHD/EDHI/EDPS/EDSP/EDUC/HDCC/TLPL (every College of Education prefix in the Academic Catalog; widened by the main session from EDCP alone), CMSC (Computer Science) and PLCY (Policy) as the best-" +
       "match real UMD subject codes, but this is the builder's inference, not a catalog-stated code. " +
       "Please confirm the intended subjects before verifying (`multidiscipline-elective` in this file).",
     "Every 'This course will be chosen in consultation with the academic advisor' restricted-elective " +
@@ -106,7 +106,7 @@ export const agstMajorAgronomy: Program = {
       name: "Multidiscipline Restricted Elective: Education, Computer Science or Policy (3 credits)",
       count: 1,
       credits: 3,
-      from: { departments: ["EDCP", "CMSC", "PLCY"] },
+      from: { departments: ["CHSE", "EDCI", "EDCP", "EDHD", "EDHI", "EDPS", "EDSP", "EDUC", "HDCC", "TLPL", "CMSC", "PLCY"] },
     },
     { kind: "course", id: "plsc389-agron", name: "Internship (PLSC389)", options: ["PLSC389"] },
     { kind: "course", id: "plsc460-agron", name: "Application of Knowledge in Plant Sciences (PLSC460)", options: ["PLSC460"] },
