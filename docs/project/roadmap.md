@@ -34,6 +34,7 @@ MVP recommendation: Phases 0–2 plus what-if audits and section recommendations
 ## Known to-dos
 Moved out of PROJECT_MEMORY.md section 14 on 2026-09-28.
 - email a copy of each signed Advisor agreement to the owner's records address (with deployment; address from the owner as an env var); the GTFS feed ends 2026-12-24 (warn in the UI and in a scheduled check first); check the GTFS license before public launch; show last good data when a source is down (needs a database); deployment (Vercel + Supabase accounts from the owner) with pre-warmed data.
+- **OCR the unreadable ARHU plan PDFs** (2026-09-28): 18 of the 59 ARHU four-year plans (Google Drive PDFs) convert to garbled text (font obfuscation): Chinese, Cinema x2, Communication x5, Dance, Global Culture, HCAI, Immersive Media, Music Jazz Studies and Composition, Theatre, WGSS. Those majors use constructed plans (official: false). Render the pages to images and OCR them (tesseract.js is already a dependency) in fetch-sources, then re-check those plans.
 
 ## History
 - **First build (2026-09-24, done):** the Campus tab (dining, library hours, RecWell, buses, study-room availability). It also sets up the repo, design system and scraper infrastructure.
