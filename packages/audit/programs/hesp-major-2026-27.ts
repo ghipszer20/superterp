@@ -19,6 +19,7 @@ export const hespMajor: Program = {
   minGrade: "C-",
   verified: false,
   reviewNotes: [
+    "Main session, 2026-09-28: the Disorder and Elective lists now accept the UNION of the checklist and the 2026-27 catalog (HESP410 from the checklist, HESP498 and HESP413/415/416 from the catalog), so a student following either source is not failed. HESP410 is not in the current catalog's approved-course list. The notes below describe the builder's original checklist-only reading.",
     "Department-checklist-vs-catalog difference (flagged both ways per the owner's dated-checklist caveat): " +
       "the Disorder Courses list. The catalog names HESP402, HESP404, HESP406 or HESP498; the department " +
       "checklist names HESP402, HESP404, HESP406 or HESP410 (HESP498 not listed there). Encoded here with " +
@@ -78,9 +79,11 @@ export const hespMajor: Program = {
     {
       kind: "choose",
       id: "hesp-disorder",
-      name: "Disorder Course (select one of HESP402, HESP404, HESP406, HESP410)",
+      name: "Disorder Course (select one)",
       count: 1,
-      from: { courses: ["HESP402", "HESP404", "HESP406", "HESP410"] },
+      // Union of the 2025 checklist (HESP410) and the 2026-27 catalog (HESP498); HESP410 is not in
+      // the current catalog's approved-course list (main session, 2026-09-28).
+      from: { courses: ["HESP402", "HESP404", "HESP406", "HESP410", "HESP498"] },
     },
     {
       kind: "choose",
@@ -93,6 +96,9 @@ export const hespMajor: Program = {
           "HESP404",
           "HESP406",
           "HESP410",
+          "HESP413",
+          "HESP415",
+          "HESP416",
           "HESP417",
           "HESP418",
           "HESP420",
