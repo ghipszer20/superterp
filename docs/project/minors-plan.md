@@ -51,5 +51,6 @@ Order: the tiny bundles first (fastest registry growth, and they prove the brief
 college by college. At most 3 builders run at once, and the next one starts whenever one is merged.
 
 ## Status
-- Running: t-bsos1, t-bsos2, t-educ.
-- Merged: (none yet)
+- Merged (2026-09-28): t-bsos2 (85k tokens), t-bsos1 (80k), t-educ (88k). 13 minors.
+- Running: t-sph-jour, t-rotc, t-engr.
+- Rule added after round 1: slots with no published list are left out of `requirements` and tagged `OPEN SLOT:` in reviewNotes (see roadmap Known to-dos).
