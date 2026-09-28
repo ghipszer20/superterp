@@ -5,8 +5,7 @@
   "official": true,
   "notes": [
     "Fall 2026 Bioengineering Graduation Plan (Clark School resource_documents PDF). Gen Ed, ENGL101, Professional Writing, Oral Communication and free-elective slots are left out: only the major is audited.",
-    "BIOE Foundational I & II, BIOE Elective I-IV, Biological Science Elective II and the Breadth Elective are not encoded as Program requirements (no approved-course list in the source; see docs/project/owner-review.md), so those slots are also left out of this plan.",
-    "Biological Science Elective I (BSCI 2xx) is filled with BSCI222 (Principles of Genetics), a real 200-level BSCI course, to satisfy the encoded departments/number-range requirement. The department's term sheet lists this slot at 4 credits.",
+    "The plan's elective slots are generic (\"BIOE Foundational I\", \"BIOE Elective II\", etc.); this plan fills each with a specific listed course, chosen from the department's electives/tracks pages (see program reviewNotes): BIOE404 and BIOE461 for BIOE Foundational I & II; BIOE411, BIOE431, BIOE442 and BIOE474 for BIOE Elective I-IV; MATH463 for the Breadth Elective; BSCI222 for Biological Science Elective I (200-level, the department's term sheet lists this slot at 4 credits); BSCI404 for Biological Science Elective II (300-level, satisfying the 'at least one 300+' policy).",
     "Chemistry lecture sequence taken as CHEM135 (the plan's own default); CHEM131 & CHEM134 is the encoded department-page alternative, not used here.",
     "Cell Biology & Physiology taken as BSCI331 & BSCI332 (the plan's own default); BSCI330 is the encoded catalog alternative, not used here."
   ],
@@ -30,9 +29,9 @@
     { "term": "Freshman Spring", "courses": ["BIOE241", "MATH141", "PHYS161", "BIOE120", "BIOE121"] },
     { "term": "Sophomore Fall", "courses": ["CHEM231", "CHEM232", "MATH241", "MATH243", "PHYS260", "PHYS261", "BIOE221"] },
     { "term": "Sophomore Spring", "courses": ["BIOE232", "ENES102", "BIOE246", "BSCI222", "ENES200"] },
-    { "term": "Junior Fall", "courses": ["BIOE331", "BIOE372", "BSCI331", "BSCI332"] },
-    { "term": "Junior Spring", "courses": ["BIOE340", "BIOE457"] },
-    { "term": "Senior Fall", "courses": ["BIOE485"] },
-    { "term": "Senior Spring", "courses": ["BIOE486"] }
+    { "term": "Junior Fall", "courses": ["BIOE331", "BIOE372", "BSCI331", "BSCI332", "BIOE404"] },
+    { "term": "Junior Spring", "courses": ["BIOE340", "BIOE457", "BIOE461", "BIOE411"] },
+    { "term": "Senior Fall", "courses": ["BIOE485", "BIOE431", "BIOE442", "MATH463"] },
+    { "term": "Senior Spring", "courses": ["BIOE486", "BIOE474", "BSCI404"] }
   ]
 }
