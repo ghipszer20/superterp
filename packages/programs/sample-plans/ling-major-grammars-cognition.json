@@ -1,0 +1,23 @@
+{
+  "programId": "ling-major-grammars-cognition",
+  "source": "https://drive.google.com/uc?export=download&id=1KT5gd9SfMR4YB1Kh_S3P9-yCgpQmBBRG#Music-Liberal-Arts---Grammars-and-Cognition",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities' Linguistics - Grammars & Cognition Four Year Academic Plan. The source PDF's term grid converts to garbled, column-interleaved text (Fall/Spring/benchmark-sidebar cells run together on each line), so exact per-slot Fall/Spring placement could not be reliably reconstructed; flagged in docs/project/owner-review.md. The plan's own benchmark sidebar confirms the full course list matches the catalog exactly (LING200/240/311/321, PHIL170 x1 (also satisfying the AR Gen Ed, hence its two mentions), 'two of LING312/320/322/410/440/444', LING350/PHIL360 x1, 'LING/PSYC/HESP/PHIL/CMSC 1xx-4xx' x2, 'LING 3xx-4xx' x3), so no course was invented to fill an unnamed placeholder; only the term (year/semester) each falls in is a best-effort reconstruction, placed by benchmark order (LING200/240 by benchmark 1; LING311/321 and PHIL170 by benchmark 2; the remaining track and elective slots after). Gen Ed and general-elective slots are left out: only the major is audited.",
+    "'Select two of LING312, LING322, LING320, LING410, LING440, LING444' filled with LING312 and LING322.",
+    "'Three 3xx-4xx level LING electives' (no course-to-slot list in either source) filled with LING330, LING420, LING451, all from the Academic Catalog's approved-course list the main session supplied for plan slots.",
+    "'LING350 or PHIL360' filled with LING350.",
+    "'Select two approved electives in LING, PSYC, HESP, PHIL, or CMSC' (no number range given) filled with PSYC300 and HESP300, both real courses already used elsewhere in this codebase (psyc-major-ba-2026-27.ts, hesp-major-2026-27.ts)."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["LING200"] },
+    { "term": "Year 1 Spring", "courses": ["LING240"] },
+    { "term": "Year 2 Fall", "courses": ["LING311", "LING321", "PHIL170"] },
+    { "term": "Year 2 Spring", "courses": ["LING312", "LING322"] },
+    { "term": "Year 3 Fall", "courses": ["LING350", "PSYC300"] },
+    { "term": "Year 3 Spring", "courses": ["HESP300", "LING330"] },
+    { "term": "Year 4 Fall", "courses": ["LING420"] },
+    { "term": "Year 4 Spring", "courses": ["LING451"] }
+  ]
+}
