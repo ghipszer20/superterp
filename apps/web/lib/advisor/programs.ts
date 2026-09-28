@@ -93,19 +93,29 @@ export function rankNoticeCandidates(
  * against the plan's own courses (planCourseIds), so only majors worth auditing get loaded and run
  * through the (HiGHS-backed) audit. Another track of a chosen major is never a candidate, since two
  * tracks of one major aren't a double major; minors and special programs never take part.
+ *
+ * `options` and `courseSets` default to the real registry and MAJOR_COURSE_SETS; a test can pass
+ * synthetic ones instead, so this doesn't need the real registry to hold ~100 majors to exercise
+ * ranking and the MAX_NOTICE_CANDIDATES cap (rankNoticeCandidates's own tests do the same).
  */
-export async function noticeCandidates(selected: string[], planCourseIds: readonly string[] = []): Promise<ProgramCandidate[]> {
-  const mine = chosen(selected).filter((o) => o.kind === "major");
+export async function noticeCandidates(
+  selected: string[],
+  planCourseIds: readonly string[] = [],
+  options: readonly ProgramOption[] = PROGRAM_OPTIONS,
+  courseSets: Record<string, readonly string[]> = MAJOR_COURSE_SETS,
+): Promise<ProgramCandidate[]> {
+  const byId = new Map(options.map((o) => [o.id, o]));
+  const mine = selected.map((id) => byId.get(id)).filter((o): o is ProgramOption => o !== undefined && o.kind === "major");
   if (mine.length === 0) return [];
   const majors = new Set(mine.map(majorKey));
   const others: ProgramOption[] = [];
-  for (const o of PROGRAM_OPTIONS) {
+  for (const o of options) {
     if (o.kind !== "major" || majors.has(majorKey(o))) continue;
     majors.add(majorKey(o));
     others.push(o);
   }
-  const filtered = rankNoticeCandidates(others, planCourseIds);
-  const [declared, undeclared] = await Promise.all([loadPrograms(mine.map((o) => o.id)), loadPrograms(filtered.map((o) => o.id))]);
+  const filtered = rankNoticeCandidates(others, planCourseIds, courseSets);
+  const [declared, undeclared] = await Promise.all([Promise.all(mine.map((o) => o.load())), Promise.all(filtered.map((o) => o.load()))]);
   return [...declared.map((program) => ({ program, declared: true })), ...undeclared.map((program) => ({ program, declared: false }))];
 }
 
