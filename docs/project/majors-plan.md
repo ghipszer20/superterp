@@ -6,12 +6,12 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 
 | # | id | majors | notes | status |
 |---|---|---|---|---|
-| 1 | agnr-ensp (resume) | ENSP: 8 remaining concentrations + 3 flagged narrowings | `ensp-shared-2026-27.ts` | running |
-| 2 | educ-elem | Elementary Education | creates `educ-shared-2026-27.ts` if the catalog shows a teacher-prep core | running |
+| 1 | agnr-ensp (resume) | ENSP: 8 remaining concentrations + 3 flagged narrowings | `ensp-shared-2026-27.ts` | merged (114k; all 12 concentrations) |
+| 2 | educ-elem | Elementary Education | creates `educ-shared-2026-27.ts` if the catalog shows a teacher-prep core | merged (87k; educ-shared created) |
 | 3 | bmgt-omba-scm | Operations Mgmt & Business Analytics + Supply Chain | import `bmgt-core-2026-27.ts` | merged (84k) |
-| 4 | agnr-ferm-nfsc | Fermentation Science + Nutrition & Food Science | | queued |
-| 5 | arch-pair | Architecture + Real Estate & Built Environment | | queued |
-| 6 | sphl-kine | Kinesiology | creates `sphl-shared` if SPHL majors share a core | queued |
+| 4 | agnr-ferm-nfsc | Fermentation Science + Nutrition & Food Science | | running |
+| 5 | arch-pair | Architecture + Real Estate & Built Environment | | running |
+| 6 | sphl-kine | Kinesiology | creates `sphl-shared` if SPHL majors share a core | running |
 | 7 | agnr-enst | Environmental Science & Technology | | queued |
 | 8–16 | educ-a..i | Early Childhood/Special Ed; Elementary/Middle Special Ed; Middle School; Math Ed; English Ed; Science Ed; Social Studies Ed; World Language Ed; Art Ed | after #2 merged | queued |
 | 17 | educ-hdev | Human Development | not teacher-prep | queued |
