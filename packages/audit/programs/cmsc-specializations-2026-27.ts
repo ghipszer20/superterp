@@ -12,7 +12,7 @@
 // specialization; the General Track stays the default (packages/programs registry).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program, Requirement } from "../src/audit.ts";
+import type { Program, Requirement, ProgramMeta } from "../src/audit.ts";
 import { AREAS, CONCENTRATION_REQUIREMENT, ELECTIVES_GENERIC, LOWER_LEVEL, STAT4XX_GENERIC } from "./cmsc-major-2026-27.ts";
 
 // Owner ruling (kept for every specialization): "Regardless of track, all CS students must
@@ -184,3 +184,11 @@ export const cmscQuantumInformation: Program = {
     CONCENTRATION_REQUIREMENT,
   ],
 };
+
+export const cmscCybersecurityMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "CS (Cybersecurity)", major: "cs", track: "Cybersecurity", sources: { department: "https://undergrad.cs.umd.edu/cybersecurity-degree-requirements" } };
+
+export const cmscDataScienceMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "CS (Data Science)", major: "cs", track: "Data Science", sources: { department: "https://undergrad.cs.umd.edu/data-science-degree-requirements" } };
+
+export const cmscMachineLearningMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "CS (Machine Learning)", major: "cs", track: "Machine Learning", sources: { department: "https://undergrad.cs.umd.edu/machine-learning-degree-requirements" } };
+
+export const cmscQuantumInformationMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "CS (Quantum Information)", major: "cs", track: "Quantum Information", sources: { department: "https://undergrad.cs.umd.edu/quantum-information-degree-requirements" } };

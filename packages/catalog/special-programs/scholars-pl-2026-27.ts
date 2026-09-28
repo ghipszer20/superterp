@@ -1,6 +1,6 @@
 // College Park Scholars: Public Leadership (Fall 2026 curriculum PDF). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR, SCHOLARS_CITATION_NOTES } from "./common.ts";
 
 export const SOURCE = "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsPL2026_0.pdf";
@@ -25,3 +25,5 @@ export const scholarsPl: Program = {
     { kind: "choose", id: "oral-communication", name: "Oral Communication course (FSOC)", count: 1, from: { genEd: ["FSOC"] } },
   ],
 };
+
+export const scholarsPlMeta: ProgramMeta = { kind: "special", college: "UGST", sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsPL2026_0.pdf" } };

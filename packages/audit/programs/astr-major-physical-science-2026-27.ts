@@ -7,7 +7,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 // Same 10-item pool (ASTR320 + the 9 named 400-level courses) as astr-major-data-science.
 const ADVANCED_ASTR_WITH_320 = ["ASTR320", "ASTR406", "ASTR410", "ASTR415", "ASTR421", "ASTR422", "ASTR430", "ASTR435", "ASTR450", "ASTR480"];
@@ -82,3 +82,5 @@ export const astrMajorPhysicalScience: Program = {
     },
   ],
 };
+
+export const astrMajorPhysicalScienceMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Astronomy (Physical Science)", major: "astr", track: "Astronomy - Physical Science", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/astronomy/astronomy-major/", department: "https://www.astro.umd.edu/sites/default/files/undergrad/bs-astronomy-physical-science_requirements-and-4-year-plan.pdf" } };

@@ -2,7 +2,7 @@
 // Source: https://sllc.umd.edu/fields/german/undergraduate/honors ("German Studies Honors Program"; fetched 2026-09-26).
 // Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://sllc.umd.edu/fields/german/undergraduate/honors";
@@ -25,3 +25,5 @@ export const deptGers: Program = {
     { kind: "choose", id: "gers499h", name: "GERS499H: Thesis Writing", credits: 3, from: { courses: ["GERS499H"] } },
   ],
 };
+
+export const deptGersMeta: ProgramMeta = { kind: "special", college: "ARHU", sources: { department: "https://sllc.umd.edu/fields/german/undergraduate/honors" } };

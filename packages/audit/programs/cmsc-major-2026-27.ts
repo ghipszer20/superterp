@@ -8,7 +8,7 @@
 // department page; each such difference is recorded below citing both sources.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program, Requirement } from "../src/audit.ts";
+import type { Program, Requirement, ProgramMeta } from "../src/audit.ts";
 
 // Shared by every specialization (cmsc-specializations-2026-27.ts): the department's General
 // Track / Distributive Areas page says its area and elective lists "can be used by all 4 CS
@@ -185,3 +185,5 @@ export const cmscMajor: Program = {
     CONCENTRATION_REQUIREMENT,
   ],
 };
+
+export const cmscMajorMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Computer Science", major: "cs", track: "General", defaultTrack: true, sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/computer-science/computer-science-major/", department: "https://undergrad.cs.umd.edu/degree-requirements-cs-major" } };

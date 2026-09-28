@@ -3,7 +3,7 @@
 // ("JIMÉNEZ-PORTER WRITERS' HOUSE NOTATION TRACK CURRICULAR REQUIREMENTS"; page fetched 2026-09-25).
 // Hand-transcribed (prose page). UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE =
@@ -45,3 +45,5 @@ export const writersHouse: Program = {
     { kind: "choose", id: "supporting-course", name: "Supporting three-credit creative writing course", count: 1, from: { courses: SUPPORTING } },
   ],
 };
+
+export const writersHouseMeta: ProgramMeta = { kind: "special", college: "UGST", sources: { department: "https://arhu.umd.edu/academics/undergraduate-studies/living-and-learning-programs/jimenez-porter-writers-house/current-students/handbook" } };

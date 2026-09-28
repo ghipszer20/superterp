@@ -7,7 +7,7 @@
 // requirements below; see docs/project/owner-review.md).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 export const entomologyMinor: Program = {
   id: "entm-minor",
@@ -54,3 +54,5 @@ export const entomologyMinor: Program = {
     },
   ],
 };
+
+export const entomologyMinorMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/entomology/entomology-minor/", department: "https://entomology.umd.edu/academics/undergraduate/entomology-minor" } };

@@ -2,7 +2,7 @@
 // Source: https://biology.umd.edu/undergraduate/current-students/honors/program-requirements ("Program
 // Requirements"; fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://biology.umd.edu/undergraduate/current-students/honors/program-requirements";
@@ -24,3 +24,5 @@ export const deptBiol: Program = {
     { kind: "course", id: "bsci398h", name: "Honors Seminar", options: ["BSCI398H"] },
   ],
 };
+
+export const deptBiolMeta: ProgramMeta = { kind: "special", college: "CMNS", sources: { department: "https://biology.umd.edu/undergraduate/current-students/honors/program-requirements" } };

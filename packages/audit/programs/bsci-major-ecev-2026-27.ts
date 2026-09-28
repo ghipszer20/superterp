@@ -8,7 +8,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 const ECEV_300_LEVEL = ["BSCI331", "BSCI332", "BSCI333", "BSCI334", "BSCI335", "BSCI337", "BSCI360", "BSCI363", "BSCI366", "BSCI374", "BSCI392", "BSCI393"];
 const ECEV_400_LEVEL = [
@@ -61,3 +61,5 @@ export const bsciMajorEcev: Program = {
     { kind: "choose", id: "enrichment", name: "Enrichment (3 credits)", credits: 3, from: { departments: ["BSCI", "CHEM", "BCHM"], minNumber: 300, maxNumber: 499 } },
   ],
 };
+
+export const bsciMajorEcevMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Bio Sci (Ecology & Evolution)", major: "bsci", track: "Ecology and Evolution", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/biological-sciences/", department: "https://bsci.umd.edu/s/ECEV-Curriculum-2026.pdf" } };

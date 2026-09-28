@@ -1,7 +1,7 @@
 // Departmental Honors: Environmental Science and Policy.
 // Source: http://www.ensp.umd.edu/research/honors-ensp (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://www.ensp.umd.edu/research/honors-ensp";
@@ -20,3 +20,5 @@ export const deptEnsp: Program = {
   ],
   requirements: [{ kind: "choose", id: "ensp499", name: "ENSP499: Honors research (6 credits)", credits: 6, from: { courses: ["ENSP499"] } }],
 };
+
+export const deptEnspMeta: ProgramMeta = { kind: "special", college: "AGNR", sources: { department: "https://www.ensp.umd.edu/research/honors-ensp" } };

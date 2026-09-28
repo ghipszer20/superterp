@@ -3,7 +3,7 @@
 // (linked from https://honors.umd.edu/academics/honors-citation/; page fetched 2026-09-25).
 // Hand-transcribed (prose page). UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR, HONORS_CITATION_NOTES } from "./common.ts";
 
 export const SOURCE =
@@ -52,3 +52,5 @@ export const honorsHumanities: Program = {
     },
   ],
 };
+
+export const honorsHumanitiesMeta: ProgramMeta = { kind: "special", college: "UGST", sources: { department: "https://arhu.umd.edu/academics/undergraduate-studies/living-and-learning-programs/honors-humanities/prospective-students/academics" } };

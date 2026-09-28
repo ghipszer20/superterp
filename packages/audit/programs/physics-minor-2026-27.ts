@@ -10,7 +10,7 @@
 // docs/project/owner-review.md).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 export const physicsMinor: Program = {
   id: "physics-minor",
@@ -51,3 +51,5 @@ export const physicsMinor: Program = {
     },
   ],
 };
+
+export const physicsMinorMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/physics/physics-minor/", department: "https://www.umdphysics.umd.edu/academics/undergraduate/ugrad-requirements.html" } };

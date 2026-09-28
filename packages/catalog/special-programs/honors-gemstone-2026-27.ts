@@ -2,7 +2,7 @@
 // Sources: https://www.gemstone.umd.edu/current-students/earning-gemstone-citation and
 // https://www.gemstone.umd.edu/current-students/curriculum (fetched 2026-09-25). Hand-transcribed. UNVERIFIED.
 
-import type { Program, Requirement } from "@superterp/audit";
+import type { Program, Requirement, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR, HONORS_CITATION_NOTES } from "./common.ts";
 
 export const SOURCE = "https://www.gemstone.umd.edu/current-students/earning-gemstone-citation";
@@ -36,3 +36,5 @@ export const honorsGemstone: Program = {
   ],
   requirements: COURSES.map(([id, name]): Requirement => ({ kind: "course", id: id.toLowerCase(), name, options: [id] })),
 };
+
+export const honorsGemstoneMeta: ProgramMeta = { kind: "special", college: "UGST", sources: { department: "https://www.gemstone.umd.edu/current-students/earning-gemstone-citation" } };

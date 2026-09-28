@@ -2,7 +2,7 @@
 // Source: https://sllc.umd.edu/fields/spanish/undergraduate/honors ("Spanish Honors Program"; fetched 2026-09-26).
 // Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://sllc.umd.edu/fields/spanish/undergraduate/honors";
@@ -21,3 +21,5 @@ export const deptSpan: Program = {
   ],
   requirements: [{ kind: "choose", id: "span479", name: "SPAN479: Honors Thesis (6 credits over two semesters)", credits: 6, from: { courses: ["SPAN479"] } }],
 };
+
+export const deptSpanMeta: ProgramMeta = { kind: "special", college: "ARHU", sources: { department: "https://sllc.umd.edu/fields/spanish/undergraduate/honors" } };

@@ -1,6 +1,6 @@
 // College Park Scholars: Data Justice (Fall 2026 curriculum PDF). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR, SCHOLARS_CITATION_NOTES } from "./common.ts";
 
 export const SOURCE = "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsDJ2026_1.pdf";
@@ -33,3 +33,5 @@ export const scholarsDj: Program = {
     { kind: "choose", id: "supporting-course", name: "Supporting course", count: 1, from: { courses: SUPPORTING }, alternatives: [["ENES200", "ENEE200"]] },
   ],
 };
+
+export const scholarsDjMeta: ProgramMeta = { kind: "special", college: "UGST", sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsDJ2026_1.pdf" } };

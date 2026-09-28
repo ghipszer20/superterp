@@ -9,7 +9,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 export const physMajor: Program = {
   id: "phys-major",
@@ -63,3 +63,5 @@ export const physMajor: Program = {
     },
   ],
 };
+
+export const physMajorMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Physics", major: "phys", track: "Physics", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/physics/physics-major/", department: "https://www.umdphysics.umd.edu/academics/undergraduate/ugrad-requirements.html" } };

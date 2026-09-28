@@ -10,7 +10,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 export const geolMajorGeophysics: Program = {
   id: "geol-major-geophysics",
@@ -73,3 +73,5 @@ export const geolMajorGeophysics: Program = {
     },
   ],
 };
+
+export const geolMajorGeophysicsMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Geology (Geophysics)", major: "geol", track: "Geophysics", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/geology-major/", department: "https://www.geol.umd.edu/undergraduate/majorgeophystrack2408.php" } };

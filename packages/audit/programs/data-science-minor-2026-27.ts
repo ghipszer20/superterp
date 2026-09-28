@@ -10,7 +10,7 @@
 // published sample plan (built from the requirements below; see docs/project/owner-review.md).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 export const dataScienceMinor: Program = {
   id: "data-minor",
@@ -44,3 +44,5 @@ export const dataScienceMinor: Program = {
     { kind: "course", id: "appliedProb", name: "Applied Probability and Statistics I", options: ["DATA400", "STAT400", "STAT410", "ENEE324", "SURV410"] },
   ],
 };
+
+export const dataScienceMinorMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/computer-science/data-science-minor/", department: "https://data.umd.edu/prospective/" } };

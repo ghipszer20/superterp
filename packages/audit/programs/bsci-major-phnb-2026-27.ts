@@ -8,7 +8,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 const PHNB_LECTURES = [
   "BSCI343", "BSCI355", "BSCI357", "BSCI360", "BSCI370", "BSCI381", "BSCI401", "BSCI402", "BSCI403", "BSCI404", "BSCI406",
@@ -65,3 +65,5 @@ export const bsciMajorPhnb: Program = {
     { kind: "choose", id: "enrichment", name: "Enrichment (3 credits)", credits: 3, from: { departments: ["BSCI", "CHEM", "BCHM"], minNumber: 300, maxNumber: 499 } },
   ],
 };
+
+export const bsciMajorPhnbMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Bio Sci (Physiology & Neurobiology)", major: "bsci", track: "Physiology and Neurobiology", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/biological-sciences/", department: "https://bsci.umd.edu/s/PHNB-Curriculum-2026.pdf" } };

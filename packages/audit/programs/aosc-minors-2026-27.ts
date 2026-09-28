@@ -11,7 +11,7 @@
 // sample plans (built from the requirements below; see docs/project/owner-review.md).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 const SOURCE_AOSC =
   "UMD Academic Catalog 2026–27, Atmospheric Chemistry / Atmospheric Sciences Minor; " +
@@ -170,3 +170,11 @@ export const aoscMinorMeteorology: Program = {
     },
   ],
 };
+
+export const aoscMinorChemistryMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/atmospheric-oceanic-science/atmospheric-chemistry-minor/", department: "https://aosc.umd.edu/undergraduate/minor" } };
+
+export const aoscMinorSciencesMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/atmospheric-oceanic-science/atmospheric-sciences-minor/", department: "https://aosc.umd.edu/undergraduate/minor" } };
+
+export const aoscMinorClimateFluencyMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/atmospheric-oceanic-science/climate-change-fluency-minor/" } };
+
+export const aoscMinorMeteorologyMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/atmospheric-oceanic-science/meteorology-minor/", department: "https://aosc.umd.edu/undergraduate/minor" } };

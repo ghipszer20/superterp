@@ -1,7 +1,7 @@
 // Departmental Honors: Entomology.
 // Source: https://entomology.umd.edu/honors-program.html (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://entomology.umd.edu/honors-program.html";
@@ -20,3 +20,5 @@ export const deptEntm: Program = {
   ],
   requirements: [{ kind: "choose", id: "bsci389h", name: "BSCI389H: Honors research (6 credits)", credits: 6, from: { courses: ["BSCI389H"] } }],
 };
+
+export const deptEntmMeta: ProgramMeta = { kind: "special", college: "AGNR", sources: { department: "https://entomology.umd.edu/honors-program.html" } };

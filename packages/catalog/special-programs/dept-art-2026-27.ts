@@ -1,7 +1,7 @@
 // Departmental Honors: Art (Studio Art).
 // Source: https://art.umd.edu/academic-programs/honors-programs (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://art.umd.edu/academic-programs/honors-programs";
@@ -23,3 +23,5 @@ export const deptArt: Program = {
     { kind: "course", id: "artt498h", name: "Honors Thesis", options: ["ARTT498H"] },
   ],
 };
+
+export const deptArtMeta: ProgramMeta = { kind: "special", college: "ARHU", sources: { department: "https://art.umd.edu/academic-programs/honors-programs" } };

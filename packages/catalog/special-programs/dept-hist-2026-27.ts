@@ -1,7 +1,7 @@
 // Departmental Honors: History.
 // Source: https://history.umd.edu/academics/undergraduate/honors ("History Honors"; fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://history.umd.edu/academics/undergraduate/honors";
@@ -25,3 +25,5 @@ export const deptHist: Program = {
     { kind: "course", id: "hist399", name: "Independent Study (thesis writing)", options: ["HIST399"] },
   ],
 };
+
+export const deptHistMeta: ProgramMeta = { kind: "special", college: "ARHU", sources: { department: "https://history.umd.edu/academics/undergraduate/honors" } };

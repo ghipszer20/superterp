@@ -7,7 +7,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 // Advanced Astronomy Courses (the 9 named 400-level ASTR courses); shared with the other two
 // Astronomy specializations, which also allow ASTR320 in this pool (see those files).
@@ -53,3 +53,5 @@ export const astrMajorAstrophysics: Program = {
     { kind: "choose", id: "advanced-phys", name: "Two of PHYS401, PHYS404, PHYS410", count: 2, from: { courses: ["PHYS401", "PHYS404", "PHYS410"] } },
   ],
 };
+
+export const astrMajorAstrophysicsMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Astronomy (Astrophysics)", major: "astr", track: "Astrophysics", defaultTrack: true, sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/astronomy/astronomy-major/", department: "https://www.astro.umd.edu/sites/default/files/undergrad/bs-astrophysics_requirements-and-4-year-plan.pdf" } };

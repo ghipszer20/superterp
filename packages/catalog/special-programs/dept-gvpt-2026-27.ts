@@ -1,7 +1,7 @@
 // Departmental Honors: Government & Politics.
 // Source: https://gvpt.umd.edu/undergraduate/gvpt-honors-program (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://gvpt.umd.edu/undergraduate/gvpt-honors-program";
@@ -23,3 +23,5 @@ export const deptGvpt: Program = {
     { kind: "course", id: "gvpt397", name: "GVPT397: Honors Research", options: ["GVPT397"] },
   ],
 };
+
+export const deptGvptMeta: ProgramMeta = { kind: "special", college: "BSOS", sources: { department: "https://gvpt.umd.edu/undergraduate/gvpt-honors-program" } };

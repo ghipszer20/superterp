@@ -2,7 +2,7 @@
 // Source: https://www.geol.umd.edu/undergraduate/ugdhonors.php ("Honors in Geology"; fetched 2026-09-26).
 // Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://www.geol.umd.edu/undergraduate/ugdhonors.php";
@@ -26,3 +26,5 @@ export const deptGeol: Program = {
     { kind: "course", id: "geol394", name: "GEOL394: Honors thesis", options: ["GEOL394"] },
   ],
 };
+
+export const deptGeolMeta: ProgramMeta = { kind: "special", college: "CMNS", sources: { department: "https://www.geol.umd.edu/undergraduate/ugdhonors.php" } };

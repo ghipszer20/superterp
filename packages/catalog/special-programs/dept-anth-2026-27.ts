@@ -1,7 +1,7 @@
 // Departmental Honors: Anthropology.
 // Source: https://anth.umd.edu/undergraduate/honors-program (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://anth.umd.edu/undergraduate/honors-program";
@@ -24,3 +24,5 @@ export const deptAnth: Program = {
     { kind: "course", id: "anth487", name: "Honors Thesis Writing and Defense", options: ["ANTH487"] },
   ],
 };
+
+export const deptAnthMeta: ProgramMeta = { kind: "special", college: "BSOS", sources: { department: "https://anth.umd.edu/undergraduate/honors-program" } };

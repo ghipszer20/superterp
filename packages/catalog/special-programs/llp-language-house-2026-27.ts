@@ -2,7 +2,7 @@
 // Source: https://sllc.umd.edu/special-programs/language-house/info-current-students-mentors
 // ("Coursework & Residency Requirements"; fetched 2026-09-25). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://sllc.umd.edu/special-programs/language-house/info-current-students-mentors";
@@ -20,3 +20,5 @@ export const languageHouse: Program = {
   ],
   requirements: [{ kind: "course", id: "sllc329", name: "Language House Immersion", options: ["SLLC329"] }],
 };
+
+export const languageHouseMeta: ProgramMeta = { kind: "special", college: "UGST", sources: { department: "https://sllc.umd.edu/special-programs/language-house/info-current-students-mentors" } };

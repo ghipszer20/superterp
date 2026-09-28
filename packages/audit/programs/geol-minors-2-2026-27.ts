@@ -18,7 +18,7 @@
 // published sample plans (built from the requirements below; see docs/project/owner-review.md).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 const FOUNDATION_GEOL: [string, string][] = [
   ["GEOL100", "GEOL110"],
@@ -231,3 +231,13 @@ export const planetarySciencesMinor: Program = {
     },
   ],
 };
+
+export const geolMinorGeophysicsMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/geophysics-minor/", department: "https://www.geol.umd.edu/undergraduate/Geology_Minors.php" } };
+
+export const geolMinorHydrologyMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/hydrology-minor/", department: "https://www.geol.umd.edu/undergraduate/Geology_Minors.php" } };
+
+export const paleobiologyMinorMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/paleobiology-minor/", department: "https://www.geol.umd.edu/undergraduate/Geology_Minors.php" } };
+
+export const planetarySciencesMinorMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/planetary-sciences-minor/", department: "https://www.geol.umd.edu/undergraduate/Geology_Minors.php" } };
+
+export const geolMinorSurficialGeologyMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/surficial-geology-minor/", department: "https://www.geol.umd.edu/undergraduate/Geology_Minors.php" } };

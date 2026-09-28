@@ -2,7 +2,7 @@
 // Sources: https://carillon.umd.edu/carillon-experience/year-carillon and …/carillon-studio,
 // and the UMD Academic Catalog, Office of Undergraduate Studies (fetched 2026-09-25). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://carillon.umd.edu/carillon-experience/year-carillon";
@@ -20,3 +20,5 @@ export const carillon: Program = {
   ],
   requirements: [{ kind: "course", id: "crln101", name: "Carillon Studio", options: ["CRLN101"] }],
 };
+
+export const carillonMeta: ProgramMeta = { kind: "special", college: "UGST", sources: { department: "https://carillon.umd.edu/carillon-experience/year-carillon" } };

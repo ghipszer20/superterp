@@ -7,7 +7,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 const GENB_CAT1_GENETICS_EVOLUTION = [
   "BCHM465", "BSCI370", "BSCI381", "BSCI382", "BSCI405", "BSCI410", "BSCI411", "BSCI412", "BSCI414", "BSCI415", "BSCI416", "BSCI471",
@@ -71,3 +71,5 @@ export const bsciMajorGenb: Program = {
     { kind: "choose", id: "genb-cat3-min", name: "At least one Ecology, Behavior, and Organismal Biology area course", count: 1, overlay: true, from: { courses: GENB_CAT3_ECOLOGY_BEHAVIOR_ORGANISMAL } },
   ],
 };
+
+export const bsciMajorGenbMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Bio Sci (General Biology)", major: "bsci", track: "General Biology", defaultTrack: true, sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/biological-sciences/", department: "https://bsci.umd.edu/s/GENB-Curriculum-2026.pdf" } };

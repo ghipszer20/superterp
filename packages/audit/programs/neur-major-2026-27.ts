@@ -7,7 +7,7 @@
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 // Molecular, Cellular, and Physiological Track (0425M).
 const NEUR_TRACK_MCP = [
@@ -80,3 +80,5 @@ export const neurMajor: Program = {
     },
   ],
 };
+
+export const neurMajorMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Neuroscience", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/biology/neuroscience-major/", department: "https://neur.umd.edu/sites/neur.umd.edu/files/NEUR%20Major%20Requirements%20Sheet%205_5_26-%20BSCI180+New%20BC%20options.pdf" } };

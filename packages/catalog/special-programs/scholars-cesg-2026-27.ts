@@ -2,7 +2,7 @@
 // living-learning program; relaunched in Scholars Fall 2024). Fall 2026 curriculum PDF.
 // Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR, SCHOLARS_CITATION_NOTES } from "./common.ts";
 
 export const SOURCE = "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsCESG2026_0.pdf";
@@ -35,3 +35,5 @@ export const scholarsCesg: Program = {
     { kind: "choose", id: "supporting-course", name: "Supporting course", count: 1, from: { courses: SUPPORTING } },
   ],
 };
+
+export const scholarsCesgMeta: ProgramMeta = { kind: "special", college: "UGST", sources: { department: "https://scholars.umd.edu/sites/default/files/2026-05/CurriculumRequirementsCESG2026_0.pdf" } };

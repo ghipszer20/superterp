@@ -7,7 +7,7 @@
 // sample plan (built from the requirements below; see docs/project/owner-review.md).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
-import type { Program } from "../src/audit.ts";
+import type { Program, ProgramMeta } from "../src/audit.ts";
 
 export const cmscMinor: Program = {
   id: "cmsc-minor",
@@ -54,3 +54,5 @@ export const cmscMinor: Program = {
     },
   ],
 };
+
+export const cmscMinorMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/computer-science/computer-science-minor/", department: "https://undergrad.cs.umd.edu/computer-science-minor" } };

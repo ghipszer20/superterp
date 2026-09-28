@@ -1,7 +1,7 @@
 // Departmental Honors: Psychology.
 // Source: https://psyc.umd.edu/undergraduate/psyc-honors-program (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE = "https://psyc.umd.edu/undergraduate/psyc-honors-program";
@@ -29,3 +29,5 @@ export const deptPsyc: Program = {
     { kind: "course", id: "psyc499h", name: "PSYC499H: Honors Thesis Research", options: ["PSYC499H"] },
   ],
 };
+
+export const deptPsycMeta: ProgramMeta = { kind: "special", college: "BSOS", sources: { department: "https://psyc.umd.edu/undergraduate/psyc-honors-program" } };

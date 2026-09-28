@@ -2,7 +2,7 @@
 // Source: https://sph.umd.edu/academics/departments-units/department-kinesiology/student-resources-kinesiology/kinesiology-honors-program
 // (fetched 2026-09-26). Hand-transcribed. UNVERIFIED.
 
-import type { Program } from "@superterp/audit";
+import type { Program, ProgramMeta } from "@superterp/audit";
 import { CATALOG_YEAR } from "./common.ts";
 
 export const SOURCE =
@@ -28,3 +28,5 @@ export const deptKnes: Program = {
     { kind: "course", id: "knes477", name: "KNES477: Honors Thesis", options: ["KNES477"] },
   ],
 };
+
+export const deptKnesMeta: ProgramMeta = { kind: "special", college: "SPHL", sources: { department: "https://sph.umd.edu/academics/departments-units/department-kinesiology/student-resources-kinesiology/kinesiology-honors-program" } };
