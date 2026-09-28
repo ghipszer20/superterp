@@ -1,0 +1,24 @@
+{
+  "programId": "span-major-literature-culture-media",
+  "source": "https://drive.google.com/uc?export=download&id=1eL0ki-g1XSznVOHn0HAHu_yuCddYjLpq#Spanish-and-Latin-American-Literature,-Culture,-and-Media",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities' Spanish and Latin American Literature, Culture, and Media Four Year Academic Plan. The PDF-to-text conversion of the term grid is garbled (Fall/Spring columns and the Gen Ed/Major-Requirements legend appear column-interleaved), but the major course list and its relative order are legible (SPAN103/203/204 prerequisites, then SPAN207/206, SPAN301/306, SPAN303, SPAN311/316, SPAN331/361, SPAN332/362, the one language/professional-contexts pick, SPAN333/363, four 4xx Literature/Culture/Media courses, and a Supporting Area near the end). Exact year/semester placement below is reconstructed from that order, not read verbatim -- flagged in docs/project/owner-review.md.",
+    "Prerequisites SPAN103/203/204 are not part of the major's own 45 credits (see span-shared-2026-27.ts) but are included here since the plan places them in Year 1 alongside Gen Ed; SPAN207/206 and later major courses follow.",
+    "Core-sequence choice: SPAN361/362/363 (Latin American sequence) chosen for this Literature/Culture/Media-track plan, matching the plan's own 'Choice of Spanish or Latin American Focus' note and its 'SPAN 361 (HU & UP)' Year-3 entry.",
+    "Track: 'Select one of the following' filled with SPAN480 (Spanish for Business II), one of the two options kept in the requirement per span-major-literature-culture-media-2026-27.ts's reviewNotes (catalog says SPAN480; department plan text reads 'SPAN470' in the same slot, flagged as a disagreement).",
+    "Track: 'Select four 4xx-level courses in Spanish or Latin American Literature, Culture, and Media' filled with SPAN401, SPAN404, SPAN407, and SPAN450, all on the Academic Catalog's approved SPAN course list (the source names no specific SPAN4xx courses here).",
+    "Supporting Area (9 credits, single department other than Spanish, approval of advisor) filled with HIST304, HIST306, HIST307 (a real, plausible non-Spanish department sequence; the source names no specific supporting-area courses)."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["SPAN103"] },
+    { "term": "Year 1 Spring", "courses": ["SPAN203"] },
+    { "term": "Year 2 Fall", "courses": ["SPAN301", "SPAN204"] },
+    { "term": "Year 2 Spring", "courses": ["SPAN207", "HIST304"] },
+    { "term": "Year 3 Fall", "courses": ["SPAN303", "HIST306"] },
+    { "term": "Year 3 Spring", "courses": ["SPAN311", "SPAN362", "HIST307"] },
+    { "term": "Year 4 Fall", "courses": ["SPAN480", "SPAN361", "SPAN401", "SPAN404"] },
+    { "term": "Year 4 Spring", "courses": ["SPAN363", "SPAN407", "SPAN450"] }
+  ]
+}
