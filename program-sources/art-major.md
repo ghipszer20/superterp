@@ -327,77 +327,77 @@ Benchmark 2 Requirements
 Year 3
 Benchmark 3 Requirements
 Fall Spring
-ARTT 100 Analy c Reasoning (AR)
+ARTT 100 Analyc Reasoning (AR)
 ARTT 110 Math (MA)* History/Social Sciences (HS)**
-ARTT 150 ARHU 158 Elec ve 1xx-4xx
+ARTT 150 ARHU 158 Elecve 1xx-4xx
 ARTT 100 ARTT 110 (SP #1)
 ARTH 2xx-4xx (UP) ARTT 150 (HU)
 ARTT 200 History/Social Sciences (HS)** Natural Sciences (NS)**
-ARTT 210 Global Engagement #1 Oral Communica on (OC)
+ARTT 210 Global Engagement #1 Oral Communicaon (OC)
 ARTT 255 ARTT 200, 210, or 255 Global Engagement #2
 ARTH 2xx-4xx (UP) ARTT 200, 210, or 255
-Elec ve 1xx-4xx ARTT 200, 210, or 255
+Elecve 1xx-4xx ARTT 200, 210, or 255
 Intermediate courses: 3 courses, Natural Science Lab (NL)** ARTT 320, 33x, 34x, or 370
-from at least 2 different areas: ARTT 320, 33x, 34x, or 370 ARTT 3xx-4xx Studio Elec ve
-ARTT 320, 33x, 34x, 370 ARTT 320, 33x, 34x, or 370 ARTT 4xx Studio Elec ve
-ARTH or Art Theory 3xx-4xx Elec ve 1xx-4xx
-Elec ve 1xx-4xx Elec ve 1xx-4xx
-Professional Wri ng (PW) Scholarship in Prac ce (SP) #2** (non-major)
-ARTH or Art Theory 3xx-4xx Elec ve 3xx-4xx
-ARTT 4xx (Studio or Art Theory) Elec ve 3xx-4xx
-Elec ve 3xx-4xx Elec ve 1xx-4xx
-Elec ve 3xx-4xx Elec ve 1xx-4xx
+from at least 2 different areas: ARTT 320, 33x, 34x, or 370 ARTT 3xx-4xx Studio Elecve
+ARTT 320, 33x, 34x, 370 ARTT 320, 33x, 34x, or 370 ARTT 4xx Studio Elecve
+ARTH or Art Theory 3xx-4xx Elecve 1xx-4xx
+Elecve 1xx-4xx Elecve 1xx-4xx
+Professional Wring (PW) Scholarship in Pracce (SP) #2** (non-major)
+ARTH or Art Theory 3xx-4xx Elecve 3xx-4xx
+ARTT 4xx (Studio or Art Theory) Elecve 3xx-4xx
+Elecve 3xx-4xx Elecve 1xx-4xx
+Elecve 3xx-4xx Elecve 1xx-4xx
 Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
 ENGL 101 (AW)* {Min. Grade: C-}
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
 Year 4
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es and
-Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees and
+Cultural Competence courses may also fulfill Distribuve Studies categories.
 Studio Art (Track 1: General)
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
-Distribu ve Studies
+Distribuve Studies
 Year 3 - Benchmark Requirements
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning--op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning--oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
 Requirements Credits Grade
-Requirements: 6 credits/2 courses Course Credits Grade Founda on Courses
+Requirements: 6 credits/2 courses Course Credits Grade Foundaon Courses
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Intermediate Courses: 3 courses total from at least 2 areas
 Requirements: 0-3 credits Course Credits Grade
 Advanced Courses
-Suppor ng Area: Art History
+Supporng Area: Art History
 ARTT 100
-Academic Wri ng (AW) ARTT 110
-Professional Wri ng (PW) ARTT 150
+Academic Wring (AW) ARTT 110
+Professional Wring (PW) ARTT 150
 Oral Comm. (OC)
 Math (MA)
-Analy c Reasoning (AR) ARTT 200
+Analyc Reasoning (AR) ARTT 200
 ARTT 210
 ARTT 255
 Natural Science Lab (NL)
 Natural Sciences (NS)
 History/Social Sciences (HS) Inermediate courses: 3 courses total from at least 2 different areas:
 History/Social Sciences (HS) ARTT 320, 33x, 34x, or 370
-Humani es (HU)
-Humani es (HU)
-Scholarship in Prac ce (SP)
-Scholarship in Prac ce (SP) non-major
-Big Ques on (IS) ARTT 100
-Big Ques on (IS) ARTT 110 (SP)
+Humanies (HU)
+Humanies (HU)
+Scholarship in Pracce (SP)
+Scholarship in Pracce (SP) non-major
+Big Queson (IS) ARTT 100
+Big Queson (IS) ARTT 110 (SP)
 ARTT 150 (HU)
 ARTT 200
 ARTT 210
@@ -407,15 +407,15 @@ Cultural Competency (CC) ARTT 320
 ARTT 330, 331, or 333
 ARTT 340, 341, or 343
 ARTT 370
-ARTT 3xx-4xx Studio Elec ve
-ARTT 4xx Studio Elec ve
+ARTT 3xx-4xx Studio Elecve
+ARTT 4xx Studio Elecve
 ARTT 4xx (Studio or Art Theory)
 Art History or Art Theory 3xx-4xx
 Art History or Art Theory 3xx-4xx
 {Min. Grade: C-} ENGL 101
-ARTH 2xx-4xx that sa sfies a GenEd Diversity
+ARTH 2xx-4xx that sasfies a GenEd Diversity
 Requirement
-ARTH 2xx-4xx that sa sfies a GenEd Diversity
+ARTH 2xx-4xx that sasfies a GenEd Diversity
 Requirement
 ARTT 150
 ARTT 110
@@ -431,14 +431,14 @@ ARHU 158 or equivalent (if applicable)
 Global Engagement
 Cumulative average of major requirements must be at least a 2.0
 or
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
-Some courses for the major may also count toward General Educa on
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
+Some courses for the major may also count toward General Educaon
 requirements.
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1KOTZOsCIo1SGWpzG31tUPuXOK9ZphGaY#Advanced-Specialization)
 
-Studio Art (Track 2: Advanced Specializa on) Four Year Academic Plan
+Studio Art (Track 2: Advanced Specializaon) Four Year Academic Plan
 Year 1
 Benchmark 1 Requirements
 Year 2
@@ -447,77 +447,77 @@ Year 3
 Benchmark 3 Requirements
 Year 4
 Fall Spring
-ARTT 100 ENGL 101 (AW)* {Min. Grade: C-} Analy c Reasoning (AR)
+ARTT 100 ENGL 101 (AW)* {Min. Grade: C-} Analyc Reasoning (AR)
 ARTT 110 Math (MA)* History/Social Sciences (HS)**
-ARTT 150 ARHU 158 Humani es (HU)**
+ARTT 150 ARHU 158 Humanies (HU)**
 ARTT 100 ARTT 110 (SP #1)
 ARTH 2xx-4xx (UP) ARTT 150 (HU)
 ARTT 200 History/Social Sciences (HS)** Natural Sciences (NS)**
-ARTT 210 Global Engagement #1 Oral Communica on (OC)
+ARTT 210 Global Engagement #1 Oral Communicaon (OC)
 ARTT 255 ARTT 200, 210, or 255 Global Engagement #2
 ARTH 2xx-4xx (UP) ARTT 200, 210, or 255
-Elec ve 1xx-4xx ARTT 200, 210, or 255
-Intermediate courses: 3 courses, Natural Science Lab (NL)** Professional Wri ng (PW)
+Elecve 1xx-4xx ARTT 200, 210, or 255
+Intermediate courses: 3 courses, Natural Science Lab (NL)** Professional Wring (PW)
 from at least 2 different areas: ARTT 320, 33x, 34x, or 370 ARTT 320, 33x, 34x, or 370
-ARTT 320, 33x, 34x, 370 ARTT 320, 33x, 34x, or 370 ARTT 3xx-4xx Studio Elec ve
-ARTT 3xx-4xx elec ve ARTH or Art Theory 3xx-4xx ARTT 4xx (Studio or Art Theory)
-ARTT 418_ or ARTT 4xx Elec ve 1xx-4xx Elec ve 1xx-4xx
+ARTT 320, 33x, 34x, 370 ARTT 320, 33x, 34x, or 370 ARTT 3xx-4xx Studio Elecve
+ARTT 3xx-4xx elecve ARTH or Art Theory 3xx-4xx ARTT 4xx (Studio or Art Theory)
+ARTT 418_ or ARTT 4xx Elecve 1xx-4xx Elecve 1xx-4xx
 One ARTH 3xx-4xx or Art Theory 4xx
-Por olio Applica on: Adv. Spec.
-Scholarship in Prac ce (SP) #2** (non-major) ARTT 4xx Specializa on or ARTT 481
-ARTT 4xx Specializa on or ARTT481 ARTT 4xx Specializa on
-ARTT 4xx Specializa on ARTT 4xx Studio Elec ve
-ARTH or Art Theory 3xx-4xx Elec ve 1xx-4xx
-Elec ve 1xx-4xx Elec ve 1xx-4xx
+Porolio Applicaon: Adv. Spec.
+Scholarship in Pracce (SP) #2** (non-major) ARTT 4xx Specializaon or ARTT 481
+ARTT 4xx Specializaon or ARTT481 ARTT 4xx Specializaon
+ARTT 4xx Specializaon ARTT 4xx Studio Elecve
+ARTH or Art Theory 3xx-4xx Elecve 1xx-4xx
+Elecve 1xx-4xx Elecve 1xx-4xx
 Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es and
-Cultural Competence courses may also fulfill Distribu ve Studies categories.
-Studio Art (Track 2: Advanced Specializa on)
-General Educa on Requirements Benchmark Requirements
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees and
+Cultural Competence courses may also fulfill Distribuve Studies categories.
+Studio Art (Track 2: Advanced Specializaon)
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
-Distribu ve Studies
+Distribuve Studies
 Year 3 - Benchmark Requirements
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning--op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning--oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
 Requirements Credits Grade
-Requirements: 6 credits/2 courses Course Credits Grade Founda on Courses
+Requirements: 6 credits/2 courses Course Credits Grade Foundaon Courses
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Intermediate Courses: 3 courses total from at least 2 areas
 Requirements: 0-3 credits
 Advanced Courses
-Suppor ng Area: Art History
-Advanced Specializa on
+Supporng Area: Art History
+Advanced Specializaon
 ARTT 100
-Academic Wri ng (AW) ARTT 110
-Professional Wri ng (PW) ARTT 150
+Academic Wring (AW) ARTT 110
+Professional Wring (PW) ARTT 150
 Oral Comm. (OC)
 Math (MA) ARTT 200
-Analy c Reasoning (AR) ARTT 210
+Analyc Reasoning (AR) ARTT 210
 ARTT 255
 Natural Science Lab (NL) Inermediate courses: 3 courses total from at least 2 different areas:
 Natural Sciences (NS) ARTT 320, 33x, 34x, or 370
-History/Social Sciences (HS) ARTT 3xx-4xx elec ve
-History/Social Sciences (HS) ARTT 418 or ARTT 4xx elec ve
-Humani es (HU) One ARTH 3xx-4xx or Art Theory
-Humani es (HU) Por olio Applica on: Advanced Specializa on
-Scholarship in Prac ce (SP)
-Scholarship in Prac ce (SP) non-major
-Big Ques on (IS) ARTT 100
-Big Ques on (IS) ARTT 110 (SP)
+History/Social Sciences (HS) ARTT 3xx-4xx elecve
+History/Social Sciences (HS) ARTT 418 or ARTT 4xx elecve
+Humanies (HU) One ARTH 3xx-4xx or Art Theory
+Humanies (HU) Porolio Applicaon: Advanced Specializaon
+Scholarship in Pracce (SP)
+Scholarship in Pracce (SP) non-major
+Big Queson (IS) ARTT 100
+Big Queson (IS) ARTT 110 (SP)
 ARTT 150 (HU)
 ARTT 200
 ARTT 210
@@ -527,8 +527,8 @@ Cultural Competency (CC) ARTT 320
 ARTT 330, 331, or 333
 ARTT 340, 341, or 343
 Course Credits Grade ARTT 370
-ARTT 3xx-4xx Studio Elec ve
-ARTT 4xx Studio Elec ve
+ARTT 3xx-4xx Studio Elecve
+ARTT 4xx Studio Elecve
 ARTT 4xx (Studio or Art Theory)
 Art History or Art Theory 3xx-4xx
 Art History or Art Theory 3xx-4xx
@@ -543,26 +543,26 @@ ARTH
 2xx-4xx
 ARTH
 2xx-4xx
-ARTH 2xx-4xx that sa sfies a GenEd Diversity
+ARTH 2xx-4xx that sasfies a GenEd Diversity
 Requirement
-ARTH 2xx-4xx that sa sfies a GenEd Diversity
+ARTH 2xx-4xx that sasfies a GenEd Diversity
 Requirement
 Cumulative average of major requirements must be at least a 2.0
 or
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
 39 upper level credits
 ARHU 158 or equivalent (if applicable)
 Global Engagement
-Some courses for the major may also count toward General Educa on
+Some courses for the major may also count toward General Educaon
 requirements.
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1nwR3mYqtz0nQqGjc37kDTFbNhe-0LLHe#Graphic-Design)
 
-Studio Art (Track 3: Graphic Design Concentra on) Four Year Academic Plan
+Studio Art (Track 3: Graphic Design Concentraon) Four Year Academic Plan
 Year 1
 Benchmark 1 Requirements
 Year 2
@@ -571,76 +571,76 @@ Year 3
 Benchmark 3 Requirements
 Year 4
 Fall Spring
-ARTT 100 ENGL 101 (AW)* {Min. Grade: C-} Analy c Reasoning (AR)
+ARTT 100 ENGL 101 (AW)* {Min. Grade: C-} Analyc Reasoning (AR)
 ARTT 110 Math (MA)* History/Social Sciences (HS)**
-ARTT 150 ARHU 158 Humani es (HU)**
+ARTT 150 ARHU 158 Humanies (HU)**
 ARTT 100 ARTT 110 (SP #1)
 ARTH 2xx-4xx (UP) ARTT 150 (HU)
 ARTT 200 History/Social Sciences (HS)** Natural Sciences (NS)**
-ARTT 210 Global Engagement #1 Oral Communica on (OC)
+ARTT 210 Global Engagement #1 Oral Communicaon (OC)
 ARTT 255 ARTT 200, 210, or 255 Global Engagement #2
-Por olio Applica on: Graphic Design ARTH 2xx-4xx (UP) ARTT 200, 210, or 255
-Elec ve 1xx-4xx ARTT 200, 210, or 255
-ARTT 355 Natural Science Lab (NL)** Professional Wri ng (PW)
+Porolio Applicaon: Graphic Design ARTH 2xx-4xx (UP) ARTT 200, 210, or 255
+Elecve 1xx-4xx ARTT 200, 210, or 255
+ARTT 355 Natural Science Lab (NL)** Professional Wring (PW)
 ARTT 356 ARTT 355 (Fall only) ARTT 357 (Spring only)
 ARTT 357 ARTT 356 (Fall only) ARTT 361 (Spring only)
 ARTT 361 ARTT 3xx-4xx ARTT 3xx-4xx
-Two ARTT 3xx-4xx elec ves Elec ve 1xx-4xx Elec ve 1xx-4xx
-Scholarship in Prac ce (SP) #2** (non-major) ARTT 458
+Two ARTT 3xx-4xx elecves Elecve 1xx-4xx Elecve 1xx-4xx
+Scholarship in Pracce (SP) #2** (non-major) ARTT 458
 ARTT 454 ARTT 455
 ARTT 386 or 456 or 459 (Fall only) ARTT 386 or 456 or 457 (Spring only)
-ARTH 3xx-4xx or Art Theory Elec ve 1xx-4xx
-Elec ve 1xx-4xx Elec ve 1xx-4xx
+ARTH 3xx-4xx or Art Theory Elecve 1xx-4xx
+Elecve 1xx-4xx Elecve 1xx-4xx
 Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es and
-Cultural Competence courses may also fulfill Distribu ve Studies categories.
-Studio Art (Track 3: Graphic Design Concentra on)
-General Educa on Requirements Benchmark Requirements
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees and
+Cultural Competence courses may also fulfill Distribuve Studies categories.
+Studio Art (Track 3: Graphic Design Concentraon)
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
-Distribu ve Studies
+Distribuve Studies
 Year 3 - Benchmark Requirements
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning--op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning--oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
 Requirements Credits Grade
-Requirements: 6 credits/2 courses Course Credits Grade Founda on Courses
+Requirements: 6 credits/2 courses Course Credits Grade Foundaon Courses
 Requirements: 4-6 credits/2 courses Course Credits Grade
-Studio Art Elec ves
-Graphic Design Concentra on
+Studio Art Elecves
+Graphic Design Concentraon
 Requirements: 0-3 credits Course Credits Grade
-Graphic Design Elec ves
-Suppor ng Area: Art History
+Graphic Design Elecves
+Supporng Area: Art History
 ARTT 100
-Academic Wri ng (AW) ARTT 110
-Professional Wri ng (PW) ARTT 150
+Academic Wring (AW) ARTT 110
+Professional Wring (PW) ARTT 150
 Oral Comm. (OC)
 Math (MA) ARTT 200
-Analy c Reasoning (AR) ARTT 210
+Analyc Reasoning (AR) ARTT 210
 ARTT 255
-Por olio Applica on: Graphic Design Concentra on
+Porolio Applicaon: Graphic Design Concentraon
 Natural Science Lab (NL)
 Natural Sciences (NS) ARTT 355
 History/Social Sciences (HS) ARTT 356
 History/Social Sciences (HS) ARTT 357
-Humani es (HU) ARTT 361
-Humani es (HU) Two ARTT 3xx-4xx elec ves
-Scholarship in Prac ce (SP)
-Scholarship in Prac ce (SP) non-major
-Big Ques on (IS) ARTT 100
-Big Ques on (IS) ARTT 110 (SP)
+Humanies (HU) ARTT 361
+Humanies (HU) Two ARTT 3xx-4xx elecves
+Scholarship in Pracce (SP)
+Scholarship in Pracce (SP) non-major
+Big Queson (IS) ARTT 100
+Big Queson (IS) ARTT 110 (SP)
 ARTT 150 (HU)
 ARTT 200
 ARTT 210
@@ -656,9 +656,9 @@ ARTT 455
 ARTT 458
 ARTT 456, 457, 459 or Internship
 ARTT 456, 457, 459 or Internship
-ARTH 2xx-4xx that sa sfies a GenEd
+ARTH 2xx-4xx that sasfies a GenEd
 Diversity Requirement
-ARTH 2xx-4xx that sa sfies a GenEd
+ARTH 2xx-4xx that sasfies a GenEd
 Diversity Requirement
 ARTT 361
 Art History or Art Theory 3xx-4xx
@@ -677,7 +677,7 @@ At least 30 credits must be earned at UMD
 ARHU 158 or equivalent (if applicable)
 Global Engagement
 or
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
-Some courses for the major may also count toward General Educa on
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
+Some courses for the major may also count toward General Educaon
 requirements.

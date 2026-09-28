@@ -454,44 +454,44 @@ Benchmark 3 Requirement
 Year 4
 Fall Spring
 JAPN 102 ENGL 101 (AW)* {Min. Grade: C-} Natural Sciences (NS)**
-Math (MA)* Analy c Reasoning (AR)
-HIST 284 (HS & UP) or Elec ve 1xx-4xx Humani es (HU)**
+Math (MA)* Analyc Reasoning (AR)
+HIST 284 (HS & UP) or Elecve 1xx-4xx Humanies (HU)**
 JAPN 101 (6 credits) JAPN 102 (6 credits; fulfills Global
 ARHU 158 Engagement)
-JAPN 202 Humani es (HU)** Oral Communica on (OC)
-JAPN 201 (6 credits) Scholarship in Prac ce (SP) #1**
-History/Social Sciences (HS)** HIST 285 (HS) or Elec ve 1xx-4xx
-Elec ve 1xx-4xx JAPN 202 (6 credits)
+JAPN 202 Humanies (HU)** Oral Communicaon (OC)
+JAPN 201 (6 credits) Scholarship in Pracce (SP) #1**
+History/Social Sciences (HS)** HIST 285 (HS) or Elecve 1xx-4xx
+Elecve 1xx-4xx JAPN 202 (6 credits)
 JAPN 302 Natural Science Lab (NL)** JAPN 302 (6 credits)
-JAPN 301 (6 credits) HIST 483 or Elec ve 3xx-4xx
-HIST 482 or Elec ve 3xx-4xx Elec ve 1xx-4xx
-Elec ve 1xx-4xx Elec ve 3xx-4xx
-Professional Wri ng (PW) JAPN 3xx-4xx (Linguis cs)
-Scholarship in Prac ce (SP) #2** JAPN 3xx-4xx
-JAPN 3xx-4xx (Literature) Elec ve 3xx-4xx
-JAPN 3xx-4xx Elec ve 1xx-4xx
-Elec ve 1xx 4xx Elec ve 1xx-4xx
+JAPN 301 (6 credits) HIST 483 or Elecve 3xx-4xx
+HIST 482 or Elecve 3xx-4xx Elecve 1xx-4xx
+Elecve 1xx-4xx Elecve 3xx-4xx
+Professional Wring (PW) JAPN 3xx-4xx (Linguiscs)
+Scholarship in Pracce (SP) #2** JAPN 3xx-4xx
+JAPN 3xx-4xx (Literature) Elecve 3xx-4xx
+JAPN 3xx-4xx Elecve 1xx-4xx
+Elecve 1xx 4xx Elecve 1xx-4xx
 Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be compleeted by the end of six semesters.
 ‑
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding
-Plural Socie es and Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding
+Plural Sociees and Cultural Competence courses may also fulfill Distribuve Studies categories.
 Japanese
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirement
 Year 2 - Benchmark Requirement
 Year 3 - Benchmark Requirement
-Distribu ve Studies Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Distribuve Studies Major Requirements
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
@@ -500,35 +500,35 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 JAPN 102
-Academic Wri ng (AW)
-Professional Wri ng (PW) JAPN 202
+Academic Wring (AW)
+Professional Wring (PW) JAPN 202
 Oral Comm. (OC)
 Math (MA) JAPN 302
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 Natural Science Lab (NL)
 Natural Sciences (NS)
 History/Social Sciences (HS) JAPN 201*
 History/Social Sciences (HS) JAPN 202
-Humani es (HU) JAPN 301
-Humani es (HU) JAPN 302
-Scholarship in Prac ce (SP)
-Scholarship in Prac ce (SP) non major HIST 284 (HS & UP) and
+Humanies (HU) JAPN 301
+Humanies (HU) JAPN 302
+Scholarship in Pracce (SP)
+Scholarship in Pracce (SP) non major HIST 284 (HS & UP) and
 HIST 483
 HIST 285 (HS) and
-Big Ques on (IS) HIST 482
-Big Ques on (IS)
+Big Queson (IS) HIST 482
+Big Queson (IS)
 JAPN 3xx-4xx
 JAPN 3xx-4xx
-JAPN 3xx-4xx (Linguis cs)
+JAPN 3xx-4xx (Linguiscs)
 Understanding Plural Soc. (UP) JAPN 3xx-4xx (Literature)
 Understanding Plural Soc. (UP)
 Cultural Competency (CC)
 {Min. Grade: C-} ENGL 101
-Cumula ve average of major requirements must be at least a 2.0
+Cumulave average of major requirements must be at least a 2.0
 Japanese Language
-Civiliza on and History
+Civilizaon and History
 or
-Elec ves
+Elecves
 or
 HIST284 or 285
 At least 30 credits must be earned at UMD
@@ -538,7 +538,7 @@ At least 30 credits must be earned at UMD
 ARHU 158 or equivalent (if applicable)
 Global Engagement
 *prerequisite JAPN 101 and 102 or equivalent
-Some courses for the major may also count toward General Educa on
+Some courses for the major may also count toward General Educaon
 requirements.
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:

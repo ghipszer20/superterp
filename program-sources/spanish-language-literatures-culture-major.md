@@ -219,44 +219,44 @@ Year 3
 Year 4
 Fall Spring
 SPAN 203 ENGL 101 (AW)* {Min. Grade: C-} Natural Sciences (NS)**
-Math (MA)* Analy c Reasoning (AR)
+Math (MA)* Analyc Reasoning (AR)
 History/Social Science (HS)** SPAN 203 (fulfills Global Engagement)
-SPAN 103 Elec ve 1xx-4xx
-ARHU 158 Elec ve 1xx-4xx
-SPAN 301 SPAN 204 Oral Communica on (OC)
-SPAN 207 or 206 Scholarship in Prac ce (SP) #1**
-Elec ve 1xx-4xx SPAN 301 or 306
-Elec ve 1xx-4xx Natural Science Lab (NL)**
-Elec ve 1xx-4xx Suppor ng Area #1 (1xx-4xx)
+SPAN 103 Elecve 1xx-4xx
+ARHU 158 Elecve 1xx-4xx
+SPAN 301 SPAN 204 Oral Communicaon (OC)
+SPAN 207 or 206 Scholarship in Pracce (SP) #1**
+Elecve 1xx-4xx SPAN 301 or 306
+Elecve 1xx-4xx Natural Science Lab (NL)**
+Elecve 1xx-4xx Supporng Area #1 (1xx-4xx)
 SPAN 303 SPAN 3xx (Lang., Culture & Professional)
 SPAN 311 or SPAN 316 SPAN 332 (HU) or 362 (HU & UP)
-History/Social Sciences (HS)** Suppor ng Area #2 (3xx-4xx)
-Elec ve 1xx-4xx Professional Wri ng (PW)
-Elec ve 1xx-4xx Elec ve 1xx-4xx
-Scholarship in Prac ce (SP) #2** SPAN 422 or 470
+History/Social Sciences (HS)** Supporng Area #2 (3xx-4xx)
+Elecve 1xx-4xx Professional Wring (PW)
+Elecve 1xx-4xx Elecve 1xx-4xx
+Scholarship in Pracce (SP) #2** SPAN 422 or 470
 SPAN 331 (HU) or 361 (HU & UP) SPAN 4xx (Literature, Culture, Media)
-SPAN 3xx (Lang., Culture & Professional) Suppor ng Area #3 (3xx-4xx)
-SPAN 333 or 363 Elec ve 1xx-4xx
-SPAN 4xx (Literature, Culture, Media) Elec ve 1xx-4xx
+SPAN 3xx (Lang., Culture & Professional) Supporng Area #3 (3xx-4xx)
+SPAN 333 or 363 Elecve 1xx-4xx
+SPAN 4xx (Literature, Culture, Media) Elecve 1xx-4xx
 Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding
-Plural Socie es and Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding
+Plural Sociees and Cultural Competence courses may also fulfill Distribuve Studies categories.
 Spanish Language, Culture, and Professional Contexts
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirement
 Year 2 - Benchmark Requirement
 Major Requirements
-Distribu ve Studies
-Big Ques on
-Normally double counted with Distribu ve Studies
+Distribuve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses
 Requirements Credits Grade
@@ -265,25 +265,25 @@ Requirements: 6 credits/2 courses
 Requirements: 4-6 credits/2 courses
 Requirements: 0-3 credits
 Course Credits Grade SPAN 203
-Academic Wri ng (AW)
-Professional Wri ng (PW) SPAN 301
+Academic Wring (AW)
+Professional Wring (PW) SPAN 301
 Oral Comm. (OC)
 Math (MA)
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 Course Credits Grade SPAN 207* or 206
 Natural Science Lab (NL) SPAN 301 or 306
 Natural Sciences (NS) SPAN 303
 History/Social Sciences (HS) SPAN 311 or 316
 History/Social Sciences (HS)
-Humani es (HU) SPAN 331 (HU) and
-Humani es (HU) SPAN 332 (HU) and
-Scholarship in Prac ce (SP) SPAN 333
-Scholarship in Prac ce (SP) non major
+Humanies (HU) SPAN 331 (HU) and
+Humanies (HU) SPAN 332 (HU) and
+Scholarship in Pracce (SP) SPAN 333
+Scholarship in Pracce (SP) non major
 SPAN 361 (HU & UP) and
 SPAN 362 (HU & UP) and
 Course Credits Grade SPAN 363
-Big Ques on (IS)
-Big Ques on (IS)
+Big Queson (IS)
+Big Queson (IS)
 SPAN 422 or SPAN 470
 Course Credits Grade
 Understanding Plural Soc. (UP) DEPT 1xx-4xx
@@ -293,11 +293,11 @@ Course Credits Grade
 Choose two from: SPAN 318, 370, 371,
 372, 373, 374, 375, or 470
 {Min. Grade: C-} ENGL 101
-Cumula ve average of major requirements must be at least a 2.0
-Choice of Spanish or La n American Focus
+Cumulave average of major requirements must be at least a 2.0
+Choice of Spanish or Lan American Focus
 OR
 Language and Culture
-Suppor ng Area** (9 credits; 6 at 3xx-4xx level)
+Supporng Area** (9 credits; 6 at 3xx-4xx level)
 or
 SPAN 331 or 361
 SPAN 332 or 362
@@ -309,14 +309,14 @@ ARHU 158 or equivalent (if applicable)
 Global Engagement
 *pre-requisites: SPAN 103, 203, and 204 or equivalent
 **requires approval of SPAN advisor
-Some courses for the major may also count toward General Educa on
+Some courses for the major may also count toward General Educaon
 requirements.
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1eL0ki-g1XSznVOHn0HAHu_yuCddYjLpq#Spanish-and-Latin-American-Literature,-Culture,-and-Media)
 
-Spanish and La n American Literature, Culture, and Media
+Spanish and Lan American Literature, Culture, and Media
 Four Year Academic Plan
 Year 1
 Benchmark 1 Requirement
@@ -326,44 +326,44 @@ Year 3
 Year 4
 Fall Spring
 SPAN 203 ENGL 101 (AW)* {Min. Grade: C-} Natural Sciences (NS)**
-Math (MA)* Analy c Reasoning (AR)
+Math (MA)* Analyc Reasoning (AR)
 History/Social Science (HS)** SPAN 203 (fulfills Global Engagement)
-SPAN 103 Elec ve 1xx-4xx
-ARHU 158 Elec ve 1xx-4xx
-SPAN 301 SPAN 204 Oral Communica on (OC)
-SPAN 207 or 206 Scholarship in Prac ce (SP) #1**
-Elec ve 1xx-4xx SPAN 301 or 306
-Elec ve 1xx-4xx Suppor ng Area #1 (1xx-4xx)
-Elec ve 1xx-4xx Natural Science Lab (NL)**
-SPAN 303 Professional Wri ng (PW)
+SPAN 103 Elecve 1xx-4xx
+ARHU 158 Elecve 1xx-4xx
+SPAN 301 SPAN 204 Oral Communicaon (OC)
+SPAN 207 or 206 Scholarship in Pracce (SP) #1**
+Elecve 1xx-4xx SPAN 301 or 306
+Elecve 1xx-4xx Supporng Area #1 (1xx-4xx)
+Elecve 1xx-4xx Natural Science Lab (NL)**
+SPAN 303 Professional Wring (PW)
 SPAN 311 or 316 SPAN 332 (HU) or 362 (HU & UP)
 History/Social Sciences (HS)** SPAN 3xx (Lang., Culture & Professional)
-Elec ve 1xx-4xx Elec ve 1xx-4xx
-Elec ve 1xx-4xx Elec ve 1xx-4xx
-Scholarship in Prac ce (SP) #2** Suppor ng Area #3 (3xx-4xx)
-Suppor ng Area #2 (3xx-4xx) SPAN 333 or 363
+Elecve 1xx-4xx Elecve 1xx-4xx
+Elecve 1xx-4xx Elecve 1xx-4xx
+Scholarship in Pracce (SP) #2** Supporng Area #3 (3xx-4xx)
+Supporng Area #2 (3xx-4xx) SPAN 333 or 363
 SPAN 331 (HU) or 361 (HU & UP) SPAN 4xx (Literature, Culture, Media)
 SPAN 4xx (Literature, Culture, Media) SPAN 4xx (Literature, Culture, Media)
-SPAN 4xx (Literature, Culture, Media) Elec ve 1xx-4xx
+SPAN 4xx (Literature, Culture, Media) Elecve 1xx-4xx
 Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding
-Plural Socie es and Cultural Competence courses may also fulfill Distribu ve Studies categories.
-Spanish and La n American Literature, Culture, and Media
-General Educa on Requirements Benchmark Requirements
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding
+Plural Sociees and Cultural Competence courses may also fulfill Distribuve Studies categories.
+Spanish and Lan American Literature, Culture, and Media
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirement
 Year 2 - Benchmark Requirement
 Major Requirements
-Distribu ve Studies
-Big Ques on
-Normally double counted with Distribu ve Studies
+Distribuve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements Credits Grade
@@ -372,25 +372,25 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 SPAN 203
-Academic Wri ng (AW)
-Professional Wri ng (PW) SPAN 301
+Academic Wring (AW)
+Professional Wring (PW) SPAN 301
 Oral Comm. (OC)
 Math (MA)
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 SPAN 207* or 206
 Natural Science Lab (NL) SPAN 301 or 306
 Natural Sciences (NS) SPAN 303
 History/Social Sciences (HS) SPAN 311 or 316
 History/Social Sciences (HS)
-Humani es (HU) SPAN 331 (HU) and
-Humani es (HU) SPAN 332 (HU) and
-Scholarship in Prac ce (SP) SPAN 333
-Scholarship in Prac ce (SP) non major
+Humanies (HU) SPAN 331 (HU) and
+Humanies (HU) SPAN 332 (HU) and
+Scholarship in Pracce (SP) SPAN 333
+Scholarship in Pracce (SP) non major
 SPAN 361 (HU & UP) and
 SPAN 362 (HU & UP) and
 SPAN 363
-Big Ques on (IS)
-Big Ques on (IS) SPAN 318, 370, 371, 372, 373,
+Big Queson (IS)
+Big Queson (IS) SPAN 318, 370, 371, 372, 373,
 374, 375, 470
 SPAN 4xx
 Understanding Plural Soc. (UP) SPAN 4xx
@@ -400,14 +400,14 @@ DEPT 1xx-4xx
 DEPT 3xx-4xx
 DEPT 3xx-4xx
 {Min. Grade: C-} ENGL 101
-Cumula ve average of major requirements must be at least a 2.0
-Choice of Spanish or La n American Focus
+Cumulave average of major requirements must be at least a 2.0
+Choice of Spanish or Lan American Focus
 OR
 Language, Culture and Professional Contexts
 One from:
 Literature, Culture, and Media
 or
-Suppor ng Area** (9 credits; 6 at 3xx-4xx level)
+Supporng Area** (9 credits; 6 at 3xx-4xx level)
 SPAN 331 or 361
 SPAN 332 or 362
 At least 30 credits must be earned at UMD
@@ -418,14 +418,14 @@ ARHU 158 or equivalent (if applicable)
 Global Engagement
 *pre-requisites: SPAN 103, 203, and 204 or equivalent
 **requires approval of SPAN advisor
-Some courses for the major may also count toward General Educa on
+Some courses for the major may also count toward General Educaon
 requirements.
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=139qrMn2SvwHU7jkbVgDX6hNFt6wFi9Hj#Linguistics,-Culture,-and-Education)
 
-Spanish Linguis cs, Culture, and Educa on
+Spanish Linguiscs, Culture, and Educaon
 Four Year Academic Plan
 Year 1
 Benchmark 1 Requirement
@@ -435,44 +435,44 @@ Year 3
 Year 4
 Fall Spring
 SPAN 203 ENGL 101 (AW)* {Min. Grade: C-} Natural Sciences (NS)**
-Math (MA)* Analy c Reasoning (AR)
+Math (MA)* Analyc Reasoning (AR)
 History/Social Science (HS)** SPAN 203 (fulfills Global Engagement)
-SPAN 103 Elec ve 1xx-4xx
-ARHU 158 Elec ve 1xx-4xx
-SPAN 301 SPAN 204 Oral Communica on (OC)
-SPAN 207 or 206 Scholarship in Prac ce (SP) #1**
-Elec ve 1xx-4xx SPAN 301 or 306
-Elec ve 1xx-4xx Natural Science Lab (NL)**
-Elec ve 1xx-4xx Suppor ng Area #1 (1xx-4xx)
+SPAN 103 Elecve 1xx-4xx
+ARHU 158 Elecve 1xx-4xx
+SPAN 301 SPAN 204 Oral Communicaon (OC)
+SPAN 207 or 206 Scholarship in Pracce (SP) #1**
+Elecve 1xx-4xx SPAN 301 or 306
+Elecve 1xx-4xx Natural Science Lab (NL)**
+Elecve 1xx-4xx Supporng Area #1 (1xx-4xx)
 SPAN 303 SPAN 332 (HU) or 362 (HU & UP)
-SPAN 311 or 316 Suppor ng Area #2 (3xx-4xx)
+SPAN 311 or 316 Supporng Area #2 (3xx-4xx)
 History/Social Sciences (HS)** SPAN 4xx (Lit., Culture, Media)
-Elec ve 1xx-4xx Elec ve 1xx-4xx
-Elec ve 1xx-4xx Elec ve 1xx-4xx
-Professional Wri ng (PW) SPAN 4xx (Lit., Culture, Media)
-Scholarship in Prac ce (SP) #2** Suppor ng Area #3 (3xx-4xx)
+Elecve 1xx-4xx Elecve 1xx-4xx
+Elecve 1xx-4xx Elecve 1xx-4xx
+Professional Wring (PW) SPAN 4xx (Lit., Culture, Media)
+Scholarship in Pracce (SP) #2** Supporng Area #3 (3xx-4xx)
 SPAN 325 SPAN 426
 SPAN 425 SPAN 333 or 363
-SPAN 331 (HU) or 361 (HU & UP) Elec ve 1xx-4xx
+SPAN 331 (HU) or 361 (HU & UP) Elecve 1xx-4xx
 Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding
-Plural Socie es and Cultural Competence courses may also fulfill Distribu ve Studies categories.
-Spanish Linguis cs, Culture, and Educa on
-General Educa on Requirements Benchmark Requirements
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding
+Plural Sociees and Cultural Competence courses may also fulfill Distribuve Studies categories.
+Spanish Linguiscs, Culture, and Educaon
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirement
 Year 2 - Benchmark Requirement
 Major Requirements
-Distribu ve Studies
-Big Ques on
-Normally double counted with Distribu ve Studies
+Distribuve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements Credits Grade
@@ -481,25 +481,25 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 SPAN 203
-Academic Wri ng (AW)
-Professional Wri ng (PW) SPAN 301
+Academic Wring (AW)
+Professional Wring (PW) SPAN 301
 Oral Comm. (OC)
 Math (MA)
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 SPAN 207* or 206
 Natural Science Lab (NL) SPAN 301 or 306
 Natural Sciences (NS) SPAN 303
 History/Social Sciences (HS) SPAN 311 or 316
 History/Social Sciences (HS)
-Humani es (HU) SPAN 331 (HU) and
-Humani es (HU) SPAN 332 (HU) and
-Scholarship in Prac ce (SP) SPAN 333
-Scholarship in Prac ce (SP) non major
+Humanies (HU) SPAN 331 (HU) and
+Humanies (HU) SPAN 332 (HU) and
+Scholarship in Pracce (SP) SPAN 333
+Scholarship in Pracce (SP) non major
 SPAN 361 (HU & UP) and
 SPAN 362 (HU & UP) and
 SPAN 363
-Big Ques on (IS)
-Big Ques on (IS) SPAN 325
+Big Queson (IS)
+Big Queson (IS) SPAN 325
 SPAN 425
 SPAN 426
 SPAN 4xx (Literature, Culture, Media)
@@ -509,11 +509,11 @@ Cultural Competency (CC) DEPT 1xx-4xx
 DEPT 3xx-4xx
 DEPT 3xx-4xx
 {Min. Grade: C-} ENGL 101
-Cumula ve average of major requirements must be at least a 2.0
-Choice of Spanish or La n American Focus
+Cumulave average of major requirements must be at least a 2.0
+Choice of Spanish or Lan American Focus
 OR
-Linguis cs and Culture
-or Suppor ng Area** (9 credits; 6 at 3xx-4xx level)
+Linguiscs and Culture
+or Supporng Area** (9 credits; 6 at 3xx-4xx level)
 SPAN 331 or 361
 SPAN 332 or 362
 At least 30 credits must be earned at UMD
@@ -524,7 +524,7 @@ ARHU 158 or equivalent (if applicable)
 Global Engagement
 *pre-requisites: SPAN 103, 203, and 204 or equivalent
 **requires approval of SPAN advisor
-Some courses for the major may also count toward General Educa on
+Some courses for the major may also count toward General Educaon
 requirements.
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:

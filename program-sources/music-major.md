@@ -257,7 +257,7 @@ Web Accessibility
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1gsAwruL7JiOj3BHkKkix16YOPS4NhbMT#Music-Liberal-Arts---Choral)
 
-Music - Bachelor of Music Educa on - Choral/General Four Year Academic Plan
+Music - Bachelor of Music Educaon - Choral/General Four Year Academic Plan
 Year 1
 Benchmark 1 Requirements
 Year 2
@@ -274,52 +274,52 @@ MUSC 329 MUSC 099
 MUSC 099 MUED 187
 MUED 186 MUSC 126, 226, or 227
 ENGL 101 (AW)* {Min. Grade: C-} MATH (MA)*
-Oral Communica on (OC) Natural Science Lab (NL)**
+Oral Communicaon (OC) Natural Science Lab (NL)**
 MUSP 207 MUSP 208
 MUSC 150 MUSC 202 MUSC 203
 MUSC 151 MUSC 329 MUSC 329
-Praxis I for College of Educa on MUSC 250 MUSC 251
+Praxis I for College of Educaon MUSC 250 MUSC 251
 MUSC 260 (HU & UP) MUSC 360
 MUSC 099 MUSC 099
 MUED 333 MUSC 106
 Natural Sciences (NS)** MUSC 490
-Elec ve 1xx-4xx (3 cr.) MUED 322
+Elecve 1xx-4xx (3 cr.) MUED 322
 MUSP 305 MUSP 306
 MUSC 250 MUSC 329 MUSC 329
-MUSC 251 MUSC 361 MUED Elec ve 1xx-4xx (2 cr.)
-MUED 422 MUED 433 (Scholarship in Prac ce #1)
+MUSC 251 MUSC 361 MUED Elecve 1xx-4xx (2 cr.)
+MUED 422 MUED 433 (Scholarship in Pracce #1)
 EDHD 413 MUED 213, 215, 216, or 217
 TLPL 360 (HS) MUSC 099
-MUSC 099 Elec ve 1xx-4xx (3 cr.)
-Analy cal Reasoning (AR)
+MUSC 099 Elecve 1xx-4xx (3 cr.)
+Analycal Reasoning (AR)
 MUSP 410 MUED 484 (6 cr.)
 MUSC 329 MUED 494 (6 cr.)
 MUED 474
 EDHD 426
-MUSC 4xx Music History Elec ve
-Humani es (HU)**
-Scholarship in Prac ce (SP) #2** (non-major)
-Professional Wri ng (PW)
+MUSC 4xx Music History Elecve
+Humanies (HU)**
+Scholarship in Pracce (SP) #2** (non-major)
+Professional Wring (PW)
 Total Credits for Degree: 137
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es
-and Cultural Competence courses may also fulfill Distribu ve Studies categories.
-Music - Bachelor of Music Educa on - Choral/General
-General Educa on Requirements Benchmark Requirements
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees
+and Cultural Competence courses may also fulfill Distribuve Studies categories.
+Music - Bachelor of Music Educaon - Choral/General
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
-Distribu ve Studies Year 3 - Benchmark Requirements
+Distribuve Studies Year 3 - Benchmark Requirements
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
@@ -328,25 +328,25 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 4 credits of lessons
-Academic Wri ng (AW) 2 credits of large ensemble
-Professional Wri ng (PW)
+Academic Wring (AW) 2 credits of large ensemble
+Professional Wring (PW)
 Oral Comm. (OC) MUSC 150
 Math (MA) MUSC 151
-Analy c Reasoning (AR) Praxis I for College of Educa on
+Analyc Reasoning (AR) Praxis I for College of Educaon
 MUSC 250
 Natural Science Lab (NL) MUSC 251
 Natural Sciences (NS)
 History/Social Sciences (HS)
 History/Social Sciences (HS)
-Humani es (HU)
-Humani es (HU)
-Scholarship in Prac ce (SP) MUSP 109
-Scholarship in Prac ce (SP) non major MUSP 110
+Humanies (HU)
+Humanies (HU)
+Scholarship in Pracce (SP) MUSP 109
+Scholarship in Pracce (SP) non major MUSP 110
 MUSP 207
 MUSP 208
 MUSC 102
-Big Ques on (IS) MUSC 103
-Big Ques on (IS) MUSC 106
+Big Queson (IS) MUSC 103
+Big Queson (IS) MUSC 106
 MUSC 126, 226, or 227
 MUSC 127
 MUSC 202
@@ -369,10 +369,10 @@ MUED 333
 TLPL 360 (HS)
 EDHD 413 (HS)
 EDHD 426
-MUSC 4xx Music History Elec ve
+MUSC 4xx Music History Elecve
 MUSP 410
 MUSC 490
-MUED Elec ve 1xx-4xx (2 cr.)
+MUED Elecve 1xx-4xx (2 cr.)
 MUED 422
 MUED 433 (SP)
 MUED 474
@@ -384,23 +384,23 @@ EDHD 413
 MUSC 260
 MUED 433
 MUSC 260
-Cumula ve average of major requirements must be at least a 2.75
+Cumulave average of major requirements must be at least a 2.75
 Students must take six semesters of MUSC 099.
-I. Founda on
+I. Foundaon
 or
 II. Intermediate
 III. Advanced
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
 ARHU 158 or equivalent (if applicable) MUED 186
-Some courses for the major may also count toward General Educa on requirements.
+Some courses for the major may also count toward General Educaon requirements.
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1KG9zVt2VyHnytYFlROSaHHcsPHenO7lF#Music-Liberal-Arts---Instrumental)
 
-Music - Bachelor of Music Educa on - Instrumental Four Year Academic Plan
+Music - Bachelor of Music Educaon - Instrumental Four Year Academic Plan
 Year 1
 Benchmark 1 Requirements
 Year 2
@@ -416,53 +416,53 @@ MUSC 229 MUSC 229
 MUSC 099 MUSC 099
 MUED 186 MUED 187
 ENGL 101 (AW)* {Min. Grade: C-} MATH (MA)*
-Oral Communica on (OC) Natural Science Lab (NL)**
+Oral Communicaon (OC) Natural Science Lab (NL)**
 MUSP 207 MUSP 208
 MUSC 150 MUSC 229 MUSC 229
 MUSC 151 MUSC 250 MUSC 251
-Praxis I for College of Educa on MUSC 260 (HU & UP) MUSC 360
+Praxis I for College of Educaon MUSC 260 (HU & UP) MUSC 360
 MUSC 099 MUSC 099
 MUED 213 MUED 217
 MUED 320 MUED 311
 Natural Sciences (NS)* MUSC 490
-Elec ve 1xx -4xx (3 cr.)
+Elecve 1xx -4xx (3 cr.)
 MUSP 305 MUSP 306
 MUSC 250 MUSC 229 MUSC 229
 MUSC 251 MUSC 361 MUED 216
 MUSC 099 MUED 411
-MUED 215 MUED Elec ve 1xx-4xx (2 cr.)
-MUED 420 (Scholarship in Prac ce #1) EDHD 413 (HS)
+MUED 215 MUED Elecve 1xx-4xx (2 cr.)
+MUED 420 (Scholarship in Pracce #1) EDHD 413 (HS)
 TLPL 360 (HS) EDHD 426
-Analy c Reasoning (AR) MUED 322
+Analyc Reasoning (AR) MUED 322
 MUSC 099
 MUSP 410 MUED 484 (6 cr.)
 MUSC 229 MUED 494 (6 cr.)
 MUED 474
-MUSC 4xx Music History Elec ve
-Professional Wri ng (PW)
-Humani es (HU)**
-Scholarship in Prac ce (SP) #2** (non-major)
-Elec ve 1xx-4xx (3 cr.)
+MUSC 4xx Music History Elecve
+Professional Wring (PW)
+Humanies (HU)**
+Scholarship in Pracce (SP) #2** (non-major)
+Elecve 1xx-4xx (3 cr.)
 Total Credits for Degree: 137
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es
-and Cultural Competence courses may also fulfill Distribu ve Studies categories.
-Music - Bachelor of Music Educa on - Instrumental
-General Educa on Requirements Benchmark Requirements
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees
+and Cultural Competence courses may also fulfill Distribuve Studies categories.
+Music - Bachelor of Music Educaon - Instrumental
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
-Distribu ve Studies Year 3 - Benchmark Requirements
+Distribuve Studies Year 3 - Benchmark Requirements
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
@@ -471,25 +471,25 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 4 credits of lessons
-Academic Wri ng (AW) 2 credits of large ensemble
-Professional Wri ng (PW)
+Academic Wring (AW) 2 credits of large ensemble
+Professional Wring (PW)
 Oral Comm. (OC) MUSC 150
 Math (MA) MUSC 151
-Analy c Reasoning (AR) Praxis I for College of Educa on
+Analyc Reasoning (AR) Praxis I for College of Educaon
 MUSC 250
 Natural Science Lab (NL) MUSC 251
 Natural Sciences (NS)
 History/Social Sciences (HS)
 History/Social Sciences (HS)
-Humani es (HU)
-Humani es (HU)
-Scholarship in Prac ce (SP) MUSP 109
-Scholarship in Prac ce (SP) non major MUSP 110
+Humanies (HU)
+Humanies (HU)
+Scholarship in Pracce (SP) MUSP 109
+Scholarship in Pracce (SP) non major MUSP 110
 MUSP 207
 MUSP 208
 MUSC 102
-Big Ques on (IS) MUSC 103
-Big Ques on (IS) MUSC 150
+Big Queson (IS) MUSC 103
+Big Queson (IS) MUSC 150
 MUSC 151
 MUED 186
 MUED 187
@@ -513,10 +513,10 @@ MUED 322
 TLPL 360 (HS)
 EDHD 413 (HS)
 EDHD 426
-MUSC 4xx Music History Elec ve
+MUSC 4xx Music History Elecve
 MUSP 410
 MUSC 490
-MUED Elec ve 1xx-4xx (2 cr.)
+MUED Elecve 1xx-4xx (2 cr.)
 MUED 411
 MUED 420 (SP)
 MUED 474
@@ -528,41 +528,41 @@ EDHD 413
 MUSC 260
 MUED 420
 MUSC 260
-Cumula ve average of major requirements must be at least a 2.75
+Cumulave average of major requirements must be at least a 2.75
 Students must take six semesters of MUSC 099.
-I. Founda on
+I. Foundaon
 or
 II. Intermediate
 III. Advanced
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
 ARHU 158 or equivalent (if applicable) MUED 186
-Some courses for the major may also count toward General Educa on requirements.
+Some courses for the major may also count toward General Educaon requirements.
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1g8J24Bz68wwqpZDqN_O19lIzJwle4FkX#Music-Liberal-Arts---Jazz-Studies)
 
-      !"#$%&'()$!*+
-,!"#$%,&'()$!*+
--!"#$%-&'()$!*+
-.
-/011 23456789:;<=>?@AB;??@C? DEFGHIJ DEFGHHIK9:;<=>?@ABL:M;;C?;NOB; DEFPHIK DEFPHIQDEFPHRI DEFPHRHDEFPKKJS DEFPKKJSDEFPIJJ DEFPIJJTUVWHIHXYZ[\]D=C^V:L<;_P`a DYbcXDY[\YdcEHRe f:LBP@NNgC=9Lh@CXfP[DEFPHRI DEFGKIi DEFGKIeDEFPHRH DEFPKKJS DEFPKKJSDEFPKRI DEFPKRHDEFPKjIXcEkEG[ DEFPQjIDEFPIJJ DEFPIJJUL>g:LBF9=;C9;WLOXUW[\\ UL>g:LBF9=;C9;?XUF[\\F9l@BL:?l=m=CG:L9h9;XFG[nH\\DEFGQIR DEFP8QjDEFPKRI DEFPKKJS cgNLC=h;?XcE[\\DEFPKRH DEFPQjH YCLBoh9d;L?@C=CMXYd[DEFP8RR VB@OLBTCMLM;N;C>nKVB@OLBTCMLM;N;C>nH TB;9hp;Qqq`8qqXQ9:^[c=?>@:orF@9=LBF9=;C9;?XcF[\\DEFP8RQ G:@A;??=@CLBZ:=hCMXGZ[F9l@BL:?l=m=CG:L9h9;XFG[nK\\ c=?>@:orF@9=LBF9=;C9;?XcF[\\TB;9hp;Qqq`8qqXQ9:^[ TB;9hp;Qqq`8qqXQ9:^[TB;9hp;Qqq`8qqXQ9:^[ TB;9hp;Qqq`8qqXQ9:^[TB;9hp;Qqq`8qqXQ9:^[ TB;9hp;Hqq`8qqXQ9:^[TB;9hp;Qqq`8qqXH9:^[ TB;9hp;Hqq`8qqXH9:^[b@>LBP:;<=>?A@:s;M:;;_HKItQJ9:;<=>?Ng?>O;Qqq`8qqB;p;B
-uvwxyz{|}~zxzyxzz|x|wz}zwxzw uvwxz}~xy{
-uvwxyz{|}~zxzyxzz||vwz}zwxzw
-uvwxyz{|}~zxzyxzz|wwz}zwxzw
- ¡¢£¤¢¥ ¦§¨©©ª¢«¡¬§§¥®¢§««®¢¯§°±¥ ¨²³ ¢¢§°´§¥¢μμ«¶¬§§¥®¢§°§¨
-    !"#$%&' ()%*"#$%&'+%&,&$' -./()%*"#$%&'-0/()%*"#$%&'-1/()%*"#$%&'2$'&$3 4,&$' 56!"#$%&'($78'!9!%:!3!&;$&)2$'&$3 4,&$'2$4'$&:<!4==%$>;$&)2$'&$3 4,&$'?!($78'!@A=$ B$7/!= !<!4==%$>;$&)!&)#$%&'?!''@,&&'%'&%$$%%!C.0D$&'&!!%=&7E
-FGHIJKGLGMNOPQRSKGTJNOURSVIKOGO WVIKOG WKGTJNO XKYTGFGHIJKGLGMNOPZRSKGTJNOU[SVIKOGO WVIKOG WKGTJNO XKYTG FGHIJKGLGMNO WKGTJNO XKYTGFGHIJKGLGMNOP\SKGTJNOUZSVIKOGO WVIKOG WKGTJNO XKYTGFGHIJKGLGMNOP]^\SKGTJNOUZSVIKOGO WVIKOG WKGTJNO XKYTGFGHIJKGLGMNOP_^`SKGTJNO WVIKOG WKGTJNO XKYTG
-abcdefghijkdhhilhmbnedofbpcfqlrsmpt ubcdefghijkncrddlhdovkdwcijdhhfilnkpcfqlrswptxcnkyioozsxyt {|}y~{ngs{mt {|}y~~mlnkqbdnhilflrsmt {|}yu{|}yu~ngcnk}bfdlbdnvstngcnk}bfdlbdhs}tfhgic}ibfnk}bfdlbdhs}tfhgic}ibfnk}bfdlbdhs}tonlfqdhs|tonlfqdhs|t {|}w~}biknchfflwcnbqbds}wt {|}w~~}biknchfflwcnbqbds}wtlilonic {|}wu{|}wu{|}y~u{|}y~frdhqils}t {|}y~frdhqils}t {|}y~~{|}yuus~bczhdodhgdcht{|}yu{|}yu~|ledchgnleflrwkcnk}ibzs|wt {|}yus||wt|ledchgnleflrwkcnk}ibzs|wtykgcnkyiodgdlbsyyt {|}w{|}y{|}y~{|}ya{|}ya{|}ya
-¡¢£ ¤¥¦§¨§
-©ª¡«¬¨
-©ª¡«¬¨
-®¯®°±²³´±³´μ±¶´·¸¯±¹·μμ´º®»μ´¯´¼½¾¯®¾½¿´±½°´±¾½±ÀÁÂ
-Ã½®Ä´¼½¾¯®¾½½±Å´¸·®μ¾´¯´¾½´μ¾·¸ÆÇÃÂÈÈÁ
-ÉÊËÌÍÎÏÐÑÌÎÒÓÔÓÕ
-ÌÖ ÉÉÊÉÎ×ÓÖØÓÏÙÐ×ÓÉÉÉÊÚÏÔÐÎÛÓÏÜÝÞßàáâÞãäåàæçÞáàèàÝãâéêáëáìíçìîêÝïðåñÜåàæçÞáàèàÝãâéêáëáìíçìîêÝïòóôõö÷óø õó÷÷óõõöõöóóõ öôø õó÷÷óõõöõöóóõø    ôõõôõôõõôöõó÷÷óõõöõöóøõôõõôõó÷ò õöôõóöôöôõôöô!"ö"õõó #$%&'($)*+&+',$*'-.&'%/0$*'%/1'/2+$'($)3-'-$4/*5'6&3&*/2'75)(/8$3'*&9):*&%&3-+;
+!"#$%&'()$!*+
+,!"#$%,&'()$!*+
+-!"#$%-&'()$!*+
+.
+/011 23456789:;<=>?@AB;??@C? DEFGHIJ DEFGHHIK9:;<=>?@ABL:M;;C?;NOB; DEFPHIK DEFPHIQDEFPHRI DEFPHRHDEFPKKJS DEFPKKJSDEFPIJJ DEFPIJJTUVWHIHXYZ[\]D=C^V:L<;_P`a DYbcXDY[\YdcEHRe f:LBP@NNgC=9Lh@CXfP[DEFPHRI DEFGKIi DEFGKIeDEFPHRH DEFPKKJS DEFPKKJSDEFPKRI DEFPKRHDEFPKjIXcEkEG[ DEFPQjIDEFPIJJ DEFPIJJUL>g:LBF9=;C9;WLOXUW[\\ UL>g:LBF9=;C9;?XUF[\\F9l@BL:?l=m=CG:L9h9;XFG[nH\\DEFGQIR DEFP8QjDEFPKRI DEFPKKJS cgNLC=h;?XcE[\\DEFPKRH DEFPQjH YCLBoh9d;L?@C=CMXYd[DEFP8RR VB@OLBTCMLM;N;C>nKVB@OLBTCMLM;N;C>nH TB;9hp;Qqq`8qqXQ9:^[c=?>@:orF@9=LBF9=;C9;?XcF[\\DEFP8RQ G:@A;??=@CLBZ:=hCMXGZ[F9l@BL:?l=m=CG:L9h9;XFG[nK\\ c=?>@:orF@9=LBF9=;C9;?XcF[\\TB;9hp;Qqq`8qqXQ9:^[ TB;9hp;Qqq`8qqXQ9:^[TB;9hp;Qqq`8qqXQ9:^[ TB;9hp;Qqq`8qqXQ9:^[TB;9hp;Qqq`8qqXQ9:^[ TB;9hp;Hqq`8qqXQ9:^[TB;9hp;Qqq`8qqXH9:^[ TB;9hp;Hqq`8qqXH9:^[b@>LBP:;<=>?A@:s;M:;;_HKItQJ9:;<=>?Ng?>O;Qqq`8qqB;p;B
+uvwxyz{|}~zxzyxzz|x|wz}zwxzw uvwxz}~xy{
+uvwxyz{|}~zxzyxzz||vwz}zwxzw
+uvwxyz{|}~zxzyxzz|wwz}zwxzw
+ ¡¢£¤¢¥ ¦§¨©©ª¢«¡¬§§¥®¢§««®¢¯§°±¥ ¨²³ ¢¢§°´§¥¢μμ«¶¬§§¥®¢§°§¨
+!"#$%&' ()%*"#$%&'+%&,&$' -./()%*"#$%&'-0/()%*"#$%&'-1/()%*"#$%&'2$'&$3 4,&$' 56!"#$%&'($78'!9!%:!3!&;$&)2$'&$3 4,&$'2$4'$&:<!4==%$>;$&)2$'&$3 4,&$'?!($78'!@A=$ B$7/!= !<!4==%$>;$&)!&)#$%&'?!''@,&&'%'&%$$%%!C.0D$&'&!!%=&7E
+FGHIJKGLGMNOPQRSKGTJNOURSVIKOGO WVIKOG WKGTJNO XKYTGFGHIJKGLGMNOPZRSKGTJNOU[SVIKOGO WVIKOG WKGTJNO XKYTG FGHIJKGLGMNO WKGTJNO XKYTGFGHIJKGLGMNOP\SKGTJNOUZSVIKOGO WVIKOG WKGTJNO XKYTGFGHIJKGLGMNOP]^\SKGTJNOUZSVIKOGO WVIKOG WKGTJNO XKYTGFGHIJKGLGMNOP_^`SKGTJNO WVIKOG WKGTJNO XKYTG
+abcdefghijkdhhilhmbnedofbpcfqlrsmpt ubcdefghijkncrddlhdovkdwcijdhhfilnkpcfqlrswptxcnkyioozsxyt {|}y~{ngs{mt {|}y~~mlnkqbdnhilflrsmt {|}yu{|}yu~ngcnk}bfdlbdnvstngcnk}bfdlbdhs}tfhgic}ibfnk}bfdlbdhs}tfhgic}ibfnk}bfdlbdhs}tonlfqdhs|tonlfqdhs|t {|}w~}biknchfflwcnbqbds}wt {|}w~~}biknchfflwcnbqbds}wtlilonic {|}wu{|}wu{|}y~u{|}y~frdhqils}t {|}y~frdhqils}t {|}y~~{|}yuus~bczhdodhgdcht{|}yu{|}yu~|ledchgnleflrwkcnk}ibzs|wt {|}yus||wt|ledchgnleflrwkcnk}ibzs|wtykgcnkyiodgdlbsyyt {|}w{|}y{|}y~{|}ya{|}ya{|}ya
+¡¢£ ¤¥¦§¨§
+©ª¡«¬¨
+©ª¡«¬¨
+®¯®°±²³´±³´μ±¶´·¸¯±¹·μμ´º®»μ´¯´¼½¾¯®¾½¿´±½°´±¾½±ÀÁÂ
+Ã½®Ä´¼½¾¯®¾½½±Å´¸·®μ¾´¯´¾½´μ¾·¸ÆÇÃÂÈÈÁ
+ÉÊËÌÍÎÏÐÑÌÎÒÓÔÓÕ
+ÌÖ ÉÉÊÉÎ×ÓÖØÓÏÙÐ×ÓÉÉÉÊÚÏÔÐÎÛÓÏÜÝÞßàáâÞãäåàæçÞáàèàÝãâéêáëáìíçìîêÝïðåñÜåàæçÞáàèàÝãâéêáëáìíçìîêÝïòóôõö÷óøõó÷÷óõõöõöóóõ öôøõó÷÷óõõöõöóóõøôõõôõôõõôöõó÷÷óõõöõöóøõôõõôõó÷ò õöôõóöôöôõôöô!"ö"õõó #$%&'($)*+&+',$*'-.&'%/0$*'%/1'/2+$'($)3-'-$4/*5'6&3&*/2'75)(/8$3'*&9):*&%&3-+;
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1w2YlzMQT2kVfHveaxuIsWW0K2WCqseIL#Music-Liberal-Arts---Piano)
 
@@ -579,48 +579,48 @@ Fall Spring
 2 credits of large ensemble MUSC 150 MUSC 151
 MUSC 329 MUSC 329
 MUSC 099 MUSC 099
-ENGL 101 (AW)* {Min. Grade: C-} MUSC Elec ve 1xx-4xx (1 cr.)
+ENGL 101 (AW)* {Min. Grade: C-} MUSC Elecve 1xx-4xx (1 cr.)
 ARHU 158 MATH (MA)*
-History/Social Sciences (HS)** Oral Communica on (OC)
+History/Social Sciences (HS)** Oral Communicaon (OC)
 MUSC 150 MUSP 207A MUSP 208A
 MUSC 151 MUSC 250 MUSC 251
 MUSC 260 (HU & UP) MUSC 360
 MUSC 329 MUSC 329
 MUSC 099 MUSC 099
 Global Engagement #1 Global Engagement #2
-Natural Sciences (NS)** Scholarship in Prac ce (SP) #1**
+Natural Sciences (NS)** Scholarship in Pracce (SP) #1**
 MUSP 305A MUSC 450
-MUSC 250 MUSC 329 Analy cal Reasoning (AR)
-MUSC 251 MUSC 361 Humani es (HU)**
+MUSC 250 MUSC 329 Analycal Reasoning (AR)
+MUSC 251 MUSC 361 Humanies (HU)**
 Natural Science Lab (NL)** History/Social Sciences (HS)**
-Elec ve 3xx-4xx (3 cr.) Elec ve 3xx-4xx (3 cr.)
-Elec ve 3xx-4xx (3 cr.)
-MUSC Elec ve 1xx-4xx (3 cr.) MUSC Elec ve 1xx-4xx (3 cr. )
-MUSC Elec ve 3xx-4xx (3 cr.) Professional Wri ng (PW)
-Scholarship in Prac ce (SP) #2** Elec ve 1xx-4xx (3 cr.)
-Elec ve 3xx-4xx (3 cr.) Elec ve 1xx-4xx (3 cr.)
-Elec ve 3xx-4xx (3 cr.) Elec ve 3xx-4xx (2 cr.)
+Elecve 3xx-4xx (3 cr.) Elecve 3xx-4xx (3 cr.)
+Elecve 3xx-4xx (3 cr.)
+MUSC Elecve 1xx-4xx (3 cr.) MUSC Elecve 1xx-4xx (3 cr. )
+MUSC Elecve 3xx-4xx (3 cr.) Professional Wring (PW)
+Scholarship in Pracce (SP) #2** Elecve 1xx-4xx (3 cr.)
+Elecve 3xx-4xx (3 cr.) Elecve 1xx-4xx (3 cr.)
+Elecve 3xx-4xx (3 cr.) Elecve 3xx-4xx (2 cr.)
 Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es
-and Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees
+and Cultural Competence courses may also fulfill Distribuve Studies categories.
 Music - Bachelor of Arts - Piano
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
 Year 3 - Benchmark Requirements
-Distribu ve Studies
+Distribuve Studies
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
@@ -629,26 +629,26 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 4 credits of lessons
-Academic Wri ng (AW) 2 credits of large ensemble
-Professional Wri ng (PW)
+Academic Wring (AW) 2 credits of large ensemble
+Professional Wring (PW)
 Oral Comm. (OC) MUSC 150
 Math (MA) MUSC 151
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 MUSC 250
 MUSC 251
 Natural Science Lab (NL)
 Natural Sciences (NS)
 History/Social Sciences (HS)
 History/Social Sciences (HS)
-Humani es (HU)
-Humani es (HU) MUSP 109A
-Scholarship in Prac ce (SP) MUSP 110A
-Scholarship in Prac ce (SP) non major MUSP 207A
+Humanies (HU)
+Humanies (HU) MUSP 109A
+Scholarship in Pracce (SP) MUSP 110A
+Scholarship in Pracce (SP) non major MUSP 207A
 MUSP 208A
 MUSC 150
 MUSC 151
-Big Ques on (IS) MUSC 250
-Big Ques on (IS) MUSC 251
+Big Queson (IS) MUSC 250
+Big Queson (IS) MUSC 251
 MUSC 260 (HU & UP)
 MUSP 305A
 Understanding Plural Soc. (UP) MUSC 360
@@ -662,14 +662,14 @@ MUSC 3xx-4xx (3 cr.)
 {Min. Grade: C-} ENGL 101
 MUSC 260
 MUSC 260
-Cumula ve average of major requirements must be at least a 2.0
-I. Founda on Level
+Cumulave average of major requirements must be at least a 2.0
+I. Foundaon Level
 II. Intermediate
 or
 III. Advanced
-IV. Elec ves (10 credits)
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+IV. Elecves (10 credits)
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
@@ -677,7 +677,7 @@ At least 30 credits must be earned at UMD
 ARHU 158 or equivalent (if applicable)
 Global Engagement
 Students must take four semesters of MUSC 099.
-Some courses for the major may also count toward General Educa on requirements.
+Some courses for the major may also count toward General Educaon requirements.
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1YMxqNvmPxryb9_R0765_pYGFvMeSnxpS#Music-Performance---Strings)
 
@@ -702,41 +702,41 @@ MUSC 151 MUSC 229 MUSC 229
 MUSC 250 MUSC 251
 MUSC 260 (HU & UP) MUSC 360
 MUSC 099 MUSC 099
-Oral Communica on (OC) Humani es (HU)**
-Natural Sciences (NS)** Scholarship in Prac ce (SP) #1**
-MUSP 305 MUSC Elec ve 3xx-4xx (3 cr.)
+Oral Communicaon (OC) Humanies (HU)**
+Natural Sciences (NS)** Scholarship in Pracce (SP) #1**
+MUSP 305 MUSC Elecve 3xx-4xx (3 cr.)
 MUSC 250 MUSC 229 MUSC 450
-MUSC 251 MUSC 361 Analy cal Reasoning (AR)
+MUSC 251 MUSC 361 Analycal Reasoning (AR)
 Global Engagement #1 Global Engagement #2
 History/Social Sciences (HS)** History/Social Sciences (HS)**
-Elec ve 3xx-4xx (3 cr.)
-MUSC Elec ve 3xx-4xx (3 cr.) Professional Wri ng (PW)
-Scholarship in Prac ce (SP) #2** Elec ve 3xx-4xx (3 cr.)
-Elec ve 3xx-4xx (3 cr.) Elec ve 3xx-4xx (3 cr.)
-Elec ve 3xx-4xx (3 cr.) Elec ve 3xx-4xx (1 cr.)
-Elec ve 3xx-4xx (3 cr.) Elec ve 1xx-4xx (3 cr.)
-Elec ve 1xx-4xx (1 cr.)
+Elecve 3xx-4xx (3 cr.)
+MUSC Elecve 3xx-4xx (3 cr.) Professional Wring (PW)
+Scholarship in Pracce (SP) #2** Elecve 3xx-4xx (3 cr.)
+Elecve 3xx-4xx (3 cr.) Elecve 3xx-4xx (3 cr.)
+Elecve 3xx-4xx (3 cr.) Elecve 3xx-4xx (1 cr.)
+Elecve 3xx-4xx (3 cr.) Elecve 1xx-4xx (3 cr.)
+Elecve 1xx-4xx (1 cr.)
 Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es
-and Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees
+and Cultural Competence courses may also fulfill Distribuve Studies categories.
 Music - Bachelor of Arts - Strings
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
 Year 3 - Benchmark Requirements
-Distribu ve Studies
+Distribuve Studies
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
@@ -745,26 +745,26 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 4 credits of lessons
-Academic Wri ng (AW) 2 credits of large ensemble
-Professional Wri ng (PW)
+Academic Wring (AW) 2 credits of large ensemble
+Professional Wring (PW)
 Oral Comm. (OC) MUSC 150
 Math (MA) MUSC 151
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 MUSC 250
 MUSC 251
 Natural Science Lab (NL)
 Natural Sciences (NS)
 History/Social Sciences (HS)
 History/Social Sciences (HS)
-Humani es (HU)
-Humani es (HU) MUSP 109
-Scholarship in Prac ce (SP) MUSP 110
-Scholarship in Prac ce (SP) non major MUSP 207
+Humanies (HU)
+Humanies (HU) MUSP 109
+Scholarship in Pracce (SP) MUSP 110
+Scholarship in Pracce (SP) non major MUSP 207
 MUSP 208
 MUSC 102
 MUSC 103
-Big Ques on (IS) MUSC 150
-Big Ques on (IS) MUSC 151
+Big Queson (IS) MUSC 150
+Big Queson (IS) MUSC 151
 MUSC 229 (1 cr. x 5 semesters)
 MUSC 250
 MUSC 251
@@ -779,13 +779,13 @@ MUSC 3xx-4xx (3 cr.)
 {Min. Grade: C-} ENGL 101
 MUSC 260
 MUSC 260
-Cumula ve average of major requirements must be at least a 2.0
-I. Founda on Level
+Cumulave average of major requirements must be at least a 2.0
+I. Foundaon Level
 or II. Intermediate
 III. Advanced
-IV. Elec ves (6 credits)
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+IV. Elecves (6 credits)
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
@@ -793,7 +793,7 @@ At least 30 credits must be earned at UMD
 ARHU 158 or equivalent (if applicable)
 Global Engagement
 Students must take four semesters of MUSC 099.
-Some courses for the major may also count toward General Educa on requirements.
+Some courses for the major may also count toward General Educaon requirements.
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1K6l4dzfqSSkBtQ18uhr6HpPY__Xjw1mP#Music-Performance---Voice)
 
@@ -818,40 +818,40 @@ MUSC 151 MUSC 250 MUSC 251
 MUSC 260 (HU & UP) MUSC 360
 MUSC 329 MUSC 329
 MUSC 099 MUSC 099
-Oral Communica on (OC) History/Social Sciences (HS)**
-Natural Sciences (NS)** Scholarship in Prac ce (SP) #1**
-MUSP 305B MUSC Elec ve 1xx-4xx (3 cr.)
+Oral Communicaon (OC) History/Social Sciences (HS)**
+Natural Sciences (NS)** Scholarship in Pracce (SP) #1**
+MUSP 305B MUSC Elecve 1xx-4xx (3 cr.)
 MUSC 250 MUSC 329 MUSC 450
-MUSC 251 MUSC 361 Analy cal Reasoning (AR)
+MUSC 251 MUSC 361 Analycal Reasoning (AR)
 Global Engagement #1 Global Engagement #2
-History/Social Sciences (HS)** Elec ve 3xx-4xx (2 cr.)
-Humani es (HU)**
-MUSC Elec ve 3xx-4xx (3 cr.) Professional Wri ng (PW)
-Scholarship in Prac ce (SP) #2** Elec ve 3xx-4xx (3 cr.)
-Elec ve 3xx-4xx (3 cr.) Elec ve 3xx-4xx (3 cr.)
-Elec ve 3xx-4xx (3 cr.) Elec ve 1xx-4xx (3 cr.)
-Elec ve 3xx-4xx (3 cr.) Elec ve 1xx-4xx (3 cr.)
+History/Social Sciences (HS)** Elecve 3xx-4xx (2 cr.)
+Humanies (HU)**
+MUSC Elecve 3xx-4xx (3 cr.) Professional Wring (PW)
+Scholarship in Pracce (SP) #2** Elecve 3xx-4xx (3 cr.)
+Elecve 3xx-4xx (3 cr.) Elecve 3xx-4xx (3 cr.)
+Elecve 3xx-4xx (3 cr.) Elecve 1xx-4xx (3 cr.)
+Elecve 3xx-4xx (3 cr.) Elecve 1xx-4xx (3 cr.)
 Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es
-and Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees
+and Cultural Competence courses may also fulfill Distribuve Studies categories.
 Music - Bachelor of Arts - Voice
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
 Year 3 - Benchmark Requirements
-Distribu ve Studies
+Distribuve Studies
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
@@ -860,26 +860,26 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits
 4 credits of lessons
-Academic Wri ng (AW) 2 credits of large ensemble
-Professional Wri ng (PW)
+Academic Wring (AW) 2 credits of large ensemble
+Professional Wring (PW)
 Oral Comm. (OC) MUSC 150
 Math (MA) MUSC 151
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 MUSC 250
 MUSC 251
 Natural Science Lab (NL)
 Natural Sciences (NS)
 History/Social Sciences (HS)
 History/Social Sciences (HS)
-Humani es (HU)
-Humani es (HU) MUSP 109B
-Scholarship in Prac ce (SP) MUSP 110B
-Scholarship in Prac ce (SP) non major MUSP 207B
+Humanies (HU)
+Humanies (HU) MUSP 109B
+Scholarship in Pracce (SP) MUSP 110B
+Scholarship in Pracce (SP) non major MUSP 207B
 MUSP 208B
 MUSC 102
 MUSC 103
-Big Ques on (IS) MUSC 150
-Big Ques on (IS) MUSC 151
+Big Queson (IS) MUSC 150
+Big Queson (IS) MUSC 151
 MUSC 250
 MUSC 251
 MUSC 260 (HU & UP)
@@ -895,13 +895,13 @@ MUSC 3xx-4xx (3 cr.)
 {Min. Grade: C-} ENGL 101
 MUSC 260
 MUSC 260
-Cumula ve average of major requirements must be at least a 2.0
-I. Founda on Level
+Cumulave average of major requirements must be at least a 2.0
+I. Foundaon Level
 or II. Intermediate
 III. Advanced
-IV. Elec ves (6 credits)
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+IV. Elecves (6 credits)
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
@@ -909,7 +909,7 @@ At least 30 credits must be earned at UMD
 ARHU 158 or equivalent (if applicable)
 Global Engagement
 Students must take four semesters of MUSC 099.
-Some courses for the major may also count toward General Educa on requirements.
+Some courses for the major may also count toward General Educaon requirements.
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1DDiNX6QWhGPlxsxE_YJGaGBlvgbAQms2#Music-Performance---Wind-&-Percussion)
 
@@ -934,41 +934,41 @@ MUSC 151 MUSC 229 MUSC 229
 MUSC 250 MUSC 251
 MUSC 260 (HU & UP) MUSC 360
 MUSC 099 MUSC 099
-Oral Communica on (OC) History/Social Sciences (HS)**
-Natural Sciences (NS)** Scholarship in Prac ce (SP) #1**
-MUSP 305 MUSC Elec ve 3xx-4xx (3 cr.)
+Oral Communicaon (OC) History/Social Sciences (HS)**
+Natural Sciences (NS)** Scholarship in Pracce (SP) #1**
+MUSP 305 MUSC Elecve 3xx-4xx (3 cr.)
 MUSC 250 MUSC 229 MUSC 450
-MUSC 251 MUSC 361 Analy cal Reasoning (AR)
+MUSC 251 MUSC 361 Analycal Reasoning (AR)
 Global Engagement #1 Global Engagement #2
-History/Social Sciences (HS)** Elec ve 3xx-4xx (3 cr. )
-Humani es (HU)**
-MUSC Elec ve 3xx-4xx (3 cr.) Professional Wri ng (PW)
-Scholarship in Prac ce (SP) #2** Elec ve 3xx-4xx (3 cr.)
-Elec ve 3xx-4xx (3 cr.) Elec ve 3xx-4xx (3 cr.)
-Elec ve 3xx-4xx (3 cr.) Elec ve 3xx-4xx (1 cr.)
-Elec ve 3xx-4xx (3 cr.) Elec ve 1xx-4xx (3 cr.)
-Elec ve 1xx-4xx (1 cr.)
+History/Social Sciences (HS)** Elecve 3xx-4xx (3 cr. )
+Humanies (HU)**
+MUSC Elecve 3xx-4xx (3 cr.) Professional Wring (PW)
+Scholarship in Pracce (SP) #2** Elecve 3xx-4xx (3 cr.)
+Elecve 3xx-4xx (3 cr.) Elecve 3xx-4xx (3 cr.)
+Elecve 3xx-4xx (3 cr.) Elecve 3xx-4xx (1 cr.)
+Elecve 3xx-4xx (3 cr.) Elecve 1xx-4xx (3 cr.)
+Elecve 1xx-4xx (1 cr.)
 Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es
-and Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees
+and Cultural Competence courses may also fulfill Distribuve Studies categories.
 Music - Bachelor of Arts - Winds & Percussion
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
 Year 3 - Benchmark Requirements
-Distribu ve Studies
+Distribuve Studies
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
@@ -977,26 +977,26 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 4 credits of lessons
-Academic Wri ng (AW) 2 credits of large ensemble
-Professional Wri ng (PW)
+Academic Wring (AW) 2 credits of large ensemble
+Professional Wring (PW)
 Oral Comm. (OC) MUSC 150
 Math (MA) MUSC 151
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 MUSC 250
 MUSC 251
 Natural Science Lab (NL)
 Natural Sciences (NS)
 History/Social Sciences (HS)
 History/Social Sciences (HS)
-Humani es (HU)
-Humani es (HU) MUSP 109
-Scholarship in Prac ce (SP) MUSP 110
-Scholarship in Prac ce (SP) non major MUSP 207
+Humanies (HU)
+Humanies (HU) MUSP 109
+Scholarship in Pracce (SP) MUSP 110
+Scholarship in Pracce (SP) non major MUSP 207
 MUSP 208
 MUSC 102
 MUSC 103
-Big Ques on (IS) MUSC 150
-Big Ques on (IS) MUSC 151
+Big Queson (IS) MUSC 150
+Big Queson (IS) MUSC 151
 MUSC 229 (1 cr. x 5 semesters)
 MUSC 250
 MUSC 251
@@ -1011,43 +1011,43 @@ MUSC 3xx-4xx (3 cr.)
 {Min. Grade: C-} ENGL 101
 MUSC 260
 MUSC 260
-Cumula ve average of major requirements must be at least a 2.0
+Cumulave average of major requirements must be at least a 2.0
 Students must take four semesters of MUSC 099
-I. Founda on Level
+I. Foundaon Level
 or II. Intermediate
 III. Advanced
-IV. Elec ves (6 credits)
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+IV. Elecves (6 credits)
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
 39 upper level credits
 ARHU 158 or equivalent (if applicable)
 Global Engagement
-Some courses for the major may also count toward General Educa on requirements.
+Some courses for the major may also count toward General Educaon requirements.
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1du3_qWLtmXz5ISfDcZPZqbfk3j_i8VU-#Music-Performance---Composition)
 
-           !"#$%&'(# )*
-+ !"#$+%&'(# )*
-, !"#$,%&'(# )*
--
-./00 123456789:;<=>?@A:>>?B> CDEFGHI CDEFGGHJ89:;<=>?@AK9L::B>:MNA: CDEFGGIO CDEFGJHOCDEPGHJ CDEPGHQCDEPGRH CDEPGRGCDEPJJI?9QJI CDEPJJI?9QJICDEPHII CDEPHIISTUVGHGWXYZ[\C<B]U9K;:^P_` CXOaWCXZ[XbaDGRc a<>=?9deE?8<KAE8<:B8:>WaEZ[[CDEPGRH CDEFJHf CDEFJHcCDEPGRG CDEFJGfO CDEFJGcOCDEPJJI?9QJI CDEPJJI?9QJICDEPJRH CDEPJRGCDEPJgHWaDhDFZ CDEPQgHCDEPHII CDEPHIIi9KAP?MMjB<8Kk?BWiPZ XBKAdk8b:K>?B<BLWXbZCDEFQGRO CDEFQGgOCDEPJRH CDEPJJI?9QJI CDEPJJI?9QJICDEPJRG CDEPQgG CDEP7gQCDEP7gH CDEP7fHCDEPHII CDEPHIITK=j9KAE8<:B8:VKNWTVZ[[ TK=j9KAE8<:B8:>WTEZ[[ajMKB<k:>WaDZ[[CDEF7GIO CDEF7JHOWE8l?AK9>l<m<BF9K8k8:nJZCDEPJJI?9QJI CDEPJJI?9QJICDEP7RH CDEP7cgCDEP7IH a<>=?9deE?8<KAE8<:B8:>WaEZ[[CDEP7ooCj><8a<>=?9dSA:8kp: F9?@:>><?BKAY9<kBLWFYZE8l?AK9>l<m<BF9K8k8:WEFZnG[[WB?B_MKq?9Z SA:8kp:Goo_7ooWQ89]ZO?=KAP9:;<=>@?9r:L9::^GJH
-stuvwxyz{|}xvx~wvxx~zvzux{xuvxu stuvx{|vwy
-stuvwxyz{|}xvx~wvxx~zztux{xuvxu
-stuvwxyz{|}xvx~wvxx~zuux{xuvxu
-¡¢£¤¥¦§§¨ ©ª¥¥«£¬ ¥©©¬¥®¯£¦°±  ¥®²¥£ ³³©´ª¥¥«£¬ ¥®¥¦
-        !"#$%& '($)!"#$%&*$%+%#& ,-.'($)!"#$%&,/.'($)!"#$%&,0.'($)!"#$%&1#&%#23+%#& 45!"#$%&'#67& 8 $9 2%:#%(1#&%#23+%#&1#3&#%9;3<<$#=:#%(1#&%#23+%#&>'#67& ?@<#A#6.< ;3<<$#=:#%(%("#$%&>&&?+%%&$&%$##$$B-/C#%&%$<%6D
-EFGHIJFKFLMNOPQRJFSIMNTQRUHJNFN VUHJNF VJFSIMN WJXSFEFGHIJFKFLMNOYQRJFSIMNTZRUHJNFN VUHJNF VJFSIMN WJXSF EFGHIJFKFLMN VJFSIMN WJXSFEFGHIJFKFLMNO[RJFSIMNTYRUHJNFN VUHJNF VJFSIMN WJXSFEFGHIJFKFLMNO\][RJFSIMNTYRUHJNFN VUHJNF VJFSIMN WJXSFEFGHIJFKFLMNO^]_RJFSIMN VUHJNF VJFSIMN WJXSF
-`abcdefghijcgghkglamdcneaobepkqrlos tabcdefghijmbqcckgcnujcvbhicggehkmjobepkqrvoswbmjxhnnyrwxs z{|x}~zmfrzls z{|x}~}lkmjpacmghkekqrls z{|xt~z{|xt~}mfbmj|aeckacmursmfbmj|aeckacgr|segfhb|haemj|aeckacgr|segfhb|haemj|aeckacgr|snmkepcgr{snmkepcgr{s z{|v}|ahjmbgeekvbmapacr|vs z{|v}}|ahjmbgeekvbmapacr|vskhknmhb z{|v}}z{|v}tz{|vtz{|vteqcgphkr|s z{|vt}eqcgphkr|s z{|vt}z{|x}tz{|x}z{|x}~{kdcbgfmkdekqvjbmj|hayr{vs z{|x}~}{kdcbgfmkdekqvjbmj|hayr{vs z{|xtthbtr}abygcncgfcbgsxjfbmjxhncfckarxxs z{|xt~z{|xt~}z{|xtr{{vsz{|v}~z{|v}z{|xz{|x}z{|x`zgeaegfhbjcapcz{|v`}z{|v`tr|vsz{|x`~z{|x`z{|x`z{|x`z{|x`z{|x`
-¡¢£¤ ¥¦§¨©¨
-ª«¢¬©ª«®¯¬©°
-ª«¢¬©
-±²³²´μ¶·¸μ·¸¹μº¸»¼³μ½»¹¹¸¾²¿¹¸³¸ÀÁÂ³²ÂÁÃ¸μÁ´¸μÂÁμÄÅÆ
-ÇÁ²È¸ÀÁÂ³²ÂÁÁμÉ¸Â¿ÊÂ¸³¸ÂÁ¸¹Â»¼ËÌÇ±ÆÍÍÅ
-ÎÏÐÑÒÓÔÕÖÑÓ×ØÙØÚ
-ÑÛ ÎÎÏÎÓÜØÛÝØÔÞÕÜØÎÎÎÏßÔÙÕÓàØÔáâãäåæçãèéêåëìãæåíåâèçîïæðæñòìñóïâôõêöáêåëìãæåíåâèçîïæðæñòìñóïâô÷ø ø ø øøø  ø øøø     ø øø÷!  ø"  # $%&'()%*+,',(-%+(./'(&01%+(&02(03,%()%*4.(.%50+6(7'4'+03(86*)09%4(+':*;+'&'4.,<
+!"#$%&'(# )*
++ !"#$+%&'(# )*
+, !"#$,%&'(# )*
+-
+./00 123456789:;<=>?@A:>>?B> CDEFGHI CDEFGGHJ89:;<=>?@AK9L::B>:MNA: CDEFGGIO CDEFGJHOCDEPGHJ CDEPGHQCDEPGRH CDEPGRGCDEPJJI?9QJI CDEPJJI?9QJICDEPHII CDEPHIISTUVGHGWXYZ[\C<B]U9K;:^P_` CXOaWCXZ[XbaDGRc a<>=?9deE?8<KAE8<:B8:>WaEZ[[CDEPGRH CDEFJHf CDEFJHcCDEPGRG CDEFJGfO CDEFJGcOCDEPJJI?9QJI CDEPJJI?9QJICDEPJRH CDEPJRGCDEPJgHWaDhDFZ CDEPQgHCDEPHII CDEPHIIi9KAP?MMjB<8Kk?BWiPZ XBKAdk8b:K>?B<BLWXbZCDEFQGRO CDEFQGgOCDEPJRH CDEPJJI?9QJI CDEPJJI?9QJICDEPJRG CDEPQgG CDEP7gQCDEP7gH CDEP7fHCDEPHII CDEPHIITK=j9KAE8<:B8:VKNWTVZ[[ TK=j9KAE8<:B8:>WTEZ[[ajMKB<k:>WaDZ[[CDEF7GIO CDEF7JHOWE8l?AK9>l<m<BF9K8k8:nJZCDEPJJI?9QJI CDEPJJI?9QJICDEP7RH CDEP7cgCDEP7IH a<>=?9deE?8<KAE8<:B8:>WaEZ[[CDEP7ooCj><8a<>=?9dSA:8kp: F9?@:>><?BKAY9<kBLWFYZE8l?AK9>l<m<BF9K8k8:WEFZnG[[WB?B_MKq?9Z SA:8kp:Goo_7ooWQ89]ZO?=KAP9:;<=>@?9r:L9::^GJH
+stuvwxyz{|}xvx~wvxx~zvzux{xuvxu stuvx{|vwy
+stuvwxyz{|}xvx~wvxx~zztux{xuvxu
+stuvwxyz{|}xvx~wvxx~zuux{xuvxu
+¡¢£¤¥¦§§¨ ©ª¥¥«£¬ ¥©©¬¥®¯£¦°±  ¥®²¥£ ³³©´ª¥¥«£¬ ¥®¥¦
+!"#$%& '($)!"#$%&*$%+%#& ,-.'($)!"#$%&,/.'($)!"#$%&,0.'($)!"#$%&1#&%#23+%#& 45!"#$%&'#67& 8 $9 2%:#%(1#&%#23+%#&1#3&#%9;3<<$#=:#%(1#&%#23+%#&>'#67& ?@<#A#6.< ;3<<$#=:#%(%("#$%&>&&?+%%&$&%$##$$B-/C#%&%$<%6D
+EFGHIJFKFLMNOPQRJFSIMNTQRUHJNFN VUHJNF VJFSIMN WJXSFEFGHIJFKFLMNOYQRJFSIMNTZRUHJNFN VUHJNF VJFSIMN WJXSF EFGHIJFKFLMN VJFSIMN WJXSFEFGHIJFKFLMNO[RJFSIMNTYRUHJNFN VUHJNF VJFSIMN WJXSFEFGHIJFKFLMNO\][RJFSIMNTYRUHJNFN VUHJNF VJFSIMN WJXSFEFGHIJFKFLMNO^]_RJFSIMN VUHJNF VJFSIMN WJXSF
+`abcdefghijcgghkglamdcneaobepkqrlos tabcdefghijmbqcckgcnujcvbhicggehkmjobepkqrvoswbmjxhnnyrwxs z{|x}~zmfrzls z{|x}~}lkmjpacmghkekqrls z{|xt~z{|xt~}mfbmj|aeckacmursmfbmj|aeckacgr|segfhb|haemj|aeckacgr|segfhb|haemj|aeckacgr|snmkepcgr{snmkepcgr{s z{|v}|ahjmbgeekvbmapacr|vs z{|v}}|ahjmbgeekvbmapacr|vskhknmhb z{|v}}z{|v}tz{|vtz{|vteqcgphkr|s z{|vt}eqcgphkr|s z{|vt}z{|x}tz{|x}z{|x}~{kdcbgfmkdekqvjbmj|hayr{vs z{|x}~}{kdcbgfmkdekqvjbmj|hayr{vs z{|xtthbtr}abygcncgfcbgsxjfbmjxhncfckarxxs z{|xt~z{|xt~}z{|xtr{{vsz{|v}~z{|v}z{|xz{|x}z{|x`zgeaegfhbjcapcz{|v`}z{|v`tr|vsz{|x`~z{|x`z{|x`z{|x`z{|x`z{|x`
+¡¢£¤ ¥¦§¨©¨
+ª«¢¬©ª«®¯¬©°
+ª«¢¬©
+±²³²´μ¶·¸μ·¸¹μº¸»¼³μ½»¹¹¸¾²¿¹¸³¸ÀÁÂ³²ÂÁÃ¸μÁ´¸μÂÁμÄÅÆ
+ÇÁ²È¸ÀÁÂ³²ÂÁÁμÉ¸Â¿ÊÂ¸³¸ÂÁ¸¹Â»¼ËÌÇ±ÆÍÍÅ
+ÎÏÐÑÒÓÔÕÖÑÓ×ØÙØÚ
+ÑÛ ÎÎÏÎÓÜØÛÝØÔÞÕÜØÎÎÎÏßÔÙÕÓàØÔáâãäåæçãèéêåëìãæåíåâèçîïæðæñòìñóïâôõêöáêåëìãæåíåâèçîïæðæñòìñóïâô÷øø ø øøø ø øøø ø øø÷! ø"# $%&'()%*+,',(-%+(./'(&01%+(&02(03,%()%*4.(.%50+6(7'4'+03(86*)09%4(+':*;+'&'4.,<
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1nlVRA54LPKzrofWqjOwEozZ-NI3Aajnq#Music-Performance---Jazz)
 
@@ -1080,38 +1080,38 @@ MUSC 250 MUSC 229J MUSC 229J
 MUSC 251 MUSC 229Z MUSC 229Z
 MUSC 361 MUSC 436
 MUSC 455 MUSC 099
-MUSC 099 Scholarship in Prac ce (SP) #1** (non-major)
-Natural Sciences (NS)** Humani es (HU)**
-Analy cal Reasoning (AR) Elec ve 1xx-4xx (2 cr.)
-MUSP 419 MUSP 420 (Scholarship in Prac ce #2)
+MUSC 099 Scholarship in Pracce (SP) #1** (non-major)
+Natural Sciences (NS)** Humanies (HU)**
+Analycal Reasoning (AR) Elecve 1xx-4xx (2 cr.)
+MUSP 419 MUSP 420 (Scholarship in Pracce #2)
 MUSC 229J MUSC 229J
 MUSC 229Z MUSC 229Z
 MUSC 453 MUSC 456
-MUSC 490 Professional Wri ng (PW)
-Elec ve 1xx-4xx (3 cr.)
-Oral Communica on (OC)
+MUSC 490 Professional Wring (PW)
+Elecve 1xx-4xx (3 cr.)
+Oral Communicaon (OC)
 Total Credits for Degree: 120
-MUSC 4xx Music History Elec ve
+MUSC 4xx Music History Elecve
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es
-and Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees
+and Cultural Competence courses may also fulfill Distribuve Studies categories.
 Music - Bachelor of Music - Jazz
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
 Year 3 - Benchmark Requirements
-Distribu ve Studies
+Distribuve Studies
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
@@ -1120,26 +1120,26 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 4 credits of lessons
-Academic Wri ng (AW) 2 credits of large ensemble
-Professional Wri ng (PW)
+Academic Wring (AW) 2 credits of large ensemble
+Professional Wring (PW)
 Oral Comm. (OC) MUSC 150
 Math (MA) MUSC 151
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 MUSC 250
 MUSC 251
 Natural Science Lab (NL)
 Natural Sciences (NS)
 History/Social Sciences (HS)
 History/Social Sciences (HS)
-Humani es (HU)
-Humani es (HU) MUSP 119
-Scholarship in Prac ce (SP) MUSP 120
-Scholarship in Prac ce (SP) non major MUSP 217
+Humanies (HU)
+Humanies (HU) MUSP 119
+Scholarship in Pracce (SP) MUSP 120
+Scholarship in Pracce (SP) non major MUSP 217
 MUSP 218
 MUSC 102
 MUSC 103
-Big Ques on (IS) MUSC 150
-Big Ques on (IS) MUSC 151
+Big Queson (IS) MUSC 150
+Big Queson (IS) MUSC 151
 MUSC 229J (1 cr. x 8 semesters)
 MUSC 229Z (1 cr. x 8 semesters)
 MUSC 250
@@ -1150,7 +1150,7 @@ MUSP 315
 MUSP 316
 MUSC 360
 MUSC 361
-MUSC 4xx Music History Elec ve
+MUSC 4xx Music History Elecve
 MUSP 419
 MUSP 420 (SP)
 MUSC 436
@@ -1162,19 +1162,19 @@ MUSC 490
 MUSC 260
 MUSP 420
 MUSC 260
-Cumula ve average of major requirements must be at least a 2.0
+Cumulave average of major requirements must be at least a 2.0
 Students must take six semesters of MUSC 099.
-I. Founda on Level
+I. Foundaon Level
 or
 II. Intermediate
 III. Advanced
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
 ARHU 158 or equivalent (if applicable)
-Some courses for the major may also count toward General Educa on requirements.
+Some courses for the major may also count toward General Educaon requirements.
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1ynFMU1Wj48gXVxKtkrrReC2KKerzQDCO#Music-Performance---Piano)
 
@@ -1200,41 +1200,41 @@ MUSC 250 MUSC 251
 MUSC 260 (HU & UP) MUSC 360
 MUSC 329 MUSC 329
 MUSC 099 MUSC 099
-Oral Communica on (OC) Scholarship in Prac ce (SP) #1** (non-major)
+Oral Communicaon (OC) Scholarship in Pracce (SP) #1** (non-major)
 MUSC 250 MUSP 315A MUSP 316A
 MUSC 251 MUSC 328 MUSC 328
 MUSC 361 MUSC 450
-MUSC 467 MUSC Elec ve (3 cr.)
+MUSC 467 MUSC Elecve (3 cr.)
 MUSC 099 MUSC 099
 Natural Science Lab (NL)** Natural Sciences (NS)**
-Elec ve 1xx-4xx (3 cr.) Humani es (HU)**
-MUSP 419A MUSP 420A (Scholarship in Prac ce #2)
-MUSC 490 MUSC Elec ve (1 cr.)
-MUSC 492 Analy cal Reasoning (AR)
-MUSC Elec ve (3 cr.) History/Social Sciences (HS)**
-MUSC 4xx Music History Elec ve Professional Wri ng (PW)
-Elec ve 1xx-4xx (3 cr.)
+Elecve 1xx-4xx (3 cr.) Humanies (HU)**
+MUSP 419A MUSP 420A (Scholarship in Pracce #2)
+MUSC 490 MUSC Elecve (1 cr.)
+MUSC 492 Analycal Reasoning (AR)
+MUSC Elecve (3 cr.) History/Social Sciences (HS)**
+MUSC 4xx Music History Elecve Professional Wring (PW)
+Elecve 1xx-4xx (3 cr.)
 Total Credits for Degree: 120
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es
-and Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees
+and Cultural Competence courses may also fulfill Distribuve Studies categories.
 Music - Bachelor of Music - Piano
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
 Year 3 - Benchmark Requirements
-Distribu ve Studies
+Distribuve Studies
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
@@ -1243,26 +1243,26 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 4 credits of lessons
-Academic Wri ng (AW) {Min. Grade: C-} 2 credits of large ensemble
-Professional Wri ng (PW)
+Academic Wring (AW) {Min. Grade: C-} 2 credits of large ensemble
+Professional Wring (PW)
 Oral Comm. (OC) MUSC 150
 Math (MA) MUSC 151
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 MUSC 250
 MUSC 251
 Natural Science Lab (NL)
 Natural Sciences (NS)
 History/Social Sciences (HS)
 History/Social Sciences (HS)
-Humani es (HU)
-Humani es (HU) MUSP 119A
-Scholarship in Prac ce (SP) MUSP 120A
-Scholarship in Prac ce (SP) non major MUSP 217A
+Humanies (HU)
+Humanies (HU) MUSP 119A
+Scholarship in Pracce (SP) MUSP 120A
+Scholarship in Pracce (SP) non major MUSP 217A
 MUSP 218A
 MUSC 128 (2 cr. x 2 semesters)
 MUSC 150
-Big Ques on (IS) MUSC 151
-Big Ques on (IS) MUSC 228 (2 cr. x 2 semesters)
+Big Queson (IS) MUSC 151
+Big Queson (IS) MUSC 228 (2 cr. x 2 semesters)
 MUSC 250
 MUSC 251
 MUSC 260 (HU & UP)
@@ -1273,34 +1273,34 @@ MUSC 360
 MUSC 361
 MUSC 328 (2 cr. x 2 semesters)
 MUSC 329 (1 cr. x 4 semesters)
-MUSC 4xx Music History Elec ve
+MUSC 4xx Music History Elecve
 MUSP 419A
 MUSP 420A (SP)
 MUSC 450
 MUSC 467
 MUSC 490
 MUSC 492
-MUSC Elec ve 1xx-4xx (3 cr.)
-MUSC Elec ve 1xx-4xx (3 cr.)
-MUSC Elec ve 1xx-4xx (1 cr.)
+MUSC Elecve 1xx-4xx (3 cr.)
+MUSC Elecve 1xx-4xx (3 cr.)
+MUSC Elecve 1xx-4xx (1 cr.)
 ENGL 101
 MUSC 260
 MUSP 420A
 MUSC 260
-Cumula ve average of major requirements must be at least a 2.0
+Cumulave average of major requirements must be at least a 2.0
 Students must take six semesters of MUSC 099.
-I. Founda on Level
+I. Foundaon Level
 II. Intermediate
 or
 III. Advanced
-IV. Elec ves (7 credits)
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+IV. Elecves (7 credits)
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
 ARHU 158 or equivalent (if applicable)
-Some courses for the major may also count toward General Educa on requirements.
+Some courses for the major may also count toward General Educaon requirements.
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1KKQburfg7BLqxm2EnshvLLnm0SckYw0i#Music-Performance---Strings)
 
@@ -1320,49 +1320,49 @@ MUSC 150 MUSC 151
 MUSC 229 MUSC 229
 MUSC 099 MUSC 099
 ENGL 101 (AW)* {Min. Grade: C-} MATH (MA)*
-ARHU 158 Humani es (HU)**
+ARHU 158 Humanies (HU)**
 MUSC 150 MUSP 217 MUSP 218
 MUSC 151 MUSC 129 MUSC 129
 MUSC 229 MUSC 229
 MUSC 250 MUSC 251
 MUSC 260 (HU & UP) MUSC 360
 MUSC 099 MUSC 099
-Natural Science Lab (NL)** Scholarship in Prac ce (SP) #1** (non-major)
+Natural Science Lab (NL)** Scholarship in Pracce (SP) #1** (non-major)
 MUSC 250 MUSP 315 MUSP 316
 MUSC 251 MUSC 129 MUSC 129
 MUSC 229 MUSC 229
 MUSC 361 MUSC 450
 MUSC 099 MUSC 099
-Oral Communica on (OC) Natural Sciences (NS)**
-History/Social Sciences (HS)** Analy cal Reasoning (AR)
-Elec ve 1xx-4xx (3 cr.) Elec ve 1xx-4xx (3 cr.)
-MUSP 419 MUSP 420 (Scholarship in Prac ce #2)
+Oral Communicaon (OC) Natural Sciences (NS)**
+History/Social Sciences (HS)** Analycal Reasoning (AR)
+Elecve 1xx-4xx (3 cr.) Elecve 1xx-4xx (3 cr.)
+MUSP 419 MUSP 420 (Scholarship in Pracce #2)
 MUSC 229 MUSC 229
 MUSC 400S MUSC 446
-MUSC 490 MUSC Elec ve (3 cr.)
-MUSC 4xx Music History Elec ve History/Social Sciences (HS)**
-Elec ve 1xx-4xx (3 cr.) Professional Wri ng (PW)
+MUSC 490 MUSC Elecve (3 cr.)
+MUSC 4xx Music History Elecve History/Social Sciences (HS)**
+Elecve 1xx-4xx (3 cr.) Professional Wring (PW)
 Total Credits for Degree: 120
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es
-and Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees
+and Cultural Competence courses may also fulfill Distribuve Studies categories.
 Music - Bachelor of Music - Strings
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
 Year 3 - Benchmark Requirements
-Distribu ve Studies
+Distribuve Studies
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
@@ -1371,26 +1371,26 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 4 credits of lessons
-Academic Wri ng (AW) 2 credits of large ensemble
-Professional Wri ng (PW)
+Academic Wring (AW) 2 credits of large ensemble
+Professional Wring (PW)
 Oral Comm. (OC) MUSC 150
 Math (MA) MUSC 151
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 MUSC 250
 MUSC 251
 Natural Science Lab (NL)
 Natural Sciences (NS)
 History/Social Sciences (HS)
 History/Social Sciences (HS)
-Humani es (HU)
-Humani es (HU) MUSP 119
-Scholarship in Prac ce (SP) MUSP 120
-Scholarship in Prac ce (SP) non major MUSP 217
+Humanies (HU)
+Humanies (HU) MUSP 119
+Scholarship in Pracce (SP) MUSP 120
+Scholarship in Pracce (SP) non major MUSP 217
 MUSP 218
 MUSC 102
 MUSC 103
-Big Ques on (IS) MUSC 129 (1 cr. x 6 semesters)
-Big Ques on (IS) MUSC 150
+Big Queson (IS) MUSC 129 (1 cr. x 6 semesters)
+Big Queson (IS) MUSC 150
 MUSC 151
 MUSC 229 (1 cr. x 8 semesters)
 MUSC 250
@@ -1402,7 +1402,7 @@ MUSP 315
 MUSP 316
 MUSC 360
 MUSC 361
-MUSC 4xx Music History Elec ve
+MUSC 4xx Music History Elecve
 MUSP 419
 MUSP 420 (SP)
 MUSC 400S
@@ -1414,20 +1414,20 @@ MUSC 1xx-4xx (3 cr.)
 MUSC 260
 MUSP 420
 MUSC 260
-Cumula ve average of major requirements must be at least a 2.0
+Cumulave average of major requirements must be at least a 2.0
 Students must take six semesters of MUSC 099.
-I. Founda on Level
+I. Foundaon Level
 or
 II. Intermediate
 III. Advanced
-IV. Elec ves (3 credits)
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+IV. Elecves (3 credits)
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
 ARHU 158 or equivalent (if applicable)
-Some courses for the major may also count toward General Educa on requirements.
+Some courses for the major may also count toward General Educaon requirements.
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1JxSZQ1DN7HKJUNvUtr0foVUAm-Rm-pmn#Theory)
 
@@ -1452,41 +1452,41 @@ MUSC 151 MUSC 229 or 329 MUSC 229 or 329
 MUSC 260 (HU & UP) MUSC 360
 MUSC 250 MUSC 251
 MUSC 099 MUSC 099
-Analy cal Reasoning (AR) Scholarship in Prac ce (SP) #1**
-Elec ve 1xx-4xx (2 cr.) Elec ve 1xx-4xx (3 cr.)
+Analycal Reasoning (AR) Scholarship in Pracce (SP) #1**
+Elecve 1xx-4xx (2 cr.) Elecve 1xx-4xx (3 cr.)
 MUSP 305 MUSC 461
-MUSC 250 MUSC 229 or 329 MUSC 4xx (Music History Elec ve)
+MUSC 250 MUSC 229 or 329 MUSC 4xx (Music History Elecve)
 MUSC 251 MUSC 450 MUSC 099
 MUSC 361 Natural Sciences (NS)**
-MUSC 099 Humani es (HU)**
-MUSC 460 or MUSC 472 Elec ve 1xx-4xx (3 cr.)
-Oral Communica on (OC)
-MUSC 4xx (Theory Elec ve #1) MUSC 4xx (Theory Elec ve #2)
+MUSC 099 Humanies (HU)**
+MUSC 460 or MUSC 472 Elecve 1xx-4xx (3 cr.)
+Oral Communicaon (OC)
+MUSC 4xx (Theory Elecve #1) MUSC 4xx (Theory Elecve #2)
 MUSC 464 History/Social Sciences (HS)**
-History/Social Sciences (HS)** Professional Wri ng (PW)
-Scholarship in Prac ce (SP) #2 ** Elec ve 1xx-4xx (3 cr.)
-Elec ve 1xx-4xx (3 cr.) Elec ve 1xx-4xx (3 cr.)
+History/Social Sciences (HS)** Professional Wring (PW)
+Scholarship in Pracce (SP) #2 ** Elecve 1xx-4xx (3 cr.)
+Elecve 1xx-4xx (3 cr.) Elecve 1xx-4xx (3 cr.)
 Total Credits for Degree: 120
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es
-and Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees
+and Cultural Competence courses may also fulfill Distribuve Studies categories.
 Music - Bachelor of Music - Theory
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
 Year 3 - Benchmark Requirements
-Distribu ve Studies
+Distribuve Studies
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
@@ -1495,26 +1495,26 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 4 credits of lessons
-Academic Wri ng (AW) 2 credits of large ensemble
-Professional Wri ng (PW)
+Academic Wring (AW) 2 credits of large ensemble
+Professional Wring (PW)
 Oral Comm. (OC) MUSC 150
 Math (MA) MUSC 151
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 MUSC 250
 MUSC 251
 Natural Science Lab (NL)
 Natural Sciences (NS)
 History/Social Sciences (HS)
 History/Social Sciences (HS)
-Humani es (HU)
-Humani es (HU) MUSP 109
-Scholarship in Prac ce (SP) MUSP 110
-Scholarship in Prac ce (SP) non major MUSP 207
+Humanies (HU)
+Humanies (HU) MUSP 109
+Scholarship in Pracce (SP) MUSP 110
+Scholarship in Pracce (SP) non major MUSP 207
 MUSP 208
 MUSC 102
 MUSC 103
-Big Ques on (IS) MUSC 150
-Big Ques on (IS) MUSC 151
+Big Queson (IS) MUSC 150
+Big Queson (IS) MUSC 151
 MUSC 229 or 329 (1 cr. x 5 semesters)
 MUSC 250
 MUSC 251
@@ -1524,28 +1524,28 @@ Cultural Competency (CC)
 MUSP 305
 MUSC 360
 MUSC 361
-MUSC 4xx Music History Elec ve
+MUSC 4xx Music History Elecve
 MUSC 450
 MUSC 460 or MUSC 472
 MUSC 461
 MUSC 464
-MUSC 4xx-- Music Theory Elec ve (3 cr.)
-MUSC 4xx-- Music Theory Elec ve (3 cr.)
+MUSC 4xx-- Music Theory Elecve (3 cr.)
+MUSC 4xx-- Music Theory Elecve (3 cr.)
 {Min. Grade: C-} ENGL 101
 MUSC 260
 MUSC 260
-Cumula ve average of major requirements must be at least a 2.0
+Cumulave average of major requirements must be at least a 2.0
 Students must take six semesters of MUSC 099.
-I. Founda on Level
+I. Foundaon Level
 or II. Intermediate
 III. Advanced
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
 ARHU 158 or equivalent (if applicable)
-Some courses for the major may also count toward General Educa on requirements.
+Some courses for the major may also count toward General Educaon requirements.
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1HGZC7G4ULXXPlXEB6QrN3Fp0RJ5-ZpWL#Voice)
 
@@ -1565,8 +1565,8 @@ MUSC 102 MUSC 103
 MUSC 150 MUSC 151
 MUSC 099 MUSC 099
 ENGL 101 (AW)* {Min. Grade: C-} MATH (MA)*
-ARHU 158 Analy cal Reasoning (AR)
-Elec ve 1xx-4xx (3 cr.)
+ARHU 158 Analycal Reasoning (AR)
+Elecve 1xx-4xx (3 cr.)
 MUSC 150 MUSP 217B MUSP 218B
 MUSC 151 MUSC 329 MUSC 329
 MUSC 123 MUSC 226
@@ -1580,36 +1580,36 @@ MUSC 250 MUSC 329 MUSC 329
 MUSC 251 MUSC 361 MUSC 450
 MUSC 490 MUSC 099
 MUSC 099 Natural Sciences (NS)**
-Language #2 Humani es (HU)**
-Scholarship in Prac ce (SP) #1** (non-major) Oral Communica on (OC)
-MUSP 419B MUSP 420B (Scholarship in Prac ce #2)
+Language #2 Humanies (HU)**
+Scholarship in Pracce (SP) #1** (non-major) Oral Communicaon (OC)
+MUSP 419B MUSP 420B (Scholarship in Pracce #2)
 MUSC 329 MUSC 329
 MUSC 379 MUSC 379
 MUSC 443 MUSC 400V
-MUSC 4xx Music History Elec ve Natural Science Lab (NL)**
+MUSC 4xx Music History Elecve Natural Science Lab (NL)**
 History/Social Sciences (HS)** History/Social Sciences (HS)**
-Professional Wri ng (PW)
+Professional Wring (PW)
 Total Credits for Degree: 120
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es
-and Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees
+and Cultural Competence courses may also fulfill Distribuve Studies categories.
 Music - Bachelor of Music - Voice
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
 Year 3 - Benchmark Requirements
-Distribu ve Studies
+Distribuve Studies
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
@@ -1618,26 +1618,26 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 4 credits of lessons
-Academic Wri ng (AW) 2 credits of large ensemble
-Professional Wri ng (PW)
+Academic Wring (AW) 2 credits of large ensemble
+Professional Wring (PW)
 Oral Comm. (OC) MUSC 150
 Math (MA) MUSC 151
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 MUSC 250
 MUSC 251
 Natural Science Lab (NL)
 Natural Sciences (NS)
 History/Social Sciences (HS)
 History/Social Sciences (HS)
-Humani es (HU)
-Humani es (HU) MUSP 119B
-Scholarship in Prac ce (SP) MUSP 120B
-Scholarship in Prac ce (SP) non major MUSP 217B
+Humanies (HU)
+Humanies (HU) MUSP 119B
+Scholarship in Pracce (SP) MUSP 120B
+Scholarship in Pracce (SP) non major MUSP 217B
 MUSP 218B
 MUSC 102
 MUSC 103
-Big Ques on (IS) MUSC 123
-Big Ques on (IS) MUSC 126
+Big Queson (IS) MUSC 123
+Big Queson (IS) MUSC 126
 MUSC 127
 MUSC 150
 MUSC 151
@@ -1655,7 +1655,7 @@ MUSC 329 (1 cr. x 8 semesters)
 MUSC 379 (1 cr. x 2 semesters)
 MUSC 360
 MUSC 361
-MUSC 4xx Music History Elec ve
+MUSC 4xx Music History Elecve
 MUSP 419B
 MUSP 420B (SP)
 MUSC 400V
@@ -1666,19 +1666,19 @@ MUSC 490
 MUSC 260
 MUSP 420B
 MUSC 260
-Cumula ve average of major requirements must be at least a 2.0
+Cumulave average of major requirements must be at least a 2.0
 Students must take six semesters of MUSC 099.
-I. Founda on Level
+I. Foundaon Level
 or
 II. Intermediate
 III. Advanced
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
 ARHU 158 or equivalent (if applicable)
-Some courses for the major may also count toward General Educa on
+Some courses for the major may also count toward General Educaon
 requirements.
 
 ## Sample plan (https://drive.google.com/uc?export=download&id=1pg0VkRRx43VVi85Y8_xmmvXXM5XpOumi#Wind-&-Percussion)
@@ -1706,43 +1706,43 @@ MUSC 229 MUSC 229
 MUSC 250 MUSC 251
 MUSC 260 (HU & UP) MUSC 360
 MUSC 099 MUSC 099
-Oral Communica on (OC) Analy cal Reasoning (AR)
+Oral Communicaon (OC) Analycal Reasoning (AR)
 MUSP 315 MUSP 316
 MUSC 250 MUSC 129 MUSC 129
 MUSC 251 MUSC 229 MUSC 229
 MUSC 361 MUSC 450
 MUSC 099 MUSC 099
-Natural Science Lab (NL)** MUSC Elec ve (3 cr.)
-Elec ve 1xx-4xx (3 cr.) Natural Sciences (NS)**
-Elec ve 1xx-4xx (3 cr.) Humani es (HU)**
-MUSP 419 MUSP 420 (Scholarship in Prac ce #2)
+Natural Science Lab (NL)** MUSC Elecve (3 cr.)
+Elecve 1xx-4xx (3 cr.) Natural Sciences (NS)**
+Elecve 1xx-4xx (3 cr.) Humanies (HU)**
+MUSP 419 MUSP 420 (Scholarship in Pracce #2)
 MUSC 229 MUSC 229
 MUSC 448W MUSC 444
-MUSC 490 MUSC Elec ve (2 cr.)
-MUSC 4xx Music History Elec ve History/Social Sciences (HS)**
-Scholarship in Prac ce (SP) #1 ** (non-major) Professional Wri ng (PW)
-Elec ve 1xx-4xx (3 cr.)
+MUSC 490 MUSC Elecve (2 cr.)
+MUSC 4xx Music History Elecve History/Social Sciences (HS)**
+Scholarship in Pracce (SP) #1 ** (non-major) Professional Wring (PW)
+Elecve 1xx-4xx (3 cr.)
 Total Credits for Degree: 120
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements.
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es
-and Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements.
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural Sociees
+and Cultural Competence courses may also fulfill Distribuve Studies categories.
 Music - Bachelor of Music - Winds & Percussion
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
 Year 3 - Benchmark Requirements
-Distribu ve Studies
+Distribuve Studies
 Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
 Requirements: 25 credits/8 courses Course Credits Grade
@@ -1751,26 +1751,26 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 4 credits of lessons
-Academic Wri ng (AW) 2 credits of large ensemble
-Professional Wri ng (PW)
+Academic Wring (AW) 2 credits of large ensemble
+Professional Wring (PW)
 Oral Comm. (OC) MUSC 150
 Math (MA) MUSC 151
-Analy c Reasoning (AR)
+Analyc Reasoning (AR)
 MUSC 250
 MUSC 251
 Natural Science Lab (NL)
 Natural Sciences (NS)
 History/Social Sciences (HS)
 History/Social Sciences (HS)
-Humani es (HU)
-Humani es (HU) MUSP 119
-Scholarship in Prac ce (SP) MUSP 120
-Scholarship in Prac ce (SP) non major MUSP 217
+Humanies (HU)
+Humanies (HU) MUSP 119
+Scholarship in Pracce (SP) MUSP 120
+Scholarship in Pracce (SP) non major MUSP 217
 MUSP 218
 MUSC 102
 MUSC 103
-Big Ques on (IS) MUSC129 (1 cr. x 6 semesters)
-Big Ques on (IS) MUSC 150
+Big Queson (IS) MUSC129 (1 cr. x 6 semesters)
+Big Queson (IS) MUSC 150
 MUSC 151
 MUSC 229 (1 cr. x 8 semesters)
 MUSC 250
@@ -1781,7 +1781,7 @@ MUSP 315
 MUSP 316
 MUSC 360
 MUSC 361
-MUSC 4xx Music History Elec ve
+MUSC 4xx Music History Elecve
 MUSP 419
 MUSP 420 (SP)
 MUSC 444
@@ -1794,17 +1794,17 @@ MUSC 1xx-4xx (2 cr.)
 MUSC 260
 MUSP 420
 MUSC 260
-Cumula ve average of major requirements must be at least a 2.0
+Cumulave average of major requirements must be at least a 2.0
 Students must take six semesters of MUSC 099.
-I. Founda on Level
+I. Foundaon Level
 or
 II. Intermediate
 III. Advanced
-IV. Elec ves (5 credits)
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on:
+IV. Elecves (5 credits)
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon:
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
 ARHU 158 or equivalent (if applicable)
-Some courses for the major may also count toward General Educa on requirements.
+Some courses for the major may also count toward General Educaon requirements.

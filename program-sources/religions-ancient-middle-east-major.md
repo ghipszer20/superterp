@@ -231,46 +231,46 @@ Year 3
 Benchmark 3 Requirements
 Year 4
 ENGL 101 (AW)* {Min. Grade: C-} History/Social Science (HS)**
-RELS 271, 273, 274, or JWST 230 Math (MA)* Humani es (HU)**
-Oral Communica on (OC) Analy c Reasoning (AR)
-RELS 271 (HU, CC, & IS) RAME Founda on Course
-ARHU 158 Elec ve 1xx-4xx
+RELS 271, 273, 274, or JWST 230 Math (MA)* Humanies (HU)**
+Oral Communicaon (OC) Analyc Reasoning (AR)
+RELS 271 (HU, CC, & IS) RAME Foundaon Course
+ARHU 158 Elecve 1xx-4xx
 Natural Sciences (NS)** Natural Science Lab (NL)**
-Three RAME Founda on courses RAME Founda on Course Scholarship in Prac ce (SP) #1**
-History/Social Science (HS)** RAME Founda on Course
-Elec ve 1xx-4xx Elec ve 1xx-4xx
+Three RAME Foundaon courses RAME Foundaon Course Scholarship in Pracce (SP) #1**
+History/Social Science (HS)** RAME Foundaon Course
+Elecve 1xx-4xx Elecve 1xx-4xx
 Global Engagement #1 Global Engagement #2
-RAME Elec ve 1xx-4xx RAME Elec ve 3xx-4xx
-Four RAME Elec ve courses RAME Elec ve 3xx-4xx RAME Elec ve 3xx-4xx
-Elec ve 1xx-4xx Elec ve 3xx-4xx
-Elec ve 3xx-4xx Elec ve 3xx-4xx
-Elec ve 3xx-4xx Elec ve 3xx-4xx
-Professional Wri ng (PW) Scholarship in Prac ce (SP) #2**
-RELS 408 RAME Elec ve 3xx-4xx
-Elec ve 1xx-4xx Elec ve 1xx-4xx
-Elec ve 3xx-4xx Elec ve 1xx-4xx
-Elec ve 3xx-4xx Elec ve 1xx-4xx
+RAME Elecve 1xx-4xx RAME Elecve 3xx-4xx
+Four RAME Elecve courses RAME Elecve 3xx-4xx RAME Elecve 3xx-4xx
+Elecve 1xx-4xx Elecve 3xx-4xx
+Elecve 3xx-4xx Elecve 3xx-4xx
+Elecve 3xx-4xx Elecve 3xx-4xx
+Professional Wring (PW) Scholarship in Pracce (SP) #2**
+RELS 408 RAME Elecve 3xx-4xx
+Elecve 1xx-4xx Elecve 1xx-4xx
+Elecve 3xx-4xx Elecve 1xx-4xx
+Elecve 3xx-4xx Elecve 1xx-4xx
 Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
 Must be completed by the end of two semesters.
-*Must a empt by 30 cr.
+*Must aempt by 30 cr.
 Must be completed by the end of four semesters.
 Must be completed by the end of six semesters.
-Note: Some courses for the major may also count toward the General Educa on requirements
-**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural
-Socie es and Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Note: Some courses for the major may also count toward the General Educaon requirements
+**All students must complete two Distribuve Studies courses that are approved for Big Queson courses. The Understanding Plural
+Sociees and Cultural Competence courses may also fulfill Distribuve Studies categories.
 Religions of the Ancient Middle East
-General Educa on Requirements Benchmark Requirements
+General Educaon Requirements Benchmark Requirements
 Fundamental Studies Year 1 - Benchmark Requirements
 Year 2 - Benchmark Requirements
 Year 3 - Benchmark Requirements
-Distribu ve Studies Major Requirements
-Big Ques on
-Normally double counted with Distribu ve Studies
+Distribuve Studies Major Requirements
+Big Queson
+Normally double counted with Distribuve Studies
 Diversity
-(overlap permi ed with Distribu ve Studies and/or Big Ques on)
-Experien al Learning- op onal
-(overlap permi ed with other requirements/courses)
-Language Track (op onal): Six credits in Hebrew, Arabic, Greek or other
+(overlap permied with Distribuve Studies and/or Big Queson)
+Experienal Learning- oponal
+(overlap permied with other requirements/courses)
+Language Track (oponal): Six credits in Hebrew, Arabic, Greek or other
 relevant language beyond the first year level.
 Students must earn a minimum of 120 credits to complete a degree.
 Requirements: 15 credits/5 courses Course Credits Grade
@@ -280,43 +280,43 @@ Requirements: 6 credits/2 courses Course Credits Grade
 Requirements: 4-6 credits/2 courses Course Credits Grade
 Requirements: 0-3 credits Course Credits Grade
 RELS 271, 273, 274, or JWST 230
-Academic Wri ng (AW)
-Professional Wri ng (PW) Three RAME Founda on courses
+Academic Wring (AW)
+Professional Wring (PW) Three RAME Foundaon courses
 Oral Comm. (OC)
-Math (MA) Four RAME Elec ve courses
-Analy c Reasoning (AR)
+Math (MA) Four RAME Elecve courses
+Analyc Reasoning (AR)
 Natural Science Lab (NL)
 Natural Sciences (NS)
 History/Social Sciences (HS) RELS 271, 273, 274, or JWST 230
 History/Social Sciences (HS) DEPT 1xx-2xx*
-Humani es (HU) DEPT 1xx-2xx*
-Humani es (HU) DEPT 1xx-2xx*
-Scholarship in Prac ce (SP)
-Scholarship in Prac ce (SP) non major DEPT 1xx-2xx**
+Humanies (HU) DEPT 1xx-2xx*
+Humanies (HU) DEPT 1xx-2xx*
+Scholarship in Pracce (SP)
+Scholarship in Pracce (SP) non major DEPT 1xx-2xx**
 DEPT 3xx-4xx**
 DEPT 3xx-4xx**
 DEPT 3xx-4xx**
-Big Ques on (IS) DEPT 3xx-4xx**
-Big Ques on (IS)
+Big Queson (IS) DEPT 3xx-4xx**
+Big Queson (IS)
 RELS 408
 Understanding Plural Soc. (UP)
 Understanding Plural Soc. (UP)
 Cultural Competency (CC)
 {Min. Grade: C-} ENGL 101
-Cumula ve average of major requirements must be at least a 2.0
-Founda on Courses
-Elec ves
+Cumulave average of major requirements must be at least a 2.0
+Foundaon Courses
+Elecves
 Capstone
 or
-*The three Founda on courses are selected from the following list:
+*The three Foundaon courses are selected from the following list:
 HIST 120, RELS 264, JWST 225, JWST 231, JWST 262 (must include two or
 more geographical, chronological, or cultural sub-areas). Other courses
 by permission.
-**The five Elec ve courses are selected from the following list:
+**The five Elecve courses are selected from the following list:
 CLAS 305, HIST 110, HIST 320, HIST 428R, JWST 324, JWST 325, JWST 326,
 JWST 430, JWST 468, JWST 469. Other courses by permission.
-University Requirements for Gradua on:
-ARHU Requirements for Gradua on: Some courses for the major may also count toward General Educa on requirements.
+University Requirements for Graduaon:
+ARHU Requirements for Graduaon: Some courses for the major may also count toward General Educaon requirements.
 At least 30 credits must be earned at UMD
 15 of the final 30 credits must be earned at the 300-400 level
 12 upper level major credits must be earned at UMD
