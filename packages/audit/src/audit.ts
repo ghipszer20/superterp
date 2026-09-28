@@ -116,7 +116,7 @@ export type ProgramMeta = {
   /** The college that owns the program's catalog page (`colleges-schools/<slug>/` in its URL);
    * the Advisor's default for the credit-cap check. Special programs run by Undergraduate Studies
    * or the Honors College use UGST. */
-  college: "AGNR" | "ARCH" | "ARHU" | "BSOS" | "BMGT" | "CMNS" | "EDUC" | "ENGR" | "INFO" | "JOUR" | "SPHL" | "UGST";
+  college: "AGNR" | "ARCH" | "ARHU" | "BSOS" | "BMGT" | "CMNS" | "EDUC" | "ENGR" | "INFO" | "JOUR" | "PLCY" | "SPHL" | "UGST" | "USG";
   /** Short name for headers, e.g. "Math (Applied)". Defaults to the Program's own name. */
   short?: string;
   /** Tracks of one major share this key; a student has one track per major. Defaults to the
