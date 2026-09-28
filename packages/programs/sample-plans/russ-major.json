@@ -1,0 +1,21 @@
+{
+  "programId": "russ-major",
+  "source": "https://drive.google.com/uc?export=download&id=1Z_eMIfEE0R2R1ipjzgVF7pQcOaxzJ2vb#Russian",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities official four-year academic plan for Russian. The PDF-to-text conversion of the term grid is garbled (a per-benchmark sidebar and the Fall/Spring columns are interleaved on each line). Years 1 and 3 read cleanly as a 2-column (Fall | Spring) grid once the benchmark sidebar box is set aside; Year 2's raw text doesn't split as cleanly for RUSS201/RUSS202. Placed RUSS201 in Year 2 Fall and RUSS202 in Year 2 Spring, following the one-course-per-term pattern Years 1 (RUSS101/RUSS102) and 3 (RUSS301/RUSS302) both show legibly, and consistent with Benchmark 2's own 'RUSS202 by end of four semesters' deadline. Flagged as reconstructed in docs/project/owner-review.md.",
+    "Year 1 has no major courses: RUSS201 requires RUSS101 and RUSS102 (or equivalent) as prerequisites, which are the pre-major language sequence, not part of the major's own 40-credit requirement list, so Gen Ed and that prerequisite sequence are left out per the pattern used by other language majors' sample plans (only the major is audited).",
+    "The 'one additional RUSS course at the 3xx level' slot filled with RUSS303, a real course from the Academic Catalog's approved RUSS-course list (not named for this slot by either source).",
+    "The 'one additional RUSS course at the 4xx level' slot filled with RUSS403, a real course from the Academic Catalog's approved RUSS-course list (not named for this slot by either source).",
+    "The two 'RUSS 3xx-4xx in Russian' elective slots filled with RUSS321 (Year 3 Spring) and RUSS334 (Year 4 Fall), real courses from the Academic Catalog's approved RUSS-course list. Their being taught in Russian is not verified (no language-of-instruction data available); see the program's reviewNotes."
+  ],
+  "terms": [
+    { "term": "Year 2 Fall", "courses": ["RUSS201"] },
+    { "term": "Year 2 Spring", "courses": ["RUSS202"] },
+    { "term": "Year 3 Fall", "courses": ["RUSS301", "RUSS303"] },
+    { "term": "Year 3 Spring", "courses": ["RUSS302", "RUSS321"] },
+    { "term": "Year 4 Fall", "courses": ["RUSS401", "RUSS334"] },
+    { "term": "Year 4 Spring", "courses": ["RUSS402", "RUSS403"] }
+  ]
+}
