@@ -90,3 +90,17 @@ Topics, in order: TDD and rebuild rules; CMSC141/142; CS gateway; schedule build
 - **CS reference plan (owner, 2026-09-27):** UMD does publish an official CS 4-year plan, with slot entries ("CMSC4xx", "Gen Ed: DVUP") instead of individual courses; the owner can find it. Until then the tracking-sheet fixture stays.
 - **Artificial Intelligence major (owner, 2026-09-27):** do not encode it at all (the B.S. starts Fall 2027 and has no department requirements page). Batches skip it.
 - **Certificates (owner, 2026-09-28):** a separate certificates session encodes the catalog index's 10 certificates only (the AGST Teaching Certificate major track and CHBE's optional certificates are out of scope). To save tokens, small certificates are grouped into one builder across departments (the "3 small programs from one department" limit doesn't apply to them). The certificates session may run up to 3 builders at once. It never touches major or minor files.
+
+## Minors (owner, 2026-09-28, answered from owner-review.md)
+- **Department page lists fewer options than the catalog:** accept both lists (union). Applies to the Math/Actuarial/Statistics honors substitutes (MATH340/341), Astronomy's ASTR498, Construction PM's ENCE420, and any later case.
+- **Cross-listed minors** (same requirements under 2+ departments): one program each, under its main college.
+- **Eligibility restrictions** (department page or catalog says a minor isn't open to certain majors): BLOCK the minor for those majors (needs an engine/picker feature; queued).
+- **"Or an equivalent" / "not limited to these examples" with no list:** accept the listed courses and show "other courses may count with advisor approval" on that requirement.
+- **Physics Minor:** the 2026-27 catalog, not the 2018 department form.
+- **Computer Science Minor:** keep the department version (B- gateway, 3.0 GPA note, MATH141).
+- **Project Management Minor:** satisfied by EITHER the catalog set or the department set.
+- **No grade floor stated while sibling minors state C-:** use C- (Climate Change Fluency, Computational Finance, Arts Leadership, and similar).
+- **Open slots** ("from an approved list", none published): the audit shows the slot as "Confirm with your advisor" with a checkbox the student ticks; the program isn't complete until it's ticked (engine + UI feature; queued; converts every `OPEN SLOT:` note).
+- **Shady Grove:** add a "Universities at Shady Grove" college group; Criminal Justice Minor at Shady Grove moves there.
+- **Video Production and Documentary Filmmaking Minor:** encode from the owner-pasted table: JOUR347; JOUR281 or JOUR402; one of JOUR368L or JOUR368T; two to five (6-15 credits) of JOUR368E, 368O, 368I, 368J, 368U, 368T, 368X, JOUR370, JOUR383, CINE310, CINE415.
+- **"From N different areas"** (Entomology's "two of the four areas"): add an engine rule for courses from at least N different groups.

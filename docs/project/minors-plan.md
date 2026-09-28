@@ -50,8 +50,15 @@ Medium:
 Order: the tiny bundles first (fastest registry growth, and they prove the brief), then the medium batches
 college by college. At most 3 builders run at once, and the next one starts whenever one is merged.
 
-## Status
-- Merged 2026-09-28 (37 programs from 36 catalog minors): t-bsos2 (85k tokens), t-bsos1 (80k), t-educ (88k), t-sph-jour (78k; Video Production skipped, source has no requirements), t-engr (89k), t-rotc (78k), t-info-usg (86k; ACES encoded as 3 pathway programs).
-- Running at pause request (owner, 2026-09-28: "after the minors in project, pause"): t-arhu, t-clas, t-agnr-arch. Merge those, then stop; resume from the batch table order (medium batches) when the owner says so.
-- Rules added: slots with no published list are left out and tagged `OPEN SLOT:` (roadmap Known to-dos); college keys come from the ProgramMeta union (UGST, not USG).
-- Merging: this session merges in its own detached worktree `C:/Users/24GHi/Code/st-minors-merge` and pushes `HEAD:feat/course-data`, because other sessions commit in the main checkout. Review-doc conflicts: `git merge-file --union`; registry: regenerate.
+## Status (paused by the owner 2026-09-28 after these merges)
+- Merged 2026-09-28: 10 batches (t-bsos2, t-bsos1, t-educ, t-sph-jour, t-engr, t-rotc, t-info-usg, t-agnr-arch, t-arhu, t-clas), 69-102k tokens each. All 10 tiny bundles are done.
+- Next when resumed: the medium batches in table order. Drop the Archaeology entry from `arth` (identical to the Classics listing; encoded as `clas-minor-archaeology`).
+- Merging: separate detached worktree `C:/Users/24GHi/Code/st-minors-merge`, push `HEAD:feat/course-data` (other sessions commit in the main checkout). Review-doc conflicts: `git merge-file --union`; registry: regenerate.
+
+## Follow-ups from the owner's answers (rulings.md "Minors"), queued
+1. Encoding fixes (one Sonnet builder): union lists for Math/Actuarial/Statistics (MATH340/341), Astronomy (ASTR498); C- floor for Climate Change Fluency, Computational Finance, Arts Leadership; Project Management accepts catalog OR department set (`sets`); advisor-approval notes on Demography SOCY201, Naval Science cultural courses, Atmospheric outside electives.
+2. Video Production and Documentary Filmmaking Minor: encode from the owner's table (rulings.md).
+3. Engine + UI: open-slot requirement ("Confirm with your advisor" checkbox), then convert every `OPEN SLOT:` note. UI change: show the owner before merging.
+4. Engine + picker: eligibility gates that block a minor for excluded majors (Astronomy, Chesapeake Bay, Meteorology, RAS, Economics, Paleobiology, Planetary Sciences, ACES pathways, and others in review notes).
+5. Engine: "courses from at least N different groups" (Entomology, then any other "N of the areas" rule).
+6. ProgramMeta: add a Universities at Shady Grove college group; move `ccjs-minor-shady-grove`.
