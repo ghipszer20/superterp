@@ -1,6 +1,6 @@
 # Living-learning and special programs report
 
-Generated 2026-09-27 by `packages/catalog/scripts/special-report.ts` from `special-programs/registry.ts`.
+Generated 2026-09-28 by `packages/catalog/scripts/special-report.ts` from `special-programs/registry.ts`.
 Sources and page formats are in `SOURCES.md`. Every drafted program is `verified: false` until the owner signs it off.
 
 How programs were drafted: **table** = a catalog requirement table through `parseProgramPage` + `draftPrograms`
@@ -15,10 +15,10 @@ interpretation quoted in `reviewNotes`; **none** = no academic requirements are 
 | Honors | 8 | 8 | 0 |
 | Other LLP | 6 | 5 | 1 |
 | Other special program | 8 | 2 | 6 |
-| Departmental Honors | 39 | 25 | 14 |
-| **Total** | **74** | **53** | **21** |
+| Departmental Honors | 39 | 28 | 11 |
+| **Total** | **74** | **56** | **18** |
 
-Drafted: **206** requirements and **324** review notes (187 manual, 137 check).
+Drafted: **216** requirements and **345** review notes (199 manual, 146 check).
 Manual notes are rules the audit can't check (GPA, residence, attendance, approvals); check notes are interpretations to confirm.
 
 ## Programs
@@ -89,13 +89,13 @@ Manual notes are rules the audit can't check (GPA, residence, attendance, approv
 | Departmental Honors: Astronomy | Departmental Honors | none: No course ids are published: the Departmental Honors Program section says only that "Honors students work with a faculty advisor on a research project for academic credit," submit "a written report," and pass "an oral comprehensive examination." | 0 | 0 | 0 | 0 |
 | Departmental Honors: Agriculture & Natural Resources | Departmental Honors | none: College-wide program with no drafteable course ids: "Six or more credits in upper-level honors courses, seminars, or workshops" from any department, plus "Six or more credits of DEPARTMENTAL 388 Honors Thesis Research," where DEPARTMENTAL is a 4-letter prefix that varies by the student's own AGNR major (ANSC388, NFSC388, PLSC388, etc.) and isn't enumerated on the page. | 0 | 0 | 0 | 0 |
 | Departmental Honors: Behavioral and Community Health | Departmental Honors | none: The Honors College directory links this URL for Behavioral and Community Health, but the page (an undergraduate resources page for the Public Health Practice major) has no honors program section, course ids or requirements. | 0 | 0 | 0 | 0 |
-| Departmental Honors: Criminology & Criminal Justice | Departmental Honors | none: ccjs.umd.edu did not respond to repeated fetches ("fetch failed"), including the department's own root page, as of 2026-09-26; no cached copy of a requirements page exists. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Criminology & Criminal Justice | Departmental Honors | hand | 3 | 8 | 4 | 4 |
 | Departmental Honors: Computer Science | Departmental Honors | none: No enumerated course requirement: to graduate with the citation a student must have "Completed a graduate level 'PhD Qualifying' CMSC course OR an honors version of a CMSC3xx/4xx course (not including CMSC396H)" plus an approved honors thesis; neither the qualifying-course list nor the honors-version course ids are published, and CMSC499/CMSC396H research credit is explicitly "not strictly required." | 0 | 0 | 0 | 0 |
 | Departmental Honors: Family Health | Departmental Honors | none: No course ids are published: "Students enroll in special honors courses, complete honors option work in regular courses and conduct independent research," culminating in a senior honors thesis, but no course ids or credit totals are named. | 0 | 0 | 0 | 0 |
 | Departmental Honors: French | Departmental Honors | none: Unlike German and Spanish, SLLC publishes no dedicated honors-program page for French: the page the Honors College directory links to is the general French Program page, with no honors section, and no French-specific honors subpage was found from its links. | 0 | 0 | 0 | 0 |
-| Departmental Honors: Hearing & Speech Sciences | Departmental Honors | none: hesp.umd.edu did not respond to repeated fetches ("fetch failed" / connect timeout), including the department's root page, as of 2026-09-26; no cached copy of a requirements page exists. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Hearing & Speech Sciences | Departmental Honors | hand | 5 | 7 | 4 | 3 |
 | Departmental Honors: Human Development | Departmental Honors | none: No course ids are published: the page describes a "two-year program sequence" with "an Honors seminar offered in the fall of the Junior year" and senior-year thesis mentorship, but names no course ids and defers eligibility/application details to a separate overview page. | 0 | 0 | 0 | 0 |
 | Departmental Honors: Linguistics | Departmental Honors | none: No required course: a student finds a faculty supervisor and may "optionally register for LING 499 ('Directed Studies')"; there's no fixed, required course id and no other requirement beyond a thesis and its supervisor's recommendation. | 0 | 0 | 0 | 0 |
-| Departmental Honors: Neuroscience | Departmental Honors | none: neur.umd.edu did not respond to repeated fetches ("fetch failed" / connect timeout) as of 2026-09-26; no cached copy of a requirements page exists. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Neuroscience | Departmental Honors | hand | 2 | 6 | 4 | 2 |
 | Departmental Honors: Philosophy | Departmental Honors | none: The Honors College directory links only the department's general homepage; it has no honors program section, and no dedicated Philosophy honors-program page was found from its navigation or links. | 0 | 0 | 0 | 0 |
-| Departmental Honors: Sociology | Departmental Honors | none: socy.umd.edu did not respond to repeated fetches ("fetch failed" / connect timeout), including the department's undergraduate and root pages, as of 2026-09-26; no cached copy of a requirements page exists. | 0 | 0 | 0 | 0 |
+| Departmental Honors: Sociology | Departmental Honors | none: No course ids are published (checked 2026-09-27): socy.umd.edu is reachable again, and the Honors College's departmental-honors directory links this same URL, but the page itself (last modified 2021) is prose-only — "the opportunity to enroll in small seminars and graduate level courses and the opportunity to work on a one-to-one basis with faculty" — with an eligibility GPA ("a cumulative GPA of 3.3 and a GPA of 3.5 in Sociology") but no SOCY course ids, credit counts or thesis requirement. | 0 | 0 | 0 | 0 |

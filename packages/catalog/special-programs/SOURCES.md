@@ -53,10 +53,13 @@ ids; the rest are `none` entries quoting why (no course ids published, or the de
 to a fetch as of 2026-09-26 — see the per-program `why` in `registry.ts`). GPA minimums, thesis documents, oral
 defenses and faculty/committee approvals are never audit requirements; they are `[manual]` review notes.
 
-Three department sites (`ccjs.umd.edu`, `hesp.umd.edu`, `socy.umd.edu`, `neur.umd.edu`) timed out on every
-attempt (`fetch failed` / `UND_ERR_CONNECT_TIMEOUT`) even though sibling BSOS/CMNS domains and the department's
-own root page (where checked) responded, so Criminology & Criminal Justice, Hearing & Speech Sciences,
-Neuroscience and Sociology are `none` entries citing the fetch failure rather than a missing requirements page.
+Four department sites (`ccjs.umd.edu`, `hesp.umd.edu`, `socy.umd.edu`, `neur.umd.edu`) timed out on every attempt
+(`fetch failed` / `UND_ERR_CONNECT_TIMEOUT`) as of 2026-09-26 even though sibling BSOS/CMNS domains and the
+department's own root page (where checked) responded. A retry on 2026-09-27 found all four sites reachable again:
+Criminology & Criminal Justice, Hearing & Speech Sciences and Neuroscience each publish specific course ids and
+are now drafted by hand. Sociology's page is reachable too, but (as on other prose-only pages, e.g. Astronomy)
+publishes no course ids, credits or thesis requirement, so it stays a `none` entry, now citing that rather than
+the earlier fetch failure.
 
 ## Programs
 
@@ -129,13 +132,13 @@ table (hand-transcribed); **none** = no requirement list published.
 | Departmental Honors: Women, Gender, and Sexuality Studies | Departmental Honors | https://wgss.umd.edu/academic-programs/undergraduate/experiential-learning | WGSS487 (3cr), WGSS489A (6cr) | prose | undated, fetched 2026-09-26 |
 | Departmental Honors: Agriculture & Natural Resources | Departmental Honors | https://agnr.umd.edu/academics/undergraduate-honors | College-wide; "DEPARTMENTAL 388" varies by major, not enumerable | none | undated, fetched 2026-09-26 |
 | Departmental Honors: Behavioral and Community Health | Departmental Honors | https://sph.umd.edu/academics/departments-units/department-behavioral-and-community-health/student-resources-and-programs-behavioral-and-community-health/undergraduate-student-resources-community-health | No honors section on the linked page | none | fetched 2026-09-26 |
-| Departmental Honors: Criminology & Criminal Justice | Departmental Honors | https://ccjs.umd.edu/landingtopic/undergraduate-honors-program | ccjs.umd.edu unreachable | none | attempted 2026-09-26 |
+| Departmental Honors: Criminology & Criminal Justice | Departmental Honors | https://ccjs.umd.edu/undergraduate/undergraduate-honors-program | CCJS388H, CCJS389H, CCJS489H (6cr, fall+spring senior year); min grade B | prose | undated, fetched 2026-09-27 |
 | Departmental Honors: Computer Science | Departmental Honors | https://undergrad.cs.umd.edu/honors/requirements | No enumerated qualifying/honors course list; research credit "not strictly required" | none | undated, fetched 2026-09-26 |
 | Departmental Honors: Family Health | Departmental Honors | https://sph.umd.edu/academics/departments-units/department-family-science/student-resources-family-science/undergraduate-student-resources-family-health | No course ids: "special honors courses... honors option work" | none | fetched 2026-09-26 |
 | Departmental Honors: French | Departmental Honors | https://sllc.umd.edu/fields/french | No dedicated honors-program page found | none | fetched 2026-09-26 |
-| Departmental Honors: Hearing & Speech Sciences | Departmental Honors | https://hesp.umd.edu/undergraduate/honors-hearing-and-speech-sciences-undergraduate-students | hesp.umd.edu unreachable | none | attempted 2026-09-26 |
+| Departmental Honors: Hearing & Speech Sciences | Departmental Honors | https://hesp.umd.edu/undergraduate/honors-hearing-and-speech-sciences-undergraduate-students | HESP468H (3cr), HESP499H (3cr), HESP469A, HESP469B, one of PSYC200/EDMS451/BIOM301 | prose | undated, fetched 2026-09-27 |
 | Departmental Honors: Human Development | Departmental Honors | https://education.umd.edu/human-development-honors-program | No course ids published | none | fetched 2026-09-26 |
 | Departmental Honors: Linguistics | Departmental Honors | https://linguistics.umd.edu/academic-programs/undergraduate/honors-programs | LING499 only "optional"; no required course | none | fetched 2026-09-26 |
-| Departmental Honors: Neuroscience | Departmental Honors | https://neur.umd.edu/opportunities/honors-requirements | neur.umd.edu unreachable | none | attempted 2026-09-26 |
+| Departmental Honors: Neuroscience | Departmental Honors | https://neur.umd.edu/opportunities/honors-requirements | NEUR379H/479H (9cr research), NEUR398H seminar | prose | undated, fetched 2026-09-27 |
 | Departmental Honors: Philosophy | Departmental Honors | https://philosophy.umd.edu/ | No honors page found; directory links only the department homepage | none | fetched 2026-09-26 |
-| Departmental Honors: Sociology | Departmental Honors | https://socy.umd.edu/undergraduate/honors-program | socy.umd.edu unreachable | none | attempted 2026-09-26 |
+| Departmental Honors: Sociology | Departmental Honors | https://socy.umd.edu/undergraduate/honors-program | Reachable but prose-only: eligibility GPA only, no course ids | none | fetched 2026-09-27 |

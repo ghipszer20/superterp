@@ -20,6 +20,7 @@ import { deptArth } from "./dept-arth-2026-27.ts";
 import { deptBioe } from "./dept-bioe-2026-27.ts";
 import { deptBiol } from "./dept-biol-2026-27.ts";
 import { deptCbmg } from "./dept-cbmg-2026-27.ts";
+import { deptCcjs } from "./dept-ccjs-2026-27.ts";
 import { deptChem } from "./dept-chem-2026-27.ts";
 import { deptComm } from "./dept-comm-2026-27.ts";
 import { deptEcon } from "./dept-econ-2026-27.ts";
@@ -30,9 +31,11 @@ import { deptEntm } from "./dept-entm-2026-27.ts";
 import { deptGeol } from "./dept-geol-2026-27.ts";
 import { deptGers } from "./dept-gers-2026-27.ts";
 import { deptGvpt } from "./dept-gvpt-2026-27.ts";
+import { deptHesp } from "./dept-hesp-2026-27.ts";
 import { deptHist } from "./dept-hist-2026-27.ts";
 import { deptKnes } from "./dept-knes-2026-27.ts";
 import { deptMath } from "./dept-math-2026-27.ts";
+import { deptNeur } from "./dept-neur-2026-27.ts";
 import { deptPhys } from "./dept-phys-2026-27.ts";
 import { deptPsyc } from "./dept-psyc-2026-27.ts";
 import { deptSpan } from "./dept-span-2026-27.ts";
@@ -198,12 +201,7 @@ export const specialPrograms: SpecialEntry[] = [
     "https://sph.umd.edu/academics/departments-units/department-behavioral-and-community-health/student-resources-and-programs-behavioral-and-community-health/undergraduate-student-resources-community-health",
     "The Honors College directory links this URL for Behavioral and Community Health, but the page (an undergraduate resources page for the Public Health Practice major) has no honors program section, course ids or requirements.",
   ),
-  none(
-    "departmental",
-    "Departmental Honors: Criminology & Criminal Justice",
-    "https://ccjs.umd.edu/landingtopic/undergraduate-honors-program",
-    "ccjs.umd.edu did not respond to repeated fetches (\"fetch failed\"), including the department's own root page, as of 2026-09-26; no cached copy of a requirements page exists.",
-  ),
+  hand("departmental", deptCcjs),
   none(
     "departmental",
     "Departmental Honors: Computer Science",
@@ -222,12 +220,7 @@ export const specialPrograms: SpecialEntry[] = [
     "https://sllc.umd.edu/fields/french",
     "Unlike German and Spanish, SLLC publishes no dedicated honors-program page for French: the page the Honors College directory links to is the general French Program page, with no honors section, and no French-specific honors subpage was found from its links.",
   ),
-  none(
-    "departmental",
-    "Departmental Honors: Hearing & Speech Sciences",
-    "https://hesp.umd.edu/undergraduate/honors-hearing-and-speech-sciences-undergraduate-students",
-    "hesp.umd.edu did not respond to repeated fetches (\"fetch failed\" / connect timeout), including the department's root page, as of 2026-09-26; no cached copy of a requirements page exists.",
-  ),
+  hand("departmental", deptHesp),
   none(
     "departmental",
     "Departmental Honors: Human Development",
@@ -240,12 +233,7 @@ export const specialPrograms: SpecialEntry[] = [
     "https://linguistics.umd.edu/academic-programs/undergraduate/honors-programs",
     "No required course: a student finds a faculty supervisor and may \"optionally register for LING 499 ('Directed Studies')\"; there's no fixed, required course id and no other requirement beyond a thesis and its supervisor's recommendation.",
   ),
-  none(
-    "departmental",
-    "Departmental Honors: Neuroscience",
-    "https://neur.umd.edu/opportunities/honors-requirements",
-    "neur.umd.edu did not respond to repeated fetches (\"fetch failed\" / connect timeout) as of 2026-09-26; no cached copy of a requirements page exists.",
-  ),
+  hand("departmental", deptNeur),
   none(
     "departmental",
     "Departmental Honors: Philosophy",
@@ -256,6 +244,6 @@ export const specialPrograms: SpecialEntry[] = [
     "departmental",
     "Departmental Honors: Sociology",
     "https://socy.umd.edu/undergraduate/honors-program",
-    "socy.umd.edu did not respond to repeated fetches (\"fetch failed\" / connect timeout), including the department's undergraduate and root pages, as of 2026-09-26; no cached copy of a requirements page exists.",
+    "No course ids are published (checked 2026-09-27): socy.umd.edu is reachable again, and the Honors College's departmental-honors directory links this same URL, but the page itself (last modified 2021) is prose-only — \"the opportunity to enroll in small seminars and graduate level courses and the opportunity to work on a one-to-one basis with faculty\" — with an eligibility GPA (\"a cumulative GPA of 3.3 and a GPA of 3.5 in Sociology\") but no SOCY course ids, credit counts or thesis requirement.",
   ),
 ];
