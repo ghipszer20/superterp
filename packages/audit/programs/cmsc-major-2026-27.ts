@@ -74,6 +74,73 @@ export const CONCENTRATION_REQUIREMENT: Requirement = {
   minGrade: "D-",
 };
 
+// Required lower-level courses (unless exempt by proficiency exam, footnote 1) plus the two
+// "additional required" CMSC courses -- identical for every specialization (each one's page says
+// "the same foundational courses in computer science... the difference in the specialization is
+// the upper level computer science courses").
+export const LOWER_LEVEL: Requirement[] = [
+  { kind: "course", id: "math140", name: "Calculus I", options: ["MATH140"], minGrade: "C-" },
+  { kind: "course", id: "math141", name: "Calculus II", options: ["MATH141"], minGrade: "C-" },
+  // Owner-confirmed 2026-09-25: CMSC141 counts for CMSC131 and CMSC142 for CMSC132.
+  // CMSC133 (department page, see review notes): "CMSC131 or CMSC133".
+  { kind: "course", id: "cmsc131", name: "Object-Oriented Programming I", options: ["CMSC131", "CMSC141", "CMSC133"], minGrade: "C-" },
+  { kind: "course", id: "cmsc132", name: "Object-Oriented Programming II", options: ["CMSC132", "CMSC142"], minGrade: "C-" },
+  { kind: "course", id: "cmsc216", name: "Introduction to Computer Systems", options: ["CMSC216"], minGrade: "C-" },
+  { kind: "course", id: "cmsc250", name: "Discrete Structures", options: ["CMSC250"], minGrade: "C-" },
+  { kind: "course", id: "cmsc330", name: "Organization of Programming Languages", options: ["CMSC330"], minGrade: "C-" },
+  { kind: "course", id: "cmsc351", name: "Algorithms", options: ["CMSC351"], minGrade: "C-" },
+];
+
+// The generic "STAT4xx" and "MATH/AMSC/STAT xxx" additional-required slots (General Track and
+// Cybersecurity). Data Science, Machine Learning and Quantum Information replace one or both with
+// a specific course instead (see cmsc-specializations-2026-27.ts).
+export const STAT4XX_GENERIC: Requirement = {
+  kind: "choose",
+  id: "stat4xx",
+  name: "STAT 400-level course",
+  count: 1,
+  from: { departments: ["STAT"], minNumber: 400, maxNumber: 499 },
+  minGrade: "C-",
+};
+export const MATHXXX_GENERIC: Requirement = {
+  kind: "choose",
+  id: "mathxxx",
+  name: "MATH/AMSC/STAT course (prerequisite MATH141 or higher)",
+  count: 1,
+  from: {
+    departments: ["MATH", "AMSC", "STAT"],
+    minNumber: 240,
+    maxNumber: 499,
+    exclude: [...AMSC_CROSSLISTS, ...MATH_CROSSLISTS],
+  },
+  minGrade: "C-",
+};
+
+// Upper level: five 400-level courses from at least three areas, at most three per area (footnote
+// 3); the General Track / Distributive Areas page says this "applies to all CS tracks" (see the
+// module comment above).
+export const AREAS_REQUIREMENT: Requirement = {
+  kind: "distribution",
+  id: "areas",
+  name: "Five 400-level CMSC courses across three areas",
+  count: 5,
+  minAreas: 3,
+  maxPerArea: 3,
+  areas: AREAS,
+  minGrade: "C-",
+};
+// Machine Learning's page states this identically ("Six credits from CMSC 3XX or CMSC 4XX
+// excluding CMSC330 and CMSC351"); Cybersecurity and Quantum Information's "Upper Level Elective
+// Course(s)" are a narrower 3-credit version of the same filter (see that program's own choose).
+export const ELECTIVES_GENERIC: Requirement = {
+  kind: "choose",
+  id: "electives",
+  name: "Upper-level CMSC electives (6 credits)",
+  credits: 6,
+  from: { departments: ["CMSC"], minNumber: 300, maxNumber: 499, exclude: ["CMSC330", "CMSC351"] },
+  minGrade: "C-",
+};
+
 export const cmscMajor: Program = {
   id: "cmsc-major",
   name: "Computer Science Major",
@@ -103,61 +170,14 @@ export const cmscMajor: Program = {
     "LEP Benchmarks (department page): a 45-credit checkpoint (CMSC131, CMSC132, MATH140, each C- or better, 2.0 cumulative GPA) and a 75-credit checkpoint (CMSC330, CMSC351, one of STAT4xx/MATH-AMSC-STAT xxx, C- or better, 2.0 cumulative GPA). This is a progress-checkpoint concept (tied to credits-earned-so-far) the audit engine doesn't model at all (it only reports gaps against the finished requirement list, not by checkpoint); not encoded. Resolved (CS department-page answers, owner, 2026-09-27): the 3.0 cumulative GPA in gateway.ts's Fall-2024-or-later rule is correct; this page's 2.0 figure is out of date.",
     "No CS-specific residency requirement is stated on the department's requirements pages (only the general university residency policy would apply, which the audit engine doesn't model at all).",
     "Minimum grade C- applies to every requirement except the concentration (see above); gateway courses need B- for students who started Fall 2024 or later (CS tracking sheet), handled separately by the gateway check.",
-    "Specializations (Cybersecurity, Data Science, Machine Learning, Quantum Information) are separate programs, not encoded yet (see report/follow-ups). The academic catalog's tables for these are also stale relative to the department's specialization pages: Cybersecurity's 'choose four' list is missing CMSC431; Data Science's 'choose two' list is missing CMSC431 and CMSC471; and the department adds MATH461 and MATH341 as Linear Algebra options alongside MATH240 for Data Science, Machine Learning and Quantum Information (the catalog only lists MATH240 for these tracks' supporting math).",
+    "Resolved: the four specializations (Cybersecurity, Data Science, Machine Learning, Quantum Information) are encoded as separate programs in cmsc-specializations-2026-27.ts, each selectable in place of this General Track program (packages/programs registry: major: 'cs', a track per specialization; General Track stays the default, not required). They share this file's LOWER_LEVEL, AREAS, ELECTIVES_GENERIC and CONCENTRATION_REQUIREMENT. See that file's own review notes for specialization-specific gaps.",
   ],
   requirements: [
-    // Required lower-level courses (unless exempt by proficiency exam, footnote 1)
-    { kind: "course", id: "math140", name: "Calculus I", options: ["MATH140"], minGrade: "C-" },
-    { kind: "course", id: "math141", name: "Calculus II", options: ["MATH141"], minGrade: "C-" },
-    // Owner-confirmed 2026-09-25: CMSC141 counts for CMSC131 and CMSC142 for CMSC132.
-    // CMSC133 (department page, see review notes): "CMSC131 or CMSC133".
-    { kind: "course", id: "cmsc131", name: "Object-Oriented Programming I", options: ["CMSC131", "CMSC141", "CMSC133"], minGrade: "C-" },
-    { kind: "course", id: "cmsc132", name: "Object-Oriented Programming II", options: ["CMSC132", "CMSC142"], minGrade: "C-" },
-    { kind: "course", id: "cmsc216", name: "Introduction to Computer Systems", options: ["CMSC216"], minGrade: "C-" },
-    { kind: "course", id: "cmsc250", name: "Discrete Structures", options: ["CMSC250"], minGrade: "C-" },
-    // Additional required courses
-    { kind: "course", id: "cmsc330", name: "Organization of Programming Languages", options: ["CMSC330"], minGrade: "C-" },
-    { kind: "course", id: "cmsc351", name: "Algorithms", options: ["CMSC351"], minGrade: "C-" },
-    {
-      kind: "choose",
-      id: "stat4xx",
-      name: "STAT 400-level course",
-      count: 1,
-      from: { departments: ["STAT"], minNumber: 400, maxNumber: 499 },
-      minGrade: "C-",
-    },
-    {
-      kind: "choose",
-      id: "mathxxx",
-      name: "MATH/AMSC/STAT course (prerequisite MATH141 or higher)",
-      count: 1,
-      from: {
-        departments: ["MATH", "AMSC", "STAT"],
-        minNumber: 240,
-        maxNumber: 499,
-        exclude: [...AMSC_CROSSLISTS, ...MATH_CROSSLISTS],
-      },
-      minGrade: "C-",
-    },
-    // Upper level: five 400-level courses from at least three areas, at most three per area (footnote 3)
-    {
-      kind: "distribution",
-      id: "areas",
-      name: "Five 400-level CMSC courses across three areas",
-      count: 5,
-      minAreas: 3,
-      maxPerArea: 3,
-      areas: AREAS,
-      minGrade: "C-",
-    },
-    {
-      kind: "choose",
-      id: "electives",
-      name: "Upper-level CMSC electives (6 credits)",
-      credits: 6,
-      from: { departments: ["CMSC"], minNumber: 300, maxNumber: 499, exclude: ["CMSC330", "CMSC351"] },
-      minGrade: "C-",
-    },
+    ...LOWER_LEVEL,
+    STAT4XX_GENERIC,
+    MATHXXX_GENERIC,
+    AREAS_REQUIREMENT,
+    ELECTIVES_GENERIC,
     // Upper-level concentration (footnote 5; department page: "Upper Level Concentration").
     // minGrade "D-" (not "C-"): the department page allows a D grade here specifically (see
     // review notes) -- D- is the lowest grade above F, so F/W attempts still earn no credit
