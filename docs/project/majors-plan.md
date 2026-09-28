@@ -6,9 +6,9 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 
 | # | id | majors | notes | status |
 |---|---|---|---|---|
-| 1 | agnr-ensp (resume) | ENSP: 8 remaining concentrations + 3 flagged narrowings | `ensp-shared-2026-27.ts` | queued |
-| 2 | educ-elem | Elementary Education | creates `educ-shared-2026-27.ts` if the catalog shows a teacher-prep core | queued |
-| 3 | bmgt-omba-scm | Operations Mgmt & Business Analytics + Supply Chain | import `bmgt-core-2026-27.ts` | queued |
+| 1 | agnr-ensp (resume) | ENSP: 8 remaining concentrations + 3 flagged narrowings | `ensp-shared-2026-27.ts` | running |
+| 2 | educ-elem | Elementary Education | creates `educ-shared-2026-27.ts` if the catalog shows a teacher-prep core | running |
+| 3 | bmgt-omba-scm | Operations Mgmt & Business Analytics + Supply Chain | import `bmgt-core-2026-27.ts` | merged (84k) |
 | 4 | agnr-ferm-nfsc | Fermentation Science + Nutrition & Food Science | | queued |
 | 5 | arch-pair | Architecture + Real Estate & Built Environment | | queued |
 | 6 | sphl-kine | Kinesiology | creates `sphl-shared` if SPHL majors share a core | queued |
