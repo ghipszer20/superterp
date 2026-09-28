@@ -1,0 +1,23 @@
+{
+  "programId": "hist-major",
+  "source": "https://drive.google.com/uc?export=download&id=1ZjfdW75RKk-Hm41Hm4ylcpcjg908TFYP#History",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities' History Four Year Academic Plan. The source PDF's term grid converts to garbled, column-interleaved text (benchmark sidebar text and the Fall/Spring cells run together), so exact per-slot Fall/Spring placement could not be reliably reconstructed; flagged in docs/project/owner-review.md. Term placement here follows the plan's clearly-legible signals (2 lower-level courses in Year 1 per Benchmark 1; HIST208 in Year 2 per Benchmark 2's 'including HIST 208'; upper-level electives concentrated in Years 3-4 per Benchmark 3's '12 credits of upper-level HIST'; the HIST408/HIST396 capstone in Year 4 Spring) and otherwise spreads the remaining elective credits across Years 1-4 in the plan's own order. Gen Ed and general-elective slots (ENGL101, Math, ARHU158, Global Engagement, etc.) are left out: only the major is audited.",
+    "Three 1xx/2xx introductory courses (beyond HIST208) filled with HIST110, HIST120, and HIST131, real courses from the Academic Catalog's approved HIST course list (the source names no specific introductory courses).",
+    "Six credits (18 of the 24 elective credits are separately covered below) of upper-level electives filled with HIST304, HIST306, HIST307, HIST310, HIST319, and HIST320, all real 3xx-level courses from the Academic Catalog's approved HIST course list (the source names no specific elective courses).",
+    "The 6-credit flexible elective bucket filled with HIST106 and HIST111 (both real, lower-level courses from the Academic Catalog's approved HIST course list), demonstrating the department plan's 'maximum of two lower-level courses' cap on the 24-credit elective total.",
+    "Capstone filled with HIST408 (the plan's primary option; HIST396 is the named substitute, not used here)."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["HIST110"] },
+    { "term": "Year 1 Spring", "courses": ["HIST120"] },
+    { "term": "Year 2 Fall", "courses": ["HIST208"] },
+    { "term": "Year 2 Spring", "courses": ["HIST131"] },
+    { "term": "Year 3 Fall", "courses": ["HIST304", "HIST306"] },
+    { "term": "Year 3 Spring", "courses": ["HIST307", "HIST310"] },
+    { "term": "Year 4 Fall", "courses": ["HIST319", "HIST320", "HIST106"] },
+    { "term": "Year 4 Spring", "courses": ["HIST408", "HIST111"] }
+  ]
+}
