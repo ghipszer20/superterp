@@ -2,6 +2,7 @@
 # Mechatronics Engineering Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/aerospace-engineering/mechatronics-engineering-major/
 Source: https://mechatronics.umd.edu/
+Source: https://mechatronics.umd.edu/curriculum
 Source: https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/mechatronics_fall_2026_gradplan_0.pdf
 Fetched: 2026-09-28
 
@@ -82,6 +83,41 @@ The Mechatronics Engineering (ENMT) program at the Universities At Shady Grove i
 About the Field
 Mechatronics Engineering at Maryland is an interdisciplinary field of engineering that integrates concepts from across software, mechanical, electrical, and aerospace engineering to develop and design advanced systems from autonomous vehicles and robotics to manufacturing and automation and beyond.
 Request More Information
+
+## Department page (https://mechatronics.umd.edu/curriculum)
+
+Home
+Curriculum
+Curriculum
+The following provides an overview of classes by semester for the Mechatronics Engineering program.
+SEMESTER 1 COURSES
+Course Code | Course Title | Description | Credits
+ENMT301 | Structural Dynamics | Kinematics and dynamics of three dimensional motion of point masses and rigid bodies with introduction to more general systems. Primary emphasis on Newtonian methods. Practice in numerical solutions and computer animation of equations of motion using MATLAB. Analysis of torsion, beam bending, plate bending, buckling and their application to robotic systems. | 3
+ENMT322 | Discrete Signal Analysis | Discrete- and continuous-time signals, sampling of sinusoids. Discrete Fourier transform: properties and applications. Periodic signals and Fourier series. Discrete-time linear filters in time and frequency domains. Numerical applications and implementation of algorithms (using MATLAB). | 3
+ENMT380 | Intro to Robotics | Mathematics of rigid motion, rotations, translations, homogeneous transformations, forward kinematics, inverse kinematics, velocity kinematics, geometric Jacobian, analytical Jacobian, motion planning, trajectory generation, independent joint control, linear control methods such as PD, PID, actuator dynamics, feedforward control for trajectory tracking, force control, basic computer vision concepts including thresholding, image segmentation, and camera calibration. | 3
+ENMT361 | Mechatronics and Controls Lab I | Basic instrumentation electronics including DC electronics, AC electronics, semiconductors, electro‐optics and digital electronics. Sensing devices used to carry out experiments including metrology, machine tool measurements, bridge circuits, optical devices, and introduction to computer-based data acquisition. | 3
+Gen Ed | General Education Requirement | General Education Requirement course worth 3 credits. | 3
+SEMESTER 2 COURSES
+Course Code | Course Title | Description | Credits
+ENMT313 | Real-Time Software Systems and Microprocessors | Timing, synchronization and data flow; parallel, serial, and analog interfaces with sensors and actuators; microprocessor system architecture; buses; direct memory access (DMA); interfacing considerations. System simulation in CAD. | 3
+ENMT332 | Classical Control Theory | An introduction to the feedback control of dynamic systems. Laplace transforms and transfer function techniques; frequency response and Bode diagrams. Stability analysis via root locus and Nyquist techniques. Performance specifications in time and frequency domains, and design of compensation strategies to meet performance goals. | 3
+ENMT372 | Robotic Systems | General domain knowledge. Manipulators, rovers, flight vehicles/quadcopters. Constraint considerations and analysis. Introduces the Robot Operating System (ROS) framework. | 3
+ENMT362 | Mechatronics and Controls Lab II | Design of mechanical motion transmission systems: gearing, couplings, belts and lead‐screws; Sensing and measurement of mechanical motion, sensor selection; Electromechanical actuator selection and specification; PLCs and sequential controller design, digital I/O; Case studies. | 3
+ENGL393 | Technical Writing | Technical writing course worth 3 credits. | 3
+SEMESTER 3 COURSES
+Course Code | Course Title | Description | Credits
+ENMT450 | Robotics Programming | Students continue to work within the Robot Operating System (ROS) as well as with many of the available tools commonly used in robotics. Lectures focus on theory and structure, whereas laboratory sections will focus on applications and implementations. Students learn how to create software and simulations, interface to sensors and actuators, and integrate control algorithms. Topics include: ROS architecture, console commands, ROS packages, simulation environments, visualizations, autonomous navigation, manipulation, and robot vision. | 3
+ENMT471 | Manufacturing Processes | An introduction to common manufacturing processes and the mindset of 'design‐for‐manufacture' in a mechatronics context. Establishing datums, geometric dimensioning and tolerancing (GD&T), and planning for the manufacturing methods that will successfully produce the desired parts. Overview of common small‐ and large‐volume production methods, such as milling, turning, stamping and bending of sheet metal, and injection molding. Cultivate a skill set for combining computer‐aided design (CAD) and computer‐aided manufacturing (CAM) methodologies to produce desired parts. | 3
+ENMT483 | Mechatronic Systems 1 | Principles of mechatronic systems analysis and design. Performance analysis and optimization. Design of systems including avionics, power, propulsion, human factors, structures, actuators and mechanisms, and thermal control. Design processes and design synthesis. Individual student projects in mechatronic systems design. | 3
+ENMT473 | Motion Planning for Autonomous Systems | Autonomous systems (e.g., aircraft, vehicles, manipulators, and robots) must plan long‐term movement that respects environmental constraints such as obstacles, other actors, and wind; system constraints such as kinematics, dynamics, and fuel; as well as factors such as time and safety. Robust autonomy also requires dealing with environmental changes, new information, and uncertainty. This course provides an overview of such problems and the methods used to solve them. | 3
+Gen Ed | General Education Requirement (as needed) | General Education Requirement course worth 3 credits (as needed). | 3
+SEMESTER 4 COURSES
+Course Code | Course Title | Description | Credits
+ENMT477 | Machine Learning in Mechatronics Engineering | Learn how to apply techniques from Artificial Intelligence and Machine Learning to solve engineering problems and design new products or systems. Design and build a personal or research project that demonstrates how computational learning algorithms can solve difficult tasks in areas you are interested in. Master how to interpret and transfer state‐of‐the‐art techniques from computer science to practical engineering situations and make smart implementation decisions. | 3
+ENMT484 | Mechatronic Systems II | Senior capstone design course in Mechatronics. Group preliminary design of a mechatronic system, including system and subsystem design, configuration control, costing, risk analysis, and programmatic development. Course also emphasizes written and oral engineering communications. Groups of students will complete, brief, and report on a major design study to specific requirements. | 4
+ENXX4XX | Mechatronics/Engineering Elective | Elective course within mechatronics or engineering, worth 3 credits. | 3
+ENXX4XX | Mechatronics/Engineering Elective | Elective course within mechatronics or engineering, worth 3 credits. | 3
+Technical Elective | Technical Elective | Technical elective course worth 3 credits. | 3
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/mechatronics_fall_2026_gradplan_0.pdf)
 

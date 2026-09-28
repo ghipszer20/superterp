@@ -2,6 +2,7 @@
 # Fire Protection Engineering Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/fire-protection-engineering/fire-protection-engineering-major/
 Source: https://fpe.umd.edu/undergraduate/degrees/bachelor-science
+Source: https://fpe.umd.edu/undergraduate/curriculum-fpe-major
 Source: https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/fire_protection_fall_2026_gradplan.pdf
 Fetched: 2026-09-28
 
@@ -88,6 +89,62 @@ On-Campus
 Please refer to the Course Schedule to learn more about class availability for the Fall, Spring, Summer and Winter semesters.
 Online
 Coming soon!
+
+## Department page (https://fpe.umd.edu/undergraduate/curriculum-fpe-major)
+
+Home
+Undergraduate
+Current Students
+Advising & Support
+Curriculum of the Fire Protection Engineering Major
+Curriculum of the Fire Protection Engineering Major
+The fire protection engineering curriculum is designed to give the student a grounding in the science and practice of fire safety. The field touches on many disciplines and its scientific basis is expanding. It is an engineering discipline that is still growing, and offers a variety of excellent career opportunities. These cover a wide spectrum involving safety assessment reviews, hazards analysis and research, loss prevention, regulatory issues and the development of new technologies and products for fire detection, alarm, mitigation and suppression.
+Basic Math and Science Requirements
+Course | Title | Credits
+CHEM135 | General Chemistry for Engineers | 3
+MATH140 | Calculus I | 4
+MATH141 | Calculus II | 4
+MATH241 or MATH240 | Calculus III or Linear Algebra | 4
+MATH246 | Differential Equations for Scientists and Engineers | 3
+PHYS161 | General Physics: Mechanics and Particle Dynamics | 3
+PHYS260 | General Physics: Vibration, Waves, Heat, Electricity and Magnetism | 3
+PHYS261 | General Physics: Mechanics, Vibrations, Waves, Heat (Laboratory) | 1
+Total Credit Hours | 25
+Engineering Science Requirements
+Course | Title | Credits
+ENES100 | Introduction to Engineering Design | 3
+ENES102 | Mechanics 1 | 3
+ENES220 | Mechanics 2 | 3
+ENES221 | Dynamics | 3
+ENES232 | Thermodynamics | 3
+Total Credit Hours | 15
+General Education Requirements
+Course | Title | Credits
+General Education (GenEd) Requirement | Academic Writing/FSAW | 3
+General Education (GenEd) Requirement | Professional Writing/FSPW | 3
+Other General Education (GenEd) Requirements | 18
+Total Credit Hours | 24
+Major Requirements
+Course | Title | Credits
+ENFP201 | Computer Programming and Numerical Methods | 3
+ENFP250 | Introduction to Life Safety Analysis | 3
+ENFP300 | Fire Protection Fluid Mechanics | 3
+ENFP310 | Water Based Fire Protection Systems Design | 3
+ENFP312 | Heat and Mass Transfer | 3
+ENFP350 | Professional Development Seminar | 1
+ENFP405 | Structural Fire Protection | 3
+ENFP410 | Special Hazard Suppression Systems | 3
+ENFP411 | Risk-Informed Performance Based Design | 3
+ENFP413 | Human Response to Fire | 3
+ENFP415 | Fire Dynamics | 3
+ENFP420 | Fire Assessment Methods and Laboratory | 4
+ENFP425 | Enclosure Fire Modeling | 3
+ENFP426 | Computational Methods in Fire Protection | 3
+ENFP440 | Smoke Management and Fire Alarm Systems | 3
+Technical Electives* | 12
+Total Credit Hours | 56
+Total Degree Credit Hours | 120
+*Technical Electives are chosen in consultation with the academic advisor, but must include the following: at least 3 credits of MATH400+ or STAT400+; at least 3 credits of ENFP400+; at least 6 credits of Engineering cousework 300+, CHEM400+, CMSC400+, MATH400+ or PHYS400+.
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/fire_protection_fall_2026_gradplan.pdf)
 

@@ -817,7 +817,8 @@
   "fire-protection-engineering-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/fire-protection-engineering/fire-protection-engineering-major/",
     "department": [
-      "https://fpe.umd.edu/undergraduate/degrees/bachelor-science"
+      "https://fpe.umd.edu/undergraduate/degrees/bachelor-science",
+      "https://fpe.umd.edu/undergraduate/curriculum-fpe-major"
     ],
     "samplePlan": [
       "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/fire_protection_fall_2026_gradplan.pdf"
@@ -1462,7 +1463,8 @@
   "mechatronics-engineering-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/aerospace-engineering/mechatronics-engineering-major/",
     "department": [
-      "https://mechatronics.umd.edu/"
+      "https://mechatronics.umd.edu/",
+      "https://mechatronics.umd.edu/curriculum"
     ],
     "samplePlan": [
       "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/mechatronics_fall_2026_gradplan_0.pdf"
