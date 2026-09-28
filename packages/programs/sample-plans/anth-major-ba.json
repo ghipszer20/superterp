@@ -6,7 +6,7 @@
   "notes": [
     "No 4-year plan was reachable (the college's Feller Center graduation-plans page, linked from the catalog, failed to fetch); this plan is constructed from the catalog's own requirements table (docs/project/owner-review.md notes this).",
     "Foundational: ANTH210, ANTH240, ANTH260 (skipping ANTH222, the 4-credit option, to keep this pool at 9 credits). Method and Theory: ANTH340 (Archaeology) and ANTH360 (Sociocultural), matching two of the three foundational-course focus areas chosen. Applied Field Methods: ANTH496 (Field Methods in Archaeology).",
-    "Anthropology Electives (12 credits, any non-double-counted ANTH course) are filled with ANTH323, ANTH410, ANTH415 and ANTH440 -- real ANTH courses (checked against umd.io, 2026-09-28), chosen because every ANTH number the fetched source names is already used by another requirement above; flagged in docs/project/owner-review.md.",
+    "Anthropology Electives (12 credits, any non-double-counted ANTH course) are filled with ANTH323, ANTH441, ANTH415 and ANTH440 -- real ANTH courses (checked against the Academic Catalog, 2026-09-28), chosen because every ANTH number the fetched source names is already used by another requirement above; flagged in docs/project/owner-review.md.",
     "Quantitative Skills Requirement (B.A.): STAT100."
   ],
   "terms": [
@@ -16,7 +16,7 @@
     { "term": "Sophomore Spring", "courses": ["ANTH340"] },
     { "term": "Junior Fall", "courses": ["ANTH360"] },
     { "term": "Junior Spring", "courses": ["ANTH496", "ANTH323"] },
-    { "term": "Senior Fall", "courses": ["ANTH410", "ANTH415"] },
+    { "term": "Senior Fall", "courses": ["ANTH441", "ANTH415"] },
     { "term": "Senior Spring", "courses": ["ANTH440"] }
   ]
 }
