@@ -1,0 +1,23 @@
+{
+  "programId": "roml-major-french-italian",
+  "source": "https://drive.google.com/uc?export=download&id=1pq1N0dC_-cPZvjmFrqsry1L4FWk0saAN#French-&-Italian",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities official Romance Languages - French & Italian Four Year Academic Plan. The PDF-to-text conversion of the term grid is garbled (the Fall/Spring grid and the Gen Ed/Major-Requirements legend appear column-interleaved), but the major's course list and its rough order are legible: FREN204 -> FREN250/ITAL207 -> FREN301/ITAL301 -> FREN351/352 and the ITAL 3xx choice -> FREN4xx and ITAL4xx/478 near the end. Exact year/semester placement below is reconstructed from that order, not read verbatim -- flagged in docs/project/owner-review.md.",
+    "Year 1 has no major courses: FREN204 and ITAL207 both sit behind pre-major language-sequence prerequisites (FREN103/203; ITAL103 or 121, ITAL122 or 203, and ITAL204), which are not part of the major's own 45 credits, so Gen Ed and that prerequisite sequence are left out per the pattern used by other ARHU-language sample plans (only the major is audited).",
+    "'Select one additional course at the 3xx level in literature or culture' filled with ITAL361 (named directly in the requirement's own option list).",
+    "The two 'additional FREN4xx' credits filled with FREN413 and FREN421 (both on the Academic Catalog's approved FREN plan-slot course list; the source names no specific FREN4xx courses for this slot).",
+    "The three 'additional ITAL4xx' courses filled with ITAL411, ITAL421, and ITAL431 (all on the Academic Catalog's approved ITAL plan-slot course list), each paired with one ITAL478 colloquium section.",
+    "'One additional course at the 4xx level in one of the two languages' filled with FREN423 (on the Academic Catalog's approved FREN plan-slot course list), distinct from the two FREN4xx courses used above."
+  ],
+  "credits": { "ITAL478": 1 },
+  "terms": [
+    { "term": "Year 2 Fall", "courses": ["FREN204"] },
+    { "term": "Year 2 Spring", "courses": ["FREN250", "ITAL207"] },
+    { "term": "Year 3 Fall", "courses": ["FREN301", "ITAL301"] },
+    { "term": "Year 3 Spring", "courses": ["FREN351", "ITAL361"] },
+    { "term": "Year 4 Fall", "courses": ["FREN352", "FREN413", "ITAL411", "ITAL478"] },
+    { "term": "Year 4 Spring", "courses": ["FREN421", "FREN423", "ITAL421", "ITAL431", "ITAL478", "ITAL478"] }
+  ]
+}
