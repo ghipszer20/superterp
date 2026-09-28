@@ -3,8 +3,9 @@
 // UMD Physics, "Degree Requirements and Policies" (effective Fall 2024),
 // https://www.umdphysics.umd.edu/academics/undergraduate/ugrad-requirements.html (fetched 2026-09-27),
 // and its linked sample graduation plan, https://docs.google.com/document/d/1N21ppgKrQJRXlUopLHYxV0BUBVKM182xYiTIliwB2Ww/
-// (fetched 2026-09-27). Only the general "Physics" specialization is encoded here; Education
-// Physics, Biophysics and Applied Physics are separate specializations left for a later batch.
+// (fetched 2026-09-27). Only the general "Physics" specialization is encoded here; the other
+// three specializations (Education Physics, Biophysics, Applied Physics) are separate tracks of
+// this same major, encoded in their own phys-major-<track>-2026-27.ts files.
 // Owner ruling (docs/project/rulings.md): where the department page and the catalog disagree,
 // follow the department page; each such difference is recorded below citing both.
 // Encoded by hand. UNVERIFIED until the owner signs off.
@@ -64,4 +65,4 @@ export const physMajor: Program = {
   ],
 };
 
-export const physMajorMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Physics", major: "phys", track: "Physics", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/physics/physics-major/", department: "https://www.umdphysics.umd.edu/academics/undergraduate/ugrad-requirements.html" } };
+export const physMajorMeta: ProgramMeta = { kind: "major", college: "CMNS", short: "Physics", major: "phys", track: "Physics", defaultTrack: true, sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/physics/physics-major/", department: "https://www.umdphysics.umd.edu/academics/undergraduate/ugrad-requirements.html" } };
