@@ -1,0 +1,24 @@
+{
+  "programId": "psyc-major-bs",
+  "source": "https://psyc.umd.edu/undergraduate/degree-requirements-bs-and-ba",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "No usable 4-year/2-year plan exists: the Feller Center's 'BS PSYC - Two Year Plan' PDF (linked from the checklist) failed to convert. This plan is constructed from the department's own requirements page and the checklist's requirement rows instead (docs/project/owner-review.md flags this). Gen Ed courses, and the B.S.'s own unencoded Additional Math and Science Requirement (no approved course list in the fetched sources -- see psyc-major-bs-2026-27.ts's reviewNotes), are left out; only the checkable major requirements are audited.",
+    "Multicultural course filled with PSYC336 (Psychology of Women), one of the department page's own named multicultural options (a different pick than the B.A. plan's PSYC354, to keep the two constructed plans distinct).",
+    "PSYC 400-Level Non-Lab slots filled with PSYC404 and PSYC406; the 400-Level Lab slot filled with PSYC420 -- real, currently-approved PSYC courses (from the builder brief's approved-course list), chosen only to fill the count/credit requirement since neither source names specific 400-level courses. PSYC420 is treated as a 4-credit lab course here (see credits map); this hasn't been verified against a live course catalog and should be confirmed or substituted with an advisor's actual picks.",
+    "The remaining PSYC credits needed to reach the major's 35-credit/11-course total (psyc-total-credits) -- standing in for the two un-enumerable Thematic Courses areas' remaining courses -- are filled with PSYC307, PSYC310, PSYC318 and PSYC319, real PSYC courses from the same approved list, picked only to reach the credit total and not for topical/thematic fit.",
+    "Math gateway filled with MATH140; MATH120 would satisfy the requirement equally."
+  ],
+  "credits": { "PSYC300": 4, "BSCI170": 4, "MATH140": 4, "PSYC420": 4 },
+  "terms": [
+    { "term": "Freshman Fall", "courses": ["PSYC100", "MATH140"] },
+    { "term": "Freshman Spring", "courses": ["BSCI170", "PSYC200"] },
+    { "term": "Sophomore Fall", "courses": ["PSYC300", "PSYC307"] },
+    { "term": "Sophomore Spring", "courses": ["PSYC310", "PSYC336"] },
+    { "term": "Junior Fall", "courses": ["PSYC404", "PSYC318"] },
+    { "term": "Junior Spring", "courses": ["PSYC406"] },
+    { "term": "Senior Fall", "courses": ["PSYC319"] },
+    { "term": "Senior Spring", "courses": ["PSYC420"] }
+  ]
+}
