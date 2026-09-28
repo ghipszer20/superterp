@@ -3,6 +3,7 @@
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/psychology/psychology-major/
 Source: https://psyc.umd.edu/undergraduate/degree-requirements-bs-and-ba
 Source: https://web.archive.org/web/20260210113440id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/PSYC%20Major%20Checklist%20042324%20Writable.pdf
+Source: https://psyc.umd.edu/undergraduate/psyc-courses-psyc-syllabi
 Source: https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BA%20PSYC%20-%20Two%20Year%20Plan.pdf
 Source: https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BS%20PSYC%20-%20Two%20Year%20Plan.pdf
 Fetched: 2026-09-28
@@ -369,6 +370,134 @@ for the SCIS: Big Question requirement. (Big Question courses are not listed
 separately in this plan)
  Understanding Plural Societies courses may also fulfill a Distributive Studies
 category.
+
+## Department page (https://psyc.umd.edu/undergraduate/psyc-courses-psyc-syllabi)
+
+PSYC Courses & PSYC Syllabi
+Breadcrumb
+Home
+Undergraduate
+PSYC Courses & PSYC Syllabi
+Undergraduate
+Becoming a PSYC Terp
+Current PSYC Terps
+Undergraduate Research
+Internships and Teaching Assistantships
+Academic Opportunities
+Life After UMD
+PSYC Events
+Student Engagement
+Courses in the Psychology Department are clustered under the themes: Mind, Brain and Behavior; Mental Health and Intervention; and Social, Developmental and Organizational Studies. A list of courses organized by theme can be found here.
+Please scroll to the bottom of this page for a list of all available PSYC courses' syllabi.
+Please Note: Bolded courses are 4-credit psychology labs.
+Foundation Courses
+Number | Title | Prerequisites
+PSYC100 | Introduction to Psychology | No prerequisites
+PSYC200 | Statistical Methods in Psychology | PSYC100; and 1 course with a minimum grade of C- from MATH120, MATH136, or MATH140
+PSYC300 | Research Methods in Psychology Laboratory | PSYC200
+THEME I - Mind, Brain & Behavior
+Number | Title | Prerequisites | Fulfills Multicultural Requirement in PSYC
+PSYC202 | Introduction to Neuroscience | PSYC100 + BSCI170
+PSYC206 | Developmental Biopsychology | PSYC100
+PSYC301 | Biological Basis of Behavior | PSYC100 + BSCI170
+PSYC302 | Fundamentals of Learning & Behavior | PSYC100 + BSCI170
+PSYC304 | Biological Psychology | PSYC100 + BSCI170
+PSYC307 (formerly PSYC207) | Collective Behavior and Decision Making in Human and Animal Groups | PSYC100
+PSYC310 | Perception | PSYC100 + BSCI170
+PSYC341 | Introduction to Memory & Cognition | PSYC100 + PSYC200 + PSYC300
+PSYC355 | Developmental Psychology | PSYC100
+PSYC401 | Biological Basis of Behavior & Laboratory (4 credit lab) | PSYC100 + PSYC300 + PSYC202 (or PSYC301 or PSYC304) + 85 credits + Permission
+PSYC402 | Neural Systems & Behavior | PSYC100 + PSYC202 (or PSYC301 or PSYC304)
+PSYC403 | Animal Behavior | PSYC100 + PSYC202 (or PSYC301 or PSYC304)
+PSYC404 | Introduction to Behavioral Pharmacology | PSYC100 + PSYC202 (or PSYC301 or PSYC304)
+PSYC406 | Neuroethology | PSYC100 + PSYC202 (or PSYC301 or PSYC304)
+PSYC407 | Behavioral Neurobiology Laboratory (4 credit lab) | PSYC100 + PSYC300 + PSYC202 + 85 credits + Permission
+PSYC411 | Introduction to Functional Magnetic Resonance Imaging | PSYC100 + PSYC200 + PSYC300 + PSYC202 (or PSYC301 or PSYC304)
+PSYC413 | Developmental Cognitive/Social Neuroscience | PSYC100 + (PSYC355 or PSYC202 or PSYC301 or PSYC304)
+PSYC414 | Science of Sleep and Biological Rhythms | PSYC100 + PSYC202 or PSYC301 or PSYC304 or permission of instructor
+PSYC417 | Data Science for Psychology and Neuroscience Majors (4 credit lab) | PSYC200 + PSYC300 + (MATH120, MATH130, or MATH140)
+PSYC431 (formerly PSYC489R) | Advanced Special Topics in Psychology: Human and Animal Intelligence | Permission from department
+PSYC440 | Experimental Psychology: Cognitive Processes & Legal Applications (4 credit lab) | PSYC100 + PSYC300 + PSYC341 + 85 credits
+PSYC442 | Psychology of Language | PSYC100 + PSYC300 + PSYC341
+PSYC443 | Thinking & Problem Solving | PSYC100 + PSYC300 + PSYC341
+PSYC455 | Cognitive Development | PSYC100 + PSYC300 + (PSYC355 or PSYC341)
+PSYC489G | Advanced Special Topics in Psychology: Hormones and Behavior | PSYC202 or NEUR200 + BSCI330 Cross listed with BSCI338N
+PSYC489J | Advanced Special Topics in Psychology; Applied Introduction to Human Brain Mapping
+PSYC489N | Advanced Special Topics in Psychology: Evolution of the Forebrain | PSYC202 (or PSYC301 or PSYC304)
+PSYC489X | Advanced Special Topics in Psychology: Musical Perception and Cognition | Permission from Department
+THEME II - Mental Health & Interventions
+Number | Title | Prerequisite | Fulfills Multicultural Requirement in PSYC
+PSYC210 | Personality & Temperament | PSYC100
+PSYC234 (PSYC289D) | Psychology of Happiness | I-series course -- no prerequisites
+PSYC262 (Formerly PSYC489Z) | Asian American Psychology | X
+PSYC330 | Child Psychopathology | PSYC100
+PSYC332 | Psychology of Human Sexuality | PSYC100
+PSYC336 | Psychology of Women | PSYC100 | X
+PSYC344 | Health Psychology | PSYC100
+PSYC353 | Adult Psychopathology | PSYC100
+PSYC381 (Formerly 318D) | Community Interventions: Theory & Research | PSYC100 + Permission
+PSYC391 (Formerly 319D) | Community Interventions: Service Learning | PSYC100 + PSYC381 + Permission | X
+PSYC425 | Psychology & Law | PSYC100 + PSYC300
+PSYC432 | Counseling Psychology: Theories, Research, and Practice | PSYC100 + PSYC200
+PSYC433 | Basic Helping Skills: Research and Practice (4 credit lab) | PSYC100 + PSYC300 + either 235, 334, 353, 432, 434, 435, or 436 + 85 credits
+PSYC435 | Theories of Personality & Psychotherapy | PSYC100 + PSYC200
+PSYC436 | Introduction to Clinical Psychology | PSYC100 + PSYC300
+PSYC437 | The Assessment & Treatment of Addictive Behaviors | PSYC100 + PSYC200
+PSYC457 | Consensual Qualitative Research Methods (4 credit lab) | PSYC100 + PSYC300 + 85 credits + Permission
+PSYC459A | Advanced Special Topics in Psychology; Discrepant Results in Mental Health Research | PSYC100 + PSYC300
+PSYC489A | Advanced Special Topics in Psychology: The Nature and Biological Bases of Emotion | PSYC100
+PSYC489E | Advanced Special Topics in Psychology; Introduction to LGBTQIA+ Populations and Psychology | PSYC300 | X
+PSYC489M | Advanced Special Topics in Psychology: The Psychology of Friendship | PSYC100
+PSYC489Q | Advanced Special Topics in Psychology: Psychology of the Black Experience | PSYC300 | X
+PSYC489V | Advanced Special Topics in Psychology: Children Living in Poverty | PSYC100
+PSYC489W | Advanced Special Topics in Psychology: Psychology of Men and Masculinity | PSYC100
+Theme III -- Social, Developmental, and Organizational Studies
+Number | Title | Prerequisites | Fulfills Multicultural Requirement in PSYC
+PSYC221 | Social Psychology | PSYC100
+PSYC221H | Social Psychology | PSYC100
+PSYC232 | Psychology of Racism | X
+PSYC237 | Psychology of Evil (formerly PSYC289E) | I-series course -- no prerequisites
+PSYC309D | Special Topics in Psychology; Living the Moral Life: Introduction to Ethics for Psychology Students | PSYC100
+PSYC334 | Psychology of Interpersonal Relationships | PSYC100
+PSYC354 | Multicultural Psychology in the U.S. | PSYC100 | X
+PSYC356 | Psychology of Adolescence | PSYC100
+PSYC357 | Psychology of Adulthood & Aging | PSYC100
+PSYC361 | Survey of Industrial & Organizational Psychology | PSYC100
+PSYC362 | Introduction to Negotiation | PSYC100 + (PSYC221 or PSYC361)
+PSYC416 | Development of Child & Adolescent Attachment | PSYC100 + PSYC355
+PSYC420 | Experimental Psychology: Social Psychology Laboratory I (4 credit lab) | PSYC100 + PSYC300 + PSYC221 + 85 credits
+PSYC424 | Communication & Persuasion | PSYC100 + PSYC200 + PSYC221
+PSYC426 (Formerly PSYC489B) | Advanced Special Topics in Psychology: Psychology of Adolescents' Close Relationships | PSYC100 + PSYC355
+PSYC450 | Industrial-Organizational Psychology Laboratory (4 credit lab) | PSYC300 + 85 credits
+PSYC456 | Research Methods in Developmental Psychology (4 credit lab) | PSYC100 + PSYC300 + 85 credits + Permission of Instructor
+PSYC460 | Psychological Foundations of Personnel Selection & Training | PSYC100 + PSY 200 + PSYC361
+PSYC463 | Psychology of Motivation & Attitudes in Organizational Settings | PSYC100 + PSYC200 + PSYC361
+PSYC464 | Psychology of Leaders in Work Organizations | PSYC100 + PSYC200 + PSYC361
+PSYC465 | Psychology of Organizational Processes | PSYC100 + PSYC200 + PSYC361
+PSYC447 | Diversity in Organizations | X
+PSYC489F | Advanced Special Topics in Psychology: Cultural Experiences & Processes in Developmental & Psychopathology | PSYC100 + PSYC355 | X
+PSYC489I | Advanced Special Topics in Psychology: Psychology of Stress and Health in the Work Environment | PSYC100 + PSYC300
+PSYC489J | Advanced Statistics in Psychology | PSYC100 + PSYC300
+PSYC489K | Advanced Special Topics: Mediation, Moderation, and Conditional Process Analysis | PSYC300
+PSYC489O | Advanced Special Topics in Psychology: History of Psychology | PSYCC100 + PSYC200
+PSYC489P | Advanced Special Topics in Psychology: Doing the Right Thing | PSYCC100 + PSYC300
+PSYC489T | Advanced Special Topics in Psychology: The Psychology of Terrorism | PSYC100 + PSYC300
+PSYC489Y | Advanced Special Topics in Psychology: Risk & Resilience Across Development | PSYC100 + PSYC355
+Additional Courses and Independent Studies (do not apply towards degree requirements)
+Number | Title | Prerequisites | Fulfills Multicultural Requirement in PSYC
+PSYC111 | Psychology of Unethical Conduct | No prerequisites
+PSYC123 | Psychology of Getting Hired | Not offered for seniors
+PSYC303 | Professional Development for Psychology Majors | PSYC100 + minimum of 60 credits
+PSYC309F | Special Topics in Psychology; PREP for Next Steps | Permission Required
+PSYC309G | Special Topics in Psychology; PREP for Research | Permission Required
+PSYC309P | Special Topics in Psychology; PREP for Psychology | Permission Required
+PSYC389 | Experiential Learning in Psychology | 9 credits in PSYC + 3.0 GPA in PSYC + 2.8 cumulative GPA
+PSYC409 | Topics in Neuroscience Seminar | For Neuroscience Minors Only
+PSYC468H | Field Experience & Special Assignments in Honors | Permission Required
+PSYC469H | Honors Thesis Proposal Preparation | Permission Required
+PSYC478 | Independent Study in Psychology | 9 credits in PSYC + 3.0 GPA in PSYC + 2.8 cumulative GPA
+PSYC479 | Special Research in Psychology | 9 credits in PSYC + 3.0 GPA in PSYC + 2.8 cumulative GPA
+PSYC499H | Honors Thesis Research | Permission of Thesis Advisor
 
 ## Sample plan (https://web.archive.org/web/2026id_/https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/BA%20PSYC%20-%20Two%20Year%20Plan.pdf)
 
