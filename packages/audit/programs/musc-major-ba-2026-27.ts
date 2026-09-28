@@ -58,7 +58,8 @@ export const muscMajorBa: Program = {
       name: "5 semesters of private lessons (Senior Recital in final semester; not encoded) " +
         "(MUSP109, MUSP110, MUSP207, MUSP208, MUSP305)",
       count: 5,
-      from: { courses: ["MUSP109", "MUSP110", "MUSP207", "MUSP208", "MUSP305"] },
+      // Any MUSP applied-lesson course counts: the listed numbers are one area's (main session, 2026-09-28).
+      from: { courses: ["MUSP109", "MUSP110", "MUSP207", "MUSP208", "MUSP305"], departments: ["MUSP"], minNumber: 100, maxNumber: 499 },
     },
     {
       kind: "choose",
