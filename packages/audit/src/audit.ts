@@ -56,6 +56,12 @@ export type RequirementRule =
       excludeDepartments?: string[];
       /** Individually-ineligible courses, e.g. a course "credit only granted for" one in the excluded department. */
       exclude?: string[];
+      /**
+       * Departments that count as ONE discipline for the "one discipline" rule, e.g. CS's ULC
+       * lets MATH and STAT (or LGBT and WGSS) mix and match: `[["MATH", "STAT"], ["LGBT", "WGSS"]]`.
+       * A department not listed in any group is its own discipline, as before.
+       */
+      disciplineGroups?: string[][];
     }
   /**
    * Every course of one set, e.g. Math's depth sequence "MATH410 & MATH411 or MATH403 & MATH404";
@@ -219,7 +225,13 @@ function pairsFor(req: Requirement, p: number, r: number, course: StudentCourse,
     if (!m || req.excludeDepartments?.includes(m[1]!) || req.exclude?.includes(course.id)) return [];
     const n = Number(m[2]);
     if (n < req.minNumber || n > req.maxNumber) return [];
-    return [{ p, c, r, area: null, department: m[1]!, name: base, weight: course.credits }];
+    const dept = m[1]!;
+    // Departments in the same disciplineGroup share one "discipline" key, so the one-department
+    // pick below (onedept_) treats them as interchangeable instead of two separate disciplines.
+    const group = req.disciplineGroups?.find((g) => g.includes(dept));
+    // "_"-joined, not e.g. "MATH/STAT": department feeds into the "d_<id>_<dept>" LP variable
+    // name below, and the solver's LP format doesn't accept "/" in an identifier.
+    return [{ p, c, r, area: null, department: group ? group.join("_") : dept, name: base, weight: course.credits }];
   }
   if (req.kind === "sets") {
     return req.options.flatMap((option, k) =>

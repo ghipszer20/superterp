@@ -68,6 +68,20 @@ describe("CS major 2026–27", () => {
     expect((await statusOf(plan)).concentration).toBe("partial");
   });
 
+  // Upper Level Concentration "Things to Note" (program-sources/cmsc-major.md, line ~173 on):
+  // "Students using Math or Statistics courses for the ULC are able to mix and match their
+  // courses between MATH and STAT" -- a discipline group, not two disciplines.
+  it("accepts a MATH+STAT mix for the upper-level concentration", async () => {
+    const plan = [...without("MATH403", "MATH410"), c("STAT410"), c("STAT420")];
+    expect((await statusOf(plan)).concentration).toBe("satisfied");
+  });
+
+  // Same page: no such exception for MATH+ENGL -- a real department split still isn't allowed.
+  it("does not accept a MATH+ENGL mix for the upper-level concentration", async () => {
+    const plan = [...without("MATH403", "MATH410"), c("ENGL300"), c("ENGL305")];
+    expect((await statusOf(plan)).concentration).toBe("partial");
+  });
+
   it("flags a plan 6 upper-level CMSC credits short", async () => {
     // Five 400-level courses can't cover both the area rule and the electives, so
     // exactly one of the two must show as unfinished; either is a correct report.

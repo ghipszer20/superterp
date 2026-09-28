@@ -1,0 +1,20 @@
+{
+  "programId": "cmsc-major-cybersecurity",
+  "source": "https://undergrad.cs.umd.edu/cybersecurity-degree-requirements",
+  "fetched": "2026-09-27",
+  "official": false,
+  "notes": [
+    "UMD publishes a blank 'Cybersecurity Track Academic Plan Template' (linked from degree-requirements-cs-major), not a filled sample plan. Built by hand from the specialization page's own requirements: required CMSC414, CMSC456; choose four -> CMSC411, CMSC430, CMSC431, CMSC451 (spans Areas 1, 3 and 4); Upper Level Elective (3 credits) -> CMSC320; upper-level concentration (12 credits, one discipline) -> ECON300, ECON305, ECON310, ECON410. Gen Ed slots are left out: only the major is audited."
+  ],
+  "credits": { "MATH140": 4, "MATH141": 4, "MATH240": 4, "CMSC131": 4, "CMSC132": 4, "CMSC216": 4, "CMSC250": 4 },
+  "terms": [
+    { "term": "Fall 1", "courses": ["MATH140", "CMSC131"] },
+    { "term": "Spring 1", "courses": ["MATH141", "CMSC132"] },
+    { "term": "Fall 2", "courses": ["CMSC216", "CMSC250", "MATH240"] },
+    { "term": "Spring 2", "courses": ["CMSC330", "CMSC351", "STAT400"] },
+    { "term": "Fall 3", "courses": ["CMSC414", "CMSC411", "ECON300"] },
+    { "term": "Spring 3", "courses": ["CMSC456", "CMSC430", "ECON305"] },
+    { "term": "Fall 4", "courses": ["CMSC431", "CMSC320", "ECON310"] },
+    { "term": "Spring 4", "courses": ["CMSC451", "ECON410"] }
+  ]
+}
