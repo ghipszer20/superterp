@@ -10,15 +10,6 @@
 
 import type { Program, ProgramMeta } from "../src/audit.ts";
 
-/** Real undergraduate GVPT courses at the 300-400 level (umd.io, checked 2026-09-28), used below
- * wherever the source names an "approved list" or "courses of choice" category without enumerating
- * the actual course numbers (owner instruction, 2026-09-28). */
-const GVPT_300_400 = [
-  "GVPT306", "GVPT320", "GVPT354", "GVPT356", "GVPT357", "GVPT377", "GVPT388", "GVPT390",
-  "GVPT396", "GVPT397", "GVPT404", "GVPT406", "GVPT410", "GVPT411", "GVPT412", "GVPT413",
-  "GVPT414", "GVPT423", "GVPT431", "GVPT454", "GVPT457", "GVPT461", "GVPT474", "GVPT482",
-];
-
 /** Courses already claimed by a named requirement below; excluded from the Courses of Choice pools
  * per the department page's "cannot be double counted as GVPT Courses of Choice" language. */
 const BA_ALREADY_USED = ["GVPT170", "GVPT200", "GVPT241", "GVPT280", "GVPT282", "GVPT201"];
@@ -39,7 +30,7 @@ export const intlRelationsMajorBa: Program = {
     "Benchmark courses (GVPT170, a 200-level GVPT course, the math/stat course) are not encoded as a separate requirement: they are the same courses already required by Required Courses/Foundational Courses below. The 'within two semesters of entering the major' timing gate is an engine gap (not encoded).",
     "Foundational Courses (GVPT200, GVPT241, and GVPT280 or GVPT282) encoded as one `choose` requirement, count 3, with `alternatives: [[\"GVPT280\", \"GVPT282\"]]` so only one of that pair counts, forcing GVPT200 + GVPT241 + one of GVPT280/GVPT282.",
     "GVPT Courses of Choice (any level, any subfield; and upper-level 300-400, any subfield) are each encoded as a `choose` requirement over the GVPT department, excluding every course already claimed by Required Courses, Foundational Courses and the Methods Requirement -- matching the department page's explicit 'cannot be double counted as GVPT Courses of Choice' language for Foundational and Methods courses.",
-    "GVPT IR/Comparative Courses of Choice (5 courses, upper-level 300-400, 15 credits): neither source enumerates the actual 'list of approved courses' -- only a placeholder heading ('IR/Comparative 300/400 courses'). Encoded from the real 300-400-level undergraduate GVPT course list supplied by the owner (GVPT_300_400 above), not from the source itself; no claim is made about which of those are actually IR/Comparative-classified by the department.",
+    "GVPT IR/Comparative Courses of Choice (5 courses, upper-level 300-400, 15 credits): neither source enumerates the actual 'list of approved courses' -- only a placeholder heading ('IR/Comparative 300/400 courses'). The real approved list is unknown, so this is encoded as a department-and-level filter (any GVPT course numbered 300-400, excluding courses already claimed elsewhere), which is broader than the department's actual (unpublished) list -- flagged in docs/project/owner-review.md.",
     "NOT encoded (unenumerable, flagged in docs/project/owner-review.md): the Skills Requirement's foreign language components (elementary sequence, 4-12 credits depending on language; and the intermediate-level course) and the Quantitative Skills course -- both are 'see GVPT website for approved list' footnotes with no course list in the fetched source. Only ECON200 (Microeconomics), the only Skills component the source names outright, is encoded.",
     "Not encoded (engine gap): the 36-42 credit hour band within GVPT (with at least 18 upper-level), the 12 in-residence upper-level credit minimum, the program's own 52-64 total-credit range, and the catalog's C- minimum-grade GPA framing beyond the per-course minGrade encoded here -- the audit has no total-credit-range, residency or GPA-average concept.",
   ],
@@ -80,7 +71,7 @@ export const intlRelationsMajorBa: Program = {
       id: "choice-ir-comparative",
       name: "GVPT IR/Comparative Courses of Choice, upper-level (300-400), select 5",
       count: 5,
-      from: { courses: GVPT_300_400, exclude: BA_ALREADY_USED },
+      from: { departments: ["GVPT"], minNumber: 300, maxNumber: 499, exclude: BA_ALREADY_USED },
     },
     { kind: "course", id: "econ200", name: "ECON200 Principles of Microeconomics", options: ["ECON200"] },
   ],
