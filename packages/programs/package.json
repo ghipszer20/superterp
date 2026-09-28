@@ -13,7 +13,8 @@
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "build:course-sets": "tsx scripts/build-course-sets.ts"
+    "build:course-sets": "tsx scripts/build-course-sets.ts",
+    "build:registry": "tsx scripts/build-registry.ts"
   },
   "dependencies": {
     "@superterp/audit": "*",
