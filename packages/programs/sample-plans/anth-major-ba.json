@@ -1,0 +1,22 @@
+{
+  "programId": "anth-major-ba",
+  "source": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/anthropology/anthropology-major/",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "No 4-year plan was reachable (the college's Feller Center graduation-plans page, linked from the catalog, failed to fetch); this plan is constructed from the catalog's own requirements table (docs/project/owner-review.md notes this).",
+    "Foundational: ANTH210, ANTH240, ANTH260 (skipping ANTH222, the 4-credit option, to keep this pool at 9 credits). Method and Theory: ANTH340 (Archaeology) and ANTH360 (Sociocultural), matching two of the three foundational-course focus areas chosen. Applied Field Methods: ANTH496 (Field Methods in Archaeology).",
+    "Anthropology Electives (12 credits, any non-double-counted ANTH course) are filled with ANTH328, ANTH400, ANTH420 and ANTH441 -- plausible but unconfirmed course numbers, since every ANTH number the fetched source names is already used by another requirement above; flagged in docs/project/owner-review.md.",
+    "Quantitative Skills Requirement (B.A.): STAT100."
+  ],
+  "terms": [
+    { "term": "Freshman Fall", "courses": ["ANTH210"] },
+    { "term": "Freshman Spring", "courses": ["ANTH240"] },
+    { "term": "Sophomore Fall", "courses": ["ANTH260", "STAT100"] },
+    { "term": "Sophomore Spring", "courses": ["ANTH340"] },
+    { "term": "Junior Fall", "courses": ["ANTH360"] },
+    { "term": "Junior Spring", "courses": ["ANTH496", "ANTH328"] },
+    { "term": "Senior Fall", "courses": ["ANTH400", "ANTH420"] },
+    { "term": "Senior Spring", "courses": ["ANTH441"] }
+  ]
+}
