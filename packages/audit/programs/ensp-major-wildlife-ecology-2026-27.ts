@@ -41,6 +41,7 @@ export const enspMajorWildlifeEcology: Program = {
     {
       kind: "course",
       id: "bio-lab-wild",
+      overlay: true,
       name: "Principles Biology Laboratory or Principles of Molecular & Cellular Biology Laboratory (BSCI180 or BSCI171)",
       options: ["BSCI180", "BSCI171"],
     },
