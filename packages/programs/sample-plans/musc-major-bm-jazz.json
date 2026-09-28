@@ -1,0 +1,22 @@
+{
+  "programId": "musc-major-bm-jazz",
+  "source": "https://drive.google.com/uc?export=download&id=1nlVRA54LPKzrofWqjOwEozZ-NI3Aajnq#Music-Performance---Jazz",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "School of Music official Music - Bachelor of Music - Jazz Four Year Academic Plan. Gen Ed and general-elective slots are left out (only the major is audited).",
+    "MUSC229J (large jazz ensemble), MUSC229Z (small jazz ensemble) and MUSC099 (recital attendance) are repeatable 1-credit courses, entered multiple times per the plan's own '(1 cr. x N semesters)' legend lines; see the program's reviewNotes.",
+    "The '1 semester of 400-level music history elective' generic slot is filled with MUSC450, and the '3-5 credits of music electives' slot with MUSC461, both real MUSC course numbers named elsewhere in the fetched plan text (this area's own plan names no specific course for either slot)."
+  ],
+  "credits": { "MUSC229J": 1, "MUSC229Z": 1, "MUSC099": 1 },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["MUSP119", "MUSC102", "MUSC150", "MUSC229J", "MUSC229Z", "MUSC099"] },
+    { "term": "Year 1 Spring", "courses": ["MUSP120", "MUSC103", "MUSC151", "MUSC229J", "MUSC229Z", "MUSC099"] },
+    { "term": "Year 2 Fall", "courses": ["MUSP217", "MUSC250", "MUSC260", "MUSC229J", "MUSC229Z", "MUSC099"] },
+    { "term": "Year 2 Spring", "courses": ["MUSP218", "MUSC251", "MUSC360", "MUSC229J", "MUSC229Z", "MUSC099"] },
+    { "term": "Year 3 Fall", "courses": ["MUSP315", "MUSC361", "MUSC229J", "MUSC229Z", "MUSC099", "MUSC455"] },
+    { "term": "Year 3 Spring", "courses": ["MUSP316", "MUSC229J", "MUSC229Z", "MUSC099", "MUSC436"] },
+    { "term": "Year 4 Fall", "courses": ["MUSP419", "MUSC229J", "MUSC229Z", "MUSC453", "MUSC490", "MUSC450"] },
+    { "term": "Year 4 Spring", "courses": ["MUSP420", "MUSC229J", "MUSC229Z", "MUSC456", "MUSC461"] }
+  ]
+}
