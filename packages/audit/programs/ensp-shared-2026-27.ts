@@ -54,23 +54,20 @@ export const enspCore: Requirement[] = [
       ["CHEM131", "CHEM132"],
       // Group 3 - Earth Sciences: five alternative course combinations, each its own set option
       // (flattened from the catalog's single "Group 3" into five sets so each pairing/lab
-      // alternate is representable; a student could in theory complete two of these five and have
-      // both count toward the "four of five groups" total instead of one, a permissive edge case
-      // flagged rather than narrowed -- see program note).
+      // alternate is representable; unlike Groups 4 and 5 below, this is the one group whose
+      // flattening is permissive rather than exact -- a student could in theory complete two of
+      // these five combinations and have both count toward the "four of five groups" total
+      // instead of one, a permissive edge case flagged rather than narrowed -- see program note).
       ["AOSC200", "AOSC201"],
       ["ENST200"],
       ["GEOG201", "GEOG211"],
       ["GEOL100", "GEOL110"],
       ["GEOL120", "GEOL110"],
-      // Group 4 - Economics (three independent single-course options)
-      ["AREC240"],
-      ["AREC241"],
-      ["ECON200"],
-      // Group 5 - Geography (four independent single-course options)
-      ["GEOG130"],
-      ["GEOG140"],
-      ["GEOG170"],
-      ["GEOG202"],
+      // Group 4 - Economics: one set, satisfied by any one of its three courses (not three
+      // independent groups -- see the flattening note below, which applies only to Group 3).
+      [{ count: 1, from: { courses: ["AREC240", "AREC241", "ECON200"] } }],
+      // Group 5 - Geography: one set, satisfied by any one of its four courses.
+      [{ count: 1, from: { courses: ["GEOG130", "GEOG140", "GEOG170", "GEOG202"] } }],
     ],
   },
 ];
@@ -86,11 +83,13 @@ export const enspCommonReviewNotes: string[] = [
     "alternative course combinations (AOSC200&201; ENST200 alone; GEOG201&211; GEOL100&110; " +
     "GEOL120&110). The engine's `sets` requirement has no nested 'choose 1 of 5, then that one " +
     "counts as one of your four groups' structure, so all five combinations are flattened into the " +
-    "top-level `count: 4` set list alongside Biology, Chemistry, Economics (3 options) and Geography " +
-    "(4 options) as 14 total set options. This is permissive rather than narrowing: a student could " +
-    "in theory complete two Group-3 combinations and have both count as separate 'groups' toward the " +
-    "four required, which the catalog likely does not intend, but no student is made to fail who " +
-    "should pass.",
+    "top-level `count: 4` set list, which also has one set each for Biology, Chemistry, Economics " +
+    "(itself a 1-of-3 filter member) and Geography (a 1-of-4 filter member) -- 9 total set options. " +
+    "Group 3's flattening is permissive rather than narrowing: a student could in theory complete " +
+    "two Group-3 combinations and have both count as separate 'groups' toward the four required, " +
+    "which the catalog likely does not intend, but no student is made to fail who should pass. " +
+    "Groups 1, 2, 4 and 5 have no such looseness: each is encoded as exactly one set requiring one " +
+    "qualifying course (or course pair) from that group, matching the catalog exactly.",
   "Footnote 1 on the ENSP Core ('Requirements may vary slightly depending on concentration; please " +
     "refer to complete list of requirements on http://ensp.umd.edu') is not encodable (no web " +
     "access to ensp.umd.edu); the catalog's own Core table is encoded as-is for every concentration.",
