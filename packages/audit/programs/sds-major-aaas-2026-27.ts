@@ -65,18 +65,21 @@ export const SDS_SHARED_NOTES: string[] = [
   "Listed under both BSOS and the College of Information with byte-identical requirement tables " +
     "(main session confirmed); encoded once as a single set of programs rather than duplicated for " +
     "both listings, matching the Data Science Minor precedent.",
-  "The catalog lists 8 tracks (African American Studies, Anthropology, Economics, Geographical " +
-    "Sciences, Government & Politics, Psychology, Public Health, Sociology); Anthropology itself " +
-    "splits into 3 sub-tracks (Health, Heritage, Environment) with different required courses, so " +
-    "10 Program entries share major key `sds`. Default track (arbitrary pick, alphabetically first " +
-    "in the catalog's own track list): African American Studies (`sds-major-aaas`).",
-  "The source file also contains a 'Criminology Track' section (CCJS100/105/200/300 plus CCJS " +
-    "electives) that is NOT named in the catalog's own 'one of the following tracks' sentence and " +
-    "has no corresponding course in the Benchmark II prerequisite list the college guide gives for " +
-    "every other track (AASP101/ANTH210/ANTH222/ANTH240/ECON200/GEOG202/GVPT170/PSYC100/SPHL100/" +
-    "SOCY100 -- no CCJS entry). This looks like a source-conversion artifact (content reused from the " +
-    "CCJS major's own page) rather than a real 9th SDS track, so it is NOT encoded here. Flagged in " +
-    "docs/project/owner-review.md for confirmation.",
+  "The catalog's intro sentence names 8 tracks (African American Studies, Anthropology, Economics, " +
+    "Geographical Sciences, Government & Politics, Psychology, Public Health, Sociology) but its own " +
+    "requirements table also has a well-formed, separately-numbered Criminology Track section " +
+    "(Benchmark, Track I, Track II, an 18-credit total, same shape as every other track) that the " +
+    "intro sentence simply omits mentioning; encoded as a 9th track. Anthropology itself splits into " +
+    "3 sub-tracks (Health, Heritage, Environment) with different required courses, so 11 Program " +
+    "entries share major key `sds`. Default track (arbitrary pick, alphabetically first in the " +
+    "catalog's own track list): African American Studies (`sds-major-aaas`).",
+  "Criminology's Math Course group is unstated: the catalog's Math Course row only splits tracks " +
+    "into the MATH115 group (African-American Studies, Anthropology, Government & Politics, " +
+    "Sociology) and the MATH120 group (Economics, Geographical Sciences, Psychology, Public Health), " +
+    "and names Criminology in neither. Criminology's own CCJS major requires no calculus (its own " +
+    "gateway is MATH107/STAT100/a calculus course), unlike the other MATH120-group majors, so it was " +
+    "placed in the MATH115 (non-calculus) group by fit rather than by an explicit source statement. " +
+    "Flagged in docs/project/owner-review.md for confirmation.",
   "Department-vs-catalog difference (department guide wins): the catalog names only STAT100 for the " +
     "Benchmark I statistics course; the college guide adds 'Equivalent Course: BMGT230 OR STAT400 " +
     "(if completed with a C- or higher prior to joining SDSC)'. Both are added as options; the " +

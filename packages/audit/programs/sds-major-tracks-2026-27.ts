@@ -1,8 +1,8 @@
-// Social Data Science Major, 2026-27 UMD Academic Catalog -- the eight remaining tracks (the
+// Social Data Science Major, 2026-27 UMD Academic Catalog -- the nine remaining tracks (the
 // African American Studies default track is in sds-major-aaas-2026-27.ts, which also holds the
 // shared core requirements, sources, and shared review notes every track here repeats).
 // Anthropology splits into three sub-tracks (Health, Heritage, Environment) with different required
-// courses, so this file has 9 Program/Meta pairs total, all sharing major key `sds`.
+// courses, so this file has 10 Program/Meta pairs total, all sharing major key `sds`.
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
 import type { Program, ProgramMeta } from "../src/audit.ts";
@@ -409,5 +409,63 @@ export const sdsMajorSocyMeta: ProgramMeta = {
   short: "Social Data Science (Sociology)",
   major: "sds",
   track: "Sociology",
+  sources: { catalog: SDS_CATALOG_URL, department: SDS_COLLEGE_URL },
+};
+
+// ---------------------------------------------------------------------------------------------
+// Criminology
+// ---------------------------------------------------------------------------------------------
+
+export const sdsMajorCcjs: Program = {
+  id: "sds-major-ccjs",
+  name: "Social Data Science Major (Criminology Track)",
+  catalogYear: "2026-27",
+  source: SDS_SOURCE,
+  minGrade: "C-",
+  verified: false,
+  reviewNotes: [
+    ...SDS_SHARED_NOTES,
+    "Track II Requirement ('choose 6 credits from the list below') is a fully enumerated 13-course " +
+      "list (CCJS320/340/342/345/346/352/360/405/418/444/450/451/454); encoded as a `choose` " +
+      "requirement over that exact list.",
+  ],
+  requirements: [
+    ...sdsCoreRequirements(SDS_MATH115),
+    { kind: "course", id: "ccjs100", name: "Introduction to Criminal Justice", options: ["CCJS100"] },
+    { kind: "course", id: "ccjs105", name: "Introduction to Criminology", options: ["CCJS105"] },
+    { kind: "course", id: "ccjs200", name: "Statistics for Criminology and Criminal Justice", options: ["CCJS200"] },
+    { kind: "course", id: "ccjs300", name: "Criminological and Criminal Justice Research Methods", options: ["CCJS300"] },
+    {
+      kind: "choose",
+      id: "ccjs-track-ii",
+      name: "Criminology Track II Electives",
+      credits: 6,
+      from: {
+        courses: [
+          "CCJS320",
+          "CCJS340",
+          "CCJS342",
+          "CCJS345",
+          "CCJS346",
+          "CCJS352",
+          "CCJS360",
+          "CCJS405",
+          "CCJS418",
+          "CCJS444",
+          "CCJS450",
+          "CCJS451",
+          "CCJS454",
+        ],
+      },
+    },
+  ],
+};
+
+export const sdsMajorCcjsMeta: ProgramMeta = {
+  kind: "major",
+  college: "BSOS",
+  short: "Social Data Science (Criminology)",
+  major: "sds",
+  track: "Criminology",
   sources: { catalog: SDS_CATALOG_URL, department: SDS_COLLEGE_URL },
 };
