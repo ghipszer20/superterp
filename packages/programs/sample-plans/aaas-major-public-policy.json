@@ -1,0 +1,23 @@
+{
+  "programId": "aaas-major-public-policy",
+  "source": "https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/Major%20Cards/AAAS%20Public%20Policy%20Major%20Checklist%20040824%20writable.pdf",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "CONSTRUCTED per the builder brief (official: false, flagged in docs/project/owner-review.md), even though the department checklist includes its own four-year plan grid: the checklist is dated 2024 (older than the 2026-27 catalog) and uses the retired AASP prefix, so this plan is built from that grid's shape but re-verified against the catalog's current AAAS requirements rather than treated as an official 2026-27 source.",
+    "Built from the department's own four-year academic plan grid on the AAAS Public Policy Major Checklist. Gen Ed slots (ENGL101, OC, HU, NS, HS, SP, UP/CC, AR, UNIV100/BSOS361) and generic 'Elective' slots outside the major are left out: only the major is audited.",
+    "PLCY388-or-PLCY401 Analytic Component choice -> PLCY388; the 3 AASP Policy Course (Upper Level) slots -> AAAS411, AAAS441, AAAS443, from the catalog's own 6-course Policy Electives list; Capstone -> AAAS397.",
+    "AAAS399 Research Practicum taken as two separate 1-credit registrations (Lab 1 in Year 2 Fall, Lab 2 in Year 2 Spring), per the checklist grid."
+  ],
+  "credits": { "AAAS399": 1 },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["AAAS100"] },
+    { "term": "Year 1 Spring", "courses": ["AAAS101"] },
+    { "term": "Year 2 Fall", "courses": ["AAAS200", "AAAS210", "AAAS399"] },
+    { "term": "Year 2 Spring", "courses": ["AAAS395", "AAAS399", "ECON200"] },
+    { "term": "Year 3 Fall", "courses": ["AAAS301"] },
+    { "term": "Year 3 Spring", "courses": ["PLCY388"] },
+    { "term": "Year 4 Fall", "courses": ["AAAS411", "AAAS441"] },
+    { "term": "Year 4 Spring", "courses": ["AAAS397", "AAAS443"] }
+  ]
+}
