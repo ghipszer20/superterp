@@ -483,7 +483,8 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/electrical-and-computer/computer-engineering-major/",
     "department": [
       "https://ece.umd.edu/undergraduate/degrees/bs-computer-engineering",
-      "https://ece.umd.edu/undergraduate/degrees/bs-computer-engineering/technical-electives-0"
+      "https://ece.umd.edu/undergraduate/degrees/bs-computer-engineering/technical-electives-0",
+      "https://ece.umd.edu/undergraduate/degrees/bs-computer-engineering/cybersecurity"
     ],
     "samplePlan": [
       "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/computer_fall_2026_gradglan.pdf"
@@ -656,7 +657,9 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/electrical-and-computer/electrical-engineering-major/",
     "department": [
       "https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering",
-      "https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering/technical-electives"
+      "https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering/technical-electives",
+      "https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering/requirements",
+      "https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering/specializations"
     ],
     "samplePlan": [
       "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/electrical_fall_2026_gradplan.pdf"

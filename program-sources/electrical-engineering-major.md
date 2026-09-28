@@ -3,6 +3,8 @@
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/electrical-and-computer/electrical-engineering-major/
 Source: https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering
 Source: https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering/technical-electives
+Source: https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering/requirements
+Source: https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering/specializations
 Source: https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/electrical_fall_2026_gradplan.pdf
 Fetched: 2026-09-28
 
@@ -220,6 +222,106 @@ ENEE408N:Design Experience in Machine Learning (3) - Spring Only
 ENEE408V: Smart Submersible Marine Vehicle (3) - Fall Only
 ENEE408W: Capstone Design Project; High Power Microwave (HPM) Systems (3) - Spring Only
 [1]: Only 5 total credits of ENEE488/ENEE499/ENEE499L may be applied to the degree requirements. An exception is for ECE Honors students, who can apply 6 credits of ENEE499/499H.
+
+## Department page (https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering/requirements)
+
+Home
+Undergraduate
+Degrees
+B.S. in Electrical Engineering
+Electrical Engineering Degree Requirements
+Electrical Engineering Degree Requirements
+Below you will find the different versions of our Electrical Engineering major. Please make sure you select the right link based on the semester you enrolled in the major.
+EE Degree Requirements: For new students admitted for Fall 2024
+EE Degree Requirements: Fall 2021 - Summer 2024
+
+## Department page (https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering/specializations)
+
+Home
+Undergraduate
+Degrees
+B.S. in Electrical Engineering
+Electrical Engineering Specializations
+Electrical Engineering Specializations
+As our students pursue their Electrical Engineering degree, they can choose to specialize in one of the six areas. Students are required to take at least two courses within their chosen specialization. The Undergraduate Office keeps a list of specialized courses for your convenience. The specialization areas are as follow:
+Communications and Signal Processing
+Computer Engineering
+Controls
+Electrophysics
+Microelectronics
+Power Systems
+Below you will find information on courses for each specialization, including course availability information. Please be sure to cross-reference this information with the Schedule of Classes on Testudo for up-to-date course availaibility.
+Communications and Signal Processing
+Communications and Signal Processing consists of two main aspects. The first is communications and networking, which primarily addresses the challenge of how to efficiently and effectively deliver information from one place to the other. Typical examples are high-speed networks, Internet, cellular and satellite communications, and WiFi or wireless area networks. Representative technical subjects are information theory, digital communications, wireless networking, compression and coding, network protocol design, performance analysis, and security. The second aspect is signal and image processing, where the main challenge is to design efficient and effective algorithms, architectures, and systems to describe and represent signals, extract information, reconstruct or recover content, and process or fuse signals and information. Representative technical subjects are signal/image/video/speech/audio processing, radar and sonar, wireless communications, computer vision, and information forensics and assurance.Courses in Communication and Signal Processing:
+ENEE408J Audio Electronics Engineering (Spring Only)
+ENEE408N Design Experience in Machine Learning (Spring Only)
+ENEE420 Communication Systems (Fall Only)
+ENEE425 Digital Signal Processing (Fall/Spring Course)
+ENEE426 Communication Networks (Spring Only)
+ENEE428 Communication Design Lab (Lab; Fall/Spring Course)
+ENEE436 Foundations of Machine Learning (Fall/Spring Course)
+ENEE439G Topics in Signal Processing; Information in a Photon (Fall Only)
+Computer Engineering
+Computers and computing systems pervade nearly every aspect of modern life, from automobile systems to air traffic control systems, missile guidance systems, surgical equipment, and portable devices. Computer chips are enhancing systems that previously were completely mechanical or electromechanical. With the continuing cost reductions of digital hardware this trend can only accelerate. Coursework below is part of the computer engineering specialization within Electrical Engineering.Courses in Computer Engineering area:
+ENEE408A Microprocessor-Based Design (Capstone; Fall/Spring Course)
+ENEE408C Modern Digital System Design (Capstone; Fall Only)
+ENEE408D Mixed Signal VLSI Design (Capstone; Spring Only)
+ENEE408M Embedded Software Design (Capstone: Spring Only)
+ENEE408N Design Experience in Machine Learning (Spring Only)
+ENEE408V Smart Submersible Marine Vehicles (Capstone: Fall Course)
+ENEE436 Machine Learning (Fall/Spring Course)
+ENEE440 Microprocessors (Fall/Spring Course)
+ENEE445 Microcomputer Lab (Lab; Fall/Spring Course)
+ENEE446 Digital Computer Design (Fall/Spring Course)
+ENEE452 Embedded Systems (Formerly ENEE459V) (Spring Only)
+ENEE456 Cryptography (Fall/Spring Course)
+ENEE457 Computer System Security (Fall Only)
+ENEE459A CAD Tools (1-credit course; Fall Only)
+ENEE459B Reverse Engineering and Hardware Security Laboratory (Lab; Fall Only)
+ENEE459C Topics in Computer Engineering; Digital CMOS VLSI Design Methods (Spring Only)
+ENEE459D Advanced Laboratory of Digital Signal Systems Using SystemVerilog (3) - (Fall/Spring Course)
+Controls
+The area of controls is devoted to the principles and technical means for ensuring that a physical quantity, such as temperature, altitude or speed, must be made to behave in a specified way over time. From the simple thermostat in a home furnace, to the cruise and emission controls in a car, to the autopilot in modern jet aircraft and space vehicles, to control of prosthetics in biomedical applications, a control device measures the behavior of a system to determine the discrepancy from some desired behavior, and then alters/adjusts the system’s inputs to bring the actual behavior closer to the desired one. This fundamental process of feedback is key to the successful operation of an immense variety of both engineered and natural systems. Emerging advances in the creation of intelligent machines, including robots in the factory and in service industry, as well as autonomous vehicles, are driven by advances in control science and technology. Control engineers also explore ways to continually adapt and modify such feedback loops to enhance the effectiveness of control systems. The area of controls is challenging and rewarding as our world faces increasingly complex control problems that need to be solved. Immediate needs include control of emissions for a cleaner environment, automation in factories, unmanned space and underwater exploration, and control of communication networks. Control is challenging since it takes strong foundations in engineering and mathematics, uses computer software and hardware extensively, and requires the ability to address and solve new problems in a variety of disciplines, ranging from aeronautical to electrical and chemical engineering, to chemistry, biology and economics.Courses in Controls area:
+ENEE408I Building Autonomous Robots (Capstone: Fall/Spring Course)
+ENEE408V Smart Submersible Marine Vehicles (Capstone: Fall Course)
+ENEE460 Control Systems (Fall Only)
+ENEE461 Control Systems Lab (Lab; Spring Only)
+ENEE463 Digital Control Systems (Spring Only)
+ENEE464 Introduction to Optimization (Formerly ENEE469O) (Spring Only)
+Electrophysics
+"Scientists have ideas; engineers make them work," said Nobel Prize winner Jack Kilby. Electrophysics is a key part of this concept. Engineers concentrating in the area of Electrophysics bring ideas that emerge from basic physics, and work to develop them into practical reality. Electrophysics represents the overlap between physics and electrical and computer engineering, and the products of Electrophysics ultimately fit into other areas of electrical and computer engineering such as: communications and signal processing, computer engineering, microelectronics, and controls. Electrophysics is an essential component to bring concepts grounded in the principles of physics together with systems engineering to create complex systems that work in real life. Devices that emerge from Electro physics are embedded in almost all modern electronics. Electrophysics education and research deals with optics, lasers, detectors, microwaves, particle beams, nanotechnology, magnetics, and electromagnetic phenomena at all wavelengths, from x-rays, to radio waves. Creating light where there is darkness is part of what Electrophysicists do, in order to improve how we see things both large and small; communicate information of all sorts; and process materials, whether by cooking with microwaves or even performing laser surgery.
+Courses in the Electrophysics area:
+ENEE408E Optical System Design (Capstone; Fall Only)
+ENEE408J Audio Electronics Engineering (Capstone; Spring Only)
+ENEE408W High Power Microwave (HPM) Systems (Capstone; Spring Only)
+ENEE484 Optoelectronic Devices (Formerly ENEE489I) (Fall Only)
+ENEE486 Optoelectronics Lab (Lab; Fall Only)
+ENEE489J Topics in Electrophysics; Microwave Devices Design & Testing Laboratory (Fall Only)
+ENEE489L Topics in Electrophysics; Design of Active and Passive Microwave Devices (Fall Only)
+ENEE489R Topics in Electrophysics; Design of Passive and Low Power Microwave Devices (Fall Only)
+ENEE490 Physical Principles of Wireless Communications (Fall Only)
+ENEE491 Quantum Phenomena in Electrical Engineering (Spring Only)
+ENEE492 Introduction to Quantum Technology (Fall Only)
+ENEE493 Quantum Hardware Laboratory (Fall Only)
+ENEE496 Lasers and Optics (Spring Only)
+Microelectronics
+Integrated circuits containing millions, soon billions, of transistors with ever increasing capability have revolutionized almost every area of technology – from computers and communications to automobiles and appliances. The area of microelectronics traditionally encompasses studying the physics of semiconductor devices, and the design and fabrication of such integrated circuits, making it fundamental to electrical engineering. More broadly however, microelectronics is increasingly viewed at the system level, where multiple devices with varying functionality are combined to create intelligent sensors and “Microsystems.” A single microchip containing electronic circuits and acceleration sensors is already responsible for deploying automobile airbags during a crash. Such microelectromechanical systems (MEMS) offer the potential to integrate numerous electronic and physical functions into a single tiny device, enabling advances in microelectronics to touch nearly every discipline imaginable.Courses in Microelectronics area:
+ENEE408D Mixed Signal VLSI Design (Capstone; Spring Only)
+ENEE408J Audio Electronics Engineering (Spring Only)
+ENEE408V Smart Submersible Marine Vehicles (Capstone: Fall Course)
+ENEE411 Analog and Digital Electronics II (formerly ENEE419A) (Fall Only)
+ENEE413 Fundamentals of Solid State Electronic (formerly ENEE480) (Spring Only)
+ENEE415 Advanced Manufacturing Laboratory (Formerly ENEE419M) (Lab; Spring Only)
+ENEE416 Integrated Circuit Fabrications Lab (Lab; Fall Only)
+ENEE419D Topics in Microelectronics; Embedded Machine Learning (Fall Onky)
+Power Systems
+This area encompasses the generation, distribution and control of electric power. Power systems include electromechanical transducers, motors, generators and transformers. Key technical challenges are the stability of power systems, possible new sources of power (e.g., fusion energy) and emerging technologies such as magnetically levitated trains and the use of high-temperature superconductors in electrical machinery.Courses in Power Systems area:
+ENEE408V Smart Submersible Marine Vehicles (Capstone: Fall Course)
+ENEE473 Electric Machines Lab (Lab; Spring Only)
+ENEE474 Power Systems (Fall Only)
+ENEE475 Power Electronics (Spring Only)
+ENEE476 Renewable Energy (Fall Only)
+ENEE484 Optoelectronic Devices (Formerly ENEE489I) (Fall Only)
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/electrical_fall_2026_gradplan.pdf)
 

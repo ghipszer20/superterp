@@ -3,6 +3,7 @@
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/electrical-and-computer/computer-engineering-major/
 Source: https://ece.umd.edu/undergraduate/degrees/bs-computer-engineering
 Source: https://ece.umd.edu/undergraduate/degrees/bs-computer-engineering/technical-electives-0
+Source: https://ece.umd.edu/undergraduate/degrees/bs-computer-engineering/cybersecurity
 Source: https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/computer_fall_2026_gradglan.pdf
 Fetched: 2026-09-28
 
@@ -272,6 +273,33 @@ Footnotes
 [3] Students should get approval from their ECE advisor before registering for any PHYS4xx courses. Courses on the Prohibited List cannot be used to satisfy this requirement.
 [5] Only 6 total credits of ENEE488/ENEE499/ENEE499L may be applied to the degree requirements
 [6] Students can only take one of these courses: CMSC/MATH456 OR ENEE456. Students CAN NOT use ENEE456 as a Category C course; nor can they use CMSC456 as a Category B course.
+
+## Department page (https://ece.umd.edu/undergraduate/degrees/bs-computer-engineering/cybersecurity)
+
+Home
+Undergraduate
+Degrees
+B.S. in Computer Engineering
+Cybersecurity Specialization
+Cybersecurity Specialization
+Cybersecurity is becoming a major focus area for the state of Maryland, as well as the greater Washington D.C. metropolitan area. There is great interest among local companies and government agencies to hire in cybersecurity. Given the expected demand, education programs in cybersecurity will become crucial to help train the future workforce, thus fulfilling a critical need for the state of Maryland.
+Students in the Computer Engineering major have the opportunity to complete a specialization in Cybersecurity within their major. To complete the Cybersecurity specialization, students must complete five courses from the following areas:
+Area 1 - Security (two courses required):
+ENEE457 Computer Security (formerly 459C) OR CMSC414 Computer Network Security
+CMSC456/ENEE456 Cryptography
+Area 2 - Networks (one course required):
+CMSC417 Computer Networks
+ENEE426 Communication Networks
+Area 3 - Hands-On Experience (one course required):
+ENEE459B Reverse Engineering
+ENEE445 Computer Laboratory (*requires permission - see below for details)
+ENEE408C Modern Digital System Design (*requires permission - see below for details)
+Area 4 - Computer Systems and Sofware (one course required):
+CMSC420 Data Structures
+CMSC451 Design and Analysis of Computer Algorithms
+ENEE440 Microprocessors
+CMSC433 Programming Language Technologies and Paradigms
+Students must choose two courses from area 1, one course from area 2, one course from area 3, and one course from area 4.
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/computer_fall_2026_gradglan.pdf)
 
