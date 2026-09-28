@@ -262,14 +262,26 @@
 
 ## Fetch failures
 
+- Aerospace Engineering Major (aerospace-engineering-major): https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/aerospace_fall_2026_gradplan.pdf -- Please provide binary data as `Uint8Array`, rather than `Buffer`.
 - African American and Africana Studies Major (african-american-africana-studies-major): https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans -- fetch failed
 - Anthropology Major (anthropology-major): https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans -- fetch failed
+- Biocomputational Engineering Major (biocomputational-engineering-major): https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/biocomp_fall_2026_gradplan.pdf -- Please provide binary data as `Uint8Array`, rather than `Buffer`.
+- Bioengineering Major (bioengineering-major): https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/bioe_fall_2026_gradplan_0.pdf -- Please provide binary data as `Uint8Array`, rather than `Buffer`.
+- Chemical Engineering Major (chemical-biomolecular-engineering-major): https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/chemical_fall_2026_gradplan_1.pdf -- Please provide binary data as `Uint8Array`, rather than `Buffer`.
+- Civil Engineering Major (civil-environmental-engineering-major): https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/civil_fall_2026_gradplan.pdf -- Please provide binary data as `Uint8Array`, rather than `Buffer`.
+- Computer Engineering Major (computer-engineering-major): https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/computer_fall_2026_gradglan.pdf -- Please provide binary data as `Uint8Array`, rather than `Buffer`.
 - Criminology and Criminal Justice Major (criminology-criminal-justice-criminology-criminal-justice-major): https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans -- fetch failed
+- Cyber-Physical Systems Engineering Major (cyber-physical-systems-engineering-major): https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/cyber-physical_fall_2026_gradplan.pdf -- Please provide binary data as `Uint8Array`, rather than `Buffer`.
 - Economics Major (economics-major): https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans -- fetch failed
+- Electrical Engineering Major (electrical-engineering-major): https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/electrical_fall_2026_gradplan.pdf -- Please provide binary data as `Uint8Array`, rather than `Buffer`.
+- Fire Protection Engineering Major (fire-protection-engineering-major): https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/fire_protection_fall_2026_gradplan.pdf -- Please provide binary data as `Uint8Array`, rather than `Buffer`.
 - Geographical Sciences Major (geographical-sciences-major): https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans -- fetch failed
 - Global Health Major (global-health-major): https://sph.umd.edu/gbhl-ug -- [sources] HTTP 404 for https://sph.umd.edu/gbhl-ug
 - Government and Politics Major (government-politics-major): https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans -- fetch failed
 - Hearing and Speech Sciences Major (hearing-speech-sciences-major): https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans -- fetch failed
+- Materials Science and Engineering Major (materials-science-engineering-major): https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/materials_fall_2026_gradplan.pdf -- Please provide binary data as `Uint8Array`, rather than `Buffer`.
+- Mechanical Engineering Major (mechanical-engineering-major): https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/mechanical_fall_2026_gradplan.pdf -- Please provide binary data as `Uint8Array`, rather than `Buffer`.
+- Mechatronics Engineering Major (mechatronics-engineering-major): https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/mechatronics_fall_2026_gradplan_0.pdf -- Please provide binary data as `Uint8Array`, rather than `Buffer`.
 - Psychology Major (psychology-major): https://psyc.umd.edu/undergraduate/program-learning-objectives -- [sources] HTTP 404 for https://psyc.umd.edu/undergraduate/program-learning-objectives
 - Psychology Major (psychology-major): https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans -- fetch failed
 - Public Health Science Major (public-health-science-major): https://sph.umd.edu/degrees/bachelor-science-public-health-science-college-park -- [sources] HTTP 404 for https://sph.umd.edu/degrees/bachelor-science-public-health-science-college-park

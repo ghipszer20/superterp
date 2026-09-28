@@ -348,7 +348,9 @@
   "bioengineering-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/bioengineering/bioengineering-major/",
     "department": [
-      "https://bioe.umd.edu/undergraduate"
+      "https://bioe.umd.edu/undergraduate",
+      "https://bioe.umd.edu/undergraduate/electives",
+      "https://bioe.umd.edu/undergraduate/tracks"
     ],
     "samplePlan": [
       "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/bioe_fall_2026_gradplan_0.pdf"

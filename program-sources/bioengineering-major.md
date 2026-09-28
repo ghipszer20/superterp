@@ -2,6 +2,8 @@
 # Bioengineering Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/bioengineering/bioengineering-major/
 Source: https://bioe.umd.edu/undergraduate
+Source: https://bioe.umd.edu/undergraduate/electives
+Source: https://bioe.umd.edu/undergraduate/tracks
 Source: https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/bioe_fall_2026_gradplan_0.pdf
 Fetched: 2026-09-28
 
@@ -119,91 +121,190 @@ BIOE Course Prerequisites Chart
 Pre-2016 Curriculum Advising Worksheet
 BIOE Undergrad Advising Worksheet
 
+## Department page (https://bioe.umd.edu/undergraduate/electives)
+
+Home
+Undergraduate
+B.S. in Bioengineering
+Technical Electives
+Technical Electives
+The Bioengineering Undergraduate Program requires the completion of 9 technical electives (at least 27 credits): 2 foundational courses (6 credits), 4 bioengineering electives (12 credits), 2 biological science electives (6 credits), and 1 breadth elective (3 credits). All electives must be successfully completed (C- or better). Students may wish to select electives in conjunction with a Bioengineering Track within the Undergraduate Program.
+Students seeking to count an elective that is not on these lists should submit a BIOE Petition for Waiver to Departmental Policy. If a student obtained prior approval during an advising meeting to take and count an elective not on this list, student should have advisor make note on the BIOE Advising Worksheet.
+Please note that only 3 credits of BIOE 399 may be used to fulfill the entire elective requirement. Students are responsible for checking prerequisites (see the BIOE course prerequisites chart).
+Electives Overview
+BIOE Foundational Courses can be chosen from the following: BIOE404, BIOE413, BIOE420, BIOE453, BIOE461, and BIOE462. BIOE Foundational I BIOE Foundational II BIOE Electives can be any upper-level BIOE courses that are not already required by the core curriculum or being used to fulfill a BIOE Foundational requirement* BIOE Elective I BIOE Elective II BIOE Elective III BIOE Elective IV See tables below for approved Breadth and Biological Science Electives Breadth Elective Biological Science Elective I Biological Science Elective II *BIOE489H and BIOE389 courses cannot count as BIOE electives. BIOE399 must be approved as an elective via the BIOE399 Independent Study form.
+The breadth elective may include any course from the list below.
+Students are responsible for checking prerequisites and obtaining permissions for non-BIOE courses with restrictions. Other departments, including those in Engineering, typically have a process for non-majors to request seats in courses or may maintain a hold file, so please inquire with the specific department. Permissions for non-BIOE courses cannot be guaranteed; students should plan accordingly. BIOE120 & BIOE121 can often count in place of BSCI170 & BSCI171 as a prerequisite.
+Any course that is listed as a breadth elective on the tracks page can also be used as a breadth elective on the Bioengineering Studies Track.
+Breadth Electives
+Any 3xx or 4xx Engr. dept. course. This includes BIOE courses, as well as other departmental upper-level courses if available.2 BSCI222 Principles of Genetics1 BSCI223 General Microbiology CHEM241 Organic Chemistry II CHEM271/2 General Chemistry and Energetics/General Bioanalytical Chemistry Laboratory BCHM463 Biochemistry of Physiology CMSC132 Object-Oriented Programming II ENED394H: Applied Quantitative Analysis MATH463 Complex Variables for Scientists and Engineers MATH464 Transform Methods for Scientists and Engineers 1. HLSC322 can stand in place of BSCI222 as a breadth or lower level biosci elective. 2. ENES courses are not included, except for ENES221, ENES401, ENES498E, ENES489P, and ENES499. Requests for seats in non-BIOE engineering departmental courses can be directed to the contact points listed here. All Breadth Electives must be upper-level courses (300-level or higher) unless specifically approved otherwise.
+The biological science electives must adhere to the following policies:
+The elective must be chosen from the biological science elective list posted below.
+All biological science electives must be at the 200-level or above.
+At least one course (3 credits) must be at the 300-level or above.
+Students are responsible for checking prerequisites and obtaining permissions for non-BIOE courses with restrictions. Other departments, including those in Engineering, typically have a process for non-majors to request seats in courses or may maintain a hold file, so please inquire with the specific department. Permissions for non-BIOE courses cannot be guaranteed; students should plan accordingly. BIOE120 & BIOE121 can often count in place of BSCI170 & BSCI171 as a prerequisite.
+Biological Science Electives
+BSCI202 Human Anatomy and Physiology II BSCI222 Principles of Genetics1 BSCI223 General Microbiology BSCI3383 Special Topics in Biology BSCI3393 Selected Topics in Biology BSCI343 Cellular Mechanisms of Aging and Disease BSCI353 Principles of Neuroscience BSCI370 Principles of Evolution BSCI374 Mathematical Modeling in Biology (previous course code BSCI474) BSCI382 Forensic Genetics: Power and Potential BSCI404 Cell Biology from a Biophysical Perspective BSCI410 Molecular Genetics BSCI411 Bioinformatics and Integrated Genomics BSCI412 Microbial Genetics BSCI414 Recombinant DNA Laboratory BSCI416 Human Genetics BSCI417 Microbial Pathogenesis BSCI420 Cell Biology Lectures BSCI421 Cell Biology BSCI422 Principles of Immunology BSCI424 Pathogenic Microbiology BSCI430 Developmental Biology BSCI433 Biology of Cancer BSCI435 Quantitative and Computational Biosciences BSCI436 RNA Biology and Therpeutics BSCI437 General Virology BSCI443 Microbial Physiology BSCI446 Neural Systems BSCI447 General Endocrinology BSCI471 Molecular Evolution BCHM461 Biochemistry I BCHM463 Biochemistry of Physiology CHEM241 Organic Chemistry II CHEM271/272 General Chemistry and Energetics/General Bioanalytical Chemistry Laboratory CHEM481 Physical Chemistry I CHEM482 Physical Chemistry II ENST499G Water Resources and Ecosystem (ENST Special Topics) KNES360 Physiology of Exercise KNES370 Motor Development NEUR306 Cellular and Molecular Neuroscience 1. HLSC322 can stand in place of BSCI222 as a breadth or lower level biosci elective. 3. Upon department approval; see elective approval request form here.
+
+## Department page (https://bioe.umd.edu/undergraduate/tracks)
+
+Engineering solutions to today's health challenges
+Home
+Undergraduate
+B.S. in Bioengineering
+Tracks
+Tracks
+Our tracks are:
+Biotechnology and Therapeutics Engineering
+Biomechanics & Biomaterials
+Biomedical Instrumentation
+Pre-Health Professions
+Bioengineering Studies (No Track) - see the Electives Overview for general requirements.
+In no cases can one course be double-counted to fulfill multiple elective categories (e.g. the same course cannot be used as both a BIOE Elective and a Breadth Elective). Students are responsible for checking prerequisites and obtaining permissions for non-BIOE courses, if necessary. Elective course offerings vary from semester to semester.
+Biotechnology & Therapeutics Engineering
+Track Leader: Dr. Steven Jay
+BIOE Foundationals (Select Two): | BIOE413 | Stem Cell Engineering
+BIOE461 | Synthetic Biology
+BIOE462 | Therapeutic Development and Delivery
+BIOE Electives (Select Four): | BIOE332 | Transport Process Design
+BIOE386 | Bioengineering Design and Teamwork
+BIOE399 or 399H1 | Independent Study in Bioengineering
+BIOE411 | Tissue Engineering
+BIOE442 | Python: Introduction to Programming and Data Analysis
+BIOE447 | Clinical Experiences in Bioengineering
+BIOE464 | Intro to Comp. Molecular Bioengineering
+BIOE474 | Biopharmaceutical Process Development and Manufacturing
+BIOE488A | Research Methods in Molecular Biology
+BIOE488B | Research Methods in Biotechnology
+BIOE489A | Machine Learning for Data Analysis
+BIOE489D | Quantitative Biotechnology
+BIOE489G | Immunoengineering
+BIOE489K | Pulmonary Engineering
+BIOE489M | Bioprinting in Regenerative Medicine
+BIOE489Q | Engineering Approaches to Photomedicine
+BIOE489R | Protein Engineering
+BIOE489X | Papers in Genome Editing & Synthetic Biology
+Breadth Elective (Select One): | BIOE3xx+ | Any BIOE course 3xx or higher
+BSCI222 | Principles of Genetics
+BSCI223 | Microbiology
+CHEM241/242 | Organic Chemistry II + Lab
+CHEM271/272 | General Chemistry II + Lab
+BSCI/CHEMxxx | Any Biological Science Elective approved for this track
+Biological Science Electives (Select Two2): | BSCI222
+BSCI223
+BSCI338x1 or BSCI339x1
+BSCI353
+BSCI370
+BSCI374
+BSCI404
+BSCI410
+BSCI411
+BSCI412
+BSCI414
+BSCI416
+BSCI417
+BSCI421
+BSCI422
+BSCI424
+BSCI430
+BSCI433
+BSCI437
+BSCI443
+BSCI447
+BSCI471
+CHEM481
+CHEM482
+BCHM463
+1. Must be approved for track compliance by track leader. BIOE399 approval process is included in BIOE399 registration form; all other courses should be approved through the departmental One-Time Approval of an Elective form. Both foms can be found here. 2. At least one course must be 3xx or higher
+Biomechanics & Biomaterials
+Track Leader: Dr. Kimberly Stroka
+BIOE Foundationals: | BIOE404 | Biomechanics
+BIOE453 | Biomaterials
+BIOE Electives (Select Four): | BIOE332 | Transport Process Engineering
+BIOE386 | Bioengineering Design and Teamwork
+BIOE399 or 399H1 | Independent Study in Bioengineering
+BIOE411 | Tissue Engineering
+BIOE413 | Stem Cell Engineering
+BIOE414 | Macro-scale Biomechanics
+BIOE415 | Engineering Design for Global Health
+BIOE416 | Cardiovascular Engineering
+BIOE437 | Computer Aided Design
+BIOE442 | Python: Introduction to Programming and Data Analysis
+BIOE447 | Clinical Experiences in Bioengineering
+BIOE489C | Mechanical Design of Medical Devices
+BIOE489F | CFD/FEA Applications in Bioengineering
+BIOE489K | Pulmonary Engineering
+BIOE489M | Bioprinting in Regenerative Medicine
+BIOE489W | Advanced Biomaterials
+Breadth Elective (Select One): | ENES221
+ENMA300 or ENME382
+ENMA442
+ENME470
+BIOE3xx+ | Any BIOE course 3xx or higher
+Biological Science Electives (Select Two2): | BSCI222
+BSCI223
+BSCI338x1 or BSCI339x1
+BSCI353
+BSCI370
+BSCI404
+BSCI410
+BCHM463
+KNES360
+KNES370
+1. Must be approved for track compliance by track leader. BIOE399 approval process is included in BIOE399 registration form; all other courses should be approved through the departmental One-Time Approval of an Elective form. Both foms can be found here. 2. At least one course must be 3xx or higher
+Top
+Biomedical Instrumentation
+Track Leader: Dr. Ian White
+BIOE Foundationals: | BIOE420 | Bioimaging
+BIOE453 | Biomaterials
+BIOE Electives (Select Four): | BIOE386 | Bioengineering Design and Teamwork
+BIOE399 or 399H1 | Independent Study in Bioengineering
+BIOE415 | Engineering Design for Global Health
+BIOE431 | Fundamentals of Biosensor Techniques, Instrumentation, and Applications
+BIOE433 | Optical Microscopy
+BIOE437 | Computer Aided Design
+BIOE442 | Python: Introduction to Programming and Data Analysis
+BIOE447 | Clinical Experiences in Bioengineering
+BIOE489A | Machine Learning for Data Analysis
+BIOE489C | Mechanical Design of Medical Devices
+BIOE489F | CFD/FEA Applications in Bioengineering
+BIOE489J | Advanced Manufacturing Laboratory
+Breadth Elective (Select One): | ENRE447
+CMSC132
+ENES401
+ENES489P
+ENES499
+BIOE3xx+ | Any BIOE course 3xx or higher
+Biological Science Electives (Select Two2): | BSCI222
+BSCI223
+BSCI338x1 or BSCI339x1
+BSCI353
+BSCI410
+BSCI433
+BSCI446
+BCHM463
+1. Must be approved for track compliance by track leader. BIOE399 approval process is included in BIOE399 registration form; all other courses should be approved through the departmental One-Time Approval of an Elective form. Both foms can be found here. 2. At least one course must be 3xx or higher
+Top
+Pre-Health Professions Track
+No track leader. Students on this track should consult closely with the Reed-Yorke Health Professions Advising Office for specific recommendations.
+Sample Program
+BIOE Foundationals (Select Two): | BIOE404 | Biomechanics
+BIOE413 | Stem Cell Engineeting
+BIOE420 | Bioimaging
+BIOE453 | Biomaterials
+BIOE461 | Synthetic Biology
+BIOE462 | Therapeutic Development and Delivery
+BIOE Electives (Select Four): | BIOE3xx+ | Any BIOE course 3xx or higher
+Breadth Elective: | CHEM241
+Biological Science Electives (Select Two2): | BSCI222
+BSCI223
+CHEM271/272
+BCHM463
+2. At least one course must be 3xx or higher
+Related Resources
+Elms
+Undergraduate Catalog
+
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/bioe_fall_2026_gradplan_0.pdf)
 
-BIOENGINEERING
-Name: A.A., A.S., Post-Bac
-UID:
-GENERAL EDUCATION REQUIREMENTS MAJOR REQUIREMENTS
-Fundamental Studies BIOE 120 - Biology for Engineers 3
-Academic Writing (AW) ENGL 101 3 BIOE 121 - Biology for Eng Lab 1
-Professional Writing (PW) ENGL 39X 3 BIOE 221 - Intro to Bioengineering Major 1
-Oral Communication (OC) 3 BIOE 232 - Biological Thermodynamics 3
-Mathmatics (MA) MATH 140 4 BIOE 241 - Biocomputation Methods 3
-Analytic Reasoning (AR) MATH 140 0 BIOE 331 - Biofluids 3
-Distributive Studies BIOE 340 - Modeling Phys. & Lab 4
-History/Social Sciences (HS*) 3 BIOE 372 - Biostatistics 3
-History/Social Sciences (HS*) 3 BIOE 457 - Biomedical Elect. & Instrumentation 4
-Humanities (HU*) ENES 200 3 BIOE Foundational I 3
-Humanities (HU*) 3 BIOE Foundational II 3
-Natural Sciences No Lab (NS) PHYS 161 3 BIOE Elective I 3
-Natural Sciences w/Lab (NL) PHYS 260/PHYS 261 4 BIOE Elective II 3
-Scholarship in Practice (SP*) in major ENES 100 3 BIOE Elective III 3
-Scholarship in Practice (SP*) out of major 3 BIOE Elective IV 3
-Big Question Courses BIOE 485 - Capstone I 3
-Big Question (SCIS*) ENES 200 0 BIOE 486 - Capstone II 3
-Big Question (SCIS*) 0/3 BSCI 331 & 332 - Cell Biology & Physiology/Lab 3 & 1
-Diversity ENES 200 - Tech & Consequences (HU/SCIS) 0
-Understanding Plural Societies (UP*) 0/3 Technical Requirements
-Understanding Plural Societies (UP*) OR 0/3 Biological Science Elective I (BSCI 2xx) ** 3 or 4
-Cultural Competency (CC*) Biological Science Elective II** 3
-MAJOR REQUIREMENTS Breadth Elective ** 3
-Basic Sciences
-CHEM 135-Chem Engr or 131 & 134 -Fund & Prin 3/3&1 Requirements for Graduation:
-CHEM 136 - Chemistry Lab for Eng 1 • Final 30 credits must be earned at UMD
-CHEM 231 and 232 - Organic Chemistry I & Lab 3 & 1 • 15 of the final 30 credits must be earned at the 300-400 level
-PHYS 161 - General Physics I (NS) 0 • 12 of the final 30 credits must be upper level major coursework
-PHYS 260 and PHYS 261 - Gen Physics II & Lab (NL) 0 • A minimum 2.00 cumulative UM GPA and satisfactory completion of all
-MATH 140 - Calculus I (MA/AR) 0 degree requirements are required for graduation
-MATH 141 - Calculus II 4 • Students matriculating after Fall 2012 must have a 2.0 minimum GPA for all
-MATH 241 - Calculus III 4 degree requirements, minor requirements, and undergraduate certificate requirements
-MATH 243 - Intro to Linear Algebra & Diff Equations 4 (Major courses are defined as: departmental courses, basic sciences, engineering
-BIOE 246 - Diff Equations for Bioengineering 3 sciences, specified degree tracks, technical requirements/ technical electives and
-Engineering Sciences Professional Writing (PW)
-ENES 100 - Intro to Eng Design (SP) 0 • A minimum of 120 credits is required to earn the degree
-ENES 102 - Mechanics I 3
-* May satisfy more than one requirement. See www.gened.umd.edu
-** See Bioengineering Advisor for appropriate electives: www.bioe.umd.edu
-Updated Fall 2026
-Bioengineering Graduation Plan
-Name: UID:
-Current Engineering Students: https://eng.umd.edu/services/academic-policies
-Prospective Engineering Students: https://lep.umd.edu/
-Year 1 Fall Spring
-Course Credit Grade Course Credit Grade
-ENES 100 (SP) 3 BIOE 241 3
-CHEM 135 3 MATH 141 4
-CHEM 136 1 PHYS 161 (NS) 3
-MATH 140 (AR) 4 BIOE 120 3
-ENGL 101 (AW) 3 BIOE 121 1
-Hist & Social Sciences (HS)* 3
-Total 14 Total 17
-Year 2 Fall Spring
-Course Credit Grade Course Credit Grade
-CHEM 231 3 BIOE 232 3
-CHEM 232 1 ENES 102 3
-MATH 241 4 BIOE 246 3
-MATH 243 4 Bio. Science Elec. I (BSCI 2xx) 4
-PHYS 260 and PHYS 261 (NL) 3 & 1 ENES200 (HU/SCIS) 3
-BIOE 221 1
-Total 17 Total 16
-Year 3 Fall Spring
-Course Credit Grade Course Credit Grade
-BIOE 331 3 BIOE 340 4
-BIOE 372 3 BIOE 457 4
-BSCI 331 and BSCI 332 3 & 1 BIOE Foundational II 3
-BIOE Foundational I 3 BIOE Elective I 3
-Oral Communication (OC) 3 Scholarship in Practice (SP)* 3
-Total 16 Total 17
-Year 4 Fall Spring
-Course Credit Grade Course Credit Grade
-BIOE 485 3 BIOE 486 3
-BIOE Elective II 3 BIOE Elective IV 3
-BIOE Elective III 3 Bio. Science Elective II 3
-Breadth Elective 3 Professional Writing (PW) 3
-Humanities (HU)* 3 Hist & Social Sciences (HS)* 3
-Total 15 Total 15
-*Students must complete two Distributive Studies courses that are approved for Big Question courses. To complete all requirements
-following this plan, the Understanding Plural Societies (UP) and Cultural Competence (CC) courses must also fulfill Distributive
-Studies categories.
-**Transfer students entering between Fall 2024-Spring 2026 should default to the 23-S24 plan Updated Fall 2026
+Not converted (fetch failed: Please provide binary data as `Uint8Array`, rather than `Buffer`.).
