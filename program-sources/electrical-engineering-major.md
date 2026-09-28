@@ -2,6 +2,7 @@
 # Electrical Engineering Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/electrical-and-computer/electrical-engineering-major/
 Source: https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering
+Source: https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering/technical-electives
 Source: https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/electrical_fall_2026_gradplan.pdf
 Fetched: 2026-09-28
 
@@ -123,6 +124,102 @@ TESTUDO
 ELMS
 Undergraduate Catalog
 Undergraduate Tuition and Fees
+
+## Department page (https://ece.umd.edu/undergraduate/degrees/bs-electrical-engineering/technical-electives)
+
+Home
+Undergraduate
+Degrees
+B.S. in Electrical Engineering
+Electrical Engineering Technical Electives
+Electrical Engineering Technical Electives
+All electrical engineering undergraduates must complete a range of technical electives designed to ensure they have the appropriate breadth and depth of training in electrical engineering, a rigorous advanced laboratory experience, and a sophisticated and sustained exposure to engineering design.
+Requirements for students who matriculated Fall 2021 - Summer 2024:
+A total of 13 credits of 400-level ENEE technical electives must be completed and distributed among the following categories:
+Category A. Advanced Theory and Applications: minimum of 3 credits
+Category B. Advanced Laboratory: minimum of 2 credits
+Category C. Capstone Design: minimum of 3 credits
+(See below)
+In addition, students must satisfy the Specialization Requirement. This entails completing at least two courses from a single area of concentration within electrical engineering. ECE has six such Specialty Areas.
+Requirements for students who matriculated Fall 2024 and beyond:
+A total of 22 credits of 400-level ENEE technical electives must be completed and distributed among the following categories:
+Category A. Advanced Theory and Applications: minimum of 3 credits
+Category B. Advanced Laboratory: minimum of 2 credits
+Category C. Capstone Design: minimum of 3 credits
+(See below)
+Completing the minimum required credits from Category A-C comes to 8 credits. The remaining 14 credits may be taken from any one category or combination of categories.
+While not required, students are encouraged to take several upper-level elective courses in the same sub-discipline. The electrical engineering sub-disciplines are:
+Communications and Signal Processing
+Computer Engineering
+Controls
+Electrophysics
+Microelectronics
+Power Systems
+Students can take up to nine credits of upper-level electrical engineering electives from approved non-ENEE courses related to that sub-discipline.
+Please read carefully and make note of the following special cases. Information in this section applies to both curricula.
+A second Capstone Design course may be used as a substitute for the required Advanced Theory and Applications course. However, students who have already completed a capstone design course or who are registered for their first will have to wait until the beginning of the semester to receive permission for a second capstone course – assuming seats are available.
+Students may enroll in a second advanced laboratory. However, students who have already completed an advanced laboratory or who are registered for their first will have to wait until the beginning of the semester to receive permission for a second advanced laboratory – assuming seats are available.
+Upper-level ENEE elective courses may be used to satisfy General Technical Elective requirements. However, any upper-level ENEE course used for this purpose may NOT then be used to satisfy the ENEE Technical Elective Requirement.
+ENEE499: A maximum of five credits of approved ENEE 499: “Senior Projects in Electrical Engineering” may be used to satisfy the electrical engineering technical electives. Approved ENEE499L credits may satisfy the Category B requirement. Students in the ECE Honors Program are permitted to count up to six credits of ENEE499/499H. NOTE: ENEE499 credits cannot be used to satisfy the Category C Capstone requirement.
+If you have any questions about how these requirements affect your current selection of senior EE electives, please contact an advisor.
+ENEE Technical Elective Courses:
+Below is a list of courses that can be used for the ENEE Technical Elective Requirements. When using this list for academic planning purposes, please make sure you check on Testudo (www.testudo.umd.edu) for the course availability, as not all of these courses are offered every semester.
+Category A: Advanced Theory and Applications (3 credit minimum)
+ENEE411: Analog and Digital Electronics (3) - Fall Only
+ENEE413: Advanced Electronic Devices (3) - Spring Only
+ENEE420: Communication Systems (3) - Fall Only
+ENEE425: Digital Signal Processing (3) - Fall/Spring Course
+ENEE426: Communication Networks (3) - Spring Only
+ENEE429Z: Topics in Communications; Introduction to Wireless Networking (3) - Fall Only
+ENEE435: Quantum Information Processing (3) - Spring Only
+ENEE436: Machine Learning (3) - Fall/Spring Course **Enrollment priority is given to students in the Academy of Machine Learning.
+ENEE439G: Topics in Signal Processing; Information in a Photon (3)- Spring Only
+ENEE440: Microprocessors (3) - Fall/Spring Course
+ENEE446: Digital Computer Design (3) - Fall/Spring Course
+ENEE452: Embedded Systems (Formerly ENEE459V) (3) - Spring Only
+ENEE457: Computer Security (3) - Fall Only
+ENEE459A: CAD Tools (1) - Fall Only (NOTE: This course alone cannot satisfy category A requirement, since it is a 1-credit course.)
+ENEE459C: Topics in Computer Engineering; Digital CMOS VLSI Design Methods (3)- Spring Only
+ENEE459P: Topics in Computer Engineering: Parallel Algorithms (3) - Fall Only
+ENEE460: Control Systems (3) - Fall/Spring Course
+ENEE463: Digital Control Systems (3) - Spring Only
+ENEE464: Introduction to Optimization (Formerly ENEE469O)(3) - Spring Only
+ENEE474: Power Systems (3) - Fall Only
+ENEE475: Power Electronics (3) - Spring Only
+ENEE476: Renewable Energy (3) - Fall Only
+ENEE484:Optoelectronic Devices (Formerly ENEE489I)(3) - Fall Only
+ENEE488: Directed Study[1] (1-3)
+ENEE489R: Topics in Electrophysics: Design of Passive and Low-Power Microwave Devices (3) - Fall Only
+ENEE489W: Topics in Electrophysics: Incubating Quantum Leaps - Fall Only
+ENEE491: Quantum Phenomena in EE (Formerly ENEE489Q) (3) - Spring Only
+ENEE492: Introduction to Quantum Technology (3) - Fall Only
+ENEE496: Lasers and Optics (3) - Spring Only
+ENEE499: Senior Research Projects in ECE[1] (1-3)
+* Please note that ENEE456 (Cryptography) is not a Cat. A course and will only count towards the MATH Gen-Tech elective (for the pre-Fall 2024 curriculum).
+Category B: Advanced Laboratory (2 credit minimum)
+ENEE415: Advanced Manufacturing Laboratory (Formerly ENEE419M) (3) - Spring Only
+ENEE416: Integrated Circuit Fabrication Lab (3) - Fall Only
+ENEE427: Communication Design Laboratory (3) - Spring Only
+ENEE445: Computer Laboratory (2) - Fall/Spring Course
+ENEE459B: Reverse Engineering and Hardware Security Laboratory (3) - Fall Only
+ENEE459L: Edge AI and IOT Lab (3) - Spring Only
+ENEE461: Control Systems Laboratory (3) - Spring Only
+ENEE473: Electric Machines Laboratory (3) - Spring Only
+ENEE486: Optoelectronics Laboratory (2) - Fall Only
+ENEE489J: Topics in Electrophysics; Microwave Devices Design & Testing Laboratory (3)- Fall Only
+ENEE493: Quantum Hardware Laboratory (3) - Fall Only
+ENEE499L[1]: Senior Research Projects in ECE (1-3)
+Category C: Capstone Design (3 credits minimum)
+ENEE408A: Microprocessor-Based Design (3) - Fall/Spring Course
+ENEE408C: Modern Digital System Design (3) - Fall Only
+ENEE408D: Mixed Signal VLSI Design (3) - Spring Only
+ENEE408I: Autonomous Robots (3) - Fall/Spring Course
+ENEE408J: Capstone Design Project; Audio Electronics Engineering (3)- Fall Only
+ENEE408M: Capstone Design Project; Embedded Software Design (3) - Spring Only
+ENEE408N:Design Experience in Machine Learning (3) - Spring Only
+ENEE408V: Smart Submersible Marine Vehicle (3) - Fall Only
+ENEE408W: Capstone Design Project; High Power Microwave (HPM) Systems (3) - Spring Only
+[1]: Only 5 total credits of ENEE488/ENEE499/ENEE499L may be applied to the degree requirements. An exception is for ECE Honors students, who can apply 6 credits of ENEE499/499H.
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/electrical_fall_2026_gradplan.pdf)
 

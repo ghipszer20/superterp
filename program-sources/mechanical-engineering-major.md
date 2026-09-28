@@ -2,6 +2,7 @@
 # Mechanical Engineering Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/mechanical-engineering/mechanical-engineering-major/
 Source: https://enme.umd.edu/undergraduate/degrees/bachelor-science
+Source: https://me.umd.edu/undergraduate/current-students/advising-support/concentration-areas
 Source: https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/mechanical_fall_2026_gradplan.pdf
 Fetched: 2026-09-28
 
@@ -163,6 +164,100 @@ ENME 489U: Fluid Structure Interactions. Fundamentals of fluid-structure interac
 ENME 489V: Mechanical Contracting. Mechanical contracting concepts in the ‘real world’. Specifications, drawings, proposals, cost estimates, scheduling, project bill of materials, labor costs, subcontracting, vendor quote analysis.
 ENME 489W: Aircraft Propulsion, Power, and Thermal Systems Design, and Simulation. Principles of aircraft energy systems including design and analysis of propulsion, power, and thermal management systems. Students will become familiar with designs and challenges of common jet engines, thermal fluid transport systems, and electrical power systems. Applied fundamentals of thermodynamics, fluids, heat transfer, electrical power, and numerical analysis will be used to construct and optimize integrated transient mission level models.
 ENME 489Z: Structural Mechanics - Aerospace Applications. The objective of this course is to provide the students with an understanding of structural mechanics as applied to aerospace structural and mechanical systems. Students will learn how to mathematically model structural elements and structural systems. The emphasis will be on a developing a “good sense” as to how structural systems behave. Matrix analysis and the stiffness method will be stressed in preparation for advanced studies. Prerequisite: ENES 220.
+
+## Department page (https://me.umd.edu/undergraduate/current-students/advising-support/concentration-areas)
+
+Home
+Concentration Areas
+Concentration Areas
+About
+Academics
+Research & Impact
+Alumni & Industry
+News & Events
+Mechanical Engineering is a broad field with many opportunities available to you. We want you to take your Mechanical program and explore an area or areas that interest you.
+You are required to take a specific number of elective credits but we give you the flexibility to choose electives that will help you gain the skills and experience required to obtain your future goals. Below you will find some popular concentration areas in Mechanical Engineering. You may choose to specialize in one specific area or combine multiple courses and experiences to create something unique! Outside of class you can further your education in these areas by participating in research, studying abroad, joining a club or organization, or attending presentations by faculty and industry.
+Concentration Areas & Courses or Experiences
+Design and Manufacturing
+ENME406 - Rollercoaster Design
+ENME410 - Design Optimization
+ENME416 - Additive Manufacturing
+ENME421 - Design Ideation
+ENME465 - Probability Based Design
+ENME489G - Manufacturing Processes and Design
+Study Abroad : Denmark
+Student Group: Thrill Design Club
+Energy and the Environment
+ENME423 - Modern Climate Control Engineering
+ENME424 - Urban Microclimate and Energy
+Nuclear Courses (ENME430 Fundamentals, ENME431 Systems and Safety, ENME489T Nuclear Reactor Design, ENME432 Reactor Lab)
+ENME436 - Renewable Energy
+ENME489M - Ultra Energy Efficient Thermal System Design
+ENME489N - Energy Audit of Buildings
+ENME489W - Pollution and Waste Technology
+ENME489X - Energy Conversion Systems for Sustainability
+Minors: Nuclear Engineering, Sustainability
+Student Groups: Solar Decathlon, Engineers Without Borders
+Study Abroad: University of New South Wales (Australia), Energy Tomorrow (Australia), Kassel winter term program for Environment and Industry (Germany)
+Robotics and Mechatronics
+ENME444 - Assistive Robotics
+ENME461 - Control Systems Lab
+ENME476 - MEMS
+ENME481 - Lab on a Chip Microsystems
+ENME489B - Mechatronics and the Internet of Things
+ENME489L - Bio-Inspired Robots
+ENME489O - Micro/Nano Robots
+Student Group: Robotics@Maryland
+Automotive Design
+ENME408 - Automotive Design
+ENME454 - Vehicle Dynamics
+ENME489P - Internal Combustion Engines
+Student Group: Terps Racing
+Study Abroad: Germany, Spain, (summer) Japan
+Aero/Mechanical Industry
+ENME489D - Flight Dynamics and Simulation
+ENME489F - Dynamics of Atmospheric Flight
+ENME489Z - Structural Mechanics - Aerospace Applications
+Special Opportunity: Southern Maryland Program
+Electives By Division
+Mechanics and Materials
+ENME461 - Control Systems Lab
+ENME476 - MEMS
+ENME481 - Lab on a Chip Microsystems
+ENME489B - Mechatronics and the Internet of Things
+ENME489I - Computational Dynamics
+ENME489O - Micro/Nano Robots
+Thermal Fluid Science
+ENME 423 - Modern Climate Control and Building Energy Design/Analysis
+ENME424 - Urban Microclimate and Energy
+Nuclear Courses (ENME430 Fundamentals, ENME431 Systems and Safety, ENME489T Nuclear Reactor Design, ENME432 Reactor Lab)
+ENME436 - Renewable Energy
+ENME483/484 - Physics/Dynamics of Turbulent Flow
+ENME489I - Computational Fluid Mechanics
+ENME489P - Internal Combustion Engines
+ENME489W - Pollution and Waste Technology
+Design and Reliability
+ENME408 - Automotive Design (Formula SAE team class)
+ENME410 - Design Optimization
+ENME416 - Additive Manufacturing
+ENME421 - Design Ideation
+ENME426 - Production Management
+ENME440 - Applied Machine Learning for Engineering and Design
+ENME442 - Information Security
+ENME444 - Assistive Robotics
+ENME445 - Design for Reliability
+ENME467 - Engineering for Social Change
+ENME470 - Finite Element Analysis
+ENME489G - Manufacturing Processes and Design
+ENME489E - Design for Sustainability
+ENME489L - Bio-Inspired Robots
+ENME489M - Ultra Energy Efficient Thermal System Design
+ENME489Q - Managing for Innovation and Quality
+ENRE447 - Fundamentals of Reliability Engineering
+Electronic Product Design
+ENME427 - CSI - Mechanical: Finding Reasons for Compromised Structural Integrity
+ENME464 - Cost Analysis for Engineers
+ENME473 - Mechanical Design of Electronic Systems
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/mechanical_fall_2026_gradplan.pdf)
 

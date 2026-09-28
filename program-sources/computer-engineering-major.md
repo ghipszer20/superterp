@@ -2,6 +2,7 @@
 # Computer Engineering Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/electrical-and-computer/computer-engineering-major/
 Source: https://ece.umd.edu/undergraduate/degrees/bs-computer-engineering
+Source: https://ece.umd.edu/undergraduate/degrees/bs-computer-engineering/technical-electives-0
 Source: https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/computer_fall_2026_gradglan.pdf
 Fetched: 2026-09-28
 
@@ -133,6 +134,144 @@ TESTUDO
 ELMS
 Undergraduate Catalog
 Undergraduate Tuition and Fees
+
+## Department page (https://ece.umd.edu/undergraduate/degrees/bs-computer-engineering/technical-electives-0)
+
+Home
+Undergraduate
+Degrees
+B.S. in Computer Engineering
+Computer Engr - Technical Electives
+Computer Engr - Technical Electives
+Computer Engineering Technical Electives
+Computer Engineering majors are required to complete twenty-six (26) credits of computer engineering technical electives distributed among the following six categories:
+Category A: Mathematics and Basic Science Electives (min 6 credits)
+Category B: Computer Science Theory and Applications (min 3 credits)
+Category C: Electrical Engineering Theory and Applications (min 6 credits)
+Category D: Advanced Laboratory (min 2 credits)
+Category E: Capstone Design (min 3 credits)
+Category F: General Technical Elective (min 3 credits)
+Additional Computer Engineering Tech Electives (CP Electives; 1-3 credits if needed)
+The categories and links to approved courses are listed below. Please note that some courses listed below may not be offered every single semester. Be sure to check both the Testudo website and with your advisor to make sure the course is available.
+Please note the following restrictions:
+Courses listed below may not be counted for two different categories
+Disciplinary foundation CMSC or ENEE courses (i.e. CMSC412, ENEE447, CMSC330, CMSC351, ENEE304, ENEE305, ENEE350, and ENEE446) may not be used to fulfill the categories below.
+Courses listed in the prohibited course list may not be used for any technical elective categories.
+Category A: Mathematics and Basic Science Electives (minimum 6 credits, of which 3 must be 400-level)
+For the latest course syllabi/information please visit the following sites: Math courses, Physics courses, CS courses.
+CMSC/MATH456/ENEE456 [6] Cryptography (3)
+CMSC/AMSC 460[1] Computational Methods (3)
+CMSC/AMSC 466[1] Introduction to Numerical Analysis I (3)
+CMSC475[1] Combinatorics and Graph Theory (3)
+MATH 241 Calculus III (4)
+MATH 401 Applications of Linear Algebra (3)
+MATH 402 Algebraic Structures (3)
+MATH 403 Introduction to Abstract Algebra (3)
+MATH 405 Linear Algebra
+MATH 406 Introduction to Number Theory (3)
+MATH 410 Advanced Calculus I (3)
+MATH 411 Advanced Calculus II (3)
+MATH 423 Linear Optimization (3)
+MATH 461[2] Linear Algebra for Scientists and Engineers (3)
+MATH 462 Partial Differential Equations (3)
+MATH 463 Complex Variables for Scientists and Engineers (3)
+MATH 464 Transform Methods for Scientists and Engineers (3)
+PHYS 270/271 General Physics III: Electrodynamics, Light, Relativity and Modern Physics (4)
+PHYS 420 Principles of Modern Physics (3)
+PHYS 4XX[3] Most 400-level Physics courses (3)
+Category B: Computer Science Theory and Applications (minimum 3 credits)
+For the latest CMSC course syllabi, please visit the CS Class Web Pages.
+CMSC 414 Computer and Network Security (3)
+CMSC 416 Introduction to Parallel Computing (3)
+CMSC 417 Computer Networks (3)
+CMSC 420 Data Structures (3)
+CMSC 421 Intro to Artificial Intelligence (3)
+CMSC 422 Intro to Machine Learning (3)
+CMSC 423 Bioinf. Algorithms, Databases, & Tools (3)
+CMSC 424 Database Design (3)
+CMSC 425 Game Programming (3)
+CMSC 426 Computer Vision (3)
+CMSC 427 Computer Graphics (3)
+CMSC 430 Introduction to Compilers (3)
+CMSC 433 Prog. Lang. Technologies & Paradigms (3)
+CMSC 434 Human Factors in Comp. & Information (3)
+CMSC 436 Programming Handheld Systems (3)
+CMSC 451 Design & Analysis of Comp. Algorithms (3)
+CMSC 452 Elementary Theory of Computation (3)
+CMSC 457 Introduction to Quantum Computing (3)
+CMSE 472 Introduction to Deep Learning (3)
+CMSC 474 Introduction to Computational Game Theory (3)
+CMSC498x Special Topics (3) - NOTE: Special topic courses must be approved by the ECE Department. CMSC498 courses which are crosslisted with 400-level ENEE courses cannot be used to fulfill the Category B requirements.
+CMSC/AMSC 460[1] Computational Methods (3)
+CMSC/AMSC 466[1] Introduction to Numerical Analysis I (3)
+CMSC475[1] Combinatorics and Graph Theory (3)
+Category C: Electrical Engineering Theory and Applications (minimum 6 credits)
+ENEE 322 Signal and System Theory (3) - Fall/Spring Course
+ENEE 323 Signals and Systems: Theory and Applications (4) - Fall/Spring Course
+ENEE 382 Electromagnetic Theory (4) - Fall/Spring Course
+ENEE 411 Analog & Digital Electronics (3) - Fall Only
+ENEE 413 Advanced Electronic Devices (3) - Spring Only
+ENEE 420 Communication Systems (3) - Fall Only
+ENEE 425 Digital Signal Processing (3) - Fall/Spring Course
+ENEE 426 Communication Networks (3) - Spring Only
+ENEE 429Z Topics in Communications; Introduction to Wireless Networking (3) - Fall Only
+ENEE 435 Quantum Information Processing (3) - Spring Only
+ENEE 436 Foundations of Machine Learning (3) - Fall/Spring Course **Enrollment priority is given to students in the Academy of Machine Learning.
+ENEE439G Topics in Signal Processing; Information in a Photon (3) - Spring Only
+ENEE 440 Microprocessors (3) - Fall/Spring Course
+ENEE 452 Embedded Systems (Formerly ENEE 459V) - Spring Only
+ENEE 457 Computer Security (3) - Fall Only
+ENEE 459A CAD Tools (1) - Fall Only (NOTE: This course alone cannot satisfy category C requirement, since it is a 1-credit course.)
+ENEE 459C Topics in Computer Engineering; Digital CMOS VLSI Design Methods (3)- Spring Only
+ENEE 459P Topics in Computer Engineering: Parallel Algorithms (3) - Fall Only
+ENEE 460 Control Systems (3) - Fall/Spring Course
+ENEE 463 Digital Control Systems (3) - Spring Only
+ENEE 464 Introduction to Optimization (Formerly ENEE 469O) - Spring Only
+ENEE 474 Power Systems (3) - Fall Only
+ENEE 475 Power Electronics (3) - Spring Only
+ENEE 476 Renewable Energy (3) - Fall Only
+ENEE 484 Optoelectronic Devices (Formerly ENEE489I) - Fall Only
+ENEE 488[5] Directed Study (1-3)[5]
+ENEE 491 Quantum Phenomena in EE (3) (Formerly ENEE489Q) * - Spring Only
+ENEE 492 Introduction to Quantum Technology (3) - Fall Only
+ENEE 496 Lasers & Electro-optic Devices (3)* - Spring Only
+ENEE 499[5]Senior Research Projects in ECE (1-3)
+*Course has prerequisite not included in CpE major requirements.
+Category D: Advanced Laboratory (minimum 2 credits)
+ENEE 415 Advanced Manufacturing Lab (Formerly ENEE 419M) - Spring Only
+ENEE 416 Integrated Circuit Fabrication Laboratory (3) - Fall Only
+ENEE 427 Communication Design Laboratory (3) - Spring Only
+ENEE 445 Computer Laboratory (2) - Fall/Spring Course
+ENEE 459B Reverse Engineering and Hardware Security Laboratory (3) - Fall Only
+ENEE 459L Edge AI and IOT Lab (3) - Spring Only
+ENEE 461 Control Systems Laboratory (3) - Spring Only
+ENEE 473 Electric Machines Laboratory (3) - Spring Only
+ENEE 489J Topics in Electrophysics; Microwave Devices Design & Testing Laboratory (3)- Fall Only
+ENEE 493 Quantum Hardware Laboratory (3) - Fall Only
+ENEE 499L[5] Senior Research Projects in ECE (2-3)
+Category E: Capstone Design (minimum 3 credits)
+ENEE 408A Microprocessor-Based Design (3) - Fall/Spring Course
+ENEE 408C Modern Digital System Design (3) - Fall Only
+ENEE 408D Mixed Signal VLSI Design (3)* - Spring Only
+ENEE 408I Autonomous Robots (3) - Fall/Spring Course
+ENEE 408J Audio Electronics Engineering (3)- Spring Only
+ENEE 408M Embedded Software Design (3) - Spring Only
+ENEE 408N Design Experience in Machine Learning (3) - Spring Only
+ENEE 408V Smart Submersible Marine Vehicles (3) - Fall Only
+ENEE 408W Capstone Design Project; High Power Microwave (HPM) Systems (3) - Spring Only
+CMSC 435 Software Engineering (3) - Fall/Spring Course
+*Course has prerequisite not included in CpE major requirements.
+Category F: General Technical Elective (3 credit minimum)
+Category F consists of 300 and 400-level courses outside of the Computer Engineering major. Students have the option of taking an additional ENEE or CMSC course to fulfill this requirement (these ENEE or CMSC courses cannot be courses used to fulfill other CpE major requirements)
+For more details, please visit the General Technical Electives page.
+Additional Computer Engineering Tech Electives (CP Electives)
+In order to reach the required 26 credits, students may need to take additional elective credits to meet this requirement. Students may take any additional Category A-F courses (not in being used in any of the above categories) to meet the 26 credits requirement. Please note that the Department has restrictions in regards to enrolling in a second advanced lab (Cat. D) or capstone design course (Cat. E), so plan appropriately.
+Footnotes
+[1] May be used for only one (1) category. Students taking any of these courses as a Category B course, they must enroll in the course under CMSC.
+[2] Credit only granted for MATH461 or MATH240(Introduction to Linear Algebra). Students who completed MATH240 may count MATH240 as a Cat. A or CE elective, but MUST have a second Cat. A at the 400-level. Students who are required to take, or have taken, ENEE290 should NOT take MATH461 or MATH240, as they are duplicate credits.
+[3] Students should get approval from their ECE advisor before registering for any PHYS4xx courses. Courses on the Prohibited List cannot be used to satisfy this requirement.
+[5] Only 6 total credits of ENEE488/ENEE499/ENEE499L may be applied to the degree requirements
+[6] Students can only take one of these courses: CMSC/MATH456 OR ENEE456. Students CAN NOT use ENEE456 as a Category C course; nor can they use CMSC456 as a Category B course.
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/computer_fall_2026_gradglan.pdf)
 

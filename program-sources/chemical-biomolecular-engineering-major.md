@@ -2,6 +2,8 @@
 # Chemical Engineering Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/chemical-biomolecular-engineering/chemical-biomolecular-engineering-major/
 Source: https://chbe.umd.edu/undergraduate/degrees/bachelor-science
+Source: https://chbe.umd.edu/undergraduate/technical-electives
+Source: https://chbe.umd.edu/undergraduate/prospective-students/tracks
 Source: https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/chemical_fall_2026_gradplan_1.pdf
 Fetched: 2026-09-28
 
@@ -86,6 +88,138 @@ Related Resources
 Undergrad Advising Form
 Elms
 Undergraduate Catalog
+
+## Department page (https://chbe.umd.edu/undergraduate/technical-electives)
+
+Home
+Undergraduate
+Degrees
+Bachelor of Science
+Sample Undergraduate Program for Students Who Entered Fall 2012 and later
+Current Technical Electives
+Current Technical Electives
+Technical electives offered by the Department of Chemical and Biomolecular Engineering may be found under the acronym "CHBE" in the course catalog and on Testudo, our online service where you will also find admission, registration, financial, class scheduling, residency, and other important information. Please note that not all electives will be available in every semester or year. Please check Testudo for course availability each semester!
+Please use the following policies to guide you as you select your courses each semester:
+Nine (9) credits of approved technical electives are required to fulfill degree requirements.
+The ChBE program allows students to take up to 6 credits of the independent study (research) course CHBE 468; however, a maximum of three credits of CHBE 468 can be used to fulfill technical elective requirements.
+The senior CHBE technical electives are 400-level chemical engineering courses, including CHBE 468x, and a limited number of approved 400-level technical courses from outside chemical engineering (see below).
+Students should select electives with the help of an academic advisor.
+Normally at least two of the three technical electives should be CHBE 4XX; the third elective may be chosen from CHBE or from the approved list of non-CHBE technical courses. 400-level technical electives from other departments cross-listed with CHBE also will count as CHBE electives, but please note that students should register for the CHBE section whenever possible.
+Any other classes, including 400-level Biosciences courses, will be considered only through the Department's exemption request procedure. Business or non-technical courses are normally not approved.
+It is recommended that technical electives be taken during the senior year.
+Questions? Questions about the undergraduate program may be sent to Kathy Gardinier at lopresti@umd.edu.
+Chemical and Biomolecular Engineering Electives
+Approved electives from other departments are below.
+Course Number | Course Title/Description | Credits
+CHBE | 451 | Photovoltaics: Solar EnergyFormerly ENCH 468LPrerequisite: Permission of Department. Credit only granted for ENCH 468L or CHBE 451. The emphasis of the class is on developing a conceptual understanding of the device physics and manufacturing processes of crystalline and thin-film photovoltaic cells, and to develop elementary computational skills necessary to quantify solar cell efficiency. The class material includes detailed, system-level energy balances necessary to understand how solar energy fits into the complete energy generation, conversion, and storage picture. Quantitative comparisons of PV technology to solar chemical conversion processes and biofuels are made. | 3
+CHBE | 454 | Chemical Process Analysis and OptimizationFormerly ENCH468CPrerequisites: MATH 246, CHBE 426 and CHBE 440. Applications of mathematical models to the analysis and optimization of chemical processes. Models based on transport, chemical kinetics and other chemical engineering principles will be employed. | 3
+CHBE | 468/469 | Undergraduate ResearchPrerequisite: Permission of both department and instructor. Repeatable up to 6 credits; however, a maximum of three credits of CHBE 468 can be used to fulfill technical elective requirements. Investigation of a research project under the direction of a faculty member. Comprehensive reports are required. | 1-3
+CHBE | 469 | Undergraduate Special ProjectPrerequisite: Permission of both department and instructor. Repeatable up to 6 credits; however, a maximum of three credits of CHBE 469 can be used to fulfill technical elective requirements. Investigation of a research project under the direction of a faculty member. Comprehensive reports are required. | 1-3
+CHBE | 472 | Control of Air Pollution Sources Sources and effects of air pollutants, regulatory trends, atmospheric dispersion models, fundamentals of two-phase flow as applied to air pollution and air pollution control systems, design of systems for control of gases and particulate matter | 3
+CHBE | 473 | Electrochemical Energy EngineeringFormerly ENCH 468K Prerequisite: Permission of Department. Credit only granted for ENCH 468K or CHBE 473. The lecture will start from the basic electrochemical thermodynamics and kinetics, with emphasis on electrochemical techniques, fundamental principle and performance of batteries, and supercapacitors. | 3
+CHBE | 474 | Biopharmaceutical Process Development and Manufacturing Syllabus RepositoryPrerequisite: BIOE120; and permission of instructor. Covers the fundamental steps involved in process development and manufacturing of biopharmaceuticals. An overview of different classes of biopharmaceuticals as well as manufacturing requirements for clinical development and regulatory approval will be provided. In depth coverage of manufacturing steps including cell culture, purification and formulation as well as drug product manufacturing, analysis and stability will be covered. Scientific literature will be used to highlight current challenges and novel solutions in each step of the manufacturing process. Scale up considerations, GMP requirements and process economics will also be introduced. | 3
+CHBE | 476 | Molecular Modeling Methods Statistical mechanics will be introduced to give the fundamental background for atomic to mesoscale molecular modeling. Classical atomic-level simulations methods (Monte Carlos and Molecular Dynamics) and the procedures to develop intra and intermolecular potentials will be covered. This course will also discuss the theory and application of coarse-grained molecular simulations, mesoscale simulations and other modern simulation techniques. A broad range of applications will be included throughout the semester, e.g., phase behavior of small molecules, kinetics, and biophysics. | 3
+CHBE | 477 | Mesoscopic and Nanoscale Thermodynamics: Fundamentals for Emerging TechnologiesPrerequisite: The course assumes that students have had a prior course in classical thermodynamics. Interdisciplinary course primarily for graduate and senior undergraduate students from engineering or science departments. New emerging technologies deal with bio-membrane and gene engineering, microreactor chemistry and microcapsule drug delivery, micro-fluids and porous media, nanoparticles and nanostructures, supercritical fluid extraction and artificial organs. Engineers often design processes where classical thermodynamics may be insufficient, e.g., strongly fluctuating and nanoscale systems, or dissipative systems under conditions far away from equilibrium. | 3
+CHBE | 480 | Bionanotechnology: Phyical Principles Bionanotechnology focuses on Physics at nano/micro scales. Biomolecular building blocks. Simplest biomolecular assembly: protein folding. Nanoscale intermolecular interactions important for biology. Protein-ligand binding. Protein higher-order assembly: filaments, networks. Protein filaments and motility. DNA, RNA and their assembly assisted by proteins. Viral capsid assembly. Lipid assembly into micelles, bilayers. Lipid-protein co-assembly in membranes. Lipid and polymer structures useful in medicine. Targeted delivery of drugs, genes by nano/micro structures. Cellular assembly in the eye, in insect wings. Cellular assembly at surfaces: gecko feet, duck feathers. Cellular assembly in the presence of crystals: biomineralization. | 3
+CHBE | 481 | Transport Phenomena in Small and Biological SystemsPrerequisites: A prior course in transport phenomena such as CHBE 422 or CHBE 424, or permission of the instructor. Interdisciplinary course primarily for senior undergraduate and graduate students from engineering or science departments. The course's main goal is to make the students familiar with the fundamental physics and modeling of transport phenomena in small and biological systems, and their current scientific and engineering utilization in microfluidics, nanofluidics and biological systems. | 3
+CHBE | 482 | Biochemical EngineeringPrerequisite: CHBE 440. Introduction to biochemical and microbiological applications to commercial and engineering processes, including industrial fermentation, enzymology, ultrafiltration, food and pharmaceutical processing and resulting waste treatment. Enzyme kinetics, cell growth, energetics and mass transfer. | 3
+CHBE | 484 | Metabolic Pathway Engineering This course will cover state of the art metabolic engineering, with a focus on the analysis and engineering of metabolic pathways through (chemical) engineering principles, Topics covered include: (1) overview of biochemistry and metabolism; (2) metabolic flux analysis and isotope labeling illustrated with examples from the recent scientific literature; (3) technologies for engineering metabolic pathways; (4) metabolic control analysis and pathway regulation; (5) applications of metabolic engineering to synthesis of biofuels and therapeutics; (6) specialized and related subjects such as protein engineering and synthetic biology. | 3
+CHBE | 486 | Heterogeneous Catalysis for Energy ApplicationPrerequisites: Minimum grade of C- in CHBE 302, CHBE 424, and CHBE 440; and permission of instructor. Credit only granted for: CHBE 486 or ENCH 686. Additional information: This is a pilot course. Introduction to heterogeneous catalytic science and technology for energy conversion and hydocarbon processing. Preparation and mechanistic characterization of catalyst systems, kinetics of catalyzed reactions, adsorption and diffusion influences in heterogenious reactions. An overview of heterogeneous catalysis in various energy-related applications, including petroleum refining, chemicals from biomass, valorization of shale gas, and CO2 utilization will be introduced. | 3
+CHBE | 487 | Tissue EngineeringFormerly: ENCH 468TPrerequisite: Must be in a major within the ENGR-Department of Chemical and Biomolecular Engineering department; or permission of Department. Also offered as: BIOE411. Credit only granted for BIOE 411, CHBE 487, or ENCH 468T. A review of the fundamental principles involved in the design of engineered tissues and organs. Both biological and engineering fundamentals will be considered. Specific tissue systems will be emphasized at the end of the course. | 3
+CHBE | 490 | Introduction to Polymer SciencePrerequisites: CHBE 424 and CHBE 440. Also offered as ENMA 495. Credit will be granted for only one of the following: CHBE 490 or ENMA 495. The elements of the polymer chemistry and industrial polymerization, polymer structures and physics, thermodynamics of polymer solutions, polymer processing methods, and engineering applications of polymers. | 3
+CHBE | 495 | Nanoparticle Aerosol Dynamics and Particle TechnologyPrerequisites: Must be in a major within the ENGR-Department of Chemical and Biomolecular Engineering department; and permission of Department. NanoParticles (NA) ( < 100 nm), and their science and technology play an important role in nature and industry. From air quality standards, nuclear reactor safety, inhalation therapy, workplace exposure, global climate change, to counterterrorism, aerosols play a central role in our environment. On the industrial side, NA plays an integral part of reinforcing fillers, pigments and catalysts, and the new emerging field of nanotechnology, they are the building blocks to new materials, which encompass, electronic, photonic and magnetic devices, and bio and chemical sensors. | 3
+CHBE | 497 | Protein Engineering Syllabus RepositoryPrerequisites: BIOE120, CHBE302, and CHBE440; and permission of instructor. This course will cover the fundamentals of protein engineering and its applications in medicine, chemical processes, and energy. Topics will include the structure and function of biological molecules, rational design and directed evolution, construction of protein and peptide libraries, protein screening platforms, methods for characterizing structure and function of biological molecules. Scientific literature will be used to highlight key discoveries and current work in protein engineering. | 3
+Approved Electives From Other Departments
+For the most up-to-date course descriptions and information on prerequisites, please see Testudo or visit the websites of the departments offering the courses.
+Course Number | Course Title/Description | Credits
+BCHM | 462 | Biochemistry IIPrerequisite: BCHM 461 | 3
+BSCI | 4XX | 400-Level Bioscience CoursesCertain courses will be approved on a case by case basis and will be considered only through the Department's exemption request procedure. | 3
+CHEM | 425 | Instrumental Methods of Analysis
+CHEM | 474 | Environmental Chemistry | 3
+CHEM | 482 | Physical Chemistry II | 3
+ENES | 489P | Special Topics in Engineering: Hands-On Systems Engineering Projects | 3
+ENFP | 464/489I | Industrial Fire Safety | 3
+MATH | 461 | Linear Algebra for Scientists and Engineers | 3
+ENMA | 411 | Materials for Energy | 3
+
+## Department page (https://chbe.umd.edu/undergraduate/prospective-students/tracks)
+
+Specialize in a track within the broad field of chemical engineering.
+Home
+Undergraduate
+Current Students
+Tracks
+Tracks
+Chemical Design and Manufacturing: Conventional ChE including catalysis, separations and manufacturing.
+Sustainability, Energy and Environment: sustainability, environmental impact, energy conversion and storage, batteries and photovoltaics.
+Nanomaterials and Nanotechnology: Science and engineering at the nano scale.
+Biomolecular Engineering: Biopharmaceuticals and cellular engineering.
+Choosing a Track
+All current CHBE undergraduate students are eligible to pursue a track. Students may pursue any one track by informing their staff advisor (currently, either Ms. Kathy Gardinier or Ms. Amanda Alicea) of their intent to pursue the track. Students should then work with their faculty mentor and staff advisor to select courses within the chosen track. Choosing a track is optional. A student could choose to graduate with no tracks if they wish to study the major comprehensively instead of specializing in certain area.
+Switching Tracks
+Students may switch tracks at any point until they apply for graduation, as long as they inform their staff adviser of the change, and plan to complete three courses within the track (with a C– or higher grade) before graduating.
+4-Year Plan Does Not List Tracks
+The default 4-year plan does not list tracks. If a student chooses a track and does not complete its requirements, but otherwise completes the requirements of the major as listed in the 4-year plan, the student can still graduate.
+Certificate for Track Completion
+Immediately after graduation, the department will issue printed certificates to students who have successfully completed their tracks.
+Track Requirements
+Students should complete at least three courses listed within each track below with a grade of C– or better before graduation.
+Chemical Design and Manufacturing
+Complete at least three courses within the track from the list below with a grade of C– or better before graduation.
+COURSE NAME | INSTRUCTOR
+CHBE451: Photovoltaics | Raymond Adomaitis
+CHBE452: Machine Learning & Data | Po-Yen Chen
+CHBE470: Colloids | Taylor Woehl
+CHBE473: Batteries | Chunsheng Wang, Paul Albertus
+CHBE474: Biopharmaceuticals | Deborah Goldberg
+CHBE481: Transport—Small | Panagiotis Dimitrakopoulos
+CHBE490: Polymer Science | Kyu Yong Choi
+CHBE4: Separations & Carbon Capture | Chen Zhang
+CHBE468: Research | TBD
+CHBE469: Special Projects | TBD
+Sustainability, Energy and Environment
+Complete at least three courses within the track from the list below with a grade of C– or better before graduation.
+COURSE NAME | INSTRUCTOR
+CHBE451: Photovoltaics | Raymond Adomaitis
+CHBE472: Air Pollution | Akua Asa-Awuku
+CHBE473: Batteries | Chunsheng Wang, Paul Albertus
+CHBE484: Metabolic Engineering | Ganesh Sriram
+CHBE497: Protein Engineering | Amy Karlsson
+CHBE4: Separations & Carbon Capture | Chen Zhang
+CHBE468: Research | TBD
+CHBE469: Special Projects | TBD
+ENMA410: Materials for Energy | (Offered by the Department of Materials Science and Engineering).
+Nanomaterials and Nanotechnology
+Complete at least three courses within the track from the list below with a grade of C– or better before graduation.
+COURSE NAME | INSTRUCTOR
+CHBE452: Machine Learning & Data | Po-Yen Chen
+CHBE470: Colloids | Taylor Woehl
+CHBE472: Air Pollution | Akua Asa-Awuku
+CHBE476: Molecular Dynamics | Jeff Klauda
+CHBE480: Bionanotechnology | Srinivasa Raghavan
+CHBE490: Polymer Science | Kyu Yong Choi
+CHBE457: Biomaterials | Peter Kofinas
+CHBE468: Research | TBD
+CHBE469: Special Projects | TBD
+ENMA410: Materials for Energy | (Offered by the Department of Materials Science and Engineering).
+Biomolecular Engineering
+Complete at least three courses within the track from the list below with a grade of C– or better before graduation.
+COURSE NAME | INSTRUCTOR
+CHBE474: Biopharmaceuticals | Deborah Goldberg
+CHBE476: Molecular Dynamics | Jeff Klauda
+CHBE480: Bionanotechnology | Srinivasa Raghavan
+CHBE481: Transport—Small | Panagiotis Dimitrakopoulos
+CHBE480: Bionanotechnology | Srinivasa Raghavan
+CHBE484: Metabolic Engineering | Ganesh Sriram
+CHBE497: Protein Engineering | Amy Karlsson
+CHBE457: Biomaterials | Peter Kofinas
+CHBE468: Research | TBD
+CHBE469: Special Projects | TBD
+BCHM461: Biochemistry I | TBD
+BCHM462: Biochemistry II | TBD
+BCHM463: Biochemistry of Physiology | TBD
+Ready to Declare your Track?
+Once you have decided which specialty to pursue, please fill out this form and contact your academic advisor.
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/chemical_fall_2026_gradplan_1.pdf)
 
