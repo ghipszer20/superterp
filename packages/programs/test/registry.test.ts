@@ -1,7 +1,7 @@
 // Invariants the registry (src/registry.generated.ts, built from every program file's own
 // ProgramMeta -- see scripts/build-registry.ts) must hold whatever programs it lists, so this file
 // never needs rewriting when a program batch adds, removes or reorders entries. Staleness and
-// migration-content checks live in registry-generated.test.ts and registry-migration.test.ts.
+// the stale-file check lives in registry-generated.test.ts.
 import { describe, expect, it } from "vitest";
 import { findProgram, loadProgram, majorKey, PROGRAMS } from "../src/registry.ts";
 
