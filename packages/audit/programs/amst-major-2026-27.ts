@@ -79,7 +79,7 @@ export const amstMajor: Program = {
         "SOCY, or WMST)",
       count: 2,
       from: {
-        departments: ["AASP", "ARTH", "ENGL", "HIST", "SOCY", "WMST"],
+        departments: ["AAAS", "AASP", "ARTH", "ENGL", "HIST", "SOCY", "WGSS", "WMST"], // AAAS and WGSS are the current prefixes of AASP and WMST (main session),
         minNumber: 100,
         maxNumber: 299,
       },

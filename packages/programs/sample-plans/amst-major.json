@@ -13,7 +13,7 @@
   "terms": [
     { "term": "Year 1 Fall", "courses": ["AMST101"] },
     { "term": "Year 1 Spring", "courses": ["AMST202"] },
-    { "term": "Year 2 Fall", "courses": ["AASP100"] },
+    { "term": "Year 2 Fall", "courses": ["AAAS100"] },
     { "term": "Year 2 Spring", "courses": ["SOCY200"] },
     { "term": "Year 3 Fall", "courses": ["AMST310", "SOCY310"] },
     { "term": "Year 3 Spring", "courses": ["AMST312", "SOCY320"] },
