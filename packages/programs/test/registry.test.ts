@@ -22,6 +22,13 @@ describe("program registry", () => {
       "cmsc-major-quantum-information",
       "math-major-traditional",
       "math-major-applied",
+      "chem-major-bs",
+      "chem-major-ba",
+      "geol-major-professional",
+      "geol-major-geophysics",
+      "geol-major-earth-environmental",
+      "neur-major",
+      "phys-major",
     ]);
     expect(findProgram("math-major-applied")).toMatchObject({ major: "math", track: "Applied Mathematics", college: "CMNS" });
     expect(findProgram("cmsc-major")).toMatchObject({ major: "cs", track: "General", college: "CMNS" });

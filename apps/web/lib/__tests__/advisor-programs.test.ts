@@ -36,6 +36,13 @@ describe("program options", () => {
       "cmsc-major-quantum-information",
       "math-major-traditional",
       "math-major-applied",
+      "chem-major-bs",
+      "chem-major-ba",
+      "geol-major-professional",
+      "geol-major-geophysics",
+      "geol-major-earth-environmental",
+      "neur-major",
+      "phys-major",
     ]);
     expect(PROGRAM_OPTIONS.length).toBeGreaterThan(3);
     expect(PROGRAM_OPTIONS.every((o) => !o.verified)).toBe(true);
@@ -158,25 +165,29 @@ describe("noticeCandidates", () => {
       "math-major-applied",
       "cmsc-major",
       // Undeclared, cmsc-major itself excluded now that it's chosen: aosc-major 3/4, then the 2/4
-      // tie (astr, bsci-genb, bchm) in registry order.
+      // tie (astr, bsci-genb, bchm, chem-major-bs -- registry order; the CMNS batch-2 majors also
+      // list MATH140/141, but only chem-major-bs's default track fits before MAX_NOTICE_CANDIDATES).
       "aosc-major",
       "astr-major-astrophysics",
       "bsci-major-genb",
       "bchm-major",
+      "chem-major-bs",
     ]);
   });
 
   it("offers one track of an unchosen major, the default", async () => {
     // Every remaining major lists MATH240 and MATH241 except the two Biological Sciences and
     // Biochemistry majors sampled here (no MATH241 or MATH240 respectively), so it's a 4/4 tie
-    // (astr, aosc, math-major-traditional -- registry order) then a 3/4 tie (bsci-genb, bchm).
+    // (astr, aosc, math-major-traditional, and now phys-major, whose MATH243-or-MATH240+MATH246
+    // choice lists both -- registry order) then a 3/4 tie (bsci-genb, bchm, chem-major-bs), capped
+    // before geol-major-professional and neur-major's 2/4 ties are reached.
     expect((await noticeCandidates(["cmsc-major"], MATH_LEANING_PLAN)).map((x) => x.program.id)).toEqual([
       "cmsc-major",
       "astr-major-astrophysics",
       "aosc-major",
       "math-major-traditional",
+      "phys-major",
       "bsci-major-genb",
-      "bchm-major",
     ]);
   });
 
@@ -186,8 +197,8 @@ describe("noticeCandidates", () => {
       "astr-major-astrophysics",
       "aosc-major",
       "math-major-traditional",
+      "phys-major",
       "bsci-major-genb",
-      "bchm-major",
     ]);
   });
 
