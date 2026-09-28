@@ -117,7 +117,9 @@
   },
   "anthropology-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/anthropology/anthropology-major/",
-    "department": [],
+    "department": [
+      "https://anth.umd.edu/undergraduate/how-become-anthropology-major"
+    ],
     "samplePlan": [
       "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
     ]
@@ -983,7 +985,12 @@
   },
   "government-politics-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/government-politics/government-politics-major/",
-    "department": [],
+    "department": [
+      "https://gvpt.umd.edu/undergraduate/major-requirements",
+      "https://gvpt.umd.edu/undergraduate/government-and-politics-major-requirements-bachelor-arts",
+      "https://gvpt.umd.edu/undergraduate/government-and-politics-major-requirements-bachelor-science",
+      "https://gvpt.umd.edu/undergraduate/gvpt-major-requirements-no-concentration"
+    ],
     "samplePlan": [
       "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
     ]
@@ -1160,7 +1167,10 @@
   },
   "international-relations-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/government-politics/international-relations-major/",
-    "department": [],
+    "department": [
+      "https://gvpt.umd.edu/undergraduate/international-relations-major-requirements-bachelor-arts",
+      "https://gvpt.umd.edu/undergraduate/international-relations-major-requirements-bachelor-science"
+    ],
     "samplePlan": []
   },
   "israel-studies-minor": {
