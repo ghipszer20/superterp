@@ -62,3 +62,7 @@ college by college. At most 3 builders run at once, and the next one starts when
 4. Engine + picker: eligibility gates that block a minor for excluded majors (Astronomy, Chesapeake Bay, Meteorology, RAS, Economics, Paleobiology, Planetary Sciences, ACES pathways, and others in review notes).
 5. Engine: "courses from at least N different groups" (Entomology, then any other "N of the areas" rule).
 6. ProgramMeta: add a Universities at Shady Grove college group; move `ccjs-minor-shady-grove`.
+- Split 2026-09-28 (owner): the 26 medium batches go to two sessions; neither touches the other's half. Each department is in only one half, so program files never collide.
+  - **Half A (session A):** arth, engl1, engl-hist, jwst1, hebrew, mideast, sllc-me, sllc-ea, sllc-rom, sllc-eur, sllc-span, amst-lasc, bsos-a.
+  - **Half B (session B):** ling-musc, bws, bsos-b, agnr-a, agnr-b, arch, bmgt-a, bmgt-b, engr-b, step-plcy, nonprofit, educ-b, usg.
+  - Session A merges in `C:/Users/24GHi/Code/st-minors-merge`; session B uses its own detached worktree (e.g. `C:/Users/24GHi/Code/st-minors-merge-b`). Both pull before merging; conflicts are only in the registry (regenerate) and review docs (`git merge-file --union`).
