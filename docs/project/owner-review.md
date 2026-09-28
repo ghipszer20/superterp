@@ -457,3 +457,10 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 ## `feat/minors-agnr-b` (2026-09-28): minors Agricultural Science and Technology, Landscape Management; all sample plans constructed, `official: false`
 - Both: psla.umd.edu pages carry no requirements (descriptions only), so both are encoded from the catalog ("department page not checked"). Landscape Management's catalog page states no grade floor; C- applied per ruling. Both: overlap cap of 2 courses and 6 credits against every program.
 - Agricultural Science and Technology (`agst-minor`): catalog footnote "6 credits must be from 300+ level" conflicts with the supporting list containing 200-level PLSC253/254 (the block is exactly 6 credits); not enforced, please decide. "Other courses may be approved" by advisor is manual. Eligibility prerequisites (MATH113+, CHEM131/132) manual. The catalog has no restriction for AGST majors; none encoded.
+## `feat/minors-sllc-rom` (2026-09-28): minors French Studies, Italian Language and Culture, Portuguese and Brazilian Studies; all sample plans constructed, `official: false`
+
+- All three (`fren-minor`, `ital-minor`, `port-minor`): the department pages fetched (sllc.umd.edu/french, /italian, /fields/portuguese) are program homepages with no requirements, so department page not checked; encoded from the catalog. No sharing caps stated, none set.
+- French Studies: the catalog "select three" table is garbled; read as three courses (21 credits total) with one required 4xx-level FREN. The sources name no 4xx FREN course, so the sample plan FREN401 is a placeholder number.
+- Italian: the extra course is accepted as any ITAL 300-499; "taught in Italian" is a manual note. ITAL203 is a prerequisite, not encoded.
+- Portuguese: the catalog list has untitled rows (PORT223, PORT224); all 22 listed courses form one pool. The "6 credits taught in Portuguese" rule is a manual note; the 9 upper-level credits are an overlay.
+- All three: minor GPA 2.0, transfer/study-abroad credit caps and native-speaker substitutions are manual notes.
