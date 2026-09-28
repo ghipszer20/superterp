@@ -2,9 +2,19 @@ import { describe, expect, it } from "vitest";
 import { findProgram, loadProgram, PROGRAMS } from "../src/registry.ts";
 
 describe("program registry", () => {
-  it("lists the hand-encoded majors, CS's and Math's tracks each sharing one major key", () => {
+  it("lists the hand-encoded majors, each major's tracks sharing one major key", () => {
     const majors = PROGRAMS.filter((p) => p.kind === "major");
     expect(majors.map((p) => p.id)).toEqual([
+      "astr-major-astrophysics",
+      "astr-major-data-science",
+      "astr-major-physical-science",
+      "aosc-major",
+      "bsci-major-genb",
+      "bsci-major-cebg",
+      "bsci-major-ecev",
+      "bsci-major-micb",
+      "bsci-major-phnb",
+      "bchm-major",
       "cmsc-major",
       "cmsc-major-cybersecurity",
       "cmsc-major-data-science",

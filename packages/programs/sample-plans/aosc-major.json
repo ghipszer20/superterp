@@ -1,0 +1,25 @@
+{
+  "programId": "aosc-major",
+  "source": "https://docs.google.com/spreadsheets/d/1-BXUAeZGFUkgoh2bJ3VKcTiSMw_Qrzph/edit",
+  "fetched": "2026-09-27",
+  "official": true,
+  "notes": [
+    "AOSC Graduation Plan spreadsheet (MATH140 track; a second MATH115 track exists for students starting a level behind), reached from https://aosc.umd.edu/education/undergrad-major/current-students/4-year-plan (itself reached from the CMNS 4-year-plans page). Gen Ed and free-elective slots are left out: only the major is audited.",
+    "The four 'AOSC4xx' placeholders (the 400-level elective requirement) are filled with AOSC400, AOSC401, AOSC420 and AOSC424.",
+    "The two 'pick 6' placeholders (the supporting-electives requirement, 3 credits each) are filled with BSCI373 and GEOG201.",
+    "AOSC493 is credited at 1 (the Major Requirements page's figure), not the 3 credits shown in the spreadsheet's own course-credit column, which looks like a stale swap with AOSC494 (see reviewNotes on the Program)."
+  ],
+  "credits": {
+    "AOSC201": 1, "MATH140": 4, "MATH141": 4, "PHYS261": 1, "MATH241": 4, "PHYS271": 1, "AOSC493": 1
+  },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["AOSC200", "AOSC201", "MATH140"] },
+    { "term": "Year 1 Spring", "courses": ["MATH141", "PHYS161", "CHEM135", "CHEM132"] },
+    { "term": "Year 2 Fall", "courses": ["AOSC400", "MATH241", "PHYS260", "PHYS261"] },
+    { "term": "Year 2 Spring", "courses": ["AOSC401", "MATH246", "PHYS270", "PHYS271", "AOSC247"] },
+    { "term": "Year 3 Fall", "courses": ["AOSC431", "BSCI373"] },
+    { "term": "Year 3 Spring", "courses": ["AOSC432", "GEOG201"] },
+    { "term": "Year 4 Fall", "courses": ["AOSC493", "AOSC494", "AOSC420"] },
+    { "term": "Year 4 Spring", "courses": ["AOSC498", "AOSC424"] }
+  ]
+}
