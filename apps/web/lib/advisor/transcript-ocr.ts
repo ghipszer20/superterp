@@ -17,7 +17,7 @@ export function ocrAssetPaths(): { workerPath: string; corePath: string; langPat
 }
 
 /** OCRs one rendered page (a canvas from transcript-pdf.ts's renderPdfPageToCanvas). */
-export async function ocrCanvasText(canvas: HTMLCanvasElement, onProgress?: (progress: number) => void): Promise<string> {
+async function ocrCanvasText(canvas: HTMLCanvasElement, onProgress?: (progress: number) => void): Promise<string> {
   const { createWorker, OEM } = await import("tesseract.js");
   const worker = await createWorker("eng", OEM.LSTM_ONLY, {
     ...ocrAssetPaths(),

@@ -45,7 +45,7 @@ export const ScheduleIcon = (p: IconProps) => (
   </Icon>
 );
 
-export const PlanIcon = (p: IconProps) => (
+const PlanIcon = (p: IconProps) => (
   <Icon {...p}>
     <rect x="3.5" y="3.5" width="7" height="7" rx="2" />
     <rect x="13.5" y="3.5" width="7" height="7" rx="2" />
@@ -54,7 +54,7 @@ export const PlanIcon = (p: IconProps) => (
   </Icon>
 );
 
-export const ExploreIcon = (p: IconProps) => (
+const ExploreIcon = (p: IconProps) => (
   <Icon {...p}>
     <circle cx="11" cy="11" r="6.5" />
     <path d="m16 16 4.5 4.5" />

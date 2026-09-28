@@ -4,7 +4,7 @@
 
 import type { Course } from "@superterp/course-data";
 
-export const COURSE_DETAILS_VERSION = 1;
+const COURSE_DETAILS_VERSION = 1;
 
 export type CourseDetails = {
   description: string;

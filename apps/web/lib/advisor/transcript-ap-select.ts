@@ -15,8 +15,8 @@ import type { ParsedApLine } from "./transcript-parse";
 const CALCULUS_BC = "Calculus BC";
 const CALCULUS_BC_SUBSCORE = "Calculus BC AB Subscore";
 
-export type ApMatch = { exam: string; score: number; flagged: boolean };
-export type ApInfo = { exam: string; score: number; note: string };
+type ApMatch = { exam: string; score: number; flagged: boolean };
+type ApInfo = { exam: string; score: number; note: string };
 
 export type ApSelection = {
   matched: ApMatch[];

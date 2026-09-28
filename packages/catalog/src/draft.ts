@@ -31,7 +31,7 @@ export type DraftMeta = {
 };
 
 /** check: drafted, but the owner should confirm it. manual: not drafted; the owner must encode it. */
-export type Confidence = "check" | "manual";
+type Confidence = "check" | "manual";
 
 export type ReviewReason =
   | "footnote"
@@ -54,7 +54,7 @@ export const ENGINE_GAPS: Partial<Record<ReviewReason, string>> = {
     "A choice of more than one course set where some sets are 'or' alternatives of each other, or a credit count over sets, e.g. 'Select two of: STAT400 & STAT401 or STAT410, STAT430, …'",
 };
 
-export type ReviewItem = {
+type ReviewItem = {
   confidence: Confidence;
   reason: ReviewReason;
   /** What to review, quoting the catalog. */

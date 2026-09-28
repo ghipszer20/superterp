@@ -115,4 +115,4 @@ export function relaxConstraint(state: FilterState, c: FilterConstraint): Filter
 }
 
 /** "Mon 8am–1pm" style summary of one window, for labels. */
-export const windowLabel = (r: { from: number; to: number }) => `${clock(r.from)}–${clock(r.to)}`;
+const windowLabel = (r: { from: number; to: number }) => `${clock(r.from)}–${clock(r.to)}`;

@@ -6,7 +6,7 @@ import type { Requirement, SetMember } from "@superterp/audit";
 import type { Milestone, TrackCategory } from "../src/types.ts";
 
 /** One course by number, with any suffix (honors "H", "S" sections…), e.g. CHEM232 matches CHEM232S. */
-export function num(id: string): SetMember {
+function num(id: string): SetMember {
   const m = /^([A-Z]{4})(\d{3})$/.exec(id);
   if (!m) throw new Error(`Not a course number: ${id}`);
   const n = Number(m[2]);
@@ -14,12 +14,12 @@ export function num(id: string): SetMember {
 }
 
 /** All of the courses in one of the options, e.g. [["CHEM131", "CHEM132"], ["CHEM135", "CHEM136"]]. */
-export function sets(id: string, name: string, options: string[][]): Requirement {
+function sets(id: string, name: string, options: string[][]): Requirement {
   return { kind: "sets", id, name, options: options.map((o) => o.map(num)) };
 }
 
 /** One course from a list. */
-export function oneOf(id: string, name: string, courses: string[]): Requirement {
+function oneOf(id: string, name: string, courses: string[]): Requirement {
   return sets(id, name, courses.map((c) => [c]));
 }
 
@@ -32,12 +32,12 @@ const cat = (requirement: Requirement, source: string, extra: Extra = {}): Track
 
 // CHEM146/CHEM177 (the chemistry/biochemistry majors' first-semester alternative) are confirmed
 // by UMD's Chemistry major catalog page (MAPPING_NOTES.genChem).
-export const GEN_CHEM_1_OPTIONS = [
+const GEN_CHEM_1_OPTIONS = [
   ["CHEM131", "CHEM132"],
   ["CHEM135", "CHEM136"], // engineering students
   ["CHEM146", "CHEM177"], // chemistry/biochemistry majors
 ];
-export const GEN_CHEM_2_OPTIONS = [
+const GEN_CHEM_2_OPTIONS = [
   ["CHEM271", "CHEM272"],
   ["CHEM276", "CHEM277"], // chemistry/biochemistry majors
 ];
@@ -50,7 +50,7 @@ export const genChem1 = (source: string, extra?: Extra) =>
 export const genChem2 = (source: string, extra?: Extra) =>
   cat(sets("gen-chem-2", "General chemistry II with lab", GEN_CHEM_2_OPTIONS), source, extra);
 
-export const ORGANIC_CHEM_1_OPTIONS = [["CHEM231", "CHEM232"], ["CHEM237"]];
+const ORGANIC_CHEM_1_OPTIONS = [["CHEM231", "CHEM232"], ["CHEM237"]];
 
 // CHEM237/CHEM247 (the chemistry/biochemistry majors' organic sequence) are confirmed by UMD's
 // Chemistry major catalog page (MAPPING_NOTES.organic).
@@ -155,7 +155,7 @@ export const physicsOneSemester = (source: string, extra?: Extra) =>
 // --- Math, statistics, English ---------------------------------------------------------------
 
 /** MATH135 is Discrete Mathematics for Life Sciences, not calculus, so it isn't here. */
-export const CALCULUS = ["MATH120", "MATH136", "MATH140"];
+const CALCULUS = ["MATH120", "MATH136", "MATH140"];
 
 export const calculus = (source: string, extra?: Extra) =>
   cat(oneOf("calculus", "Calculus", CALCULUS), source, {
@@ -165,7 +165,7 @@ export const calculus = (source: string, extra?: Extra) =>
   });
 
 /** The NEUR pre-med plan's approved statistics courses, plus STAT100. */
-export const STATISTICS = ["BIOM301", "EPIB315", "PSYC200", "STAT400", "STAT464", "STAT100"];
+const STATISTICS = ["BIOM301", "EPIB315", "PSYC200", "STAT400", "STAT464", "STAT100"];
 
 export const statistics = (source: string, extra?: Extra) => cat(oneOf("statistics", "Statistics", STATISTICS), source, extra);
 
