@@ -8,6 +8,7 @@ describe("program registry", () => {
       "astr-major-astrophysics",
       "astr-major-data-science",
       "astr-major-physical-science",
+      "aosc-major",
       "bchm-major",
       "cmsc-major",
       "math-major-traditional",
