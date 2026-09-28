@@ -1,0 +1,21 @@
+{
+  "programId": "rame-major-language",
+  "source": "https://drive.google.com/uc?export=download&id=1plP1e7d5mrA0V8gPnpWp_CcUWrDt1v_8#Religions-of-the-Ancient-Middle-East",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "Constructed, not official: the college's four-year plan (see rame-major.json for its own garbled-term-grid caveat) covers only the base major's term grid; the optional Language Track is described just as a footnote ('Language Track (optional): Six credits in Hebrew, Arabic, Greek or other relevant language beyond the first year level') with no term-by-term placement of its own 6 credits. Flagged in docs/project/owner-review.md.",
+    "Reuses rame-major.json's Foundations/Electives/Capstone placement and fills the Language Track's six credits with HEBR206 and HEBR207 (Intermediate Modern Hebrew I/II, second-year level, real UMD courses from the Academic Catalog), added in Years 1-2 alongside the Foundations courses.",
+    "First-year language prerequisite credits (6-12 credits to reach the second-year level) are not part of the major requirement being audited and are left out, same as Gen Ed and general-elective slots."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["RELS271"] },
+    { "term": "Year 1 Spring", "courses": ["JWST225", "HEBR206"] },
+    { "term": "Year 2 Fall", "courses": ["JWST231", "HEBR207"] },
+    { "term": "Year 2 Spring", "courses": ["HIST120"] },
+    { "term": "Year 3 Fall", "courses": ["CLAS305"] },
+    { "term": "Year 3 Spring", "courses": ["JWST325"] },
+    { "term": "Year 4 Fall", "courses": ["JWST326", "JWST430"] },
+    { "term": "Year 4 Spring", "courses": ["JWST468", "RELS408"] }
+  ]
+}
