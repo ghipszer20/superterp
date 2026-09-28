@@ -54,10 +54,14 @@ export const aaasMajorPublicPolicy: Program = {
       options: ["AAAS395", "AASP395"],
     },
     {
-      kind: "course",
+      kind: "choose",
       id: "capstone",
-      name: "Capstone: AAAS397 Senior Thesis (see reviewNotes for the two unencodable unnumbered catalog alternatives)",
-      options: ["AAAS397", "AASP397"],
+      name: "Capstone (choose one): AAAS397 Senior Thesis, or a 400-level AAAS capstone seminar / study-abroad course",
+      count: 1,
+      // The catalog's other two options are printed as "AAAS4XX" (Capstone Seminar and Community
+      // Practicum; Study Abroad), so any 400-level AAAS/AASP course is accepted (broader than the
+      // department's list; main session, 2026-09-28).
+      from: { courses: ["AAAS397", "AASP397"], departments: ["AAAS", "AASP"], minNumber: 400, maxNumber: 499 },
     },
     { kind: "course", id: "econ200", name: "Principles of Microeconomics", options: ["ECON200"] },
     { kind: "course", id: "aaas301", name: "Applied Policy Analysis and the Black Community", options: ["AAAS301", "AASP301"] },
