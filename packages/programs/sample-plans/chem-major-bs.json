@@ -1,0 +1,30 @@
+{
+  "programId": "chem-major-bs",
+  "source": "https://chem.umd.edu/sites/default/files/chembiochbachelorprograms-f26.pdf",
+  "fetched": "2026-09-27",
+  "official": true,
+  "notes": [
+    "Comparison of Sample Plans Leading to Bachelor's degrees in CHEM BS, BCHM BS and CHEM BA programs (effective Fall 2026), CHEM BS column. Gen Ed, ENGL and free-elective slots are left out: only the major is audited.",
+    "Semester 7 and 8's two 'CHEM UL' upper-level elective placeholders (6 credits total, matching the checksheet's 'take at least 6 credits' pool) are filled with CHEM403 (Radiochemistry) and CHEM433 (Atmospheric Chemistry)."
+  ],
+  "credits": {
+    "CHEM146": 3, "CHEM177": 2, "MATH140": 4, "UNIV100": 1,
+    "CHEM237": 4, "BSCI170": 3, "MATH141": 4,
+    "CHEM247": 4, "PHYS161": 3, "BSCI180": 1,
+    "CHEM276": 2, "CHEM277": 3, "PHYS260": 3, "PHYS261": 1, "MATH241": 4,
+    "CHEM481": 3, "CHEM483": 2,
+    "CHEM482": 3, "CHEM484": 2, "CHEM395": 1,
+    "CHEM425": 4, "CHEM403": 3,
+    "CHEM401": 3, "CHEM433": 3
+  },
+  "terms": [
+    { "term": "Freshman Fall", "courses": ["CHEM146", "CHEM177", "MATH140", "UNIV100"] },
+    { "term": "Freshman Spring", "courses": ["CHEM237", "BSCI170", "MATH141"] },
+    { "term": "Sophomore Fall", "courses": ["CHEM247", "PHYS161", "BSCI180"] },
+    { "term": "Sophomore Spring", "courses": ["CHEM276", "CHEM277", "PHYS260", "PHYS261", "MATH241"] },
+    { "term": "Junior Fall", "courses": ["CHEM481", "CHEM483"] },
+    { "term": "Junior Spring", "courses": ["CHEM482", "CHEM484", "CHEM395"] },
+    { "term": "Senior Fall", "courses": ["CHEM425", "CHEM403"] },
+    { "term": "Senior Spring", "courses": ["CHEM401", "CHEM433"] }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "programId": "phys-major",
+  "source": "https://docs.google.com/document/d/1N21ppgKrQJRXlUopLHYxV0BUBVKM182xYiTIliwB2Ww/ (linked from https://www.umdphysics.umd.edu/academics/undergraduate/ugrad-requirements.html)",
+  "fetched": "2026-09-27",
+  "official": true,
+  "notes": [
+    "Physics Major (Physics specialization) sample 4-year plan, department's own sample graduation plan doc linked from its live degree-requirements page. Gen Ed and free-elective slots are left out: only the major is audited.",
+    "The two 'PHYS4XY' Advanced Physics Elective placeholders (senior year) are filled with PHYS474 (Computational Physics) and PHYS483 (Biophysics), both real 400-level PHYS courses not already required by name."
+  ],
+  "credits": {
+    "MATH140": 4, "PHYS170": 1,
+    "MATH141": 4, "PHYS171": 3, "PHYS275": 2,
+    "MATH241": 4, "PHYS272": 3, "PHYS265": 3,
+    "MATH243": 4, "PHYS273": 3, "PHYS276": 2,
+    "PHYS313": 4, "PHYS371": 3, "PHYS375": 3,
+    "PHYS401": 4, "PHYS413": 3,
+    "PHYS402": 3, "PHYS404": 3, "PHYS474": 3,
+    "PHYS405": 3, "PHYS410": 3, "PHYS483": 3
+  },
+  "terms": [
+    { "term": "Freshman Fall", "courses": ["MATH140", "PHYS170"] },
+    { "term": "Freshman Spring", "courses": ["MATH141", "PHYS171", "PHYS275"] },
+    { "term": "Sophomore Fall", "courses": ["MATH241", "PHYS272", "PHYS265"] },
+    { "term": "Sophomore Spring", "courses": ["MATH243", "PHYS273", "PHYS276"] },
+    { "term": "Junior Fall", "courses": ["PHYS313", "PHYS371", "PHYS375"] },
+    { "term": "Junior Spring", "courses": ["PHYS401", "PHYS413"] },
+    { "term": "Senior Fall", "courses": ["PHYS402", "PHYS404", "PHYS474"] },
+    { "term": "Senior Spring", "courses": ["PHYS405", "PHYS410", "PHYS483"] }
+  ]
+}
