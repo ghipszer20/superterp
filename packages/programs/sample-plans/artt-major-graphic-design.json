@@ -1,0 +1,22 @@
+{
+  "programId": "artt-major-graphic-design",
+  "source": "https://drive.google.com/uc?export=download&id=1nwR3mYqtz0nQqGjc37kDTFbNhe-0LLHe",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "Department's official Graphic Design Concentration (Track 3) four-year plan; the PDF-to-text conversion garbled the term grid (Fall/Spring columns interleaved illegibly). Courses are placed by legible signals only (year headers, benchmark notes, and the plan's own 'ARTT355/356/357/361 Fall only / Spring only' annotations for the GD-required sequence, and the portfolio-application marker before that sequence); flagged as reconstructed placement. Gen Ed slots are left out: only the major is audited.",
+    "'Select six credits: ARTT386 or ARTT45x Graphic Design Electives' filled with ARTT386 and ARTT456 (both named in the catalog's own Graphic Design Elective Courses list). 'Select six credits ARTT 3xx-4xx Art Electives' filled with ARTT350 and ARTT351 (real, currently-approved ARTT courses not otherwise required by this track).",
+    "Supporting Area 'ARTH or Art Theory 3xx-4xx' elective (1 required, since ARTT361 below satisfies the other per footnote 1) filled with ARTT462 (Art Theory has no separate subject code; see the Studio Art track's reviewNotes).",
+    "Supporting Area 'ARTH 200+ satisfying GenEd Diversity' (2 required): as with the other two tracks, only ARTH351 is named anywhere in the fetched source, so only one of the two slots (support-arth-diversity-1) is filled; the second (support-arth-diversity-2) is left unsatisfied on purpose and flagged in docs/project/owner-review.md and KNOWN_FAILURES."
+  ],
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["ARTT100", "ARTT110", "ARTT150"] },
+    { "term": "Year 1 Spring", "courses": ["ARTT200", "ARTT210", "ARTT255"] },
+    { "term": "Year 2 Fall", "courses": ["ARTH351", "ARTT355", "ARTT356"] },
+    { "term": "Year 2 Spring", "courses": ["ARTT357", "ARTT361", "ARTT350", "ARTT351"] },
+    { "term": "Year 3 Fall", "courses": ["ARTT454", "ARTT386"] },
+    { "term": "Year 3 Spring", "courses": ["ARTT455", "ARTT458", "ARTT456"] },
+    { "term": "Year 4 Fall", "courses": ["ARTT462"] },
+    { "term": "Year 4 Spring", "courses": [] }
+  ]
+}
