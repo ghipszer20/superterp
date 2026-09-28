@@ -18,7 +18,21 @@ const ids = (list: { id: string }[]) => list.map((p) => p.id);
 
 describe("program options", () => {
   it("offers every registered program, majors first, all unverified for now", () => {
-    expect(ids(PROGRAM_OPTIONS.filter((o) => o.kind === "major"))).toEqual(["cmsc-major", "math-major-traditional", "math-major-applied"]);
+    expect(ids(PROGRAM_OPTIONS.filter((o) => o.kind === "major"))).toEqual([
+      "astr-major-astrophysics",
+      "astr-major-data-science",
+      "astr-major-physical-science",
+      "aosc-major",
+      "bsci-major-genb",
+      "bsci-major-cebg",
+      "bsci-major-ecev",
+      "bsci-major-micb",
+      "bsci-major-phnb",
+      "bchm-major",
+      "cmsc-major",
+      "math-major-traditional",
+      "math-major-applied",
+    ]);
     expect(PROGRAM_OPTIONS.length).toBeGreaterThan(3);
     expect(PROGRAM_OPTIONS.every((o) => !o.verified)).toBe(true);
   });
@@ -113,8 +127,10 @@ describe("degreeModeOf", () => {
 });
 
 // cmsc-major's course set (course-sets.generated.ts) includes MATH140/141, CMSC131/132; the math
-// majors' sets include MATH140/141/240/241. Each sample plan below clears NOTICE_OVERLAP_THRESHOLD
-// against the major it's meant to surface as a candidate.
+// majors' sets include MATH140/141/240/241. With the CMNS batch-1 majors now in the registry, both
+// plans below clear NOTICE_OVERLAP_THRESHOLD against several majors at once (they all need
+// MATH140/141), so these tests assert the full ranked (share descending, ties in registry order)
+// and MAX_NOTICE_CANDIDATES-capped candidate lists, not just the one major each plan was chosen for.
 const CS_LEANING_PLAN = ["MATH140", "MATH141", "CMSC131", "CMSC132"];
 const MATH_LEANING_PLAN = ["MATH140", "MATH141", "MATH240", "MATH241"];
 
@@ -123,7 +139,13 @@ describe("noticeCandidates", () => {
     const c = await noticeCandidates(["math-major-applied"], CS_LEANING_PLAN);
     expect(c.map((x) => [x.program.id, x.declared])).toEqual([
       ["math-major-applied", true],
+      // Undeclared majors, ranked by share of the plan's 4 courses they list: cmsc-major 4/4,
+      // aosc-major 3/4, then a 2/4 tie broken by registry order (astr, bsci-genb, bchm).
       ["cmsc-major", false],
+      ["aosc-major", false],
+      ["astr-major-astrophysics", false],
+      ["bsci-major-genb", false],
+      ["bchm-major", false],
     ]);
   });
 
@@ -131,17 +153,37 @@ describe("noticeCandidates", () => {
     expect((await noticeCandidates(["math-major-applied", "cmsc-major"], CS_LEANING_PLAN)).map((x) => x.program.id)).toEqual([
       "math-major-applied",
       "cmsc-major",
+      // Undeclared, cmsc-major itself excluded now that it's chosen: aosc-major 3/4, then the 2/4
+      // tie (astr, bsci-genb, bchm) in registry order.
+      "aosc-major",
+      "astr-major-astrophysics",
+      "bsci-major-genb",
+      "bchm-major",
     ]);
   });
 
   it("offers one track of an unchosen major, the default", async () => {
-    expect((await noticeCandidates(["cmsc-major"], MATH_LEANING_PLAN)).map((x) => x.program.id)).toEqual(["cmsc-major", "math-major-traditional"]);
+    // Every remaining major lists MATH240 and MATH241 except the two Biological Sciences and
+    // Biochemistry majors sampled here (no MATH241 or MATH240 respectively), so it's a 4/4 tie
+    // (astr, aosc, math-major-traditional -- registry order) then a 3/4 tie (bsci-genb, bchm).
+    expect((await noticeCandidates(["cmsc-major"], MATH_LEANING_PLAN)).map((x) => x.program.id)).toEqual([
+      "cmsc-major",
+      "astr-major-astrophysics",
+      "aosc-major",
+      "math-major-traditional",
+      "bsci-major-genb",
+      "bchm-major",
+    ]);
   });
 
   it("only majors take part: a chosen special program is never a double major", async () => {
     expect((await noticeCandidates(["cmsc-major", "honors-aces"], MATH_LEANING_PLAN)).map((x) => x.program.id)).toEqual([
       "cmsc-major",
+      "astr-major-astrophysics",
+      "aosc-major",
       "math-major-traditional",
+      "bsci-major-genb",
+      "bchm-major",
     ]);
   });
 
