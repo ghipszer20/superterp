@@ -1,0 +1,196 @@
+{
+ "locations": [
+  {
+   "lid": 13231,
+   "name": "McKeldin Library",
+   "category": "library",
+   "desc": "",
+   "url": "https://www.lib.umd.edu/visit/libraries/mckeldin",
+   "contact": "",
+   "lat": "",
+   "long": "",
+   "color": "#E21833",
+   "fn": "",
+   "weeks": [
+    {
+     "Sunday": {
+      "date": "2026-09-20",
+      "times": {
+       "status": "open",
+       "hours": [
+        {
+         "from": "11am",
+         "to": "12am"
+        }
+       ],
+       "currently_open": false
+      },
+      "rendered": "11am - 12am"
+     },
+     "Monday": {
+      "date": "2026-09-21",
+      "times": {
+       "status": "24hours",
+       "currently_open": false
+      },
+      "rendered": "24 Hours"
+     },
+     "Tuesday": {
+      "date": "2026-09-22",
+      "times": {
+       "status": "24hours",
+       "currently_open": false
+      },
+      "rendered": "24 Hours"
+     },
+     "Wednesday": {
+      "date": "2026-09-23",
+      "times": {
+       "status": "24hours",
+       "currently_open": false
+      },
+      "rendered": "24 Hours"
+     },
+     "Thursday": {
+      "date": "2026-09-24",
+      "times": {
+       "status": "24hours",
+       "currently_open": true
+      },
+      "rendered": "24 Hours"
+     },
+     "Friday": {
+      "date": "2026-09-25",
+      "times": {
+       "status": "open",
+       "hours": [
+        {
+         "from": "12am",
+         "to": "8pm"
+        }
+       ],
+       "currently_open": false
+      },
+      "rendered": "12am - 8pm"
+     },
+     "Saturday": {
+      "date": "2026-09-26",
+      "times": {
+       "status": "open",
+       "hours": [
+        {
+         "from": "11am",
+         "to": "8pm"
+        }
+       ],
+       "currently_open": false
+      },
+      "rendered": "11am - 8pm"
+     }
+    }
+   ]
+  },
+  {
+   "lid": 17168,
+   "name": "STEM Library",
+   "category": "library",
+   "desc": "",
+   "url": "https://www.lib.umd.edu/visit/libraries/stem",
+   "contact": "",
+   "lat": "",
+   "long": "",
+   "color": "#454545",
+   "fn": "",
+   "weeks": [
+    {
+     "Sunday": {
+      "date": "2026-09-20",
+      "times": {
+       "status": "closed",
+       "currently_open": false
+      },
+      "rendered": "Closed"
+     },
+     "Monday": {
+      "date": "2026-09-21",
+      "times": {
+       "status": "open",
+       "hours": [
+        {
+         "from": "8am",
+         "to": "9pm"
+        }
+       ],
+       "currently_open": false
+      },
+      "rendered": "8am - 9pm"
+     },
+     "Tuesday": {
+      "date": "2026-09-22",
+      "times": {
+       "status": "open",
+       "hours": [
+        {
+         "from": "8am",
+         "to": "9pm"
+        }
+       ],
+       "currently_open": false
+      },
+      "rendered": "8am - 9pm"
+     },
+     "Wednesday": {
+      "date": "2026-09-23",
+      "times": {
+       "status": "open",
+       "hours": [
+        {
+         "from": "8am",
+         "to": "9pm"
+        }
+       ],
+       "currently_open": false
+      },
+      "rendered": "8am - 9pm"
+     },
+     "Thursday": {
+      "date": "2026-09-24",
+      "times": {
+       "status": "open",
+       "hours": [
+        {
+         "from": "8am",
+         "to": "9pm"
+        }
+       ],
+       "currently_open": false
+      },
+      "rendered": "8am - 9pm"
+     },
+     "Friday": {
+      "date": "2026-09-25",
+      "times": {
+       "status": "open",
+       "hours": [
+        {
+         "from": "8am",
+         "to": "5pm"
+        }
+       ],
+       "currently_open": false
+      },
+      "rendered": "8am - 5pm"
+     },
+     "Saturday": {
+      "date": "2026-09-26",
+      "times": {
+       "status": "closed",
+       "currently_open": false
+      },
+      "rendered": "Closed"
+     }
+    }
+   ]
+  }
+ ]
+}

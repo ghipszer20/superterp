@@ -141,3 +141,21 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# --- SuperTerp ---
+# Secrets
+.env*
+!.env.example
+# Scraped data and caches (never commit; repo will go public)
+.cache/
+cache/
+data/raw/
+# Personal academic records (transcripts stay on the owner's machine only)
+transcripts/
+*transcript*.pdf
+# Next.js / build output
+.next/
+out/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts

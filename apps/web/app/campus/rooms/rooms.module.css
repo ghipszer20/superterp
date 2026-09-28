@@ -1,0 +1,91 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin: 0 calc(-1 * var(--gutter));
+  padding: 8px var(--gutter) 12px;
+  background: var(--bg);
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 2px 0;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+.partial {
+  margin: 4px 4px 0;
+  color: var(--soon);
+  font: var(--t-foot);
+}
+
+.room {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  position: relative;
+}
+
+.room + .room::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 16px;
+  border-top: 0.5px solid var(--separator);
+}
+
+.roomText {
+  flex: 1;
+  min-width: 0;
+}
+
+.roomName {
+  font: var(--t-headline);
+}
+
+.cap {
+  color: var(--text-2);
+  font-weight: 400;
+}
+
+.roomSub {
+  margin-top: 2px;
+  color: var(--text-2);
+  font: var(--t-sub);
+}
+
+.status {
+  margin-top: 8px;
+}
+
+.book {
+  flex: none;
+  padding: 7px 16px;
+  border-radius: var(--r-pill);
+  background: var(--accent-tint);
+  color: var(--accent);
+  font: var(--t-sub);
+  font-weight: 600;
+  transition: background var(--fast) ease;
+}
+
+.book:active {
+  background: var(--accent-tint-2);
+}
+
+@media (hover: hover) {
+  .book:hover {
+    background: var(--accent-tint-2);
+  }
+}

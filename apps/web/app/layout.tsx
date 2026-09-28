@@ -1,0 +1,33 @@
+import type { Metadata, Viewport } from "next";
+import { Nav } from "@/components/Nav";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: { default: "SuperTerp", template: "%s · SuperTerp" },
+  description:
+    "Dining menus, library and gym hours, study rooms and Shuttle-UM buses for UMD students. Unofficial; not affiliated with the University of Maryland.",
+  applicationName: "SuperTerp",
+  appleWebApp: { capable: true, title: "SuperTerp", statusBarStyle: "default" },
+  formatDetection: { telephone: false },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f5f5f7" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html lang="en">
+      <body>
+        <Nav />
+        <div className="app-content">{children}</div>
+      </body>
+    </html>
+  );
+}
