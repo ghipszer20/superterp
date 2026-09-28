@@ -1593,7 +1593,9 @@
   },
   "physics-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/physics/physics-major/",
-    "department": [],
+    "department": [
+      "https://www.umdphysics.umd.edu/academics/undergraduate/ugrad-requirements.html"
+    ],
     "samplePlan": [
       "https://cmns.umd.edu/undergraduate/advising-academic-planning/academic-planning/four-year-plans/four-year-plans-gened"
     ]
