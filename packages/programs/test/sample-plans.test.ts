@@ -12,6 +12,11 @@ const file = (id: string) => new URL(`../sample-plans/${id}.json`, import.meta.u
 
 /** Program id -> requirement ids its sample plan is known to leave unsatisfied (flagged). */
 const KNOWN_FAILURES: Record<string, string[]> = {
+  // imdm-major-computing: 'Major Elective: CMSC 4xx (Graphics Programming)' and 'CMSC Elective:
+  // CMSC 4xx (Graphics Programming)' name no specific course number anywhere in the source
+  // (program-sources/art-immersive-media-design-major.md); the owner ruling forbids inventing one.
+  // Flagged in docs/project/owner-review.md.
+  "imdm-major-computing": ["cmsc-4xx-graphics"],
 };
 
 describe("sample plans", () => {
