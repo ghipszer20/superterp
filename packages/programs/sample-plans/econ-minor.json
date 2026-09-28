@@ -1,0 +1,15 @@
+{
+  "programId": "econ-minor",
+  "source": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/economics/economics-minor/",
+  "fetched": "2026-09-28",
+  "official": false,
+  "notes": [
+    "UMD publishes no sample plan for this minor. Built from the requirements: ECON200, ECON201, ECON305 (intermediate theory), ECON306 (second intermediate theory, for the 300/400-level slot), and two 400-level courses (ECON410, ECON422). Flagged in docs/project/owner-review.md."
+  ],
+  "credits": { "ECON305": 4, "ECON306": 4 },
+  "terms": [
+    { "term": "Term 1", "courses": ["ECON200", "ECON201"] },
+    { "term": "Term 2", "courses": ["ECON305", "ECON306"] },
+    { "term": "Term 3", "courses": ["ECON410", "ECON422"] }
+  ]
+}
