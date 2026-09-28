@@ -94,4 +94,83 @@ Undergraduate Catalog
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/civil_fall_2026_gradplan.pdf)
 
-Not converted (fetch failed: Please provide binary data as `Uint8Array`, rather than `Buffer`.).
+CIVIL ENGINEERING
+NAME: A.A., A.S., Post-Bac
+UID:
+GENERAL EDUCATION REQUIREMENTS MAJOR REQUIREMENTS
+Fundamental Studies ENCE 202 - Eng Drawings & Design CEE 3
+Academic Writing (AW) ENGL 101 3 ENCE 203 - Data Models & Numerical Computing 3
+Professional Writing (PW) ENGL 39X 3 ENCE 303 - Probability & Stat for CEE 3
+Oral Communication (OC) 3 ENCE 305 - Fund of Eng Fluids 3
+Mathmatics (MA) MATH140 4 ENCE 312 - Eng Economics & Project Mgmt 3
+Analytic Reasoning (AR) MATH140 0 ENCE 336 - Environment & Water I 3
+Distributive Studies ENCE 340 - Fundamentals Geotechnical Eng 3
+History/Social Sciences (HS*) 3 ENCE 342 - Structural Analysis & Design I 3
+History/Social Sciences (HS*) 3 ENCE 365 - Materials in Civil Infrastructure 4
+Humanities (HU*) 3 ENCE 367 - Civil Engineering Sys Optimization 4
+Humanities (HU*) ENES/ENEE 200 3 ENCE 383 - Transporation Systems I 3
+Natural Sciences No Lab (NS) PHYS 161 3 ENCE 436 - Environment & Water II 3
+Natural Sciences w/Lab (NL) PHYS 260/261 4 ENCE 442 - Structural Analysis & Design II 3
+Scholarship in Practice (SP*) in major ENES 100 3 ENCE 464 - Civil & Environmental Eng Design I 2
+Scholarship in Practice (SP*) out of major 3 ENCE 467 - Civil & Environmental Eng Design II 2
+Big Question Courses ENCE 483 - Transporation Systems II 3
+Big Question (SCIS*) ENES/ENEE 200 0 ENCE In-Major Technical Elective** 3
+Big Question (SCIS*) 0/3 ENCE In-Major Technical Elective** 3
+Diversity STEM-Based Elective** 3
+Understanding Plural Societies (UP*) 3 Open Elective** 3
+Understanding Plural Societies (UP*) OR 0/3 ENES 200 or ENEE200 - Tech & Consequence (HU/I-Series) 0
+Cultural Competency (CC*)
+MAJOR REQUIREMENTS Requirements for Graduation:
+Basic Sciences • Final 30 credits must be earned at UMD
+CHEM 135-Chem Engr OR 131 & 134 -Fund & Prin 3/3&1 • 15 of the final 30 credits must be earned at the 300-400 level
+PHYS 161 - General Physics I (NS) 0 • 12 upper level major credits must be earned at UMD
+PHYS 260 and PHYS 261 - Gen Physics II & Lab (NL) 0 • A minimum 2.00 cumulative UM GPA, and satisfactory
+MATH 140 - Calculus I (MA/AR) 0 completion of all degree requirements, is required for gradution
+MATH 141 - Calculus II 4 • Students must have a 2.0 minimum GPA for all degree requirements,
+MATH 241 - Calculus III 4 minor requirements, and undergraduate certificate requirements
+MATH 243 - Intro Linear Algebra & Diff Equations 4 • A minimum of 120 credits is required to earn the degree
+BSCI160, ENCE205,ENSP101, GEOL120,GEOL123, or ECON200 3
+Engineering Sciences * May satisfy more than one requirement. See www.gened.umd.edu
+ENES 100 - Intro to Eng Design (SP) 0 ** See Civil Engineering Advisor for appropriate electives: www.civil.umd.edu
+ENES 102 - Mechanics I 3
+ENES 220 - Mechanics II 3
+Updated Fall 2026
+Civil Engineering Graduation Plan
+Name: UID:
+Current Engineering Students: https://eng.umd.edu/services/academic-policies
+Prospective Engineering Students: https://lep.umd.edu/
+Year 1 Fall Spring
+Course Credit Grade Course Credit Grade
+ENES 100 (SP) 3 ENES 102 3
+CHEM 135 3 MATH 141 4
+MATH 140 (AR) 4 PHYS 161 (NS) 3
+ENGL 101 (AW) 3 ENES/ENEE 200 (HU/SCIS) 3
+Science Requirement^ 3 GenEd Program Requirement 3
+Total 16 Total 16
+Year 2 Fall Spring
+Course Credit Grade Course Credit Grade
+ENCE 202 3 ENCE 203 3
+ENES 220 3 ENCE 305 3
+MATH 241 4 MATH 243 4
+PHYS 260 and PHYS 261 (NL) 3 & 1 GenEd Program Requirement 3
+GenEd Program Requirement 3
+Total 14 Total 16
+Year 3 Fall Spring
+Course Credit Grade Course Credit Grade
+ENCE 303 3 ENCE 340 3
+ENCE 312 3 ENCE 342 3
+ENCE 336 3 ENCE 367 4
+ENCE 365 4 ENCE 383 3
+Professional Writing (PW) 3 ENCE 436 3
+Total 15 Total 16
+Year 4 Fall Spring
+Course Credit Grade Course Credit Grade
+ENCE In-Major Tech Elective 3 ENCE In-Major Tech Elective 3
+STEM-Based Elective (See advisor) 3 Open Elective (See advisor) 3
+ENCE 442 3 ENCE 467 2
+ENCE 464 2 GenEd Program Requirement 3
+ENCE 483 3 GenEd Program Requirement 3
+Total 14 Total 14
+*All students must complete two Distributive Studies courses that are approved for Big Question courses. The Understanding Plural Societies (UP) and Cultural Competence (CC)
+courses may also fulfill Distributive Studies categories.
+Visit www.civil.umd.edu about approved electives. Updated Fall 2026

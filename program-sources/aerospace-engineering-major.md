@@ -139,4 +139,96 @@ Undergraduate Catalog
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/aerospace_fall_2026_gradplan.pdf)
 
-Not converted (fetch failed: Please provide binary data as `Uint8Array`, rather than `Buffer`.).
+AEROSPACE ENGINEERING
+NAME: A.A., A.S., Post-Bac
+UID:
+GENERAL EDUCATION REQUIREMENTS MAJOR REQUIREMENTS
+Fundamental Studies ENAE 100 - Aerospace Eng Profession 1
+Academic Writing (AW) ENGL 101 3 ENAE 202 -Computing Fundamentals Engr 3
+Professional Writing (PW) ENGL 39X 3 ENAE 203 - Intro Computer-Aided Design 1
+Oral Communication (OC) 3 ENAE 222 - Aerospace Mechanics 4
+Mathmatics (MA) MATH 140 4 ENAE 283 - Intro to Aerospace Systems 3
+Analytic Reasoning (AR) MATH 140 0 ENAE 284 - Foundations of Aerospace II 3
+Distributive Studies ENAE 301 - Dynamics of Aero Systems 3
+History/Social Sciences (HS*) 3 ENAE 310 - Incompressible Aerodynamics 3
+History/Social Sciences (HS*) 3 ENAE 325 - Aerospace Structures 3
+Humanities (HU*) 3 ENAE 362 - Aero Instrumentation & Exp. 3
+Humanities (HU*) ENEE/ENES 200 3 ENAE 364 - Aerospace Eng Lab 3
+Natural Sciences No Lab (NS) PHYS 161 3 ENAE 380 - Flight Software Systems 3
+Natural Sciences w/Lab (NL) PHYS 260/261 4 ENAE 410 - Compressible Aerodynamics 3
+Scholarship in Practice (SP*) in major ENES 100 3 ENAE 423 - Vibration & Aeroelasticity 3
+Scholarship in Practice (SP*) out of major 3 ENAE 432 - Control of Aero. Systems 3
+Big Question Courses ENAE 480 - Fundamentals Aerospace Design 2
+Big Question (SCIS*) ENEE/ENES 200 0 ENAE 4XX** 3
+Big Question (SCIS*) 3 ENAE 4XX** or 3
+Diversity ENAE 398H - Honors Research** 1/1/1
+Understanding Plural Societies (UP*) 3 ENES 200 or ENEE 200- Tech & Consequences (HU/IS) 0
+Understanding Plural Societies (UP*) OR 3 Technical Requirements
+Cultural Competency (CC*) Technical Elective - 4XX** 3
+MAJOR REQUIREMENTS Choose one of the following tracks:
+Basic Sciences Aeronautical Track:
+CHEM 135-Chem Engr or 131 & 134 -Fund & Prin 3/3&1 ENAE 403 - Aircraft Flight Dynamics 3
+PHYS 161 - General Physics I (NS) 0 ENAE 455 - Aircraft Propulsion & Power 3
+PHYS 260 and PHYS 261 - Gen Physics II & Lab (NL) 0 ENAE 491 - Principle of Aircraft Design 2
+PHYS 270 and PHYS 271 - Gen Physics III & Lab 3 & 1 ENAE 492 - Aeronautical Systems Design 3
+MATH 140 - Calculus I (MA/AR) 0 Astronautical Track:
+MATH 141 - Calculus II 4 ENAE 404 - Space Flight Dynamics 3
+MATH 241 - Calculus III 4 ENAE 457 - Space Propulsion & Power 3
+MATH 243 - Intro Linear Algebra & Diff Equations 4 ENAE 493 - Prin of Space Systems Design 2
+Engineering Sciences ENAE 494 - Space systems Design 3
+ENES 100 - Intro to Eng Design (SP) 0 Requirements for Graduation:
+ENES 232 - Thermodynamics 3 • Final 30 credits must be earned at UMD
+• 15 of the final 30 credits must be earned at the 300-400 level
+* May satisfy more than one requirement. See www.gened.umd.edu • 12 of the final 30 credits must be upper level major coursework
+**See Aerospace Advisor for appropriate electives: • A minimum 2.00 cumulative UM GPA and satisfactory
+completion of all degree requirements are required for graduation
+• Students matriculating after Fall 2012 must have a 2.0
+minimun GPA for all major requirements, minor requirements,
+and undergraduate certificate requirement (Major courses are
+defined as: departments courses, basic sciences, engineering
+sciences specified degree tracks, technical requirements.
+• A minimum of 124 credits is required to earn the degree
+Updated Fall 2026
+Aerospace Engineering Graduation Plan
+Name: UID:
+Current Engineering Students: https://eng.umd.edu/services/academic-policies
+Prospective Engineering Students: https://lep.umd.edu/
+Year 1 Fall Spring
+Course Credit Grade Course Credit Grade
+ENAE 100 1 ENAE 202 3
+ENES 100 (SP) 3 ENES 200 (HU/IS) 3
+MATH 140 (AR) 4 MATH 141 4
+CHEM 135 3 PHYS 161 (NS) 3
+ENGL 101 (FSAW) 3 FSOC 3
+Total 14 Total 16
+Year 2 Fall Spring
+Course Credit Grade Course Credit Grade
+ENAE 203 1 ENAE 284 3
+ENAE 222^ 4 ENES 232 3
+ENAE 283 3 MATH 243* 4
+MATH 241 4 GenEd Requirement 3
+PHYS 260 and PHYS 261 (NL) 3 & 1 PHYS 270 and PHYS 271 3 & 1
+Total 16 Total 17
+Year 3 Fall Spring
+Course Credit Grade Course Credit Grade
+ENAE 301 3 ENAE 325 3
+ENAE 310 3 ENAE 364 3
+ENAE 362 3 ENAE 410 3
+ENAE 380 3 ENAE 432 3
+GenEd Program Requirement 3 FSPW (need 60+cr) 3
+Total 15 Total 15
+Year 4 Fall Spring
+Course Credit Grade Course Credit Grade
+ENAE 423 3 ENAE Elective 3
+ENAE 480 2 ENAE Elective 3
+GenEd Requirement 3 Technical Elective 3
+ENAE 403 or 404 3 Gen Ed/Elective‡ 3
+ENAE 455 or 457 3 ENAE492 or 494 3
+ENAE491 or 493 2
+Total 16 Total 15
+*All students must complete two Distributive Studies courses that are approved for Big Question courses. The Understanding Plural Societies (UP) and
+Cultural Competence (CC) courses may also fulfill Distributive Studies categories.
+^ A combo of ENES102 & ENES220 can also be used for this requirement. * A combo of MATH246 & (MATH240 or MATH461) can be used for this requirement.
+**Aeronautical track: ENAE403, ENAE455, ENAE491; Astronautical track: ENAE404, ENAE457, ENAE493
+‡Only necessary if student still needs to fulfill GenEd and/or needs to meet the 124 credit minimum.
+Updated Fall 2026

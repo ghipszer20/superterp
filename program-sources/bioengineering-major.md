@@ -307,4 +307,89 @@ Undergraduate Catalog
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/bioe_fall_2026_gradplan_0.pdf)
 
-Not converted (fetch failed: Please provide binary data as `Uint8Array`, rather than `Buffer`.).
+BIOENGINEERING
+Name: A.A., A.S., Post-Bac
+UID:
+GENERAL EDUCATION REQUIREMENTS MAJOR REQUIREMENTS
+Fundamental Studies BIOE 120 - Biology for Engineers 3
+Academic Writing (AW) ENGL 101 3 BIOE 121 - Biology for Eng Lab 1
+Professional Writing (PW) ENGL 39X 3 BIOE 221 - Intro to Bioengineering Major 1
+Oral Communication (OC) 3 BIOE 232 - Biological Thermodynamics 3
+Mathmatics (MA) MATH 140 4 BIOE 241 - Biocomputation Methods 3
+Analytic Reasoning (AR) MATH 140 0 BIOE 331 - Biofluids 3
+Distributive Studies BIOE 340 - Modeling Phys. & Lab 4
+History/Social Sciences (HS*) 3 BIOE 372 - Biostatistics 3
+History/Social Sciences (HS*) 3 BIOE 457 - Biomedical Elect. & Instrumentation 4
+Humanities (HU*) ENES 200 3 BIOE Foundational I 3
+Humanities (HU*) 3 BIOE Foundational II 3
+Natural Sciences No Lab (NS) PHYS 161 3 BIOE Elective I 3
+Natural Sciences w/Lab (NL) PHYS 260/PHYS 261 4 BIOE Elective II 3
+Scholarship in Practice (SP*) in major ENES 100 3 BIOE Elective III 3
+Scholarship in Practice (SP*) out of major 3 BIOE Elective IV 3
+Big Question Courses BIOE 485 - Capstone I 3
+Big Question (SCIS*) ENES 200 0 BIOE 486 - Capstone II 3
+Big Question (SCIS*) 0/3 BSCI 331 & 332 - Cell Biology & Physiology/Lab 3 & 1
+Diversity ENES 200 - Tech & Consequences (HU/SCIS) 0
+Understanding Plural Societies (UP*) 0/3 Technical Requirements
+Understanding Plural Societies (UP*) OR 0/3 Biological Science Elective I (BSCI 2xx) ** 3 or 4
+Cultural Competency (CC*) Biological Science Elective II** 3
+MAJOR REQUIREMENTS Breadth Elective ** 3
+Basic Sciences
+CHEM 135-Chem Engr or 131 & 134 -Fund & Prin 3/3&1 Requirements for Graduation:
+CHEM 136 - Chemistry Lab for Eng 1 • Final 30 credits must be earned at UMD
+CHEM 231 and 232 - Organic Chemistry I & Lab 3 & 1 • 15 of the final 30 credits must be earned at the 300-400 level
+PHYS 161 - General Physics I (NS) 0 • 12 of the final 30 credits must be upper level major coursework
+PHYS 260 and PHYS 261 - Gen Physics II & Lab (NL) 0 • A minimum 2.00 cumulative UM GPA and satisfactory completion of all
+MATH 140 - Calculus I (MA/AR) 0 degree requirements are required for graduation
+MATH 141 - Calculus II 4 • Students matriculating after Fall 2012 must have a 2.0 minimum GPA for all
+MATH 241 - Calculus III 4 degree requirements, minor requirements, and undergraduate certificate requirements
+MATH 243 - Intro to Linear Algebra & Diff Equations 4 (Major courses are defined as: departmental courses, basic sciences, engineering
+BIOE 246 - Diff Equations for Bioengineering 3 sciences, specified degree tracks, technical requirements/ technical electives and
+Engineering Sciences Professional Writing (PW)
+ENES 100 - Intro to Eng Design (SP) 0 • A minimum of 120 credits is required to earn the degree
+ENES 102 - Mechanics I 3
+* May satisfy more than one requirement. See www.gened.umd.edu
+** See Bioengineering Advisor for appropriate electives: www.bioe.umd.edu
+Updated Fall 2026
+Bioengineering Graduation Plan
+Name: UID:
+Current Engineering Students: https://eng.umd.edu/services/academic-policies
+Prospective Engineering Students: https://lep.umd.edu/
+Year 1 Fall Spring
+Course Credit Grade Course Credit Grade
+ENES 100 (SP) 3 BIOE 241 3
+CHEM 135 3 MATH 141 4
+CHEM 136 1 PHYS 161 (NS) 3
+MATH 140 (AR) 4 BIOE 120 3
+ENGL 101 (AW) 3 BIOE 121 1
+Hist & Social Sciences (HS)* 3
+Total 14 Total 17
+Year 2 Fall Spring
+Course Credit Grade Course Credit Grade
+CHEM 231 3 BIOE 232 3
+CHEM 232 1 ENES 102 3
+MATH 241 4 BIOE 246 3
+MATH 243 4 Bio. Science Elec. I (BSCI 2xx) 4
+PHYS 260 and PHYS 261 (NL) 3 & 1 ENES200 (HU/SCIS) 3
+BIOE 221 1
+Total 17 Total 16
+Year 3 Fall Spring
+Course Credit Grade Course Credit Grade
+BIOE 331 3 BIOE 340 4
+BIOE 372 3 BIOE 457 4
+BSCI 331 and BSCI 332 3 & 1 BIOE Foundational II 3
+BIOE Foundational I 3 BIOE Elective I 3
+Oral Communication (OC) 3 Scholarship in Practice (SP)* 3
+Total 16 Total 17
+Year 4 Fall Spring
+Course Credit Grade Course Credit Grade
+BIOE 485 3 BIOE 486 3
+BIOE Elective II 3 BIOE Elective IV 3
+BIOE Elective III 3 Bio. Science Elective II 3
+Breadth Elective 3 Professional Writing (PW) 3
+Humanities (HU)* 3 Hist & Social Sciences (HS)* 3
+Total 15 Total 15
+*Students must complete two Distributive Studies courses that are approved for Big Question courses. To complete all requirements
+following this plan, the Understanding Plural Societies (UP) and Cultural Competence (CC) courses must also fulfill Distributive
+Studies categories.
+**Transfer students entering between Fall 2024-Spring 2026 should default to the 23-S24 plan Updated Fall 2026

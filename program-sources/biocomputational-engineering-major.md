@@ -137,4 +137,83 @@ Yes! All graduates of our Biocomputational Engineering degree program earn their
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/biocomp_fall_2026_gradplan.pdf)
 
-Not converted (fetch failed: Please provide binary data as `Uint8Array`, rather than `Buffer`.).
+BIOCOMPUTATIONAL ENGINEERING
+NAME: A.A., A.S., Post-Bac
+UID:
+GENERAL EDUCATION REQUIREMENTS Major Requirements @ USG
+Fundamental Studies ENBC 301 - Intro to Biocomputational Engineering 1
+Academic Writing (AW) ENGL 101 3 ENBC 311 - Python for Data Analysis 3
+Professional Writing (PW) @USG ENGL 393 3 ENBC 312 - Object Oriented Programming in C++ 3
+Oral Communication (OC) 3 ENBC 321 - Machine Learning for Data Analysis 3
+Mathmatics (MA) MATH 140 4 ENBC 322 - Algorithms 3
+Analytic Reasoning (AR) MATH 140 0 ENBC 331 - Applied Linear Systems and Diff Eqs 3
+Distributive Studies ENBC 332 - Statistics, Data Analysis, and Data Vis 3
+History/Social Sciences (HS*) 3 ENBC 341 - Biomolecular Engineering Thermo 3
+History/Social Sciences (HS*) 3 ENBC 342 - Comp Fluid Dynamics and Mass Transfer 3
+Humanities (HU*) 3 ENBC 351 - Quantitative Mol and Cell Biology 3
+Humanities (HU*) 3 ENBC 352 - Molecular Techniques Laboratory 2
+Natural Sciences No Lab (NS) PHYS 161 3 ENBC 353 - Synthetic Biology 3
+Natural Sciences w/Lab (NL) PHYS 260/261 4 ENBC 425 - Imaging and Image Processing 3
+Scholarship in Practice (SP*) in major ENES 100 3 ENBC 431 - Finite Element Analysis 3
+Scholarship in Practice (SP*) out of major 3 ENBC 441 - Computational Systems Biology 3
+Big Question Courses ENBC 491 - Senior Capstone Design in BCE 3
+Big Question (SCIS*) 0/3 Required Technical Electives (12 credits) ** @ USG
+Big Question (SCIS*) 0/3 ENBC Technical Elective I 3
+Diversity ENBC Technical Elective II 3
+Understanding Plural Societies (UP*) 0/3 ENBC Technical Elective III 3
+Understanding Plural Societies (UP*) OR 0/3 ENBC Technical Elective IV 3
+Cultural Competency (CC*)
+MAJOR REQUIREMENTS Requirements for Graduation:
+Basic Sciences • Final 30 credits must be earned at UMD
+CHEM 135- Chem Engr or CHEM 131+134 - Gen Chem+Princ 3/3&1 • 15 of the final 30 credits must be earned at the 300-400 level
+CHEM136 - Chemistry Lab for Engr 1 •12 upper level major credits must be earned at UMD
+PHYS 161 - General Physics I (NS) 0 • A minimum 2.00 cumulative UM GPA, and satisfactory completion of
+PHYS 260 and PHYS 261 - Gen Physics II & Lab (NL) 0 requirements, is required for graduation all degree
+MATH 140 - Calculus I (MA/AR) 0 • Students matriculating in Fall 2012 or after must have a 2.0 minimum GPA for all
+MATH 141 - Calculus II 4 degree requirements, minor requirements, and undergraduate certificate requirements
+MATH 241 - Calculus III 4 (Major courses are defined as: departmental courses, basic sciences, engineering
+Engineering Sciences sciences, specified degree tracks, technical requirements/ technical electives and
+ENES 100 - Intro to Eng Design (SP) 0 ENGL 393)
+BIOE 120 - Biology for Engr or BSCI170 - Prin of Mol & Cell Bio 3 • A minimum of 120 credits is required to earn the degree
+BIOE 241 - Biocomputational Methods or equivalent 3
+* May satisfy more than one requirement. See www.gened.umd.edu
+**See Biocomputational Engineering Advisor for electives: biocomp.umd.edu
+Updated Fall 2026
+BIOCOMPUTATIONAL ENGINEERING GRADUATION PLAN
+Name: UID:
+Current Engineering Students: https://eng.umd.edu/services/academic-policies
+Prospective Engineering Students: https://lep.umd.edu/
+Year 1 Fall Spring
+Course Credit Grade Course Credit Grade
+MATH140 4 ENES100 3
+CHEM135 3 BIOE120 3
+CHEM136 1 MATH141 4
+ENGL101 3 PHYS161 3
+General Ed Requirement I 3 General Ed Requirement III 3
+General Ed Requirement II 3
+Total 17 Total 16
+Year 2 Fall Spring
+Course Credit Grade Course Credit Grade
+MATH241 4 PHYS260 3
+BIOE241 3 PHYS261 1
+General Ed Requirement IV 3 General Ed Requirement VI 3
+General Ed Requirement V 3 General Ed Requirement VII 3
+General Ed Requirement VIII 3
+Total 13 Total 13
+Year 3 Fall @USG Spring @USG
+Course Credit Grade Course Credit Grade
+ENBC301 1 ENBC312 3
+ENBC311 3 ENBC351 3
+ENBC331 3 ENBC342 3
+ENBC332 3 ENBC352 2
+ENBC341 3 ENBC321 3
+ENBC322 3
+Total 16 Total 14
+Year 4 Fall @USG Spring @ USG
+Course Credit Grade Course Credit Grade
+ENBC353 3 Elective 3
+ENBC431 3 ENBC441 3
+ENBC425 3 ENBC491 3
+ENGL393 3 Elective 3
+Total 12 Total 12
+Updated Fall 2026

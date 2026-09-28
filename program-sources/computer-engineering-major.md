@@ -136,4 +136,89 @@ Undergraduate Tuition and Fees
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/computer_fall_2026_gradglan.pdf)
 
-Not converted (fetch failed: Please provide binary data as `Uint8Array`, rather than `Buffer`.).
+COMPUTER ENGINEERING
+NAME: A.A., A.S., Post-Bac
+UID:
+GENERAL EDUCATION REQUIREMENTS MAJOR REQUIREMENTS
+Fundamental Studies CMSC 131 – Object Oriented Programming I** 0
+Academic Writing (AW) ENGL 101 3 CMSC 132 – Object Oriented Programming II 4
+Professional Writing (PW) ENGL 39X 3 CMSC 216 – Intro to Computer Systems 4
+Oral Communication (OC) 3 CMSC 250 – Intro to Discrete Structures 4
+Mathmatics (MA) MATH 140 4 CMSC 330 – Organization of Progr Languages 3
+Analytic Reasoning (AR) MATH 140 0 CMSC 351 – Algorithms 3
+Distributive Studies CMSC 412 or ENEE447– Operating Systems 4
+History/Social Sciences (HS*) 3 ENEE 101 - Intro to Electrical & Comp Engr 3
+History/Social Sciences (HS*) 3 ENEE 200 - Engineering Ethics (HU/IS) 0
+Humanities (HU*) ENEE 200 3 ENEE 205 – Electric Circuits 4
+Humanities (HU*) 3 ENEE 222 – Elements of Discrete Signals 4
+Natural Sciences No Lab (NS) PHYS 161 3 ENEE 244 – Digital Logic Design 3
+Natural Sciences w/Lab (NL) PHYS 260/261 4 ENEE 245 – Digital Circuits & Systems Lab 2
+Scholarship in Practice (SP*) in major ENES 100 3 ENEE 304 or ENEE 322 3
+Scholarship in Practice (SP*) out of major 3 ENEE 324 or STAT400 3
+Big Question Courses ENEE 350 – Computer Organization 3
+Big Question (SCIS*) ENEE 200 0 ENEE 446 – Digital Computer Design 3
+Big Question (SCIS*) 0/3 Computer Engineering Electives*** (26) credits required
+Diversity Category A (min 6 crs; 3 crs at 300/400 lvl): 3
+Understanding Plural Societies (UP*) 0/3 Category A: 3
+Understanding Plural Societies (UP*) OR 0/3 Category B: 3
+Cultural Competency (CC*) Category C: 3
+MAJOR REQUIREMENTS Category C: 3
+Basic Sciences Category D: 2
+CHEM 135-Chem Engr or 131 & 134 -Fund & Prin 3/3&1 Category E: 3
+PHYS 161 - General Physics I (NS) 0 Category F: 3
+PHYS 260 and 261 - Gen Physics II & Lab (NL) 0 Elective (Category A-F or Free Elective): 3
+MATH 140 - Calculus I (MA/AR) 0
+MATH 141 - Calculus II 4 Requirements for Graduation:
+ENEE 290 - Intro Diff Equations & Linear Algebra Engrs 4 • Final 30 credits must be earned at UMD
+Engineering Sciences • 15 of the final 30 credits must be earned at the 300-400 level
+ENES 100 - Intro to Eng Design (SP) 0 • 12 of the final 30 credits must be upper level major coursework
+• A minimum 2.00 cumulative UM GPA and satisfactory completion of all degree
+* May satisfy more than one requirement. See www.gened.umd.edu requirements are required for graduation
+** Students are required to complete CMSC131 prior to taking CMSC132 • Students matriculating after Fall 2012 must have a 2.0 minimum GPA for all
+unless they have AP credit for CMSC131 (5 on the JAVA A exam, 4 or 5 on the JAVA AB) degree requirements, minor requirements, and undergraduate certificate requirements
+or have satisfactorily passed the Computer Science exemption exam. (Major courses are defined as: departmental courses, basic sciences, engineering
+sciences, specified degree tracks, technical requirements/ technical electives and
+*** For a complete list of approved electives, please see: Professional Writing (PW)
+www.ece.umd.edu/home • A minimum of 120 credits are required to earn the degree
+Update Fall 2026
+Computer Engineering Graduation Plan
+Name: UID:
+Current Engineering Students: https://eng.umd.edu/services/academic-policies
+Prospective Engineering Students: https://lep.umd.edu/
+Year 1 Fall Spring
+Course Credit Grade Course Credit Grade
+CHEM 135 3 ENES 100 (SP)* 3
+CMSC 131 *** 4 CMSC 132 4
+ENEE 101* 3 PHYS161 (NS) 3
+MATH 140 (AR/MA) 4 MATH 141 4
+ENGL 101 (AW) 3 ORAL COMM (OC) 3
+Total 17 17
+Year 2 Fall Spring
+Course Credit Grade Course Credit Grade
+ENEE 244 3 ENEE 222 4
+ENEE 290 4 ENEE 205 4
+PHYS 260 and PHYS 261 (NL) 3 & 1 CMSC 216 4
+CMSC 250 4 ENEE 245 2
+Humanities (HU)** 3 HIST & SOC SCIENCE (HS)** 3
+Total 18 Total 17
+Year 3 Fall Spring
+Course Credit Grade Course Credit Grade
+ENEE 200 (HU/SCIS) 3 ENEE 324 or STAT400 3
+ENEE 304 or ENEE 322 3 ENEE 446 3
+ENEE 350 3 CMSC 351 3
+CMSC 330 3 CpE Tech El: CAT A 3
+CpE Tech El: CAT A 3 Hist & Social Sciences (HS)** 3
+Total 15 Total 15
+Year 4 Fall Spring
+Course Credit Grade Course Credit Grade
+CMSC4xx: CAT B 3 ENEE 4xx: CAT D 2
+ENEE 4xx: CAT C 3 CpE Tech El: CAT E 3
+ENEE 4xx: CAT C 3 CMSC 412 or ENEE 447 4
+CpE Tech El: CAT F 3 CpE Tech Elective 3
+Scholarship in Prac (SP)** 3 Professional Writing (PW) 3
+Total 15 Total 15
+*ENEE101 and ENES100 cannot be taken in the same semester. Students may take these courses consecutively within their choice.
+** All students must complete two distributive studies courses that are approved Big Question courses. The Understanding Plural Societies & Cultural first year
+in the order of choice. Competence courses may also fulfill Distributive Studies categories.
+*** Students are required to complete CMSC131 prior to taking CMSC132 unless they have AP credit for CMSC131 (5 on the JAVA A exam, 4 or 5 on the JAVA AB)
+or have satisfactorily passed the Computer Science exemption exam. Updated Fall 2026

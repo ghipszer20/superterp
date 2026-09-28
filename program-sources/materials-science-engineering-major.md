@@ -166,4 +166,91 @@ Undergraduate Catalog
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/materials_fall_2026_gradplan.pdf)
 
-Not converted (fetch failed: Please provide binary data as `Uint8Array`, rather than `Buffer`.).
+MATERIALS SCIENCE AND ENGINEERING
+NAME: A.A, A.S., Post Bac
+UID:
+GENERAL EDUCATION REQUIREMENTS MAJOR REQUIREMENTS
+Fundamental Studies ENES200 or ENEE200 - Tech & Consequences (HU/I-Series) 0
+Academic Writing (AW) ENGL 101 3 ENMA 165 - Intro Programming - Python 3
+Professional Writing (PW) ENGL 39X 3 ENMA 180 - MSE: The Field and the Future 1
+Oral Communication (OC) 3 ENMA 300 - Intro to Materials Engineering 3
+Mathmatics (MA) MATH 140 4 ENMA 301 - Materials Emerging Tech 3
+Analytic Reasoning (AR) MATH 140 0 ENMA 312 - Experimental Methods in MSE 3
+Distributive Studies ENMA 441 - Characterization of Materials 3
+History/Social Sciences (HS*) 3 ENMA 457 - Mechanical Properties 4
+History/Social Sciences (HS*) 3 ENMA 460 - Physics of Materials 3
+Humanities (HU*) ENES/ENEE 200 3 ENMA 461 - Thermodynamics of Materials 3
+Humanities (HU*) 3 ENMA 465 - Microprocessing Materials 3
+Natural Sciences No Lab (NS) PHYS 161 3 ENMA 470 - Materials Selection for Engr Design 3
+Natural Sciences w/Lab (NL) PHYS 260/261 4 ENMA 471 - Kinetics 3
+Scholarship in Practice (SP*) in major ENES 100 3 ENMA 487- Capstone Preparation 1
+Scholarship in Practice (SP*) out of major 3 ENMA 490 - Materials Design 3
+Big Question Courses Technical Requirements
+Big Question (SCIS*) ENES/ENEE 200 0 CHEM 231 & 232-Org Chem I or CHEM 481 3&1OR3
+Big Question (SCIS*) 0/3 TECH 4XX - Tech. Elective** 3
+Diversity TECH 4XX - Tech. Elective** 3
+Understanding Plural Societies (UP*) 0/3 ENMA 4XX - Spec. Elective** 3
+Understanding Plural Societies (UP*) OR 0/3 ENMA 4XX - Spec. Elective** 3
+Cultural Competency (CC*) ENMA 4XX - Spec. Elective** 3
+MAJOR REQUIREMENTS ENMA 4XX - Spec. Elective** 3
+Basic Sciences ENMA 4XX - Spec. Elective** 3
+CHEM 135-Chem Engr or 131 & 134 -Fund & Prin 3/3&1 SCI ELEC - Upper level Science Elective 3
+CHEM 136 - Chemistry Lab for Eng 1
+PHYS 161 - General Physics I (NS) 0 Requirements for Graduation:
+PHYS 260 and 261 - Gen Physics II & Lab (NL) 0 • Final 30 credits must be earned at UMD
+PHYS 270 and 271 - Gen Physics III & Lab 3 & 1 • 15 of the final 30 credits must be earned at the 300-400 level
+MATH 140 - Calculus I (MA/AR) 0 • 12 of the final 30 credits must be upper level major coursework
+MATH 141 - Calculus II 4 • A minimum 2.00 cumulative UM GPA and satisfactory completion of all degree
+MATH 241 - Calculus III 4 requirements are required for graduation
+MATH 246 - Differential Equations 3 • Students matriculating after Fall 2012 must have a 2.0 minimum GPA for all
+Engineering Sciences degree requirements, minor requirements, and undergraduate certificate requirements
+ENES 100 - Intro to Eng Design (SP) 0 (Major courses are defined as: departmental courses basic sciences, engineering
+sciences, specified degree tracks, technical requirements/ technical electives and
+* May satisfy more than one requirement. See www.gened.umd.edu Professional Writing (PW)
+**Students should design a course program under the guidance of their advisor. • A minimum of 120 credits is required to earn the degree
+Check the website to see examples of potential specialization electives for
+each option.
+Updated Fall 2026
+Materials Science and Engineering Graduation Plan
+Name: UID:
+Current Engineering Students: https://eng.umd.edu/services/academic-policies
+Prospective Engineering Students: https://lep.umd.edu/
+Year 1 Fall Spring
+Course Credit Grade Course Credit Grade
+ENES 100 (SP) 3 ENMA 165 3
+MATH 140 (AR) 4 MATH 141 4
+CHEM 135 3 PHYS 161 3
+CHEM 136 1 Hist & Social Sciences (HS)* 3
+ENGL 101 (AW) 3 ORAL COMM (OC) 3
+ENMA 180 1
+Total 15 Total 16
+Year 2 Fall Spring
+Course Credit Grade Course Credit Grade
+MATH 241 4 MATH 246 3
+PHYS 260 and PHYS 261 (NL) 3 & 1 PHYS 270 and PHYS 271 (NL) 3 & 1
+ENMA 300 3 ENMA 301 3
+ENES/ENEE 200 (HU/SCIS) 3 CHEM 231 & 232 OR 481 3 & 1 OR 3
+Hist & Social Sciences (HS)* 3
+Total 14 Total 16 or 17
+Year 3 Fall Spring
+Course Credit Grade Course Credit Grade
+ENMA 312 OR Upper Level
+Science Elective 3
+ENMA 312 OR Upper Level
+Science Elective 3
+ENMA 457 4 ENMA 461 3
+ENMA 460 3 ENMA 465 3
+Specialization Elective 3 ENMA 470 3
+Scholarship in Practice (SP)* 3 Specialization Elective 3
+Total 16 Total 15
+Year 4 Fall Spring
+Course Credit Grade Course Credit Grade
+ENMA 441 3 ENMA 490 3
+ENMA 471 3 Specialization Elective 3
+ENMA 487 1 Specialization Elective 3
+Specialization Elective 3 Technical Elective 3
+Technical Elective 3 Humanities (HU)* 3
+Professional Writing (PW) 3
+Total 16 Total 15
+*All students must complete two Distributive Studies courses that are approved for Big Question courses. The Understanding
+Plural Societies (UP) and Cultural Competence (CC) courses may also fulfill Distributive Studies categories. Updated Fall 2026

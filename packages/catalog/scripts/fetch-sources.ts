@@ -85,7 +85,7 @@ async function paced<T>(fn: () => Promise<T>): Promise<T> {
 async function fetchRaw(url: string): Promise<{ html?: string; bytes?: Uint8Array }> {
   const file = rawCacheFile(url);
   if (existsSync(file)) {
-    return isPdf(url) ? { bytes: readFileSync(file) } : { html: readFileSync(file, "utf8") };
+    return isPdf(url) ? { bytes: new Uint8Array(readFileSync(file)) } : { html: readFileSync(file, "utf8") };
   }
   if (isPdf(url)) {
     const bytes = await paced(() => fetchBytes("sources", url));

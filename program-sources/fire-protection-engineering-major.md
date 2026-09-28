@@ -91,4 +91,89 @@ Coming soon!
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/fire_protection_fall_2026_gradplan.pdf)
 
-Not converted (fetch failed: Please provide binary data as `Uint8Array`, rather than `Buffer`.).
+FIRE PROTECTION ENGINEERING
+NAME: A.A., A.S., Post-Bac
+UID:
+GENERAL EDUCATION REQUIREMENTS MAJOR REQUIREMENTS
+Fundamental Studies ENFP 201 - Computer Programming & Numerical Methods 3
+Academic Writing (AW) ENGL 101 3 ENFP 250 - Intro to Life Safety Analysis 3
+Professional Writing (PW) ENGL 39X 3 ENFP 300 - Fire Protection Fluid Mechanics 3
+Oral Communication (OC) 3 ENFP 310 - Water Based FP Sys. Design 3
+Mathmatics (MA) MATH 140 4 ENFP 312 - Heat & Mass Transfer 3
+Analytic Reasoning (AR) MATH 140 0 ENFP 420 - Fire Assessment Methods & Lab 4
+GenEd Distributive Studies ENFP 350 - Professional Dev Seminar 1
+History/Social Sciences (HS*) 3 ENFP 405 - Structural Fire Protection 3
+History/Social Sciences (HS*) 3 ENFP 410 - Special Hazard Suppression Systems 3
+Humanities (HU*) 3 ENFP 411 - Risk Informed Performance Based Design 3
+Humanities (HU*) 3 ENFP 413 - Human Response to Fire 3
+Natural Sciences No Lab (NS) PHYS 161 3 ENFP 415 - Fire Dynamics 3
+Natural Sciences w/Lab (NL) PHYS 260/261 4 ENFP 425 - Enclosure Fire Modeling 3
+Scholarship in Practice (SP*) in major ENES 100 3 ENFP 426 - Computational Methods in FPE 3
+Scholarship in Practice (SP*) out major 3 ENFP 440 - Smoke Mgmt & Fire Alarm Systems 3
+Big Question Courses Technical Requirements
+Big Question (SCIS*) 0/3 Technical Elective** 3
+Big Question (SCIS*) 0/3 Technical Elective** 3
+GenEd Diversity Technical Elective** 3
+Understanding Plural Societies (UP*) 0/3 Technical Elective** 3
+Understanding Plural Societies (UP*) OR 0/3
+Cultural Competency (CC*) Requirements for Graduation:
+MAJOR REQUIREMENTS • Final 30 credits must be earned at UMD
+Basic Sciences • 15 of the final 30 credits must be earned at the 300-400 level
+CHEM 135-Chem Engr or 131 & 134 -Fund & Prin 3/3&1 • 12 of the final 30 credits must be upper level major coursework
+PHYS 161 - General Physics I (NS) 0 • A minimum 2.00 cumulative UM GPA and satisfactory completion of all degree
+PHYS 260 and PHYS 261 - Gen Physics II & Lab (NL) 0 requirements are required for graduation
+MATH 140 - Calculus I (MA/AR) 0 • Students matriculating after Fall 2012 must have a 2.0 minimum GPA for all
+MATH 141 - Calculus II 4 degree requirements, minor requirements, and undergraduate certificate requirements
+MATH 240 - Linear Algebra or MATH 241 - Calculus III 4 (Major courses are defined as: departmental courses, basic sciences, engineering
+MATH 246 - Differential Equations 3 sciences, specified degree tracks, technical requirements/ technical electives and
+Engineering Sciences Professional Writing)
+ENES 100 - Intro to Eng Design (SP) 0 • A minimum of 120 credits is required to earn the degree
+ENES 102 - Mechanics I 3
+ENES 220 - Mechanics II 3
+ENES 221- Dynamics 3
+ENES 232 - Thermodynamics 3
+*May satisfy more than one requirement. See
+**Technical Electives are chosen in consultation with the academic advisor, but must include the following: at least 3 credits of MATH400+ or
+STAT400+ at least 3 credits of ENFP400+ at least 6 credits of Engineering coursework 300
+Updated Fall 2026
+Fire Protection Engineering Graduation Plan
+Name: UID:
+Current Engineering Students: https://eng.umd.edu/services/academic-policies
+Prospective Engineering Students: https://lep.umd.edu/
+Year 1 Fall Spring
+Course Credit Grade Course Credit Grade
+ENFP 101 (optional) 1 ENES102 3
+ENES100 (SP) 3 MATH 141 4
+MATH 140 (AR) 4 PHYS 161 (NL) 3
+CHEM 135 3 Hist & Social Sciences (HS)* 3
+ENGL 101 (AW) 3 Humanities (HU)* 3
+Total 13-14 Total 16
+Year 2 Fall Spring
+Course Credit Grade Course Credit Grade
+ENFP 250 3 ENFP 201 3
+ENES 221 3 ENES 220 3
+MATH 240 or 241 4 ENES 232 3
+PHYS 260 and PHYS 261 (NL) 3 & 1 MATH 246 3
+Scholarship and Practice (SP)* 3 Oral Communication (OC) 3
+Total 17 Total 15
+Year 3 Fall Spring
+Course Credit Grade Course Credit Grade
+ENFP 300 3 ENFP 310 3
+ENFP 440 3 ENFP 312 3
+Technical Elective** 3 ENFP 350 1
+Professional Writing (PW) 3 ENFP 413 3
+Hist & Social Sciences (HS)* 3 Technical Elective** 3
+Humanities (HU)* 3
+Total 15 Total 16
+Year 4 Fall Spring
+Course Credit Grade Course Credit Grade
+ENFP 405 3 ENFP 411 3
+ENFP 410 3 ENFP 420 4
+ENFP 415 3 ENFP 426 3
+ENFP 425 3 Technical Elective** 3
+Technical Elective** 3
+Total 15 Total 13
+*All students must complete two Distributive Studies courses that are approved for Big Question courses.
+The Understanding Plural Societies (UP) and Cultural Competence (CC) courses may also fulfill Distributive Studies categories.
+**Technical Electives are chosen in consultation with the academic advisor, but must include the following: at least 3 credits of MATH400+ or STAT400+
+at least 3 credits of ENFP400+ at least 6 credits of Engineering coursework 300+, CHEM400+, CMSC400+, MATH400+, or PHYS400+ Updated Fall 2026

@@ -89,4 +89,89 @@ Undergraduate Catalog
 
 ## Sample plan (https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/chemical_fall_2026_gradplan_1.pdf)
 
-Not converted (fetch failed: Please provide binary data as `Uint8Array`, rather than `Buffer`.).
+CHEMICAL ENGINEERING
+NAME: A.A., A.S., Post-Bac
+UID:
+GENERAL EDUCATION REQUIREMENTS MAJOR REQUIREMENTS
+Fundamental Studies BIOE 120 - Biology for Engineers 3
+Academic Writing (AW) ENGL 101 3 CHBE 101 - Intro to Chem & Biom. Eng 3
+Professional Writing (PW) ENGL 39X 3 CHBE 250 - Comp MethodsChem & Bio 3
+Oral Communication (OC) 3 CHBE 301 - Chem & Biomolec Thermo 3
+Mathmatics (MA) MATH 140 4 CHBE 302 - Chem & Biomolec Thermo II 3
+Analytic Reasoning (AR) MATH 140 0 CHBE 333 - Comm Skills for Eng 1
+Distributive Studies CHBE 410 - Statistics & Experimental Design 3
+History/Social Sciences (HS*) 3 CHBE 422 - Chem & Biomolec Trans. 3
+History/Social Sciences (HS*) 3 CHBE 424 - Chem & Biomolec Trans. II 3
+Humanities (HU*) 3 CHBE 426 - Chem & Biomolec Sep. Processes 3
+Humanities (HU*) 3 CHBE 437 - Chem & Biomolec Eng Lab 3
+Natural Sciences No Lab (NS) PHYS 161 3 CHBE 440 - Chem Kinetics & Reactor 3
+Natural Sciences w/Lab (NL) PHYS 260/261 4 CHBE 442 - Chem Eng Systems Analysis 3
+Scholarship in Practice (SP*) In major ENES 100 3 CHBE 444 - Process Eng Econ & Design I 3
+Scholarship in Practice (SP*) out of major 3 CHBE 446 - Process Eng Econ & Design II 3
+Big Question Courses ENMA 300 or CHBE 457 3
+Big Question (SCIS*) 0/3 CHBE 4XX - Elective ** 3
+Big Question (SCIS*) 0/3 CHBE 4XX - Elective ** 3
+Diversity CHBE 4XX - Elective ** 3
+Understanding Plural Societies (UP*) 0/3 Technical Requirements
+Understanding Plural Societies (UP*) OR 0/3 BCHM 461 & BCHM 462 or BCHM463 6 or 3
+Cultural Competency (CC*) CHEM 272 – Gen Bioanalytical Chem Lab 2
+MAJOR REQUIREMENTS
+Basic Sciences
+CHEM 135-Chem Engr or 131 & 134 -Fund & Prin 3/3&1 Requirements for Graduation:
+CHEM 136 - Chemistry Lab for Eng 1 • Final 30 credits must be earned at UMD
+CHEM 231 and 232 - Organic Chemistry I & Lab 3 & 1 • 15 of the final 30 credits must be earned at the 300-400 level
+CHEM 241 and 242 - Organic Chemistry II & Lab 3 & 1 • 12 of the final 30 credits must be upper level major coursework
+PHYS 161 - General Physics I (NS) 0 •A minimum 2.00 cumulative UM GPA and satisfactory completion of all degree
+PHYS 260 and 261 - Gen Physics II & Lab (NL) 0 requirements are required for graduation
+PHYS 270 and 271 - Gen Physics III & Lab 3 & 1 • Students matriculating after Fall 2012 must have a 2.0 minimum GPA for all
+MATH 140 - Calculus I (MA/AR) 0 degree requirements, minor requirements, and undergraduate certificate requirements
+MATH 141 - Calculus II 4 (Major courses are defined as: departmental courses, basic sciences, engineering
+MATH 241 - Calculus III 4 sciences, specified degree tracks, technical requirements/ technical electives and
+MATH 246 - Differential Equations 3 Professional Writing (PW)
+Engineering Sciences • A minimum of 120 credits is required to earn the degree
+ENES 100 - Intro to Eng Design (SP) 0
+* May satisfy more than one requirement. See www.gened.umd.edu
+** For technical elective guidelines, see:
+www.chbe.umd.edu/undergraduate/electives
+Updated Fall 2026
+Chemical and Biomolecular Engineering Graduation Plan
+Name: UID:
+Current Engineering Students: https://eng.umd.edu/services/academic-policies
+Prospective Engineering Students: https://lep.umd.edu/
+Year 1 Fall Spring
+Course Credit Grade Course Credit Grade
+ENES100 (SP) 3 CHBE 101 3
+MATH 140 (AR) 4 MATH 141 4
+CHEM 135 3 PHYS 161 (NS) 3
+CHEM 136 1 ENGL 101 (AW) 3
+Humanities (HU)* 3 BIOE 120 3
+Total 14 Total 16
+Year 2 Fall Spring
+Course Credit Grade Course Credit Grade
+MATH 241 4 MATH 246 3
+CHEM 231 3 PHYS 270 and PHYS 271 3 & 1
+CHEM 232 1 CHEM 241 3
+PHYS 260 and PHYS 261 (NL) 3 & 1 CHEM 242 1
+CHBE 250 3 CHBE 302 3
+CHBE 301 3 ORAL COMM (OC) 3
+Total 18 Total 17
+Year 3 Fall Spring
+Course Credit Grade Course Credit Grade
+CHBE 410 3 BCHM 461** or 463 3
+CHBE 422 3 ENMA 300 or CHBE 457 3
+CHBE 440 3 CHBE 424 3
+CHEM 272 2 CHBE 426 3
+Professional Writing (PW) 3 CHBE 333 1
+Scholarship in Practice (SP)* 3 Humanities (HU)* 3
+Total 17 Total 16
+Year 4 Fall Spring
+Course Credit Grade Course Credit Grade
+CHBE 437 3 CHBE 446 3
+CHBE 442 3 Tech Elective (see advisor)** 3
+CHBE 444 3 Tech Elective (see advisor)** 3
+Tech Elective (see advisor)** 3 Hist & Social Sciences (HS)* 3
+Hist & Social Sciences (HS)* 3
+Total 15 Total 12
+*All students must complete two Distributive Studies courses that are approved for Big Question courses. The Understanding
+Plural Societies (UP) and Cultural Competence (CC) courses may also fulfill Distributive Studies categories.
+** Students selecting BCHM 461 must complete BCHM 462 as their approved outside technical elective. Updated Fall 2026
