@@ -1,0 +1,22 @@
+{
+  "programId": "geog-major-general",
+  "source": "https://fellercenter.umd.edu/sites/fellercenter.umd.edu/files/2%20Year%20Plans/geographical_sciences_2yearplan.pdf",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "Built from the department's own four-year academic plan grid on the GEOG Major Checklist (the 2-year-plan PDF itself failed to fetch; the checklist's four-year grid is used instead). Gen Ed slots (ENGL101, OC, HU, NS, HS, SP, UP, UNIV100/361) and generic 'Elective' slots outside the major are left out: only the major is audited.",
+    "GEOG Physical Gateway Course -> GEOG301; GEOG Human Gateway Course -> GEOG330; GEOG Technique Gateway Course -> GEOG372 (of the enumerated GEOG372/373 choice); GEOG Elective Courses 1-3 -> GEOG303, GEOG331, GEOG358; GEOG Elective Courses 4-5 (400 level) -> GEOG421, GEOG422. All are real, currently-offered GEOG courses not otherwise required by this track, picked from the Academic Catalog's approved GEOG course list to satisfy the count/level requirement, not for topical fit -- please confirm or substitute an advisor's actual picks.",
+    "Supporting Sequence 1 (MATH120/140/136) filled with MATH120; Supporting Sequences 2-5 (12 credits, advisor-approved, no enumerable list) are left out entirely -- see the program's reviewNotes and docs/project/owner-review.md."
+  ],
+  "credits": { "GEOG211": 1, "GEOG212": 1 },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["GEOG201", "GEOG211", "MATH120"] },
+    { "term": "Year 1 Spring", "courses": ["GEOG202"] },
+    { "term": "Year 2 Fall", "courses": ["GEOG301", "GEOG330", "GEOG212"] },
+    { "term": "Year 2 Spring", "courses": ["GEOG306", "GEOG303"] },
+    { "term": "Year 3 Fall", "courses": ["GEOG372"] },
+    { "term": "Year 3 Spring", "courses": ["GEOG331"] },
+    { "term": "Year 4 Fall", "courses": ["GEOG358", "GEOG421"] },
+    { "term": "Year 4 Spring", "courses": ["GEOG422"] }
+  ]
+}
