@@ -396,3 +396,7 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Latin (`clas-minor-latin`): 3xx and 4xx reading courses are not numbered in the catalog (only authors named), so any LATN 3xx and any LATN 4xx are accepted; the advanced-standing route (five LATN courses at 2xx+) is open to everyone.
 - Classical Mythology (`clas-minor-mythology`): no flags beyond the homepage note.
 - Archaeology (`clas-minor-archaeology`): supporting courses accept every course in ARCH/ANTH/ARTH/CLAS/HIST/JWST/LARC/RELS plus the listed GEOL/GEOG/HISP courses (broader than the faculty-maintained approved list); the 305-prerequisite (CLAS190 added by the department page, waivable) is not encoded; fieldwork/supporting caps (6/9 credits) are not enforced. Possible cross-listing with `program-sources/art-history-archaeology-archaeology-minor.md`; encoded once here, please confirm they are one minor.
+
+## `feat/minors-arth` (2026-09-28): minor Art History; all sample plans constructed, `official: false`
+- Art History (`arth-minor`): the department page (arthistory.umd.edu) is only a homepage with no requirements, so it is encoded from the catalog ("department page not checked"). Every ARTH 2xx course is accepted (the catalog list is non-exhaustive); minor GPA and the 6-credit transfer cap are manual. No overlap cap in the source, none set.
+- Archaeology (ARTH-side catalog page): not encoded again; it has the same requirement text as `clas-minor-archaeology` (cross-listed ANTH/CLAS/ARTH305). Confirm they are one minor.
