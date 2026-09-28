@@ -8,3 +8,4 @@ Shell and tooling gotchas on the owner's PC. Moved out of PROJECT_MEMORY.md sect
 - Headless Edge `--screenshot` can't go below ~500px wide and fires before streamed content arrives. Use `apps/web/scripts/ui-check.mjs` (true mobile emulation, waits for JS).
 - Next 16 ships its docs in `node_modules/next/dist/docs/`. Read them before using new APIs (Cache Components, `use cache`, `cacheLife`, `connection()`).
 - Removing a worktree can fail on long `node_modules` paths: use the `\\?\` long-path prefix.
+- A paused builder can still be resumed (e.g. by the owner's "resume"). Don't remove its worktree until its final report arrives: removing one on 2026-09-27 lost the builder's uncommitted doc edits, and it rebuilt the worktree to redo them.
