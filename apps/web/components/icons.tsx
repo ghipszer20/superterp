@@ -45,21 +45,6 @@ export const ScheduleIcon = (p: IconProps) => (
   </Icon>
 );
 
-const PlanIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <rect x="3.5" y="3.5" width="7" height="7" rx="2" />
-    <rect x="13.5" y="3.5" width="7" height="7" rx="2" />
-    <rect x="3.5" y="13.5" width="7" height="7" rx="2" />
-    <path d="m14.5 17 2 2 3.5-4" />
-  </Icon>
-);
-
-const ExploreIcon = (p: IconProps) => (
-  <Icon {...p}>
-    <circle cx="11" cy="11" r="6.5" />
-    <path d="m16 16 4.5 4.5" />
-  </Icon>
-);
 
 export const DiningIcon = (p: IconProps) => (
   <Icon {...p}>
