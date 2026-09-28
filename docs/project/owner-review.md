@@ -400,3 +400,6 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 ## `feat/minors-engl-hist` (2026-09-28): minors Professional Writing, History; all sample plans constructed, `official: false`
 - Professional Writing (`pwrt-minor`): english.umd.edu is only a homepage, so encoded from the catalog ("department page not checked"). OPEN SLOT: 12 credits of approved courses (9 at 3xx/4xx, 3 at 4xx); the approved list is a link not in the source and no department is named. Only ENGL297 is enforced; the portfolio, ENGL281/ENGL384 either-or, Gen Ed PWP exclusion and internship allowance are manual.
 - History (`hist-minor`): the department page adds "no more than one 100-level course" (catalog silent); encoded per the department page. Geographic-field and pre/post-1750 rules are manual (no course-to-field lists). Sharing set to 2 courses with any program; the stricter minor-to-minor ban is manual.
+
+## `feat/minors-hebrew` (2026-09-28): minors Hebrew Studies; all sample plans constructed, `official: false`
+- Hebrew Studies (`hebr-minor`): cross-listed JWST+SLLC, encoded once. sllc.umd.edu/hebrew is only a homepage, so encoded from the catalog ("department page not checked"). Advisor-approved extra electives have no range, so only the listed courses are accepted; English-translation cap, advanced-placement HEBR207 replacement, and GPA are manual.
