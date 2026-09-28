@@ -1,0 +1,24 @@
+{
+  "programId": "roml-major-italian-spanish",
+  "source": "https://drive.google.com/uc?export=download&id=1nL-g2PQXdXaw7Zs4gDP8g8w0Np5suauD#Italian-&-Spanish",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities official Romance Languages - Italian & Spanish Four Year Academic Plan. The PDF-to-text conversion of the term grid is garbled (the Fall/Spring grid and the Gen Ed/Major-Requirements legend appear column-interleaved), but the major's course list and its rough order are legible: ITAL207 -> ITAL301/SPAN207 -> SPAN301/303 and the ITAL 3xx choice -> the SPAN Option choice -> ITAL4xx/478 and SPAN4xx near the end. Exact year/semester placement below is reconstructed from that order, not read verbatim -- flagged in docs/project/owner-review.md.",
+    "Year 1 has no major courses: ITAL207 and SPAN207 both sit behind pre-major language-sequence prerequisites (ITAL103/121, ITAL122/203, ITAL204; SPAN103/203/204), which are not part of the major's own 45 credits, so Gen Ed and that prerequisite sequence are left out per the pattern used by other ARHU-language sample plans (only the major is audited).",
+    "'Select one additional course at the 3xx level in literature or culture' filled with ITAL362 (named directly in the requirement's own option list).",
+    "'Select two courses from one of the following options' filled with Option II: SPAN361 and SPAN362 (both named directly in the requirement's own option list).",
+    "The three 'additional ITAL4xx' courses filled with ITAL411, ITAL421, and ITAL431 (all on the Academic Catalog's approved ITAL plan-slot course list), each paired with one ITAL478 colloquium section.",
+    "The two 'literature or civilization courses at the 4xx level' (Spanish) filled with SPAN401 and SPAN402 (both on the Academic Catalog's approved SPAN plan-slot course list).",
+    "'One additional course at the 4xx level in one of the two languages' filled with SPAN404 (on the Academic Catalog's approved SPAN plan-slot course list), distinct from the two SPAN4xx courses used above."
+  ],
+  "credits": { "ITAL478": 1 },
+  "terms": [
+    { "term": "Year 2 Fall", "courses": ["ITAL207"] },
+    { "term": "Year 2 Spring", "courses": ["ITAL301", "SPAN207"] },
+    { "term": "Year 3 Fall", "courses": ["SPAN301", "ITAL362"] },
+    { "term": "Year 3 Spring", "courses": ["SPAN303", "SPAN361"] },
+    { "term": "Year 4 Fall", "courses": ["SPAN362", "ITAL411", "ITAL478", "SPAN401"] },
+    { "term": "Year 4 Spring", "courses": ["ITAL421", "ITAL478", "ITAL431", "ITAL478", "SPAN402", "SPAN404"] }
+  ]
+}
