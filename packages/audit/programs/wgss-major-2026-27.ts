@@ -70,7 +70,7 @@ export const wgssMajor: Program = {
     "Department plan unreadable: unlike other ARHU builds where the college's four-year-plan PDF converts to " +
       "garbled-but-partially-legible text, this one (program-sources/womens-gender-sexuality-studies-major.md, " +
       "'Sample plan' section) converts to unreadable binary-looking text with no recoverable course numbers or " +
-      "structure at all. Per the owner's fallback, the sample plan (packages/programs/sample-plans/wgss-major.json) " +
+      "structure at all. Per the main session's brief, the sample plan (packages/programs/sample-plans/wgss-major.json) " +
       "is constructed from the catalog's own requirement table instead, marked `official: false`, and flagged in " +
       "docs/project/owner-review.md. No department-vs-catalog disagreement could be checked for the same reason.",
     "'Lower Level Requirements' (6 credits) is the catalog's own 'minimum 3 credits from LLC' + 'maximum 3 " +
