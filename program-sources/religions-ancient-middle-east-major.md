@@ -2,7 +2,7 @@
 # Religions of the Ancient Middle East Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/jewish-studies/religions-ancient-middle-east-major/
 Source: https://jewishstudies.umd.edu/academic-programs/undergraduate/rame-ba
-Source: https://www.arhu.umd.edu/academics/advising/academic-plans
+Source: https://drive.google.com/uc?export=download&id=1plP1e7d5mrA0V8gPnpWp_CcUWrDt1v_8#Religions-of-the-Ancient-Middle-East
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -219,177 +219,107 @@ Log In
 Privacy Policy
 Web Accessibility
 
-## Sample plan (https://www.arhu.umd.edu/academics/advising/academic-plans)
+## Sample plan (https://drive.google.com/uc?export=download&id=1plP1e7d5mrA0V8gPnpWp_CcUWrDt1v_8#Religions-of-the-Ancient-Middle-East)
 
-Primary Header Navigation
-ARHU Home
-About
-Academic Units
-College Leadership
-Committees and Councils
-Diversity, Equity and Inclusion
-Facilities
-ARHU Newsletter & Podcast
-Service Awards
-Strategic Plan
-Academics
-Undergraduate
-Degree Programs
-Minors
-Undergraduate Research
-Internship Courses
-Study Abroad
-Living-Learning Programs
-Scholarships & Academic Honors
-Access2Alumni
-Graduate
-Degree Programs
-Museum Scholarship and Material Culture Certificate
-Financial Support
-Interdisciplinary Opportunities
-Career Development
-Graduate Research
-Fellowships, Grants & Awards
-Advising
-Academic Plans
-Academic Probation & Dismissal
-Declaring a Major
-Exceptions to Policy
-Global Engagement
-Graduation & Commencement
-Online Forms
-Orientation
-Career Initiative
-Strategic Career Preparation
-Curricular Innovations
-Regional & Alumni Partnerships
-World Language Placement
-Admissions
-Admitted Students
-Meet Our Students
-Visit Us
-Research
-Research Services
-Internal Funding Opportunities
-Academic Units
-Research Centers and Institutes
-Endowed Chairs
-Secondary Header Navigation
-Directory
-News
-Calendar
-Contact
-Current Students
-Prospective Students
-Faculty & Staff
-Alumni
-Academic Plans
-Home
-Academics
-ADVISING
-The College of Arts and Humanities is dedicated to helping students navigate and enrich their academic experience, and to Be WORLDWISE.
-Menu
-AdvisingAcademic PlansAcademic Probation & DismissalDeclaring a MajorExceptions to PolicyGlobal EngagementGraduation & CommencementOnline FormsOrientation
-Academic Plans/Degree Requirements
-All University of Maryland students are required to complete a minimum of 120 credits and earn a minimum 2.0 cumulative GPA. They are also responsible for completing the General Education Requirements.
-Additionally, students are responsible for completing the College of Arts and Humanities’ Requirements.
-College Requirements
-ARHU158
-All ARHU first year students (excluding students participating in one of the following programs: Honors Humanities, Design Cultures & Creativity, University Honors, Global Challenges and Solutions, Gemstone, Interdisciplinary Business Honors, Integrated Life Sciences, Advanced Cybersecurity Experience for Students, College Park Scholars, Jimenez-Porter Writers' House) must take ARHU158, Explorations in Arts and Humanities, during their first semester on campus.
-Upper Level Credits
-All ARHU students, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 45 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Effective fall 2024, all ARHU students entering the college, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 39 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Global Engagement Requirement
-The ARHU Global Engagement Requirement responds to the University Strategic Plan's call for students to "be prepared to live, work, and thrive in the current and future world environment." We believe that the development of cultural competence will result in the knowledge, skills and disposition needed to understand, communicate with, and effectively interact with people across cultures and is an integral component in an arts and humanities education. All ARHU students with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree must complete the ARHU Global Engagement Requirement.
-For information about your specific degree requirements, click on your major, linked below:
-American Studies
-Arabic Studies
-Art History
-Art Studio
-Studio Art
-Advanced Specialization
-Graphic Design
-Chinese
-Cinema and Media Studies
-Critical Studies
-Film Production
-Classics
-Humanities
-Latin
-Latin & Greek
-Communication
-Communication Studies
-Health and Science Communication
-Media and Digital Communication
-Political Communication and Public Advocacy
-Public Relations
-Dance
-English
-French
-German Studies
-Global Culture and Thought
-History
-Human-Centered Artificial Intelligence
-Immersive Media Design
-Italian Studies
-Japanese
-Jewish Studies
-Linguistics
-Language
-Grammars and Cognition
-Music Education
-Choral
-Instrumental
-Music Liberal Arts
-Jazz Studies
-Piano
-Strings
-Voice
-Wind & Percussion
-Music Performance
-Composition
-Jazz
-Piano
-Strings
-Theory
-Voice
-Wind & Percussion
-Persian Studies
-Philosophy
-Philosophy, Politics, and Economics
+Religions of the Ancient Middle East Four Year Academic Plan
+Fall Spring
+Year 1
+Benchmark 1 Requirements
+Year 2
+Benchmark 2 Requirements
+Year 3
+Benchmark 3 Requirements
+Year 4
+ENGL 101 (AW)* {Min. Grade: C-} History/Social Science (HS)**
+RELS 271, 273, 274, or JWST 230 Math (MA)* Humani es (HU)**
+Oral Communica on (OC) Analy c Reasoning (AR)
+RELS 271 (HU, CC, & IS) RAME Founda on Course
+ARHU 158 Elec ve 1xx-4xx
+Natural Sciences (NS)** Natural Science Lab (NL)**
+Three RAME Founda on courses RAME Founda on Course Scholarship in Prac ce (SP) #1**
+History/Social Science (HS)** RAME Founda on Course
+Elec ve 1xx-4xx Elec ve 1xx-4xx
+Global Engagement #1 Global Engagement #2
+RAME Elec ve 1xx-4xx RAME Elec ve 3xx-4xx
+Four RAME Elec ve courses RAME Elec ve 3xx-4xx RAME Elec ve 3xx-4xx
+Elec ve 1xx-4xx Elec ve 3xx-4xx
+Elec ve 3xx-4xx Elec ve 3xx-4xx
+Elec ve 3xx-4xx Elec ve 3xx-4xx
+Professional Wri ng (PW) Scholarship in Prac ce (SP) #2**
+RELS 408 RAME Elec ve 3xx-4xx
+Elec ve 1xx-4xx Elec ve 1xx-4xx
+Elec ve 3xx-4xx Elec ve 1xx-4xx
+Elec ve 3xx-4xx Elec ve 1xx-4xx
+Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
+Must be completed by the end of two semesters.
+*Must a empt by 30 cr.
+Must be completed by the end of four semesters.
+Must be completed by the end of six semesters.
+Note: Some courses for the major may also count toward the General Educa on requirements
+**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural
+Socie es and Cultural Competence courses may also fulfill Distribu ve Studies categories.
 Religions of the Ancient Middle East
-Romance Languages
-French & Italian
-French & Spanish
-Italian & Spanish
-Russian
-Spanish
-Language, Culture, and Professional Contexts
-Spanish and Latin American Literature, Culture, and Media
-Linguistics, Culture, and Education
-Theatre
-Women, Gender, and Sexuality Studies
-Primary Footer Navigation
-ARHU Home
-About
-Academics
-Admissions
-Research
-Secondary Footer Navigation
-Apply
-Give
-Directory
-News
-Calendar
-Contact Us
-Maps
-Diversity and Inclusion
-Facebook
-Twitter
-Instagram
-Youtube
-Vimeo
-Flickr
-Log In
-Privacy Policy
-Web Accessibility
+General Educa on Requirements Benchmark Requirements
+Fundamental Studies Year 1 - Benchmark Requirements
+Year 2 - Benchmark Requirements
+Year 3 - Benchmark Requirements
+Distribu ve Studies Major Requirements
+Big Ques on
+Normally double counted with Distribu ve Studies
+Diversity
+(overlap permi ed with Distribu ve Studies and/or Big Ques on)
+Experien al Learning- op onal
+(overlap permi ed with other requirements/courses)
+Language Track (op onal): Six credits in Hebrew, Arabic, Greek or other
+relevant language beyond the first year level.
+Students must earn a minimum of 120 credits to complete a degree.
+Requirements: 15 credits/5 courses Course Credits Grade
+Requirements: 25 credits/8 courses Course Credits Grade
+Requirements Credits Grade
+Requirements: 6 credits/2 courses Course Credits Grade
+Requirements: 4-6 credits/2 courses Course Credits Grade
+Requirements: 0-3 credits Course Credits Grade
+RELS 271, 273, 274, or JWST 230
+Academic Wri ng (AW)
+Professional Wri ng (PW) Three RAME Founda on courses
+Oral Comm. (OC)
+Math (MA) Four RAME Elec ve courses
+Analy c Reasoning (AR)
+Natural Science Lab (NL)
+Natural Sciences (NS)
+History/Social Sciences (HS) RELS 271, 273, 274, or JWST 230
+History/Social Sciences (HS) DEPT 1xx-2xx*
+Humani es (HU) DEPT 1xx-2xx*
+Humani es (HU) DEPT 1xx-2xx*
+Scholarship in Prac ce (SP)
+Scholarship in Prac ce (SP) non major DEPT 1xx-2xx**
+DEPT 3xx-4xx**
+DEPT 3xx-4xx**
+DEPT 3xx-4xx**
+Big Ques on (IS) DEPT 3xx-4xx**
+Big Ques on (IS)
+RELS 408
+Understanding Plural Soc. (UP)
+Understanding Plural Soc. (UP)
+Cultural Competency (CC)
+{Min. Grade: C-} ENGL 101
+Cumula ve average of major requirements must be at least a 2.0
+Founda on Courses
+Elec ves
+Capstone
+or
+*The three Founda on courses are selected from the following list:
+HIST 120, RELS 264, JWST 225, JWST 231, JWST 262 (must include two or
+more geographical, chronological, or cultural sub-areas). Other courses
+by permission.
+**The five Elec ve courses are selected from the following list:
+CLAS 305, HIST 110, HIST 320, HIST 428R, JWST 324, JWST 325, JWST 326,
+JWST 430, JWST 468, JWST 469. Other courses by permission.
+University Requirements for Gradua on:
+ARHU Requirements for Gradua on: Some courses for the major may also count toward General Educa on requirements.
+At least 30 credits must be earned at UMD
+15 of the final 30 credits must be earned at the 300-400 level
+12 upper level major credits must be earned at UMD
+39 upper level credits
+ARHU 158 or equivalent (if applicable)
+Global Engagement

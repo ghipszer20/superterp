@@ -3,7 +3,7 @@
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/germanic-studies/german-studies-major/
 Source: https://sllc.umd.edu/german
 Source: https://arhu.umd.edu/academics/world-language-placement
-Source: https://www.arhu.umd.edu/academics/advising/academic-plans
+Source: https://drive.google.com/uc?export=download&id=1hDoLft_mRqAwKEzh2voKvNnt32zj761n#German-Studies
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -432,177 +432,83 @@ Log In
 Privacy Policy
 Web Accessibility
 
-## Sample plan (https://www.arhu.umd.edu/academics/advising/academic-plans)
+## Sample plan (https://drive.google.com/uc?export=download&id=1hDoLft_mRqAwKEzh2voKvNnt32zj761n#German-Studies)
 
-Primary Header Navigation
-ARHU Home
-About
-Academic Units
-College Leadership
-Committees and Councils
-Diversity, Equity and Inclusion
-Facilities
-ARHU Newsletter & Podcast
-Service Awards
-Strategic Plan
-Academics
-Undergraduate
-Degree Programs
-Minors
-Undergraduate Research
-Internship Courses
-Study Abroad
-Living-Learning Programs
-Scholarships & Academic Honors
-Access2Alumni
-Graduate
-Degree Programs
-Museum Scholarship and Material Culture Certificate
-Financial Support
-Interdisciplinary Opportunities
-Career Development
-Graduate Research
-Fellowships, Grants & Awards
-Advising
-Academic Plans
-Academic Probation & Dismissal
-Declaring a Major
-Exceptions to Policy
-Global Engagement
-Graduation & Commencement
-Online Forms
-Orientation
-Career Initiative
-Strategic Career Preparation
-Curricular Innovations
-Regional & Alumni Partnerships
-World Language Placement
-Admissions
-Admitted Students
-Meet Our Students
-Visit Us
-Research
-Research Services
-Internal Funding Opportunities
-Academic Units
-Research Centers and Institutes
-Endowed Chairs
-Secondary Header Navigation
-Directory
-News
-Calendar
-Contact
-Current Students
-Prospective Students
-Faculty & Staff
-Alumni
-Academic Plans
-Home
-Academics
-ADVISING
-The College of Arts and Humanities is dedicated to helping students navigate and enrich their academic experience, and to Be WORLDWISE.
-Menu
-AdvisingAcademic PlansAcademic Probation & DismissalDeclaring a MajorExceptions to PolicyGlobal EngagementGraduation & CommencementOnline FormsOrientation
-Academic Plans/Degree Requirements
-All University of Maryland students are required to complete a minimum of 120 credits and earn a minimum 2.0 cumulative GPA. They are also responsible for completing the General Education Requirements.
-Additionally, students are responsible for completing the College of Arts and Humanities’ Requirements.
-College Requirements
-ARHU158
-All ARHU first year students (excluding students participating in one of the following programs: Honors Humanities, Design Cultures & Creativity, University Honors, Global Challenges and Solutions, Gemstone, Interdisciplinary Business Honors, Integrated Life Sciences, Advanced Cybersecurity Experience for Students, College Park Scholars, Jimenez-Porter Writers' House) must take ARHU158, Explorations in Arts and Humanities, during their first semester on campus.
-Upper Level Credits
-All ARHU students, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 45 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Effective fall 2024, all ARHU students entering the college, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 39 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Global Engagement Requirement
-The ARHU Global Engagement Requirement responds to the University Strategic Plan's call for students to "be prepared to live, work, and thrive in the current and future world environment." We believe that the development of cultural competence will result in the knowledge, skills and disposition needed to understand, communicate with, and effectively interact with people across cultures and is an integral component in an arts and humanities education. All ARHU students with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree must complete the ARHU Global Engagement Requirement.
-For information about your specific degree requirements, click on your major, linked below:
-American Studies
-Arabic Studies
-Art History
-Art Studio
-Studio Art
-Advanced Specialization
-Graphic Design
-Chinese
-Cinema and Media Studies
-Critical Studies
-Film Production
-Classics
-Humanities
-Latin
-Latin & Greek
-Communication
-Communication Studies
-Health and Science Communication
-Media and Digital Communication
-Political Communication and Public Advocacy
-Public Relations
-Dance
-English
-French
+German Studies Four Year Academic Plan
+Year 1 Fall Spring
+Benchmark 1 Requirements
+GERS203 ENGL 101 (AW)* {Min. Grade: C-} Natural Sciences (NS)**
+Must be completed by the end of two semesters. Math (MA)* Analytic Reasoning (AR)
+History/Social Sciences (HS)** Humanities (HU)**
+GERS 103 GERS 203 (satisfies Global Engagement
+ARHU 158 Requirement)
+Elective 1xx-4xx
+*Must attempt by 30 cr.
+Year 2
+Benchmark 2 Requirements
+Two (2) GERS 3xx courses Humanities (HU)** Oral Communication (OC)
+Must be completed by the end of four semesters. GERS 204 Scholarship in Practice (SP) #1**
+Elective 1xx-4xx GERS 301
+Elective 1xx-4xx GERS Elective 2xx-4xx (#1)
+Elective 1xx-4xx Elective 1xx-4xx
+Year 3
+Benchmark 3 Requirements
+Five (5) additional courses in GERS Natural Science Lab (NL)** History/Social Sciences (HS)**
+Must be completed by the end of six semesters. GERS 302 GERS Culture 3xx-4xx (#1)
+GERS Elective 2xx-4xx (#2) GERS Literature 3xx-4xx (#1)
+Elective 1xx-4xx Elective 3xx-4xx
+Elective 3xx-4xx Elective 3xx-4xx
+Year 4
+Professional Writing (PW) GERS Language 3xx-4xx (#2)
+Scholarship in Practice (SP) #2** GERS Literature 3xx-4xx (#2)
+GERS Language 3xx-4xx (#1) GERS Elective 2xx-4xx (#3)
+GERS Culture 3xx-4xx (#2) Elective 1xx-4xx
+Elective 3xx-4xx Elective 1xx-4xx
+Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
+Note: Some courses for the major may also count toward the General Education requirements.
+**All students must complete two Distributive Studies courses that are approved for Big Question courses. The Understanding Plural Societies
+and Cultural Competence courses may also fulfill Distributive Studies categories.
 German Studies
-Global Culture and Thought
-History
-Human-Centered Artificial Intelligence
-Immersive Media Design
-Italian Studies
-Japanese
-Jewish Studies
-Linguistics
-Language
-Grammars and Cognition
-Music Education
-Choral
-Instrumental
-Music Liberal Arts
-Jazz Studies
-Piano
-Strings
-Voice
-Wind & Percussion
-Music Performance
-Composition
-Jazz
-Piano
-Strings
-Theory
-Voice
-Wind & Percussion
-Persian Studies
-Philosophy
-Philosophy, Politics, and Economics
-Religions of the Ancient Middle East
-Romance Languages
-French & Italian
-French & Spanish
-Italian & Spanish
-Russian
-Spanish
-Language, Culture, and Professional Contexts
-Spanish and Latin American Literature, Culture, and Media
-Linguistics, Culture, and Education
-Theatre
-Women, Gender, and Sexuality Studies
-Primary Footer Navigation
-ARHU Home
-About
-Academics
-Admissions
-Research
-Secondary Footer Navigation
-Apply
-Give
-Directory
-News
-Calendar
-Contact Us
-Maps
-Diversity and Inclusion
-Facebook
-Twitter
-Instagram
-Youtube
-Vimeo
-Flickr
-Log In
-Privacy Policy
-Web Accessibility
+General Education Requirements Benchmark Requirements
+Fundamental Studies Year 1 - Benchmark Requirements
+Requirements: 15 credits/5 courses Course Credits Grade GERS 203
+Academic Writing (AW) {Min. Grade: C-} ENGL101 Year 2 - Benchmark Requirements
+Professional Writing (PW) Two (2) GERS 3xx courses
+Oral Comm. (OC) Year 3 - Benchmark Requirements
+Math (MA) Five (5) additional courses in GERS
+Analytic Reasoning (AR)
+Distributive Studies Major Requirements
+Requirements: 25 credits/8 courses Course Credits Grade Cumulative average of major requirements must be at least a 2.0
+Natural Science Lab (NL) Requirements Credits Grade
+Natural Sciences (NS) Core Language Sequence (9 credits)
+History/Social Sciences (HS) GERS 204*
+History/Social Sciences (HS) GERS 301
+Humanities (HU) GERS 302
+Humanities (HU) Area Requirements (27 credits)
+Scholarship in Practice (SP) I. Language Courses (6 credits)
+Scholarship in Practice SP (non major) Two from GERS 315, 319, 402, 419, or 473
+Big Question
+Normally double counted with Distributive Studies II. Literature Courses (6 credits)
+Requirements: 6 credits/2 courses Course Credits Grade Two from GERS 320, 322, 331, 436, 439,
+442, 443, 444, or 458Big Question (IS)
+Big Question (IS) III. Culture Courses (6 credits)
+Diversity Two from GERS 356, 399, 441, 449, or 489
+(overlap permitted with Distributive Studies and/or Big Question)
+Requirements: 4-6 credits/2 courses Course Credits Grade IV. Additional German Courses (9 credits)
+Understanding Plural Soc. (UP) GERS 2xx-4xx
+Understanding Plural Soc. (UP) or GERS 2xx-4xx
+Cultural Competency (CC) GERS 2xx-4xx
+Experiential Learning- optional At least 27 credits must be completed at 3xx-4xx level.
+(overlap permitted with other requirements/courses) Only 9 credits (3 courses) can be in English.
+Requirements: 0-3 credits Course Credits Grade *pre-requisites GERS 103 and 203, or equivalent.
+Some courses for the major may also count toward General Education
+requirements.
+Students must earn a minimum of 120 credits to complete a degree.
+University Requirements for Graduation:
+At least 30 credits must be earned at UMD
+15 of the final 30 credits must be earned at the 300-400 level
+12 upper level major credits must be earned at UMD
+ARHU Requirements for Graduation:
+39 upper level credits
+ARHU 158 or equivalent (if applicable)
+Global Engagement

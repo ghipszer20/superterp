@@ -3,7 +3,7 @@
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/japanese/japanese-major/
 Source: https://sllc.umd.edu/fields/japanese/major
 Source: https://arhu.umd.edu/academics/world-language-placement
-Source: https://www.arhu.umd.edu/academics/advising/academic-plans
+Source: https://drive.google.com/uc?export=download&id=1NkCebF68ZokYba325f7rASFoEz-XZTbX#Japanese
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -442,177 +442,103 @@ Log In
 Privacy Policy
 Web Accessibility
 
-## Sample plan (https://www.arhu.umd.edu/academics/advising/academic-plans)
+## Sample plan (https://drive.google.com/uc?export=download&id=1NkCebF68ZokYba325f7rASFoEz-XZTbX#Japanese)
 
-Primary Header Navigation
-ARHU Home
-About
-Academic Units
-College Leadership
-Committees and Councils
-Diversity, Equity and Inclusion
-Facilities
-ARHU Newsletter & Podcast
-Service Awards
-Strategic Plan
-Academics
-Undergraduate
-Degree Programs
-Minors
-Undergraduate Research
-Internship Courses
-Study Abroad
-Living-Learning Programs
-Scholarships & Academic Honors
-Access2Alumni
-Graduate
-Degree Programs
-Museum Scholarship and Material Culture Certificate
-Financial Support
-Interdisciplinary Opportunities
-Career Development
-Graduate Research
-Fellowships, Grants & Awards
-Advising
-Academic Plans
-Academic Probation & Dismissal
-Declaring a Major
-Exceptions to Policy
-Global Engagement
-Graduation & Commencement
-Online Forms
-Orientation
-Career Initiative
-Strategic Career Preparation
-Curricular Innovations
-Regional & Alumni Partnerships
-World Language Placement
-Admissions
-Admitted Students
-Meet Our Students
-Visit Us
-Research
-Research Services
-Internal Funding Opportunities
-Academic Units
-Research Centers and Institutes
-Endowed Chairs
-Secondary Header Navigation
-Directory
-News
-Calendar
-Contact
-Current Students
-Prospective Students
-Faculty & Staff
-Alumni
-Academic Plans
-Home
-Academics
-ADVISING
-The College of Arts and Humanities is dedicated to helping students navigate and enrich their academic experience, and to Be WORLDWISE.
-Menu
-AdvisingAcademic PlansAcademic Probation & DismissalDeclaring a MajorExceptions to PolicyGlobal EngagementGraduation & CommencementOnline FormsOrientation
-Academic Plans/Degree Requirements
-All University of Maryland students are required to complete a minimum of 120 credits and earn a minimum 2.0 cumulative GPA. They are also responsible for completing the General Education Requirements.
-Additionally, students are responsible for completing the College of Arts and Humanities’ Requirements.
-College Requirements
-ARHU158
-All ARHU first year students (excluding students participating in one of the following programs: Honors Humanities, Design Cultures & Creativity, University Honors, Global Challenges and Solutions, Gemstone, Interdisciplinary Business Honors, Integrated Life Sciences, Advanced Cybersecurity Experience for Students, College Park Scholars, Jimenez-Porter Writers' House) must take ARHU158, Explorations in Arts and Humanities, during their first semester on campus.
-Upper Level Credits
-All ARHU students, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 45 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Effective fall 2024, all ARHU students entering the college, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 39 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Global Engagement Requirement
-The ARHU Global Engagement Requirement responds to the University Strategic Plan's call for students to "be prepared to live, work, and thrive in the current and future world environment." We believe that the development of cultural competence will result in the knowledge, skills and disposition needed to understand, communicate with, and effectively interact with people across cultures and is an integral component in an arts and humanities education. All ARHU students with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree must complete the ARHU Global Engagement Requirement.
-For information about your specific degree requirements, click on your major, linked below:
-American Studies
-Arabic Studies
-Art History
-Art Studio
-Studio Art
-Advanced Specialization
-Graphic Design
-Chinese
-Cinema and Media Studies
-Critical Studies
-Film Production
-Classics
-Humanities
-Latin
-Latin & Greek
-Communication
-Communication Studies
-Health and Science Communication
-Media and Digital Communication
-Political Communication and Public Advocacy
-Public Relations
-Dance
-English
-French
-German Studies
-Global Culture and Thought
-History
-Human-Centered Artificial Intelligence
-Immersive Media Design
-Italian Studies
+Japanese Four Year Academic Plan
+Year 1
+Benchmark 1 Requirement
+Year 2
+Benchmark 2 Requirement
+Year 3
+Benchmark 3 Requirement
+Year 4
+Fall Spring
+JAPN 102 ENGL 101 (AW)* {Min. Grade: C-} Natural Sciences (NS)**
+Math (MA)* Analy c Reasoning (AR)
+HIST 284 (HS & UP) or Elec ve 1xx-4xx Humani es (HU)**
+JAPN 101 (6 credits) JAPN 102 (6 credits; fulfills Global
+ARHU 158 Engagement)
+JAPN 202 Humani es (HU)** Oral Communica on (OC)
+JAPN 201 (6 credits) Scholarship in Prac ce (SP) #1**
+History/Social Sciences (HS)** HIST 285 (HS) or Elec ve 1xx-4xx
+Elec ve 1xx-4xx JAPN 202 (6 credits)
+JAPN 302 Natural Science Lab (NL)** JAPN 302 (6 credits)
+JAPN 301 (6 credits) HIST 483 or Elec ve 3xx-4xx
+HIST 482 or Elec ve 3xx-4xx Elec ve 1xx-4xx
+Elec ve 1xx-4xx Elec ve 3xx-4xx
+Professional Wri ng (PW) JAPN 3xx-4xx (Linguis cs)
+Scholarship in Prac ce (SP) #2** JAPN 3xx-4xx
+JAPN 3xx-4xx (Literature) Elec ve 3xx-4xx
+JAPN 3xx-4xx Elec ve 1xx-4xx
+Elec ve 1xx 4xx Elec ve 1xx-4xx
+Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
+Must be completed by the end of two semesters.
+*Must a empt by 30 cr.
+Must be completed by the end of four semesters.
+Must be compleeted by the end of six semesters.
+‑
+Note: Some courses for the major may also count toward the General Educa on requirements.
+**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding
+Plural Socie es and Cultural Competence courses may also fulfill Distribu ve Studies categories.
 Japanese
-Jewish Studies
-Linguistics
-Language
-Grammars and Cognition
-Music Education
-Choral
-Instrumental
-Music Liberal Arts
-Jazz Studies
-Piano
-Strings
-Voice
-Wind & Percussion
-Music Performance
-Composition
-Jazz
-Piano
-Strings
-Theory
-Voice
-Wind & Percussion
-Persian Studies
-Philosophy
-Philosophy, Politics, and Economics
-Religions of the Ancient Middle East
-Romance Languages
-French & Italian
-French & Spanish
-Italian & Spanish
-Russian
-Spanish
-Language, Culture, and Professional Contexts
-Spanish and Latin American Literature, Culture, and Media
-Linguistics, Culture, and Education
-Theatre
-Women, Gender, and Sexuality Studies
-Primary Footer Navigation
-ARHU Home
-About
-Academics
-Admissions
-Research
-Secondary Footer Navigation
-Apply
-Give
-Directory
-News
-Calendar
-Contact Us
-Maps
-Diversity and Inclusion
-Facebook
-Twitter
-Instagram
-Youtube
-Vimeo
-Flickr
-Log In
-Privacy Policy
-Web Accessibility
+General Educa on Requirements Benchmark Requirements
+Fundamental Studies Year 1 - Benchmark Requirement
+Year 2 - Benchmark Requirement
+Year 3 - Benchmark Requirement
+Distribu ve Studies Major Requirements
+Big Ques on
+Normally double counted with Distribu ve Studies
+Diversity
+(overlap permi ed with Distribu ve Studies and/or Big Ques on)
+Experien al Learning- op onal
+(overlap permi ed with other requirements/courses)
+Students must earn a minimum of 120 credits to complete a degree.
+Requirements: 15 credits/5 courses Course Credits Grade
+Requirements: 25 credits/8 courses Course Credits Grade
+Requirements Credits Grade
+Requirements: 6 credits/2 courses Course Credits Grade
+Requirements: 4-6 credits/2 courses Course Credits Grade
+Requirements: 0-3 credits Course Credits Grade
+JAPN 102
+Academic Wri ng (AW)
+Professional Wri ng (PW) JAPN 202
+Oral Comm. (OC)
+Math (MA) JAPN 302
+Analy c Reasoning (AR)
+Natural Science Lab (NL)
+Natural Sciences (NS)
+History/Social Sciences (HS) JAPN 201*
+History/Social Sciences (HS) JAPN 202
+Humani es (HU) JAPN 301
+Humani es (HU) JAPN 302
+Scholarship in Prac ce (SP)
+Scholarship in Prac ce (SP) non major HIST 284 (HS & UP) and
+HIST 483
+HIST 285 (HS) and
+Big Ques on (IS) HIST 482
+Big Ques on (IS)
+JAPN 3xx-4xx
+JAPN 3xx-4xx
+JAPN 3xx-4xx (Linguis cs)
+Understanding Plural Soc. (UP) JAPN 3xx-4xx (Literature)
+Understanding Plural Soc. (UP)
+Cultural Competency (CC)
+{Min. Grade: C-} ENGL 101
+Cumula ve average of major requirements must be at least a 2.0
+Japanese Language
+Civiliza on and History
+or
+Elec ves
+or
+HIST284 or 285
+At least 30 credits must be earned at UMD
+15 of the final 30 credits must be earned at the 300-400 level
+12 upper level major credits must be earned at UMD
+39 upper level credits
+ARHU 158 or equivalent (if applicable)
+Global Engagement
+*prerequisite JAPN 101 and 102 or equivalent
+Some courses for the major may also count toward General Educa on
+requirements.
+University Requirements for Gradua on:
+ARHU Requirements for Gradua on:

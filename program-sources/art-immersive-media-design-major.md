@@ -2,7 +2,7 @@
 # Immersive Media Design Major (ARTT)
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/art/immersive-media-design-major/
 Source: https://lep.umd.edu/
-Source: https://www.arhu.umd.edu/academics/advising/academic-plans
+Source: https://drive.google.com/uc?export=download&id=1UqFgW6mZjaq_xGlEWd68VIJrnYIPq-V2#Immersive-Media-Design
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -156,177 +156,26 @@ Questions about LEPs at UMD may be directed to lep@umd.edu.
 Web Accessibility
 Privacy Notice
 
-## Sample plan (https://www.arhu.umd.edu/academics/advising/academic-plans)
+## Sample plan (https://drive.google.com/uc?export=download&id=1UqFgW6mZjaq_xGlEWd68VIJrnYIPq-V2#Immersive-Media-Design)
 
-Primary Header Navigation
-ARHU Home
-About
-Academic Units
-College Leadership
-Committees and Councils
-Diversity, Equity and Inclusion
-Facilities
-ARHU Newsletter & Podcast
-Service Awards
-Strategic Plan
-Academics
-Undergraduate
-Degree Programs
-Minors
-Undergraduate Research
-Internship Courses
-Study Abroad
-Living-Learning Programs
-Scholarships & Academic Honors
-Access2Alumni
-Graduate
-Degree Programs
-Museum Scholarship and Material Culture Certificate
-Financial Support
-Interdisciplinary Opportunities
-Career Development
-Graduate Research
-Fellowships, Grants & Awards
-Advising
-Academic Plans
-Academic Probation & Dismissal
-Declaring a Major
-Exceptions to Policy
-Global Engagement
-Graduation & Commencement
-Online Forms
-Orientation
-Career Initiative
-Strategic Career Preparation
-Curricular Innovations
-Regional & Alumni Partnerships
-World Language Placement
-Admissions
-Admitted Students
-Meet Our Students
-Visit Us
-Research
-Research Services
-Internal Funding Opportunities
-Academic Units
-Research Centers and Institutes
-Endowed Chairs
-Secondary Header Navigation
-Directory
-News
-Calendar
-Contact
-Current Students
-Prospective Students
-Faculty & Staff
-Alumni
-Academic Plans
-Home
-Academics
-ADVISING
-The College of Arts and Humanities is dedicated to helping students navigate and enrich their academic experience, and to Be WORLDWISE.
-Menu
-AdvisingAcademic PlansAcademic Probation & DismissalDeclaring a MajorExceptions to PolicyGlobal EngagementGraduation & CommencementOnline FormsOrientation
-Academic Plans/Degree Requirements
-All University of Maryland students are required to complete a minimum of 120 credits and earn a minimum 2.0 cumulative GPA. They are also responsible for completing the General Education Requirements.
-Additionally, students are responsible for completing the College of Arts and Humanities’ Requirements.
-College Requirements
-ARHU158
-All ARHU first year students (excluding students participating in one of the following programs: Honors Humanities, Design Cultures & Creativity, University Honors, Global Challenges and Solutions, Gemstone, Interdisciplinary Business Honors, Integrated Life Sciences, Advanced Cybersecurity Experience for Students, College Park Scholars, Jimenez-Porter Writers' House) must take ARHU158, Explorations in Arts and Humanities, during their first semester on campus.
-Upper Level Credits
-All ARHU students, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 45 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Effective fall 2024, all ARHU students entering the college, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 39 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Global Engagement Requirement
-The ARHU Global Engagement Requirement responds to the University Strategic Plan's call for students to "be prepared to live, work, and thrive in the current and future world environment." We believe that the development of cultural competence will result in the knowledge, skills and disposition needed to understand, communicate with, and effectively interact with people across cultures and is an integral component in an arts and humanities education. All ARHU students with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree must complete the ARHU Global Engagement Requirement.
-For information about your specific degree requirements, click on your major, linked below:
-American Studies
-Arabic Studies
-Art History
-Art Studio
-Studio Art
-Advanced Specialization
-Graphic Design
-Chinese
-Cinema and Media Studies
-Critical Studies
-Film Production
-Classics
-Humanities
-Latin
-Latin & Greek
-Communication
-Communication Studies
-Health and Science Communication
-Media and Digital Communication
-Political Communication and Public Advocacy
-Public Relations
-Dance
-English
-French
-German Studies
-Global Culture and Thought
-History
-Human-Centered Artificial Intelligence
-Immersive Media Design
-Italian Studies
-Japanese
-Jewish Studies
-Linguistics
-Language
-Grammars and Cognition
-Music Education
-Choral
-Instrumental
-Music Liberal Arts
-Jazz Studies
-Piano
-Strings
-Voice
-Wind & Percussion
-Music Performance
-Composition
-Jazz
-Piano
-Strings
-Theory
-Voice
-Wind & Percussion
-Persian Studies
-Philosophy
-Philosophy, Politics, and Economics
-Religions of the Ancient Middle East
-Romance Languages
-French & Italian
-French & Spanish
-Italian & Spanish
-Russian
-Spanish
-Language, Culture, and Professional Contexts
-Spanish and Latin American Literature, Culture, and Media
-Linguistics, Culture, and Education
-Theatre
-Women, Gender, and Sexuality Studies
-Primary Footer Navigation
-ARHU Home
-About
-Academics
-Admissions
-Research
-Secondary Footer Navigation
-Apply
-Give
-Directory
-News
-Calendar
-Contact Us
-Maps
-Diversity and Inclusion
-Facebook
-Twitter
-Instagram
-Youtube
-Vimeo
-Flickr
-Log In
-Privacy Policy
-Web Accessibility
+    !"#$%"&!'"()!*+,#!-!.&/
+!"#01!.23-"#40)!*+,#!-!.&/
+!"#51!.23-"#45)!*+,#!-!.&/
+!"#6
+7899 :;<=>?@ABBCDD @ABBCDDEFGH @ABBCCD@ABBCCD IJFICKK LJMJCKNLJMJCKN LJMJCDC LJMJCODEPQHJ@BPCCOEJ@HR STUVCDCE@WHRXJYZ[U\]^_`Iab@APQCOc d\]eIfgghZYi]jfZEdIH@ABBKCD @ABBKDD STUVCklmKkOmKOOmKnDmKnkmf\KnOEPQH@ABBKOO @ABBKCD LJMJKnDEFo\YZpdZeqHLJMJKKN @ABBKOO T]rh\]eFiY_Zi_sETFHRRLJMJKnD LJMJKKNEt]eedZeqH @Z]eqjiA_]sfZYZpE@AHUefu]eSZp]p_g_ZrvC Uefu]eSZp]p_g_ZrvK@ABBlNw @ABBlNw LJMJlnDEFo\YZpdZeqHLJMJlOD LJMJlODEt]eedZeqH G\fx_ssYfZ]eW\YjZpEGWHLJMJlnD PYsrf\qyFfiY]eFiY_Zi_sEPFHRR PYsrf\qyFfiY]eFiY_Zi_sEPFHRRT]rh\]eFiY_Zi_V]uETVHRR Se_ijz_lwwakwwFi{fe]\s{YoYZG\]iji_`TfZaJ]|f\EFGHRR Se_ijz_lwwakww@ABBkNn@mImMmf\S LJMJknCEFo\YZpdZeqHLJMJknDEt]eedZeqH Se_ijz_lwwakwwSe_ijz_lwwakww Se_ijz_CwwakwwSe_ijz_lwwakww Se_ijz_CwwakwwSe_ijz_lwwakww Se_ijz_CwwakwwBfr]eI\_^Yrsxf\M_p\__`CKD}lni\_^Yrsghsru_lwwakwwe_z_e
+~ ~
+~
+~  ¡¢¢£¤¥¡¦§¢¨¦¢©
+ª«¬®¯«° ±«²³´´μ«³¬¶°·¸«³°·¹·º´«±«²»¬¬«¼·³½¬¶¾ »³·º¿½²±·À«»³Á²Â³° »¬´ÃÃÄºº´¬²½»¬´°²´¬±«°Åº¬¬¼«ÆÂ´¬³ÂÇ²ÀÈ¯¬²½Â´±«²³´´¬¶·¬·³·ÅÅ³«È½μ«³ÉÂÊË²´À«»±«²³´´ÌÍ¶Î»½³´¬·»½Â»ÊÏº²³·º¯«±ÂÀ´·»½Ð²º¬²³·ºÐ«°Å¬»±±«²³´´°·¹·º´«μ²ºÑººÆÂ´¬³ÂÇ²ÀÈ¯¬²½Â´±·¬Ê«³Â´Ì
+   !"#$%&!'()* +",(-%&!'()*.! ()/)! '* 012+",(-%&!'()*032+",(-%&!'()*4'*)'5!#6/)! '* 072+",(-%&!'()*89$%&!'()*+':;!*#$<$(=$!5"$!) >'),4'*)'5!#6/)! '*4'6*')=?$6@@('A >'),4'*)'5!#6/)! '* B$+':;!*#$CD@'#E':2$@#$?$6@@('A >'),$),&!'()*B"$!**C/)! )*(!*)(''(!($F13G" ')*)$"$(@):H
+IJKLMNJOJPQRSTUVNJWMQRXUVYLNRJR ZYLNRJ ZNJWMQR [N\WJ
+IJKLMNJOJPQRS]UVNJWMQRX^VYLNRJR ZYLNRJ ZNJWMQR [N\WJ IJKLMNJOJPQR ZNJWMQR [N\WJIJKLMNJOJPQRS_VNJWMQRX]VYLNRJR ZYLNRJ ZNJWMQR [N\WJIJKLMNJOJPQRS`a_VNJWMQRX]VYLNRJR ZYLNRJ ZNJWMQR [N\WJIJKLMNJOJPQRSbacVNJWMQR ZYLNRJ ZNJWMQR [N\WJ
+deffghhdijklmniopnqrstdou deffgghvpwxlyynwrjzopnqrstvou {|}|g~pjzwmmtu|jt|du deff~ghdrjzqieljywrnrstdeu deff~{|}|~~{|}|~hjpjzinlriljtujpjzinlrilytu deffnywpwinjzinlrilytu {|}|hnywpwinjzinlrilytu {|}|hmjrnqlytumjrnqlytuiwzjpynnrvpjiqiltvuiwzjpynnrvpjiqiltvurwrmjwp deffghhtvudeffgghdeff~hhnslyqwrt{u deff~ghnslyqwrt{u deff~deffdeffd}wp|g~~rklpyjrknrsvzpjzwitvu |dfggt|durklpyjrknrsvzpjzwitvuzpjzwmllritu {|}|ghg{|}|g~{|}|ghtu{|}|~~{|}|~h{|}|h{|}|h{|}|h{|}|g
+¡¢£¤¥¦
+§¨©ª«¬®«¯®¯¯®°±®°«²®°¯³´μ¶
+·¸¹º»¼»½¾¿À»»Á
+Â½Ã½»Á¼·¸¹ºÄÅÆÇÈÉÊÅÇËÌÍÅÇ¾Î¿¿»¼¼
+¾ÏÐÉÌÈÏÑ¼ÄÇÉÒÓÏÈËÆÈÏÔÉÉÌÇÕÉÒÌÏÖ½Ã»ÁÅÊÏ×ÉØÕÌÐÑ¼ÄÇÉÒÓÏÈËÆÈÏÔÉÉÌÇÕÉÒÌÏÏ×ÉÑ¼¼ÙÚ¼¼ÐÉÛÉÐ»ÜÆÝÝÉÇÐÉÛÉÐËÌÍÅÇÄÇÉÒÓÏÈËÆÈÏÔÉÉÌÇÕÉÒÌÏÖ½ÃÑÞÆÝÝÉÇÐÉÛÉÐÄÇÉÒÓÏÈ¾ÎÀÖ»ÁßÅÇÉàÆÓÛÌÐÉÕÏáÓÊÌÝÝÐÓÄÌÔÐÉâ¹ÐÅÔÌÐ·ÕãÌãÉËÉÕÏ
+äåæåçèéêëèêëìèíëîïæèðîììëñåòìëæëóôõæåõôöëèôçëèõôè÷øù
+ú 
+      !"#$%$&$'("")$*+($',*$-(./("

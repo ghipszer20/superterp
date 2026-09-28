@@ -60,16 +60,19 @@ function readCatalogPage(url: string): string | null {
 
 // --- raw source cache (department/sample-plan pages) -------------------------
 
-const isPdf = (url: string) => /\.pdf($|\?)/i.test(new URL(url).pathname);
+/** A Google Drive direct download (`drive.google.com/uc?export=download&id=...`) serves the file itself; the ARHU academic plans are PDFs shared this way. */
+const isDriveDownload = (url: string) => new URL(url).hostname === "drive.google.com" && new URL(url).pathname === "/uc";
+const isPdf = (url: string) => /\.pdf($|\?)/i.test(new URL(url).pathname) || isDriveDownload(url);
 const isUnconvertibleDoc = (url: string) => /\.(docx?|xlsx?|csv|pptx?)($|\?)/i.test(new URL(url).pathname);
 function isGoogleDoc(url: string): boolean {
+  if (isDriveDownload(url)) return false;
   const host = new URL(url).hostname.toLowerCase();
   return host === "docs.google.com" || host === "drive.google.com" || host === "sheets.google.com" || host.endsWith(".google.com");
 }
 
 function rawCacheFile(url: string): URL {
   const u = new URL(url);
-  const slug = `${u.hostname}${u.pathname}`.replace(/^\/+|\/+$/g, "").replace(/\.pdf$/i, "").replace(/[^A-Za-z0-9-]+/g, "_") || "root";
+  const slug = `${u.hostname}${u.pathname}${isDriveDownload(url) ? `_${u.searchParams.get("id")}` : ""}`.replace(/^\/+|\/+$/g, "").replace(/\.pdf$/i, "").replace(/[^A-Za-z0-9-]+/g, "_") || "root";
   return new URL(`${slug}.${isPdf(url) ? "pdf" : "html"}`, RAW_CACHE);
 }
 

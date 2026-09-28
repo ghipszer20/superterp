@@ -79,7 +79,7 @@
 - Women, Gender, and Sexuality Studies Minor (womens-gender-sexuality-studies-minor)
 - African American and Africana Studies Certificate (african-american-africana-studies-certificate)
 
-## No sample plan (175)
+## No sample plan (173)
 
 - African American and Africana Studies Major (african-american-africana-studies-major)
 - Anthropology Major (anthropology-major)
@@ -93,9 +93,7 @@
 - Fermentation Science Major at Shady Grove (fermentation-science)
 - Geology Major (geology-major)
 - Global and Foreign Policy Major (global-and-foreign-policy-major)
-- Global Culture and Thought Major (global-culture-thought-major)
 - Government and Politics Major (government-politics-major)
-- Human-Centered Artificial Intelligence Major (human-centered-artificial-intelligence-major)
 - Individual Studies Program (individual-studies)
 - Information Science Major (information-science-major)
 - Information Science Major at Shady Grove (information-science)

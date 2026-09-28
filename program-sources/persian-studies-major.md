@@ -2,7 +2,7 @@
 # Persian Studies Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/persian-studies/persian-studies-major/
 Source: https://arhu.umd.edu/academics/world-language-placement
-Source: https://www.arhu.umd.edu/academics/advising/academic-plans
+Source: https://drive.google.com/uc?export=download&id=1oulxmIQPz-P4OVNev8Vz1UTs5iFtNuzZ#Persian-Studies
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -152,177 +152,87 @@ Log In
 Privacy Policy
 Web Accessibility
 
-## Sample plan (https://www.arhu.umd.edu/academics/advising/academic-plans)
+## Sample plan (https://drive.google.com/uc?export=download&id=1oulxmIQPz-P4OVNev8Vz1UTs5iFtNuzZ#Persian-Studies)
 
-Primary Header Navigation
-ARHU Home
-About
-Academic Units
-College Leadership
-Committees and Councils
-Diversity, Equity and Inclusion
-Facilities
-ARHU Newsletter & Podcast
-Service Awards
-Strategic Plan
-Academics
-Undergraduate
-Degree Programs
-Minors
-Undergraduate Research
-Internship Courses
-Study Abroad
-Living-Learning Programs
-Scholarships & Academic Honors
-Access2Alumni
-Graduate
-Degree Programs
-Museum Scholarship and Material Culture Certificate
-Financial Support
-Interdisciplinary Opportunities
-Career Development
-Graduate Research
-Fellowships, Grants & Awards
-Advising
-Academic Plans
-Academic Probation & Dismissal
-Declaring a Major
-Exceptions to Policy
-Global Engagement
-Graduation & Commencement
-Online Forms
-Orientation
-Career Initiative
-Strategic Career Preparation
-Curricular Innovations
-Regional & Alumni Partnerships
-World Language Placement
-Admissions
-Admitted Students
-Meet Our Students
-Visit Us
-Research
-Research Services
-Internal Funding Opportunities
-Academic Units
-Research Centers and Institutes
-Endowed Chairs
-Secondary Header Navigation
-Directory
-News
-Calendar
-Contact
-Current Students
-Prospective Students
-Faculty & Staff
-Alumni
-Academic Plans
-Home
-Academics
-ADVISING
-The College of Arts and Humanities is dedicated to helping students navigate and enrich their academic experience, and to Be WORLDWISE.
-Menu
-AdvisingAcademic PlansAcademic Probation & DismissalDeclaring a MajorExceptions to PolicyGlobal EngagementGraduation & CommencementOnline FormsOrientation
-Academic Plans/Degree Requirements
-All University of Maryland students are required to complete a minimum of 120 credits and earn a minimum 2.0 cumulative GPA. They are also responsible for completing the General Education Requirements.
-Additionally, students are responsible for completing the College of Arts and Humanities’ Requirements.
-College Requirements
-ARHU158
-All ARHU first year students (excluding students participating in one of the following programs: Honors Humanities, Design Cultures & Creativity, University Honors, Global Challenges and Solutions, Gemstone, Interdisciplinary Business Honors, Integrated Life Sciences, Advanced Cybersecurity Experience for Students, College Park Scholars, Jimenez-Porter Writers' House) must take ARHU158, Explorations in Arts and Humanities, during their first semester on campus.
-Upper Level Credits
-All ARHU students, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 45 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Effective fall 2024, all ARHU students entering the college, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 39 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Global Engagement Requirement
-The ARHU Global Engagement Requirement responds to the University Strategic Plan's call for students to "be prepared to live, work, and thrive in the current and future world environment." We believe that the development of cultural competence will result in the knowledge, skills and disposition needed to understand, communicate with, and effectively interact with people across cultures and is an integral component in an arts and humanities education. All ARHU students with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree must complete the ARHU Global Engagement Requirement.
-For information about your specific degree requirements, click on your major, linked below:
-American Studies
-Arabic Studies
-Art History
-Art Studio
-Studio Art
-Advanced Specialization
-Graphic Design
-Chinese
-Cinema and Media Studies
-Critical Studies
-Film Production
-Classics
-Humanities
-Latin
-Latin & Greek
-Communication
-Communication Studies
-Health and Science Communication
-Media and Digital Communication
-Political Communication and Public Advocacy
-Public Relations
-Dance
-English
-French
-German Studies
-Global Culture and Thought
-History
-Human-Centered Artificial Intelligence
-Immersive Media Design
-Italian Studies
-Japanese
-Jewish Studies
-Linguistics
-Language
-Grammars and Cognition
-Music Education
-Choral
-Instrumental
-Music Liberal Arts
-Jazz Studies
-Piano
-Strings
-Voice
-Wind & Percussion
-Music Performance
-Composition
-Jazz
-Piano
-Strings
-Theory
-Voice
-Wind & Percussion
+Persian Studies Four Year Academic Plan
+Year 1 Fall Spring
+Benchmark 1 Requirements
+PERS 104 ENGL 101 (AW)* {Min. Grade: C-} Natural Sciences (NS)**
+Must be completed by the end of two semesters. Math (MA)* Analytic Reasoning (AR)
+ARHU 158 Humanities (HU)**
+PERS 103 PERS 104 (satisfies Global Engagement
+Requirement)PERS 251 (Foundation Requirement)
+Elective 1xx-4xx
+*Must attempt by 30 cr.
+Year 2
+Benchmark 2 Requirements
+PERS 202 History/Social Sciences (HS)** Oral Communication (OC)
+One PERS Foundation Requirement Humanities (HU)** Scholarship in Practice (SP) #1**
+Must be completed by the end of four semesters. PERS 201 History/Social Sciences (HS)**
+PERS 283 (Foundation Requirement) PERS 202
+Elective 1xx-4xx Elective 1xx-4xx
+Year 3
+Benchmark 3 Requirements
+PERS 3xx Natural Science Lab (NL)** PERS 302
+A second PERS Foundation Requirement PERS 301 PERS 371 (Foundation Requirement)
+Must be completed by the end of six semesters. Elective 3xx-4xx Elective 3xx-4xx
+Elective 3xx-4xx Elective 1xx-4xx
+Elective 1xx-4xx Elective 1xx-4xx
+Year 4
+Professional Writing (PW) PERS 312
+Scholarship in Practice (SP) #2** PERS 498
+PERS 311 Elective 3xx-4xx
+Elective 3xx-4xx Elective 1xx-4xx
+Elective 3xx-4xx Elective 1xx-4xx
+Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
+Note: Some courses for the major may also count toward the General Education requirements.
+**All students must complete two Distributive Studies courses that are approved for Big Question courses. The Understanding Plural Societies
+and Cultural Competence courses may also fulfill Distributive Studies categories.
 Persian Studies
-Philosophy
-Philosophy, Politics, and Economics
-Religions of the Ancient Middle East
-Romance Languages
-French & Italian
-French & Spanish
-Italian & Spanish
-Russian
-Spanish
-Language, Culture, and Professional Contexts
-Spanish and Latin American Literature, Culture, and Media
-Linguistics, Culture, and Education
-Theatre
-Women, Gender, and Sexuality Studies
-Primary Footer Navigation
-ARHU Home
-About
-Academics
-Admissions
-Research
-Secondary Footer Navigation
-Apply
-Give
-Directory
-News
-Calendar
-Contact Us
-Maps
-Diversity and Inclusion
-Facebook
-Twitter
-Instagram
-Youtube
-Vimeo
-Flickr
-Log In
-Privacy Policy
-Web Accessibility
+General Education Requirements Benchmark Requirements
+Fundamental Studies Year 1 - Benchmark Requirements
+Requirements: 15 credits/5 courses Course Credits Grade PERS 104
+Academic Writing (AW) {Min. Grade: C-} ENGL101 Year 2 - Benchmark Requirements
+Professional Writing (PW) PERS 202
+Oral Comm. (OC) One PERS Foundation Requirement
+Math (MA) Year 3 - Benchmark Requirements
+Analytic Reasoning (AR) PERS 3xx
+Distributive Studies A second PERS Foundation Requirement
+Requirements: 25 credits/8 courses Course Credits Grade
+Natural Science Lab (NL) Major Requirements
+Natural Sciences (NS) Cumulative average of major requirements must be at least a 2.0
+History/Social Sciences (HS) Requirements Credits Grade
+History/Social Sciences (HS) Core Language Sequence (12 credits)
+Humanities (HU) PERS 103
+Humanities (HU) PERS 104
+Scholarship in Practice (SP) PERS 201
+Scholarship in Practice SP (non major) PERS 202
+Big Question Foundation Requirements* (9 credits)
+Normally double counted with Distributive Studies Select three (3) courses from: PERS 251,
+252, 283, 371
+Requirements: 6 credits/2 courses Course Credits Grade
+Big Question (IS)
+Big Question (IS) Electives (15 credits)
+Diversity
+Select five (5) courses from: PERS 280, 298,
+299, 301, 302, 311, 312, 353, 385, 386, 399,
+405, 406, 498
+(overlap permitted with Distributive Studies and/or Big Question)
+Requirements: 4-6 credits/2 courses Course Credits Grade
+Understanding Plural Soc. (UP)
+Understanding Plural Soc. (UP) or
+Cultural Competency (CC)
+Experiential Learning- optional *Foundation Courses may be substituted with permission.
+(overlap permitted with other requirements/courses) At least 15 credits in the major must be taken at the 3xx/4xx level.
+Requirements: 0-3 credits Course Credits Grade
+Students must earn a minimum of 120 credits to complete a degree.
+University Requirements for Graduation:
+Some courses for the major may also count toward General Education
+requirements.
+At least 30 credits must be earned at UMD
+15 of the final 30 credits must be earned at the 300-400 level
+12 upper level major credits must be earned at UMD
+ARHU Requirements for Graduation:
+39 upper level credits
+ARHU 158 or equivalent (if applicable)
+Global Engagement

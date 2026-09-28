@@ -2,7 +2,9 @@
 # Studio Art Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/art/art-major/
 Source: https://art.umd.edu/
-Source: https://www.arhu.umd.edu/academics/advising/academic-plans
+Source: https://drive.google.com/uc?export=download&id=1AKJNiU7YmO-IrnINLLeJ0dM-tcs6ygQL#Studio-Art
+Source: https://drive.google.com/uc?export=download&id=1KOTZOsCIo1SGWpzG31tUPuXOK9ZphGaY#Advanced-Specialization
+Source: https://drive.google.com/uc?export=download&id=1nwR3mYqtz0nQqGjc37kDTFbNhe-0LLHe#Graphic-Design
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -315,177 +317,367 @@ Log In
 Privacy Policy
 Web Accessibility
 
-## Sample plan (https://www.arhu.umd.edu/academics/advising/academic-plans)
+## Sample plan (https://drive.google.com/uc?export=download&id=1AKJNiU7YmO-IrnINLLeJ0dM-tcs6ygQL#Studio-Art)
 
-Primary Header Navigation
-ARHU Home
-About
-Academic Units
-College Leadership
-Committees and Councils
-Diversity, Equity and Inclusion
-Facilities
-ARHU Newsletter & Podcast
-Service Awards
-Strategic Plan
-Academics
-Undergraduate
-Degree Programs
-Minors
-Undergraduate Research
-Internship Courses
-Study Abroad
-Living-Learning Programs
-Scholarships & Academic Honors
-Access2Alumni
-Graduate
-Degree Programs
-Museum Scholarship and Material Culture Certificate
-Financial Support
-Interdisciplinary Opportunities
-Career Development
-Graduate Research
-Fellowships, Grants & Awards
-Advising
-Academic Plans
-Academic Probation & Dismissal
-Declaring a Major
-Exceptions to Policy
+Studio Art (Track 1: General) Four Year Academic Plan
+Year 1
+Benchmark 1 Requirements
+Year 2
+Benchmark 2 Requirements
+Year 3
+Benchmark 3 Requirements
+Fall Spring
+ARTT 100 Analy c Reasoning (AR)
+ARTT 110 Math (MA)* History/Social Sciences (HS)**
+ARTT 150 ARHU 158 Elec ve 1xx-4xx
+ARTT 100 ARTT 110 (SP #1)
+ARTH 2xx-4xx (UP) ARTT 150 (HU)
+ARTT 200 History/Social Sciences (HS)** Natural Sciences (NS)**
+ARTT 210 Global Engagement #1 Oral Communica on (OC)
+ARTT 255 ARTT 200, 210, or 255 Global Engagement #2
+ARTH 2xx-4xx (UP) ARTT 200, 210, or 255
+Elec ve 1xx-4xx ARTT 200, 210, or 255
+Intermediate courses: 3 courses, Natural Science Lab (NL)** ARTT 320, 33x, 34x, or 370
+from at least 2 different areas: ARTT 320, 33x, 34x, or 370 ARTT 3xx-4xx Studio Elec ve
+ARTT 320, 33x, 34x, 370 ARTT 320, 33x, 34x, or 370 ARTT 4xx Studio Elec ve
+ARTH or Art Theory 3xx-4xx Elec ve 1xx-4xx
+Elec ve 1xx-4xx Elec ve 1xx-4xx
+Professional Wri ng (PW) Scholarship in Prac ce (SP) #2** (non-major)
+ARTH or Art Theory 3xx-4xx Elec ve 3xx-4xx
+ARTT 4xx (Studio or Art Theory) Elec ve 3xx-4xx
+Elec ve 3xx-4xx Elec ve 1xx-4xx
+Elec ve 3xx-4xx Elec ve 1xx-4xx
+Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
+ENGL 101 (AW)* {Min. Grade: C-}
+Must be completed by the end of two semesters.
+*Must a empt by 30 cr.
+Must be completed by the end of four semesters.
+Must be completed by the end of six semesters.
+Year 4
+Note: Some courses for the major may also count toward the General Educa on requirements.
+**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es and
+Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Studio Art (Track 1: General)
+General Educa on Requirements Benchmark Requirements
+Fundamental Studies Year 1 - Benchmark Requirements
+Year 2 - Benchmark Requirements
+Distribu ve Studies
+Year 3 - Benchmark Requirements
+Major Requirements
+Big Ques on
+Normally double counted with Distribu ve Studies
+Diversity
+(overlap permi ed with Distribu ve Studies and/or Big Ques on)
+Experien al Learning--op onal
+(overlap permi ed with other requirements/courses)
+Students must earn a minimum of 120 credits to complete a degree.
+Requirements: 15 credits/5 courses Course Credits Grade
+Requirements: 25 credits/8 courses Course Credits Grade
+Requirements Credits Grade
+Requirements: 6 credits/2 courses Course Credits Grade Founda on Courses
+Requirements: 4-6 credits/2 courses Course Credits Grade
+Intermediate Courses: 3 courses total from at least 2 areas
+Requirements: 0-3 credits Course Credits Grade
+Advanced Courses
+Suppor ng Area: Art History
+ARTT 100
+Academic Wri ng (AW) ARTT 110
+Professional Wri ng (PW) ARTT 150
+Oral Comm. (OC)
+Math (MA)
+Analy c Reasoning (AR) ARTT 200
+ARTT 210
+ARTT 255
+Natural Science Lab (NL)
+Natural Sciences (NS)
+History/Social Sciences (HS) Inermediate courses: 3 courses total from at least 2 different areas:
+History/Social Sciences (HS) ARTT 320, 33x, 34x, or 370
+Humani es (HU)
+Humani es (HU)
+Scholarship in Prac ce (SP)
+Scholarship in Prac ce (SP) non-major
+Big Ques on (IS) ARTT 100
+Big Ques on (IS) ARTT 110 (SP)
+ARTT 150 (HU)
+ARTT 200
+ARTT 210
+Understanding Plural Soc. (UP) ARTT 255
+Understanding Plural Soc. (UP)
+Cultural Competency (CC) ARTT 320
+ARTT 330, 331, or 333
+ARTT 340, 341, or 343
+ARTT 370
+ARTT 3xx-4xx Studio Elec ve
+ARTT 4xx Studio Elec ve
+ARTT 4xx (Studio or Art Theory)
+Art History or Art Theory 3xx-4xx
+Art History or Art Theory 3xx-4xx
+{Min. Grade: C-} ENGL 101
+ARTH 2xx-4xx that sa sfies a GenEd Diversity
+Requirement
+ARTH 2xx-4xx that sa sfies a GenEd Diversity
+Requirement
+ARTT 150
+ARTT 110
+ARTH
+2xx-4xx
+ARTH
+2xx-4xx
+At least 30 credits must be earned at UMD
+15 of the final 30 credits must be earned at the 300-400 level
+12 upper level major credits must be earned at UMD
+39 upper level credits
+ARHU 158 or equivalent (if applicable)
 Global Engagement
-Graduation & Commencement
-Online Forms
-Orientation
-Career Initiative
-Strategic Career Preparation
-Curricular Innovations
-Regional & Alumni Partnerships
-World Language Placement
-Admissions
-Admitted Students
-Meet Our Students
-Visit Us
-Research
-Research Services
-Internal Funding Opportunities
-Academic Units
-Research Centers and Institutes
-Endowed Chairs
-Secondary Header Navigation
-Directory
-News
-Calendar
-Contact
-Current Students
-Prospective Students
-Faculty & Staff
-Alumni
-Academic Plans
-Home
-Academics
-ADVISING
-The College of Arts and Humanities is dedicated to helping students navigate and enrich their academic experience, and to Be WORLDWISE.
-Menu
-AdvisingAcademic PlansAcademic Probation & DismissalDeclaring a MajorExceptions to PolicyGlobal EngagementGraduation & CommencementOnline FormsOrientation
-Academic Plans/Degree Requirements
-All University of Maryland students are required to complete a minimum of 120 credits and earn a minimum 2.0 cumulative GPA. They are also responsible for completing the General Education Requirements.
-Additionally, students are responsible for completing the College of Arts and Humanities’ Requirements.
-College Requirements
-ARHU158
-All ARHU first year students (excluding students participating in one of the following programs: Honors Humanities, Design Cultures & Creativity, University Honors, Global Challenges and Solutions, Gemstone, Interdisciplinary Business Honors, Integrated Life Sciences, Advanced Cybersecurity Experience for Students, College Park Scholars, Jimenez-Porter Writers' House) must take ARHU158, Explorations in Arts and Humanities, during their first semester on campus.
-Upper Level Credits
-All ARHU students, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 45 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Effective fall 2024, all ARHU students entering the college, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 39 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Global Engagement Requirement
-The ARHU Global Engagement Requirement responds to the University Strategic Plan's call for students to "be prepared to live, work, and thrive in the current and future world environment." We believe that the development of cultural competence will result in the knowledge, skills and disposition needed to understand, communicate with, and effectively interact with people across cultures and is an integral component in an arts and humanities education. All ARHU students with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree must complete the ARHU Global Engagement Requirement.
-For information about your specific degree requirements, click on your major, linked below:
-American Studies
-Arabic Studies
-Art History
-Art Studio
-Studio Art
-Advanced Specialization
-Graphic Design
-Chinese
-Cinema and Media Studies
-Critical Studies
-Film Production
-Classics
-Humanities
-Latin
-Latin & Greek
-Communication
-Communication Studies
-Health and Science Communication
-Media and Digital Communication
-Political Communication and Public Advocacy
-Public Relations
-Dance
-English
-French
-German Studies
-Global Culture and Thought
-History
-Human-Centered Artificial Intelligence
-Immersive Media Design
-Italian Studies
-Japanese
-Jewish Studies
-Linguistics
-Language
-Grammars and Cognition
-Music Education
-Choral
-Instrumental
-Music Liberal Arts
-Jazz Studies
-Piano
-Strings
-Voice
-Wind & Percussion
-Music Performance
-Composition
-Jazz
-Piano
-Strings
-Theory
-Voice
-Wind & Percussion
-Persian Studies
-Philosophy
-Philosophy, Politics, and Economics
-Religions of the Ancient Middle East
-Romance Languages
-French & Italian
-French & Spanish
-Italian & Spanish
-Russian
-Spanish
-Language, Culture, and Professional Contexts
-Spanish and Latin American Literature, Culture, and Media
-Linguistics, Culture, and Education
-Theatre
-Women, Gender, and Sexuality Studies
-Primary Footer Navigation
-ARHU Home
-About
-Academics
-Admissions
-Research
-Secondary Footer Navigation
-Apply
-Give
-Directory
-News
-Calendar
-Contact Us
-Maps
-Diversity and Inclusion
-Facebook
-Twitter
-Instagram
-Youtube
-Vimeo
-Flickr
-Log In
-Privacy Policy
-Web Accessibility
+Cumulative average of major requirements must be at least a 2.0
+or
+University Requirements for Gradua on:
+ARHU Requirements for Gradua on:
+Some courses for the major may also count toward General Educa on
+requirements.
+
+## Sample plan (https://drive.google.com/uc?export=download&id=1KOTZOsCIo1SGWpzG31tUPuXOK9ZphGaY#Advanced-Specialization)
+
+Studio Art (Track 2: Advanced Specializa on) Four Year Academic Plan
+Year 1
+Benchmark 1 Requirements
+Year 2
+Benchmark 2 Requirements
+Year 3
+Benchmark 3 Requirements
+Year 4
+Fall Spring
+ARTT 100 ENGL 101 (AW)* {Min. Grade: C-} Analy c Reasoning (AR)
+ARTT 110 Math (MA)* History/Social Sciences (HS)**
+ARTT 150 ARHU 158 Humani es (HU)**
+ARTT 100 ARTT 110 (SP #1)
+ARTH 2xx-4xx (UP) ARTT 150 (HU)
+ARTT 200 History/Social Sciences (HS)** Natural Sciences (NS)**
+ARTT 210 Global Engagement #1 Oral Communica on (OC)
+ARTT 255 ARTT 200, 210, or 255 Global Engagement #2
+ARTH 2xx-4xx (UP) ARTT 200, 210, or 255
+Elec ve 1xx-4xx ARTT 200, 210, or 255
+Intermediate courses: 3 courses, Natural Science Lab (NL)** Professional Wri ng (PW)
+from at least 2 different areas: ARTT 320, 33x, 34x, or 370 ARTT 320, 33x, 34x, or 370
+ARTT 320, 33x, 34x, 370 ARTT 320, 33x, 34x, or 370 ARTT 3xx-4xx Studio Elec ve
+ARTT 3xx-4xx elec ve ARTH or Art Theory 3xx-4xx ARTT 4xx (Studio or Art Theory)
+ARTT 418_ or ARTT 4xx Elec ve 1xx-4xx Elec ve 1xx-4xx
+One ARTH 3xx-4xx or Art Theory 4xx
+Por olio Applica on: Adv. Spec.
+Scholarship in Prac ce (SP) #2** (non-major) ARTT 4xx Specializa on or ARTT 481
+ARTT 4xx Specializa on or ARTT481 ARTT 4xx Specializa on
+ARTT 4xx Specializa on ARTT 4xx Studio Elec ve
+ARTH or Art Theory 3xx-4xx Elec ve 1xx-4xx
+Elec ve 1xx-4xx Elec ve 1xx-4xx
+Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
+Must be completed by the end of two semesters.
+*Must a empt by 30 cr.
+Must be completed by the end of four semesters.
+Must be completed by the end of six semesters.
+Note: Some courses for the major may also count toward the General Educa on requirements.
+**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es and
+Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Studio Art (Track 2: Advanced Specializa on)
+General Educa on Requirements Benchmark Requirements
+Fundamental Studies Year 1 - Benchmark Requirements
+Year 2 - Benchmark Requirements
+Distribu ve Studies
+Year 3 - Benchmark Requirements
+Major Requirements
+Big Ques on
+Normally double counted with Distribu ve Studies
+Diversity
+(overlap permi ed with Distribu ve Studies and/or Big Ques on)
+Experien al Learning--op onal
+(overlap permi ed with other requirements/courses)
+Students must earn a minimum of 120 credits to complete a degree.
+Requirements: 15 credits/5 courses Course Credits Grade
+Requirements: 25 credits/8 courses Course Credits Grade
+Requirements Credits Grade
+Requirements: 6 credits/2 courses Course Credits Grade Founda on Courses
+Requirements: 4-6 credits/2 courses Course Credits Grade
+Intermediate Courses: 3 courses total from at least 2 areas
+Requirements: 0-3 credits
+Advanced Courses
+Suppor ng Area: Art History
+Advanced Specializa on
+ARTT 100
+Academic Wri ng (AW) ARTT 110
+Professional Wri ng (PW) ARTT 150
+Oral Comm. (OC)
+Math (MA) ARTT 200
+Analy c Reasoning (AR) ARTT 210
+ARTT 255
+Natural Science Lab (NL) Inermediate courses: 3 courses total from at least 2 different areas:
+Natural Sciences (NS) ARTT 320, 33x, 34x, or 370
+History/Social Sciences (HS) ARTT 3xx-4xx elec ve
+History/Social Sciences (HS) ARTT 418 or ARTT 4xx elec ve
+Humani es (HU) One ARTH 3xx-4xx or Art Theory
+Humani es (HU) Por olio Applica on: Advanced Specializa on
+Scholarship in Prac ce (SP)
+Scholarship in Prac ce (SP) non-major
+Big Ques on (IS) ARTT 100
+Big Ques on (IS) ARTT 110 (SP)
+ARTT 150 (HU)
+ARTT 200
+ARTT 210
+Understanding Plural Soc. (UP) ARTT 255
+Understanding Plural Soc. (UP)
+Cultural Competency (CC) ARTT 320
+ARTT 330, 331, or 333
+ARTT 340, 341, or 343
+Course Credits Grade ARTT 370
+ARTT 3xx-4xx Studio Elec ve
+ARTT 4xx Studio Elec ve
+ARTT 4xx (Studio or Art Theory)
+Art History or Art Theory 3xx-4xx
+Art History or Art Theory 3xx-4xx
+ARTT 481
+ARTT 4xx
+ARTT 4xx
+ARTT 4xx
+{Min. Grade: C-} ENGL 101
+ARTT 150
+ARTT 110
+ARTH
+2xx-4xx
+ARTH
+2xx-4xx
+ARTH 2xx-4xx that sa sfies a GenEd Diversity
+Requirement
+ARTH 2xx-4xx that sa sfies a GenEd Diversity
+Requirement
+Cumulative average of major requirements must be at least a 2.0
+or
+University Requirements for Gradua on:
+ARHU Requirements for Gradua on:
+At least 30 credits must be earned at UMD
+15 of the final 30 credits must be earned at the 300-400 level
+12 upper level major credits must be earned at UMD
+39 upper level credits
+ARHU 158 or equivalent (if applicable)
+Global Engagement
+Some courses for the major may also count toward General Educa on
+requirements.
+
+## Sample plan (https://drive.google.com/uc?export=download&id=1nwR3mYqtz0nQqGjc37kDTFbNhe-0LLHe#Graphic-Design)
+
+Studio Art (Track 3: Graphic Design Concentra on) Four Year Academic Plan
+Year 1
+Benchmark 1 Requirements
+Year 2
+Benchmark 2 Requirements
+Year 3
+Benchmark 3 Requirements
+Year 4
+Fall Spring
+ARTT 100 ENGL 101 (AW)* {Min. Grade: C-} Analy c Reasoning (AR)
+ARTT 110 Math (MA)* History/Social Sciences (HS)**
+ARTT 150 ARHU 158 Humani es (HU)**
+ARTT 100 ARTT 110 (SP #1)
+ARTH 2xx-4xx (UP) ARTT 150 (HU)
+ARTT 200 History/Social Sciences (HS)** Natural Sciences (NS)**
+ARTT 210 Global Engagement #1 Oral Communica on (OC)
+ARTT 255 ARTT 200, 210, or 255 Global Engagement #2
+Por olio Applica on: Graphic Design ARTH 2xx-4xx (UP) ARTT 200, 210, or 255
+Elec ve 1xx-4xx ARTT 200, 210, or 255
+ARTT 355 Natural Science Lab (NL)** Professional Wri ng (PW)
+ARTT 356 ARTT 355 (Fall only) ARTT 357 (Spring only)
+ARTT 357 ARTT 356 (Fall only) ARTT 361 (Spring only)
+ARTT 361 ARTT 3xx-4xx ARTT 3xx-4xx
+Two ARTT 3xx-4xx elec ves Elec ve 1xx-4xx Elec ve 1xx-4xx
+Scholarship in Prac ce (SP) #2** (non-major) ARTT 458
+ARTT 454 ARTT 455
+ARTT 386 or 456 or 459 (Fall only) ARTT 386 or 456 or 457 (Spring only)
+ARTH 3xx-4xx or Art Theory Elec ve 1xx-4xx
+Elec ve 1xx-4xx Elec ve 1xx-4xx
+Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
+Must be completed by the end of two semesters.
+*Must a empt by 30 cr.
+Must be completed by the end of four semesters.
+Must be completed by the end of six semesters.
+Note: Some courses for the major may also count toward the General Educa on requirements.
+**All students must complete two Distribu ve Studies courses that are approved for Big Ques on courses. The Understanding Plural Socie es and
+Cultural Competence courses may also fulfill Distribu ve Studies categories.
+Studio Art (Track 3: Graphic Design Concentra on)
+General Educa on Requirements Benchmark Requirements
+Fundamental Studies Year 1 - Benchmark Requirements
+Year 2 - Benchmark Requirements
+Distribu ve Studies
+Year 3 - Benchmark Requirements
+Major Requirements
+Big Ques on
+Normally double counted with Distribu ve Studies
+Diversity
+(overlap permi ed with Distribu ve Studies and/or Big Ques on)
+Experien al Learning--op onal
+(overlap permi ed with other requirements/courses)
+Students must earn a minimum of 120 credits to complete a degree.
+Requirements: 15 credits/5 courses Course Credits Grade
+Requirements: 25 credits/8 courses Course Credits Grade
+Requirements Credits Grade
+Requirements: 6 credits/2 courses Course Credits Grade Founda on Courses
+Requirements: 4-6 credits/2 courses Course Credits Grade
+Studio Art Elec ves
+Graphic Design Concentra on
+Requirements: 0-3 credits Course Credits Grade
+Graphic Design Elec ves
+Suppor ng Area: Art History
+ARTT 100
+Academic Wri ng (AW) ARTT 110
+Professional Wri ng (PW) ARTT 150
+Oral Comm. (OC)
+Math (MA) ARTT 200
+Analy c Reasoning (AR) ARTT 210
+ARTT 255
+Por olio Applica on: Graphic Design Concentra on
+Natural Science Lab (NL)
+Natural Sciences (NS) ARTT 355
+History/Social Sciences (HS) ARTT 356
+History/Social Sciences (HS) ARTT 357
+Humani es (HU) ARTT 361
+Humani es (HU) Two ARTT 3xx-4xx elec ves
+Scholarship in Prac ce (SP)
+Scholarship in Prac ce (SP) non-major
+Big Ques on (IS) ARTT 100
+Big Ques on (IS) ARTT 110 (SP)
+ARTT 150 (HU)
+ARTT 200
+ARTT 210
+Understanding Plural Soc. (UP) ARTT 255
+Understanding Plural Soc. (UP)
+Cultural Competency (CC) ARTT 3xx-4xx
+ARTT 3xx-4xx
+ARTT 355
+ARTT 356
+ARTT 357
+ARTT 454
+ARTT 455
+ARTT 458
+ARTT 456, 457, 459 or Internship
+ARTT 456, 457, 459 or Internship
+ARTH 2xx-4xx that sa sfies a GenEd
+Diversity Requirement
+ARTH 2xx-4xx that sa sfies a GenEd
+Diversity Requirement
+ARTT 361
+Art History or Art Theory 3xx-4xx
+{Min. Grade: C-} ENGL 101
+ARTT 150
+ARTT 110
+Cumulative average of major requirements must be at least a 2.0
+ARTH
+2xx-4xx
+ARTH
+2xx-4xx
+At least 30 credits must be earned at UMD
+15 of the final 30 credits must be earned at the 300-400 level
+12 upper level major credits must be earned at UMD
+39 upper level credits
+ARHU 158 or equivalent (if applicable)
+Global Engagement
+or
+University Requirements for Gradua on:
+ARHU Requirements for Gradua on:
+Some courses for the major may also count toward General Educa on
+requirements.

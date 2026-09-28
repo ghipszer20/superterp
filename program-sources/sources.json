@@ -106,7 +106,7 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/american-studies/american-studies-major/",
     "department": [],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1nOsCTmVM4dhwKglqMEblqO2pCujWAY_I#American-Studies"
     ]
   },
   "animal-sciences-major": {
@@ -152,7 +152,7 @@
       "https://arhu.umd.edu/academics/world-language-placement"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=11biF06jxlkxYZ8_71AWJ7ZzpcEx-an7g#Arabic-Studies"
     ]
   },
   "architecture-major": {
@@ -203,7 +203,7 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/art-history-archaeology/art-history-major/",
     "department": [],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1bXaa5dhAxm54n7XLoYOmgO7Drnt3PYXV#Art-History"
     ]
   },
   "art-history-minor": {
@@ -220,7 +220,7 @@
       "https://lep.umd.edu/"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1UqFgW6mZjaq_xGlEWd68VIJrnYIPq-V2#Immersive-Media-Design"
     ]
   },
   "art-major": {
@@ -229,7 +229,9 @@
       "https://art.umd.edu/"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1AKJNiU7YmO-IrnINLLeJ0dM-tcs6ygQL#Studio-Art",
+      "https://drive.google.com/uc?export=download&id=1KOTZOsCIo1SGWpzG31tUPuXOK9ZphGaY#Advanced-Specialization",
+      "https://drive.google.com/uc?export=download&id=1nwR3mYqtz0nQqGjc37kDTFbNhe-0LLHe#Graphic-Design"
     ]
   },
   "artificial-intelligence-computational-structures-ai-systems-major": {
@@ -406,7 +408,7 @@
       "https://arhu.umd.edu/academics/world-language-placement"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1DA9AvJMUDq0Hn4oYY6xIH-u4XFD9C1lg#Chinese"
     ]
   },
   "chinese-studies-minor": {
@@ -451,7 +453,9 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/classical-languages-literature/classics-major/",
     "department": [],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=18tFM357KN3rEkZqtASqHL4ZDB-z-2EYt#Humanities",
+      "https://drive.google.com/uc?export=download&id=1XOy6bx6sHIZ2Hkse1JrH1PCCMuFAFiKi#Latin",
+      "https://drive.google.com/uc?export=download&id=1Go4fyz59qBM5GgDt7xvqJXxnuWw3b3WO#Latin-&-Greek"
     ]
   },
   "climate-change-fluency-minor": {
@@ -470,7 +474,11 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/communication/communication-major/",
     "department": [],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1I36HqnXfxSpWs3PW_3on9226EDeW8CaR#Communication-Studies",
+      "https://drive.google.com/uc?export=download&id=1ETspCX6Xy8feCY6kQlAhVTYc_XhYKWmS#Health-and-Science-Communication",
+      "https://drive.google.com/uc?export=download&id=1gujq1AvfdD6crXvPwS8TVSB877MTQp54#Media-and-Digital-Communication",
+      "https://drive.google.com/uc?export=download&id=1O_OqBgmiMqMASjpXXrRxG6JaR1f7gZjN#Political-Communication-and-Public-Advocacy",
+      "https://drive.google.com/uc?export=download&id=1p7VsEESCucKzHn92KjkI1CwjMIVUpyz3#Public-Relations"
     ]
   },
   "communication-rhetoric-minor": {
@@ -605,7 +613,7 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/theatre-dance-performance-studies/dance-major/",
     "department": [],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1RdyaKmH8ft-GLD4UHzet9ubPtwSVD1cr#Dance"
     ]
   },
   "demography-minor": {
@@ -725,7 +733,8 @@
       "https://sllc.umd.edu/fields/cinema-media"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1B9ifEzSZ_rtJDP-6P0b5_D-AiNAAEmrw#Critical-Studies",
+      "https://drive.google.com/uc?export=download&id=1-dNgdkQ622vupRk-U2eRXNRcfAniVSk-#Film-Production"
     ]
   },
   "english-language-literature-rhetoric-minor": {
@@ -741,7 +750,7 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/english-language-literature/english-major/",
     "department": [],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1hCmIPjZi3fZy96AM4mF4S1grGFEbZ46A#English"
     ]
   },
   "entomology-minor": {
@@ -836,7 +845,7 @@
       "https://arhu.umd.edu/academics/world-language-placement"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=17UqV14aynMTWEgyBOex0GzaajjhDtcjc#French"
     ]
   },
   "french-studies-minor": {
@@ -922,7 +931,7 @@
       "https://arhu.umd.edu/academics/world-language-placement"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1hDoLft_mRqAwKEzh2voKvNnt32zj761n#German-Studies"
     ]
   },
   "german-studies-minor": {
@@ -943,10 +952,11 @@
   "global-culture-thought-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/global-culture-thought-major/",
     "department": [
-      "https://sllc.umd.edu/fields/global-culture-and-thought/major",
-      "https://arhu.umd.edu/academics/advising/academic-plans"
+      "https://sllc.umd.edu/fields/global-culture-and-thought/major"
     ],
-    "samplePlan": []
+    "samplePlan": [
+      "https://drive.google.com/uc?export=download&id=1xtu7OAIvMXD0bcWacqte__1eZ0dsGsN1#Global-Culture-and-Thought"
+    ]
   },
   "global-engineering-leadership-minor": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/global-engineering-leadership-minor/",
@@ -1054,7 +1064,7 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/history/history-major/",
     "department": [],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1ZjfdW75RKk-Hm41Hm4ylcpcjg908TFYP#History"
     ]
   },
   "history-minor": {
@@ -1076,7 +1086,9 @@
   "human-centered-artificial-intelligence-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/philosophy/human-centered-artificial-intelligence-major/",
     "department": [],
-    "samplePlan": []
+    "samplePlan": [
+      "https://drive.google.com/uc?export=download&id=11hH4qitJRsXvN2YkuQ3TnXOmlGF_RCrS#Human-Centered-Artificial-Intelligence"
+    ]
   },
   "human-development-major": {
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/human-development-quantitative-methodology/human-development-major/",
@@ -1208,7 +1220,7 @@
       "https://arhu.umd.edu/academics/world-language-placement"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1DTZOYr6ZR0khHL4nxetKE9C1NGiK6_uu#Italian-Studies"
     ]
   },
   "japanese-major": {
@@ -1218,7 +1230,7 @@
       "https://arhu.umd.edu/academics/world-language-placement"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1NkCebF68ZokYba325f7rASFoEz-XZTbX#Japanese"
     ]
   },
   "japanese-minor": {
@@ -1233,7 +1245,7 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/jewish-studies/jewish-studies-major/",
     "department": [],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1PDQm3Yaw9ilNtPnjFPwD6U-3It5SrZ32#Music-Education---Jewish-Studies"
     ]
   },
   "jewish-studies-minor": {
@@ -1306,7 +1318,8 @@
       "https://sllc.umd.edu/fields/cinema-media"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1B9ifEzSZ_rtJDP-6P0b5_D-AiNAAEmrw#Critical-Studies",
+      "https://drive.google.com/uc?export=download&id=1-dNgdkQ622vupRk-U2eRXNRcfAniVSk-#Film-Production"
     ]
   },
   "languages-literatures-cultures-east-asian-studies-certificate": {
@@ -1373,7 +1386,8 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/linguistics/linguistics-major/",
     "department": [],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1N4Sf-yodBQvBImqf8enLGN1g3ookBpCy#Music-Education---Language",
+      "https://drive.google.com/uc?export=download&id=1KT5gd9SfMR4YB1Kh_S3P9-yCgpQmBBRG#Music-Liberal-Arts---Grammars-and-Cognition"
     ]
   },
   "linguistics-minor": {
@@ -1539,7 +1553,20 @@
       "https://music.umd.edu/admissions/undergraduate"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1gsAwruL7JiOj3BHkKkix16YOPS4NhbMT#Music-Liberal-Arts---Choral",
+      "https://drive.google.com/uc?export=download&id=1KG9zVt2VyHnytYFlROSaHHcsPHenO7lF#Music-Liberal-Arts---Instrumental",
+      "https://drive.google.com/uc?export=download&id=1g8J24Bz68wwqpZDqN_O19lIzJwle4FkX#Music-Liberal-Arts---Jazz-Studies",
+      "https://drive.google.com/uc?export=download&id=1w2YlzMQT2kVfHveaxuIsWW0K2WCqseIL#Music-Liberal-Arts---Piano",
+      "https://drive.google.com/uc?export=download&id=1YMxqNvmPxryb9_R0765_pYGFvMeSnxpS#Music-Performance---Strings",
+      "https://drive.google.com/uc?export=download&id=1K6l4dzfqSSkBtQ18uhr6HpPY__Xjw1mP#Music-Performance---Voice",
+      "https://drive.google.com/uc?export=download&id=1DDiNX6QWhGPlxsxE_YJGaGBlvgbAQms2#Music-Performance---Wind-&-Percussion",
+      "https://drive.google.com/uc?export=download&id=1du3_qWLtmXz5ISfDcZPZqbfk3j_i8VU-#Music-Performance---Composition",
+      "https://drive.google.com/uc?export=download&id=1nlVRA54LPKzrofWqjOwEozZ-NI3Aajnq#Music-Performance---Jazz",
+      "https://drive.google.com/uc?export=download&id=1ynFMU1Wj48gXVxKtkrrReC2KKerzQDCO#Music-Performance---Piano",
+      "https://drive.google.com/uc?export=download&id=1KKQburfg7BLqxm2EnshvLLnm0SckYw0i#Music-Performance---Strings",
+      "https://drive.google.com/uc?export=download&id=1JxSZQ1DN7HKJUNvUtr0foVUAm-Rm-pmn#Theory",
+      "https://drive.google.com/uc?export=download&id=1HGZC7G4ULXXPlXEB6QrN3Fp0RJ5-ZpWL#Voice",
+      "https://drive.google.com/uc?export=download&id=1pg0VkRRx43VVi85Y8_xmmvXXM5XpOumi#Wind-&-Percussion"
     ]
   },
   "music-performance-minor": {
@@ -1609,7 +1636,7 @@
       "https://arhu.umd.edu/academics/world-language-placement"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1oulxmIQPz-P4OVNev8Vz1UTs5iFtNuzZ#Persian-Studies"
     ]
   },
   "persian-studies-minor": {
@@ -1624,7 +1651,7 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/philosophy/philosophy-major/",
     "department": [],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1kH1bnxhyH-0GSKpI-WH_4SgdmDLdlJTt#Philosophy"
     ]
   },
   "philosophy-minor": {
@@ -1638,7 +1665,7 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/philosophy/philosophy-politics-economics-major/",
     "department": [],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1GLntl2I-ebb7jVOIAnhkCy1F2Jvd5530#Philosophy,-Politics,-and-Economics"
     ]
   },
   "physics-major": {
@@ -1798,7 +1825,7 @@
       "https://jewishstudies.umd.edu/academic-programs/undergraduate/rame-ba"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1plP1e7d5mrA0V8gPnpWp_CcUWrDt1v_8#Religions-of-the-Ancient-Middle-East"
     ]
   },
   "religious-studies-minor": {
@@ -1822,7 +1849,9 @@
       "https://arhu.umd.edu/academics/world-language-placement"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1pq1N0dC_-cPZvjmFrqsry1L4FWk0saAN#French-&-Italian",
+      "https://drive.google.com/uc?export=download&id=1CYxEmtRxdG4Boj0l2VNZ9_IiBkUSyRTB#French-&-Spanish",
+      "https://drive.google.com/uc?export=download&id=1nL-g2PQXdXaw7Zs4gDP8g8w0Np5suauD#Italian-&-Spanish"
     ]
   },
   "russian-language-literature-major": {
@@ -1831,7 +1860,7 @@
       "https://arhu.umd.edu/academics/world-language-placement"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1Z_eMIfEE0R2R1ipjzgVF7pQcOaxzJ2vb#Russian"
     ]
   },
   "russian-studies-minor": {
@@ -1916,7 +1945,9 @@
       "https://arhu.umd.edu/academics/world-language-placement"
     ],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1Lz_BBrjv7AeI3bf8GHRH5cBrNQBC0baF#Language,-Culture,-and-Professional-Contexts",
+      "https://drive.google.com/uc?export=download&id=1eL0ki-g1XSznVOHn0HAHu_yuCddYjLpq#Spanish-and-Latin-American-Literature,-Culture,-and-Media",
+      "https://drive.google.com/uc?export=download&id=139qrMn2SvwHU7jkbVgDX6hNFt6wFi9Hj#Linguistics,-Culture,-and-Education"
     ]
   },
   "spanish-literature-linguistics-culture-minor": {
@@ -1994,7 +2025,7 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/theatre-dance-performance-studies/theatre-major/",
     "department": [],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1W2lqXy4Ra_wafe8_uFEihlgakWSZOBZK#Theatre"
     ]
   },
   "universities-shady-grove-biological-sciences": {
@@ -2037,7 +2068,7 @@
     "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/women-gender-sexuality-studies/womens-gender-sexuality-studies-major/",
     "department": [],
     "samplePlan": [
-      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+      "https://drive.google.com/uc?export=download&id=1LJeussxI358rB4P4J7pbCZeQlEgE6jOv#Women,-Gender,-and-Sexuality-Studies"
     ]
   },
   "womens-gender-sexuality-studies-minor": {

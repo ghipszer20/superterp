@@ -2,7 +2,8 @@
 # Cinema and Media Studies Major (SLLC)
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/cinema-media-studies-major/
 Source: https://sllc.umd.edu/fields/cinema-media
-Source: https://www.arhu.umd.edu/academics/advising/academic-plans
+Source: https://drive.google.com/uc?export=download&id=1B9ifEzSZ_rtJDP-6P0b5_D-AiNAAEmrw#Critical-Studies
+Source: https://drive.google.com/uc?export=download&id=1-dNgdkQ622vupRk-U2eRXNRcfAniVSk-#Film-Production
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -355,177 +356,32 @@ Log In
 Privacy Policy
 Web Accessibility
 
-## Sample plan (https://www.arhu.umd.edu/academics/advising/academic-plans)
+## Sample plan (https://drive.google.com/uc?export=download&id=1B9ifEzSZ_rtJDP-6P0b5_D-AiNAAEmrw#Critical-Studies)
 
-Primary Header Navigation
-ARHU Home
-About
-Academic Units
-College Leadership
-Committees and Councils
-Diversity, Equity and Inclusion
-Facilities
-ARHU Newsletter & Podcast
-Service Awards
-Strategic Plan
-Academics
-Undergraduate
-Degree Programs
-Minors
-Undergraduate Research
-Internship Courses
-Study Abroad
-Living-Learning Programs
-Scholarships & Academic Honors
-Access2Alumni
-Graduate
-Degree Programs
-Museum Scholarship and Material Culture Certificate
-Financial Support
-Interdisciplinary Opportunities
-Career Development
-Graduate Research
-Fellowships, Grants & Awards
-Advising
-Academic Plans
-Academic Probation & Dismissal
-Declaring a Major
-Exceptions to Policy
-Global Engagement
-Graduation & Commencement
-Online Forms
-Orientation
-Career Initiative
-Strategic Career Preparation
-Curricular Innovations
-Regional & Alumni Partnerships
-World Language Placement
-Admissions
-Admitted Students
-Meet Our Students
-Visit Us
-Research
-Research Services
-Internal Funding Opportunities
-Academic Units
-Research Centers and Institutes
-Endowed Chairs
-Secondary Header Navigation
-Directory
-News
-Calendar
-Contact
-Current Students
-Prospective Students
-Faculty & Staff
-Alumni
-Academic Plans
-Home
-Academics
-ADVISING
-The College of Arts and Humanities is dedicated to helping students navigate and enrich their academic experience, and to Be WORLDWISE.
-Menu
-AdvisingAcademic PlansAcademic Probation & DismissalDeclaring a MajorExceptions to PolicyGlobal EngagementGraduation & CommencementOnline FormsOrientation
-Academic Plans/Degree Requirements
-All University of Maryland students are required to complete a minimum of 120 credits and earn a minimum 2.0 cumulative GPA. They are also responsible for completing the General Education Requirements.
-Additionally, students are responsible for completing the College of Arts and Humanities’ Requirements.
-College Requirements
-ARHU158
-All ARHU first year students (excluding students participating in one of the following programs: Honors Humanities, Design Cultures & Creativity, University Honors, Global Challenges and Solutions, Gemstone, Interdisciplinary Business Honors, Integrated Life Sciences, Advanced Cybersecurity Experience for Students, College Park Scholars, Jimenez-Porter Writers' House) must take ARHU158, Explorations in Arts and Humanities, during their first semester on campus.
-Upper Level Credits
-All ARHU students, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 45 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Effective fall 2024, all ARHU students entering the college, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 39 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Global Engagement Requirement
-The ARHU Global Engagement Requirement responds to the University Strategic Plan's call for students to "be prepared to live, work, and thrive in the current and future world environment." We believe that the development of cultural competence will result in the knowledge, skills and disposition needed to understand, communicate with, and effectively interact with people across cultures and is an integral component in an arts and humanities education. All ARHU students with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree must complete the ARHU Global Engagement Requirement.
-For information about your specific degree requirements, click on your major, linked below:
-American Studies
-Arabic Studies
-Art History
-Art Studio
-Studio Art
-Advanced Specialization
-Graphic Design
-Chinese
-Cinema and Media Studies
-Critical Studies
-Film Production
-Classics
-Humanities
-Latin
-Latin & Greek
-Communication
-Communication Studies
-Health and Science Communication
-Media and Digital Communication
-Political Communication and Public Advocacy
-Public Relations
-Dance
-English
-French
-German Studies
-Global Culture and Thought
-History
-Human-Centered Artificial Intelligence
-Immersive Media Design
-Italian Studies
-Japanese
-Jewish Studies
-Linguistics
-Language
-Grammars and Cognition
-Music Education
-Choral
-Instrumental
-Music Liberal Arts
-Jazz Studies
-Piano
-Strings
-Voice
-Wind & Percussion
-Music Performance
-Composition
-Jazz
-Piano
-Strings
-Theory
-Voice
-Wind & Percussion
-Persian Studies
-Philosophy
-Philosophy, Politics, and Economics
-Religions of the Ancient Middle East
-Romance Languages
-French & Italian
-French & Spanish
-Italian & Spanish
-Russian
-Spanish
-Language, Culture, and Professional Contexts
-Spanish and Latin American Literature, Culture, and Media
-Linguistics, Culture, and Education
-Theatre
-Women, Gender, and Sexuality Studies
-Primary Footer Navigation
-ARHU Home
-About
-Academics
-Admissions
-Research
-Secondary Footer Navigation
-Apply
-Give
-Directory
-News
-Calendar
-Contact Us
-Maps
-Diversity and Inclusion
-Facebook
-Twitter
-Instagram
-Youtube
-Vimeo
-Flickr
-Log In
-Privacy Policy
-Web Accessibility
+      !"#$%&!'()!")#$%&!'(*+
+,-.. /012345678987:;<=> 87:;?@?ABCDEFGHIJ:KLMNO5PQ 7LRSKLTUVHNIVNWA7UDEEGLRXAGBDE BILTYZV[NLW\IHI]AB[D^HWR\KY9U\VHLTUVHNIVNWA^UDEE ^S_LIHZNWA^`DEEB[^`?>a 8TNVZbN?ccP=cc5678987:;<=>A^`D 56788TNVZbN<ccP=cc5678d@? eKLT5\__SIHVLZ\IAe5D UVX\TLKWXHfHIgKLVZVNAUgDh?EE5678d@< :T\iLT8I]L]N_NIRh? :T\iLT8I]L]N_NIRh<5678d@? 5678d@<8TNVZbN?ccP=cc 56787LZ\ILTj6IRNKILZ\ILTdccP=cc8TNVZbN?ccP=cc 8TNVZbN?ccP=cc7LRSKLTUVHNIVN;LiA7;DEE ^HWR\KY9U\VHLTUVHNIVNWA^UDEE8TNVZbN?ccP=cc gK\kNWWH\ILTCKHZI]AgCD8TNVZbN?ccP=cc 8TNVZbN?ccP=cc56787LZ\ILTj6IRNKILZ\ILTdccP=cc 5678:NIKNWjBSRNSKWjG\bN_NIRWdccP=cc56788TNVZbNdccP=cc 56788TNVZbN<ccP=ccUVX\TLKWXHfHIgKLVZVNAUgDh<EE 8TNVZbN?ccP=cc8TNVZbNdccP=cc 8TNVZbN?ccP=cc8TNVZbNdccP=cc 8TNVZbN?ccP=cc56788TNVZbNdccP=cc 5678:NIKNWjBSRNSKWjG\bN_NIRWdccP=cc5678lXN\KHNWdccP=ccl\RLT5KNMHRWk\KmN]KNNO?<@ndoVKNMHRW_SWRiNdccP=ccTNbNT5678m\VS_NIRLKYjBIH_LZ\Ij\K8cfNKH_NIRLTdccP=cc
+pqrstuvwxyzusu{t|s}uu~{wswruxursur
+pqrstuvwxyzusu{t|s}uu~{wwqruxursur
+¡¢¢£¤¥¦§¤¨©©ª¡¢¤
+     !"#$%& '%()*$"+$ ,-.'%(),/.'%()01&2+$ *$&345336'57&8""9$1"%$:(01&2+$ 3&%"+$;%)36029<2"==>$:(01&2+$$?'57&@#A=&"B5.=&"<2"==>$:((?%@
+CDEFGHDIDJKLMNOPHDQGKLROPSFHLDL TSFHLD THDQGKL UHVQDCDEFGHDIDJKLMWOPHDQGKLRXPSFHLDL TSFHLD THDQGKL UHVQD CDEFGHDIDJKL THDQGKL UHVQD
+CDEFGHDIDJKLMYPHDQGKLRWPSFHLDL TSFHLD THDQGKL UHVQDCDEFGHDIDJKLMZ[YPHDQGKLRWPSFHLDL TSFHLD THDQGKL UHVQDCDEFGHDIDJKLM\[]PHDQGKL TSFHLD THDQGKL UHVQD
+^_`abcddef^bg bhijklmno`apqrst`ucovowfnsg bhijxjiyzm{|nr`}tdvr~_vqowfn~g_ctuuvco`a~_vqowf~g bhijkl`fngi`_`arvtortz`fizgi`_`arvtortufig bhijxjiyzm{|fgvuc_pxcrv`arvtortufg bhijklvuc_pxcrv`arvtortufg bhijklmd`ovqtufg bhijm{|d`ovqtufg bhijtc_vtuk{rca`_uvvo_`rqrtfg bhijcrdto`_pnovd`qcoc_jt_vdto`ak{rca`_uvvo_`rqrtfgocod`c_ bhiji`qco`ahot_o`qco`abvotd`uk{bhijyto_tunt_uctdtouk{vwtuqcofhg bhijyto_tunt_uctdtouk{vwtuqcofhg bhiji`qco`ahot_o`qco`abvotd`uk{bhijjatrqtm{bhijjatrqtm{bhijjatrqtk{o}t_u`o}vowa_`acrefg bhijjatrqtk{o}t_u`o}vowa_`acrefgba_`abcdttorpfbbg
+¡¢£ ¤¥¦¥§¨©ª«¨ª«¬¨«®¯¦¨°®¬¬«±¥²¬«¦«³´μ¦¥μ´¶«¨´§«¨μ´¨·¸¹
+º» ¼½¾¿ÀÁÂ¾ÃÄÀÅÃÆÇÂÀÈÄ¾ÉÈÂÅÁ¾ÀÊÃÇËÌÆÂ¾ÍÀ¾ÁÎÀÄÁ¾¾ÉÀÏÐÐ¿ÀÑÀ¿ÒÓÉÀÅÃÆÇÂÀÂÌÆÂ¾ÍÀÂÀ¿ÀÅ¾ÀÔÀÈ¾ÉÀÇÕÇÃÌ¾ÉÀÖÇÀ×ÁÖÖÇÃÑÀÔØÙÚÛÇÆÍÇÈÅÂÃÇÕÇÃÌÁ¿ÈÂ¾ÃÕÜ¿ÌÀ¿ÀÅÝÑÀÂÁÑÁÈ¿ÁÍ¿ÀÕÇÃÌ¾ÉÀØÙÚÛÁÔÑÈÂÃÇÒ¼¼ÞÖ¾Ã¾ßÃÀ¿ÀÅÝÑÀÅÃÆÇÂÀÂÌÁËÍÀ¾ÁÎÀÄÁ¾¾ÉÀàÐÐ¿ÀÑÀ¿Òá¾ÆÔÀÄ¾ÂÂÀ¿ÀÅ¾ÀÈ¾ÉÀÇ¾ßÃÅÃÆÇÂÀÂÕÇÃÌÖÇÀ×ÁÖÖÇÃÑÀÔØÙÚÛÇÆÍÇÈÅÂÁÄÔ¾ßÃÅÃÆÇÂÀÂÈÄ¾ÉÈÂÁÇÀÁÕÇÃÌÃ¾ÉÀÇÖÇÃÊÇÁÌÂßÈ¾É¾ÉÀÁÖÖÇÃÑÁ¿ÃÕ¾ÉÀØÙÚÛÁÔÑÈÂÃÇâÃÇÕÃÆÇÅÃÆÇÂÀÂÈÄÅÃÄÂÆ¿¾ÁÝÃÄßÈ¾É¾ÉÀØÙÚÛÁÔÑÈÂÃÇ¾ÃÀÐÖ¿ÃÇÀÁÂÖÀÅÈÜÅÁÇÀÁÃÕÈÄ¾ÀÇÀÂ¾ÃÇÁÄÁÇÀÁÇÀ¿Á¾ÀÔ¾Ã¾ÉÀÈÇÕÆ¾ÆÇÀÁÅÁÔÀÌÈÅÃÇÖÇÃÕÀÂÂÈÃÄÁ¿Ö¿ÁÄÂÒáÃÌÀÅÃÆÇÂÀÂÕÃÇ¾ÉÀÌÁãÃÇÌÁËÁ¿ÂÃÅÃÆÄ¾¾ÃßÁÇÔäÀÄÀÇÁ¿ÛÔÆÅÁÝÃÄÇÀåÆÈÇÀÌÀÄ¾ÂÒæçèéêëçìíèìçêîïëîíðëðíèíñòóôõöïêéðçìçñöñí÷øêçêîéêùïêê ëðêïìðçêèðïêíêëçìòñïïîéèîñë êèðïêíêëçìòñïïîéèîñë!"#$%$&'()**(+",**(-.!/"0(1#**23"455
+
+## Sample plan (https://drive.google.com/uc?export=download&id=1-dNgdkQ622vupRk-U2eRXNRcfAniVSk-#Film-Production)
+
+     !"#$%&!'()!")#$%&!'(*+
+,-.. /012345678987:;<=> 87:;?@?ABCDEFGHIJ:KLMNO5PQ 7LRSKLTUVHNIVNWA7UDEEGLRXAGBDE BILTYZV[NLW\IHI]AB[D^HWR\KY9U\VHLTUVHNIVNWA^UDEE ^S_LIHZNWA^`DEEB[^`?>a UVX\TLKWXHbHIcKLVZVNAUcDd?EE5678987:;<=>A^`D 56788TNVZeN<ffP=ff5678g@? :T\hLT8I]L]N_NIRd? :T\hLT8I]L]N_NIRd<5678g@< iKLT5\__SIHVLZ\IAi5D ^HWR\KY9U\VHLTUVHNIVNWA^UDEE5678g?@ 5678g@? UVX\TLKWXHbHIcKLVZVNAUcDd<EE5678gjk 5678g@<8TNVZeN?ffP=ff 5678g?@7LRSKLTUVHNIVN;LhA7;DEE cK\lNWWH\ILTCKHZI]AcCD5678:NIKNWmBSRNSKWmG\eN_NIRWgffP=ff56788TNVZeN<ffP=ff 5678=?>8TNVZeN?ffP=ff 8TNVZeN?ffP=ff8TNVZeN?ffP=ff 8TNVZeN?ffP=ff56787LZ\ILTn6IRNKILZ\ILTgffP=ff 5678oXN\KHNWgffP=ff8TNVZeNgffP=ff 5678=pp8TNVZeNgffP=ff 8TNVZeN?ffP=ff8TNVZeN?ffP=ff 8TNVZeN?ffP=ff8TNVZeN?ffP=ff 8TNVZeN?ffP=ffo\RLT5KNMHRWl\KqN]KNNO?<@rgpVKNMHRW_SWRhNgffP=ffTNeNT
+5678q\VS_NIRLKYmBIH_LZ\Im\K
+stuvwxyz{|}xvx~wvxx~zvzux{xuvxu
+stuvwxyz{|}xvx~wvxx~zztux{xuvxu
+¡¢£¤¥¢¢¥¦§¨©ª§«¬¬¢£¤¥§
+     !"#$%&' ()%*"#$%&'+%&,&$' -./()%*"#$%&'-0/()%*"#$%&'1$'&$2 3,&$' 45!"#$%&'+! !6!''7!8%6!6!''($89'!:!%;!2!&<$&)1$'&$2 3,&$' +$%7!!=*6!''1$3'$&;>!3??%$@<$&)1$'&$2 3,&$'A!($89'!BC?$ D$8/!? !>!3??%$@<$&)!&)#$%&'A!''B
+EFGHIJFKFLMNOPQRJFSIMNTQRUHJNFN VUHJNF VJFSIMN WJXSFEFGHIJFKFLMNOYQRJFSIMNTZRUHJNFN VUHJNF VJFSIMN WJXSF EFGHIJFKFLMN VJFSIMN WJXSF
+EFGHIJFKFLMNO[RJFSIMNTYRUHJNFN VUHJNF VJFSIMN WJXSFEFGHIJFKFLMNO\][RJFSIMNTYRUHJNFN VUHJNF VJFSIMN WJXSFEFGHIJFKFLMNO^]_RJFSIMN VUHJNF VJFSIMN WJXSF
+`abcdeffgh`di djklmnopqbcrstuvbweqxqyhpui djklzlk{|o}~ptbvfxtaxsqyhpiaevwwxeqbcaxsqyhi djklmnbhpi djklmnkbabctxvqtv|bhk|ikbabctxvqtvwhkixwearzetxbctxvqtvwhi djklzlk{|o}~hixwearzetxbctxvqtvwhi djklmnfbqxsvwhi djklo}~ djklmnofbqxsvwhitecbawxxqabtstvhi djklveaxvwm}tecbawxxqabtstvhiqeqfbea djkletfvqbarpqxfbseqealvaxfvqbcm}djklkbseqbcjqvaqbseqbcdxqvfbwm}djkl{vqavwpvawevfvqwm}xyvwseqhjixyvwseqhji djkllcvtsvo}djkllcvtsvo}djklmndjklmqvawbqxqycabcetghi djkl}~qvawbqxqycabcetghi djkl}dcabcdefvvqtrhddi
+¡¢£¤¥¦§¨ ©ª«ª¬®¯°¯°±²°³´« μ³±±°¶ª·±°«°¸¹º«ªº¹»°¹¬°º¹¼½¾
+¿À ÁÂÃÄÅÆÇÃÈÉÄÈÃÈÆÊÆËÃËÌÄÍÈÆÈÎÍÌÉÏÍÆÐÑÏÏÍÌÒÆÅÍÄÓÍÔËÈÑÒÑÔÊÑÓÊÆÎÍÌÉÃÕÆÖ×ØÙÑÅÒÔÈÌÍÚÁÁÂÃÄÅÆÇÃÈÈÆÊÆËÃÃÛÌÖ×ØÙËÌÄÍÈÆÈÜÖ×ØÙÝÞßàÖ×ØÙÝÞáâÌÍÃÛÌËÌÄÍÈÆÈÎÍÌÉÌÃÕÆÍÏÍÌãÍÑÉÈÔÇÑÈÔÉÔÊÑÍÑÍÆÑÌÎÈÃÄÅÔÆÈÛÔÃÕÃÕÆÑÏÏÍÌÒÑÊÌÎÃÕÆÖ×ØÙÑÅÒÔÈÌÍÚ
+ÂÌÉÆËÌÄÍÈÆÈÎÌÍÃÕÆÉÑäÌÍÉÑåÑÊÈÌËÌÄÇÃÃÌÛÑÍÅæÆÇÆÍÑÊÙÅÄËÑçÌÇÍÆèÄÔÍÆÉÆÇÃÈÚéêëìíîêïðëïêíñòîñðóîóðëðôõö÷øùòíìóêïêôùôð íêíñìíòííîóíòïóêí ëóòíðíîêïõôòòñìëñ ôîí ëóòíðíîêïõôòòñìëñ ôî!"#$%&'(')*+#,--+.%!"/--+01 #$2%3+4&--56%788

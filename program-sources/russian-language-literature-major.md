@@ -2,7 +2,7 @@
 # Russian Language and Literature Major
 Source: https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/russian-language-literature/russian-language-literature-major/
 Source: https://arhu.umd.edu/academics/world-language-placement
-Source: https://www.arhu.umd.edu/academics/advising/academic-plans
+Source: https://drive.google.com/uc?export=download&id=1Z_eMIfEE0R2R1ipjzgVF7pQcOaxzJ2vb#Russian
 Fetched: 2026-09-28
 
 ## Catalog requirements
@@ -134,177 +134,81 @@ Log In
 Privacy Policy
 Web Accessibility
 
-## Sample plan (https://www.arhu.umd.edu/academics/advising/academic-plans)
+## Sample plan (https://drive.google.com/uc?export=download&id=1Z_eMIfEE0R2R1ipjzgVF7pQcOaxzJ2vb#Russian)
 
-Primary Header Navigation
-ARHU Home
-About
-Academic Units
-College Leadership
-Committees and Councils
-Diversity, Equity and Inclusion
-Facilities
-ARHU Newsletter & Podcast
-Service Awards
-Strategic Plan
-Academics
-Undergraduate
-Degree Programs
-Minors
-Undergraduate Research
-Internship Courses
-Study Abroad
-Living-Learning Programs
-Scholarships & Academic Honors
-Access2Alumni
-Graduate
-Degree Programs
-Museum Scholarship and Material Culture Certificate
-Financial Support
-Interdisciplinary Opportunities
-Career Development
-Graduate Research
-Fellowships, Grants & Awards
-Advising
-Academic Plans
-Academic Probation & Dismissal
-Declaring a Major
-Exceptions to Policy
-Global Engagement
-Graduation & Commencement
-Online Forms
-Orientation
-Career Initiative
-Strategic Career Preparation
-Curricular Innovations
-Regional & Alumni Partnerships
-World Language Placement
-Admissions
-Admitted Students
-Meet Our Students
-Visit Us
-Research
-Research Services
-Internal Funding Opportunities
-Academic Units
-Research Centers and Institutes
-Endowed Chairs
-Secondary Header Navigation
-Directory
-News
-Calendar
-Contact
-Current Students
-Prospective Students
-Faculty & Staff
-Alumni
-Academic Plans
-Home
-Academics
-ADVISING
-The College of Arts and Humanities is dedicated to helping students navigate and enrich their academic experience, and to Be WORLDWISE.
-Menu
-AdvisingAcademic PlansAcademic Probation & DismissalDeclaring a MajorExceptions to PolicyGlobal EngagementGraduation & CommencementOnline FormsOrientation
-Academic Plans/Degree Requirements
-All University of Maryland students are required to complete a minimum of 120 credits and earn a minimum 2.0 cumulative GPA. They are also responsible for completing the General Education Requirements.
-Additionally, students are responsible for completing the College of Arts and Humanities’ Requirements.
-College Requirements
-ARHU158
-All ARHU first year students (excluding students participating in one of the following programs: Honors Humanities, Design Cultures & Creativity, University Honors, Global Challenges and Solutions, Gemstone, Interdisciplinary Business Honors, Integrated Life Sciences, Advanced Cybersecurity Experience for Students, College Park Scholars, Jimenez-Porter Writers' House) must take ARHU158, Explorations in Arts and Humanities, during their first semester on campus.
-Upper Level Credits
-All ARHU students, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 45 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Effective fall 2024, all ARHU students entering the college, with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree, must earn a minimum of 39 hours of 3xx-4xx level credit. Students earning a Bachelor of Music or Bachelor of Music Education degree should consult a Music advisor.
-Global Engagement Requirement
-The ARHU Global Engagement Requirement responds to the University Strategic Plan's call for students to "be prepared to live, work, and thrive in the current and future world environment." We believe that the development of cultural competence will result in the knowledge, skills and disposition needed to understand, communicate with, and effectively interact with people across cultures and is an integral component in an arts and humanities education. All ARHU students with the exception of students earning a Bachelor of Music or Bachelor of Music Education degree must complete the ARHU Global Engagement Requirement.
-For information about your specific degree requirements, click on your major, linked below:
-American Studies
-Arabic Studies
-Art History
-Art Studio
-Studio Art
-Advanced Specialization
-Graphic Design
-Chinese
-Cinema and Media Studies
-Critical Studies
-Film Production
-Classics
-Humanities
-Latin
-Latin & Greek
-Communication
-Communication Studies
-Health and Science Communication
-Media and Digital Communication
-Political Communication and Public Advocacy
-Public Relations
-Dance
-English
-French
-German Studies
-Global Culture and Thought
-History
-Human-Centered Artificial Intelligence
-Immersive Media Design
-Italian Studies
-Japanese
-Jewish Studies
-Linguistics
-Language
-Grammars and Cognition
-Music Education
-Choral
-Instrumental
-Music Liberal Arts
-Jazz Studies
-Piano
-Strings
-Voice
-Wind & Percussion
-Music Performance
-Composition
-Jazz
-Piano
-Strings
-Theory
-Voice
-Wind & Percussion
-Persian Studies
-Philosophy
-Philosophy, Politics, and Economics
-Religions of the Ancient Middle East
-Romance Languages
-French & Italian
-French & Spanish
-Italian & Spanish
+Russian Four Year Academic Plan
+Year 1 Fall Spring
+Benchmark 1 Requirement
+RUSS 102 ENGL 101 (AW)* {Min. Grade: C-} Natural Sciences (NS)**
+Must be completed by the end of two semesters. Math (MA)* Analytic Reasoning (AR)
+History/Social Science (HS)** Humanities (HU)**
+RUSS 101 (6 credits) RUSS 102 (6 credits; fulfills Global
+Engagement)
+ARHU 158
+*Must attempt by 30 cr.
+Year 2
+Benchmark 2 Requirement
+RUSS 202 Humanities (HU)** Oral Communication (OC)
+Must be completed by the end of four semesters. RUSS 201 (5 credits) Scholarship in Practice (SP) #1**
+RUSS 2xx-4xx RUSS 202 (5 credits)
+Elective 1xx-4xx RUSS 2xx-4xx
+Year 3
+Natural Science Lab (NL)** History/Social Sciences (HS)**
+RUSS 301 RUSS 302
+RUSS 3xx RUSS 3xx-4xx in Russian
+Elective 1xx-4xx Elective 3xx-4xx
+Elective 3xx-4xx Elective 3xx-4xx
+Year 4
+Professional Writing (PW) RUSS 402
+Scholarship in Practice (SP) #2** RUSS 4xx
+RUSS 401 Elective 1xx-4xx
+RUSS 3xx-4xx in Russian Elective 1xx-4xx
+Elective 3xx-4xx Elective 1xx-4xx
+Total Credits for Degree: 120; 39 credits must be 3xx-4xx level
+Note: Some courses for the major may also count toward the General Education requirements.
+**All students must complete two Distributive Studies courses that are approved for Big Question courses. The Understanding
+Plural Societies and Cultural Competence courses may also fulfill Distributive Studies categories.
 Russian
-Spanish
-Language, Culture, and Professional Contexts
-Spanish and Latin American Literature, Culture, and Media
-Linguistics, Culture, and Education
-Theatre
-Women, Gender, and Sexuality Studies
-Primary Footer Navigation
-ARHU Home
-About
-Academics
-Admissions
-Research
-Secondary Footer Navigation
-Apply
-Give
-Directory
-News
-Calendar
-Contact Us
-Maps
-Diversity and Inclusion
-Facebook
-Twitter
-Instagram
-Youtube
-Vimeo
-Flickr
-Log In
-Privacy Policy
-Web Accessibility
+General Education Requirements Benchmark Requirements
+Fundamental Studies Year 1 - Benchmark Requirement
+Requirements: 15 credits/5 courses Course Credits Grade RUSS 102
+Academic Writing (AW) {Min. Grade: C-} ENGL 101 Year 2 - Benchmark Requirement
+Professional Writing (PW) RUSS 202
+Oral Comm. (OC)
+Math (MA) Major Requirements
+Analytic Reasoning (AR) Cumulative average of major requirements must be at least 2.0
+Distributive Studies Requirements Credits Grade
+Requirements: 25 credits/8 courses Course Credits Grade RUSS 201*
+Natural Science Lab (NL) RUSS 202
+Natural Sciences (NS) RUSS 301
+History/Social Sciences (HS) RUSS 302
+History/Social Sciences (HS) RUSS 3xx
+Humanities (HU) RUSS 401
+Humanities (HU) RUSS 402
+Scholarship in Practice (SP) RUSS 4xx
+Scholarship in Practice (SP) non major RUSS 2xx-4xx
+Big Question RUSS 2xx-4xx
+Normally double counted with Distributive Studies RUSS 3xx-4xx in Russian
+Requirements: 6 credits/2 courses Course Credits Grade RUSS 3xx-4xx in Russian
+Big Question (IS) *pre-requisites: RUSS 101 and 102 or equivalent
+Big Question (IS)
+Diversity Notes:
+(overlap permitted with Distributive Studies and/or Big Question) RUSS 221, 222, 282, 289I, and 398K are HU courses
+Requirements: 4-6 credits/2 courses Course Credits Grade RUSS 282, 289I, 398K are UP courses
+Understanding Plural Soc. (UP)
+Understanding Plural Soc. (UP) or
+Cultural Competency (CC)
+Experiential Learning- optional
+(overlap permitted with other requirements/courses)
+Requirements: 0-3 credits Course Credits Grade
+Students must earn a minimum of 120 credits to complete a degree.
+University Requirements for Graduation:
+At least 30 credits must be earned at UMD
+Some courses for the major may also count toward General Education
+requirements.
+15 of the final 30 credits must be earned at the 300-400 level
+12 upper level major credits must be earned at UMD
+ARHU Requirements for Graduation:
+39 upper level credits
+ARHU 158 or equivalent (if applicable)
+Global Engagement
