@@ -1,0 +1,22 @@
+{
+  "programId": "musc-major-bm",
+  "source": "https://drive.google.com/uc?export=download&id=1KKQburfg7BLqxm2EnshvLLnm0SckYw0i#Music-Performance---Strings",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "School of Music official Music - Bachelor of Music - Strings Four Year Academic Plan. Gen Ed and general-elective slots are left out (only the major is audited).",
+    "MUSC229 (large ensemble), MUSC129 (small ensemble) and MUSC099 (recital attendance) are repeatable 1-credit courses, entered multiple times per the plan's own '(1 cr. x N semesters)' legend lines; see the program's reviewNotes.",
+    "The '1 semester of 400-level music history elective' generic slot is filled with MUSC460, and the '3-5 credits of music electives' slot with MUSC434, both from the Academic Catalog's approved MUSC course list (the source names no specific course for either)."
+  ],
+  "credits": { "MUSC229": 1, "MUSC129": 1, "MUSC099": 1 },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["MUSP119", "MUSC102", "MUSC150", "MUSC229", "MUSC129", "MUSC099"] },
+    { "term": "Year 1 Spring", "courses": ["MUSP120", "MUSC103", "MUSC151", "MUSC229", "MUSC129", "MUSC099"] },
+    { "term": "Year 2 Fall", "courses": ["MUSP217", "MUSC250", "MUSC260", "MUSC229", "MUSC129", "MUSC099"] },
+    { "term": "Year 2 Spring", "courses": ["MUSP218", "MUSC251", "MUSC360", "MUSC229", "MUSC129", "MUSC099"] },
+    { "term": "Year 3 Fall", "courses": ["MUSP315", "MUSC361", "MUSC229", "MUSC129", "MUSC099"] },
+    { "term": "Year 3 Spring", "courses": ["MUSP316", "MUSC450", "MUSC229", "MUSC129", "MUSC099"] },
+    { "term": "Year 4 Fall", "courses": ["MUSP419", "MUSC446", "MUSC229", "MUSC460"] },
+    { "term": "Year 4 Spring", "courses": ["MUSP420", "MUSC490", "MUSC229", "MUSC400", "MUSC434"] }
+  ]
+}

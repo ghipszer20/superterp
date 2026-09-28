@@ -1,0 +1,21 @@
+{
+  "programId": "musc-major-ba",
+  "source": "https://drive.google.com/uc?export=download&id=1YMxqNvmPxryb9_R0765_pYGFvMeSnxpS#Music-Liberal-Arts---Strings",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "School of Music official Music - Bachelor of Arts - Strings Four Year Academic Plan. Gen Ed and general-elective slots are left out (only the major is audited).",
+    "MUSC229 (ensemble, 1 credit) and MUSC099 (recital attendance, 1 credit) are repeatable and entered multiple times per the plan's own '(1 cr. x N semesters)' legend lines; see the program's reviewNotes.",
+    "The '6 credits of music electives' generic 3xx-4xx slot is filled with MUSC434 and MUSC461, both from the Academic Catalog's approved MUSC course list (the source names no specific elective course)."
+  ],
+  "credits": { "MUSC229": 1, "MUSC099": 1 },
+  "terms": [
+    { "term": "Year 1 Fall", "courses": ["MUSP109", "MUSC102", "MUSC150", "MUSC229", "MUSC099"] },
+    { "term": "Year 1 Spring", "courses": ["MUSP110", "MUSC103", "MUSC151", "MUSC229", "MUSC099"] },
+    { "term": "Year 2 Fall", "courses": ["MUSP207", "MUSC250", "MUSC360", "MUSC229", "MUSC099"] },
+    { "term": "Year 2 Spring", "courses": ["MUSP208", "MUSC251", "MUSC361", "MUSC229", "MUSC099"] },
+    { "term": "Year 3 Fall", "courses": ["MUSP305", "MUSC260", "MUSC229"] },
+    { "term": "Year 3 Spring", "courses": ["MUSC450", "MUSC434"] },
+    { "term": "Year 4 Fall", "courses": ["MUSC461"] }
+  ]
+}
