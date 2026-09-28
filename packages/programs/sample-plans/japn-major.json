@@ -1,0 +1,28 @@
+{
+  "programId": "japn-major",
+  "source": "https://drive.google.com/uc?export=download&id=1NkCebF68ZokYba325f7rASFoEz-XZTbX#Japanese",
+  "fetched": "2026-09-28",
+  "official": true,
+  "notes": [
+    "College of Arts and Humanities official four-year academic plan for Japanese. The PDF-to-text conversion of the term grid is badly garbled (a benchmark sidebar and the Fall/Spring columns are interleaved line by line), but legible signals recover the full set of major-relevant courses: JAPN101/JAPN102 (prerequisites, not part of the major's own 42 credits -- left out of this plan entirely, the same pattern used for gers-major-2026-27's pre-major GERS103/203 sequence), JAPN201/202/301/302 in sequence, the Civilization/History option pair ('HIST 284 ... or Elective' appearing near the JAPN201/202 lines, 'HIST 483 ... or Elective' appearing near the JAPN301 line), and exactly four upper-level JAPN elective slots explicitly tagged 'JAPN 3xx-4xx (Linguistics)', 'JAPN 3xx-4xx (Literature)', and two untagged 'JAPN 3xx-4xx' -- matching the requirement's own 1 literature/cultural + 1 linguistics + 2 general split. Exact term placement (which year/semester each slot falls in) is reconstructed from that reading, not read verbatim -- flagged in docs/project/owner-review.md.",
+    "Civilization/History: the source prints both Option I (HIST284+HIST483) and Option II (HIST285+HIST482) as alternatives on the same lines ('HIST 284 ... or Elective', 'HIST 285 (HS) or Elective', etc.); Option I was picked for this plan.",
+    "The 'JAPN 3xx-4xx (Linguistics)' slot filled with JAPN428 (named directly in the catalog's linguistics elective list).",
+    "The 'JAPN 3xx-4xx (Literature)' slot filled with JAPN315 (named directly in the catalog's literature/cultural-studies elective list).",
+    "The two untagged 'JAPN 3xx-4xx' (general elective) slots filled with JAPN401 and JAPN402 (both named directly in the catalog's general-elective list).",
+    "Gen Ed and general-elective placeholder slots ('ENGL 101', 'Math (MA)', 'Elective 1xx-4xx', 'ARHU 158', etc.) are left out entirely, per the pattern used by other programs' sample plans: only the major is audited."
+  ],
+  "credits": {
+    "JAPN201": 6,
+    "JAPN202": 6,
+    "JAPN301": 6,
+    "JAPN302": 6
+  },
+  "terms": [
+    { "term": "Year 2 Fall", "courses": ["JAPN201", "HIST284"] },
+    { "term": "Year 2 Spring", "courses": ["JAPN202"] },
+    { "term": "Year 3 Fall", "courses": ["JAPN301", "HIST483"] },
+    { "term": "Year 3 Spring", "courses": ["JAPN302"] },
+    { "term": "Year 4 Fall", "courses": ["JAPN428", "JAPN401"] },
+    { "term": "Year 4 Spring", "courses": ["JAPN315", "JAPN402"] }
+  ]
+}
