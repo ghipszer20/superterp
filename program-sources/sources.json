@@ -1,0 +1,2005 @@
+{
+  "LGBTQ-studies-certificate": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/women-gender-sexuality-studies/lesbian-gay-bisexual-transgender-studies/LGBTQ-studies-certificate/",
+    "department": [
+      "https://wgss.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "accounting": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/business/accounting/",
+    "department": [
+      "https://www.rhsmith.umd.edu/programs/undergraduate/shady-grove"
+    ],
+    "samplePlan": [
+      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
+    ]
+  },
+  "accounting-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/accounting/accounting-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
+    ]
+  },
+  "actuarial-mathematics-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/mathematics/actuarial-mathematics-minor/",
+    "department": [
+      "https://www-math.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "advanced-cybersecurity-experience-students-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/advanced-cybersecurity-experience-students-minor/",
+    "department": [
+      "https://aces.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "aerospace-engineering-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/aerospace-engineering/aerospace-engineering-major/",
+    "department": [],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "african-american-africana-studies-black-womens-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/african-american-africana-studies/black-womens-studies-minor/",
+    "department": [
+      "https://wgss.umd.edu/",
+      "https://aasd.umd.edu/",
+      "https://arhu.umd.edu/undergraduate/academics/minors"
+    ],
+    "samplePlan": []
+  },
+  "african-american-africana-studies-certificate": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/african-american-africana-studies/african-american-africana-studies-certificate/",
+    "department": [],
+    "samplePlan": []
+  },
+  "african-american-africana-studies-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/african-american-africana-studies/african-american-africana-studies-major/",
+    "department": [],
+    "samplePlan": [
+      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+    ]
+  },
+  "african-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/african-american-africana-studies/african-studies-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "agricultural-resource-economics-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/agricultural-resource-economics/agricultural-resource-economics-major/",
+    "department": [],
+    "samplePlan": [
+      "https://agnr.umd.edu/academics/advising/four-year-plans"
+    ]
+  },
+  "agricultural-science-technology-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/plant-sciences-landscape-architecture/agricultural-science-technology-major/",
+    "department": [
+      "https://psla.umd.edu/",
+      "https://agnr.umd.edu/about/directory/melissa-welsh"
+    ],
+    "samplePlan": [
+      "https://agnr.umd.edu/academics/advising/four-year-plans"
+    ]
+  },
+  "agricultural-science-technology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/plant-sciences-landscape-architecture/agricultural-science-technology-minor/",
+    "department": [
+      "https://psla.umd.edu/",
+      "https://psla.umd.edu/undergraduate/degrees/minors"
+    ],
+    "samplePlan": []
+  },
+  "american-sign-language-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/counseling-higher-special-education/american-sign-language-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "american-studies-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/american-studies/american-studies-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "animal-sciences-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/animal-sciences/animal-sciences-major/",
+    "department": [],
+    "samplePlan": [
+      "https://agnr.umd.edu/academics/advising/four-year-plans"
+    ]
+  },
+  "anthropology-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/anthropology/anthropology-major/",
+    "department": [],
+    "samplePlan": [
+      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+    ]
+  },
+  "anti-black-racism-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/african-american-africana-studies/anti-black-racism-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "applied-agriculture": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/applied-agriculture/",
+    "department": [
+      "https://iaa.umd.edu/",
+      "https://iaa.umd.edu/prospective-students/admissions",
+      "https://iaa.umd.edu/agriculture-forward"
+    ],
+    "samplePlan": []
+  },
+  "arabic-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/arabic-studies/arabic-minor/",
+    "department": [
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "arabic-studies-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/arabic-studies/arabic-studies-major/",
+    "department": [
+      "https://arhu.umd.edu/academics/world-language-placement"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "architecture-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/architecture-planning-preservation/architecture-major/",
+    "department": [],
+    "samplePlan": [
+      "https://arch.umd.edu/programs/architecture/resources/student-resources/advising/undergraduate-advising/degree-planning"
+    ]
+  },
+  "architecture-planning-preservation-construction-project-management-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/architecture-planning-preservation/construction-project-management-minor/",
+    "department": [
+      "https://pm.umd.edu/program/cpm-minor"
+    ],
+    "samplePlan": []
+  },
+  "architecture-planning-preservation-creative-placemaking-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/architecture-planning-preservation/creative-placemaking-minor/",
+    "department": [
+      "https://go.umd.edu/creativeplace",
+      "https://go.umd.edu/crpm"
+    ],
+    "samplePlan": []
+  },
+  "army-leadership-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/army-leadership-studies-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "art-education-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/teaching-learning-policy-leadership/art-education-major/",
+    "department": [
+      "https://www.education.umd.edu/MCERT",
+      "https://terrapinteachers.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://education.umd.edu/student-resources/student-services/coe-undergraduate-studies-student-services-office/major-four"
+    ]
+  },
+  "art-history-archaeology-archaeology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/art-history-archaeology/archaeology-minor/",
+    "department": [
+      "https://classics.umd.edu/academicprograms/archaeology"
+    ],
+    "samplePlan": []
+  },
+  "art-history-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/art-history-archaeology/art-history-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "art-history-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/art-history-archaeology/art-history-minor/",
+    "department": [
+      "https://arthistory.umd.edu/",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "art-immersive-media-design-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/art/immersive-media-design-major/",
+    "department": [
+      "https://lep.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "art-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/art/art-major/",
+    "department": [
+      "https://art.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "artificial-intelligence-computational-structures-ai-systems-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/computer-science/artificial-intelligence-computational-structures-ai-systems-major/",
+    "department": [],
+    "samplePlan": []
+  },
+  "artificial-intelligence-in-architecture-Minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/architecture-planning-preservation/artificial-intelligence-in-architecture-Minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "arts-humanities-creative-placemaking-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/creative-placemaking-minor/",
+    "department": [
+      "https://go.umd.edu/creativeplace",
+      "https://go.umd.edu/crpm"
+    ],
+    "samplePlan": []
+  },
+  "arts-leadership-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/theatre-dance-performance-studies/arts-leadership-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "asian-american-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/asian-american-studies-minor/",
+    "department": [
+      "https://aast.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "astronomy-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/astronomy/astronomy-major/",
+    "department": [],
+    "samplePlan": [
+      "https://cmns.umd.edu/undergraduate/advising-academic-planning/academic-planning/four-year-plans/four-year-plans-gened"
+    ]
+  },
+  "astronomy-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/astronomy/astronomy-minor/",
+    "department": [
+      "https://astro.umd.edu/",
+      "https://astro.umd.edu/undergrad/minor"
+    ],
+    "samplePlan": []
+  },
+  "astronomy-planetary-sciences-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/astronomy/planetary-sciences-minor/",
+    "department": [
+      "https://astro.umd.edu/",
+      "https://geol.umd.edu/",
+      "https://astro.umd.edu/undergrad/minorPlanSci"
+    ],
+    "samplePlan": []
+  },
+  "atmospheric-chemistry-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/atmospheric-oceanic-science/atmospheric-chemistry-minor/",
+    "department": [
+      "https://aosc.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "atmospheric-oceanic-science-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/atmospheric-oceanic-science/atmospheric-oceanic-science-major/",
+    "department": [],
+    "samplePlan": [
+      "https://cmns.umd.edu/undergraduate/advising-academic-planning/academic-planning/four-year-plans/four-year-plans-gened"
+    ]
+  },
+  "atmospheric-sciences-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/atmospheric-oceanic-science/atmospheric-sciences-minor/",
+    "department": [
+      "https://aosc.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "behavioral-social-sciences-criminology-criminal-justice-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/behavioral-social-sciences/criminology-criminal-justice-major/",
+    "department": [
+      "https://shadygrove.umd.edu/academics/degree-programs/ba-criminology-and-criminal-justice"
+    ],
+    "samplePlan": []
+  },
+  "behavioral-social-sciences-social-data-science-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/social-data-science-major/",
+    "department": [],
+    "samplePlan": [
+      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+    ]
+  },
+  "biochemistry-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/chemistry-biochemistry/biochemistry-major/",
+    "department": [
+      "https://lep.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://cmns.umd.edu/undergraduate/advising-academic-planning/academic-planning/four-year-plans/four-year-plans-gened"
+    ]
+  },
+  "biocomputational-engineering": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/engineering/biocomputational-engineering/",
+    "department": [
+      "https://biocomp.umd.edu/admissions"
+    ],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "biocomputational-engineering-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/bioengineering/biocomputational-engineering-major/",
+    "department": [
+      "https://biocomp.umd.edu/admissions"
+    ],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "bioengineering-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/bioengineering/bioengineering-major/",
+    "department": [
+      "https://bioe.umd.edu/undergraduate"
+    ],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "biology-neuroscience-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/biology/neuroscience-major/",
+    "department": [
+      "https://lep.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "business-analytics-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/business-analytics-minor/",
+    "department": [
+      "https://rhsmith.umd.edu/programs/undergraduate/academics/academic-minors"
+    ],
+    "samplePlan": []
+  },
+  "business-computational-finance-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/computational-finance-minor/",
+    "department": [
+      "https://rhsmith.umd.edu/programs/undergraduate/academics/academic-minors"
+    ],
+    "samplePlan": []
+  },
+  "chemical-biomolecular-engineering-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/chemical-biomolecular-engineering/chemical-biomolecular-engineering-major/",
+    "department": [],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "chemistry-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/chemistry-biochemistry/chemistry-major/",
+    "department": [
+      "https://lep.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://cmns.umd.edu/undergraduate/advising-academic-planning/academic-planning/four-year-plans/four-year-plans-gened"
+    ]
+  },
+  "chinese-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/chinese/chinese-major/",
+    "department": [
+      "https://arhu.umd.edu/academics/world-language-placement"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "chinese-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/chinese/chinese-studies-minor/",
+    "department": [
+      "https://sllc.umd.edu/chinese",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "civil-environmental-engineering-construction-project-management-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/civil-environmental-engineering/construction-project-management-minor/",
+    "department": [
+      "https://pm.umd.edu/program/cpm-minor"
+    ],
+    "samplePlan": []
+  },
+  "civil-environmental-engineering-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/civil-environmental-engineering/civil-environmental-engineering-major/",
+    "department": [],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "classical-languages-literature-archaeology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/classical-languages-literature/archaeology-minor/",
+    "department": [
+      "https://classics.umd.edu/academicprograms/archaeology"
+    ],
+    "samplePlan": []
+  },
+  "classical-mythology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/classical-languages-literature/classical-mythology-minor/",
+    "department": [
+      "https://classics.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "classics-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/classical-languages-literature/classics-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "climate-change-fluency-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/atmospheric-oceanic-science/climate-change-fluency-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "communication": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/communication/",
+    "department": [
+      "https://shadygrove.umd.edu/academics/degree-programs/ba-communication"
+    ],
+    "samplePlan": []
+  },
+  "communication-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/communication/communication-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "communication-rhetoric-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/communication/rhetoric-minor/",
+    "department": [
+      "https://rhetoric.umd.edu/",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors",
+      "https://arhu.umd.edu/rhetoric"
+    ],
+    "samplePlan": []
+  },
+  "computer-engineering-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/electrical-and-computer/computer-engineering-major/",
+    "department": [],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "computer-engineering-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/electrical-and-computer/computer-engineering-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "computer-mathematical-natural-sciences-biological-sciences": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/biological-sciences/",
+    "department": [
+      "https://bsci.umd.edu/",
+      "https://shadygrove.umd.edu/academics/degree-programs/bs-biological-sciences",
+      "https://lep.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://cmns.umd.edu/undergraduate/advising-academic-planning/academic-planning/four-year-plans/four-year-plans-gened"
+    ]
+  },
+  "computer-science-computational-finance-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/computer-science/computational-finance-minor/",
+    "department": [
+      "https://rhsmith.umd.edu/programs/undergraduate/academics/academic-minors"
+    ],
+    "samplePlan": []
+  },
+  "computer-science-data-science-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/computer-science/data-science-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "computer-science-immersive-media-design-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/computer-science/immersive-media-design-major/",
+    "department": [
+      "https://lep.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://cmns.umd.edu/undergraduate/advising-academic-planning/academic-planning/four-year-plans/four-year-plans-gened"
+    ]
+  },
+  "computer-science-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/computer-science/computer-science-major/",
+    "department": [
+      "https://lep.umd.edu/",
+      "https://undergrad.cs.umd.edu/exemption-exams"
+    ],
+    "samplePlan": [
+      "https://cmns.umd.edu/undergraduate/advising-academic-planning/academic-planning/four-year-plans/four-year-plans-gened"
+    ]
+  },
+  "computer-science-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/computer-science/computer-science-minor/",
+    "department": [
+      "https://cs.umd.edu/",
+      "https://undergrad.cs.umd.edu/computer-science-minor"
+    ],
+    "samplePlan": []
+  },
+  "computer-science-robotics-autonomous-systems-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/computer-science/robotics-autonomous-systems-minor/",
+    "department": [
+      "https://robotics.umd.edu/minor"
+    ],
+    "samplePlan": []
+  },
+  "creative-writing-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/english-language-literature/creative-writing-minor/",
+    "department": [
+      "https://english.umd.edu/",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "criminal-justice-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/behavioral-social-sciences/criminal-justice-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "criminology-criminal-justice-criminology-criminal-justice-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/criminology-criminal-justice/criminology-criminal-justice-major/",
+    "department": [],
+    "samplePlan": [
+      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+    ]
+  },
+  "cyber-physical-systems-engineering": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/engineering/cyber-physical-systems-engineering/",
+    "department": [
+      "https://eng.umd.edu/transfer/external",
+      "https://lep.umd.edu/",
+      "https://shadygrove.ece.umd.edu/curriculum",
+      "https://shadygrove.ece.umd.edu/program-admissions"
+    ],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "cyber-physical-systems-engineering-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/electrical-and-computer/cyber-physical-systems-engineering-major/",
+    "department": [
+      "https://eng.umd.edu/transfer/external",
+      "https://lep.umd.edu/",
+      "https://shadygrove.ece.umd.edu/curriculum",
+      "https://shadygrove.ece.umd.edu/program-admissions"
+    ],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "dance-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/theatre-dance-performance-studies/dance-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "demography-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/sociology/demography-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "digital-storytelling-poetics-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/english-language-literature/digital-storytelling-poetics-minor/",
+    "department": [
+      "https://english.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "disability-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/counseling-higher-special-education/disability-studies-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "early-childhood-special-education-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/human-development-quantitative-methodology/early-childhood-special-education-major/",
+    "department": [],
+    "samplePlan": [
+      "https://education.umd.edu/student-resources/student-services/coe-undergraduate-studies-student-services-office/major-four"
+    ]
+  },
+  "earth-history-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/earth-history-minor/",
+    "department": [
+      "https://geol.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "earth-material-properties-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/earth-material-properties-minor/",
+    "department": [
+      "https://geol.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "economics-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/economics/economics-major/",
+    "department": [],
+    "samplePlan": [
+      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+    ]
+  },
+  "economics-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/economics/economics-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "electrical-engineering-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/electrical-and-computer/electrical-engineering-major/",
+    "department": [],
+    "samplePlan": []
+  },
+  "electrical-engineering-usmsm": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/college-of-southern-maryland/electrical-engineering-usmsm/",
+    "department": [
+      "https://usmsm.umd.edu/",
+      "https://ece.umd.edu/ee-so-md-program"
+    ],
+    "samplePlan": []
+  },
+  "elementary-education-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/teaching-learning-policy-leadership/elementary-education-major/",
+    "department": [
+      "https://education.umd.edu/academics/departments/tlpl"
+    ],
+    "samplePlan": [
+      "https://education.umd.edu/student-resources/student-services/coe-undergraduate-studies-student-services-office/major-four"
+    ]
+  },
+  "elementary-middle-special-education-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/counseling-higher-special-education/elementary-middle-special-education-major/",
+    "department": [],
+    "samplePlan": [
+      "https://education.umd.edu/student-resources/student-services/coe-undergraduate-studies-student-services-office/major-four"
+    ]
+  },
+  "engineering-robotics-autonomous-systems-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/robotics-autonomous-systems-minor/",
+    "department": [
+      "https://robotics.umd.edu/minor"
+    ],
+    "samplePlan": []
+  },
+  "engineering-science-technology-ethics-policy-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/science-technology-ethics-policy-minor/",
+    "department": [
+      "https://spp.umd.edu/science-technology-ethics-and-policy-step-minor"
+    ],
+    "samplePlan": []
+  },
+  "english-education-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/teaching-learning-policy-leadership/english-education-major/",
+    "department": [
+      "https://www.education.umd.edu/MCERT",
+      "https://terrapinteachers.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://education.umd.edu/student-resources/student-services/coe-undergraduate-studies-student-services-office/major-four"
+    ]
+  },
+  "english-language-literature-cinema-media-studies-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/english-language-literature/cinema-media-studies-major/",
+    "department": [
+      "https://sllc.umd.edu/fields/cinema-media"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "english-language-literature-rhetoric-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/english-language-literature/rhetoric-minor/",
+    "department": [
+      "https://rhetoric.umd.edu/",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors",
+      "https://arhu.umd.edu/rhetoric"
+    ],
+    "samplePlan": []
+  },
+  "english-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/english-language-literature/english-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "entomology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/entomology/entomology-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "entomology-paleobiology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/entomology/paleobiology-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "entrepreneurial-leadership-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/entrepreneurial-leadership-minor/",
+    "department": [
+      "https://rhsmith.umd.edu/programs/undergraduate/academics/academic-minors"
+    ],
+    "samplePlan": []
+  },
+  "environmental-science-policy-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/environmental-science-policy/environmental-science-policy-major/",
+    "department": [
+      "https://ensp.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://agnr.umd.edu/academics/advising/four-year-plans"
+    ]
+  },
+  "environmental-science-policy-sustainability-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/environmental-science-policy/sustainability-studies-minor/",
+    "department": [
+      "https://spp.umd.edu/your-education/undergraduate/minors"
+    ],
+    "samplePlan": []
+  },
+  "environmental-science-technology-chesapeake-bay-watersheds-water-resources-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/environmental-science-technology/chesapeake-bay-watersheds-water-resources-minor/",
+    "department": [
+      "https://enst.umd.edu/",
+      "https://geol.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "environmental-science-technology-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/environmental-science-technology/environmental-science-technology-major/",
+    "department": [
+      "https://enst.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://agnr.umd.edu/academics/advising/four-year-plans"
+    ]
+  },
+  "family-health-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-health/family-science/family-health-major/",
+    "department": [
+      "https://sph.umd.edu/academics/advising-resources/undergraduate-center-academic-success-and-achievement/casa-advising/casa-declare-sph-major"
+    ],
+    "samplePlan": []
+  },
+  "fermentation-science": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/fermentation-science/",
+    "department": [],
+    "samplePlan": []
+  },
+  "fermentation-science-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/nutrition-food-science/fermentation-science-major/",
+    "department": [],
+    "samplePlan": [
+      "https://agnr.umd.edu/academics/advising/four-year-plans"
+    ]
+  },
+  "finance-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/finance/finance-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
+    ]
+  },
+  "fire-protection-engineering-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/fire-protection-engineering/fire-protection-engineering-major/",
+    "department": [
+      "https://fpe.umd.edu/undergraduate/degrees/bachelor-science"
+    ],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "french-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/french-language-literature/french-major/",
+    "department": [
+      "https://arhu.umd.edu/academics/world-language-placement"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "french-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/french-language-literature/french-studies-minor/",
+    "department": [
+      "https://sllc.umd.edu/french",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "general-business-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/general-business-minor/",
+    "department": [
+      "https://rhsmith.umd.edu/programs/undergraduate/academics/academic-minors"
+    ],
+    "samplePlan": []
+  },
+  "geochemistry-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/geochemistry-minor/",
+    "department": [
+      "https://geol.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "geographic-information-science-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/geographical-sciences/geographic-information-science-minor/",
+    "department": [
+      "https://geog.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "geographical-sciences-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/geographical-sciences/geographical-sciences-major/",
+    "department": [
+      "https://geog.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+    ]
+  },
+  "geological-environmental-planetary-sciences-chesapeake-bay-watersheds-water-resources-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/chesapeake-bay-watersheds-water-resources-minor/",
+    "department": [
+      "https://enst.umd.edu/",
+      "https://geol.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "geological-environmental-planetary-sciences-paleobiology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/paleobiology-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "geological-environmental-planetary-sciences-planetary-sciences-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/planetary-sciences-minor/",
+    "department": [
+      "https://astro.umd.edu/",
+      "https://geol.umd.edu/",
+      "https://astro.umd.edu/undergrad/minorPlanSci"
+    ],
+    "samplePlan": []
+  },
+  "geology-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/geology-major/",
+    "department": [],
+    "samplePlan": []
+  },
+  "geophysics-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/geophysics-minor/",
+    "department": [
+      "https://geol.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "german-studies-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/germanic-studies/german-studies-major/",
+    "department": [
+      "https://sllc.umd.edu/german",
+      "https://arhu.umd.edu/academics/world-language-placement"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "german-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/germanic-studies/german-studies-minor/",
+    "department": [
+      "https://sllc.umd.edu/german",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "global-and-foreign-policy-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-policy/global-and-foreign-policy-major/",
+    "department": [
+      "https://spp.umd.edu/your-education/undergraduate/bachelor-arts-global-and-foreign-policy"
+    ],
+    "samplePlan": []
+  },
+  "global-culture-thought-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/global-culture-thought-major/",
+    "department": [
+      "https://sllc.umd.edu/fields/global-culture-and-thought/major",
+      "https://arhu.umd.edu/academics/advising/academic-plans"
+    ],
+    "samplePlan": []
+  },
+  "global-engineering-leadership-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/global-engineering-leadership-minor/",
+    "department": [
+      "https://eng.umd.edu/global/coursework"
+    ],
+    "samplePlan": []
+  },
+  "global-health-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-health/global-environmental-occupational-health/global-health-major/",
+    "department": [
+      "https://sph.umd.edu/gbhl-ug",
+      "https://sph.umd.edu/declare"
+    ],
+    "samplePlan": [
+      "https://sph.umd.edu/content/four-year-plans"
+    ]
+  },
+  "global-poverty-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/agricultural-resource-economics/global-poverty-minor/",
+    "department": [
+      "https://arec.umd.edu/",
+      "https://amp.umd.edu/terpengage"
+    ],
+    "samplePlan": []
+  },
+  "global-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/global-studies-minor/",
+    "department": [
+      "https://cidcm.umd.edu/",
+      "https://ilp.umd.edu/coursework",
+      "https://arec.umd.edu/undergraduate/minors/global-poverty",
+      "https://start.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "global-terrorism-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/global-terrorism-studies-minor/",
+    "department": [
+      "https://start.umd.edu/",
+      "https://start.umd.edu/education/global-terrorism-studies-minor-program"
+    ],
+    "samplePlan": []
+  },
+  "government-politics-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/government-politics/government-politics-major/",
+    "department": [],
+    "samplePlan": [
+      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+    ]
+  },
+  "greek-language-culture-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/classical-languages-literature/greek-language-culture-minor/",
+    "department": [
+      "https://classics.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "hearing-speech-sciences-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/hearing-speech-sciences/hearing-speech-sciences-major/",
+    "department": [],
+    "samplePlan": [
+      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+    ]
+  },
+  "hearing-speech-sciences-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/hearing-speech-sciences/hearing-speech-sciences-minor/",
+    "department": [
+      "https://hesp.umd.edu/",
+      "https://hesp.umd.edu/landingtopic/advising"
+    ],
+    "samplePlan": []
+  },
+  "hebrew-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/hebrew-minor/",
+    "department": [
+      "https://sllc.umd.edu/hebrew",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "hebrew-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/jewish-studies/hebrew-studies-minor/",
+    "department": [
+      "https://sllc.umd.edu/hebrew",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "history-east-asian-studies-certificate": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/history/east-asian-studies-certificate/",
+    "department": [
+      "https://ceas.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "history-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/history/history-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "history-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/history/history-minor/",
+    "department": [
+      "https://history.umd.edu/academics/undergraduate/history-minor",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "history-theory-architecture-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/architecture-planning-preservation/history-theory-architecture-minor/",
+    "department": [
+      "https://arch.umd.edu/",
+      "https://arch.umd.edu/programs/undergraduate-programs/minors/history-and-theory-architecture"
+    ],
+    "samplePlan": []
+  },
+  "human-centered-artificial-intelligence-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/philosophy/human-centered-artificial-intelligence-major/",
+    "department": [],
+    "samplePlan": []
+  },
+  "human-development-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/human-development-quantitative-methodology/human-development-major/",
+    "department": [],
+    "samplePlan": [
+      "https://education.umd.edu/student-resources/student-services/coe-undergraduate-studies-student-services-office/major-four"
+    ]
+  },
+  "human-development-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/human-development-quantitative-methodology/human-development-minor/",
+    "department": [
+      "https://education.umd.edu/HDQM"
+    ],
+    "samplePlan": []
+  },
+  "humanities-health-medicine-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/history/humanities-health-medicine-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "hydrology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/hydrology-minor/",
+    "department": [
+      "https://geol.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "individual-studies": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/individual-studies/",
+    "department": [
+      "https://ivsp.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "information-risk-management-ethics-privacy": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/information/information-risk-management-ethics-privacy/",
+    "department": [],
+    "samplePlan": []
+  },
+  "information-risk-management-ethics-privacy-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/information/information-risk-management-ethics-privacy-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "information-science": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/information/information-science/",
+    "department": [
+      "https://ischool.umd.edu/academics/bachelors-programs/bachelor-of-science-in-information-science-shady-grove",
+      "https://www.shadygrove.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "information-science-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/information/information-science-major/",
+    "department": [
+      "https://ischool.umd.edu/academics/bachelors-programs/change-major",
+      "https://ischool.umd.edu/academics/bachelors-programs/bachelor-of-science-in-information-science-college-park"
+    ],
+    "samplePlan": []
+  },
+  "information-science-technology-ethics-policy-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/information/science-technology-ethics-policy-minor/",
+    "department": [
+      "https://spp.umd.edu/science-technology-ethics-and-policy-step-minor"
+    ],
+    "samplePlan": []
+  },
+  "information-social-data-science-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/information/social-data-science-major/",
+    "department": [],
+    "samplePlan": []
+  },
+  "information-systems-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/decision-operations-information-technologies/information-systems-major/",
+    "department": [],
+    "samplePlan": []
+  },
+  "international-agriculture-natural-resources-certificate": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/international-agriculture-natural-resources-certificate/",
+    "department": [
+      "https://agnr.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "international-business-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/logistics-business-public-policy/international-business-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
+    ]
+  },
+  "international-development-conflict-management-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/government-politics/international-development-conflict-management-minor/",
+    "department": [
+      "https://idcm.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "international-relations-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/government-politics/international-relations-major/",
+    "department": [],
+    "samplePlan": []
+  },
+  "israel-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/jewish-studies/israel-studies-minor/",
+    "department": [
+      "https://jewishstudies.umd.edu/academic-programs/undergraduate/is-minor",
+      "https://arhu.umd.edu/undergraduate/academics/minors",
+      "https://israelstudies.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "italian-language-culture-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/italian-studies/italian-language-culture-minor/",
+    "department": [
+      "https://sllc.umd.edu/italian",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "italian-studies-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/italian-studies/italian-studies-major/",
+    "department": [
+      "https://arhu.umd.edu/academics/world-language-placement"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "japanese-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/japanese/japanese-major/",
+    "department": [
+      "https://sllc.umd.edu/fields/japanese/major",
+      "https://arhu.umd.edu/academics/world-language-placement"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "japanese-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/japanese/japanese-minor/",
+    "department": [
+      "https://sllc.umd.edu/fields/japanese/minor",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "jewish-studies-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/jewish-studies/jewish-studies-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "jewish-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/jewish-studies/jewish-studies-minor/",
+    "department": [
+      "https://jewishstudies.umd.edu/academic-programs/undergraduate/js-minor",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "journalism-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/journalism/journalism-major/",
+    "department": [],
+    "samplePlan": []
+  },
+  "kinesiology-biomechanics-motor-control-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-health/kinesiology/kinesiology-biomechanics-motor-control-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "kinesiology-exercise-physiology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-health/kinesiology/kinesiology-exercise-physiology-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "kinesiology-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-health/kinesiology/kinesiology-major/",
+    "department": [
+      "https://sph.umd.edu/academics/departments-units/department-kinesiology"
+    ],
+    "samplePlan": [
+      "https://sph.umd.edu/content/four-year-plans"
+    ]
+  },
+  "kinesiology-sport-commerce-culture-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-health/kinesiology/kinesiology-sport-commerce-culture-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "korean-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/korean-studies-minor/",
+    "department": [
+      "https://sllc.umd.edu/korean",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "landscape-architecture-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/plant-sciences-landscape-architecture/landscape-architecture-major/",
+    "department": [
+      "https://larch.umd.edu/",
+      "https://agnr.umd.edu/about/directory/david-n-myers",
+      "https://agnr.umd.edu/about/directory/deni-ruggeri"
+    ],
+    "samplePlan": [
+      "https://agnr.umd.edu/academics/advising/four-year-plans"
+    ]
+  },
+  "landscape-management-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/plant-sciences-landscape-architecture/landscape-management-minor/",
+    "department": [
+      "https://psla.umd.edu/",
+      "https://psla.umd.edu/undergraduate/degrees/minors"
+    ],
+    "samplePlan": []
+  },
+  "languages-literatures-cultures-cinema-media-studies-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/cinema-media-studies-major/",
+    "department": [
+      "https://sllc.umd.edu/fields/cinema-media"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "languages-literatures-cultures-east-asian-studies-certificate": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/east-asian-studies-certificate/",
+    "department": [
+      "https://ceas.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "latin-american-caribbean-studies-certificate": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/latin-american-caribbean-studies-certificate/",
+    "department": [
+      "https://lacs.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "latin-american-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/latin-american-studies-minor/",
+    "department": [
+      "https://lacs.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "latin-language-literature-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/classical-languages-literature/latin-language-literature-minor/",
+    "department": [
+      "https://classics.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "law-society-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/law-society-minor/",
+    "department": [
+      "https://mlaw.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "leadership-studies-certificate": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/counseling-higher-special-education/leadership-studies-certificate/",
+    "department": [
+      "https://education.umd.edu/leadershipstudies",
+      "https://education.umd.edu/academics/departments/chse",
+      "https://thestamp.umd.edu/leadership_community_service-learning"
+    ],
+    "samplePlan": []
+  },
+  "leadership-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/counseling-higher-special-education/leadership-studies-minor/",
+    "department": [
+      "https://education.umd.edu/leadershipstudies",
+      "https://education.umd.edu/academics/departments/chse",
+      "https://thestamp.umd.edu/leadership_community_service-learning"
+    ],
+    "samplePlan": []
+  },
+  "lesbian-gay-bisexual-transgender-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/women-gender-sexuality-studies/lesbian-gay-bisexual-transgender-studies/lesbian-gay-bisexual-transgender-studies-minor/",
+    "department": [
+      "https://wgss.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "linguistics-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/linguistics/linguistics-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "linguistics-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/linguistics/linguistics-minor/",
+    "department": [
+      "https://ling.umd.edu/",
+      "https://arhu.umd.edu/undergraduate/academics/minors",
+      "https://linguistics.umd.edu/academic-programs/undergraduate/linguistics-minor"
+    ],
+    "samplePlan": []
+  },
+  "management": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/business/management/",
+    "department": [
+      "https://www.rhsmith.umd.edu/programs/undergraduate/shady-grove"
+    ],
+    "samplePlan": [
+      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
+    ]
+  },
+  "management-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/management/management-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
+    ]
+  },
+  "marketing": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/business/marketing/",
+    "department": [
+      "https://www.rhsmith.umd.edu/programs/undergraduate/shady-grove"
+    ],
+    "samplePlan": [
+      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
+    ]
+  },
+  "marketing-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/marketing/marketing-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
+    ]
+  },
+  "materials-science-engineering-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/materials-science-engineering/materials-science-engineering-major/",
+    "department": [],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "mathematics-data-science-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/mathematics/data-science-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "mathematics-education-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/teaching-learning-policy-leadership/mathematics-education-major/",
+    "department": [
+      "https://www.education.umd.edu/MCERT",
+      "https://terrapinteachers.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://education.umd.edu/student-resources/student-services/coe-undergraduate-studies-student-services-office/major-four"
+    ]
+  },
+  "mathematics-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/mathematics/mathematics-major/",
+    "department": [],
+    "samplePlan": [
+      "https://cmns.umd.edu/undergraduate/advising-academic-planning/academic-planning/four-year-plans/four-year-plans-gened"
+    ]
+  },
+  "mathematics-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/mathematics/mathematics-minor/",
+    "department": [
+      "https://www-math.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "mechanical-engineering-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/mechanical-engineering/mechanical-engineering-major/",
+    "department": [],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "mechanical-engineering-usmsm": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/college-of-southern-maryland/mechanical-engineering-usmsm/",
+    "department": [
+      "https://usmsm.umd.edu/",
+      "https://me.umd.edu/academics/southern-maryland"
+    ],
+    "samplePlan": []
+  },
+  "mechatronics-engineering": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/engineering/mechatronics-engineering/",
+    "department": [
+      "https://mechatronics.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "mechatronics-engineering-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/aerospace-engineering/mechatronics-engineering-major/",
+    "department": [
+      "https://mechatronics.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://eng.umd.edu/advising/four-year-plans"
+    ]
+  },
+  "media-technology-democracy-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/journalism/media-technology-democracy-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "meteorology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/atmospheric-oceanic-science/meteorology-minor/",
+    "department": [
+      "https://aosc.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "middle-eastern-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/history/middle-eastern-studies-minor/",
+    "department": [
+      "https://history.umd.edu/",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "middle-school-education-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/teaching-learning-policy-leadership/middle-school-education-major/",
+    "department": [
+      "https://education.umd.edu/academics/departments/tlpl"
+    ],
+    "samplePlan": [
+      "https://education.umd.edu/student-resources/student-services/coe-undergraduate-studies-student-services-office/major-four"
+    ]
+  },
+  "military-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/military-studies-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "music-culture-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/music/music-culture-minor/",
+    "department": [
+      "https://music.umd.edu/academic-programs/music-culture-minor"
+    ],
+    "samplePlan": []
+  },
+  "music-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/music/music-major/",
+    "department": [
+      "https://music.umd.edu/admissions/undergraduate"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "music-performance-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/music/music-performance-minor/",
+    "department": [
+      "https://music.umd.edu/academic-programs/music-performance-minor",
+      "https://music.umd.edu/admissions/undergraduate"
+    ],
+    "samplePlan": []
+  },
+  "nanoscale-science-technology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/nanoscale-science-technology-minor/",
+    "department": [
+      "https://nanocenter.umd.edu/education/nano-minor",
+      "https://mse.umd.edu/undergraduate/degrees/minor-nano"
+    ],
+    "samplePlan": []
+  },
+  "naval-science-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/undergraduate-studies/naval-science-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "neuroscience-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/psychology/neuroscience-minor/",
+    "department": [
+      "https://psyc.umd.edu/",
+      "https://psyc.umd.edu/facultyprofile/kader/lori",
+      "https://biology.umd.edu/people/catherine-carr",
+      "https://psyc.umd.edu/facultyprofile/chicoli/amanda",
+      "https://psyc.umd.edu/undergraduate/neuroscience-minor"
+    ],
+    "samplePlan": []
+  },
+  "nonprofit-leadership-and-social-innovation-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-policy/nonprofit-leadership-and-social-innovation-minor/",
+    "department": [
+      "https://spp.umd.edu/your-education/undergraduate/minors",
+      "https://spp.umd.edu/your-education/undergraduate/public-policy-major"
+    ],
+    "samplePlan": []
+  },
+  "nuclear-engineering-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/mechanical-engineering/nuclear-engineering-minor/",
+    "department": [
+      "https://enme.umd.edu/undergraduate/degrees/minor-nuclear-engineering"
+    ],
+    "samplePlan": []
+  },
+  "nutrition-food-science-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/nutrition-food-science/nutrition-food-science-major/",
+    "department": [],
+    "samplePlan": [
+      "https://agnr.umd.edu/academics/advising/four-year-plans"
+    ]
+  },
+  "operations-management-business-analytics-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/decision-operations-information-technologies/operations-management-business-analytics-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
+    ]
+  },
+  "persian-studies-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/persian-studies/persian-studies-major/",
+    "department": [
+      "https://arhu.umd.edu/academics/world-language-placement"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "persian-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/persian-studies/persian-studies-minor/",
+    "department": [
+      "https://sllc.umd.edu/persian",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "philosophy-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/philosophy/philosophy-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "philosophy-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/philosophy/philosophy-minor/",
+    "department": [
+      "https://philosophy.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "philosophy-politics-economics-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/philosophy/philosophy-politics-economics-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "physics-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/physics/physics-major/",
+    "department": [],
+    "samplePlan": [
+      "https://cmns.umd.edu/undergraduate/advising-academic-planning/academic-planning/four-year-plans/four-year-plans-gened"
+    ]
+  },
+  "physics-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/physics/physics-minor/",
+    "department": [
+      "https://umdphysics.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "plant-sciences-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/plant-sciences-landscape-architecture/plant-sciences-major/",
+    "department": [
+      "https://psla.umd.edu/undergraduate/plant-sciences"
+    ],
+    "samplePlan": [
+      "https://agnr.umd.edu/academics/advising/four-year-plans"
+    ]
+  },
+  "portuguese-brazilian-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/portuguese-brazilian-studies-minor/",
+    "department": [
+      "https://sllc.umd.edu/fields/portuguese",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "professional-writing-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/english-language-literature/professional-writing-minor/",
+    "department": [
+      "https://english.umd.edu/",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "project-management-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/civil-environmental-engineering/project-management-minor/",
+    "department": [
+      "https://pm.umd.edu/program/undergraduate-minor-in-project-management"
+    ],
+    "samplePlan": []
+  },
+  "psychology-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/psychology/psychology-major/",
+    "department": [
+      "https://psyc.umd.edu/",
+      "https://bsos.umd.edu/",
+      "https://psyc.umd.edu/undergraduate/program-learning-objectives"
+    ],
+    "samplePlan": [
+      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+    ]
+  },
+  "psychology-neuroscience-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/psychology/neuroscience-major/",
+    "department": [
+      "https://lep.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "public-health-practice-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-health/behavioral-community-health/public-health-practice-major/",
+    "department": [],
+    "samplePlan": [
+      "https://sph.umd.edu/content/four-year-plans"
+    ]
+  },
+  "public-health-science": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/public-health-science/",
+    "department": [
+      "https://sph.umd.edu/undergraduate-degrees/bs-public-health-science-shady-grove"
+    ],
+    "samplePlan": [
+      "https://sph.umd.edu/content/four-year-plans"
+    ]
+  },
+  "public-health-science-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-health/public-health-science/public-health-science-major/",
+    "department": [
+      "https://sph.umd.edu/degrees/bachelor-science-public-health-science-college-park"
+    ],
+    "samplePlan": [
+      "https://sph.umd.edu/content/four-year-plans"
+    ]
+  },
+  "public-leadership-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-policy/public-leadership-minor/",
+    "department": [
+      "https://spp.umd.edu/your-education/undergraduate/minors"
+    ],
+    "samplePlan": []
+  },
+  "public-policy-education-policy-equity-justice-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-policy/education-policy-equity-justice-minor/",
+    "department": [
+      "https://education.umd.edu/academics/programs/undergraduate/education-policy-equity-and-justice-minor"
+    ],
+    "samplePlan": []
+  },
+  "public-policy-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-policy/public-policy-major/",
+    "department": [
+      "https://spp.umd.edu/your-education/undergraduate/public-policy-major"
+    ],
+    "samplePlan": [
+      "https://spp.umd.edu/spp_4-year_plan"
+    ]
+  },
+  "public-policy-science-technology-ethics-policy-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-policy/science-technology-ethics-policy-minor/",
+    "department": [
+      "https://spp.umd.edu/science-technology-ethics-and-policy-step-minor"
+    ],
+    "samplePlan": []
+  },
+  "public-policy-sustainability-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/public-policy/sustainability-studies-minor/",
+    "department": [
+      "https://spp.umd.edu/your-education/undergraduate/minors"
+    ],
+    "samplePlan": []
+  },
+  "quantum-science-engineering-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/electrical-and-computer/quantum-science-engineering-minor/",
+    "department": [
+      "https://ece.umd.edu/undergraduate/degrees/minor-quantum-science-and-engineering"
+    ],
+    "samplePlan": []
+  },
+  "real-estate-built-environment-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/architecture-planning-preservation/real-estate-built-environment-major/",
+    "department": [],
+    "samplePlan": [
+      "https://arch.umd.edu/programs/architecture/resources/student-resources/advising/undergraduate-advising/degree-planning"
+    ]
+  },
+  "real-estate-development-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/architecture-planning-preservation/real-estate-development-minor/",
+    "department": [
+      "https://arch.umd.edu/",
+      "https://arch.umd.edu/programs/undergraduate-programs/minors/real-estate-development-minor"
+    ],
+    "samplePlan": []
+  },
+  "religions-ancient-middle-east-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/jewish-studies/religions-ancient-middle-east-major/",
+    "department": [
+      "https://jewishstudies.umd.edu/academic-programs/undergraduate/rame-ba"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "religious-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/jewish-studies/religious-studies-minor/",
+    "department": [
+      "https://religious-studies.umd.edu/",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "remote-sensing-environmental-change-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/geographical-sciences/remote-sensing-environmental-change-minor/",
+    "department": [
+      "https://geog.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "romance-languages-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/romance-languages/romance-languages-major/",
+    "department": [
+      "https://arhu.umd.edu/academics/world-language-placement"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "russian-language-literature-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/russian-language-literature/russian-language-literature-major/",
+    "department": [
+      "https://arhu.umd.edu/academics/world-language-placement"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "russian-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/russian-language-literature/russian-studies-minor/",
+    "department": [
+      "https://russian.umd.edu/",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "science-education-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/teaching-learning-policy-leadership/science-education-major/",
+    "department": [
+      "https://education.umd.edu/academics/programs/undergraduate/science-education-terrapin-teachers-bachelor-science-bs",
+      "https://www.education.umd.edu/MCERT",
+      "https://terrapinteachers.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://education.umd.edu/student-resources/student-services/coe-undergraduate-studies-student-services-office/major-four"
+    ]
+  },
+  "secondary-education-certificate": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/teaching-learning-policy-leadership/secondary-education-certificate/",
+    "department": [
+      "https://education.umd.edu/studentinfo"
+    ],
+    "samplePlan": []
+  },
+  "secondary-education-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/teaching-learning-policy-leadership/secondary-education-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "social-studies-education-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/teaching-learning-policy-leadership/social-studies-education-major/",
+    "department": [
+      "https://www.education.umd.edu/MCERT",
+      "https://terrapinteachers.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://education.umd.edu/student-resources/student-services/coe-undergraduate-studies-student-services-office/major-four"
+    ]
+  },
+  "sociology-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/sociology/sociology-major/",
+    "department": [],
+    "samplePlan": [
+      "https://fellercenter.umd.edu/academic-advising/forms-policies/graduation-plans"
+    ]
+  },
+  "sociology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/sociology/sociology-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "soil-science-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/environmental-science-technology/soil-science-minor/",
+    "department": [
+      "https://enst.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "spanish-heritage-language-latino-culture-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/spanish-language-literatures-culture/spanish-heritage-language-latino-culture-minor/",
+    "department": [
+      "https://sllc.umd.edu/spanish",
+      "https://arhu.umd.edu/academics/world-language-placement"
+    ],
+    "samplePlan": []
+  },
+  "spanish-language-culture-professional-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/spanish-language-literatures-culture/spanish-language-culture-professional-minor/",
+    "department": [
+      "https://sllc.umd.edu/spanish",
+      "https://arhu.umd.edu/academics/world-language-placement"
+    ],
+    "samplePlan": []
+  },
+  "spanish-language-literatures-culture-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/spanish-language-literatures-culture/spanish-language-literatures-culture-major/",
+    "department": [
+      "https://arhu.umd.edu/academics/world-language-placement"
+    ],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "spanish-literature-linguistics-culture-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/spanish-language-literatures-culture/spanish-literature-linguistics-culture-minor/",
+    "department": [
+      "https://sllc.umd.edu/spanish",
+      "https://arhu.umd.edu/academics/world-language-placement"
+    ],
+    "samplePlan": []
+  },
+  "statistics-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/mathematics/statistics-minor/",
+    "department": [
+      "https://www-math.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "supply-chain-management-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/business/logistics-business-public-policy/supply-chain-management-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors"
+    ]
+  },
+  "surficial-geology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/geological-environmental-planetary-sciences/surficial-geology-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "survey-methodology-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/survey-methodology-minor/",
+    "department": [
+      "https://jpsm.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "teaching-learning-policy-leadership-education-policy-equity-justice-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/teaching-learning-policy-leadership/education-policy-equity-justice-minor/",
+    "department": [
+      "https://education.umd.edu/academics/programs/undergraduate/education-policy-equity-and-justice-minor"
+    ],
+    "samplePlan": []
+  },
+  "technology-entrepreneurship-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/engineering/technology-entrepreneurship-minor/",
+    "department": [
+      "https://mtech.umd.edu/educate/minor"
+    ],
+    "samplePlan": []
+  },
+  "technology-info-design-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/information/technology-info-design-major/",
+    "department": [
+      "https://ischool.umd.edu/academics/bachelors-programs/change-major",
+      "https://ischool.umd.edu/academics/bachelors-programs/bachelor-of-arts-in-technology-and-information-design-at-college-park"
+    ],
+    "samplePlan": []
+  },
+  "technology-innovation-leadership": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/information/technology-innovation-leadership/",
+    "department": [],
+    "samplePlan": []
+  },
+  "technology-innovation-leadership-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/information/technology-innovation-leadership-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "tesol-education-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/teaching-learning-policy-leadership/tesol-education-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "theatre-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/theatre-dance-performance-studies/theatre-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "universities-shady-grove-biological-sciences": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/biological-sciences/",
+    "department": [
+      "https://shadygrove.umd.edu/academics/degree-programs/bs-biological-sciences"
+    ],
+    "samplePlan": []
+  },
+  "us-latina-latino-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/american-studies/us-latina-latino-studies-minor/",
+    "department": [
+      "https://amst.umd.edu/academic-programs/undergraduate/us-latina-o-studies-minor",
+      "https://arhu.umd.edu/academics/undergraduate-studies/minors"
+    ],
+    "samplePlan": []
+  },
+  "video-production-documentary-filmmaking-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/journalism/video-production-documentary-filmmaking-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "women-gender-sexuality-studies-black-womens-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/women-gender-sexuality-studies/black-womens-studies-minor/",
+    "department": [
+      "https://wgss.umd.edu/",
+      "https://aasd.umd.edu/",
+      "https://arhu.umd.edu/undergraduate/academics/minors"
+    ],
+    "samplePlan": []
+  },
+  "women-gender-sexuality-studies-certificate": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/women-gender-sexuality-studies/women-gender-sexuality-studies-certificate/",
+    "department": [
+      "https://wgss.umd.edu/"
+    ],
+    "samplePlan": []
+  },
+  "womens-gender-sexuality-studies-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/women-gender-sexuality-studies/womens-gender-sexuality-studies-major/",
+    "department": [],
+    "samplePlan": [
+      "https://www.arhu.umd.edu/academics/advising/academic-plans"
+    ]
+  },
+  "womens-gender-sexuality-studies-minor": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/women-gender-sexuality-studies/womens-gender-sexuality-studies-minor/",
+    "department": [],
+    "samplePlan": []
+  },
+  "world-language-education-major": {
+    "catalog": "https://academiccatalog.umd.edu/undergraduate/colleges-schools/education/teaching-learning-policy-leadership/world-language-education-major/",
+    "department": [
+      "https://www.education.umd.edu/MCERT",
+      "https://terrapinteachers.umd.edu/"
+    ],
+    "samplePlan": [
+      "https://education.umd.edu/student-resources/student-services/coe-undergraduate-studies-student-services-office/major-four"
+    ]
+  }
+}
