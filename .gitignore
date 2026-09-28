@@ -168,3 +168,4 @@ apps/web/public/data/
 # maplibre-gl's worker bundle, copied from node_modules by postinstall (apps/web/scripts/copy-maplibre-worker.mjs)
 apps/web/public/vendor/
 graphify-out/
+.claude/worktrees/
