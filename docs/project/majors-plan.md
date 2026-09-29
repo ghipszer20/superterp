@@ -21,7 +21,7 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 19 | agnr-larc | Landscape Architecture | | queued |
 | 22 | info-infosci | Information Science | | queued |
 | 23 | info-tid | Technology & Information Design | | queued |
-| 24–27 | sphl-* | Family Health; Global Health; PH Practice (+ PH Science if both small) | after #6 merged | running (Family Health) |
+| 24–27 | sphl-* | Family Health; Global Health; PH Practice (+ PH Science if both small) | after #6 merged | Family Health merged (73k); Global Health running |
 | 31–34 | usg-* | Fermentation (identical: thin re-export) + Info Science + PH Science; Shady Grove Accounting/Management/Marketing; Communication; Southern Maryland EE + ME | college USG; patterns `biocomp-major`, `mechatronics-major`; diff only `## Catalog requirements` first | queued |
 
 
