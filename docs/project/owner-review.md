@@ -538,3 +538,6 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Technical electives are encoded as one credit `choose` over each concentration's blocks (the catalog says any combination may be taken). "ENSP330 or GVPT273" is not an alternatives group because GVPT273 is also listed alone in Wildlife and Habitats.
 - Soil and Watershed Science: ENST411's credits are not given; 4 assumed from the "at least 13 credits" total. Credits for ENST301/302/303/309 are not given either.
 - The WPIT (wetlands) and Soil Certification Exam footnotes are advising notes, not encoded. The 2.0 major GPA and 120-credit total are manual.
+## `feat/educ-c` (2026-09-28): major Middle School Education (`mided-major`, EDUC); plan constructed, `official: false`
+- Middle School Education: no readable 4-year plan (pages only link roadmaps), so the plan is constructed from the catalog. The catalog has no content-area choices, so it is one program with no tracks.
+- Middle School Education: the AOSC200 & AOSC201 row sits right under the BSCI options; encoded as its own required science row, not a BSCI option (the catalog total of 89 credits fits that reading). Please confirm.
