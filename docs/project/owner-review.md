@@ -538,3 +538,8 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Technical electives are encoded as one credit `choose` over each concentration's blocks (the catalog says any combination may be taken). "ENSP330 or GVPT273" is not an alternatives group because GVPT273 is also listed alone in Wildlife and Habitats.
 - Soil and Watershed Science: ENST411's credits are not given; 4 assumed from the "at least 13 credits" total. Credits for ENST301/302/303/309 are not given either.
 - The WPIT (wetlands) and Soil Certification Exam footnotes are advising notes, not encoded. The 2.0 major GPA and 120-credit total are manual.
+
+## `feat/educ-e` (2026-09-28): major Secondary Education - English (`educ-english-major`, EDUC); plan constructed, `official: false`
+- Secondary English Education: no official four-year plan in the fetched sources (links only); sample plan constructed from the catalog table.
+- Elements 2 (15 credits) and 3 (9 credits) have no course lists in the source (approved list at go.umd.edu/EnglishEducation); encoded as ENGL/CMLT 100-499 credit pools, six-period and topic splits unenforced. Element 3 open slot could be a non-ENGL course, which the pool rejects.
+- Element 5 (American Literature, Shakespeare, Differences and Diasporas, Methods, Advanced Writing) has no designation lists; not encoded. Concurrency footnotes (TLPL479C with TLPL456, TLPL478C with TLPL489C) and the 82-credit total are manual.
