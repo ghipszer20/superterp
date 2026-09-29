@@ -59,4 +59,15 @@ describe("validateSamplePlan", () => {
     const v = await validateSamplePlan(vacuous, plan(["TOYS101"]));
     expect(v.mutants.every((m) => m.broke === false)).toBe(true);
   });
+
+  it("treats every open slot as confirmed and makes no mutants for it", async () => {
+    const withSlot: Program = {
+      ...program,
+      requirements: [...program.requirements, { kind: "openSlot", id: "approved", name: "Approved courses", credits: 12 }],
+    };
+    const v = await validateSamplePlan(withSlot, plan(["TOYS101", "TOYS401", "TOYS402"]));
+    expect(v.unsatisfied).toEqual([]);
+    expect(v.mutants.some((m) => m.requirement === "approved")).toBe(false);
+    expect(v.mutants.every((m) => m.broke)).toBe(true);
+  });
 });
