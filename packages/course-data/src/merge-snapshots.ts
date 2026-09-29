@@ -6,9 +6,8 @@ import type { Course } from "./soc.ts";
  * description) wins. Term codes are YYYYMM strings, so they sort as text.
  */
 export function mergeSnapshots(snapshots: { term: string; courses: Course[] }[]): Course[] {
+  const newestFirst = [...snapshots].sort((a, b) => b.term.localeCompare(a.term));
   const merged = new Map<string, Course>();
-  for (const snap of [...snapshots].sort((a, b) => b.term.localeCompare(a.term))) {
-    for (const course of snap.courses) if (!merged.has(course.id)) merged.set(course.id, course);
-  }
+  for (const { courses } of newestFirst) for (const c of courses) if (!merged.has(c.id)) merged.set(c.id, c);
   return [...merged.values()];
 }
