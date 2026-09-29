@@ -3,7 +3,7 @@
 // student's current declared majors vs a proposed set. Async and solver-backed (@superterp/audit),
 // like notices.ts -- run it after edits settle, not on every keystroke.
 
-import { auditPrograms, checkCsGateway, earnsCredit, type AuditResult, type GatewayResult, type Program, type StudentCourse } from "@superterp/audit";
+import { auditPrograms, checkCsGateway, PROGRAM_GPA_ID, earnsCredit, type AuditResult, type GatewayResult, type Program, type StudentCourse } from "@superterp/audit";
 import type { PlanCatalog } from "./catalog.ts";
 import type { Plan } from "./check.ts";
 import { planCourses, shortfall } from "./notices.ts";
@@ -114,7 +114,7 @@ function meetsProgramGrade(course: StudentCourse, minGrade: string | undefined):
  * wrongly grab "counts" ahead of the passing retake that follows it.
  */
 function usedIndices(program: Program, result: AuditResult, courses: StudentCourse[]): Set<number> {
-  const nonOverlayAssigned = result.requirements.flatMap((r, i) => (program.requirements[i]!.overlay ? [] : r.assigned));
+  const nonOverlayAssigned = result.requirements.flatMap((r, i) => (r.id === PROGRAM_GPA_ID || program.requirements[i]!.overlay ? [] : r.assigned));
   const remaining = new Map<string, number>();
   for (const id of nonOverlayAssigned) remaining.set(id, (remaining.get(id) ?? 0) + 1);
   const used = new Set<number>();
