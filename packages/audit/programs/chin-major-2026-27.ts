@@ -24,17 +24,8 @@ export const chinMajor: Program = {
   minGrade: "C-",
   verified: false,
   reviewNotes: [
-    "Department page vs. catalog: could NOT be compared. Unlike the other ARHU four-year plans already " +
-      "encoded (Arabic, American Studies, Art History), whose PDF-to-text conversions were merely garbled " +
-      "and column-interleaved but still contained some legible course codes and slot labels, the Chinese " +
-      "plan's conversion (see program-sources/chinese-major.md, 'Sample plan' section) produced no legible " +
-      "text at all -- no course codes, term headers or requirement labels survived, only what looks like " +
-      "font-remapped control characters end to end. No department-vs-catalog comparison was possible, and " +
-      "no course placement could be read from it. Please supply a readable copy if this matters.",
-    "Because the plan source is unusable, the sample plan (packages/programs/sample-plans/chin-major.json) " +
-      "is built entirely from the catalog's own requirement list, not read from the four-year plan -- " +
-      "treated the same as 'no official plan published' and marked official: false. Flagged in " +
-      "docs/project/owner-review.md.",
+    "Department page vs. catalog: OCR re-check (2026-09-28) of the four-year plan (program-sources/chinese-major.md, 'Sample plan' section) found it still too garbled to read the major courses or their term placement (only Gen Ed legend labels and the footnote about WL-placement substitution of higher CHIN courses survive; the term grid has no legible CHIN codes). No department-vs-catalog difference could be established; encoding unchanged. The one legible footnote (higher-level CHIN substitution with advisor approval, total of 17 CHIN language credits) matches the un-encoded placement exception noted below.",
+    "Because the plan text is still unusable (also after OCR), the sample plan (packages/programs/sample-plans/chin-major.json) is built from the catalog's own requirement list, not read from the four-year plan, and is marked official: false. Flagged in docs/project/owner-review.md.",
     "Not encoded (placement- and approval-based exception, no list given): footnote 1's 'Students with " +
       "the appropriate WLP level and the approval of the Chinese Undergraduate Advisor may substitute " +
       "CHIN207 (4 credits) with one 3-credit upper-level CHIN course and 1 credit of CHIN386 or CHIN499.' " +
