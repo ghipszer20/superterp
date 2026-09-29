@@ -36,7 +36,7 @@ export function ExportMenu({ plan, analysis, issues, prior, catalog }: { plan: A
     setError(false);
     try {
       const today = new Date();
-      const { buildTakeout } = await import("@/lib/advisor/export/takeout");
+      const { buildTakeout, exportFileName } = await import("@/lib/advisor/export/takeout");
       const takeout = buildTakeout({
         plan,
         analysis: result,
@@ -47,15 +47,15 @@ export function ExportMenu({ plan, analysis, issues, prior, catalog }: { plan: A
         today,
         hideGrades,
       });
-      const day = takeout.header.date;
+      const name = exportFileName(kind, takeout.header.date);
       if (kind === "xlsx") {
         const { buildXlsx } = await import("@/lib/advisor/export/xlsx");
         const bytes = await buildXlsx(takeout);
-        download(new Blob([bytes], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" }), `superterp-plan-${day}.xlsx`);
+        download(new Blob([bytes], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" }), name);
       } else {
         const { buildPdf } = await import("@/lib/advisor/export/pdf");
         const doc = await buildPdf(takeout);
-        download(doc.output("blob"), `superterp-advising-takeout-${day}.pdf`);
+        download(doc.output("blob"), name);
       }
       setOpen(false);
     } catch {

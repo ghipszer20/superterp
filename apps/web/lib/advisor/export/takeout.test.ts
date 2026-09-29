@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildTakeout, CATEGORY_COLORS, DISCLAIMER } from "./takeout";
+import { buildTakeout, CATEGORY_COLORS, DISCLAIMER, exportFileName } from "./takeout";
 
 const req = (id: string, name: string, status: "satisfied" | "partial" | "missing", assigned: string[], gap: { need: string; suggestions: string[] } | null = null) => ({
   requirement: { id, name },
@@ -122,5 +122,12 @@ describe("buildTakeout", () => {
     expect(t.prior.totalCredits).toBe(4);
     expect(t.tracks[0]).toMatchObject({ name: "Pre-Med" });
     expect(t.tracks[0]!.requirements[0]).toMatchObject({ name: "Biology", status: "missing" });
+  });
+});
+
+describe("exportFileName", () => {
+  it("names the download by kind and the takeout's date", () => {
+    expect(exportFileName("xlsx", "2026-09-29")).toBe("superterp-plan-2026-09-29.xlsx");
+    expect(exportFileName("pdf", "2026-09-29")).toBe("superterp-advising-takeout-2026-09-29.pdf");
   });
 });

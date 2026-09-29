@@ -144,3 +144,7 @@ export function buildTakeout(input: TakeoutInput) {
 }
 
 export type Takeout = ReturnType<typeof buildTakeout>;
+
+/** The download's file name, dated by the takeout's header date. */
+export const exportFileName = (kind: "xlsx" | "pdf", date: string) =>
+  kind === "xlsx" ? `superterp-plan-${date}.xlsx` : `superterp-advising-takeout-${date}.pdf`;
