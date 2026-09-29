@@ -101,7 +101,7 @@ Moved to `docs/project/legal.md`. Read it before building the disclaimer, accoun
   - **Session 2 (engine: open slots, eligibility gates, N different areas):** not started.
   - **Session 3 (schedule: section recommendations, .ics, share link, walk/leave-by):** not started.
   - **Session 4 (grades in the audit, semester difficulty):** step 1 `feat/grades-audit` merged 2026-09-28 (engine `minGpa` + solver grade tie-break, CS ULC 1.7, `belowMinimum` notes, transcript cumulative GPA fills `plan.gpa`, BCPM breakdown on track cards; no screenshots yet). Step 2 `feat/semester-difficulty` next, plan in `C:/Users/24GHi/.claude/plans/velvet-meandering-oasis.md`. GPA rules in other programs deferred (roadmap to-do).
-  - **Session 5 (advising export, academic calendar, registration prep):** not started.
+  - **Session 5 (advising export, academic calendar, registration prep):** plan `C:/Users/24GHi/.claude/plans/resilient-whistling-sprout.md` approved 2026-09-29 (owner: reg prep in the Schedule tab; reminder = .ics with alarms + Today countdown). Order, one builder at a time: `feat/academic-calendar` (running 2026-09-29) → `feat/advising-export` (ExcelJS + jsPDF, lazy-loaded) → `feat/registration-prep`. Calendar fixtures committed in `packages/campus-data/test/fixtures/`. Merges in `.claude/worktrees/merge-s5`.
 - **Waiting on the owner:** see `docs/project/owner-review.md` (include it in every progress report; add new items there).
 - **Known to-dos:** see `docs/project/roadmap.md` "Known to-dos" (add new ones there).
 
