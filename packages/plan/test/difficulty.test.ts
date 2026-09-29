@@ -20,6 +20,9 @@ describe("courseDifficulty", () => {
     const rough = courseDifficulty(course("A200", 3.0, 3, { wRate: 0.15, fRate: 0.1 }));
     expect(rough).toBeGreaterThan(calm);
   });
+  it("adds a level allowance so an upper-level course with an ordinary average still reads harder", () => {
+    expect(courseDifficulty(course("CMSC420", 3.2))).toBeGreaterThan(courseDifficulty(course("CMSC120", 3.2)) + 1);
+  });
   it("uses a neutral value by course level when there is no data", () => {
     const [a, b, c, d] = ["A100", "A200", "A300", "A400"].map((id) => courseDifficulty(course(id, null)));
     expect(a! < b! && b! < c! && c! < d!).toBe(true);
