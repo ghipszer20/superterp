@@ -70,7 +70,10 @@ export function Nav() {
           </Link>
           <ThemeToggle />
         </div>
-        <p className={styles.fine}>Unofficial. Not affiliated with the University of Maryland.</p>
+        <p className={styles.fine}>
+          Unofficial. Not affiliated with the University of Maryland. <Link href="/terms">Terms</Link> ·{" "}
+          <Link href="/privacy">Privacy</Link>
+        </p>
       </nav>
     </>
   );
