@@ -36,14 +36,14 @@ const ANALYSIS_DELAY_MS = 350;
 
 export type OpenCourse = { id: string; term: string | null };
 
-export function AdvisorApp({ calendar = [] }: { calendar?: AcademicEvent[] }) {
+export function AdvisorApp({ calendar }: { calendar: AcademicEvent[] }) {
   const store = useAdvisorStore();
   const catalog = useCatalog();
 
   if (store === null) return <Shell />;
   if (!store.consent || !hasConsent(store.consent)) return <DisclaimerGate />;
   if (!store.plan) return <SetupView plan={null} onDone={(plan) => savePlan(plan)} />;
-  return <Planner plan={store.plan} catalog={catalog} signedBy={store.consent.name} signedAt={store.consent.acceptedAt} />;
+  return <Planner plan={store.plan} catalog={catalog} signedBy={store.consent.name} signedAt={store.consent.acceptedAt} calendar={calendar} />;
 }
 
 function Shell() {
@@ -57,7 +57,7 @@ function Shell() {
   );
 }
 
-function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; catalog: CatalogState; signedBy: string; signedAt: string }) {
+function Planner({ plan, catalog, signedBy, signedAt, calendar }: { plan: AdvisorPlan; catalog: CatalogState; signedBy: string; signedAt: string; calendar: AcademicEvent[] }) {
   const view = useView();
   const [editing, setEditing] = useState(() => initialSetup());
   const [importing, setImporting] = useState(() => initialImport());
