@@ -579,3 +579,6 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Public Health Practice: no term-by-term plan in the sources (SPH page has benchmarks only); plan constructed. Elective fills HLTH300, HLTH325, HLTH377, HLTH424 are unconfirmed placeholders.
 - Public Health Practice: anatomy row is "HLTH212 or BSCI201" (catalog and SPH benchmark agree), so the shared BSCI201/202 pair was not used.
 - Public Health Science: sph.umd.edu department page returned 404, department page not checked. 12 credits of Public Health Science options (300-400 level, "primarily offered within SPH") from an approved list not in the sources; OPEN SLOT. No term-by-term plan; plan constructed with unconfirmed option fills HLTH424, MIEH330, MIEH331, HLSA484.
+
+## Half 1 main session (2026-09-28): major Fermentation Science at Shady Grove (`ferm-usg-major`, USG); plan constructed, `official: false`
+- Catalog requirement table is identical to College Park's, so the program re-uses `ferm-major`'s requirements (and inherits its flags: AGST/NFSC topic rows as ranges, constructed plan). No Shady Grove department page in the sources.
