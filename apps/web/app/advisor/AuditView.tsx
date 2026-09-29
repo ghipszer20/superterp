@@ -9,6 +9,7 @@
 import type { GatewayCourseStatus, GatewayOverallStatus, Requirement, RequirementResult } from "@superterp/audit";
 import type { MilestoneTiming } from "@superterp/tracks";
 import type { AdvisorPlan } from "@/lib/advisor/plan-state";
+import { blockedNotice } from "@/lib/advisor/programs";
 import { showsScienceGpa } from "@/lib/advisor/tracks";
 import { gatewayAttemptLimitNote } from "@/lib/advisor/what-if-display";
 import type { AnalysisState, OpenCourse } from "./AdvisorApp";
@@ -73,7 +74,7 @@ export function AuditView({
             {!audit.program.verified ? <span className={styles.unverified}>Unverified</span> : null}
           </div>
           <p className={styles.cardNote}>
-            {audit.satisfied} of {audit.total} requirements met
+            {blockedNotice(audit.program.id, plan.programs) ?? `${audit.satisfied} of ${audit.total} requirements met`}
           </p>
           <ul className={styles.reqList}>
             {audit.requirements.map(({ requirement, result, gap }) =>

@@ -15,6 +15,7 @@ export type { ProgramEntry, ProgramKind } from "./registry-types.ts";
 import type { ProgramEntry } from "./registry-types.ts";
 
 export { PROGRAMS } from "./registry.generated.ts";
+export { blockedReason } from "./eligibility.ts";
 import { PROGRAMS } from "./registry.generated.ts";
 
 const byId = new Map(PROGRAMS.map((p) => [p.id, p]));

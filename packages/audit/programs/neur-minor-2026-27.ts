@@ -19,7 +19,7 @@ export const neurMinor: Program = {
   maxSharedWith: [{ courses: 2 }],
   reviewNotes: [
     "Department page: 'No more than 2 courses can count towards both the minor and your major' -> maxSharedWith: [{ courses: 2 }]. The catalog is silent on sharing.",
-    "Eligibility restriction (department page): all majors are eligible EXCEPT students in the Physiology & Neurobiology (PHNB) track of Biological Sciences and the Neuroscience (NEUR) major. Not enforced (no declared-major gate yet); manual note.",
+    "Eligibility restriction (department page): all majors are eligible EXCEPT students in the Physiology & Neurobiology (PHNB) track of Biological Sciences and the Neuroscience (NEUR) major. Enforced via notOpenTo (bsci-major-phnb, its Shady Grove track bsci-usg-major, and neur-major).",
     "Application prerequisites (both sources): 30 college credits with 15 at UMD, good standing, and C- or better in BSCI170, CHEM131/CHEM132 and NEUR200 or PSYC202. These gate admission and are not among the minor's 21-23 credits, so they are not encoded as requirements; manual check.",
     "The 2.0 cumulative GPA across minor courses is a GPA-average rule, not encoded (manual check). The C- minimum grade is encoded on the whole program.",
     "Open slot 'neur-electives' (openSlot requirement): 6-8 credits (two elective courses) from the eligible-elective list on the department program website; the list is not published in either fetched source. Set to the 6-credit minimum.",
@@ -41,4 +41,4 @@ export const neurMinor: Program = {
   ],
 };
 
-export const neurMinorMeta: ProgramMeta = { kind: "minor", college: "BSOS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/psychology/neuroscience-minor/", department: "https://psyc.umd.edu/undergraduate/neuroscience-minor" } };
+export const neurMinorMeta: ProgramMeta = { kind: "minor", college: "BSOS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/behavioral-social-sciences/psychology/neuroscience-minor/", department: "https://psyc.umd.edu/undergraduate/neuroscience-minor" }, notOpenTo: { programs: ["bsci-major-phnb", "bsci-usg-major", "neur-major"], reason: "Not open to Biological Sciences (Physiology and Neurobiology) or Neuroscience majors." } };

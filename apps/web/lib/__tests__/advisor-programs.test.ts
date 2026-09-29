@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   auditedPrograms,
+  blockedNotice,
   collegeOf,
   degreeModeOf,
   MAX_NOTICE_CANDIDATES,
@@ -247,5 +248,19 @@ describe("programsLabel", () => {
 
   it("says 'No program chosen' only when nothing is picked", () => {
     expect(programsLabel([])).toBe("No program chosen");
+  });
+});
+
+describe("blockedNotice (saved state holding a blocked minor)", () => {
+  it("names the reason when a chosen major closes the program", () => {
+    expect(blockedNotice("astr-minor", ["astr-major-data-science", "astr-minor"])).toBe(
+      "Not open to astronomy, physics or physical sciences majors. Remove it in Edit setup.",
+    );
+  });
+
+  it("is undefined when the program is open, ungated or unknown", () => {
+    expect(blockedNotice("astr-minor", ["cmsc-major", "astr-minor"])).toBeUndefined();
+    expect(blockedNotice("cmsc-major", ["astr-major-data-science"])).toBeUndefined();
+    expect(blockedNotice("no-such-program", ["astr-major-data-science"])).toBeUndefined();
   });
 });
