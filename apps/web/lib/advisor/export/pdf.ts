@@ -28,7 +28,7 @@ export async function buildPdf(t: Takeout) {
     doc.text(lines, margin, y);
     y += lines.length * 13;
   };
-  const common = { margin: { left: margin, right: margin, bottom: 44 }, styles: { fontSize: 8, cellPadding: 3 }, headStyles: { fillColor: [60, 60, 67] as [number, number, number] } };
+  const common = { margin: { left: margin, right: margin, bottom: 44 }, styles: { fontSize: 8, cellPadding: 3 }, headStyles: { fillColor: [60, 60, 67] as [number, number, number], textColor: 255 } };
   const table = (opts: Record<string, unknown>) => {
     autoTable(doc, { ...common, startY: y, ...opts });
     y = tableEnd() + 18;
