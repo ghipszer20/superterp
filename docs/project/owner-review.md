@@ -553,3 +553,9 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Plant Sciences: no official four-year plan (catalog links only the college roadmap page), so all three sample plans are constructed (official: false) from the catalog table.
 - Plant Sciences: department page has no course requirements; encoded from the catalog alone. Several catalog rows lost their course titles in the source (PLSC202, PLSC361, PLSC403, PLSC456, PLSC474), encoded by id.
 - Plant Sciences: the "C-" rule is encoded per requirement on the all-areas courses except ENGL101 and ENGL393; specialization courses carry no grade rule. Urban Forestry suggested electives are advisory and not encoded.
+
+## `feat/sphl-ph` (2026-09-28): majors Public Health Practice (`php-major`), Public Health Science (`phsc-major`), SPHL; plans constructed, `official: false`
+- Public Health Practice: 12 credits of health electives come from a "pre-approved list" not in the sources; OPEN SLOT, not encoded. Optional areas of specialization (Special Populations, Health Communication, Health Risk Behavior) not encoded (no course lists in the sources).
+- Public Health Practice: no term-by-term plan in the sources (SPH page has benchmarks only); plan constructed. Elective fills HLTH300, HLTH325, HLTH377, HLTH424 are unconfirmed placeholders.
+- Public Health Practice: anatomy row is "HLTH212 or BSCI201" (catalog and SPH benchmark agree), so the shared BSCI201/202 pair was not used.
+- Public Health Science: sph.umd.edu department page returned 404, department page not checked. 12 credits of Public Health Science options (300-400 level, "primarily offered within SPH") from an approved list not in the sources; OPEN SLOT. No term-by-term plan; plan constructed with unconfirmed option fills HLTH424, MIEH330, MIEH331, HLSA484.
