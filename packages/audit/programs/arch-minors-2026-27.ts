@@ -39,12 +39,13 @@ export const archConstructionProjectManagementMinor: Program = {
     "identical table under Civil and Environmental Engineering); Project Management Center for Excellence, " +
     "https://pm.umd.edu/program/cpm-minor (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Cross-listed: the ARCH and ENGR (Civil and Environmental Engineering) catalog pages carry the same requirement table (verified by diff: only the title suffix and URL differ). Encoded once under college ARCH.",
     "Department-vs-catalog difference: the department page's elective list is ARCH430, ARCH462, ARCH467, ENCE421, ENCE422 and omits ENCE420 (Selection and Utilization of Construction Equipment), which the catalog lists. Kept ENCE420 (owner ruling in rulings.md: accept both lists).",
     "Both sources agree on the core: ENCE325, ENCE423, ENCE424, and ENCE426 or ARCH472.",
-    "Not encoded: minimum 2.0 GPA for the minor (catalog); a construction-industry internship (both sources; the department page says summer after junior year); eligibility from the department page (Clark School of Engineering or School of Architecture, Planning & Preservation students with at least 60 credits and a 3.0 GPA or higher).",
+    "Program GPA 2.0 encoded as minGpa. Not encoded: a construction-industry internship (both sources; the department page says summer after junior year); eligibility from the department page (Clark School of Engineering or School of Architecture, Planning & Preservation students with at least 60 credits and a 3.0 GPA or higher).",
     "Neither source states a sharing cap, so none is set. The separate Project Management Minor (project-management-minor) is a different minor.",
   ],
   requirements: [
@@ -112,12 +113,13 @@ export const archRealEstateDevelopmentMinor: Program = {
     "UMD Academic Catalog 2026–27, Real Estate Development Minor; School of Architecture, Planning and Preservation, " +
     "https://arch.umd.edu/programs/undergraduate-programs/minors/real-estate-development-minor (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Catalog and department page agree on the four core courses; the department page adds no requirement differences.",
     "Open slot 'permitted-elective' (openSlot requirement): 3 credits of one elective from the 'permitted electives' list; the list is on a separate arch.umd.edu page that was not among the sources, and the department page names only subject areas (architecture, sustainability, business, economics, political science), so the student confirms with their advisor.",
     "ARCH271/RDEV250 is one cross-listed course; either code counts. RDEV270 'can also be met' by BMGT220 or an equivalent accounting course that qualifies for transfer credit (catalog footnote): BMGT220 is accepted, transfer equivalents are a manual check.",
-    "Minor grade: all required courses C- or better (catalog), applied as minGrade. Not encoded: UMD GPA of at least 2.0 for the minor; application (department page): ARCH271/RDEV250 completed with C- or better before 60 credits, apply two years before intended graduation, email rdevminor@umd.edu.",
+    "Minor grade: all required courses C- or better (catalog), applied as minGrade. Program GPA 2.0 encoded as minGpa. Not encoded: application (department page): ARCH271/RDEV250 completed with C- or better before 60 credits, apply two years before intended graduation, email rdevminor@umd.edu.",
     "Neither source states a sharing cap; none is set.",
   ],
   requirements: [

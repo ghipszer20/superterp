@@ -15,6 +15,7 @@ export const enspSustainabilityStudiesMinor: Program = {
     "UMD Academic Catalog 2026-27, Sustainability Studies Minor (AGNR/ENSP and PLCY listings); " +
     "School of Public Policy, https://spp.umd.edu/your-education/undergraduate/minors (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
@@ -27,7 +28,7 @@ export const enspSustainabilityStudiesMinor: Program = {
     "The SPP page's Nonprofit Leadership elective list mentions some sustainability courses but is not this minor's list; not used.",
     "'15 credits, at least 9 at the 300-400 level' is not encoded because the approved courses are unpublished; manual check.",
     "'No more than 6 credits may overlap between your major and Sustainability Studies, unless otherwise approved by your major' -> maxSharedWith: [{ credits: 6 }]. This applies to every other program (the engine cannot cap the major only); the 'unless approved' exception is not encoded. Catalog also bars a course counting in another minor (manual).",
-    "Minimum C (2.00) cumulative GPA across the minor is a manual check. Students must declare the minor a full academic year before intended graduation (not encoded).",
+    "Program GPA 2.0 encoded as minGpa. Students must declare the minor a full academic year before intended graduation (not encoded).",
     "AGNR301 and PLCY301 are the same course (cross-listed); either satisfies the core.",
     "Sample plan is constructed and contains only the core course because the approved lists are unpublished.",
   ],

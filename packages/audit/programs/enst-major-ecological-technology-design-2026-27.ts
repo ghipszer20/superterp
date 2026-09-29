@@ -10,6 +10,7 @@ export const enstMajorEcologicalTechnologyDesign: Program = {
   catalogYear: "2026-27",
   source: `UMD Academic Catalog 2026-27, Environmental Science and Technology Major, ${enstCatalogUrl}; ${enstDepartmentUrl} (both fetched 2026-09-28)`,
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     ...enstCommonReviewNotes,

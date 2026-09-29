@@ -34,6 +34,7 @@ export const enstCommonReviewNotes: string[] = [
   "Department page (enst.umd.edu) is a homepage with no requirements (it announces the new Chesapeake Bay minor only); encoded from the catalog alone.",
   "The catalog's four Areas of Concentration are encoded as four programs sharing the enst major key; Ecological Technology Design (first-listed) is the default track. The ENST Core and Senior Integrative Experience are shared (enst-shared-2026-27.ts).",
   "The catalog's C- rule ('all courses counted toward the major') is the program minGrade C-.",
-  "Not encoded (engine gap): total credits (120), the 2.0 GPA in major courses, and 'under some circumstances other 300 or 400 level electives can be substituted with advisor's approval' (manual).",
+  "Program GPA 2.0 encoded as minGpa.",
+  "Not encoded (engine gap): total credits (120) and 'under some circumstances other 300 or 400 level electives can be substituted with advisor's approval' (manual).",
   "No official four-year plan (the catalog only links the college's general roadmap page and 4yearplans.umd.edu), so the sample plan is CONSTRUCTED (official: false).",
 ];
