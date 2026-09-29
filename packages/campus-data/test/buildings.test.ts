@@ -41,7 +41,11 @@ describe("buildingByCode", () => {
   it("uses the override table for codes umd.io leaves blank", () => {
     expect(buildingByCode(list, "IRB")?.name).toBe("Brendan Iribe Center");
   });
+  it("maps ATL (Atlantic Building) to the renamed Computer and Space Sciences Building", () => {
+    const css = { id: "224", name: "Computer and Space Sciences Building", code: "CSS", lat: 38.9909812, lon: -76.9425669540912 };
+    expect(buildingByCode([...list, css], "ATL")?.id).toBe("224");
+  });
   it("returns undefined for unknown, off-campus, TBA or empty codes", () => {
-    for (const c of ["ATL", "BLD3", "TBA", "", null, undefined]) expect(buildingByCode(list, c)).toBeUndefined();
+    for (const c of ["TMH", "BLD3", "TBA", "", null, undefined]) expect(buildingByCode(list, c)).toBeUndefined();
   });
 });

@@ -30,9 +30,10 @@ export function parseBuildings(raw: unknown): Building[] {
 // Testudo building codes umd.io leaves blank or omits -> umd.io building id (matched by name
 // against the buildings feed). Hand-kept; unknown codes just mean "no walk time".
 // Left out on purpose (off campus, or no confident name match in the feed):
-//   BLD3, BLD4 (Shady Grove), DC (Washington), ATL (Atlantic Building not in feed),
-//   TMH (Thurgood Marshall Hall not in feed), PFR, ZUP, PSC, GVC, RGC, SEN, PBR, RDG.
+//   BLD3, BLD4 (Shady Grove), DC (Washington),
+//   TMH (Thurgood Marshall Hall, the new School of Public Policy building: not in the feed; needs coordinates), PFR, ZUP, PSC, GVC, RGC, SEN, PBR, RDG.
 const CODE_OVERRIDES: Record<string, string> = {
+  ATL: "224", // Atlantic Building = the renamed Computer and Space Sciences Building (CSS; no longer used in Testudo, Spring 2027)
   IRB: "432", // Brendan Iribe Center
   YDH: "436", // Yahentamitsi (dining hall)
   ERC: "223", // Energy Research Facility
