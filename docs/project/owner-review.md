@@ -593,3 +593,8 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - World Language: Applied Linguistics row is "Primary WL Area Applied Linguistics or LING200"; not encoded because LING200 alone would narrow it.
 - World Language: department pages (MCERT, Terrapin Teachers, four-year-plans) carry no requirements; catalog only. ACTFL OPI and Praxis II/ACTFL written test are manual.
 - World Language: no term-by-term plan in the sources; sample plan constructed, education courses only.
+## `feat/educ-i` (2026-09-28): major Secondary Education - Art (`educ-art-major`), EDUC; plan constructed, `official: false`
+- Art Education: no term-by-term plan in the sources (the COE page only links out); sample plan constructed. ARTH 300-400 fills (ARTH305, ARTH351) and printmaking fill (ARTT341) are unconfirmed placeholders.
+- Art Education: the printmaking "select one" row is garbled in the catalog (ARTT340 and ARTT344 have no titles); all four options accepted, verify.
+- Art Education: footnote says TLPL430 is taken concurrently with TLPL447, but TLPL430 is not in the requirement table; not encoded. Spring-only/fall-only footnotes (TLPL435, TLPL433) and the catalog's "sequencing under review" note are not encoded.
+- Art Education: department pages carry no requirements for this major; catalog encoded alone.
