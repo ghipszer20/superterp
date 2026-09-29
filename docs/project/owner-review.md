@@ -538,3 +538,7 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Technical electives are encoded as one credit `choose` over each concentration's blocks (the catalog says any combination may be taken). "ENSP330 or GVPT273" is not an alternatives group because GVPT273 is also listed alone in Wildlife and Habitats.
 - Soil and Watershed Science: ENST411's credits are not given; 4 assumed from the "at least 13 credits" total. Credits for ENST301/302/303/309 are not given either.
 - The WPIT (wetlands) and Soil Certification Exam footnotes are advising notes, not encoded. The 2.0 major GPA and 120-credit total are manual.
+
+## `feat/agnr-larc` (2026-09-28): major Landscape Architecture (`larc-major`, AGNR); plan constructed, `official: false`
+- Landscape Architecture: department page (larch.umd.edu) has no requirements; encoded from the catalog alone. The catalog lists no concentrations, so it is one program. No official four-year plan; sample plan constructed.
+- Landscape Architecture: "MATH113 (or higher level math course)" is encoded as any MATH course numbered 113+; "LARC389 (or Approved Study Abroad)" accepts only LARC389 because the study-abroad course is unnamed (manual override). The 6-credit restricted electives are 2 courses of the six listed, assuming 3 credits each.
