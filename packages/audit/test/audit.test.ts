@@ -572,6 +572,48 @@ describe("auditProgram", () => {
       expect(r.requirements[0]).toMatchObject({ status: "satisfied" });
     });
   });
+
+  describe("distribution areas defined by a course filter", () => {
+    type A = { name: string; courses?: string[]; from?: { departments: string[]; minNumber?: number } };
+    const mk = (areas: A[], count = 3, minAreas = 2, maxPerArea = 2): Program => ({
+      id: "d",
+      name: "D",
+      requirements: [{ kind: "distribution", id: "spread", name: "Spread", count, minAreas, maxPerArea, areas }],
+    });
+    const depts = mk([
+      { name: "SPAN", from: { departments: ["SPAN"] } },
+      { name: "HIST", from: { departments: ["HIST"] } },
+    ]);
+
+    it("is satisfied by courses from two departments", async () => {
+      const r = await auditProgram(depts, took("SPAN301", "SPAN302", "HIST301"));
+      expect(r.requirements[0]).toMatchObject({ status: "satisfied" });
+    });
+
+    it("is not satisfied by courses from one department only", async () => {
+      const r = await auditProgram(depts, took("SPAN301", "SPAN302", "SPAN303"));
+      expect(r.requirements[0]).toMatchObject({ status: "partial" });
+    });
+
+    it("counts a course matching two areas toward only one", async () => {
+      const twins = mk([
+        { name: "A", from: { departments: ["HIST"] } },
+        { name: "B", from: { departments: ["HIST"] } },
+      ], 1, 2, 2);
+      const r = await auditProgram(twins, took("HIST301"));
+      expect(r.requirements[0]).toMatchObject({ status: "partial" });
+      expect(r.requirements[0]!.assigned).toHaveLength(1);
+    });
+
+    it("mixes course-list and filter areas", async () => {
+      const p = mk([
+        { name: "Listed", courses: ["ANTH210"] },
+        { name: "History", from: { departments: ["HIST"] } },
+      ], 2, 2, 1);
+      expect((await auditProgram(p, took("ANTH210", "HIST301"))).requirements[0]).toMatchObject({ status: "satisfied" });
+      expect((await auditProgram(p, took("HIST301", "HIST302"))).requirements[0]).toMatchObject({ status: "partial" });
+    });
+  });
 });
 
 describe("open slots (from an approved list that isn't published)", () => {

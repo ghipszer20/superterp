@@ -21,7 +21,7 @@ function courseIds(req: Requirement): string[] {
     case "sets":
       return req.options.flat().flatMap(member);
     case "distribution":
-      return req.areas.flatMap((a) => a.courses);
+      return req.areas.flatMap((a) => a.courses ?? []);
     default:
       return [];
   }

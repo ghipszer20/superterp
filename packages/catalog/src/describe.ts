@@ -59,7 +59,7 @@ function describeRule(r: Requirement): Pick<Described, "text" | "details"> {
       const cap = r.maxPerArea < r.count ? `, at most ${r.maxPerArea} per area` : "";
       return {
         text: `${plural(r.count, "course")} from at least ${plural(r.minAreas, "area")}${cap}`,
-        details: r.areas.map((a) => `${a.name}: ${list(a.courses)}`),
+        details: r.areas.map((a) => `${a.name}: ${[...(a.courses?.length ? [list(a.courses)] : []), ...(a.from ? [describeFilter(a.from)] : [])].join("; ")}`),
       };
     }
     case "concentration": {

@@ -2,7 +2,7 @@
 // express as a Requirement — exam timing, AP/IB and pass/fail credit, low grades, milestone
 // timing, and pre-law's GPA protection. Pure and synchronous apart from the audit's solver call.
 
-import { auditProgram, matchesFilter, type AuditResult, type Requirement } from "@superterp/audit";
+import { auditProgram, inArea, matchesFilter, type AuditResult, type Requirement } from "@superterp/audit";
 import type { Plan, PlanCourse, PriorCredit } from "@superterp/plan";
 import { amcasGpa, gpaOf, type GradedCourse } from "./gpa.ts";
 import { trackProgram } from "./list.ts";
@@ -69,7 +69,7 @@ function requirementMentions(req: Requirement, courseId: string): boolean {
     case "sets":
       return req.options.some((option) => option.some((m) => (typeof m === "string" ? m === courseId : matchesFilter(m.from, course))));
     case "distribution":
-      return req.areas.some((a) => a.courses.includes(courseId));
+      return req.areas.some((a) => inArea(a, course));
     case "concentration":
     case "openSlot":
       return false; // no track category uses these kinds

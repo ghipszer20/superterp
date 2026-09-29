@@ -21,7 +21,7 @@ function codes(r: Requirement): { courses: string[]; departments: string[] } {
     case "choose":
       return { courses: [...filterCodes(r.from).courses, ...(r.alternatives ?? []).flat()], departments: filterCodes(r.from).departments };
     case "distribution":
-      return { courses: r.areas.flatMap((a) => a.courses), departments: [] };
+      return { courses: r.areas.flatMap((a) => a.courses ?? []), departments: [] };
     case "concentration":
       return { courses: [], departments: r.excludeDepartments ?? [] };
     case "sets": {
