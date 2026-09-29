@@ -16,7 +16,7 @@ export const hhmMinor: Program = {
   verified: false,
   reviewNotes: [
     "Department page not checked: none was provided. Encoded from the catalog alone.",
-    "OPEN SLOT: four courses (12 credits) in at least three of five core areas. The catalog points to an approved-course list per area (a link, not in the source) and names no course or range, so the slot is left out of requirements rather than narrowed or opened to any course. The three-of-five-areas rule, the Gen Ed diversity co-requirement on one of the four, the 300/400-level minimum ('six of the nine credits', a catalog inconsistency with the 12-credit slot) and the 3-credit internship allowance are manual.",
+    "Open slot 'core-courses' (openSlot requirement): four courses (12 credits) in at least three of five core areas, from an approved-course list per area (a link, not in the source), so the student confirms it with their advisor. The three-of-five-areas rule, the Gen Ed diversity co-requirement on one of the four, the 300/400-level minimum ('six of the nine credits', a catalog inconsistency with the 12-credit slot) and the 3-credit internship allowance are manual.",
     "ENGL395 (or ENGL390) and ENGL390H: the footnote allows ENGL390H for the same writing slot; all three are accepted.",
     "Minor GPA and other eligibility rules are not stated in the source; C- is the standard minor grade floor. No sharing cap stated; none is set.",
   ],
@@ -27,6 +27,13 @@ export const hhmMinor: Program = {
       id: "writing",
       name: "Writing for Health Professions, or Science Writing",
       options: ["ENGL395", "ENGL390", "ENGL390H"],
+    },
+    {
+      kind: "openSlot",
+      id: "core-courses",
+      name: "Core area courses",
+      credits: 12,
+      note: "Four courses in at least three of the five core areas, from the approved-course list for each area.",
     },
   ],
 };
