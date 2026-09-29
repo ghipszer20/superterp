@@ -5,13 +5,14 @@
 //   npm run snapshot -w @superterp/course-data -- 202701
 
 import { mkdirSync, writeFileSync } from "node:fs";
-import { fetchCourses, fetchSections, fetchTermsAndDepartments, type Course, type Section } from "../src/soc.ts";
+import { fetchCourses, fetchSections, fetchTermsAndDepartments, withExtraDepartments, type Course, type Section } from "../src/soc.ts";
 
 const PAUSE_MS = 300;
 const SECTION_BATCH = 40;
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-const { terms, departments } = await fetchTermsAndDepartments();
+const { terms, departments: listed } = await fetchTermsAndDepartments();
+const departments = withExtraDepartments(listed);
 const term = process.argv[2] ?? terms.find((t) => t.current)?.id;
 if (!term) throw new Error("No term given and no current term found");
 console.log(`Term ${term}: ${departments.length} departments`);
