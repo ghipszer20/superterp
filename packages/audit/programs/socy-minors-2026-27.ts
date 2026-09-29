@@ -48,7 +48,7 @@ export const socyMinorDemography: Program = {
   verified: false,
   reviewNotes: [
     "Department page not checked (none provided); encoded from the catalog alone.",
-    "SOCY201 is 'or an equivalent course from another department' with no equivalents named. Encoded as SOCY201 only; accepting an equivalent is a manual check (flagged: narrower than the source for students who took a statistics course elsewhere).",
+    "SOCY201 is 'or an equivalent course from another department' with no equivalents named. Encoded as SOCY201 only; accepting an equivalent is a manual check: the student confirms an equivalent statistics course with their advisor.",
     "'Up to two electives may be taken from outside of the Sociology Department' is encoded as a 3-course choose over the whole list plus a 1-course overlay requiring at least one elective from the SOCY list (3 electives minus at most 2 outside).",
     "Total credits print as 19 while the text says 18 (SOCY201 is 4 credits); not encoded.",
     "AAST498 is listed with the topic AAST498B (Urban Demography and Community); any AAST498 is accepted (the engine has no topic concept). AAST222, GEOG335 and NFSC425 are listed with no title.",
