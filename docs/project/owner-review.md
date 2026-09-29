@@ -501,3 +501,7 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Kinesiology: the catalog states a "C-" only for option-course prerequisites (KNES core) and the SPH benchmarks; a program-level "C-" is applied to every requirement. Please confirm it is not too strict.
 - Kinesiology: the option list (15 credits) and activity list (4 courses) live in a handbook not in the sources; encoded as KNES 300-499 and 100-199. Plan uses KNES101-103 as unconfirmed placeholders for real activity courses. "MATH/STAT Statistics Course" is encoded as any STAT or MATH course 100-499.
 - SPHL shared core: only SPHL100, BSCI170, BSCI180/171, BSCI201/202 and EPIB301 are shared; statistics is not. Global Health and Public Health Practice catalog tables were not read, so their uses are marked "confirm" in the file header.
+
+## `feat/sphl-fmsc` (2026-09-28): major Family Health (`fmsc-major`, SPHL); plan constructed, `official: false`
+- Family Health: no term-by-term plan is published and the SPH department page has no requirements; plan constructed from the catalog. It uses FMSC420 as an unconfirmed placeholder for the second 300-400 elective (FMSC190, FMSC290 and FMSC460 are real).
+- Family Health: "two 100-200 level" and "two 300-400 level" FMSC electives are encoded as FMSC 100-299 and 300-499 ranges; FMSC290 counts toward the economics pick-one and can also fill a lower elective when ECON200/201 is used instead. A program-level "C-" is applied, per the catalog.
