@@ -30,7 +30,7 @@ export function sectionScore(s: Section, context: SortContext = {}): number {
     const r = context.ratings?.[name];
     if (r != null) rating = Math.max(rating, (r - 1) / 4);
     const g = context.gpas?.[gpaKey(s.courseId, name)];
-    if (g != null) gpa = Math.max(gpa, g / 4);
+    if (g != null) gpa = Math.max(gpa, Math.max(0, (g - 2) / 2)); // 2.0 -> 0, 3.0 -> 0.5 (neutral), 4.0 -> 1
   }
   const seats = Math.min(Math.max(s.seats.open, 0), SEATS_SATURATION) / SEATS_SATURATION;
   return (

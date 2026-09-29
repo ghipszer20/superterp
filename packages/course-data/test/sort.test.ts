@@ -176,6 +176,11 @@ describe("sortLayouts: recommended", () => {
     expect(sectionScore(s, { ratings, gpas })).toBeCloseTo(0.4 * 0.5 + 0.4 * 0.5);
   });
 
+  it("scores missing grade data like a typical 3.0 GPA, not a 2.0", () => {
+    const typical = { [gpaKey("A", "Mid")]: 3.0 };
+    expect(sectionScore(sec("A", ["Nobody"], 0, t))).toBeCloseTo(sectionScore(sec("A", ["Mid"], 0, t), { gpas: typical }));
+  });
+
   it("saturates open seats at 10", () => {
     const ten = sec("A", ["Nobody"], 10, t);
     const fifty = sec("A", ["Nobody"], 50, t);
