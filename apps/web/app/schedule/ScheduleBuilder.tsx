@@ -6,6 +6,8 @@ import type { Section } from "@superterp/course-data/schedules";
 import { dispatchPlan, useAdvisorStore } from "@/app/advisor/store";
 import { Segmented } from "@/components/Segmented";
 import { EmptyState, SkeletonCard } from "@/components/ui";
+import { buildIcs } from "@/lib/schedule/ics";
+import { termDates } from "@/lib/schedule/term-dates";
 import { timeScale } from "@/lib/schedule/calendar";
 import { DEFAULT_FILTERS, readQuery, relaxConstraint, relaxOptions, toScheduleFilters, writeQuery, type FilterState } from "@/lib/schedule/filters";
 import type { GenerateRequest } from "@/lib/schedule/generate";
@@ -215,6 +217,18 @@ export function ScheduleBuilder() {
   // Only a saved plan's picks for courses still in this term count — a course the plan or the
   // picker dropped shouldn't leave a phantom "Plan A ✓".
   const planHasPicks = (p: PlanId) => Object.keys(saved.plans[p] ?? {}).some((c) => courses.includes(c));
+  const exportIcs = (picks: Record<string, string>) => {
+    if (!term) return;
+    const chosen = Object.entries(picks)
+      .filter(([c]) => courses.includes(c))
+      .flatMap(([c, id]) => sectionByKey.get(`${c}/${id}`) ?? []);
+    const url = URL.createObjectURL(new Blob([buildIcs(term, chosen)], { type: "text/calendar;charset=utf-8" }));
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `superterp-${term}.ics`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
   const planHeader = (picks: Record<string, string>, back: React.ReactNode) => (
     <div className={styles.editorTop}>
       {back}
@@ -227,6 +241,15 @@ export function ScheduleBuilder() {
       <button type="button" className={styles.save} onClick={() => save(picks)} disabled={!Object.keys(picks).length}>
         {savedNote ?? `Save as Plan ${plan}`}
       </button>
+      <button
+        type="button"
+        className={styles.exportBtn}
+        onClick={() => exportIcs(picks)}
+        disabled={!Object.keys(picks).length || !term || !termDates(term)}
+      >
+        Add to calendar (.ics)
+      </button>
+      {term && !termDates(term) ? <span className={styles.exportNote}>Class dates for this term aren’t available yet</span> : null}
     </div>
   );
   const idsOf = (picks: Record<string, Section>) => Object.fromEntries(Object.entries(picks).map(([c, s]) => [c, s.id]));
