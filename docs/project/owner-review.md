@@ -586,3 +586,8 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Elective credits conflict: department page says 45-credit major with 15 elective credits (also "six additional elective" courses); catalog says 55 credits with 18 elective credits. Catalog encoded (18 credits from the 10 named courses); confirm with the advisor.
 - Elective list can grow by program-committee approval; not encodable. Department page does not list electives.
 - No term-by-term plan in the sources; plan constructed from the catalog. Benchmark semester timelines not encoded.
+
+## `feat/usg-phsc` (2026-09-28): major Public Health Science at Shady Grove (`phsc-usg-major`, USG); plan constructed, `official: false`
+- Catalog heading says "(Discontinued)"; encoded anyway. Confirm whether to offer it.
+- Table matches College Park except PHSC300 replaces SPHL100; inherits phsc-major's flags (12 credits of options is an OPEN SLOT; option fills HLTH424, MIEH330, MIEH331, HLSA484 are unconfirmed).
+- Department page returned HTTP 403 (not checked); four-year-plans page has no Shady Grove plan, so the plan is constructed.
