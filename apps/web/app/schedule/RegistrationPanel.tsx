@@ -6,6 +6,7 @@
 import { useMemo, useSyncExternalStore } from "react";
 import type { Section } from "@superterp/course-data/schedules";
 import { Card } from "@/components/ui";
+import { eventTitle, formatEventDate } from "@/lib/calendar";
 import { meetingSummary } from "@/lib/schedule/sections";
 import {
   appointmentIcs,
@@ -68,7 +69,7 @@ function Body({
   return (
     <>
       {list.windows.length ? (
-        <p className={styles.note}>{list.windows.map((w) => `${w.label}: ${w.start}${w.end ? ` to ${w.end}` : ""}`).join(" · ")}</p>
+        <p className={styles.note}>{list.windows.map((w) => `${eventTitle(w)}: ${formatEventDate(w)}`).join(" · ")}</p>
       ) : null}
       <Card>
         <ul className={styles.list}>
