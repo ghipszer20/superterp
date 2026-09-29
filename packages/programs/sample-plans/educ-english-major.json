@@ -8,7 +8,7 @@
     "Element 2 (no course-to-period list in the source) filled with ENGL201, ENGL305, ENGL316, ENGL410, ENGL433; Element 3 with ENGL222, ENGL318, ENGL360; Element 4 with ENGL331, ENGL402, ENGL420, ENGL412; all real ENGL courses from the Academic Catalog list used by the English major's plans."
   ],
   "terms": [
-    { "term": "Freshman Fall", "courses": ["ENGL201"] },
+    { "term": "Freshman Fall", "courses": ["ENGL201", "UNIV100"] },
     { "term": "Freshman Spring", "courses": ["ENGL222", "TLPL250"] },
     { "term": "Sophomore Fall", "courses": ["ENGL301", "ENGL305", "COMM230"] },
     { "term": "Sophomore Spring", "courses": ["ENGL316", "ENGL318", "EDHD413"] },
@@ -16,5 +16,6 @@
     { "term": "Junior Spring", "courses": ["ENGL331", "ENGL402", "TLPL457", "TLPL300"] },
     { "term": "Senior Fall", "courses": ["ENGL420", "ENGL412", "TLPL451", "TLPL452", "TLPL456", "TLPL479"] },
     { "term": "Senior Spring", "courses": ["ENGL433", "TLPL478", "TLPL489"] }
-  ]
+  ],
+  "credits": { "UNIV100": 1 }
 }

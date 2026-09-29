@@ -7,8 +7,9 @@
     "UMD publishes no sample plan for this minor. Built from the requirements: AOSC431 and AOSC432 required, AOSC123 and AOSC200 for the two electives, and AOSC400 for the additional elective. Flagged in docs/project/owner-review.md."
   ],
   "terms": [
-    { "term": "Term 1", "courses": ["AOSC123", "AOSC200"] },
+    { "term": "Term 1", "courses": ["AOSC123", "AOSC200", "CMNS100"] },
     { "term": "Term 2", "courses": ["AOSC431", "AOSC432"] },
     { "term": "Term 3", "courses": ["AOSC400"] }
-  ]
+  ],
+  "credits": { "CMNS100": 1 }
 }

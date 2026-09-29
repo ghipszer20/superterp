@@ -9,7 +9,7 @@
     "'ARTT47X | (Advanced Digital Media Choice: 479a/c/d/e)' is filled with ARTT479A, one of the catalog's own four lettered options."
   ],
   "terms": [
-    { "term": "Year 1 Fall", "courses": ["MATH115", "ARTT100", "ARTT110", "IMDM101"] },
+    { "term": "Year 1 Fall", "courses": ["MATH115", "ARTT100", "ARTT110", "IMDM101", "ARHU158"] },
     { "term": "Year 1 Spring", "courses": ["CMSC122", "ARTT200", "ARTT210", "IMDM127"] },
     { "term": "Year 2 Fall", "courses": ["ENGL143", "ARTT255", "IMDM150"] },
     { "term": "Year 2 Spring", "courses": ["ARTT370", "IMDM227"] },

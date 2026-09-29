@@ -8,7 +8,7 @@
   ],
   "credits": { "MUSP302": 2, "MUSP303": 2, "MUSP402": 2, "MUSP403": 2, "MUSC229": 1 },
   "terms": [
-    { "term": "Year 1 Fall", "courses": ["MUSC140", "MUSP302", "MUSC229"] },
+    { "term": "Year 1 Fall", "courses": ["MUSC140", "MUSP302", "MUSC229", "ARHU158"] },
     { "term": "Year 1 Spring", "courses": ["MUSC130", "MUSP303", "MUSC229"] },
     { "term": "Year 2 Fall", "courses": ["MUSP402", "MUSC229"] },
     { "term": "Year 2 Spring", "courses": ["MUSP403", "MUSC229"] }

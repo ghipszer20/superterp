@@ -8,73 +8,14 @@
     "Fills (no course lists in the source): regional HIST electives HIST284 (East Asia) and HIST111; History electives HIST304, HIST306, HIST307, HIST310, HIST319, HIST320, HIST106, HIST120; all real catalog courses used by the History major's plan. Economics: ECON200."
   ],
   "terms": [
-    {
-      "term": "Freshman Fall",
-      "courses": [
-        "HIST200",
-        "GEOG202"
-      ]
-    },
-    {
-      "term": "Freshman Spring",
-      "courses": [
-        "HIST208",
-        "GVPT170",
-        "SOCY100"
-      ]
-    },
-    {
-      "term": "Sophomore Fall",
-      "courses": [
-        "HIST284",
-        "HIST111",
-        "ECON200",
-        "TLPL250"
-      ]
-    },
-    {
-      "term": "Sophomore Spring",
-      "courses": [
-        "HIST106",
-        "HIST120",
-        "EDHD413",
-        "TLPL300"
-      ]
-    },
-    {
-      "term": "Junior Fall",
-      "courses": [
-        "HIST304",
-        "HIST306",
-        "EDHD426",
-        "TLPL481",
-        "TLPL488",
-        "TLPL470"
-      ]
-    },
-    {
-      "term": "Junior Spring",
-      "courses": [
-        "HIST307",
-        "HIST310"
-      ]
-    },
-    {
-      "term": "Senior Fall",
-      "courses": [
-        "HIST319",
-        "HIST320",
-        "TLPL471",
-        "TLPL479"
-      ]
-    },
-    {
-      "term": "Senior Spring",
-      "courses": [
-        "HIST408",
-        "TLPL478",
-        "TLPL489"
-      ]
-    }
-  ]
+    { "term": "Freshman Fall", "courses": ["HIST200", "GEOG202", "UNIV100"] },
+    { "term": "Freshman Spring", "courses": ["HIST208", "GVPT170", "SOCY100"] },
+    { "term": "Sophomore Fall", "courses": ["HIST284", "HIST111", "ECON200", "TLPL250"] },
+    { "term": "Sophomore Spring", "courses": ["HIST106", "HIST120", "EDHD413", "TLPL300"] },
+    { "term": "Junior Fall", "courses": ["HIST304", "HIST306", "EDHD426", "TLPL481", "TLPL488", "TLPL470"] },
+    { "term": "Junior Spring", "courses": ["HIST307", "HIST310"] },
+    { "term": "Senior Fall", "courses": ["HIST319", "HIST320", "TLPL471", "TLPL479"] },
+    { "term": "Senior Spring", "courses": ["HIST408", "TLPL478", "TLPL489"] }
+  ],
+  "credits": { "UNIV100": 1 }
 }

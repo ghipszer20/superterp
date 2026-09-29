@@ -11,7 +11,7 @@
   ],
   "credits": { "CHIN206": 4, "CHIN207": 4 },
   "terms": [
-    { "term": "Year 1 Fall", "courses": ["CHIN206"] },
+    { "term": "Year 1 Fall", "courses": ["CHIN206", "ARHU158"] },
     { "term": "Year 1 Spring", "courses": ["CHIN207"] },
     { "term": "Year 2 Fall", "courses": ["CHIN301", "EALL284"] },
     { "term": "Year 2 Spring", "courses": ["CHIN302", "EALL285"] },

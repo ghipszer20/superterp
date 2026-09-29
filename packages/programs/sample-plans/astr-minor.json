@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the requirements: ASTR100 (introductory), ASTR220 (intermediate), and three upper-level courses (ASTR300, ASTR305, ASTR315). Flagged in docs/project/owner-review.md."
   ],
-  "credits": { "ASTR315": 4 },
+  "credits": { "ASTR315": 4, "CMNS100": 1 },
   "terms": [
-    { "term": "Term 1", "courses": ["ASTR100"] },
+    { "term": "Term 1", "courses": ["ASTR100", "CMNS100"] },
     { "term": "Term 2", "courses": ["ASTR220"] },
     { "term": "Term 3", "courses": ["ASTR300", "ASTR305"] },
     { "term": "Term 4", "courses": ["ASTR315"] }

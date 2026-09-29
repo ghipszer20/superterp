@@ -7,8 +7,9 @@
     "UMD publishes no sample plan for this minor. Built from the catalog's requirements: BUFN400, CMSC320, BUFN403 required, plus one of BUFN401/BUFN402 (BUFN401 chosen) and one of the CMSC 400-level list (CMSC421 chosen). Flagged in docs/project/owner-review.md."
   ],
   "terms": [
-    { "term": "Term 1", "courses": ["BUFN400", "CMSC320"] },
+    { "term": "Term 1", "courses": ["BUFN400", "CMSC320", "CMNS100"] },
     { "term": "Term 2", "courses": ["BUFN401", "CMSC421"] },
     { "term": "Term 3", "courses": ["BUFN403"] }
-  ]
+  ],
+  "credits": { "CMNS100": 1 }
 }

@@ -8,7 +8,7 @@
   ],
   "credits": { "MUSC129G": 1, "MUSC129K": 1 },
   "terms": [
-    { "term": "Year 1 Fall", "courses": ["MUSC204", "MUSC129G"] },
+    { "term": "Year 1 Fall", "courses": ["MUSC204", "MUSC129G", "ARHU158"] },
     { "term": "Year 1 Spring", "courses": ["MUSC220", "MUSC129G"] },
     { "term": "Year 2 Fall", "courses": ["MUSC438E", "MUSC129K"] },
     { "term": "Year 2 Spring", "courses": ["MUSC438K", "MUSC129K"] },

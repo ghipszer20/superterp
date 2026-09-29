@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the department page's Electrical Engineering sample pathway: ENEE290 (4 credits), ENEE491, ENEE492, ENEE493, ENEE435. Flagged in docs/project/owner-review.md."
   ],
-  "credits": { "ENEE290": 4 },
+  "credits": { "ENEE290": 4, "UNIV100": 1 },
   "terms": [
-    { "term": "Term 1", "courses": ["ENEE290", "ENEE491"] },
+    { "term": "Term 1", "courses": ["ENEE290", "ENEE491", "UNIV100"] },
     { "term": "Term 2", "courses": ["ENEE492", "ENEE493", "ENEE435"] }
   ]
 }

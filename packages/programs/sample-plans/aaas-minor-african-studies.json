@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the requirements: AAAS200; Area 1 = AAAS310 and HIST310 (both upper-level); Area 2 = AAAS190 and GEOG422. Optional capstone omitted. Flagged in docs/project/owner-review.md."
   ],
-  "credits": {},
+  "credits": { "UNIV100": 1 },
   "terms": [
-    { "term": "Term 1", "courses": ["AAAS200", "AAAS190"] },
+    { "term": "Term 1", "courses": ["AAAS200", "AAAS190", "UNIV100"] },
     { "term": "Term 2", "courses": ["AAAS310", "HIST310"] },
     { "term": "Term 3", "courses": ["GEOG422"] }
   ]

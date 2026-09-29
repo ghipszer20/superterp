@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the requirements: the five required courses, then Elective Option 1 (HESP305 and HESP406). Flagged in docs/project/owner-review.md."
   ],
-  "credits": {},
+  "credits": { "UNIV100": 1 },
   "terms": [
-    { "term": "Term 1", "courses": ["HESP202", "HESP300"] },
+    { "term": "Term 1", "courses": ["HESP202", "HESP300", "UNIV100"] },
     { "term": "Term 2", "courses": ["HESP305", "HESP400", "HESP403"] },
     { "term": "Term 3", "courses": ["HESP406", "HESP407"] }
   ]

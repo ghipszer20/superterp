@@ -7,8 +7,9 @@
     "UMD publishes no sample plan for this minor. Built from the requirements: EDHD200 and EDHD306, plus EDHD201 (Cognitive), EDHD402 (Social) and EDHD320 (Lifespan). Flagged in docs/project/owner-review.md."
   ],
   "terms": [
-    { "term": "Term 1", "courses": ["EDHD200", "EDHD201"] },
+    { "term": "Term 1", "courses": ["EDHD200", "EDHD201", "UNIV100"] },
     { "term": "Term 2", "courses": ["EDHD306", "EDHD402"] },
     { "term": "Term 3", "courses": ["EDHD320"] }
-  ]
+  ],
+  "credits": { "UNIV100": 1 }
 }

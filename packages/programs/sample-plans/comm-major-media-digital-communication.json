@@ -12,65 +12,15 @@
     "Applied's two picks filled with COMM388 and COMM425.",
     "Specialization Electives' 'select four of the following' filled with COMM371, COMM372, COMM373, and COMM374."
   ],
-  "credits": {
-    "COMM130": 1
-  },
+  "credits": { "COMM130": 1 },
   "terms": [
-    {
-      "term": "Year 1 Fall",
-      "courses": [
-        "COMM230",
-        "COMM130"
-      ]
-    },
-    {
-      "term": "Year 1 Spring",
-      "courses": [
-        "COMM250",
-        "CCJS200"
-      ]
-    },
-    {
-      "term": "Year 2 Fall",
-      "courses": [
-        "COMM303",
-        "COMM302"
-      ]
-    },
-    {
-      "term": "Year 2 Spring",
-      "courses": [
-        "COMM304",
-        "COMM307"
-      ]
-    },
-    {
-      "term": "Year 3 Fall",
-      "courses": [
-        "COMM422",
-        "COMM382"
-      ]
-    },
-    {
-      "term": "Year 3 Spring",
-      "courses": [
-        "COMM388",
-        "COMM425"
-      ]
-    },
-    {
-      "term": "Year 4 Fall",
-      "courses": [
-        "COMM371",
-        "COMM372"
-      ]
-    },
-    {
-      "term": "Year 4 Spring",
-      "courses": [
-        "COMM373",
-        "COMM374"
-      ]
-    }
+    { "term": "Year 1 Fall", "courses": ["COMM230", "COMM130", "ARHU158"] },
+    { "term": "Year 1 Spring", "courses": ["COMM250", "CCJS200"] },
+    { "term": "Year 2 Fall", "courses": ["COMM303", "COMM302"] },
+    { "term": "Year 2 Spring", "courses": ["COMM304", "COMM307"] },
+    { "term": "Year 3 Fall", "courses": ["COMM422", "COMM382"] },
+    { "term": "Year 3 Spring", "courses": ["COMM388", "COMM425"] },
+    { "term": "Year 4 Fall", "courses": ["COMM371", "COMM372"] },
+    { "term": "Year 4 Spring", "courses": ["COMM373", "COMM374"] }
   ]
 }

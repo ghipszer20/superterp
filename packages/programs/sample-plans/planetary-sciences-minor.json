@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the requirements: ASTR100 for the astronomy foundation, GEOL100+GEOL110 for the geology foundation, ASTR330 for the core course, and ASTR220+GEOL322+GEOL340 as the three electives. Flagged in docs/project/owner-review.md."
   ],
-  "credits": { "GEOL100": 3, "GEOL110": 1, "GEOL340": 4 },
+  "credits": { "GEOL100": 3, "GEOL110": 1, "GEOL340": 4, "CMNS100": 1 },
   "terms": [
-    { "term": "Term 1", "courses": ["ASTR100"] },
+    { "term": "Term 1", "courses": ["ASTR100", "CMNS100"] },
     { "term": "Term 2", "courses": ["GEOL100", "GEOL110"] },
     { "term": "Term 3", "courses": ["ASTR330"] },
     { "term": "Term 4", "courses": ["ASTR220", "GEOL322", "GEOL340"] }

@@ -12,65 +12,15 @@
     "Applied's two picks filled with COMM311 and COMM370.",
     "The unnamed '3xx or 4xx-Level COMM Electives' slot (12 credits, 4 courses) filled with COMM340, COMM341, COMM351, and COMM365 (real, currently-approved COMM courses picked only to fill the count/level requirement)."
   ],
-  "credits": {
-    "COMM130": 1
-  },
+  "credits": { "COMM130": 1 },
   "terms": [
-    {
-      "term": "Year 1 Fall",
-      "courses": [
-        "COMM107",
-        "COMM130"
-      ]
-    },
-    {
-      "term": "Year 1 Spring",
-      "courses": [
-        "COMM250",
-        "STAT100"
-      ]
-    },
-    {
-      "term": "Year 2 Fall",
-      "courses": [
-        "COMM201",
-        "COMM302"
-      ]
-    },
-    {
-      "term": "Year 2 Spring",
-      "courses": [
-        "COMM304",
-        "COMM305"
-      ]
-    },
-    {
-      "term": "Year 3 Fall",
-      "courses": [
-        "COMM330",
-        "COMM324"
-      ]
-    },
-    {
-      "term": "Year 3 Spring",
-      "courses": [
-        "COMM311",
-        "COMM370"
-      ]
-    },
-    {
-      "term": "Year 4 Fall",
-      "courses": [
-        "COMM340",
-        "COMM341"
-      ]
-    },
-    {
-      "term": "Year 4 Spring",
-      "courses": [
-        "COMM351",
-        "COMM365"
-      ]
-    }
+    { "term": "Year 1 Fall", "courses": ["COMM107", "COMM130", "ARHU158"] },
+    { "term": "Year 1 Spring", "courses": ["COMM250", "STAT100"] },
+    { "term": "Year 2 Fall", "courses": ["COMM201", "COMM302"] },
+    { "term": "Year 2 Spring", "courses": ["COMM304", "COMM305"] },
+    { "term": "Year 3 Fall", "courses": ["COMM330", "COMM324"] },
+    { "term": "Year 3 Spring", "courses": ["COMM311", "COMM370"] },
+    { "term": "Year 4 Fall", "courses": ["COMM340", "COMM341"] },
+    { "term": "Year 4 Spring", "courses": ["COMM351", "COMM365"] }
   ]
 }

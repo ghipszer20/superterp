@@ -7,20 +7,8 @@
     "UMD publishes no sample plan for this minor. Built from the requirements: all five required courses. Flagged in docs/project/owner-review.md."
   ],
   "terms": [
-    {
-      "term": "Term 1",
-      "courses": [
-        "INST364",
-        "INST366"
-      ]
-    },
-    {
-      "term": "Term 2",
-      "courses": [
-        "INST455",
-        "INST456",
-        "INST461"
-      ]
-    }
-  ]
+    { "term": "Term 1", "courses": ["INST364", "INST366", "INST101"] },
+    { "term": "Term 2", "courses": ["INST455", "INST456", "INST461"] }
+  ],
+  "credits": { "INST101": 1 }
 }

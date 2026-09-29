@@ -7,8 +7,9 @@
     "UMD publishes no sample plan for this minor. Built from the requirements: GEOG272 and GEOG373 required, GEOG473 and GEOG475 for the two GIS courses, GEOG306 for statistics. Flagged in docs/project/owner-review.md."
   ],
   "terms": [
-    { "term": "Term 1", "courses": ["GEOG272", "GEOG306"] },
+    { "term": "Term 1", "courses": ["GEOG272", "GEOG306", "UNIV100"] },
     { "term": "Term 2", "courses": ["GEOG373"] },
     { "term": "Term 3", "courses": ["GEOG473", "GEOG475"] }
-  ]
+  ],
+  "credits": { "UNIV100": 1 }
 }

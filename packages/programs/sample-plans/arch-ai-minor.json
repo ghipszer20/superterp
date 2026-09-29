@@ -7,7 +7,8 @@
     "UMD publishes no sample plan for this minor. Built from the catalog's required courses (ARCH418 appears once; the minor needs the J and D sections). Flagged in docs/project/owner-review.md."
   ],
   "terms": [
-    { "term": "Term 1", "courses": ["ARCH230", "PHIL211"] },
+    { "term": "Term 1", "courses": ["ARCH230", "PHIL211", "UNIV100"] },
     { "term": "Term 2", "courses": ["ARCH418", "ARCH470"] }
-  ]
+  ],
+  "credits": { "UNIV100": 1 }
 }
