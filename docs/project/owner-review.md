@@ -538,3 +538,6 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Technical electives are encoded as one credit `choose` over each concentration's blocks (the catalog says any combination may be taken). "ENSP330 or GVPT273" is not an alternatives group because GVPT273 is also listed alone in Wildlife and Habitats.
 - Soil and Watershed Science: ENST411's credits are not given; 4 assumed from the "at least 13 credits" total. Credits for ENST301/302/303/309 are not given either.
 - The WPIT (wetlands) and Soil Certification Exam footnotes are advising notes, not encoded. The 2.0 major GPA and 120-credit total are manual.
+
+## `feat/educ-f` (2026-09-28): major Secondary Education - Science (`scie-major`); sample plan constructed, `official: false`
+- Secondary Education - Science: the sources list Agriculture, Biology, Chemistry, Computer Science, Geology and Physics only as double-major content areas with no per-area requirements, so it is one program (no tracks) covering the 41-credit education component; content-area courses are not encoded. The COE four-year plans are links only, so the plan is constructed. TLPL401 needs B-; BSCI348 (section T) and TLPL488 (section B) are matched by course code. GPA 2.75, Praxis, admission steps are manual.
