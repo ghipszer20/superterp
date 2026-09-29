@@ -17,6 +17,7 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
   - Secondary Education Certificate (`tlpl-cert`): only the catalog states requirements (education.umd.edu/studentinfo has none). Part II accepts 6 credits of any TLPL 400-499 course outside Parts I and III (catalog shows only the social studies pair TLPL470/471); other content areas may use other prefixes. Admission gates and the Transcript Notation path are manual. Sample plan `tlpl-cert.json` is constructed.
   - International Agriculture and Natural Resources Certificate (`agnr-cert`): the international list accepts both the department's 10 courses ("BGMT 392" read as BMGT392) and the catalog-only BMGT390, BSCI365, ECON440, GEOG422, GEOG434 (never narrower); decide whether the catalog-only ones stay. Foreign language accepts any of 16 language prefixes (neither source names courses). The "3 courses in AGNR for non-AGNR majors" rule, travel study/abroad and the Travel Study Seminar (no course codes named) are manual. Sample plan `agnr-cert.json` is constructed.
 - Academic calendar (2026-09-29): the Registrar's dates page has no pass/fail deadline row; its schedule-adjustment row says grading method can be changed then, so SuperTerp shows the **pass/fail deadline = the last day of schedule adjustment** (e.g. Feb 9, 2027 for Spring 2027). Confirm, or point to the official pass/fail deadline.
+- **UI approval (session 5, 2026-09-29):** academic dates, merged: "Upcoming dates" card at the bottom of Today and a muted "Key dates" line under each plan term. Screenshots: `apps/web/.ui-check/session5/today.png`, `advisor_seed_owner.png`.
 - Schedule builder: gallery mini-calendar blocks carry no text; Build-my-own design; Plan A/B/C slots. Final look at the Campus navigation (PR #1).
 - `feat/ocr-comm` (2026-09-28): OCR re-check of Communication majors `comm-major-communication-studies`, `-health-science-communication`, `-media-digital-communication`, `-political-communication-public-advocacy`, `-public-relations`; plans: Health and Science official (best-effort placement), other four constructed.
   - Health and Science plan OCR gives slot types (COMM107/200/230, 130, 250, 302, 304, 305/306/307, 201/301/303, Diversity, Leadership, Applied, four specialization electives) but no specific fill courses and column-interleaved terms, so Fall/Spring placement is a guess; the encoding matches the slots.
@@ -659,7 +660,17 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 ## `feat/video-minor` (2026-09-28): Video Production and Documentary Filmmaking Minor, encoded from the owner's table; sample plan constructed
 - Catalog page lists no requirements; encoded from the owner-pasted table. No grade floor stated, C- used (siblings state C-). Department page not checked.
 - "Two to five courses (6-15 credits)": only the 2-course minimum is enforced; JOUR368T is in two rows but counts once within the program.
+
+### Session 1 (2026-09-29): Criminology and Criminal Justice at Shady Grove; Criminal Justice minor moved to USG
+- `ccjs-usg-major` re-uses the College Park `ccjs-major` requirements, because the Shady Grove catalog table differs only in wording. The sample plan is copied from College Park (constructed). Department page not checked separately.
+- `ccjs-minor-shady-grove` now has college USG (rulings.md "Shady Grove").
 ## `feat/distinct-areas` (2026-09-28): distribution areas can be course filters; "from at least two departments" now enforced
 - `lacs-cert`: electives re-encoded as a distribution (3 courses, at least 2 areas, one filter area per department in the existing set, 100-499). The 300+ overlay is kept. Sample plan changed: SPAN363 replaced by HIST307 so the plan spans two departments.
 - `lacs-minor`: electives re-encoded as a distribution (2 courses, 2 areas, one per department, 300-499). Sample plan unchanged (SPAN458 + LACS369). The 75% Latin American content rule stays manual.
 - Left manual: `musc-minor-culture` (source approves four ensembles but does not assign them to culture areas) and `lgbt-cert` (source names the 6 areas but not which courses belong to each).
+
+## `feat/usg-bsci` (2026-09-29): Biological Sciences at Shady Grove (PHNB only); plan constructed
+- `bsci-usg-major`: built from `bsci-major-phnb`. Shady Grove table adds BSCI223 and drops BSCI207 and the freshman seminar; confirm this is intended rather than a catalog omission.
+- Footnote 2 (General Chemistry II lab may substitute for CHEM272) has no course code, so it is a manual note; CHEM272 stays required.
+- Advanced-program 11-credit pool uses the Shady Grove list (special topics by base course number, statistics one-course cap and section topics not enforced); no lab minimum is stated, so College Park's at-least-one-lab rule is dropped.
+- The 22 elective credits, the 96-credit total and General Education are not encoded. Sample plan is constructed, not official.

@@ -16,6 +16,7 @@ import { CourseSheet } from "./CourseSheet";
 import { useCatalog, type CatalogState } from "./data";
 import { DisclaimerGate } from "./DisclaimerGate";
 import { ImportTranscriptView } from "./ImportTranscriptView";
+import type { AcademicEvent } from "@superterp/campus-data";
 import { PlanView } from "./PlanView";
 import { PriorCreditView } from "./PriorCreditView";
 import { SetupView } from "./SetupView";
@@ -35,14 +36,14 @@ const ANALYSIS_DELAY_MS = 350;
 
 export type OpenCourse = { id: string; term: string | null };
 
-export function AdvisorApp() {
+export function AdvisorApp({ calendar }: { calendar: AcademicEvent[] }) {
   const store = useAdvisorStore();
   const catalog = useCatalog();
 
   if (store === null) return <Shell />;
   if (!store.consent || !hasConsent(store.consent)) return <DisclaimerGate />;
   if (!store.plan) return <SetupView plan={null} onDone={(plan) => savePlan(plan)} />;
-  return <Planner plan={store.plan} catalog={catalog} signedBy={store.consent.name} signedAt={store.consent.acceptedAt} />;
+  return <Planner plan={store.plan} catalog={catalog} signedBy={store.consent.name} signedAt={store.consent.acceptedAt} calendar={calendar} />;
 }
 
 function Shell() {
@@ -56,7 +57,7 @@ function Shell() {
   );
 }
 
-function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; catalog: CatalogState; signedBy: string; signedAt: string }) {
+function Planner({ plan, catalog, signedBy, signedAt, calendar }: { plan: AdvisorPlan; catalog: CatalogState; signedBy: string; signedAt: string; calendar: AcademicEvent[] }) {
   const view = useView();
   const [editing, setEditing] = useState(() => initialSetup());
   const [importing, setImporting] = useState(() => initialImport());
@@ -108,7 +109,7 @@ function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; cat
       ) : null}
 
       {view === "plan" ? (
-        <PlanView plan={plan} catalog={catalog} checked={checked} analysis={analysis} prior={prior} onOpenCourse={setOpen} />
+        <PlanView plan={plan} catalog={catalog} checked={checked} analysis={analysis} prior={prior} calendar={calendar} onOpenCourse={setOpen} />
       ) : null}
       {view === "credit" ? <PriorCreditView plan={plan} prior={prior} catalog={catalog} /> : null}
       {view === "audit" ? <AuditView plan={plan} analysis={analysis} onOpenCourse={setOpen} /> : null}

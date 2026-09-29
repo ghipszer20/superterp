@@ -32,12 +32,19 @@ export const englMinorDigitalStorytelling: Program = {
   ],
   reviewNotes: [
     "Department page not checked: english.umd.edu is only a homepage with no requirements. Encoded from the catalog.",
-    "OPEN SLOT: 12 credits of approved 3xx/4xx courses (at least one 4xx course, at least one critical analysis & theory course, at least one craft & creative process course); the approved list is only at go.umd.edu/digitalstorytelling, not in the fetched sources.",
+    "Open slot 'approved-courses' (openSlot requirement): 12 credits of approved 3xx/4xx courses; the approved list is only at go.umd.edu/digitalstorytelling, so the student confirms it with their advisor. The conditions (at least one 4xx course, at least one critical analysis & theory course, at least one craft & creative process course) are manual.",
     "'English majors may count two Digital Storytelling and Poetics minor courses toward both' -> maxSharedWith toward the English major tracks: 2 courses. The catalog is silent on sharing with other programs, so none is set for them.",
     "Not encoded (manual): the final-semester digital portfolio (by Nov 1 / Apr 1 / Aug 1); acceptance into the minor by the start of the semester before graduation; minor GPA 2.0.",
   ],
   requirements: [
     { kind: "course", id: "engl295", name: "Introduction to Digital Storytelling and Poetics", options: ["ENGL295"] },
+    {
+      kind: "openSlot",
+      id: "approved-courses",
+      name: "Approved courses",
+      credits: 12,
+      note: "From the approved list at go.umd.edu/digitalstorytelling: 3xx/4xx courses, at least one 4xx, one critical analysis & theory and one craft & creative process course.",
+    },
   ],
 };
 

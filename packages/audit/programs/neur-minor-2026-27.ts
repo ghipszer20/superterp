@@ -22,7 +22,7 @@ export const neurMinor: Program = {
     "Eligibility restriction (department page): all majors are eligible EXCEPT students in the Physiology & Neurobiology (PHNB) track of Biological Sciences and the Neuroscience (NEUR) major. Not enforced (no declared-major gate yet); manual note.",
     "Application prerequisites (both sources): 30 college credits with 15 at UMD, good standing, and C- or better in BSCI170, CHEM131/CHEM132 and NEUR200 or PSYC202. These gate admission and are not among the minor's 21-23 credits, so they are not encoded as requirements; manual check.",
     "The 2.0 cumulative GPA across minor courses is a GPA-average rule, not encoded (manual check). The C- minimum grade is encoded on the whole program.",
-    "OPEN SLOT: 6-8 credits (two elective courses) from the eligible-elective list on the department program website; the list is not published in either fetched source.",
+    "Open slot 'neur-electives' (openSlot requirement): 6-8 credits (two elective courses) from the eligible-elective list on the department program website; the list is not published in either fetched source. Set to the 6-credit minimum.",
     "Seniors must apply before the end of fall schedule adjustment because PSYC409 is offered only in the fall; application deadlines are Oct 1, Mar 1 and Jun 1. Timing rules, not encoded.",
   ],
   requirements: [
@@ -31,6 +31,13 @@ export const neurMinor: Program = {
     { kind: "course", id: "lab", name: "Laboratory or data science course", options: ["NEUR405", "PSYC407", "PSYC417"] },
     { kind: "course", id: "biological", name: "Biological neuroscience course", options: ["PSYC304", "PSYC406", "BSCI446"] },
     { kind: "course", id: "behavior", name: "Animal behavior course", options: ["PSYC403", "PSYC302", "BSCI360"] },
+    {
+      kind: "openSlot",
+      id: "neur-electives",
+      name: "Neuroscience electives",
+      credits: 6,
+      note: "Two courses (6-8 credits) from the eligible-elective list on the Psychology department's Neuroscience Minor page; confirm with your advisor.",
+    },
   ],
 };
 

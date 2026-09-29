@@ -31,7 +31,7 @@ export const plcyMinorStep: Program = {
   maxSharedWith: [{ courses: 2 }],
   reviewNotes: [
     "Cross-listed minor: the same requirement table appears under ENGR, INFO and PLCY catalog pages (the three pages differ only in their title line, checked by diff). Encoded once, under PLCY (main college per the owner ruling).",
-    "OPEN SLOT: 9 credits (3 courses) of STEP electives, at least 6 credits at 300-400 level; the catalog says 'see website' and the department page's elective list isn't in the fetched text, so no list is published in the sources (the 300-400 rule is left with it).",
+    "Open slot 'step-electives' (openSlot requirement): 9 credits (3 courses) of STEP electives, at least 6 credits at 300-400 level; the catalog says 'see website' and the department page's elective list isn't in the fetched text, so no list is published and the student confirms it with their advisor (the 300-400 rule is in the slot note, not enforced).",
     "Two tracks (Track 1 capstone ENES440, Track 2 SSRD capstone ENES401) share ENES240 and differ only in the capstone and the elective list; encoded as one program with the capstone as ENES440 or ENES401. The department page says ENES401 is only for students in the SSRD concentration who took at least 2 SSRD electives; not checked.",
     "ENES240 is also PLCY240 (department page: 'ENES 240/PLCY 240'); both accepted. ENES240 needs a B- to register for ENES440 or ENES401 (catalog footnote), encoded as a B- minimum on ENES240 alone.",
     "No overall grade floor is stated in either source while sibling minors state C-; C- applied by owner ruling.",
@@ -52,6 +52,13 @@ export const plcyMinorStep: Program = {
       id: "capstone",
       name: "Capstone: ENES440 (Track 1) or ENES401 (Track 2, SSRD concentration)",
       options: ["ENES440", "ENES401"],
+    },
+    {
+      kind: "openSlot",
+      id: "step-electives",
+      name: "STEP electives",
+      credits: 9,
+      note: "Three STEP elective courses, at least 6 credits at the 300-400 level; the list is on the SPP STEP minor page (spp.umd.edu/science-technology-ethics-and-policy-step-minor); confirm with your advisor.",
     },
   ],
 };

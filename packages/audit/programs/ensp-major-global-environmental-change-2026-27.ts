@@ -18,8 +18,8 @@ export const enspMajorGlobalEnvironmentalChange: Program = {
   reviewNotes: [
     ...enspCommonReviewNotes,
     "Official four-year plan (agnr.umd.edu PDF) transcribed; placeholders filled with real catalog courses (each fill is in the sample plan's notes). The plan's Restricted Elective, Techniques & Methods and similar unnamed slots are left out of the sample plan because they are not encoded.",
-    "OPEN SLOT: Techniques & Methods (9 credits) names no courses or department in the catalog (only 'See ENSP website for list of approved electives', no web access); not encoded, so the audit cannot check it.",
-    "OPEN SLOT: Restricted Electives (6 credits from one Area, 3 from the other) (9 credits) names no courses or department in the catalog (only 'See ENSP website for list of approved electives', no web access); not encoded, so the audit cannot check it.",
+    "Open slot 'techniques-methods-gec' (openSlot requirement): techniques and methods, 9 credits; the catalog only says 'See ENSP website for list of approved electives' (no list available to us), so the student confirms it with their advisor.",
+    "Open slot 'restricted-electives-gec' (openSlot requirement): restricted electives, 9 credits; the catalog only says 'See ENSP website for list of approved electives' (no list available to us), so the student confirms it with their advisor.",
     "Overlays: GEOL100 and the ENST200/GEOL102 row may also serve Core Group 3 (footnote 3 forbids double-counting only Applied Science and Policy). The GVPT306/ENSP340/ENSP342/ENSP350 row is not an overlay: ENSP340/342/350 are Core Applied options; the plan fills the row with GVPT306 and a Restricted Elective with ENSP330 for the Core.",
     "GEOG342 and GEOG345 appear in the catalog rows with no title (table-conversion artifact); encoded as the course codes given.",
   ],
@@ -36,6 +36,8 @@ export const enspMajorGlobalEnvironmentalChange: Program = {
     { kind: "choose", id: "policy-gec", name: "Global Environmental Politics or an ENSP policy course (GVPT306, ENSP340, ENSP342 or ENSP350)", count: 1, from: { courses: ["GVPT306", "ENSP340", "ENSP342", "ENSP350"] } },
     { kind: "choose", id: "climate-gec", name: "GEOG442, AOSC400 or GEOL437", count: 1, from: { courses: ["GEOG442", "AOSC400", "GEOL437"] } },
     { kind: "course", id: "ensp386-gec", name: "Internship (ENSP386)", options: ["ENSP386"] },
+    { kind: "openSlot", id: "techniques-methods-gec", name: "Techniques and methods", credits: 9, note: "Approved list on the ensp website." },
+    { kind: "openSlot", id: "restricted-electives-gec", name: "Restricted electives", credits: 9, note: "6 credits from one Area, 3 from the other; approved list on the ENSP website." },
   ],
 };
 

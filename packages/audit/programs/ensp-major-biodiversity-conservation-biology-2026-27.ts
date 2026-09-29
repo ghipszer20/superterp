@@ -18,7 +18,7 @@ export const enspMajorBiodiversityConservation: Program = {
   reviewNotes: [
     ...enspCommonReviewNotes,
     "Official four-year plan (agnr.umd.edu PDF) transcribed; placeholders filled with real catalog courses (each fill is in the sample plan's notes). The plan's Restricted Elective, Techniques & Methods and similar unnamed slots are left out of the sample plan because they are not encoded.",
-    "OPEN SLOT: Restricted Electives (5 courses from an approved list) (15 credits) names no courses or department in the catalog (only 'See ENSP website for list of approved electives', no web access); not encoded, so the audit cannot check it.",
+    "Open slot 'restricted-electives-bcb' (openSlot requirement): restricted electives, 15 credits; the catalog only says 'See ENSP website for list of approved electives' (no list available to us), so the student confirms it with their advisor.",
     "Overlay: the BSCI180/BSCI171 lab may also serve Core Group 1 (footnote 3 forbids double-counting only Applied Science and Policy). The plan fills its 'App Sci & Pol' slot with ENSP330 and its fourth Core group with AREC240.",
   ],
   requirements: [
@@ -33,6 +33,7 @@ export const enspMajorBiodiversityConservation: Program = {
     { kind: "sets", id: "orgchem1-bcb", name: "Organic Chemistry I and Laboratory I (CHEM231 & CHEM232)", count: 1, options: [["CHEM231", "CHEM232"]] },
     { kind: "sets", id: "orgchem2-bcb", name: "Organic Chemistry II and Laboratory II (CHEM241 & CHEM242)", count: 1, options: [["CHEM241", "CHEM242"]] },
     { kind: "choose", id: "calc2-bcb", name: "Calculus II or Discrete Mathematics (MATH141, MATH121 or MATH135)", count: 1, from: { courses: ["MATH141", "MATH121", "MATH135"] } },
+    { kind: "openSlot", id: "restricted-electives-bcb", name: "Restricted electives", credits: 15, note: "5 courses from the approved list on the ENSP website." },
   ],
 };
 

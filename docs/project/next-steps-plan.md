@@ -1,5 +1,7 @@
 # SuperTerp next steps: 5 parallel sessions (owner-approved 2026-09-28)
 
+> **Superseded for remaining work (2026-09-29):** the unfinished items now run as 3 sessions in `docs/project/overtime-plan-2026-09-29.md`. This file's "Shared rules" still apply.
+
 ## Context
 Wave 2 (program encoding) is effectively finished. Majors A and B, minors A and B, certificates and the OCR re-checks have all merged into `origin/feat/course-data`. The registry holds about 410 programs, and the only skips are Individual Studies and CMNS AI (unpublished).
 
@@ -20,6 +22,7 @@ Owner request: split the next steps into **5 sessions that run in parallel**.
   - union any doc conflicts;
   - regenerate the registry and course sets if programs changed;
   - run the **full local verification** (tests, typecheck, lint and build), because CI can't cover it;
+  - if the push then loses a race: merge the new `origin/feat/course-data` (already verified by its session), regenerate the registry if programs changed, run the programs tests and typecheck, and push at once (added 2026-09-29, since a full run takes about 10 minutes and nearly always loses the race);
   - push `HEAD:feat/course-data`, retrying on races;
   - run `graphify update .`.
 - **Builders:**

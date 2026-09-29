@@ -63,6 +63,13 @@ export const gfplSharedRequirements: Requirement[] = [
     name: "Experiential Applications: PLCY400 Senior Capstone or PLCY309 Internship (approved study abroad also counts; not encodable)",
     options: ["PLCY400", "PLCY309"],
   },
+  {
+    kind: "openSlot",
+    id: "track-or-general-electives",
+    name: "Track or general electives",
+    credits: 6,
+    note: "Two courses from the approved list, within your track and/or other tracks (including anchor courses); confirm with your advisor.",
+  },
 ];
 
 export const gfplSharedReviewNotes: string[] = [
@@ -76,11 +83,10 @@ export const gfplSharedReviewNotes: string[] = [
   "World language: modeled as two courses from any SLLC language department. Not encoded: placement-exam " +
     "rules, AP/IB credit for up to one course, native-speaker test-out, languages needing more than 3 credits " +
     "per semester, and 'courses used for the language requirement cannot also count as elective credit' " +
-    "(the elective slots are open, see OPEN SLOT notes).",
-  "OPEN SLOT: 6 credits, Track or General Elective Courses (two courses, from within the chosen track and/or " +
+    "(the elective slots are openSlot requirements, so this can't be checked).",
+  "Open slot 'track-or-general-electives' (openSlot requirement): 6 credits, Track or General Elective Courses (two courses, from within the chosen track and/or " +
     "other tracks including anchor courses). The source names only 'the list of approved courses' at a link " +
-    "that is not in the fetched source, and allows petitions for other university courses, so these are left " +
-    "out of requirements.",
+    "that is not in the fetched source, and allows petitions for other university courses, so the student confirms it with their advisor.",
   "Statistics: the catalog also lets students petition for a statistics or research methods course from " +
     "another unit; not encodable.",
   "Experiential Applications: approved study abroad also satisfies the requirement; not encodable (no course " +

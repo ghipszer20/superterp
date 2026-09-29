@@ -19,14 +19,21 @@ export const jourMajorSports: Program = {
     "Sports Specialization (11-21 credits): which JOUR courses count as 'sports' skills or seminar " +
       "courses is not listed in the source, so those rows accept any JOUR course in 321-389 and " +
       "410-469 respectively, as overlays.",
-    "OPEN SLOT: sports capstone course, 3-9 credits (covered by the capstone OPEN SLOT above; if a second " +
+    "Sports capstone course, 3-9 credits: covered by the shared 'capstone-experience' openSlot requirement (no separate slot); if a second " +
       "sports capstone replaces the experiential course, each is limited to 6 credits).",
-    "OPEN SLOT: sports experiential course, 2-6 credits: an approved sports internship for JOUR396 (the " +
+    "Open slot 'sports-experiential' (openSlot requirement): sports experiential course, 2 credits minimum (range 2-6): an approved sports internship for JOUR396 (the " +
       "core JOUR396 already covers 2 credits) or a second sports-focused capstone. Which internships are " +
       "sports-approved is not stated.",
   ],
   requirements: [
     ...jourCore,
+    {
+      kind: "openSlot",
+      id: "sports-experiential",
+      name: "Sports experiential course",
+      credits: 2,
+      note: "An approved sports internship for JOUR396 or a second sports-focused capstone (2-6 credits); the catalog does not say which internships are sports-approved, so confirm with your advisor.",
+    },
     {
       kind: "choose",
       id: "sports-skills",
