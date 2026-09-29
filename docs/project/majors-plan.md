@@ -18,11 +18,11 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 6 | sphl-kine | Kinesiology | creates `sphl-shared` if SPHL majors share a core | merged (84k; sphl-shared created) |
 | 7 | agnr-enst | Environmental Science & Technology | | merged (90k; 4 tracks) |
 | 18 | agnr-plsc | Plant Sciences | | merged (84k; 3 tracks) |
-| 19 | agnr-larc | Landscape Architecture | | running |
+| 19 | agnr-larc | Landscape Architecture | | merged |
 | 22 | info-infosci | Information Science | | running |
-| 23 | info-tid | Technology & Information Design | | queued |
+| 23 | info-tid | Technology & Information Design | | handed off to another session (owner, 2026-09-28): half 1 |
 | 24–27 | sphl-* | Family Health; Global Health; PH Practice (+ PH Science if both small) | after #6 merged | Family Health (73k), Global Health (42k) merged; PH Practice + PH Science running |
-| 31–34 | usg-* | Fermentation (identical: thin re-export) + Info Science + PH Science; Shady Grove Accounting/Management/Marketing; Communication; Southern Maryland EE + ME | college USG; patterns `biocomp-major`, `mechatronics-major`; diff only `## Catalog requirements` first | queued |
+| 31–34 | usg-* | Fermentation (identical: thin re-export) + Info Science + PH Science; Shady Grove Accounting/Management/Marketing; Communication; Southern Maryland EE + ME | college USG; patterns `biocomp-major`, `mechatronics-major`; diff only `## Catalog requirements` first | handed off (owner, 2026-09-28): half 1 = Shady Grove InfoSci, PH Science, Fermentation; half 2 = Shady Grove Accounting/Management/Marketing, Communication, Southern Maryland EE + ME |
 
 
 
