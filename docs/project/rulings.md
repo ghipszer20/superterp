@@ -111,3 +111,4 @@ Topics, in order: TDD and rebuild rules; CMSC141/142; CS gateway; schedule build
 - **Gallery blocks:** the mini calendars on Browse layouts show only each course's color, never a course number or other text. The larger week view keeps its labels.
 - **Walk warning:** the "walk is longer than the gap between classes" warning shows in Build my own (existing) and on each Browse layouts card.
 - **Phone Advisor header:** the program/catalog line must not run under the header buttons.
+- **More pre-professional tracks (owner, 2026-09-29):** add every pre-professional track that has actual fixed prerequisites (set by a national accreditor, licensing board or professional body), beyond the HPAO and pre-law ones. Tracks whose programs have few or no fixed prerequisites (MBA, MPH, MSW) are left out.
