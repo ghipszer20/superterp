@@ -37,12 +37,12 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 11 | educ-d | Secondary Ed: Mathematics | | merged (40k; catalog lists education courses only, Terrapin Teachers) |
 | 12 | educ-e | Secondary Ed: English | | merged (52k; Element 3 open 3 credits split out as OPEN SLOT by main session) |
 | 13 | educ-f | Secondary Ed: Science | | merged (35k; education component only, content areas are double majors) |
-| 14 | educ-g | Secondary Ed: Social Studies | | dispatched (resumed by owner 2026-09-28) |
-| 15 | educ-h | Secondary Ed: World Language | | dispatched (resumed by owner 2026-09-28) |
-| 16 | educ-i | Secondary Ed: Art | | dispatched (resumed by owner 2026-09-28) |
-| 17 | educ-hdev | Human Development | not teacher-prep | queued (resumed by owner 2026-09-28; next) |
+| 14 | educ-g | Secondary Ed: Social Studies | | merged (78k; 3 tracks: History default, Geography, Government & Politics) |
+| 15 | educ-h | Secondary Ed: World Language | | merged (43k; education component only, language area OPEN SLOT) |
+| 16 | educ-i | Secondary Ed: Art | | merged (57k) |
+| 17 | educ-hdev | Human Development | not teacher-prep | dispatched |
 | 20 | cmns-ai | AI: Computational Structures for AI Systems | | skipped (not yet published; owner 2026-09-28) |
-| 21 | jour | Journalism | default (no specialization) + Broadcast, Investigative, Sports tracks | queued (resumed by owner 2026-09-28; next) |
+| 21 | jour | Journalism | default (no specialization) + Broadcast, Investigative, Sports tracks | dispatched |
 | 28 | plcy-pp | Public Policy | college PLCY | merged (71k; STAT row widened by main session) |
 | 29 | plcy-gfp | Global & Foreign Policy | college PLCY; thematic tracks | merged (61k; 3 tracks, elective lists not in source: OPEN SLOT) |
 | 30a | ocr-comm | OCR re-check: Communication (5 plans) | read only the OCR plan section | queued (paused; owner 2026-09-28) |
