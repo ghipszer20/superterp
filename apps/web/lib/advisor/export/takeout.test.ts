@@ -30,8 +30,17 @@ const analysis = {
     audit("math-minor", "Math Minor", undefined, [req("calc", "Calculus", "satisfied", ["MATH140", "CMSC131"])]),
     audit("gen-ed", "General Education", "gen-ed", [req("w", "Writing", "satisfied", ["ENGL101"])]),
   ],
-  notices: [{ kind: "double-major", severity: "info", programs: ["a", "b"], declared: false, message: "Declare by the deadline." }],
-  degrees: null,
+  notices: [
+    { kind: "double-major", severity: "info", programs: ["a", "b"], declared: false, message: "Suggestion: add a second major." },
+    { kind: "dual-degree", severity: "info", programs: ["a", "b"], eligible: true, totalCredits: 150, creditsShort: 0, uniqueCredits: {}, message: "Suggestion: dual degree." },
+  ],
+  degrees: {
+    issues: [
+      { kind: "double-degree-credits", severity: "error", programs: ["a", "b"], message: "Needs 150 credits." },
+      { kind: "double-degree-unique", severity: "error", programs: ["a", "b"], message: "Needs 18 unique." },
+      { kind: "declaration-deadline", severity: "warning", programs: ["b"], message: "Declare by Spring 2026." },
+    ],
+  },
   gateway: { overall: "not-yet", gpa: "unknown", rule: {}, courses: [], attemptLimitViolated: false },
   tracks: [{ track: { id: "pre-med", name: "Pre-Med" }, requirements: [req("bio", "Biology", "missing", [])] }],
 };
@@ -97,6 +106,15 @@ describe("buildTakeout", () => {
     const titles = f.map((g) => g.title);
     expect(titles).toEqual(expect.arrayContaining(["Prerequisites and order", "Credit load and caps", "Graduate-course permission", "CS gateway", "Declaration deadline"]));
     expect(f.find((g) => g.title === "Prerequisites and order")!.items[0]).toMatchObject({ term: "Fall 2026", course: "CMSC132" });
+  });
+  it("takes double-degree and declaration flags from degree issues, never from suggestion notices", () => {
+    const f = build().flags;
+    expect(f.find((g) => g.title === "Double degree (150 credits, 18 unique)")!.items.map((i) => i.message)).toEqual(["Needs 150 credits.", "Needs 18 unique."]);
+    expect(f.find((g) => g.title === "Declaration deadline")!.items.map((i) => i.message)).toEqual(["Declare by Spring 2026."]);
+    expect(JSON.stringify(f)).not.toMatch(/Suggestion/);
+    const none = buildTakeout({ plan, analysis: { ...analysis, degrees: null }, issues: [], prior, today: new Date(2026, 8, 29) } as never).flags.map((g) => g.title);
+    expect(none).not.toContain("Declaration deadline");
+    expect(none).not.toContain("Double degree (150 credits, 18 unique)");
   });
   it("includes prior credit and tracks", () => {
     const t = build();
