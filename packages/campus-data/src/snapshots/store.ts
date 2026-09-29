@@ -8,7 +8,7 @@ import { mkdir, readdir, readFile, rename, rm, writeFile } from "node:fs/promise
 import { dirname, join, resolve } from "node:path";
 
 /** Bump when a snapshot's data shape changes; older snapshots then read as missing. */
-export const SNAPSHOT_SCHEMA = 1;
+export const SNAPSHOT_SCHEMA = 2;
 
 export type Snapshot<T> = {
   /** ISO timestamp of when the data was fetched from the source. */
