@@ -2,7 +2,7 @@
 // Journalism). Source: academiccatalog.umd.edu/undergraduate/colleges-schools/journalism/
 // media-technology-democracy-minor/ (fetched 2026-09-28). Department page not checked.
 // The Video Production and Documentary Filmmaking Minor's catalog page lists no requirements
-// ("none found"), so it is NOT encoded (see docs/project/owner-review.md).
+// ("none found"); it is encoded below from the owner-pasted table (docs/project/rulings.md).
 // No official published sample plan (built from the requirements below).
 // Encoded by hand. UNVERIFIED until the owner signs off.
 
@@ -52,3 +52,40 @@ export const jourMinorMediaTechnologyDemocracy: Program = {
 };
 
 export const jourMinorMediaTechnologyDemocracyMeta: ProgramMeta = { kind: "minor", college: "JOUR", short: "Media, Technology and Democracy", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/journalism/media-technology-democracy-minor/" } };
+
+export const jourMinorVideoProduction: Program = {
+  id: "jour-minor-video-production-documentary-filmmaking",
+  name: "Video Production and Documentary Filmmaking Minor",
+  catalogYear: "2026-27",
+  source:
+    "Owner-pasted requirements table (docs/project/rulings.md); the catalog page, " +
+    "https://academiccatalog.umd.edu/undergraduate/colleges-schools/journalism/video-production-documentary-filmmaking-minor/ (fetched 2026-09-28), lists no requirements",
+  minGrade: "C-",
+  verified: false,
+  reviewNotes: [
+    "Encoded from the owner-pasted table, not the catalog (the catalog page has no requirements). Department page not checked.",
+    "No grade floor stated: C- used because sibling Merrill minors state C- (rulings.md); minGrade: 'C-'.",
+    "Elective row is 'two to five courses (6-15 credits)'. The audit requires the minimum (2 courses); the five-course upper limit is not enforced, extra courses simply count as extra.",
+    "JOUR368T appears in both the one-of row and the elective list. Within one program each course counts once, so a JOUR368T used for the one-of row cannot also fill the elective row.",
+    "No sharing cap stated; none set.",
+  ],
+  requirements: [
+    { kind: "course", id: "jour347", name: "JOUR347", options: ["JOUR347"] },
+    { kind: "choose", id: "jour281-or-402", name: "JOUR281 or JOUR402", count: 1, from: { courses: ["JOUR281", "JOUR402"] } },
+    { kind: "choose", id: "jour368l-or-368t", name: "JOUR368L or JOUR368T", count: 1, from: { courses: ["JOUR368L", "JOUR368T"] } },
+    {
+      kind: "choose",
+      id: "electives",
+      name: "Two to five electives (6-15 credits)",
+      count: 2,
+      from: {
+        courses: [
+          "JOUR368E", "JOUR368O", "JOUR368I", "JOUR368J", "JOUR368U", "JOUR368T", "JOUR368X",
+          "JOUR370", "JOUR383", "CINE310", "CINE415",
+        ],
+      },
+    },
+  ],
+};
+
+export const jourMinorVideoProductionMeta: ProgramMeta = { kind: "minor", college: "JOUR", short: "Video Production and Documentary Filmmaking", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/journalism/video-production-documentary-filmmaking-minor/" } };

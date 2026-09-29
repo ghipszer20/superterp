@@ -655,3 +655,6 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 ## `feat/ocr-musc` (2026-09-28): majors Music (BM Composition, BA Jazz Studies re-check); no plans added
 - BM Composition OCR plan (`program-sources/music-major.md` lines 1075-1146) is still mostly noise; only a few course fragments (MUSC260, MUSP207) are legible and match the generic BM. No Composition track added; `musc-major-bm` notes updated. Needs a legible plan to confirm whether Composition differs.
 - BA Jazz Studies OCR plan (lines 545-611) likewise unreadable; NOT confirmed as matching the Strings-based `musc-major-ba`. A note was added to the BA's reviewNotes. Needs a legible plan.
+## `feat/video-minor` (2026-09-28): Video Production and Documentary Filmmaking Minor, encoded from the owner's table; sample plan constructed
+- Catalog page lists no requirements; encoded from the owner-pasted table. No grade floor stated, C- used (siblings state C-). Department page not checked.
+- "Two to five courses (6-15 credits)": only the 2-course minimum is enforced; JOUR368T is in two rows but counts once within the program.
