@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Card, Notice, Page, Row, Section } from "@/components/ui";
 import { ABOUT, resolveAbout } from "@/lib/about";
 import { ReportForm } from "./ReportForm";
@@ -19,6 +20,9 @@ export default function AboutPage() {
               schedule builder, and a four-year plan and degree audit, all in one place.
             </p>
             <p>It&apos;s free and open source. Not affiliated with the University of Maryland.</p>
+            <p>
+              Read the <Link href="/terms">Terms of Use</Link> and the <Link href="/privacy">Privacy</Link> notice.
+            </p>
           </div>
         </Card>
       </Section>
