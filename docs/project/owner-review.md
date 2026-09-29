@@ -663,3 +663,9 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - `lacs-cert`: electives re-encoded as a distribution (3 courses, at least 2 areas, one filter area per department in the existing set, 100-499). The 300+ overlay is kept. Sample plan changed: SPAN363 replaced by HIST307 so the plan spans two departments.
 - `lacs-minor`: electives re-encoded as a distribution (2 courses, 2 areas, one per department, 300-499). Sample plan unchanged (SPAN458 + LACS369). The 75% Latin American content rule stays manual.
 - Left manual: `musc-minor-culture` (source approves four ensembles but does not assign them to culture areas) and `lgbt-cert` (source names the 6 areas but not which courses belong to each).
+
+## `feat/usg-bsci` (2026-09-29): Biological Sciences at Shady Grove (PHNB only); plan constructed
+- `bsci-usg-major`: built from `bsci-major-phnb`. Shady Grove table adds BSCI223 and drops BSCI207 and the freshman seminar; confirm this is intended rather than a catalog omission.
+- Footnote 2 (General Chemistry II lab may substitute for CHEM272) has no course code, so it is a manual note; CHEM272 stays required.
+- Advanced-program 11-credit pool uses the Shady Grove list (special topics by base course number, statistics one-course cap and section topics not enforced); no lab minimum is stated, so College Park's at-least-one-lab rule is dropped.
+- The 22 elective credits, the 96-credit total and General Education are not encoded. Sample plan is constructed, not official.
