@@ -579,3 +579,8 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Public Health Practice: no term-by-term plan in the sources (SPH page has benchmarks only); plan constructed. Elective fills HLTH300, HLTH325, HLTH377, HLTH424 are unconfirmed placeholders.
 - Public Health Practice: anatomy row is "HLTH212 or BSCI201" (catalog and SPH benchmark agree), so the shared BSCI201/202 pair was not used.
 - Public Health Science: sph.umd.edu department page returned 404, department page not checked. 12 credits of Public Health Science options (300-400 level, "primarily offered within SPH") from an approved list not in the sources; OPEN SLOT. No term-by-term plan; plan constructed with unconfirmed option fills HLTH424, MIEH330, MIEH331, HLSA484.
+
+## `feat/info-tid` (2026-09-28): major Technology & Information Design (`tid-major`), INFO; plan constructed, `official: false`
+- Elective credits conflict: department page says 45-credit major with 15 elective credits (also "six additional elective" courses); catalog says 55 credits with 18 elective credits. Catalog encoded (18 credits from the 10 named courses); confirm with the advisor.
+- Elective list can grow by program-committee approval; not encodable. Department page does not list electives.
+- No term-by-term plan in the sources; plan constructed from the catalog. Benchmark semester timelines not encoded.
