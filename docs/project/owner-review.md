@@ -630,3 +630,9 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
   - Variable credits encoded at the minimum: upper-level JOUR electives (9-15, as 6 credits in JOUR321-389 plus one 300-499 JOUR course), capstone.
   - Sports specialization: "sports" skills and seminar courses have no list, so any JOUR321-389 and JOUR410-469 course counts (overlay). Investigative "approved seminar" likewise accepts any JOUR410-469 course.
   - The catalog C- rule is encoded per requirement (listed courses only), not program-wide.
+
+## `feat/educ-hdev` (2026-09-28): major Human Development; sample plan constructed, `official: false`
+- Human Development (`hdev-major`): department page not checked (the source has only the catalog and a generic College of Education four-year-plans page with no Human Development plan text). Sample plan is constructed.
+- minGrade C- applied from the College of Education's general statement; the catalog gives no grade rule for this major. Confirm.
+- Electives pool accepts every course in the 16 "Other Possible Electives" departments (the catalog says advisor-approved, not encodable) plus the core courses (catalog footnote). The 6-credit internship substitute (400-level electives) covers named 400-level courses only; 400-level courses from the other departments are not in that pool (filter cannot combine named courses with a level-limited department range).
+- Not encoded: double-major substitutions (FMSC302, PSYC300, PSYC200), EDHD489/498 substitution, 43-credit total.
