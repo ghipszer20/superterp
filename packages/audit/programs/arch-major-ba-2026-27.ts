@@ -20,9 +20,9 @@ export const archMajorBa: Program = {
     ...archCommonReviewNotes,
     "The catalog offers a BS and a BA option; encoded as two programs of major key 'arch' (see the BS file for the default).",
     "BA electives: 'Select 30 additional credits in upper level Architecture electives, of which a maximum of 9 credits may be directed electives inside or outside the major.' " +
-      "Encoded as 21 credits of ARCH courses numbered 300-499 ('upper level'; the catalog gives no number) plus an OPEN SLOT for the 9 credits of directed electives. " +
+      "Encoded as 21 credits of ARCH courses numbered 300-499 ('upper level'; the catalog gives no number) plus an openSlot requirement ('directed-electives') for the 9 credits of directed electives. " +
       "Encoding all 30 as ARCH 300-499 would wrongly fail students using directed electives outside the major.",
-    "OPEN SLOT: 9 credits of directed electives, inside or outside the major (no course, department or range given; not encoded).",
+    "Open slot 'directed-electives' (openSlot requirement): 9 credits of directed electives, inside or outside the major; no course, department or range is published, so the student confirms with their advisor.",
   ],
   requirements: [
     ...archCore,
@@ -32,6 +32,13 @@ export const archMajorBa: Program = {
       name: "Upper-level Architecture electives: 21 credits of ARCH 300-499 (the other 9 of the 30 may be directed electives; see reviewNotes)",
       credits: 21,
       from: { departments: ["ARCH"], minNumber: 300, maxNumber: 499 },
+    },
+    {
+      kind: "openSlot",
+      id: "directed-electives",
+      name: "Directed electives (inside or outside the major)",
+      credits: 9,
+      note: "Up to 9 of the 30 upper-level elective credits may be directed electives inside or outside the major; no list is published, so confirm the courses with your advisor.",
     },
   ],
 };

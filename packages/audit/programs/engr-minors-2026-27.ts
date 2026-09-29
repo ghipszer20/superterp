@@ -86,8 +86,7 @@ export const engrMinorNanoscale: Program = {
   maxSharedWith: [{ courses: 2 }],
   reviewNotes: [
     "The approved course list (classified into Nanofabrication/Nanosynthesis, Nanocharacterization, Fundamental Science/Nanoscience and Specialization/Application) lives on the Maryland NanoCenter courses page, which is not among the sources, so no course is named. The five courses are encoded as any five courses from the participating departments named on the department pages (ENMA, CHBE, ENEE, ENME, BIOE in the Clark School; PHYS and CHEM in CMNS); this accepts the whole range and is broader than the approved list.",
-    "OPEN SLOT: 6 credits (two courses) of Nanofabrication/Nanosynthesis and/or Nanocharacterization electives; no list published in the sources",
-    "OPEN SLOT: 6 credits (two courses) of Fundamental Science and/or Nanoscience electives, at least one also a Nanospecialization/Application elective; no list published in the sources",
+    "Open slot 'nano-fab-char' (openSlot requirement): 6 credits (two courses) of Nanofabrication/Nanosynthesis and/or Nanocharacterization electives. Open slot 'nano-science-spec' (openSlot requirement): 6 credits (two courses) of Fundamental Science and/or Nanoscience electives, at least one also a Nanospecialization/Application elective. No list is in the sources (it lives on the NanoCenter courses page). The broad 'five-courses' filter checks the credits; the two slots take no courses and only ask the student to confirm with the advisor that those courses are on the approved list, so nothing is counted twice.",
     "Grade floor: the catalog and the MSE page say C-; nanocenter.umd.edu says C. C- used (the MSE page and catalog agree).",
     "Department-vs-catalog difference: both department pages restrict the minor to students majoring in Engineering, Physics or Chemistry (the NanoCenter page also says 'any student' in the Colleges of Engineering and CMNS); the catalog states no restriction. Eligibility is not enforced (manual).",
     "Sharing: 'up to two courses (6 credits) may be double counted' -> maxSharedWith: [{ courses: 2 }]. 'Three of the courses (9 credits) must be from outside the individual major', 'at least 15 credits', and 'no more than two courses from any one department' are manual (the engine cannot cap courses per department or tell the student's major).",
@@ -101,6 +100,20 @@ export const engrMinorNanoscale: Program = {
       name: "Five NS&T courses",
       count: 5,
       from: { departments: NANO_DEPARTMENTS },
+    },
+    {
+      kind: "openSlot",
+      id: "nano-fab-char",
+      name: "Nanofabrication / Nanocharacterization electives",
+      credits: 6,
+      note: "Two courses on the approved Nanofabrication/Nanosynthesis and/or Nanocharacterization list (Maryland NanoCenter courses page). Confirm with your advisor that your courses are on it; they are already counted in the five courses above.",
+    },
+    {
+      kind: "openSlot",
+      id: "nano-science-spec",
+      name: "Fundamental Science / Nanoscience electives",
+      credits: 6,
+      note: "Two courses on the approved Fundamental Science and/or Nanoscience list, at least one also a Nanospecialization/Application elective (Maryland NanoCenter courses page). Confirm with your advisor; they are already counted in the five courses above.",
     },
     {
       kind: "choose",

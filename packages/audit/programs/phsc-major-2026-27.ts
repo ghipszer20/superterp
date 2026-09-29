@@ -37,7 +37,7 @@ export const phscMajor: Program = {
     "Grade floor: 'C-' or higher in all Public Health Science major-required coursework; applied as the program-level minimum.",
     "'CHEM131 & CHEM132' and 'CHEM231 & CHEM232' are each listed as one paired row; encoded as four separate required courses.",
     "'BSCI180 or BSCI171' is one row with either option.",
-    "OPEN SLOT: 12 credits of Public Health Science options ('300 and 400 level courses primarily offered within the School of Public Health'; the approved list is on a PHSC page not in the sources, and no department is named; not encoded).",
+    "Open slot 'phsc-options' (openSlot requirement): 12 credits of Public Health Science options ('300 and 400 level courses primarily offered within the School of Public Health'; the approved list is on a PHSC page not in the sources, so the student confirms with their advisor).",
     "Not enforced (manual): catalog says 74 of 120 credits are specific to the degree.",
     "The sources contain no term-by-term four-year plan (the SPH page links to one); the sample plan is CONSTRUCTED from the catalog table and the CHEM benchmarks. Option slots are filled with HLTH424, MIEH330, MIEH331 and HLSA484, unconfirmed placeholders taken from other SPH programs' course lists. Flagged in docs/project/owner-review.md.",
   ],
@@ -62,6 +62,13 @@ export const phscMajor: Program = {
     c("phsc-knes320", "Physiological Basis of Physical Activity and Human Health", "KNES320"),
     c("phsc-phsc415", "Essentials of Public Health Biology: The Cell, The Individual, and Disease", "PHSC415"),
     c("phsc-phsc497", "Public Health Science Capstone", "PHSC497"),
+    {
+      kind: "openSlot",
+      id: "phsc-options",
+      name: "Public Health Science options",
+      credits: 12,
+      note: "300 and 400 level courses primarily offered within the School of Public Health; ask your advisor for the approved list.",
+    },
   ],
 };
 

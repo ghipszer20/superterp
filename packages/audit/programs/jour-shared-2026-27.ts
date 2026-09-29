@@ -107,6 +107,26 @@ export const jourCore: Requirement[] = [
     count: 1,
     credits: 3,
     from: { departments: ["JOUR"], minNumber: 300, maxNumber: 499 },
+  },  {
+    kind: "openSlot",
+    id: "capstone-experience",
+    name: "Journalism Capstone Experience",
+    credits: 3,
+    note: "3-9 credits; the catalog names no capstone courses, so confirm an approved capstone with your advisor (it must earn a C- or higher).",
+  },
+  {
+    kind: "openSlot",
+    id: "language-math-stats",
+    name: "Language and/or Math/Statistics/Computer Science",
+    credits: 6,
+    note: "Up to two language courses (one intermediate, at most one introductory) and/or up to two Math/Stat/CS courses (MATH 107 or higher, or an approved 3+ credit programming course); confirm with your advisor.",
+  },
+  {
+    kind: "openSlot",
+    id: "supporting-area-upper",
+    name: "Supporting Area: four more upper-level courses",
+    credits: 12,
+    note: "Four additional upper-level (300+) courses, not Communication; the catalog names no list, so confirm with your advisor.",
   },
 ];
 
@@ -114,14 +134,13 @@ export const jourCore: Requirement[] = [
 export const jourCommonReviewNotes: string[] = [
   "Department page not checked: program-sources/journalism-major.md holds only the catalog page, so the " +
     "owner's 'department page wins' ruling could not be applied; encoded from the catalog alone.",
-  "OPEN SLOT: Journalism Capstone Experience, 3-9 credits. The catalog names no capstone courses or number " +
-    "range, so the slot is left out of requirements (a capstone must also earn a C- or higher). The 3-9 " +
-    "credit range is variable; only the 3-credit minimum is noted.",
-  "OPEN SLOT: 6 credits of Language (up to two courses, one intermediate, at most one introductory) and/or " +
-    "Math/Statistics/Computer Science (up to two: MATH 107 or higher, or an approved 3+ credit programming " +
-    "course). Language subjects and the programming list are not named in the source, so the slot is left out.",
-  "OPEN SLOT: 12 credits, 'four additional upper-level courses' (300+, not Communication), the second " +
-    "half of the Supporting Area. No department or list is named, so the slot is left out. The first " +
+  "Open slot 'capstone-experience' (openSlot requirement): Journalism Capstone Experience, 3 credits (the catalog range is 3-9; " +
+    "only the 3-credit minimum is encoded). The catalog names no capstone courses, so the student confirms with their advisor; " +
+    "a capstone must also earn a C- or higher.",
+  "Open slot 'language-math-stats' (openSlot requirement): 6 credits of Language and/or Math/Statistics/Computer Science. " +
+    "Language subjects and the programming list are not named in the source, so the student confirms with their advisor.",
+  "Open slot 'supporting-area-upper' (openSlot requirement): 12 credits, 'four additional upper-level courses' (300+, not " +
+    "Communication), the second half of the Supporting Area. No list is named, so the student confirms with their advisor. The first " +
     "Supporting Area block (four upper-level courses, 12 credits in one field, not COMM) is encoded as a " +
     "12-credit one-department 300-499 concentration excluding COMM.",
   "The catalog's 'Upper-Level Courses of Choice' (9-15 credits; at least 9 upper-level JOUR, at least 6 in the " +
