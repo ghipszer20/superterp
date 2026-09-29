@@ -18,7 +18,7 @@ export const enspMajorMarineCoastal: Program = {
   reviewNotes: [
     ...enspCommonReviewNotes,
     "Official four-year plan (agnr.umd.edu PDF) transcribed; placeholders filled with real catalog courses (each fill is in the sample plan's notes). The plan's Restricted Elective, Techniques & Methods and similar unnamed slots are left out of the sample plan because they are not encoded.",
-    "OPEN SLOT: Restricted Electives (5 courses; at least 2 from Area 1 Coastal Science, at least 1 from Area 2 Management) (15 credits) names no courses or department in the catalog (only 'See ENSP website for list of approved electives', no web access); not encoded, so the audit cannot check it.",
+    "Open slot 'restricted-electives-mcm' (openSlot requirement): restricted electives, 15 credits; the catalog only says 'See ENSP website for list of approved electives' (no list available to us), so the student confirms it with their advisor.",
     "ENSP342 is required directly and is also a Core Applied Science and Policy option (footnote 3: not double-counted); the plan fills a Restricted Elective with ENSP340 for the Core.",
   ],
   requirements: [
@@ -30,6 +30,7 @@ export const enspMajorMarineCoastal: Program = {
     { kind: "course", id: "geog272-mc", name: "Introduction to Earth Observation Science (GEOG272)", options: ["GEOG272"] },
     { kind: "course", id: "geog373-mc", name: "Geographic Information Systems (GEOG373)", options: ["GEOG373"] },
     { kind: "course", id: "ensp386-mc", name: "Internship (ENSP386)", options: ["ENSP386"] },
+    { kind: "openSlot", id: "restricted-electives-mcm", name: "Restricted electives", credits: 15, note: "5 courses; at least 2 from Area 1 Coastal Science and at least 1 from Area 2 Management; approved list on the ENSP website." },
   ],
 };
 

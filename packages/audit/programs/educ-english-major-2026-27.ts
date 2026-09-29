@@ -40,7 +40,7 @@ export const educEnglishMajor: Program = {
     ...educSharedReviewNotes,
     "Department pages checked: the MCERT page describes a graduate certification program, terrapinteachers.umd.edu is a STEM-only landing page and the four-year-plans page only links out. None adds or contradicts a requirement, so the catalog is encoded alone.",
     "Element 2 (Historical Studies, 15 credits: one course in at least five of six periods) and Element 3 (Language, Writing, and Rhetoric, 9 credits: one History/Analysis/Theory course, one Practice/Performance/Pedagogy course, one open) name no courses in the source (approved list at go.umd.edu/EnglishEducation, not fetched). Each is encoded as a credit pool over ENGL and CMLT courses (100-499, excluding ENGL301), matching the English major's precedent; the period and topic distributions are NOT enforced. ",
-    "OPEN SLOT: Element 3's remaining 3 credits, 'any language, writing, or rhetoric course' (no department or range named; main session 2026-09-28 split it out of the ENGL/CMLT pool, which was narrower than the source).",
+    "Element 3's remaining 3 credits ('any language, writing, or rhetoric course'; no department or range named) is now an openSlot requirement, 'educ-english-element3-open' (main session 2026-09-28 split it out of the ENGL/CMLT pool, which was narrower than the source). The student confirms the course with their advisor.",
     "Element 4 (Electives, 12 credits) is encoded as stated: any ENGL or CMLT course. It is a separate consuming pool, so no course counts twice across Elements 2-4.",
     "Element 5 (American Literature, Shakespeare, Differences and Diasporas, Methods, Advanced Writing) is a set of co-requirements satisfied by courses already counted in Elements 2-4; no course-to-designation list is in the source, so it is not encoded. Manual: the Fundamental Studies Professional Writing course cannot count toward Advanced Writing.",
     "The catalog's Total Credits line (82) is not checked. TLPL479C must be taken concurrently with TLPL456 and TLPL478C with TLPL489C (footnotes); concurrency is not encoded.",
@@ -64,6 +64,13 @@ export const educEnglishMajor: Program = {
       count: 2,
       credits: 6,
       from: { departments: ["ENGL", "CMLT"], minNumber: 100, maxNumber: 499, exclude: ["ENGL301"] },
+    },
+    {
+      kind: "openSlot",
+      id: "educ-english-element3-open",
+      name: "Element 3: any language, writing, or rhetoric course",
+      credits: 3,
+      note: "Any language, writing, or rhetoric course; the catalog names no department or range. The approved list is at go.umd.edu/EnglishEducation. Confirm with your advisor.",
     },
     {
       kind: "choose",

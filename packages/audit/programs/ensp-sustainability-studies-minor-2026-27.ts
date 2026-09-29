@@ -20,10 +20,10 @@ export const enspSustainabilityStudiesMinor: Program = {
   reviewNotes: [
     "Cross-listed: the AGNR and PLCY catalog pages differ only in title and URL (diffed); encoded once under AGNR. Flagged for owner.",
     "The department page (SPP minors page) matches the catalog: AGNR301/PLCY301 core, one approved course from each of three thematic areas, one more approved course or approved experiential learning.",
-    "OPEN SLOT: 3 credits of Science and Technology approved course; no list published in the sources ('see web site')",
-    "OPEN SLOT: 3 credits of Policy and Institutions approved course; no list published in the sources ('see web site')",
-    "OPEN SLOT: 3 credits of Social and Human Dimensions approved course; no list published in the sources ('see web site')",
-    "OPEN SLOT: 3 credits, an additional approved course from one of the three areas or approved credit-bearing experiential learning (internship, study abroad, research linked to sustainability, approved in advance); no list published",
+    "Open slot 'science-technology' (openSlot requirement): 3 credits, science and Technology approved course; no list is published in the sources, so the student confirms it with their advisor.",
+    "Open slot 'policy-institutions' (openSlot requirement): 3 credits, policy and Institutions approved course; no list is published in the sources, so the student confirms it with their advisor.",
+    "Open slot 'social-human-dimensions' (openSlot requirement): 3 credits, social and Human Dimensions approved course; no list is published in the sources, so the student confirms it with their advisor.",
+    "Open slot 'additional-approved' (openSlot requirement): 3 credits, additional approved course or experiential learning; no list is published in the sources, so the student confirms it with their advisor.",
     "The SPP page's Nonprofit Leadership elective list mentions some sustainability courses but is not this minor's list; not used.",
     "'15 credits, at least 9 at the 300-400 level' is not encoded because the approved courses are unpublished; manual check.",
     "'No more than 6 credits may overlap between your major and Sustainability Studies, unless otherwise approved by your major' -> maxSharedWith: [{ credits: 6 }]. This applies to every other program (the engine cannot cap the major only); the 'unless approved' exception is not encoded. Catalog also bars a course counting in another minor (manual).",
@@ -33,6 +33,10 @@ export const enspSustainabilityStudiesMinor: Program = {
   ],
   requirements: [
     { kind: "course", id: "core", name: "Sustainability (AGNR/PLCY301)", options: ["AGNR301", "PLCY301"] },
+    { kind: "openSlot", id: "science-technology", name: "Science and Technology approved course", credits: 3, note: "Approved list on the Sustainability Studies minor web site." },
+    { kind: "openSlot", id: "policy-institutions", name: "Policy and Institutions approved course", credits: 3, note: "Approved list on the Sustainability Studies minor web site." },
+    { kind: "openSlot", id: "social-human-dimensions", name: "Social and Human Dimensions approved course", credits: 3, note: "Approved list on the Sustainability Studies minor web site." },
+    { kind: "openSlot", id: "additional-approved", name: "Additional approved course or experiential learning", credits: 3, note: "Another approved course from one of the three areas, or approved credit-bearing experiential learning (internship, study abroad, research linked to sustainability), approved in advance." },
   ],
 };
 

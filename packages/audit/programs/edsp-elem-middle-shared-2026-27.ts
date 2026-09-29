@@ -63,6 +63,20 @@ export const edspShared: Requirement[] = [
   // Professional Semester IV (spring)
   c("edsp490", "Teacher Candidate Research Seminar in Special Education", "EDSP490"),
   c("edsp495", "Internship II: Elementary/Middle Special Education", "EDSP495"),
+  {
+    kind: "openSlot",
+    id: "edsp-physical-science",
+    name: "Physical science with lab",
+    credits: 4,
+    note: "The catalog names no course or department (also counts toward Gen Ed). Confirm with your advisor.",
+  },
+  {
+    kind: "openSlot",
+    id: "edsp-biological-science",
+    name: "Biological science with lab",
+    credits: 4,
+    note: "The catalog names no course or department (also counts toward Gen Ed). Confirm with your advisor.",
+  },
 ];
 
 /** reviewNotes common to both tracks. Each track file appends its own. */
@@ -70,8 +84,8 @@ export const edspSharedReviewNotes: string[] = [
   "The College of Education page (education.umd.edu .../major-four) lists only the college's four-year-plan links and general policies (120-credit minimum, 'C-' in pre-professional and professional work, 2.75 GPA after admission, 'S' in the internship); it gives no course requirements and no plan for this major, so there is no disagreement with the catalog. The catalog is encoded.",
   "Not enforced (manual): admission to Teacher Education, an overall GPA of 2.75 after admission, satisfactory College of Education Foundational Competencies evaluations, a Maryland Test of Basic Skills for admission, Praxis II Special Education for the internship and graduation, the yearlong PDS internship, and total credits (151-161).",
   "EDSP210/EDSP211 (Foundations of Special Education) needs a 'B-' or better, encoded as a requirement-level minimum grade; the other college requirements use the catalog's 'C-', encoded as the program-level minimum grade (the College also states 'C-' for all pre-professional and professional coursework).",
-  "OPEN SLOT: Physical Science with lab, 4 credits (a Gen Ed double count). The catalog names no course or department.",
-  "OPEN SLOT: Biological Science with lab, 4 credits (a Gen Ed double count). The catalog names no course or department.",
+  "Physical Science with lab, 4 credits (a Gen Ed double count), is now an openSlot requirement ('edsp-physical-science'). The catalog names no course or department.",
+  "Biological Science with lab, 4 credits (a Gen Ed double count), is now an openSlot requirement ('edsp-biological-science'). The catalog names no course or department.",
   "'ENGL Literature (HU)' names only the department, so any one ENGL course is accepted (a narrower literature list would wrongly fail real students); flagged so the owner can decide whether a literature-only filter is wanted.",
   "EDSP452 (Internship I) is listed at 2-4 credits; the audit matches the course, not the credit amount.",
   "No official four-year plan is published in the fetched sources. The sample plan is CONSTRUCTED from the catalog table; flagged in docs/project/owner-review.md.",
