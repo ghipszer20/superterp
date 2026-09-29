@@ -588,3 +588,8 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Regional HIST electives, History-electives concentration (15 credits) and non-Western rule, Geography gateway split (physical/human/technique) and GVPT skills option name no course lists; pools accept whole departments and the splits are not enforced.
 - Catalog's "29 credit hours in the social sciences" does not match the rows listed (History 12, Geography and Government about 21); the balance is unlisted, not encoded as a slot.
 - Government and Politics option is flagged "under review" in the catalog; encoded as printed.
+## `feat/educ-h` (2026-09-28): major Secondary Education - World Language (`educ-world-language-major`), EDUC; plan constructed, `official: false`
+- World Language: the catalog gives the language content (36 credits of Primary WL Area courses, 3 credits Applied Linguistics, 9 credits supporting-area electives) as generic rows with no course lists and no per-language tracks; all three are OPEN SLOTs, only the education component is encoded. Need per-language course lists (Chinese, French, German, Italian, Latin, Russian, Spanish) from the language departments.
+- World Language: Applied Linguistics row is "Primary WL Area Applied Linguistics or LING200"; not encoded because LING200 alone would narrow it.
+- World Language: department pages (MCERT, Terrapin Teachers, four-year-plans) carry no requirements; catalog only. ACTFL OPI and Praxis II/ACTFL written test are manual.
+- World Language: no term-by-term plan in the sources; sample plan constructed, education courses only.
