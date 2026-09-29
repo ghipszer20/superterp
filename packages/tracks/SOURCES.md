@@ -59,6 +59,16 @@ Encoded from `docs/project/new-tracks-research.md` (2026-09-29, sections 3, 9 an
 | NAACLS (MLS accreditor) | https://naacls.org/ | Standards require only "appropriate prerequisite coursework"; 2024 Standards PDF unparseable. | Search summary, 2026-09-29 |
 | ASCP Board of Certification: MLS | https://www.ascp.org/boc/explore-credentials/view-all-credentials/MLS | Baccalaureate with 16 semester hours of biology (including 1 semester of microbiology) and 16 of chemistry (including 1 semester of organic chemistry or biochemistry), plus a NAACLS-accredited MLS program. Page returned 403. | Search summary, 2026-09-29 |
 
+## Batch C sources (CPA in Maryland, Actuarial VEE, Pre-Medical Physics)
+
+Encoded from `docs/project/new-tracks-research.md` (2026-09-29, sections 4, 12 and 13). CPA and VEE figures are **(S)**: from a fetch summary, not a full read, to be re-verified before either is set `verified: true`. Nothing here is signed off by the owner. Course codes are the research doc's; those not in the Spring 2027 snapshot were added to the fixture from the doc alone.
+
+| What | URL | What it says | Date / edition |
+|---|---|---|---|
+| Maryland State Board of Public Accountancy: CPA exam education requirements | https://labor.maryland.gov/license/cpa/cpaexam/cpaexameducreq.shtml | (S) To sit: 120 semester hours including 30 in accounting and ethics (27 accounting + 3 ethics). Licensure: 150 semester hours, minimum 30 accounting hours, at least 18 business hours across five of nine subject areas, plus 3 hours business law. Prior standards usable until June 30, 2026. No GPA. | Fetch summary, 2026-09-29 |
+| Society of Actuaries: VEE | https://www.soa.org/education/exam-req/edu-VEE/ | (S) Three VEE topics: Economics, Accounting and Finance, Mathematical Statistics. Two SOA, CAS or CIA exams first. Approved-course directory and grade minimums not visible. | Fetch summary, 2026-09-29 |
+| CAMPEP graduate standards | https://campep.org/GraduateStandards.pdf | Entering students need a strong physics foundation: a physics degree, or another degree with physics equivalent to a minor (at least three upper-level physics courses). No credit minimums or GPA. | Research doc, 2026-09-29 |
+
 ## Non-UMD sources (for the science GPA)
 
 | What | URL | What it says |

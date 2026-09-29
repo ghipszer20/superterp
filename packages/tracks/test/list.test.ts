@@ -59,8 +59,8 @@ describe("examMilestone", () => {
 });
 
 describe("TRACKS", () => {
-  it("lists all nineteen encoded tracks, each unverified", () => {
-    expect(TRACKS).toHaveLength(19);
+  it("lists all twenty-two encoded tracks, each unverified", () => {
+    expect(TRACKS).toHaveLength(22);
     expect(TRACKS.every((t) => t.verified === false)).toBe(true);
   });
 });
