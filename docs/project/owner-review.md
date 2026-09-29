@@ -463,3 +463,9 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Real Estate Development (`arch-real-estate-development-minor`): OPEN SLOT: 3 credits of one elective from a "permitted electives" list on a page not in the sources. BMGT220 accepted for RDEV270 (catalog footnote); transfer equivalents and the 2.0 minor GPA, application and 60-credit timing are manual notes.
 - Creative Placemaking (`arch-creative-placemaking-minor`): cross-listed ARCH and ARHU; a diff of the two catalog pages shows identical requirements. Encoded once under ARCH; please confirm the college. Studio ARCH409 (catalog) and ARCH408c (department page) both accepted; the department page's art path "two electives" alternative is not encoded. No grade floor stated; C- applied per ruling.
 - Creative Placemaking: OPEN SLOT: 6 credits of electives (list on an art.umd.edu page not in the sources; catalog 3-credits-per-department cap is manual). ARHU439C repeated twice counts as one course code (manual check).
+
+## `feat/arch-pair` (2026-09-28): majors Architecture (BS, BA) and Real Estate and the Built Environment; plans constructed
+- Architecture BS/BA and REBE: department page not checked (the arch.umd.edu page is only links to 4-year plan PDFs); encoded from the catalog. All three sample plans are constructed (official: false).
+- Architecture BA: catalog says 30 credits of upper-level ARCH electives, up to 9 of them directed electives inside or outside the major. Encoded as 21 credits of ARCH 300-499 plus OPEN SLOT: 9 credits directed electives. "Upper level" taken as 300-499 (catalog gives no number).
+- Architecture BS: the "ARCH4XX 12 credits" row is encoded as 12 credits of ARCH 400-499. Please confirm BS is the default track.
+- REBE: culmination is 3-4 credits depending on RDEV270 vs BMGT210 for the finance cognate; encoded as one course from the list (BMGT210 case is a manual check). Study-abroad and director-approved electives are not encoded.
