@@ -45,7 +45,13 @@ describe("buildingByCode", () => {
     const css = { id: "224", name: "Computer and Space Sciences Building", code: "CSS", lat: 38.9909812, lon: -76.9425669540912 };
     expect(buildingByCode([...list, css], "ATL")?.id).toBe("224");
   });
+  it("knows TMH (Thurgood Marshall Hall, opened 2023, not in umd.io) by hand-entered coordinates", () => {
+    const tmh = buildingByCode(list, "TMH");
+    expect(tmh?.name).toBe("Thurgood Marshall Hall");
+    expect(tmh?.lat).toBeCloseTo(38.985, 4);
+    expect(tmh?.lon).toBeCloseTo(-76.93861, 4);
+  });
   it("returns undefined for unknown, off-campus, TBA or empty codes", () => {
-    for (const c of ["TMH", "BLD3", "TBA", "", null, undefined]) expect(buildingByCode(list, c)).toBeUndefined();
+    for (const c of ["PFR", "BLD3", "TBA", "", null, undefined]) expect(buildingByCode(list, c)).toBeUndefined();
   });
 });

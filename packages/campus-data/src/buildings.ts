@@ -31,7 +31,7 @@ export function parseBuildings(raw: unknown): Building[] {
 // against the buildings feed). Hand-kept; unknown codes just mean "no walk time".
 // Left out on purpose (off campus, or no confident name match in the feed):
 //   BLD3, BLD4 (Shady Grove), DC (Washington),
-//   TMH (Thurgood Marshall Hall, the new School of Public Policy building: not in the feed; needs coordinates), PFR, ZUP, PSC, GVC, RGC, SEN, PBR, RDG.
+//   PFR, ZUP, PSC, GVC, RGC, SEN, PBR, RDG.
 const CODE_OVERRIDES: Record<string, string> = {
   ATL: "224", // Atlantic Building = the renamed Computer and Space Sciences Building (CSS; no longer used in Testudo, Spring 2027)
   IRB: "432", // Brendan Iribe Center
@@ -42,12 +42,19 @@ const CODE_OVERRIDES: Record<string, string> = {
   EDUC: "143", // Benjamin Building (School of Education; umd.io code "EDU")
 };
 
+// Buildings missing from the umd.io feed entirely, with hand-entered coordinates.
+const EXTRA_BUILDINGS: Record<string, Building> = {
+  // School of Public Policy, opened 2023; 38°59'6"N 76°56'19"W (owner, 2026-09-29).
+  TMH: { id: "tmh", name: "Thurgood Marshall Hall", code: "TMH", lat: 38.985, lon: -76.93861 },
+};
+
 /** The building a Testudo code refers to, or undefined (unknown, off campus, "TBA"). */
 export function buildingByCode(buildings: readonly Building[], code: string | null | undefined): Building | undefined {
   const c = (code ?? "").trim().toUpperCase();
   if (!c || c === "TBA") return undefined;
   const overrideId = CODE_OVERRIDES[c];
   if (overrideId) return buildings.find((b) => b.id === overrideId);
+  if (EXTRA_BUILDINGS[c]) return EXTRA_BUILDINGS[c];
   return buildings.find((b) => b.code === c);
 }
 
