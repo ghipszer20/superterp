@@ -815,3 +815,10 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.cardWalk {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font: var(--t-foot);
+  line-height: 1.2;
+}

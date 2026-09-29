@@ -6,7 +6,8 @@ import type { CourseGrades } from "@superterp/ratings";
 import { sectionBlocks } from "@/lib/schedule/block-items";
 import { untimed, type TimeScale } from "@/lib/schedule/calendar";
 import { courseColor } from "@/lib/schedule/colors";
-import { conflictPairs, overlapsWith, sectionChoices } from "@/lib/schedule/sections";
+import { overlapNote, saveBlockedBy } from "@/lib/schedule/conflicts";
+import { overlapsWith, sectionChoices } from "@/lib/schedule/sections";
 import { useBuildings } from "@/lib/schedule/use-buildings";
 import { dayWalks, formatWalk, walkNote } from "@/lib/schedule/walks";
 import { SectionPanel } from "./SectionPanel";
@@ -75,7 +76,7 @@ export function WeekEditor({
     return out;
   }, [placed, preview, courseIds]);
   const offGrid = untimed(items.filter((i) => !i.ghost));
-  const conflicts = mode === "own" ? conflictPairs(placed) : [];
+  const conflicts = mode === "own" ? saveBlockedBy(placed) : [];
   const buildings = useBuildings();
   const walks = useMemo(() => dayWalks(placed, buildings), [placed, buildings]);
   const tightWalks = walks.filter((w) => w.tight);
@@ -124,8 +125,8 @@ export function WeekEditor({
           ) : null}
           {conflicts.length ? (
             <p className={styles.conflictNote} role="status">
-              <b>Overlap:</b> {conflicts.map(([a, b]) => `${a} and ${b}`).join("; ")}. You can’t register for overlapping
-              sections; tap one to pick another time.
+              <b>Overlap:</b> {overlapNote(conflicts)} You can’t register for overlapping sections; tap one to pick another
+              time.
             </p>
           ) : null}
           {placed.length ? (

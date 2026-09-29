@@ -79,7 +79,6 @@ export function WeekCalendar({
                     className={styles.block}
                     data-color={data.color}
                     data-ghost={b.ghost || undefined}
-                    data-conflict={(b.conflict && !b.ghost) || undefined}
                     data-outlined={(outlined === data.courseId && !b.ghost) || undefined}
                     role={clickable ? "button" : undefined}
                     tabIndex={clickable ? 0 : undefined}

@@ -32,6 +32,7 @@ import {
   type SavedSchedule,
 } from "@/lib/schedule/saved";
 import { NOT_LOADED, savedStore } from "@/lib/schedule/saved-store";
+import { overlapNote, saveBlockedBy } from "@/lib/schedule/conflicts";
 import { sectionKey } from "@/lib/schedule/sections";
 import { resolveShared, saveShared, type SharedSchedule } from "@/lib/schedule/share";
 import { sectionBlocks } from "@/lib/schedule/block-items";
@@ -278,6 +279,8 @@ export function ScheduleBuilder({ events = [] }: { events?: AcademicEvent[] }) {
     setSavedNote(`Saved as Plan ${plan}`);
     setTimeout(() => setSavedNote(null), 2500);
   };
+  const blockedPairs = (picks: Record<string, string>) =>
+    saveBlockedBy(Object.entries(picks).flatMap(([c, id]) => sectionByKey.get(`${c}/${id}`) ?? []));
   const planHeader = (picks: Record<string, string>, back: React.ReactNode) => (
     <div className={styles.editorTop}>
       {back}
@@ -287,7 +290,13 @@ export function ScheduleBuilder({ events = [] }: { events?: AcademicEvent[] }) {
         value={plan}
         onChange={setPlan}
       />
-      <button type="button" className={styles.save} onClick={() => save(picks)} disabled={!Object.keys(picks).length}>
+      <button
+        type="button"
+        className={styles.save}
+        onClick={() => save(picks)}
+        disabled={!Object.keys(picks).length || blockedPairs(picks).length > 0}
+        title={blockedPairs(picks).length ? overlapNote(blockedPairs(picks)) : undefined}
+      >
         {savedNote ?? `Save as Plan ${plan}`}
       </button>
       <button
@@ -328,6 +337,7 @@ export function ScheduleBuilder({ events = [] }: { events?: AcademicEvent[] }) {
     const courseIds = Object.keys(shared.picks);
     const items = found.flatMap((s) => sectionBlocks(s, { color: courseColor(courseIds, s.courseId), size: "large" }));
     const scale = timeScale(found.flatMap((s) => s.meetings));
+    const sharedOverlaps = saveBlockedBy(found);
     return (
       <div className={styles.builder}>
         <div className={styles.editorTop}>
@@ -340,7 +350,7 @@ export function ScheduleBuilder({ events = [] }: { events?: AcademicEvent[] }) {
                 value={plan}
                 onChange={setPlan}
               />
-              <button type="button" className={styles.save} onClick={saveSharedAs} disabled={!found.length}>
+              <button type="button" className={styles.save} onClick={saveSharedAs} disabled={!found.length || sharedOverlaps.length > 0}>
                 {savedNote ?? `Save as Plan ${plan}`}
               </button>
             </>
@@ -361,6 +371,11 @@ export function ScheduleBuilder({ events = [] }: { events?: AcademicEvent[] }) {
             {missing.length ? (
               <p className={styles.conflictNote} role="status">
                 No longer offered: {missing.join(", ")}.
+              </p>
+            ) : null}
+            {sharedOverlaps.length ? (
+              <p className={styles.conflictNote} role="status">
+                <b>Overlap:</b> {overlapNote(sharedOverlaps)}
               </p>
             ) : null}
             <div className={styles.bigCard}>
