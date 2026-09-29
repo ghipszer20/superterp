@@ -14,7 +14,7 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 2 | educ-elem | Elementary Education | creates `educ-shared-2026-27.ts` if the catalog shows a teacher-prep core | merged (87k; educ-shared created) |
 | 3 | bmgt-omba-scm | Operations Mgmt & Business Analytics + Supply Chain | import `bmgt-core-2026-27.ts` | merged (84k) |
 | 4 | agnr-ferm-nfsc | Fermentation Science + Nutrition & Food Science | | running |
-| 5 | arch-pair | Architecture + Real Estate & Built Environment | | running |
+| 5 | arch-pair | Architecture + Real Estate & Built Environment | | merged (94k) |
 | 6 | sphl-kine | Kinesiology | creates `sphl-shared` if SPHL majors share a core | running |
 | 7 | agnr-enst | Environmental Science & Technology | | queued |
 | 18 | agnr-plsc | Plant Sciences | | queued |
