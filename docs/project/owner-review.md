@@ -523,3 +523,7 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 ## `feat/sphl-fmsc` (2026-09-28): major Family Health (`fmsc-major`, SPHL); plan constructed, `official: false`
 - Family Health: no term-by-term plan is published and the SPH department page has no requirements; plan constructed from the catalog. It uses FMSC420 as an unconfirmed placeholder for the second 300-400 elective (FMSC190, FMSC290 and FMSC460 are real).
 - Family Health: "two 100-200 level" and "two 300-400 level" FMSC electives are encoded as FMSC 100-299 and 300-499 ranges; FMSC290 counts toward the economics pick-one and can also fill a lower elective when ECON200/201 is used instead. A program-level "C-" is applied, per the catalog.
+
+## `feat/educ-c` (2026-09-28): major Middle School Education (`mided-major`, EDUC); plan constructed, `official: false`
+- Middle School Education: no readable 4-year plan (pages only link roadmaps), so the plan is constructed from the catalog. The catalog has no content-area choices, so it is one program with no tracks.
+- Middle School Education: the AOSC200 & AOSC201 row sits right under the BSCI options; encoded as its own required science row, not a BSCI option (the catalog total of 89 credits fits that reading). Please confirm.
