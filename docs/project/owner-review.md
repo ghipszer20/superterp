@@ -573,3 +573,9 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Information Science: the catalog's InfoSci Cognate Area option (Data Science, Cybersecurity and Privacy, Digital Curation, Health Information) lists no courses in the fetched source, so no tracks were made; the 15-credit elective is encoded as any INST course. Cognate students taking non-INST courses would show it unmet. Need the cognate course lists.
 - Information Science: department page says "upper-level" electives, catalog says "INST-coded"; encoded the wider catalog rule, not narrowed.
 - Information Science: no official four-year plan in the sources; sample plan constructed (official: false).
+
+## `feat/sphl-ph` (2026-09-28): majors Public Health Practice (`php-major`), Public Health Science (`phsc-major`), SPHL; plans constructed, `official: false`
+- Public Health Practice: 12 credits of health electives come from a "pre-approved list" not in the sources; OPEN SLOT, not encoded. Optional areas of specialization (Special Populations, Health Communication, Health Risk Behavior) not encoded (no course lists in the sources).
+- Public Health Practice: no term-by-term plan in the sources (SPH page has benchmarks only); plan constructed. Elective fills HLTH300, HLTH325, HLTH377, HLTH424 are unconfirmed placeholders.
+- Public Health Practice: anatomy row is "HLTH212 or BSCI201" (catalog and SPH benchmark agree), so the shared BSCI201/202 pair was not used.
+- Public Health Science: sph.umd.edu department page returned 404, department page not checked. 12 credits of Public Health Science options (300-400 level, "primarily offered within SPH") from an approved list not in the sources; OPEN SLOT. No term-by-term plan; plan constructed with unconfirmed option fills HLTH424, MIEH330, MIEH331, HLSA484.
