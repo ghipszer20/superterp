@@ -582,3 +582,8 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 
 ## Half 1 main session (2026-09-28): major Fermentation Science at Shady Grove (`ferm-usg-major`, USG); plan constructed, `official: false`
 - Catalog requirement table is identical to College Park's, so the program re-uses `ferm-major`'s requirements (and inherits its flags: AGST/NFSC topic rows as ranges, constructed plan). No Shady Grove department page in the sources.
+
+## `feat/usg-phsc` (2026-09-28): major Public Health Science at Shady Grove (`phsc-usg-major`, USG); plan constructed, `official: false`
+- Catalog heading says "(Discontinued)"; encoded anyway. Confirm whether to offer it.
+- Table matches College Park except PHSC300 replaces SPHL100; inherits phsc-major's flags (12 credits of options is an OPEN SLOT; option fills HLTH424, MIEH330, MIEH331, HLSA484 are unconfirmed).
+- Department page returned HTTP 403 (not checked); four-year-plans page has no Shady Grove plan, so the plan is constructed.
