@@ -13,10 +13,11 @@ export const hespMinor: Program = {
   source:
     "UMD Academic Catalog 2026-27, Hearing and Speech Sciences Minor; Department of Hearing and Speech Sciences, https://hesp.umd.edu/ (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Department page not checked: the fetched hesp.umd.edu pages are a homepage and an empty advising page with no minor requirements. Encoded from the catalog.",
-    "Not encoded: minimum 2.0 cumulative GPA across the minor's courses; the catalog's note that a C- is needed to enroll in courses that require a class as a prerequisite.",
+    "Not encoded: program GPA 2.0 across the minor's courses is encoded as minGpa; the catalog's note that a C- is needed to enroll in courses that require a class as a prerequisite.",
     "Elective area: two courses in ONE of two areas. Option 1 (speech-language pathology) is HESP305 plus one of HESP402, HESP404, HESP406, HESP498; Option 2 (audiology) is HESP311 plus HESP411. Encoded as two alternative sets so the courses must come from one area.",
     "Neither source states a cap on overlap with a major or other programs; no sharing limit is set.",
     "No published sample plan; the sample plan is constructed.",

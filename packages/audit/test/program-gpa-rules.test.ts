@@ -56,6 +56,19 @@ import { romlMajorItalianSpanish } from "../programs/roml-major-italian-spanish-
 import { spanMajorLanguageCultureProfessionalContexts } from "../programs/span-major-language-culture-professional-contexts-2026-27.ts";
 import { spanMajorLinguisticsCultureEducation } from "../programs/span-major-linguistics-culture-education-2026-27.ts";
 import { spanMajorLiteratureCultureMedia } from "../programs/span-major-literature-culture-media-2026-27.ts";
+import { aaasMajorPublicPolicy } from "../programs/aaas-major-public-policy-2026-27.ts";
+import { econMajorBa } from "../programs/econ-major-ba-2026-27.ts";
+import { econMajorBs } from "../programs/econ-major-bs-2026-27.ts";
+import { geogMajorCeos } from "../programs/geog-major-ceos-2026-27.ts";
+import { geogMajorGds } from "../programs/geog-major-gds-2026-27.ts";
+import { geogMajorGeneral } from "../programs/geog-major-general-2026-27.ts";
+import { gtstMinor } from "../programs/gtst-minor-2026-27.ts";
+import { gvptMinorIdcm } from "../programs/gvpt-minor-idcm-2026-27.ts";
+import { hespMinor } from "../programs/hesp-minor-2026-27.ts";
+import { neurMinor } from "../programs/neur-minor-2026-27.ts";
+import { psycMajorBa } from "../programs/psyc-major-ba-2026-27.ts";
+import { socyMajor } from "../programs/socy-major-2026-27.ts";
+import { survMinor } from "../programs/surv-minor-2026-27.ts";
 
 const programs = [
   amstMajor, arabMinor, arthMajor, arthMinor, arttMajorAdvancedSpecialization, arttMajorGraphicDesign,
@@ -157,6 +170,32 @@ describe("program GPA rules (ARHU part B)", () => {
         ["span-major-language-culture-professional-contexts", 2.0],
         ["span-major-linguistics-culture-education", 2.0],
         ["span-major-literature-culture-media", 2.0],
+      ].sort(),
+    );
+  });
+});
+
+const bsosPrograms = [
+  aaasMajorPublicPolicy, econMajorBa, econMajorBs, geogMajorCeos, geogMajorGds, geogMajorGeneral, gtstMinor, gvptMinorIdcm, hespMinor, neurMinor, psycMajorBa, socyMajor, survMinor,
+];
+
+describe("program GPA rules (BSOS)", () => {
+  it("encodes the stated graduation GPA per program", () => {
+    expect(bsosPrograms.map((p) => [p.id, p.minGpa]).sort()).toEqual(
+      [
+        ["aaas-major-public-policy", 2.0],
+        ["econ-major-ba", 2.0],
+        ["econ-major-bs", 2.0],
+        ["geog-major-ceos", 2.0],
+        ["geog-major-gds", 2.0],
+        ["geog-major-general", 2.0],
+        ["gtst-minor", 2.0],
+        ["gvpt-minor-idcm", 2.0],
+        ["hesp-minor", 2.0],
+        ["neur-minor", 2.0],
+        ["psyc-major-ba", 1.7],
+        ["socy-major", 2.0],
+        ["surv-minor", 2.0],
       ].sort(),
     );
   });
