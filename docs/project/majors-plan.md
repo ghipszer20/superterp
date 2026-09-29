@@ -4,6 +4,10 @@ Scope: every unencoded major (College Park first, then Shady Grove / Southern Ma
 
 College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady Grove) added 2026-09-28.
 
+**Split 2026-09-28 (owner):** Half A (AGNR, ARCH, BMGT, SPHL, INFO, Shady Grove/Southern Maryland) = majors session A, merging in `.claude/worktrees/majors-merge`. Half B (EDUC, PLCY, JOUR, CMNS AI, ARHU OCR re-check) = majors session B, merging in `.claude/worktrees/majors-merge-b`. Each session edits only its own half's rows.
+
+## Half A (majors session A)
+
 | # | id | majors | notes | status |
 |---|---|---|---|---|
 | 1 | agnr-ensp (resume) | ENSP: 8 remaining concentrations + 3 flagged narrowings | `ensp-shared-2026-27.ts` | merged (114k; all 12 concentrations) |
@@ -13,16 +17,24 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 5 | arch-pair | Architecture + Real Estate & Built Environment | | running |
 | 6 | sphl-kine | Kinesiology | creates `sphl-shared` if SPHL majors share a core | running |
 | 7 | agnr-enst | Environmental Science & Technology | | queued |
-| 8–16 | educ-a..i | Early Childhood/Special Ed; Elementary/Middle Special Ed; Middle School; Math Ed; English Ed; Science Ed; Social Studies Ed; World Language Ed; Art Ed | after #2 merged | queued |
-| 17 | educ-hdev | Human Development | not teacher-prep | queued |
 | 18 | agnr-plsc | Plant Sciences | | queued |
 | 19 | agnr-larc | Landscape Architecture | | queued |
-| 20 | cmns-ai | AI: Computational Structures for AI Systems | `cmsc-major` pattern | queued |
-| 21 | jour | Journalism | | queued |
 | 22 | info-infosci | Information Science | | queued |
 | 23 | info-tid | Technology & Information Design | | queued |
 | 24–27 | sphl-* | Family Health; Global Health; PH Practice (+ PH Science if both small) | after #6 merged | queued |
+| 31–34 | usg-* | Fermentation (identical: thin re-export) + Info Science + PH Science; Shady Grove Accounting/Management/Marketing; Communication; Southern Maryland EE + ME | college USG; patterns `biocomp-major`, `mechatronics-major`; diff only `## Catalog requirements` first | queued |
+
+
+
+
+## Half B (majors session B)
+
+| # | id | majors | notes | status |
+|---|---|---|---|---|
+| 8–16 | educ-a..i | Early Childhood/Special Ed; Elementary/Middle Special Ed; Middle School; Math Ed; English Ed; Science Ed; Social Studies Ed; World Language Ed; Art Ed | after #2 merged | queued |
+| 17 | educ-hdev | Human Development | not teacher-prep | queued |
+| 20 | cmns-ai | AI: Computational Structures for AI Systems | `cmsc-major` pattern | queued |
+| 21 | jour | Journalism | | queued |
 | 28 | plcy-pp | Public Policy | college PLCY | queued |
 | 29 | plcy-gfp | Global & Foreign Policy | college PLCY | queued |
 | 30 | arhu-ocr-recheck | re-check the 18 OCR-readable ARHU plans (`official: true` where clean); Music Composition BM track | follow-up | queued |
-| 31–34 | usg-* | Fermentation (identical: thin re-export) + Info Science + PH Science; Shady Grove Accounting/Management/Marketing; Communication; Southern Maryland EE + ME | college USG; patterns `biocomp-major`, `mechatronics-major`; diff only `## Catalog requirements` first | queued |
