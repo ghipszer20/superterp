@@ -579,3 +579,9 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Public Health Practice: no term-by-term plan in the sources (SPH page has benchmarks only); plan constructed. Elective fills HLTH300, HLTH325, HLTH377, HLTH424 are unconfirmed placeholders.
 - Public Health Practice: anatomy row is "HLTH212 or BSCI201" (catalog and SPH benchmark agree), so the shared BSCI201/202 pair was not used.
 - Public Health Science: sph.umd.edu department page returned 404, department page not checked. 12 credits of Public Health Science options (300-400 level, "primarily offered within SPH") from an approved list not in the sources; OPEN SLOT. No term-by-term plan; plan constructed with unconfirmed option fills HLTH424, MIEH330, MIEH331, HLSA484.
+
+## `feat/educ-h` (2026-09-28): major Secondary Education - World Language (`educ-world-language-major`), EDUC; plan constructed, `official: false`
+- World Language: the catalog gives the language content (36 credits of Primary WL Area courses, 3 credits Applied Linguistics, 9 credits supporting-area electives) as generic rows with no course lists and no per-language tracks; all three are OPEN SLOTs, only the education component is encoded. Need per-language course lists (Chinese, French, German, Italian, Latin, Russian, Spanish) from the language departments.
+- World Language: Applied Linguistics row is "Primary WL Area Applied Linguistics or LING200"; not encoded because LING200 alone would narrow it.
+- World Language: department pages (MCERT, Terrapin Teachers, four-year-plans) carry no requirements; catalog only. ACTFL OPI and Praxis II/ACTFL written test are manual.
+- World Language: no term-by-term plan in the sources; sample plan constructed, education courses only.
