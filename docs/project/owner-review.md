@@ -659,3 +659,7 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 ## `feat/video-minor` (2026-09-28): Video Production and Documentary Filmmaking Minor, encoded from the owner's table; sample plan constructed
 - Catalog page lists no requirements; encoded from the owner-pasted table. No grade floor stated, C- used (siblings state C-). Department page not checked.
 - "Two to five courses (6-15 credits)": only the 2-course minimum is enforced; JOUR368T is in two rows but counts once within the program.
+## `feat/distinct-areas` (2026-09-28): distribution areas can be course filters; "from at least two departments" now enforced
+- `lacs-cert`: electives re-encoded as a distribution (3 courses, at least 2 areas, one filter area per department in the existing set, 100-499). The 300+ overlay is kept. Sample plan changed: SPAN363 replaced by HIST307 so the plan spans two departments.
+- `lacs-minor`: electives re-encoded as a distribution (2 courses, 2 areas, one per department, 300-499). Sample plan unchanged (SPAN458 + LACS369). The 75% Latin American content rule stays manual.
+- Left manual: `musc-minor-culture` (source approves four ensembles but does not assign them to culture areas) and `lgbt-cert` (source names the 6 areas but not which courses belong to each).

@@ -1123,6 +1123,40 @@
   font: var(--t-foot);
 }
 
+/* An Open Slot: neutral until ticked; the accent appears only on the checked box. */
+.reqStatus[data-status="confirm"] {
+  background: var(--fill, rgb(120 120 128 / 0.16));
+  color: var(--text-2);
+}
+
+.slotCredits {
+  color: var(--text-2);
+  font-weight: 400;
+}
+
+.slotCheck {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  min-height: 32px;
+  color: var(--text-2);
+  font: var(--t-foot);
+  cursor: pointer;
+}
+
+.slotCheck input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.slotCheck[data-checked] {
+  color: var(--text);
+}
+
 /* ---------- Tracks (audit view) ---------- */
 
 .trackSection {

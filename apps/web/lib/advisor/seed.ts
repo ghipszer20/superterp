@@ -54,5 +54,10 @@ export function seedFromUrl(search: string, env: Env): { plan: AdvisorPlan | nul
   if (tracks.length) plan.tracks = tracks;
   const degree = params.get("degree");
   if (DEGREE_CHOICES.includes(degree as DegreeChoice)) plan.degreeMode = degree as DegreeChoice;
+  // &add=pwrt-minor appends programs; &slots=pwrt-minor/approved-courses ticks those Open Slots.
+  const csv = (name: string) => (params.get(name) ?? "").split(",").filter(Boolean);
+  plan.programs.push(...csv("add").filter((id) => !plan.programs.includes(id)));
+  const slots = csv("slots");
+  if (slots.length) plan.confirmedSlots = slots;
   return { plan, consent };
 }

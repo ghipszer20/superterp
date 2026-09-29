@@ -51,6 +51,8 @@ export type WhatIfOptions = {
    * for a gateway result when the Computer Science major is involved. */
   matriculationTerm?: string;
   cumulativeGpa?: number;
+  /** Open Slots the student confirmed, as "<programId>/<requirementId>" (@superterp/audit AuditOptions). */
+  confirmed?: string[];
 };
 
 export type WhatIfResult = {
@@ -203,7 +205,7 @@ export async function whatIf(
   const floorCredits = splitLayers.flatMap((l) => l.floors);
 
   const union = dedupeById([...current, ...proposed, ...auditedLayers]);
-  const results = union.length > 0 ? await auditPrograms(union, courses) : [];
+  const results = union.length > 0 ? await auditPrograms(union, courses, options.confirmed ? { confirmed: options.confirmed } : {}) : [];
   const usedByProgram = new Map(union.map((p, i) => [p.id, usedIndices(p, results[i]!, courses)]));
 
   const floorSet = creditFloorIndices(courses, floorCredits);
