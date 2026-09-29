@@ -4,22 +4,72 @@
   "fetched": "2026-09-28",
   "official": false,
   "notes": [
-    "No usable 4-year plan exists: the College's official Public Relations four-year plan PDF (https://drive.google.com/uc?export=download&id=1p7VsEESCucKzHn92KjkI1CwjMIVUpyz3) converted to fully garbled, symbol-substituted text with no legible course codes, term headers, or other course-level signal anywhere in it. This plan is CONSTRUCTED from the catalog's own requirement structure instead (docs/project/owner-review.md flags this). Gen Ed courses are left out; only the major is audited.",
+    "No usable 4-year plan exists: the College's official Public Relations four-year plan PDF (https://drive.google.com/uc?export=download&id=1p7VsEESCucKzHn92KjkI1CwjMIVUpyz3) was re-checked from OCR text and is also illegible (shredded table; no course-by-term grid recoverable). This plan is CONSTRUCTED from the catalog's own requirement structure instead (docs/project/owner-review.md flags this). Gen Ed courses are left out; only the major is audited.",
     "College Requirement Statistics filled with BMGT230.",
     "Communication Theory & Principles' remaining pick (alongside fixed COMM201) filled with COMM303.",
     "Research Methods choice filled with COMM307.",
     "Communication & Society's Leadership & Social Change pick filled with COMM422; Diversity & Inclusion pick filled with COMM324.",
     "Applied (COMM331, COMM386) and the four Specialization Electives (COMM351, COMM353, COMM483, COMM476) are all named, required courses for this track -- no slots to fill."
   ],
-  "credits": { "COMM130": 1 },
+  "credits": {
+    "COMM130": 1
+  },
   "terms": [
-    { "term": "Year 1 Fall", "courses": ["COMM200", "COMM130"] },
-    { "term": "Year 1 Spring", "courses": ["COMM250", "BMGT230"] },
-    { "term": "Year 2 Fall", "courses": ["COMM201", "COMM303"] },
-    { "term": "Year 2 Spring", "courses": ["COMM304", "COMM307"] },
-    { "term": "Year 3 Fall", "courses": ["COMM422", "COMM324"] },
-    { "term": "Year 3 Spring", "courses": ["COMM331", "COMM386"] },
-    { "term": "Year 4 Fall", "courses": ["COMM351", "COMM353"] },
-    { "term": "Year 4 Spring", "courses": ["COMM483", "COMM476"] }
+    {
+      "term": "Year 1 Fall",
+      "courses": [
+        "COMM200",
+        "COMM130"
+      ]
+    },
+    {
+      "term": "Year 1 Spring",
+      "courses": [
+        "COMM250",
+        "BMGT230"
+      ]
+    },
+    {
+      "term": "Year 2 Fall",
+      "courses": [
+        "COMM201",
+        "COMM303"
+      ]
+    },
+    {
+      "term": "Year 2 Spring",
+      "courses": [
+        "COMM304",
+        "COMM307"
+      ]
+    },
+    {
+      "term": "Year 3 Fall",
+      "courses": [
+        "COMM422",
+        "COMM324"
+      ]
+    },
+    {
+      "term": "Year 3 Spring",
+      "courses": [
+        "COMM331",
+        "COMM386"
+      ]
+    },
+    {
+      "term": "Year 4 Fall",
+      "courses": [
+        "COMM351",
+        "COMM353"
+      ]
+    },
+    {
+      "term": "Year 4 Spring",
+      "courses": [
+        "COMM483",
+        "COMM476"
+      ]
+    }
   ]
 }
