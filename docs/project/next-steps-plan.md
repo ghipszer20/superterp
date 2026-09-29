@@ -1,5 +1,7 @@
 # SuperTerp next steps: 5 parallel sessions (owner-approved 2026-09-28)
 
+> **Superseded for remaining work (2026-09-29):** the unfinished items now run as 3 sessions in `docs/project/overtime-plan-2026-09-29.md`. This file's "Shared rules" still apply.
+
 ## Context
 Wave 2 (program encoding) is effectively finished. Majors A and B, minors A and B, certificates and the OCR re-checks have all merged into `origin/feat/course-data`. The registry holds about 410 programs, and the only skips are Individual Studies and CMNS AI (unpublished).
 
