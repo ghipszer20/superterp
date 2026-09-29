@@ -16,12 +16,12 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 4 | agnr-ferm-nfsc | Fermentation Science + Nutrition & Food Science | | merged (99k) |
 | 5 | arch-pair | Architecture + Real Estate & Built Environment | | merged (94k) |
 | 6 | sphl-kine | Kinesiology | creates `sphl-shared` if SPHL majors share a core | merged (84k; sphl-shared created) |
-| 7 | agnr-enst | Environmental Science & Technology | | merged (4 tracks) |
-| 18 | agnr-plsc | Plant Sciences | | running |
+| 7 | agnr-enst | Environmental Science & Technology | | merged (90k; 4 tracks) |
+| 18 | agnr-plsc | Plant Sciences | | merged (84k; 3 tracks) |
 | 19 | agnr-larc | Landscape Architecture | | running |
-| 22 | info-infosci | Information Science | | queued |
+| 22 | info-infosci | Information Science | | running |
 | 23 | info-tid | Technology & Information Design | | queued |
-| 24–27 | sphl-* | Family Health; Global Health; PH Practice (+ PH Science if both small) | after #6 merged | Family Health merged (73k); Global Health running |
+| 24–27 | sphl-* | Family Health; Global Health; PH Practice (+ PH Science if both small) | after #6 merged | Family Health (73k), Global Health (42k) merged; PH Practice + PH Science running |
 | 31–34 | usg-* | Fermentation (identical: thin re-export) + Info Science + PH Science; Shady Grove Accounting/Management/Marketing; Communication; Southern Maryland EE + ME | college USG; patterns `biocomp-major`, `mechatronics-major`; diff only `## Catalog requirements` first | queued |
 
 
