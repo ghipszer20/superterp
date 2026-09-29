@@ -19,13 +19,19 @@ export const gfplMajorHumanSecurityMigration: Program = {
   minGrade: "C-",
   verified: false,
   reviewNotes: [
-    "OPEN SLOT: 6 credits, Human Security and Migration Track Elective Courses (two courses 'linked to that track', from SPP or " +
-      "elsewhere on campus). The linked approved-course list is not in the fetched source, so these are left " +
-      "out of requirements.",
+    "Open slot 'track-electives' (openSlot requirement): 6 credits, Human Security and Migration Track Elective Courses (two courses 'linked to that track', from SPP or " +
+      "elsewhere on campus). The linked approved-course list is not in the fetched source, so the student confirms it with their advisor rather than the audit narrowing it.",
     ...gfplSharedReviewNotes,
   ],
   requirements: [
     ...gfplSharedRequirements,
+    {
+      kind: "openSlot",
+      id: "track-electives",
+      name: "Human Security and Migration track electives",
+      credits: 6,
+      note: "Two courses linked to the track, from SPP or elsewhere on campus, from the approved list; confirm with your advisor.",
+    },
     { kind: "course", id: "track-anchor", name: "Track Anchor Course: GFPL372 Foundations of Human Security and Migration", options: ["GFPL372"] },
   ],
 };

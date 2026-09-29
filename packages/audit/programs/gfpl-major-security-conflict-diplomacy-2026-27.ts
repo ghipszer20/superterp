@@ -19,13 +19,19 @@ export const gfplMajorSecurityConflictDiplomacy: Program = {
   minGrade: "C-",
   verified: false,
   reviewNotes: [
-    "OPEN SLOT: 6 credits, Security, Conflict, and Diplomacy Track Elective Courses (two courses 'linked to that track', from SPP or " +
-      "elsewhere on campus). The linked approved-course list is not in the fetched source, so these are left " +
-      "out of requirements.",
+    "Open slot 'track-electives' (openSlot requirement): 6 credits, Security, Conflict, and Diplomacy Track Elective Courses (two courses 'linked to that track', from SPP or " +
+      "elsewhere on campus). The linked approved-course list is not in the fetched source, so the student confirms it with their advisor rather than the audit narrowing it.",
     ...gfplSharedReviewNotes,
   ],
   requirements: [
     ...gfplSharedRequirements,
+    {
+      kind: "openSlot",
+      id: "track-electives",
+      name: "Security, Conflict, and Diplomacy track electives",
+      credits: 6,
+      note: "Two courses linked to the track, from SPP or elsewhere on campus, from the approved list; confirm with your advisor.",
+    },
     { kind: "course", id: "track-anchor", name: "Track Anchor Course: GFPL371 Foundations of Security, Conflict, and Diplomacy", options: ["GFPL371"] },
   ],
 };
