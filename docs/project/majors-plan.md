@@ -31,10 +31,10 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 
 | # | id | majors | notes | status |
 |---|---|---|---|---|
-| 8 | educ-a | Early Childhood / Early Childhood Special Ed | 2 tracks; import `educ-shared`, never edit it | running |
-| 9 | educ-b | Elementary/Middle Special Ed | 2 tracks | running |
-| 10 | educ-c | Middle School Ed | | queued |
-| 11 | educ-d | Secondary Ed: Mathematics | | queued |
+| 8 | educ-a | Early Childhood / Early Childhood Special Ed | 2 tracks; import `educ-shared`, never edit it | merged (73k) |
+| 9 | educ-b | Elementary/Middle Special Ed | 2 tracks | merged (79k) |
+| 10 | educ-c | Middle School Ed | | running |
+| 11 | educ-d | Secondary Ed: Mathematics | | running |
 | 12 | educ-e | Secondary Ed: English | | queued |
 | 13 | educ-f | Secondary Ed: Science | | queued |
 | 14 | educ-g | Secondary Ed: Social Studies | | queued |
@@ -43,8 +43,8 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 17 | educ-hdev | Human Development | not teacher-prep | queued |
 | 20 | cmns-ai | AI: Computational Structures for AI Systems | | skipped (not yet published; owner 2026-09-28) |
 | 21 | jour | Journalism | default (no specialization) + Broadcast, Investigative, Sports tracks | queued |
-| 28 | plcy-pp | Public Policy | college PLCY | running |
-| 29 | plcy-gfp | Global & Foreign Policy | college PLCY; thematic tracks | queued |
+| 28 | plcy-pp | Public Policy | college PLCY | merged (71k; STAT row widened by main session) |
+| 29 | plcy-gfp | Global & Foreign Policy | college PLCY; thematic tracks | running |
 | 30a | ocr-comm | OCR re-check: Communication (5 plans) | read only the OCR plan section | queued |
 | 30b | ocr-musc | OCR re-check: Music (Jazz, Perf/Comp) + Composition BM track | | queued |
 | 30c | ocr-a | OCR re-check: Chinese, Cinema ×2, Dance | | queued |
