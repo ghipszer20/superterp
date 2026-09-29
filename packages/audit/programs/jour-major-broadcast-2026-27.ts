@@ -18,7 +18,7 @@ export const jourMajorBroadcast: Program = {
     ...jourCommonReviewNotes,
     "Broadcast Specialization (9-15 credits): JOUR347 and JOUR360 are overlays because they also fill " +
       "Menu 1 and Menu 2. The third row, an approved broadcast capstone (3-9 credits; several also " +
-      "require JOUR361), is covered by the capstone OPEN SLOT above.",
+      "require JOUR361), is covered by the shared 'capstone-experience' openSlot requirement (no separate slot, to avoid double-counting).",
   ],
   requirements: [
     ...jourCore,
