@@ -31,10 +31,22 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 
 | # | id | majors | notes | status |
 |---|---|---|---|---|
-| 8–16 | educ-a..i | Early Childhood/Special Ed; Elementary/Middle Special Ed; Middle School; Math Ed; English Ed; Science Ed; Social Studies Ed; World Language Ed; Art Ed | after #2 merged | queued |
+| 8 | educ-a | Early Childhood / Early Childhood Special Ed | 2 tracks; import `educ-shared`, never edit it | running |
+| 9 | educ-b | Elementary/Middle Special Ed | 2 tracks | running |
+| 10 | educ-c | Middle School Ed | | queued |
+| 11 | educ-d | Secondary Ed: Mathematics | | queued |
+| 12 | educ-e | Secondary Ed: English | | queued |
+| 13 | educ-f | Secondary Ed: Science | | queued |
+| 14 | educ-g | Secondary Ed: Social Studies | | queued |
+| 15 | educ-h | Secondary Ed: World Language | | queued |
+| 16 | educ-i | Secondary Ed: Art | | queued |
 | 17 | educ-hdev | Human Development | not teacher-prep | queued |
-| 20 | cmns-ai | AI: Computational Structures for AI Systems | `cmsc-major` pattern | queued |
-| 21 | jour | Journalism | | queued |
-| 28 | plcy-pp | Public Policy | college PLCY | queued |
-| 29 | plcy-gfp | Global & Foreign Policy | college PLCY | queued |
-| 30 | arhu-ocr-recheck | re-check the 18 OCR-readable ARHU plans (`official: true` where clean); Music Composition BM track | follow-up | queued |
+| 20 | cmns-ai | AI: Computational Structures for AI Systems | | skipped (not yet published; owner 2026-09-28) |
+| 21 | jour | Journalism | default (no specialization) + Broadcast, Investigative, Sports tracks | queued |
+| 28 | plcy-pp | Public Policy | college PLCY | running |
+| 29 | plcy-gfp | Global & Foreign Policy | college PLCY; thematic tracks | queued |
+| 30a | ocr-comm | OCR re-check: Communication (5 plans) | read only the OCR plan section | queued |
+| 30b | ocr-musc | OCR re-check: Music (Jazz, Perf/Comp) + Composition BM track | | queued |
+| 30c | ocr-a | OCR re-check: Chinese, Cinema ×2, Dance | | queued |
+| 30d | ocr-b | OCR re-check: Global Culture, HCAI, Immersive Media Design | | queued |
+| 30e | ocr-c | OCR re-check: Theatre, WGSS | | queued |
