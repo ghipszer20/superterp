@@ -582,3 +582,9 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 
 ## Half 1 main session (2026-09-28): major Fermentation Science at Shady Grove (`ferm-usg-major`, USG); plan constructed, `official: false`
 - Catalog requirement table is identical to College Park's, so the program re-uses `ferm-major`'s requirements (and inherits its flags: AGST/NFSC topic rows as ranges, constructed plan). No Shady Grove department page in the sources.
+## `feat/educ-g` (2026-09-28): major Secondary Education - Social Studies (`educ-social-studies`, three tracks: History default, Geography, Government and Politics), EDUC; plans constructed, `official: false`
+- No department page carries requirements (MCERT is the graduate program, Terrapin Teachers is STEM only, the COE plans page only links), so the catalog alone is encoded.
+- No official term-by-term plan in the sources; all three sample plans are constructed. Fills (regional HIST electives HIST284/HIST111, History/GEOG/GVPT electives) are placeholders from courses used in the History, Geography and GVPT major plans.
+- Regional HIST electives, History-electives concentration (15 credits) and non-Western rule, Geography gateway split (physical/human/technique) and GVPT skills option name no course lists; pools accept whole departments and the splits are not enforced.
+- Catalog's "29 credit hours in the social sciences" does not match the rows listed (History 12, Geography and Government about 21); the balance is unlisted, not encoded as a slot.
+- Government and Politics option is flagged "under review" in the catalog; encoded as printed.
