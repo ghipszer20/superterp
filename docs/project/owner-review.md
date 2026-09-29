@@ -613,3 +613,14 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Catalog heading says "(Discontinued)"; encoded anyway. Confirm whether to offer it.
 - Table matches College Park except PHSC300 replaces SPHL100; inherits phsc-major's flags (12 credits of options is an OPEN SLOT; option fills HLTH424, MIEH330, MIEH331, HLSA484 are unconfirmed).
 - Department page returned HTTP 403 (not checked); four-year-plans page has no Shady Grove plan, so the plan is constructed.
+
+## `feat/usg-comm` (2026-09-28): major Communication at Shady Grove (`comm-usg-major`, USG); plan constructed, `official: false`
+- Communication (Shady Grove): department page says "Communication Studies track, with a specialization in Media and Digital Communication" but lists no courses. Encoded the catalog table, which resembles College Park's Communication Studies track and has none of the Media and Digital named electives; specialization claim unverifiable.
+- Communication (Shady Grove): differs from College Park in Diversity & Inclusion (adds COMM398) and both Applied lists (COMM498 in, COMM311 out); other rows reuse `comm-shared`.
+- Communication (Shady Grove): COMM420/421/436/454/455 have no titles in the source; kept in pools, not used in the plan.
+- Communication (Shady Grove): "only 3 credits of COMM386 may count" is an at-most cap, manual note (Applied's overlapping picks are one `sets` requirement so one course fills only one).
+- Communication (Shady Grove): no four-year plan in the source; plan constructed. Elective fills COMM340/341/351/365 are placeholders. Undergraduate Director substitutions, admission, 2.0 GPA not encoded.
+
+## `feat/usg-usmsm-reexports` (2026-09-28): majors Accounting, Management, Marketing at Shady Grove (`acct-usg-major`, `mgmt-usg-major`, `mktg-usg-major`, USG); Electrical Engineering, Mechanical Engineering at Southern Maryland (`ee-usmsm-major`, `me-usmsm-major`, ENGR); plans mirror the College Park plans (constructed unless the College Park plan is official)
+- Accounting at Shady Grove: the USG catalog's Business and Accounting Advisory track says "Select two of the following: | 9" / "Total Credits | 12" and drops BMGT313 from the "or one of the following accounting courses not selected above" list; the Smith department page says "Two of the following courses" and keeps BMGT313, as at College Park. Department page wins, so the College Park encoding is unchanged.
+- EE and ME at Southern Maryland: no USMSM key exists in the college list, so both use ENGR (the Clark School runs them; the catalog URL slug is college-of-southern-maryland). Confirm or add a USMSM college.
