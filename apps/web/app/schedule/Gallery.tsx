@@ -26,6 +26,8 @@ export type GalleryData = {
   sectionByKey: ReadonlyMap<string, Section>;
   ratings: Readonly<Record<string, number>>;
   courseIds: string[];
+  /** Set only for the Recommended sort: the strip then explains each pick. */
+  gpas?: Readonly<Record<string, number>>;
 };
 
 /** The sections a card shows: for each interchangeable group, the best-rated instructor's. */
@@ -50,7 +52,7 @@ const Card = memo(function Card({
   return (
     <>
       <WeekCalendar size={size} scale={data.scale} items={items} height={size === "mini" ? MINI_COL : ZOOM_COL} days={days} />
-      <TeacherStrip picks={picks} groups={groups} courseIds={data.courseIds} ratings={data.ratings} size={size} />
+      <TeacherStrip picks={picks} groups={groups} courseIds={data.courseIds} ratings={data.ratings} gpas={data.gpas} size={size} />
     </>
   );
 });

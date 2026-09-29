@@ -1,6 +1,6 @@
 import type { Section } from "@superterp/course-data/schedules";
 import { courseColor } from "@/lib/schedule/colors";
-import { bestRating, instructorLabel } from "@/lib/schedule/sections";
+import { bestRating, instructorLabel, recommendReason } from "@/lib/schedule/sections";
 import { RatingBadge } from "./RatingBadge";
 import cal from "./calendar.module.css";
 import styles from "./builder.module.css";
@@ -14,12 +14,15 @@ export function TeacherStrip({
   groups,
   courseIds,
   ratings,
+  gpas,
   size = "mini",
 }: {
   picks: Section[];
   groups?: Section[][];
   courseIds: string[];
   ratings: Readonly<Record<string, number>>;
+  /** Given only when sorting by Recommended: adds one short reason per course. */
+  gpas?: Readonly<Record<string, number>>;
   size?: "mini" | "zoom" | "large";
 }) {
   return (
@@ -29,7 +32,7 @@ export function TeacherStrip({
           <span className={styles.swatch} />
           <b>{s.courseId}</b>
           <span className={styles.stripWho}>{instructorLabel(s, groups?.[k])}</span>
-          <RatingBadge rating={bestRating(s, ratings)} />
+          {gpas ? <span>{recommendReason(s, ratings, gpas)}</span> : <RatingBadge rating={bestRating(s, ratings)} />}
         </li>
       ))}
     </ul>

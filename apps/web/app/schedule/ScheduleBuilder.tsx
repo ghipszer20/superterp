@@ -58,7 +58,9 @@ export function ScheduleBuilder() {
 
   // The term is known once the course index loads; the saved schedule is per term.
   const [courseList, setCourseList] = useState<string[]>([]);
-  const data = useScheduleData(courseList);
+  // Grades load only once "Recommended" is chosen (set from the saved filters below).
+  const [wantGrades, setWantGrades] = useState(false);
+  const data = useScheduleData(courseList, wantGrades);
   const term = data.term;
   const saved: SavedSchedule | null = useMemo(
     () => (term && raw !== NOT_LOADED ? parseSaved(raw, term) : null),
@@ -133,16 +135,21 @@ export function ScheduleBuilder() {
   }, [data.sections]);
   const sectionByKey = useMemo(() => new Map(data.sections.map((s) => [sectionKey(s), s])), [data.sections]);
 
-  const ready = data.loaded && courseList.join() === courses.join();
+  // With Recommended, wait for the grades too (the hook sets wantGrades a render after the sort changes).
+  const ready = data.loaded && (!filters || filters.sort !== "recommended" || wantGrades) && courseList.join() === courses.join();
   // filters is rebuilt from saved on every change; key the memo on its serialized form.
   const filtersKey = JSON.stringify(filters);
+  const recommended = filters.sort === "recommended";
+  useEffect(() => {
+    if (recommended) setWantGrades(true);
+  }, [recommended]);
   const request = useMemo<GenerateRequest | null>(
     () =>
       ready && courses.length
-        ? { courseIds: courses, sections: data.sections, filters: toScheduleFilters(filters), sort: filters.sort, ratings: data.ratings }
+        ? { courseIds: courses, sections: data.sections, filters: toScheduleFilters(filters), sort: filters.sort, ratings: data.ratings, gpas: recommended ? data.gpas : undefined }
         : null,
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [ready, courses, data.sections, data.ratings, filtersKey],
+    [ready, courses, data.sections, data.ratings, data.gpas, filtersKey],
   );
   const { result, pending } = useLayouts(view.kind === "own" ? null : request);
 
@@ -366,7 +373,7 @@ export function ScheduleBuilder() {
           ) : result ? (
             <div style={{ opacity: pending ? 0.5 : 1, transition: "opacity 160ms ease" }}>
               <Gallery
-                data={{ layouts: result.layouts, scale: result.scale, sectionByKey, ratings: data.ratings, courseIds: courses }}
+                data={{ layouts: result.layouts, scale: result.scale, sectionByKey, ratings: data.ratings, courseIds: courses, gpas: recommended ? data.gpas : undefined }}
                 days={filters.days}
                 onOpen={(picks) => setView({ kind: "editor", picks: Object.fromEntries(picks.map((s) => [s.courseId, s])) })}
               />
