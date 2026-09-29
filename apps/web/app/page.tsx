@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { connection } from "next/server";
 import { campusDate, campusMinutes, DINING_HALLS, orderLibraries, recWellOnDate } from "@superterp/campus-data";
 import { BusIcon, DiningIcon, GymIcon, LibraryIcon, RoomIcon } from "@/components/icons";
+import { RegistrationCountdown } from "@/app/RegistrationCountdown";
 import { LiveStatus } from "@/components/LiveStatus";
 import { Card, IconTile, Page, Row, Section, SkeletonCard } from "@/components/ui";
 import { getAcademicCalendar, getAllDiningMenus, getLibraryHours, getRecWellAreas, getRoutesOn, safe } from "@/lib/campus";
@@ -43,6 +44,7 @@ async function Today() {
 
   return (
     <Page title="Today" subtitle={dateLabel}>
+      <RegistrationCountdown />
       <Section title="Eat">
         <Suspense fallback={<SkeletonCard rows={3} />}>
           <Dining today={today} minutes={minutes} />
