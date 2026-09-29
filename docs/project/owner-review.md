@@ -642,3 +642,8 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - HCAI (all 7 `hcai-major-*.json`): kept constructed. The OCR text is unreadable (mostly noise characters); only fragments like "HCAI121 and HEAL200" and the specialization note survive, so nothing can be transcribed reliably.
 - Immersive Media Design Emerging Creatives (`imdm-major-emerging-creatives.json`): kept constructed. The OCR text has a few fragments (ARTT, DANC, MUSC-like codes) but rows and terms cannot be reconstructed. The Computing plan is untouched (its source has no OCR section).
 - No program files changed. These plans need a manual read of the PDFs if an official plan is wanted.
+
+## `ocr-c` (2026-09-28): OCR re-check of Theatre and WGSS plans; both kept constructed
+- Theatre (`thet-major`): the OCR'd four-year plan has no legible term grid (one stray code, "TOPS479"); plan kept constructed (`official: false`).
+- Women's, Gender and Sexuality Studies (`wgss-major`): the OCR text has only four codes (WGSS205/250/263, LGBT200) and no readable term rows; plan kept constructed (`official: false`).
+- No program files changed. These plans need a manual read of the PDFs if an official plan is wanted.

@@ -48,5 +48,5 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 30a | ocr-comm | OCR re-check: Communication (5 plans) | read only the OCR plan section | running (OCR half A session) |
 | 30b | ocr-musc | OCR re-check: Music (Jazz, Perf/Comp) + Composition BM track | | running (OCR half A session) |
 | 30c | ocr-a | OCR re-check: Chinese, Cinema ×2, Dance | | running (OCR half A session) |
-| 30d | ocr-b | OCR re-check: Global Culture, HCAI, Immersive Media Design | | running (majors session B) |
-| 30e | ocr-c | OCR re-check: Theatre, WGSS | | running (majors session B) |
+| 30d | ocr-b | OCR re-check: Global Culture, HCAI, Immersive Media Design | | done (plans kept constructed: OCR unreadable) |
+| 30e | ocr-c | OCR re-check: Theatre, WGSS | | done (plans kept constructed: OCR unreadable) |
