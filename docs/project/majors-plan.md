@@ -33,10 +33,10 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 |---|---|---|---|---|
 | 8 | educ-a | Early Childhood / Early Childhood Special Ed | 2 tracks; import `educ-shared`, never edit it | merged (73k) |
 | 9 | educ-b | Elementary/Middle Special Ed | 2 tracks | merged (79k) |
-| 10 | educ-c | Middle School Ed | | running |
-| 11 | educ-d | Secondary Ed: Mathematics | | running |
-| 12 | educ-e | Secondary Ed: English | | queued |
-| 13 | educ-f | Secondary Ed: Science | | queued |
+| 10 | educ-c | Middle School Ed | | merged (43k) |
+| 11 | educ-d | Secondary Ed: Mathematics | | merged (40k; catalog lists education courses only, Terrapin Teachers) |
+| 12 | educ-e | Secondary Ed: English | | running |
+| 13 | educ-f | Secondary Ed: Science | | running |
 | 14 | educ-g | Secondary Ed: Social Studies | | queued |
 | 15 | educ-h | Secondary Ed: World Language | | queued |
 | 16 | educ-i | Secondary Ed: Art | | queued |
@@ -45,8 +45,8 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 21 | jour | Journalism | default (no specialization) + Broadcast, Investigative, Sports tracks | queued |
 | 28 | plcy-pp | Public Policy | college PLCY | merged (71k; STAT row widened by main session) |
 | 29 | plcy-gfp | Global & Foreign Policy | college PLCY; thematic tracks | running |
-| 30a | ocr-comm | OCR re-check: Communication (5 plans) | read only the OCR plan section | queued |
-| 30b | ocr-musc | OCR re-check: Music (Jazz, Perf/Comp) + Composition BM track | | queued |
-| 30c | ocr-a | OCR re-check: Chinese, Cinema ×2, Dance | | queued |
-| 30d | ocr-b | OCR re-check: Global Culture, HCAI, Immersive Media Design | | queued |
-| 30e | ocr-c | OCR re-check: Theatre, WGSS | | queued |
+| 30a | ocr-comm | OCR re-check: Communication (5 plans) | read only the OCR plan section | queued: majors session C (owner split 2026-09-28) |
+| 30b | ocr-musc | OCR re-check: Music (Jazz, Perf/Comp) + Composition BM track | | queued: majors session C (owner split 2026-09-28) |
+| 30c | ocr-a | OCR re-check: Chinese, Cinema ×2, Dance | | queued: majors session C (owner split 2026-09-28) |
+| 30d | ocr-b | OCR re-check: Global Culture, HCAI, Immersive Media Design | | queued: majors session C (owner split 2026-09-28) |
+| 30e | ocr-c | OCR re-check: Theatre, WGSS | | queued: majors session C (owner split 2026-09-28) |
