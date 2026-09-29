@@ -568,3 +568,8 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 
 ## `feat/educ-f` (2026-09-28): major Secondary Education - Science (`scie-major`); sample plan constructed, `official: false`
 - Secondary Education - Science: the sources list Agriculture, Biology, Chemistry, Computer Science, Geology and Physics only as double-major content areas with no per-area requirements, so it is one program (no tracks) covering the 41-credit education component; content-area courses are not encoded. The COE four-year plans are links only, so the plan is constructed. TLPL401 needs B-; BSCI348 (section T) and TLPL488 (section B) are matched by course code. GPA 2.75, Praxis, admission steps are manual.
+
+## feat/info-infosci (2026-09-28): major Information Science; plan constructed
+- Information Science: the catalog's InfoSci Cognate Area option (Data Science, Cybersecurity and Privacy, Digital Curation, Health Information) lists no courses in the fetched source, so no tracks were made; the 15-credit elective is encoded as any INST course. Cognate students taking non-INST courses would show it unmet. Need the cognate course lists.
+- Information Science: department page says "upper-level" electives, catalog says "INST-coded"; encoded the wider catalog rule, not narrowed.
+- Information Science: no official four-year plan in the sources; sample plan constructed (official: false).
