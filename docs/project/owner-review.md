@@ -541,3 +541,6 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 ## `feat/educ-c` (2026-09-28): major Middle School Education (`mided-major`, EDUC); plan constructed, `official: false`
 - Middle School Education: no readable 4-year plan (pages only link roadmaps), so the plan is constructed from the catalog. The catalog has no content-area choices, so it is one program with no tracks.
 - Middle School Education: the AOSC200 & AOSC201 row sits right under the BSCI options; encoded as its own required science row, not a BSCI option (the catalog total of 89 credits fits that reading). Please confirm.
+## `feat/educ-d` (2026-09-28): major Secondary Education - Mathematics (`mathed-major`, EDUC); plan constructed, `official: false`
+- Secondary Math Education: the catalog table lists only education/pre-professional courses (39-44 credits) and no mathematics content courses, so the math content is not encoded; no readable four-year plan, so the sample plan is constructed from the catalog. Department pages have no undergraduate requirements.
+- Secondary Math Education: the catalog lists BSCI348 (Cell Biology special topics) in the professional block, which looks stale; encoded as listed and recorded in KNOWN_FAILURES (left out of the plan). TLPL488 appears twice (pre-professional topic and 488B); encoded as two enrollments of TLPL488.
