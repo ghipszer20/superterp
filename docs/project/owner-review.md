@@ -658,3 +658,7 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 ## `feat/video-minor` (2026-09-28): Video Production and Documentary Filmmaking Minor, encoded from the owner's table; sample plan constructed
 - Catalog page lists no requirements; encoded from the owner-pasted table. No grade floor stated, C- used (siblings state C-). Department page not checked.
 - "Two to five courses (6-15 credits)": only the 2-course minimum is enforced; JOUR368T is in two rows but counts once within the program.
+
+### Session 1 (2026-09-29): Criminology and Criminal Justice at Shady Grove; Criminal Justice minor moved to USG
+- `ccjs-usg-major` re-uses the College Park `ccjs-major` requirements, because the Shady Grove catalog table differs only in wording. The sample plan is copied from College Park (constructed). Department page not checked separately.
+- `ccjs-minor-shady-grove` now has college USG (rulings.md "Shady Grove").

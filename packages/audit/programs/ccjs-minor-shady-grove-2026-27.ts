@@ -16,7 +16,7 @@ export const ccjsMinorShadyGrove: Program = {
   verified: false,
   reviewNotes: [
     "Department page not checked (catalog only).",
-    "ProgramMeta college is BSOS: the ProgramMeta college union has no Universities at Shady Grove value, and CCJS is a College of Behavioral and Social Sciences department. The catalog URL slug is universities-shady-grove/behavioral-social-sciences.",
+    "ProgramMeta college is USG (Universities at Shady Grove), per the owner ruling in rulings.md; CCJS is a College of Behavioral and Social Sciences department.",
     "The catalog page states no minimum grade, no sharing cap with the major, and no residency rule; none is encoded (sharing unlimited).",
     "Electives: 9 credits from the listed courses; CCJS432 appears with no title and is included. CCJS340/342/345 are not in the elective list, so a third one doesn't count as an elective.",
   ],
@@ -44,4 +44,4 @@ export const ccjsMinorShadyGrove: Program = {
   ],
 };
 
-export const ccjsMinorShadyGroveMeta: ProgramMeta = { kind: "minor", college: "BSOS", short: "Criminal Justice (Shady Grove)", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/behavioral-social-sciences/criminal-justice-minor/" } };
+export const ccjsMinorShadyGroveMeta: ProgramMeta = { kind: "minor", college: "USG", short: "Criminal Justice (Shady Grove)", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/universities-shady-grove/behavioral-social-sciences/criminal-justice-minor/" } };
