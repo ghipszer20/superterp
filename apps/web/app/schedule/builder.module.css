@@ -713,6 +713,18 @@
   font: var(--t-foot);
 }
 
+.walkList {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-2);
+  font: var(--t-foot);
+}
+
+.walkList li + li {
+  margin-top: 2px;
+}
+
 .conflictNote {
   padding: 10px 12px;
   border: 1px solid color-mix(in srgb, var(--rating-low) 45%, transparent);

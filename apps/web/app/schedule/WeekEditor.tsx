@@ -7,6 +7,8 @@ import { sectionBlocks } from "@/lib/schedule/block-items";
 import { untimed, type TimeScale } from "@/lib/schedule/calendar";
 import { courseColor } from "@/lib/schedule/colors";
 import { conflictPairs, overlapsWith, sectionChoices } from "@/lib/schedule/sections";
+import { useBuildings } from "@/lib/schedule/use-buildings";
+import { dayWalks, formatWalk, walkNote } from "@/lib/schedule/walks";
 import { SectionPanel } from "./SectionPanel";
 import { TeacherStrip } from "./TeacherStrip";
 import { WeekCalendar } from "./WeekCalendar";
@@ -74,6 +76,9 @@ export function WeekEditor({
   }, [placed, preview, courseIds]);
   const offGrid = untimed(items.filter((i) => !i.ghost));
   const conflicts = mode === "own" ? conflictPairs(placed) : [];
+  const buildings = useBuildings();
+  const walks = useMemo(() => dayWalks(placed, buildings), [placed, buildings]);
+  const tightWalks = walks.filter((w) => w.tight);
 
   const openPanel = (courseId: string) => {
     setPreview(null);
@@ -99,7 +104,24 @@ export function WeekEditor({
                 {offGrid.map((i) => `${i.data!.courseId} ${i.data!.sub ?? ""} (${i.meeting.start === null ? "time TBA" : i.meeting.days.join("")})`).join("; ")}
               </p>
             ) : null}
+            {walks.length ? (
+              <ul className={styles.walkList} aria-label="Walking between classes (estimates)">
+                {walks.map((w) => (
+                  <li key={`${w.day}-${w.fromCourse}-${w.toCourse}`}>{formatWalk(w)}</li>
+                ))}
+              </ul>
+            ) : null}
           </div>
+          {tightWalks.length ? (
+            <p className={styles.conflictNote} role="status">
+              {tightWalks.map((w, i) => (
+                <span key={`${w.day}-${w.fromCourse}-${w.toCourse}`}>
+                  {i ? " " : ""}
+                  <b>{walkNote(w)}</b> ({w.day} {w.from} → {w.to}).
+                </span>
+              ))}
+            </p>
+          ) : null}
           {conflicts.length ? (
             <p className={styles.conflictNote} role="status">
               <b>Overlap:</b> {conflicts.map(([a, b]) => `${a} and ${b}`).join("; ")}. You can’t register for overlapping
