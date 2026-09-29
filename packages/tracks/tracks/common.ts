@@ -336,6 +336,14 @@ export const MAPPING_NOTES = {
     "Sociology (SOCY100 or SOCY105), human growth and development (EDHD320 or PSYC355) and nutrition (NFSC100) each map to UMD's most general course in the area. Checked directly against HPAO's Occupational Therapy page (https://prehealth.umd.edu/explore-careers/occupational-therapy: \"Sociology\", \"Human Growth and Development\") and Nursing page (https://prehealth.umd.edu/explore-careers/nursing: \"Nutrition\", \"Human Growth and Development\"), both fetched 2026-09-27: both name the category but no UMD course number for any of the three, so these three mappings stay SuperTerp's own reading, same as microeconomics/communications above.",
 };
 
+/** N credits from a list of courses (a credit-minimum category, e.g. "24 credits of life and physical science"). */
+export const creditsFrom = (id: string, name: string, credits: number, courses: string[], source: string, extra?: Extra): TrackCategory =>
+  cat({ kind: "choose", id, name, credits, from: { courses } }, source, extra);
+
+/** A category that counts alongside a credit pool without using its courses up (e.g. "including 1 semester of microbiology"). */
+export const overlaySets = (id: string, name: string, options: string[][], source: string, extra?: Extra): TrackCategory =>
+  cat({ ...sets(id, name, options), overlay: true }, source, extra);
+
 export const HPAO = {
   home: "https://prehealth.umd.edu/",
   apIb: "https://prehealth.umd.edu/prospective-students/ap-ib-credit",

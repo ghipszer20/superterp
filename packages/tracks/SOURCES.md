@@ -47,6 +47,18 @@ From `docs/project/new-tracks-research.md` (2026-09-29, read through a summarizi
 | ASHA: 2020 SLP Certification Standards | https://www.asha.org/certification/2020-slp-certification-standards/ | Standard I: a master's, doctoral or other post-baccalaureate degree; graduate program of at least 36 semester credit hours. Standard IV-A prerequisite areas, no credit minimums: biological sciences; chemistry or physics; social/behavioral sciences; statistics (research methodology does not count). No exam or GPA stated; programs set GRE and GPA; many apply through CSDCAS. Used by `tracks/pre-slp.ts`. | 2020 standards |
 | AATA: Becoming an art therapist | https://arttherapy.org/becoming-art-therapist/ | A master's degree is necessary for entry-level practice; foundational studio art (drawing, painting, digital art, clay or sculpture) and prerequisite courses in developmental and abnormal psychology. Standards are set by ACATE/CAAHEP. The figures about 18 semester hours of studio art and about 12 of psychology are **(S)**: search summaries of program sources, not AATA text. Used by `tracks/pre-art-therapy.ts`. | Current site |
 
+## Batch B sources (Chiropractic, Naturopathic, Medical Laboratory Science)
+
+Encoded from `docs/project/new-tracks-research.md` (2026-09-29, sections 3, 9 and 10). The research fetch tool summarized pages, and several official pages 404'd, returned 403 or were unparseable PDFs, so every figure below is **(S)**: from a search-result summary, to be re-verified before any of these tracks is set `verified: true`. Nothing here is signed off by the owner. All course codes are the research doc's or already used by another track.
+
+| What | URL | What it says (S) | Date / edition |
+|---|---|---|---|
+| CCE (Council on Chiropractic Education) | https://www.cce-usa.org/ | 90 semester hours of undergraduate study; at least 24 semester hours in life and physical science, at least half of the courses with a substantive lab. GPA figures conflict (3.0 with a 2.7-2.75 alternative; older 2.75), so none is encoded. Standards PDF 404'd. | Search summary, 2026-09-29 |
+| CNME (naturopathic accreditor) | https://cnme.org/ | Accreditor; handbook PDF unparseable. NPLEX licensing exam follows the ND. | Search summary, 2026-09-29 |
+| AANMC academic prerequisites | https://aanmc.org/academic-prerequisites/ | Baccalaureate; 24 credit hours in life and physical sciences, lecture plus lab; C or higher in all courses; GPA 3.00 (alternative track 2.75-2.99). Page returned 403. | Search summary, 2026-09-29 |
+| NAACLS (MLS accreditor) | https://naacls.org/ | Standards require only "appropriate prerequisite coursework"; 2024 Standards PDF unparseable. | Search summary, 2026-09-29 |
+| ASCP Board of Certification: MLS | https://www.ascp.org/boc/explore-credentials/view-all-credentials/MLS | Baccalaureate with 16 semester hours of biology (including 1 semester of microbiology) and 16 of chemistry (including 1 semester of organic chemistry or biochemistry), plus a NAACLS-accredited MLS program. Page returned 403. | Search summary, 2026-09-29 |
+
 ## Non-UMD sources (for the science GPA)
 
 | What | URL | What it says |

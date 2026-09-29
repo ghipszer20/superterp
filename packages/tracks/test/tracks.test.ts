@@ -54,6 +54,9 @@ const EXPECTED = [
   "pre-genetic-counseling",
   "pre-slp",
   "pre-art-therapy",
+  "pre-chiropractic",
+  "pre-naturopathic",
+  "pre-mls",
 ];
 
 describe("track definitions", () => {
