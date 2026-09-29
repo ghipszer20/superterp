@@ -553,3 +553,8 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Plant Sciences: no official four-year plan (catalog links only the college roadmap page), so all three sample plans are constructed (official: false) from the catalog table.
 - Plant Sciences: department page has no course requirements; encoded from the catalog alone. Several catalog rows lost their course titles in the source (PLSC202, PLSC361, PLSC403, PLSC456, PLSC474), encoded by id.
 - Plant Sciences: the "C-" rule is encoded per requirement on the all-areas courses except ENGL101 and ENGL393; specialization courses carry no grade rule. Urban Forestry suggested electives are advisory and not encoded.
+
+## feat/info-infosci (2026-09-28): major Information Science; plan constructed
+- Information Science: the catalog's InfoSci Cognate Area option (Data Science, Cybersecurity and Privacy, Digital Curation, Health Information) lists no courses in the fetched source, so no tracks were made; the 15-credit elective is encoded as any INST course. Cognate students taking non-INST courses would show it unmet. Need the cognate course lists.
+- Information Science: department page says "upper-level" electives, catalog says "INST-coded"; encoded the wider catalog rule, not narrowed.
+- Information Science: no official four-year plan in the sources; sample plan constructed (official: false).
