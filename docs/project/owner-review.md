@@ -582,3 +582,9 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 
 ## Half 1 main session (2026-09-28): major Fermentation Science at Shady Grove (`ferm-usg-major`, USG); plan constructed, `official: false`
 - Catalog requirement table is identical to College Park's, so the program re-uses `ferm-major`'s requirements (and inherits its flags: AGST/NFSC topic rows as ranges, constructed plan). No Shady Grove department page in the sources.
+- `feat/jour` (2026-09-28): Journalism major (`jour-major` default General, `-broadcast`, `-investigative`, `-sports`); plans constructed (no official term grid in the catalog).
+  - Department page not checked (source holds the catalog only) for all four Journalism programs.
+  - OPEN SLOTs (no courses or range named): Capstone Experience 3-9 credits (Sports and Broadcast capstones share it); the 6-credit language/math/programming slot; the second 12-credit Supporting Area block (300+, not COMM); the Sports experiential course (2-6 credits).
+  - Variable credits encoded at the minimum: upper-level JOUR electives (9-15, as 6 credits in JOUR321-389 plus one 300-499 JOUR course), capstone.
+  - Sports specialization: "sports" skills and seminar courses have no list, so any JOUR321-389 and JOUR410-469 course counts (overlay). Investigative "approved seminar" likewise accepts any JOUR410-469 course.
+  - The catalog C- rule is encoded per requirement (listed courses only), not program-wide.
