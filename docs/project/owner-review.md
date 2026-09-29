@@ -477,3 +477,9 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 ## `feat/minors-sllc-eur` (2026-09-28): minors German Studies, Russian Studies; all sample plans constructed, `official: false`
 - German Studies (`gers-minor`): sllc.umd.edu/german is a homepage with no requirements (department page not checked); encoded from the catalog. "Taught in German" is not checkable, so five GERS courses 204-499 are accepted (English-taught GERS255/339/385 would count). The one-language/one-literature/one-culture split among the three 3xx/4xx courses is a manual note (no lists in the minor's entry).
 - Russian Studies (`russ-minor`): russian.umd.edu is a homepage with no requirements (department page not checked); encoded from the catalog. Five courses from the catalog list; the 6-credits-in-Russian and 9-credits-at-3xx/4xx minimums are overlays. Transfer cap (usually 6 credits), advisor substitutions and the minor GPA are manual notes. No sharing cap in either source.
+
+## `feat/arch-pair` (2026-09-28): majors Architecture (BS, BA) and Real Estate and the Built Environment; plans constructed
+- Architecture BS/BA and REBE: department page not checked (the arch.umd.edu page is only links to 4-year plan PDFs); encoded from the catalog. All three sample plans are constructed (official: false).
+- Architecture BA: catalog says 30 credits of upper-level ARCH electives, up to 9 of them directed electives inside or outside the major. Encoded as 21 credits of ARCH 300-499 plus OPEN SLOT: 9 credits directed electives. "Upper level" taken as 300-499 (catalog gives no number).
+- Architecture BS: the "ARCH4XX 12 credits" row is encoded as 12 credits of ARCH 400-499. Please confirm BS is the default track.
+- REBE: culmination is 3-4 credits depending on RDEV270 vs BMGT210 for the finance cognate; encoded as one course from the list (BMGT210 case is a manual check). Study-abroad and director-approved electives are not encoded.
