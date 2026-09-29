@@ -14,6 +14,8 @@ export type GenerateRequest = {
   filters: ScheduleFilters;
   sort: SortKey;
   ratings: Record<string, number>;
+  /** Average GPA per instructor and course (`gpaKey`); only used by the "recommended" sort. */
+  gpas?: Record<string, number>;
 };
 
 export type GenerateResult = {
@@ -33,6 +35,7 @@ export function runGeneration(req: GenerateRequest): GenerateResult {
   }
   const layouts = sortLayouts([...generateLayouts(req.courseIds, req.sections, req.filters)], req.sort, {
     ratings: req.ratings,
+    gpas: req.gpas,
   });
   const explanation = layouts.length === 0 ? explainNoLayouts(req.courseIds, req.sections, req.filters) : null;
   return { layouts: encodeLayouts(req.courseIds, layouts), scale, explanation, ms: performance.now() - t0 };

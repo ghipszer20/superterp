@@ -141,6 +141,7 @@ export function shortfall(program: Program, result: AuditResult, courses: Studen
       n = req.count !== undefined ? req.count - r.assigned.length : Math.ceil(((req.credits ?? 0) - assignedCredits) / 3);
     } else if (req.kind === "distribution") n = req.count - r.assigned.length;
     else if (req.kind === "concentration") n = Math.ceil((req.credits - assignedCredits) / 3);
+    else if (req.kind === "openSlot") names = [`${req.name} (confirm with your advisor)`];
     else {
       // Each set's gap: its fixed courses not yet taken, plus what each "any N from a filter"
       // member still needs after the student's other matching courses. The requirement needs its

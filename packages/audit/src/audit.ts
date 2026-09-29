@@ -19,7 +19,8 @@ export type CourseFilter = {
   anyCourse?: boolean;
 };
 
-export type Area = { name: string; courses: string[] };
+/** A distribution area: a course list, a course filter (a department, a level range), or both. */
+export type Area = { name: string; courses?: string[]; from?: CourseFilter };
 
 /** One member of a course set: a specific course, or `count` courses matching a filter ("two 400-level AOSC courses"). */
 export type SetMember = string | { count: number; from: CourseFilter };
@@ -76,7 +77,13 @@ export type RequirementRule =
    * A member may be a filter part, e.g. ["AOSC200", "AOSC201", { count: 2, from: 400-level AOSC }].
    * A course counts toward one set, and one member of it, only.
    */
-  | { kind: "sets"; id: string; name: string; options: SetMember[][]; count?: number };
+  | { kind: "sets"; id: string; name: string; options: SetMember[][]; count?: number }
+  /**
+   * An Open Slot: "from an approved list" the department doesn't publish. It holds no courses and
+   * the audit assigns none to it; it's satisfied only once the student confirms it with their
+   * advisor (AuditOptions.confirmed), so the program isn't complete until then.
+   */
+  | { kind: "openSlot"; id: string; name: string; credits?: number; note?: string };
 
 export type Program = {
   id: string;
@@ -153,8 +160,8 @@ export type StudentCourse = {
 function requirementCourseIds(req: RequirementRule): string[] {
   if (req.kind === "course") return req.options;
   if (req.kind === "choose") return [...(req.from.courses ?? []), ...(req.alternatives?.flat() ?? [])];
-  if (req.kind === "distribution") return req.areas.flatMap((a) => a.courses);
-  if (req.kind === "concentration") return [];
+  if (req.kind === "distribution") return req.areas.flatMap((a) => a.courses ?? []);
+  if (req.kind === "concentration" || req.kind === "openSlot") return [];
   return req.options.flat().flatMap((m) => (typeof m === "string" ? [m] : (m.from.courses ?? [])));
 }
 
@@ -234,6 +241,11 @@ export function matchesFilter(filter: CourseFilter, course: Pick<StudentCourse, 
   return n >= (filter.minNumber ?? 0) && n <= (filter.maxNumber ?? 999);
 }
 
+/** Whether a course belongs to a distribution area: it is in the area's list or matches its filter. */
+export function inArea(area: Area, course: Pick<StudentCourse, "id" | "genEd">): boolean {
+  return (area.courses?.includes(course.id) ?? false) || (area.from ? matchesFilter(area.from, course) : false);
+}
+
 /** How many courses completing a set takes. */
 const setSize = (option: SetMember[]) => option.reduce((t, m) => t + (typeof m === "string" ? 1 : m.count), 0);
 
@@ -242,6 +254,7 @@ function need(req: Requirement): number {
   if (req.kind === "course") return 1;
   if (req.kind === "distribution") return req.count;
   if (req.kind === "concentration") return req.credits;
+  if (req.kind === "openSlot") return 0;
   if (req.kind === "sets") {
     const sizes = req.options.map(setSize).sort((a, b) => a - b);
     return sizes.slice(0, req.count ?? 1).reduce((t, n) => t + n, 0);
@@ -268,6 +281,7 @@ type Pair = {
 function pairsFor(req: Requirement, p: number, r: number, course: StudentCourse, c: number): Pair[] {
   const base = `x_${p}_${c}_${r}`;
   const plain = (weight: number): Pair[] => [{ p, c, r, area: null, department: null, name: base, weight }];
+  if (req.kind === "openSlot") return [];
   if (req.kind === "course") return req.options.includes(course.id) ? plain(1) : [];
   if (req.kind === "choose") return matchesFilter(req.from, course) ? plain(req.credits ? course.credits : 1) : [];
   if (req.kind === "concentration") {
@@ -292,7 +306,7 @@ function pairsFor(req: Requirement, p: number, r: number, course: StudentCourse,
     );
   }
   return req.areas.flatMap((area, a) =>
-    area.courses.includes(course.id)
+    inArea(area, course)
       ? [{ p, c, r, area: a, department: null, name: `${base}_${a}`, weight: 1 }]
       : [],
   );
@@ -325,7 +339,12 @@ export type AuditOptions = {
    */
   degrees?: number[][];
   minUniqueCredits?: number;
+  /** Open Slots the student confirmed with their advisor, as "<programId>/<requirementId>". */
+  confirmed?: string[];
 };
+
+/** The key an Open Slot is confirmed by: requirement ids repeat across programs. */
+export const slotKey = (programId: string, requirementId: string) => `${programId}/${requirementId}`;
 
 export type StudentAudit = {
   results: AuditResult[];
@@ -568,9 +587,14 @@ export async function auditStudent(
   if (solution.Status !== "Optimal") throw new Error(`Audit solver ended with status ${solution.Status}`);
   const chosen = (name: string) => (solution.Columns[name]?.Primal ?? 0) > 0.5;
 
+  const confirmed = new Set(options.confirmed ?? []);
   const results = programs.map((program, p) => {
     const used = new Set<number>();
     const requirements = program.requirements.map((req, r): RequirementResult => {
+      if (req.kind === "openSlot") {
+        const ok = confirmed.has(slotKey(program.id, req.id));
+        return { id: req.id, name: req.name, status: ok ? "satisfied" : "missing", assigned: [] };
+      }
       const assigned = pairs.filter((q) => q.p === p && q.r === r && chosen(q.name));
       assigned.forEach((q) => used.add(q.c));
       const progress = assigned.reduce((t, q) => t + q.weight, 0);
@@ -610,7 +634,7 @@ export async function auditStudent(
   return { results, uniqueCredits };
 }
 
-export async function auditProgram(program: Program, courses: StudentCourse[]): Promise<AuditResult> {
-  const [result] = await auditPrograms([program], courses);
+export async function auditProgram(program: Program, courses: StudentCourse[], options: AuditOptions = {}): Promise<AuditResult> {
+  const [result] = await auditPrograms([program], courses, options);
   return result!;
 }

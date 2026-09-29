@@ -115,5 +115,7 @@ export function parsePlan(raw: string | null): AdvisorPlan | null {
   if (et) plan.examTerms = et;
   const eg = expectedGrades(data.expectedGrades);
   if (eg) plan.expectedGrades = eg;
+  const slots = [...new Set(list(data.confirmedSlots).filter(str))];
+  if (slots.length) plan.confirmedSlots = slots;
   return plan;
 }

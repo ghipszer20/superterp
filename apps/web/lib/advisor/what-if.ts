@@ -18,11 +18,13 @@ export async function runWhatIf(
   proposedProgramIds: string[],
   startTerm: string,
   gpa: number | undefined,
+  confirmedSlots: string[] = [],
 ): Promise<WhatIfResult> {
   const matriculationTerm = matriculationTermId(startTerm);
   const [current, proposed] = await Promise.all([majorPrograms(currentProgramIds), majorPrograms(proposedProgramIds)]);
   return whatIf(plan, catalog, current, proposed, AUTOMATIC_PROGRAMS, {
     ...(matriculationTerm ? { matriculationTerm } : {}),
     ...(gpa !== undefined ? { cumulativeGpa: gpa } : {}),
+    confirmed: confirmedSlots,
   });
 }

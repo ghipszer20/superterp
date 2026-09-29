@@ -6,7 +6,7 @@
 // code-splits with import(). A Track's own data (name, categories, disclaimer, milestones) comes
 // through as a value on analysis.result.tracks[].track, which isn't an import and so is fine.
 
-import type { GatewayCourseStatus, GatewayOverallStatus, RequirementResult } from "@superterp/audit";
+import type { GatewayCourseStatus, GatewayOverallStatus, Requirement, RequirementResult } from "@superterp/audit";
 import type { MilestoneTiming } from "@superterp/tracks";
 import type { AdvisorPlan } from "@/lib/advisor/plan-state";
 import { showsScienceGpa } from "@/lib/advisor/tracks";
@@ -16,6 +16,32 @@ import { dispatchPlan } from "./store";
 import styles from "./advisor.module.css";
 
 const REQ_STATUS: Record<RequirementResult["status"], string> = { satisfied: "Satisfied", partial: "In progress", missing: "Missing" };
+
+type OpenSlot = Extract<Requirement, { kind: "openSlot" }>;
+
+/** An Open Slot ("from an approved list" that isn't published): the student ticks it once their
+ * advisor confirms it; the program isn't complete until then. The key matches @superterp/audit's slotKey. */
+function OpenSlotRow({ programId, slot, confirmed }: { programId: string; slot: OpenSlot; confirmed: boolean }) {
+  const key = `${programId}/${slot.id}`;
+  return (
+    <li className={styles.reqRow}>
+      <div className={styles.reqHead}>
+        <span className={styles.reqName}>
+          {slot.name}
+          {slot.credits !== undefined ? <span className={styles.slotCredits}> · {slot.credits} credits</span> : null}
+        </span>
+        <span className={styles.reqStatus} data-status={confirmed ? "satisfied" : "confirm"}>
+          {confirmed ? "Confirmed" : "Confirm with your advisor"}
+        </span>
+      </div>
+      {slot.note ? <p className={styles.reqGap}>{slot.note}</p> : null}
+      <label className={styles.slotCheck} data-checked={confirmed || undefined}>
+        <input type="checkbox" checked={confirmed} onChange={() => dispatchPlan({ type: "toggle-slot", key })} />
+        <span>My advisor confirmed my courses for this</span>
+      </label>
+    </li>
+  );
+}
 
 export function AuditView({
   plan,
@@ -50,7 +76,10 @@ export function AuditView({
             {audit.satisfied} of {audit.requirements.length} requirements met
           </p>
           <ul className={styles.reqList}>
-            {audit.requirements.map(({ requirement, result, gap }) => (
+            {audit.requirements.map(({ requirement, result, gap }) =>
+              requirement.kind === "openSlot" ? (
+                <OpenSlotRow key={requirement.id} programId={audit.program.id} slot={requirement} confirmed={result.status === "satisfied"} />
+              ) : (
               <li key={requirement.id} className={styles.reqRow}>
                 <div className={styles.reqHead}>
                   <span className={styles.reqName}>{requirement.name}</span>
@@ -76,7 +105,8 @@ export function AuditView({
                   </p>
                 ) : null}
               </li>
-            ))}
+              ),
+            )}
           </ul>
         </section>
       ))}

@@ -65,9 +65,11 @@ function meaning(r: Requirement): string {
     case "sets":
       return `sets ${r.count ?? 1} of ${sorted(r.options.map(setKey))}${overlay}`;
     case "distribution":
-      return `distribution ${r.count}/${r.minAreas}/${r.maxPerArea} ${r.areas.map((a) => `${a.name}=${sorted(a.courses)}`)}${overlay}`;
+      return `distribution ${r.count}/${r.minAreas}/${r.maxPerArea} ${r.areas.map((a) => `${a.name}=${sorted(a.courses ?? [])}`)}${overlay}`;
     case "concentration":
       return `concentration ${JSON.stringify({ ...r, id: undefined, name: undefined })}`;
+    case "openSlot":
+      return `openSlot ${r.credits ?? ""}`;
   }
 }
 

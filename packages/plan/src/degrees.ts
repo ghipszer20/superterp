@@ -84,7 +84,7 @@ export async function checkDegrees(
   catalog: PlanCatalog,
   degrees: Degree[],
   layers: Program[],
-  options: { today?: Date } = {},
+  options: { today?: Date; confirmed?: string[] } = {},
 ): Promise<DegreeCheck> {
   const mode = degreeMode(degrees);
   const courses = planCourses(plan, catalog);
@@ -101,7 +101,10 @@ export async function checkDegrees(
   const { results, uniqueCredits } = await auditStudent(
     entries.map((e) => e.program),
     courses,
-    double ? { degrees: groups, minUniqueCredits: DUAL_DEGREE_UNIQUE_CREDITS } : {},
+    {
+      ...(double ? { degrees: groups, minUniqueCredits: DUAL_DEGREE_UNIQUE_CREDITS } : {}),
+      ...(options.confirmed ? { confirmed: options.confirmed } : {}),
+    },
   );
   const audits = entries.map((e, i) => ({ ...e, result: results[i]! }));
 
