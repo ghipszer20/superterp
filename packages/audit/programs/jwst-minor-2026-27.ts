@@ -23,7 +23,7 @@ export const jwstMinor: Program = {
     "Open slot 'jewish-thought' (openSlot requirement): 3 credits of Jewish thought, religion, or culture; the Director of Jewish Studies holds the qualifying-course list, so the student confirms it with them or their advisor.",
     "The two 'Jewish Studies' electives (6 credits) accept the whole JWST range plus HEBR and YIDD (100-499): the sources publish no list, only 'Jewish Studies courses' and Hebrew/Yiddish language study. Broader than a Director-maintained list, so flagged.",
     "The '9 credits at 3xx/4xx' minimum is an overlay over JWST/HEBR/YIDD 300-499, so it counts courses placed in the open slots too.",
-    "Not encoded: 'only 3 credits of 1xx/2xx Hebrew or Yiddish may count' (no cap-by-level rule); petitions to include other languages; the 2.0 minor GPA; the Jewish Studies major is not eligible for the minor (no declared-major concept); at least 6 credits of 3xx/4xx at UMD and at most 6 credits at another institution (residency/transfer caps).",
+    "Not encoded: 'only 3 credits of 1xx/2xx Hebrew or Yiddish may count' (no cap-by-level rule); petitions to include other languages; the 2.0 minor GPA; the Jewish Studies major is not eligible for the minor (enforced via notOpenTo); at least 6 credits of 3xx/4xx at UMD and at most 6 credits at another institution (residency/transfer caps).",
     "'No more than 6 credits may also be applied to a major' -> maxSharedWith: [{ credits: 6 }].",
     "Related: Israel Studies and Hebrew Studies minors sit on the same department page; Hebrew Studies is a separate batch and not encoded here.",
   ],
@@ -69,7 +69,7 @@ export const jwstMinor: Program = {
 
 export const jwstMinorMeta: ProgramMeta = {
   kind: "minor",
-  college: "ARHU",
+  notOpenTo: { programs: ["jwst-major"], reason: "Not open to Jewish Studies majors." }, college: "ARHU",
   short: "Jewish Studies",
   sources: {
     catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/jewish-studies/jewish-studies-minor/",

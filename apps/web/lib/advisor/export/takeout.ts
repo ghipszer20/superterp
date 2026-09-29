@@ -1,6 +1,7 @@
 // The advising export's data, built once from what the Advisor already computed and rendered as
 // .xlsx (xlsx.ts) or PDF (pdf.ts). Pure: no solver runs here.
 
+import type { RequirementResult } from "@superterp/audit";
 import type { Analysis } from "../analysis";
 import type { AdvisorPlan } from "../plan-state";
 import type { PriorCreditResult } from "../prior-credit";
@@ -89,17 +90,29 @@ export function buildTakeout(input: TakeoutInput) {
 
   const cite = (p: { name: string; catalogYear?: string; source?: string }) =>
     `${p.name}, ${p.catalogYear ?? "unknown year"} catalog${p.source ? ` (${p.source})` : ""}`;
+  // The program-wide GPA check (Program.minGpa) has no Requirement, so it's its own row.
+  const gpaRow = (r: RequirementResult, citation: string) => ({
+    name: r.name,
+    status: r.status,
+    citation,
+    assigned: r.assigned,
+    need: r.gpa && r.gpa.value < r.gpa.min ? `GPA ${r.gpa.value.toFixed(2)} in these courses; needs ${r.gpa.min.toFixed(1)} or higher.` : "",
+    satisfiedBy: [] as string[],
+  });
   const auditOut = audits.map((a) => ({
     program: a.program.name,
     citation: cite(a.program),
-    requirements: a.requirements.map((r) => ({
-      name: r.requirement.name,
-      status: r.result.status,
-      citation: cite(a.program),
-      assigned: r.result.assigned,
-      need: r.result.status === "satisfied" ? "" : (r.gap?.need ?? ""),
-      satisfiedBy: r.result.status === "satisfied" ? [] : (r.gap?.suggestions ?? []),
-    })),
+    requirements: [
+      ...a.requirements.map((r) => ({
+        name: r.requirement.name,
+        status: r.result.status,
+        citation: cite(a.program),
+        assigned: r.result.assigned,
+        need: r.result.status === "satisfied" ? "" : (r.gap?.need ?? ""),
+        satisfiedBy: r.result.status === "satisfied" ? [] : (r.gap?.suggestions ?? []),
+      })),
+      ...(a.gpa ? [gpaRow(a.gpa, cite(a.program))] : []),
+    ],
   }));
 
   const flags: { title: string; items: FlagItem[] }[] = [];

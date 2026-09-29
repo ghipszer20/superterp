@@ -101,6 +101,20 @@ describe("buildTakeout", () => {
     expect(core.satisfiedBy).toEqual(["CMSC216"]);
     expect(a[1]!.requirements[0]!.satisfiedBy).toEqual([]);
   });
+  it("adds the program-wide GPA row after the requirements", () => {
+    const gpa = { id: "program-gpa", name: "Program GPA (at least 2.0)", status: "missing" as const, assigned: ["AAAS100"], gpa: { value: 1.7, min: 2 } };
+    const t = buildTakeout({
+      plan,
+      analysis: { ...analysis, audits: [{ ...audit("aaas-major-general", "African American Studies", undefined, []), gpa }] },
+      issues,
+      prior,
+      catalog,
+      today: new Date(2026, 8, 29),
+    } as never);
+    expect(t.audit[0]!.requirements).toEqual([
+      expect.objectContaining({ name: "Program GPA (at least 2.0)", status: "missing", assigned: ["AAAS100"], need: "GPA 1.70 in these courses; needs 2.0 or higher." }),
+    ]);
+  });
   it("groups flags", () => {
     const f = build().flags;
     const titles = f.map((g) => g.title);
