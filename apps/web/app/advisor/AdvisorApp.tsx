@@ -96,7 +96,7 @@ function Planner({ plan, catalog, signedBy, signedAt, calendar }: { plan: Adviso
         <button type="button" className={styles.ghostButton} onClick={() => setEditing(true)}>
           Edit setup
         </button>
-        <ExportMenu plan={plan} analysis={analysis} issues={checked?.issues ?? []} prior={prior} catalog={ready?.catalog ?? null} />
+        <ExportMenu plan={plan} analysis={analysis} catalog={ready?.catalog ?? null} />
       </header>
 
       <div className={styles.tabs}>
