@@ -33,7 +33,7 @@ export const clasMinorGreek: Program = {
     "Department page (classics.umd.edu) is only a homepage with no requirements; encoded from the catalog. Department page not checked for requirements.",
     "'9 to 15 credits in ancient OR modern Greek language courses (not a combination)': encoded as 9 credits from any GREK course numbered 100-499 (ancient and modern Greek both carry the GREK prefix, so the engine can't tell them apart). The 'all ancient or all modern' rule is not enforced -- manual check. The 15-credit cap on language is not enforced either (more language credits simply count as extra).",
     "'At least one language course at the 300 or 400 level' is an overlay: one GREK course numbered 300-499 (so a 300+ language course counts toward both).",
-    "OPEN SLOT: 3 to 6 credits of courses taught in English on ancient and/or modern Greek history, literature and culture; no list published (the catalog gives no courses, department or range).",
+    "Open slot 'greek-culture' (openSlot requirement): 3 credits (the catalog says 3 to 6, so the minimum is used; extra culture credits are manual) of courses taught in English on ancient and/or modern Greek history, literature and culture. No list is published, so the student confirms it with their advisor.",
     "Total of at least 15 credits (9-15 language + 3-6 culture) and 'at least 9 credits of the total at 300/400 level' are not encoded: the culture courses are unnamed, so neither total can be checked. Manual check.",
     "'A maximum of 6 credits may count toward both the minor and the student's major' -> maxSharedWith: [{ credits: 6 }] (the catalog says 'the student's major', not a named major, so it is not limited to Classics major ids). 'A maximum of six credits earned at other institutions' is a transfer cap, not encoded. Minor GPA of 2.0 is not encoded (no GPA concept); per-course C- minimum is (minGrade).",
   ],
@@ -52,6 +52,13 @@ export const clasMinorGreek: Program = {
       overlay: true,
       count: 1,
       from: { departments: ["GREK"], minNumber: 300, maxNumber: 499 },
+    },
+    {
+      kind: "openSlot",
+      id: "greek-culture",
+      name: "Greek history, literature or culture course (in English)",
+      credits: 3,
+      note: "Courses taught in English on ancient and/or modern Greek history, literature and culture; no list is published.",
     },
   ],
 };

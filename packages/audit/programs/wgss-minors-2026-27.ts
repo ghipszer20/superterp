@@ -160,7 +160,7 @@ export const bwsMinor: Program = {
   reviewNotes: [
     "Cross-listed: the same requirement table appears under WGSS (ARHU) and AAAS (BSOS); a diff of the two fetched pages shows only the college label and catalog URL differ. Encoded once here under WGSS/ARHU (the ARHU minors page lists it).",
     "Department pages not checked: wgss.umd.edu and aasd.umd.edu are homepages with no requirements, and the ARHU minors page only lists the minor as OPEN. Encoded from the catalog alone.",
-    "OPEN SLOT: 9 credits of electives (at least two at 300/400 level, one 300/400 level course Comparative or non-U.S.); catalog says 'see program for approved electives' and the list (wgss.umd.edu/academic-programs/courses) was not among the sources. The 300/400 and non-U.S. conditions are manual.",
+    "Open slot 'bws-electives' (openSlot requirement): 9 credits of approved electives; the list (wgss.umd.edu/academic-programs/courses) was not among the sources, so the student confirms it with their advisor. The conditions (at least two at 300/400 level, one 300/400 level course Comparative or non-U.S.) are manual.",
     "Second foundation slot: the catalog lists 'AASP398 ... (AASP389G: Gender, Labor, and Racial Identity in Diasporic Communities)'; the parenthetical code AASP389G looks like a typo for AASP398G, so AASP398 (any topic) is accepted. WGSS314/AASP313 are cross-listed; either id counts.",
     "Catalog states C- minimum: encoded as minGrade C-. 'No more than two courses may count toward a major in African American Studies or Women's Studies' is maxSharedWith courses: 2 against aaas-major-general, aaas-major-public-policy and wgss-major (sds-major-aaas not named).",
     "Not encoded: overall 2.0 minor GPA, advisor consultation.",
@@ -179,6 +179,13 @@ export const bwsMinor: Program = {
       name: "Foundation: one of WGSS314/AASP313, HIST360, AASP398",
       count: 1,
       from: { courses: ["WGSS314", "AASP313", "HIST360", "AASP398"] },
+    },
+    {
+      kind: "openSlot",
+      id: "bws-electives",
+      name: "Approved electives",
+      credits: 9,
+      note: "See the approved electives at wgss.umd.edu/academic-programs/courses: at least two at 300/400 level, one 300/400 level course Comparative or non-U.S.",
     },
   ],
 };
