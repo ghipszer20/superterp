@@ -37,16 +37,16 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 11 | educ-d | Secondary Ed: Mathematics | | merged (40k; catalog lists education courses only, Terrapin Teachers) |
 | 12 | educ-e | Secondary Ed: English | | running |
 | 13 | educ-f | Secondary Ed: Science | | running |
-| 14 | educ-g | Secondary Ed: Social Studies | | queued |
-| 15 | educ-h | Secondary Ed: World Language | | queued |
-| 16 | educ-i | Secondary Ed: Art | | queued |
-| 17 | educ-hdev | Human Development | not teacher-prep | queued |
+| 14 | educ-g | Secondary Ed: Social Studies | | queued (paused; owner 2026-09-28) |
+| 15 | educ-h | Secondary Ed: World Language | | queued (paused; owner 2026-09-28) |
+| 16 | educ-i | Secondary Ed: Art | | queued (paused; owner 2026-09-28) |
+| 17 | educ-hdev | Human Development | not teacher-prep | queued (paused; owner 2026-09-28) |
 | 20 | cmns-ai | AI: Computational Structures for AI Systems | | skipped (not yet published; owner 2026-09-28) |
-| 21 | jour | Journalism | default (no specialization) + Broadcast, Investigative, Sports tracks | queued |
+| 21 | jour | Journalism | default (no specialization) + Broadcast, Investigative, Sports tracks | queued (paused; owner 2026-09-28) |
 | 28 | plcy-pp | Public Policy | college PLCY | merged (71k; STAT row widened by main session) |
-| 29 | plcy-gfp | Global & Foreign Policy | college PLCY; thematic tracks | running |
-| 30a | ocr-comm | OCR re-check: Communication (5 plans) | read only the OCR plan section | queued: majors session C (owner split 2026-09-28) |
-| 30b | ocr-musc | OCR re-check: Music (Jazz, Perf/Comp) + Composition BM track | | queued: majors session C (owner split 2026-09-28) |
-| 30c | ocr-a | OCR re-check: Chinese, Cinema ×2, Dance | | queued: majors session C (owner split 2026-09-28) |
-| 30d | ocr-b | OCR re-check: Global Culture, HCAI, Immersive Media Design | | queued: majors session C (owner split 2026-09-28) |
-| 30e | ocr-c | OCR re-check: Theatre, WGSS | | queued: majors session C (owner split 2026-09-28) |
+| 29 | plcy-gfp | Global & Foreign Policy | college PLCY; thematic tracks | merged (61k; 3 tracks, elective lists not in source: OPEN SLOT) |
+| 30a | ocr-comm | OCR re-check: Communication (5 plans) | read only the OCR plan section | queued (paused; owner 2026-09-28) |
+| 30b | ocr-musc | OCR re-check: Music (Jazz, Perf/Comp) + Composition BM track | | queued (paused; owner 2026-09-28) |
+| 30c | ocr-a | OCR re-check: Chinese, Cinema ×2, Dance | | queued (paused; owner 2026-09-28) |
+| 30d | ocr-b | OCR re-check: Global Culture, HCAI, Immersive Media Design | | queued (paused; owner 2026-09-28) |
+| 30e | ocr-c | OCR re-check: Theatre, WGSS | | queued (paused; owner 2026-09-28) |
