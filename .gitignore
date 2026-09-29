@@ -169,3 +169,6 @@ apps/web/public/data/
 apps/web/public/vendor/
 graphify-out/
 .claude/worktrees/
+
+# UI review gallery (npm run ui-gallery -w @superterp/web; regenerated screenshots)
+/ui-review/
