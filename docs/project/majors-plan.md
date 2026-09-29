@@ -19,9 +19,9 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 7 | agnr-enst | Environmental Science & Technology | | merged (90k; 4 tracks) |
 | 18 | agnr-plsc | Plant Sciences | | merged (84k; 3 tracks) |
 | 19 | agnr-larc | Landscape Architecture | | merged |
-| 22 | info-infosci | Information Science | | merged (`infosci-shared` created) |
+| 22 | info-infosci | Information Science | | running |
 | 23 | info-tid | Technology & Information Design | | handed off to another session (owner, 2026-09-28): half 1 |
-| 24–27 | sphl-* | Family Health; Global Health; PH Practice (+ PH Science if both small) | after #6 merged | all merged: Family Health (73k), Global Health (42k), PH Practice + PH Science (49k) |
+| 24–27 | sphl-* | Family Health; Global Health; PH Practice (+ PH Science if both small) | after #6 merged | Family Health (73k), Global Health (42k) merged; PH Practice + PH Science running |
 | 31–34 | usg-* | Fermentation (identical: thin re-export) + Info Science + PH Science; Shady Grove Accounting/Management/Marketing; Communication; Southern Maryland EE + ME | college USG; patterns `biocomp-major`, `mechatronics-major`; diff only `## Catalog requirements` first | handed off (owner, 2026-09-28): half 1 = Shady Grove InfoSci, PH Science, Fermentation; half 2 = Shady Grove Accounting/Management/Marketing, Communication, Southern Maryland EE + ME |
 
 
@@ -37,12 +37,12 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 11 | educ-d | Secondary Ed: Mathematics | | merged (40k; catalog lists education courses only, Terrapin Teachers) |
 | 12 | educ-e | Secondary Ed: English | | merged (52k; Element 3 open 3 credits split out as OPEN SLOT by main session) |
 | 13 | educ-f | Secondary Ed: Science | | merged (35k; education component only, content areas are double majors) |
-| 14 | educ-g | Secondary Ed: Social Studies | | queued (paused; owner 2026-09-28) |
-| 15 | educ-h | Secondary Ed: World Language | | queued (paused; owner 2026-09-28) |
-| 16 | educ-i | Secondary Ed: Art | | queued (paused; owner 2026-09-28) |
-| 17 | educ-hdev | Human Development | not teacher-prep | queued (paused; owner 2026-09-28) |
+| 14 | educ-g | Secondary Ed: Social Studies | | dispatched (resumed by owner 2026-09-28) |
+| 15 | educ-h | Secondary Ed: World Language | | dispatched (resumed by owner 2026-09-28) |
+| 16 | educ-i | Secondary Ed: Art | | dispatched (resumed by owner 2026-09-28) |
+| 17 | educ-hdev | Human Development | not teacher-prep | queued (resumed by owner 2026-09-28; next) |
 | 20 | cmns-ai | AI: Computational Structures for AI Systems | | skipped (not yet published; owner 2026-09-28) |
-| 21 | jour | Journalism | default (no specialization) + Broadcast, Investigative, Sports tracks | queued (paused; owner 2026-09-28) |
+| 21 | jour | Journalism | default (no specialization) + Broadcast, Investigative, Sports tracks | queued (resumed by owner 2026-09-28; next) |
 | 28 | plcy-pp | Public Policy | college PLCY | merged (71k; STAT row widened by main session) |
 | 29 | plcy-gfp | Global & Foreign Policy | college PLCY; thematic tracks | merged (61k; 3 tracks, elective lists not in source: OPEN SLOT) |
 | 30a | ocr-comm | OCR re-check: Communication (5 plans) | read only the OCR plan section | queued (paused; owner 2026-09-28) |
