@@ -19,7 +19,7 @@ export type PickMode = "from" | "to" | null;
 type FieldState = { text: string; place: Place | null };
 export const emptyField: FieldState = { text: "", place: null };
 
-function searchBuildings(buildings: Building[], query: string, limit = 6): Building[] {
+export function searchBuildings(buildings: Building[], query: string, limit = 6): Building[] {
   const q = query.trim().toLowerCase();
   if (!q) return [];
   return buildings.filter((b) => b.name.toLowerCase().includes(q)).slice(0, limit);
