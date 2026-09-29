@@ -18,7 +18,6 @@ const EASY_SCORE = 1;
 const HARD_SCORE = 9;
 const WF_WEIGHT = 10; // W+F share (0-1) times this is added, so 20% W+F adds 2
 const NEUTRAL_BY_LEVEL = [3.5, 4.5, 5.5, 6.5]; // 1xx-4xx courses with no data
-const LEVEL_ALLOWANCE = 0.6; // per level above 1xx: averages run high in upper-level courses even when the work is hard
 const SHRINK_K = 2; // department record weight n / (n + K)
 const PERSONAL_SCALE = 2.5; // difficulty points per grade point above/below course averages
 const PERSONAL_CAP = 1.5; // largest personal adjustment to one course, either way
@@ -43,8 +42,7 @@ export function courseDifficulty(course: DifficultyCourse): number {
   }
   const span = (EASY_GPA - s.averageGpa) / (EASY_GPA - HARD_GPA);
   const base = EASY_SCORE + clamp(span, -0.4, 1.4) * (HARD_SCORE - EASY_SCORE);
-  const level = clamp(Number(/\d/.exec(course.id)?.[0] ?? 2), 1, 4);
-  return clamp(base + (s.wRate + s.fRate) * WF_WEIGHT + (level - 1) * LEVEL_ALLOWANCE, 0, 10);
+  return clamp(base + (s.wRate + s.fRate) * WF_WEIGHT, 0, 10);
 }
 
 /** Per-department record: mean (grade points - course average), shrunk toward the overall mean. */
@@ -92,8 +90,7 @@ export function termDifficulty(courses: DifficultyCourse[], history: DifficultyH
   const mean = 0.5 * weighted + 0.5 * topMean;
   const hard = byHardness.filter((r) => r.difficulty >= HARD_COURSE);
   const load = credits > LOAD_BASE ? Math.min(3, (credits - LOAD_BASE) * LOAD_PER_CREDIT) : credits > 0 && credits < LIGHT_CREDITS ? -LIGHT_DISCOUNT : 0;
-  const bump = hard.length >= 2 ? Math.min(1.5, 0.5 * (hard.length - 1)) : 0;
-  const score = Math.round(clamp(mean + load + bump, 1, 10));
+  const score = Math.round(clamp(mean + load, 1, 10));
 
   // One plain sentence from the one or two biggest drivers.
   const heavy = credits >= HEAVY_CREDITS;
