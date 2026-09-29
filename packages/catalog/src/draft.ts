@@ -477,7 +477,7 @@ class ListDrafter {
         for (const s of parsed.slots) if (s.alts.length > 1) flattened.push(s.alts.map((a) => a[0]).join(" or "));
         areas.push({ name: label(g), courses: parsed.slots.flatMap((s) => s.alts.map((a) => a[0]!)) });
       }
-      const firstCode = areas[0]!.courses[0]!.toLowerCase();
+      const firstCode = areas[0]!.courses![0]!.toLowerCase();
       const id = this.id(`areas-${firstCode}`);
       this.add({ kind: "distribution", id, name, count: rule.count, minAreas: rule.minAreas, maxPerArea: rule.maxPerArea, areas }, [i, ...body]);
       if (flattened.length) {
