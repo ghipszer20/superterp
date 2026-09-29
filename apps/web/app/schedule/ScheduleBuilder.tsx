@@ -140,9 +140,7 @@ export function ScheduleBuilder() {
   // filters is rebuilt from saved on every change; key the memo on its serialized form.
   const filtersKey = JSON.stringify(filters);
   const recommended = filters.sort === "recommended";
-  useEffect(() => {
-    if (recommended) setWantGrades(true);
-  }, [recommended]);
+  if (recommended && !wantGrades) setWantGrades(true); // adjusting state during render, not in an effect
   const request = useMemo<GenerateRequest | null>(
     () =>
       ready && courses.length
