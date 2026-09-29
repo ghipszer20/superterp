@@ -560,3 +560,8 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 ## `feat/agnr-larc` (2026-09-28): major Landscape Architecture (`larc-major`, AGNR); plan constructed, `official: false`
 - Landscape Architecture: department page (larch.umd.edu) has no requirements; encoded from the catalog alone. The catalog lists no concentrations, so it is one program. No official four-year plan; sample plan constructed.
 - Landscape Architecture: "MATH113 (or higher level math course)" is encoded as any MATH course numbered 113+; "LARC389 (or Approved Study Abroad)" accepts only LARC389 because the study-abroad course is unnamed (manual override). The 6-credit restricted electives are 2 courses of the six listed, assuming 3 credits each.
+
+## `feat/educ-e` (2026-09-28): major Secondary Education - English (`educ-english-major`, EDUC); plan constructed, `official: false`
+- Secondary English Education: no official four-year plan in the fetched sources (links only); sample plan constructed from the catalog table.
+- Elements 2 (15 credits) and 3 (9 credits) have no course lists in the source (approved list at go.umd.edu/EnglishEducation); encoded as ENGL/CMLT 100-499 credit pools, six-period and topic splits unenforced. Element 3 open slot could be a non-ENGL course, which the pool rejects.
+- Element 5 (American Literature, Shakespeare, Differences and Diasporas, Methods, Advanced Writing) has no designation lists; not encoded. Concurrency footnotes (TLPL479C with TLPL456, TLPL478C with TLPL489C) and the 82-credit total are manual.
