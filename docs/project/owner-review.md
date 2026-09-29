@@ -579,3 +579,10 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Public Health Practice: no term-by-term plan in the sources (SPH page has benchmarks only); plan constructed. Elective fills HLTH300, HLTH325, HLTH377, HLTH424 are unconfirmed placeholders.
 - Public Health Practice: anatomy row is "HLTH212 or BSCI201" (catalog and SPH benchmark agree), so the shared BSCI201/202 pair was not used.
 - Public Health Science: sph.umd.edu department page returned 404, department page not checked. 12 credits of Public Health Science options (300-400 level, "primarily offered within SPH") from an approved list not in the sources; OPEN SLOT. No term-by-term plan; plan constructed with unconfirmed option fills HLTH424, MIEH330, MIEH331, HLSA484.
+
+## `feat/educ-g` (2026-09-28): major Secondary Education - Social Studies (`educ-social-studies`, three tracks: History default, Geography, Government and Politics), EDUC; plans constructed, `official: false`
+- No department page carries requirements (MCERT is the graduate program, Terrapin Teachers is STEM only, the COE plans page only links), so the catalog alone is encoded.
+- No official term-by-term plan in the sources; all three sample plans are constructed. Fills (regional HIST electives HIST284/HIST111, History/GEOG/GVPT electives) are placeholders from courses used in the History, Geography and GVPT major plans.
+- Regional HIST electives, History-electives concentration (15 credits) and non-Western rule, Geography gateway split (physical/human/technique) and GVPT skills option name no course lists; pools accept whole departments and the splits are not enforced.
+- Catalog's "29 credit hours in the social sciences" does not match the rows listed (History 12, Geography and Government about 21); the balance is unlisted, not encoded as a slot.
+- Government and Politics option is flagged "under review" in the catalog; encoded as printed.
