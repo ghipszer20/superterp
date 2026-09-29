@@ -9,10 +9,13 @@
   "types": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
+    "./buildings": "./src/buildings.ts",
+    "./buses": "./src/buses.ts",
     "./dates": "./src/dates.ts",
     "./hours": "./src/hours.ts",
     "./http": "./src/http.ts",
-    "./snapshots": "./src/snapshots/index.ts"
+    "./snapshots": "./src/snapshots/index.ts",
+    "./trip": "./src/trip.ts"
   },
   "scripts": {
     "test": "vitest run",

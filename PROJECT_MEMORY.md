@@ -100,7 +100,7 @@ Moved to `docs/project/legal.md`. Read it before building the disclaimer, accoun
 - **Plan: overtime run, 3 parallel sessions** (owner-approved 2026-09-29, `docs/project/overtime-plan-2026-09-29.md`; next-steps-plan.md shared rules still apply). Each session replaces only its own bullet below.
   - **Session A (programs, integration, prelaunch):** not started. Resume `feat/minors-fixes` → `feat/test-students` → `feat/prelaunch` → GPA rules per college (after B's program GPA rule) → final full suite and cleanup list. Merges in `merge-s1`.
   - **Session B (engine, Advisor data):** running (2026-09-29). Order changed: `feat/program-gpa` first (Sonnet builder running; it unblocks A task 4) → `feat/eligibility-gates` (Opus) → `feat/eligibility-apply` → `feat/grades-data`. Merges in `merge-s2`.
-  - **Session C (schedule, exports, registration):** not started. Resume `feat/walk-leave-by` → resume `feat/advising-export` → `feat/registration-prep` (plan `C:/Users/24GHi/.claude/plans/resilient-whistling-sprout.md` Task 3) → GTFS expiry warning (stretch). Merges in `merge-s5`.
+  - **Session C (schedule, exports, registration):** in progress. `feat/walk-leave-by` merged (full suite green) → finishing `feat/advising-export` (main session) → `feat/registration-prep` (Sonnet; plan `C:/Users/24GHi/.claude/plans/resilient-whistling-sprout.md` Task 3) → GTFS expiry warning (stretch). Merges in `merge-s5`.
 - **Waiting on the owner:** see `docs/project/owner-review.md` (include it in every progress report; add new items there).
 - **Known to-dos:** see `docs/project/roadmap.md` "Known to-dos" (add new ones there).
 

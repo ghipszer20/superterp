@@ -31,6 +31,7 @@ import {
   fetchShuttleFeed,
   nextDepartures,
   parseGtfs,
+  planArriveBy,
   planTrip,
   routeMap,
   routesOn,
@@ -41,6 +42,7 @@ import {
   type AcademicEvent,
   type LibraryHours,
   type Place,
+  type PlanArriveByResult,
   type PlanTripResult,
   type RecWellArea,
   type RoomAvailability,
@@ -275,4 +277,10 @@ export async function getDepartures(stopIds: string[], isoDate: string, fromMinu
 export async function planTripBetween(isoDate: string, fromMinutes: number, from: Place, to: Place): Promise<PlanTripResult> {
   const f = await loadFeed();
   return planTrip(f, isoDate, fromMinutes, from, to);
+}
+
+/** Arrive-by mode: the latest way to leave that still gets between two places by `arriveByMinutes`. */
+export async function planArriveByBetween(isoDate: string, arriveByMinutes: number, from: Place, to: Place): Promise<PlanArriveByResult> {
+  const f = await loadFeed();
+  return planArriveBy(f, isoDate, arriveByMinutes, from, to);
 }

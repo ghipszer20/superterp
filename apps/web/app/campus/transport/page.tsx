@@ -5,6 +5,7 @@ import { campusDate, campusMinutes } from "@superterp/campus-data";
 import { Notice, Page, Section, SkeletonCard, SourceError } from "@/components/ui";
 import { getBuildings, getBusStops, getCampusMap, getRoutesOn, safe } from "@/lib/campus";
 import { BusBoard } from "./BusBoard";
+import { LeaveByCard } from "./LeaveByCard";
 import { TransportMap } from "./TransportMap";
 
 export const metadata: Metadata = { title: "Transport" };
@@ -12,6 +13,7 @@ export const metadata: Metadata = { title: "Transport" };
 export default function TransportPage() {
   return (
     <Page title="Transport" subtitle="Shuttle-UM">
+      <LeaveByCard />
       <Section title="Map">
         <Suspense fallback={<SkeletonCard rows={1} />}>
           <MapSection />
