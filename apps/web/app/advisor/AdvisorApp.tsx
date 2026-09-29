@@ -135,7 +135,7 @@ function Planner({ plan, catalog, signedBy, signedAt, calendar }: { plan: Adviso
         </p>
         <p>
           Agreement signed by {signedBy} on {date}.
-          {ready ? ` Course data: ${termLabel(ready.term)} Schedule of Classes; courses not offered that term show as unknown.` : ""}
+          {ready ? ` Course data: ${termsLabel(ready.terms)} Schedule${ready.terms.length > 1 ? "s" : ""} of Classes; courses in none of those terms show as unknown.` : ""}
         </p>
       </footer>
     </main>
@@ -143,6 +143,10 @@ function Planner({ plan, catalog, signedBy, signedAt, calendar }: { plan: Adviso
 }
 
 const termLabel = (id: string) => termFromMatriculationId(id) ?? "";
+const termsLabel = (ids: string[]) => {
+  const names = [...ids].sort().map(termLabel);
+  return names.length > 1 ? `${names.slice(0, -1).join(", ")} and ${names.at(-1)}` : (names[0] ?? "");
+};
 
 /** ?course=CMSC351 opens that course's sheet (a deep link; also used by screenshots). */
 function initialCourse(): OpenCourse | null {
