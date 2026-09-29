@@ -86,17 +86,17 @@ export function parseAcademicCalendar(html: string, term: string): AcademicEvent
   return events;
 }
 
-/** The registrar's default (current) term and the next two it lists (the picker runs newest first). */
+/** The registrar's default (current) term and the next two (the picker runs newest first, so they sit just above it). */
 export async function fetchAcademicCalendar(): Promise<AcademicEvent[]> {
   const url = (id: string) => `${CALENDAR_URL}?field_academic_terms_target_id=${id}`;
   const first = await fetchText("calendar", CALENDAR_URL);
   const terms = listCalendarTerms(first);
   const selected = cheerio.load(first)(`${TERM_OPTIONS}[selected]`).first().attr("value");
   const start = Math.max(0, terms.findIndex((t) => t.id === selected));
-  const wanted = terms.slice(start, start + 3);
+  const wanted = terms.slice(Math.max(0, start - 2), start + 1).reverse();
   if (wanted.length === 0) throw new Error("calendar: no terms listed");
   const pages = await Promise.all(
-    wanted.map((t, i) => (i === 0 ? Promise.resolve(first) : fetchText("calendar", url(t.id)))),
+    wanted.map((t) => (t.id === terms[start]?.id ? Promise.resolve(first) : fetchText("calendar", url(t.id)))),
   );
   return wanted.flatMap((t, i) => parseAcademicCalendar(pages[i]!, t.name));
 }
