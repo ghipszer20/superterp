@@ -91,7 +91,7 @@ export const PRIVACY: LegalSection[] = [
   {
     heading: "What is stored in your browser",
     paragraphs: [
-      "SuperTerp saves a few things on your device using your browser's local storage. Nothing is sent to us.",
+      "SuperTerp saves a few things on your device using your browser's local storage. None of it is sent to us.",
       "superterp-advisor-plan: your four-year plan.",
       "superterp-advisor-consent: your signed Advisor agreement (version, date and typed name).",
       "superterp-schedule: your saved schedule.",
@@ -115,6 +115,8 @@ export const PRIVACY: LegalSection[] = [
     paragraphs: [
       "Map tiles are loaded from OpenFreeMap, so it sees your IP address like any site you load images from.",
       "Your location is used only when you tap a button like \"Show my location\", and it isn't stored.",
+      "When you plan a trip, its start and end points (which can be your location) are sent to our server to find buses. They're used for that request only and aren't saved.",
+      "Like any website, our host may keep short-lived request logs (such as IP address and the page requested) to run the service.",
     ],
   },
   {

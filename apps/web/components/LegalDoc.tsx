@@ -4,8 +4,8 @@ import styles from "@/app/about/about.module.css";
 
 export function LegalDoc({ title, version, sections }: { title: string; version: string; sections: LegalSection[] }) {
   return (
-    <Page title={title}>
-      <Section title={`Version ${version}`}>
+    <Page title={title} subtitle={`Updated ${version}`}>
+      <Section>
         {sections.map((s) => (
           <Card key={s.heading} className={styles.card}>
             <div className={styles.prose}>
