@@ -28,11 +28,11 @@ export function TeacherStrip({
   return (
     <ul className={styles.strip} data-size={size}>
       {picks.map((s, k) => (
-        <li key={s.courseId} className={cal.course} data-color={courseColor(courseIds, s.courseId)}>
+        <li key={s.courseId} className={cal.course} data-color={courseColor(courseIds, s.courseId)} data-reason={gpas ? "" : undefined}>
           <span className={styles.swatch} />
           <b>{s.courseId}</b>
           <span className={styles.stripWho}>{instructorLabel(s, groups?.[k])}</span>
-          {gpas ? <span>{recommendReason(s, ratings, gpas)}</span> : <RatingBadge rating={bestRating(s, ratings)} />}
+          {gpas ? <span className={styles.stripReason}>{recommendReason(s, ratings, gpas)}</span> : <RatingBadge rating={bestRating(s, ratings)} />}
         </li>
       ))}
     </ul>
