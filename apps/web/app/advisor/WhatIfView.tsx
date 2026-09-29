@@ -116,7 +116,7 @@ function useCompare(
       try {
         const { runWhatIf } = await import("@/lib/advisor/what-if");
         const planForCheck = checkerPlan(plan, prior.courses);
-        const result = await runWhatIf(planForCheck, ready.catalog, plan.programs, proposed, plan.startTerm, plan.gpa);
+        const result = await runWhatIf(planForCheck, ready.catalog, plan.programs, proposed, plan.startTerm, plan.gpa, plan.confirmedSlots);
         if (id === run.current) setState({ status: "ready", result });
       } catch {
         if (id === run.current) setState((s) => ({ status: "error", result: s.result }));

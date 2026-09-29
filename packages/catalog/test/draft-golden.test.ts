@@ -68,6 +68,8 @@ function meaning(r: Requirement): string {
       return `distribution ${r.count}/${r.minAreas}/${r.maxPerArea} ${r.areas.map((a) => `${a.name}=${sorted(a.courses)}`)}${overlay}`;
     case "concentration":
       return `concentration ${JSON.stringify({ ...r, id: undefined, name: undefined })}`;
+    case "openSlot":
+      return `openSlot ${r.credits ?? ""}`;
   }
 }
 

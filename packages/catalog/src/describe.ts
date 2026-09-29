@@ -74,6 +74,10 @@ function describeRule(r: Requirement): Pick<Described, "text" | "details"> {
         details: r.options.map((set) => set.map(member).join(" + ")),
       };
     }
+    case "openSlot": {
+      const amount = r.credits !== undefined ? `${r.credits} credits` : "Courses";
+      return { text: `${amount} from an approved list that isn't published: confirm with your advisor`, details: r.note ? [r.note] : [] };
+    }
   }
 }
 

@@ -82,6 +82,11 @@ export type AdvisorPlan = {
    * instead of checking the cap.
    */
   mastersCredits?: number;
+  /**
+   * Open Slots ("from an approved list" that isn't published) the student ticked as confirmed with
+   * their advisor, as "<programId>/<requirementId>" (@superterp/audit slotKey). Omitted when empty.
+   */
+  confirmedSlots?: string[];
 };
 
 export type PlanAction =
@@ -115,7 +120,9 @@ export type PlanAction =
   | { type: "set-gpa"; gpa: number | undefined }
   /** Applying a what-if comparison: replaces only the declared majors, never tracks, exam terms
    * or anything else "setup" also touches. */
-  | { type: "set-programs"; programs: string[] };
+  | { type: "set-programs"; programs: string[] }
+  /** Ticks or unticks an Open Slot as confirmed with the student's advisor. */
+  | { type: "toggle-slot"; key: string };
 
 export type DegreeChoice = "double-major" | "double-degree";
 export const DEGREE_CHOICES: DegreeChoice[] = ["double-major", "double-degree"];
@@ -317,6 +324,14 @@ export function planReducer(plan: AdvisorPlan, action: PlanAction): AdvisorPlan 
       const next = { ...plan };
       if (action.mastersCredits === undefined) delete next.mastersCredits;
       else next.mastersCredits = action.mastersCredits;
+      return next;
+    }
+    case "toggle-slot": {
+      const had = plan.confirmedSlots ?? [];
+      const slots = had.includes(action.key) ? had.filter((k) => k !== action.key) : [...had, action.key];
+      const next = { ...plan };
+      if (slots.length === 0) delete next.confirmedSlots;
+      else next.confirmedSlots = slots;
       return next;
     }
   }
