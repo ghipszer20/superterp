@@ -65,8 +65,8 @@ function fakeSources(fail: Partial<Record<keyof CampusSources, boolean>> = {}) {
     shuttleGtfs: () => run("shuttleGtfs", () => ({ ...GTFS })),
     buildings: () =>
       run("buildings", () => [
-        { id: "432", name: "Brendan Iribe Center", lat: 38.9891607057353, lon: -76.9364438800535 },
-        { id: "026", name: "South Campus Dining Hall", lat: 38.983048, lon: -76.9436837393588 },
+        { id: "432", name: "Brendan Iribe Center", code: "", lat: 38.9891607057353, lon: -76.9364438800535 },
+        { id: "026", name: "South Campus Dining Hall", code: "SDH", lat: 38.983048, lon: -76.9436837393588 },
       ]),
   };
   return { sources, calls };

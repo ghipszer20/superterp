@@ -70,12 +70,14 @@ export function LeaveByCard() {
   const [result, setResult] = useState<{ key: string; option: ArriveByOption | null } | null>(null);
 
   useEffect(() => {
-    const date = campusDate();
-    setClock({ day: weekdayOf(date), now: campusMinutes(), date });
-    setSaved(readOrigin());
     loadPickedSections()
-      .then(setSections)
-      .catch(() => setSections(null));
+      .catch(() => null)
+      .then((picked) => {
+        const date = campusDate();
+        setClock({ day: weekdayOf(date), now: campusMinutes(), date });
+        setSaved(readOrigin());
+        setSections(picked);
+      });
   }, []);
 
   const next = useMemo(

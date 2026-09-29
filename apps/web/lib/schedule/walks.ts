@@ -27,6 +27,8 @@ const MAX_GAP = 60;
 
 const DAY_NAMES: Record<Weekday, string> = { M: "Mon", Tu: "Tue", W: "Wed", Th: "Thu", F: "Fri" };
 
+const isWeekday = (d: string): d is Weekday => (WEEKDAYS as readonly string[]).includes(d);
+
 type Slot = { start: number; end: number; code: string; course: string };
 
 export function dayWalks(placed: readonly Section[], buildings: readonly Building[]): Walk[] {
@@ -34,7 +36,7 @@ export function dayWalks(placed: readonly Section[], buildings: readonly Buildin
   for (const s of placed) {
     for (const mt of s.meetings) {
       if (mt.start === null || mt.end === null || !mt.building) continue;
-      for (const d of mt.days) {
+      for (const d of mt.days.filter(isWeekday)) {
         const list = byDay.get(d) ?? [];
         list.push({ start: mt.start, end: mt.end, code: mt.building, course: s.courseId });
         byDay.set(d, list);
@@ -47,7 +49,7 @@ export function dayWalks(placed: readonly Section[], buildings: readonly Buildin
   for (const s of placed) {
     for (const mt of s.meetings) {
       if (mt.start === null || mt.end === null || mt.building) continue;
-      for (const d of mt.days) {
+      for (const d of mt.days.filter(isWeekday)) {
         const list = untimedBreaks.get(d) ?? [];
         list.push({ start: mt.start, end: mt.end, code: "", course: s.courseId });
         untimedBreaks.set(d, list);
