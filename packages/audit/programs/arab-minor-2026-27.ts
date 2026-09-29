@@ -15,13 +15,14 @@ export const arabMinor: Program = {
     "https://arhu.umd.edu/academics/undergraduate-studies/minors (fetched 2026-09-28)",
   verified: false,
   minGrade: "C-",
+  minGpa: 2.0,
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
     "Department page not checked for requirements: the fetched ARHU minors page is only a list of minors (Arabic: OPEN) with no requirements, and no SLLC Arabic page was fetched. Encoded from the catalog.",
     "9 credits at 3xx/4xx: the catalog says 'including at least one taught in Arabic' and footnote 1 says 'Contact the minor advisor for approved courses' without naming them. Encoded as any ARAB course numbered 300 or above (the whole named range); the 'at least one taught in Arabic' condition and the advisor-approved list are a manual check. The catalog also says all courses applied to the minor must be taught in Arabic, which may narrow the 3xx/4xx range further; not enforced.",
     "'No more than 6 credits of the minor may be used to satisfy the requirements of a major' -> maxSharedWith: [{ credits: 6 }].",
     "'No courses in the minor may count toward another minor' is not encoded (no way to name every other minor); manual check.",
-    "Manual notes, not encodable: mandatory placement testing and replacement of required courses for students with prior knowledge (advisor permission); max 6 credits from other institutions; overall minor GPA of 2.0 required; a lower-level course may not be taken after a higher one in the same strand.",
+    "Manual notes, not encodable: mandatory placement testing and replacement of required courses for students with prior knowledge (advisor permission); max 6 credits from other institutions; overall minor GPA of 2.0 required (encoded as minGpa); a lower-level course may not be taken after a higher one in the same strand.",
   ],
   requirements: [
     { kind: "course", id: "arab101", name: "Elementary Arabic I", options: ["ARAB101"] },

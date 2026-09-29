@@ -31,10 +31,10 @@ export const DANC_SHARED_NOTES: string[] = [
     "the requirement is encoded as a 4-credit `choose` over that named list, so any real per-course credit value " +
     "the courses actually carry will satisfy it correctly at audit time. The sample plan's own per-course credit " +
     "assumption is noted in its own `notes` field.",
-  "Not encoded (engine gaps): the major's 2.0 GPA-in-the-major requirement; the Mid-Point Assessment (portfolio + " +
+  "Not encoded (engine gaps): the Mid-Point Assessment (portfolio + " +
     "meeting, a benchmark gate, not a course); mandatory per-semester advising; residency rules (30 credits at UMD, " +
     "15 of the final 30 at the 300-400 level, 12 upper-level major credits at UMD); and the 120-credit graduation " +
-    "minimum. Entrance auditions are 'not required' per the catalog, so nothing to encode or flag there.",
+    "minimum. Entrance auditions are 'not required' per the catalog, so nothing to encode or flag there. Program GPA 2.0 encoded as minGpa.",
 ];
 
 /** Requirements every DANC track shares (everything but the 12-credit Area of Emphasis). */
@@ -80,6 +80,7 @@ export const dancMajorPerformanceChoreography: Program = {
   catalogYear: "2026-27",
   source: DANC_SOURCE,
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     ...DANC_SHARED_NOTES,
@@ -145,6 +146,7 @@ export const dancMajorProduction: Program = {
   catalogYear: "2026-27",
   source: DANC_SOURCE,
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     ...DANC_SHARED_NOTES,
@@ -210,6 +212,7 @@ export const dancMajorEducation: Program = {
   catalogYear: "2026-27",
   source: DANC_SOURCE,
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     ...DANC_SHARED_NOTES,

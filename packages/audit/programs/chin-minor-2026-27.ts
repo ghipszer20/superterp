@@ -13,13 +13,14 @@ export const chinStudiesMinor: Program = {
   source:
     "UMD Academic Catalog 2026–27, Chinese Studies Minor; SLLC Chinese program, https://sllc.umd.edu/chinese (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Department page not checked: https://sllc.umd.edu/chinese carries no requirements (it mentions 'two Chinese minors' -- this one and the Chinese Language Minor). Encoded from the catalog.",
     "17 credits: CHIN206 + CHIN207 (4 credits each) and all three foundation topic courses (CHIN307, CHIN315, CHIN441; 17 - 8 = 9 credits).",
     "Not encoded (advisor approval): CHIN207 may be replaced by one 3-credit upper-level CHIN course plus 1 credit of CHIN386/CHIN499; other China-topic courses may replace the foundation courses when those are not offered.",
     "'9 of the 17 credits at 300/400 level' is encoded as an overlay over CHIN 300-499 (the three foundation courses already meet it).",
-    "Manual: minor GPA of 2.0; no more than 6 of the 17 credits at another institution. The catalog states no cap on overlap with the major, so none is set.",
+    "Manual: no more than 6 of the 17 credits at another institution. The catalog states no cap on overlap with the major, so none is set. Program GPA 2.0 encoded as minGpa.",
   ],
   requirements: [
     { kind: "course", id: "chin206", name: "Intermediate Chinese I", options: ["CHIN206"] },

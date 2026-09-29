@@ -16,11 +16,12 @@ export const arthMinor: Program = {
     "(https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/art-history-archaeology/art-history-minor/); " +
     "Department of Art History and Archaeology, https://arthistory.umd.edu/ (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Department page not checked: the fetched arthistory.umd.edu page is only a homepage with no requirements, so this is encoded from the catalog alone.",
     "Three ARTH courses at 2xx (one may be a Big Question course) and three at 3xx or 4xx = 18 credits. The catalog's footnote lists example 2xx courses ('include, but are not limited to' ARTH200, 201, 221, 230, 250, 255, 275, 290), so every ARTH 2xx course is accepted.",
-    "Not encoded (manual): overall minor GPA of 2.0; at most 6 credits may be transferred in from other institutions or programs (study abroad needs prior approval of the Director of Undergraduate Studies). The source states no overlap cap with the major, so no maxSharedWith is set.",
+    "Not encoded (manual): at most 6 credits may be transferred in from other institutions or programs (study abroad needs prior approval of the Director of Undergraduate Studies). The source states no overlap cap with the major, so no maxSharedWith is set. Program GPA 2.0 encoded as minGpa.",
     "Cross-listing: the Archaeology Minor appears under both Art History and Archaeology and Classical Languages and Literatures; it is encoded once as clas-minor-archaeology, not here.",
   ],
   requirements: [

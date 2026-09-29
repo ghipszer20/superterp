@@ -15,6 +15,7 @@ export const gersMinor: Program = {
     "(https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/germanic-studies/german-studies-minor/); " +
     "SLLC German, https://sllc.umd.edu/german (fetched 2026-09-28, homepage only)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Department page not checked: the fetched sllc.umd.edu/german page is a program homepage with no minor requirements. Encoded from the catalog alone.",
@@ -22,7 +23,7 @@ export const gersMinor: Program = {
     "Three of the five must be 3xx or 4xx: encoded as an overlay choose of three GERS 300-499 courses.",
     "'One language, one literature, and one culture' among those three has no course list in the minor's catalog entry (the German Studies major's Area I/II/III lists are a different program), so the audit can't assign courses to areas; the split is a manual check.",
     "Prerequisites GERS103 and GERS203 (or equivalents 'as determined through departmental advising') are not encoded as requirements: equivalence is an advising decision.",
-    "Every course needs a C- or better (encoded as minGrade). The overall 2.0 GPA in the minor is a manual check.",
+    "Every course needs a C- or better (encoded as minGrade). Program GPA 2.0 (overall in the minor) encoded as minGpa.",
     "No sharing cap stated in the catalog; none is set.",
   ],
   requirements: [
