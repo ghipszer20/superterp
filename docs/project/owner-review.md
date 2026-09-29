@@ -582,3 +582,9 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 
 ## Half 1 main session (2026-09-28): major Fermentation Science at Shady Grove (`ferm-usg-major`, USG); plan constructed, `official: false`
 - Catalog requirement table is identical to College Park's, so the program re-uses `ferm-major`'s requirements (and inherits its flags: AGST/NFSC topic rows as ranges, constructed plan). No Shady Grove department page in the sources.
+
+## `feat/educ-hdev` (2026-09-28): major Human Development; sample plan constructed, `official: false`
+- Human Development (`hdev-major`): department page not checked (the source has only the catalog and a generic College of Education four-year-plans page with no Human Development plan text). Sample plan is constructed.
+- minGrade C- applied from the College of Education's general statement; the catalog gives no grade rule for this major. Confirm.
+- Electives pool accepts every course in the 16 "Other Possible Electives" departments (the catalog says advisor-approved, not encodable) plus the core courses (catalog footnote). The 6-credit internship substitute (400-level electives) covers named 400-level courses only; 400-level courses from the other departments are not in that pool (filter cannot combine named courses with a level-limited department range).
+- Not encoded: double-major substitutions (FMSC302, PSYC300, PSYC200), EDHD489/498 substitution, 43-credit total.
