@@ -69,6 +69,11 @@ export async function buildPdf(t: Takeout) {
   heading("Degree audit (with catalog rule)");
   // The catalog rule is per program, so it is cited once above that program's requirements.
   for (const p of t.audit) {
+    if (y > doc.internal.pageSize.getHeight() - 110) {
+      doc.addPage();
+      y = margin;
+    }
+    y += 8; // text is drawn from its baseline, tables from their top
     line(`Catalog rule: ${p.citation}`);
     table({
       head: [[p.program, "Status", "Would satisfy"]],
