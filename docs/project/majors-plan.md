@@ -20,9 +20,9 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 18 | agnr-plsc | Plant Sciences | | merged (84k; 3 tracks) |
 | 19 | agnr-larc | Landscape Architecture | | merged |
 | 22 | info-infosci | Information Science | | merged (`infosci-shared` created) |
-| 23 | info-tid | Technology & Information Design | | half 1 session: running (`feat/info-tid`) |
+| 23 | info-tid | Technology & Information Design | | merged (37k; half 1 session; catalog vs department elective credits flagged) |
 | 24–27 | sphl-* | Family Health; Global Health; PH Practice (+ PH Science if both small) | after #6 merged | all merged: Family Health (73k), Global Health (42k), PH Practice + PH Science (49k) |
-| 31–34 | usg-* | Fermentation (identical: thin re-export) + Info Science + PH Science; Shady Grove Accounting/Management/Marketing; Communication; Southern Maryland EE + ME | college USG; patterns `biocomp-major`, `mechatronics-major`; diff only `## Catalog requirements` first | handed off (owner, 2026-09-28): half 1 = Fermentation merged (thin re-export `ferm-usg-major`, main session), Shady Grove InfoSci + PH Science running (`feat/usg-infosci`, `feat/usg-phsc`); half 2 = Shady Grove Accounting/Management/Marketing, Communication, Southern Maryland EE + ME |
+| 31–34 | usg-* | Fermentation (identical: thin re-export) + Info Science + PH Science; Shady Grove Accounting/Management/Marketing; Communication; Southern Maryland EE + ME | college USG; patterns `biocomp-major`, `mechatronics-major`; diff only `## Catalog requirements` first | handed off (owner, 2026-09-28): half 1 = Fermentation merged (thin re-export `ferm-usg-major`, main session), Shady Grove InfoSci (40k) + PH Science (29k; catalog marks it Discontinued) merged; half 2 = Shady Grove Accounting/Management/Marketing, Communication, Southern Maryland EE + ME |
 
 
 
