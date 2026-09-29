@@ -5,6 +5,7 @@ import type { DayRule, ScheduleFilters, Weekday } from "@superterp/course-data/s
 import type { EmptyExplanation, FilterConstraint } from "@superterp/course-data/explain";
 import type { SortKey } from "@superterp/course-data/sort";
 import { DAY_NAME, WEEKDAYS } from "./calendar";
+import type { SharedSchedule } from "./share";
 
 export type FilterState = {
   /** Days left out are unrestricted. */
@@ -26,8 +27,27 @@ const SORT_KEYS = new Set<string>(SORT_OPTIONS.map((o) => o.value));
 const COURSE = /^[A-Z]{4}\d{3}[A-Z]?$/;
 const isWeekday = (d: string): d is Weekday => (WEEKDAYS as readonly string[]).includes(d);
 
-export function readQuery(params: URLSearchParams): { courses?: string[]; filters?: FilterState } {
-  const out: { courses?: string[]; filters?: FilterState } = {};
+const TERM = /^\d{6}$/;
+const SHARE_PICK = /^([A-Z]{4}\d{3}[A-Z]?)\.([A-Za-z0-9]{1,6})$/;
+
+/** `?term=202608&share=CMSC351.0101~STAT400.0201`; anything malformed means no share at all. */
+function readShare(params: URLSearchParams): SharedSchedule | undefined {
+  const term = params.get("term");
+  const share = params.get("share");
+  if (term === null || share === null || !TERM.test(term)) return undefined;
+  const picks: Record<string, string> = {};
+  for (const part of share.split("~")) {
+    const m = SHARE_PICK.exec(part);
+    if (!m || m[1] in picks) return undefined;
+    picks[m[1]] = m[2];
+  }
+  return { term, picks };
+}
+
+export function readQuery(params: URLSearchParams): { courses?: string[]; filters?: FilterState; share?: SharedSchedule } {
+  const out: { courses?: string[]; filters?: FilterState; share?: SharedSchedule } = {};
+  const shared = readShare(params);
+  if (shared) out.share = shared;
   const c = params.get("c");
   if (c !== null) {
     out.courses = [...new Set(c.split(",").map((s) => s.trim().toUpperCase()).filter((s) => COURSE.test(s)))];
@@ -51,8 +71,11 @@ export function readQuery(params: URLSearchParams): { courses?: string[]; filter
 }
 
 /** Commas and colons are left unescaped so the URL stays readable. */
-export function writeQuery(courses: string[], filters: FilterState): string {
+export function writeQuery(courses: string[], filters: FilterState, share?: SharedSchedule): string {
   const parts: string[] = [];
+  if (share && Object.keys(share.picks).length) {
+    parts.push(`term=${share.term}`, `share=${Object.entries(share.picks).map(([c, id]) => `${c}.${id}`).join("~")}`);
+  }
   if (courses.length) parts.push(`c=${courses.join(",")}`);
   const off = WEEKDAYS.filter((d) => filters.days[d] === "off");
   if (off.length) parts.push(`off=${off.join(",")}`);
