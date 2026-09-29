@@ -36,7 +36,7 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 10 | educ-c | Middle School Ed | | merged (43k) |
 | 11 | educ-d | Secondary Ed: Mathematics | | merged (40k; catalog lists education courses only, Terrapin Teachers) |
 | 12 | educ-e | Secondary Ed: English | | merged (52k; Element 3 open 3 credits split out as OPEN SLOT by main session) |
-| 13 | educ-f | Secondary Ed: Science | | running |
+| 13 | educ-f | Secondary Ed: Science | | merged (35k; education component only, content areas are double majors) |
 | 14 | educ-g | Secondary Ed: Social Studies | | queued (paused; owner 2026-09-28) |
 | 15 | educ-h | Secondary Ed: World Language | | queued (paused; owner 2026-09-28) |
 | 16 | educ-i | Secondary Ed: Art | | queued (paused; owner 2026-09-28) |
