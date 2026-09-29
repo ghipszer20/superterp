@@ -40,9 +40,9 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 14 | educ-g | Secondary Ed: Social Studies | | merged (78k; 3 tracks: History default, Geography, Government & Politics) |
 | 15 | educ-h | Secondary Ed: World Language | | merged (43k; education component only, language area OPEN SLOT) |
 | 16 | educ-i | Secondary Ed: Art | | merged (57k) |
-| 17 | educ-hdev | Human Development | not teacher-prep | dispatched |
+| 17 | educ-hdev | Human Development | not teacher-prep | merged (58k; C- assumed from COE statement, flagged) |
 | 20 | cmns-ai | AI: Computational Structures for AI Systems | | skipped (not yet published; owner 2026-09-28) |
-| 21 | jour | Journalism | default (no specialization) + Broadcast, Investigative, Sports tracks | dispatched |
+| 21 | jour | Journalism | default (no specialization) + Broadcast, Investigative, Sports tracks | merged (75k; 4 programs, all plans constructed) |
 | 28 | plcy-pp | Public Policy | college PLCY | merged (71k; STAT row widened by main session) |
 | 29 | plcy-gfp | Global & Foreign Policy | college PLCY; thematic tracks | merged (61k; 3 tracks, elective lists not in source: OPEN SLOT) |
 | 30a | ocr-comm | OCR re-check: Communication (5 plans) | read only the OCR plan section | queued (paused; owner 2026-09-28) |
