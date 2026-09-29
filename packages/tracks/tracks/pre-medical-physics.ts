@@ -14,7 +14,7 @@ export const preMedicalPhysics: Track = {
   usesScienceGpa: true,
   categories: [
     cat(
-      sets("intro-physics", "Introductory physics sequence", [["PHYS161", "PHYS260", "PHYS261"], ["PHYS171", "PHYS172"]]),
+      sets("intro-physics", "Introductory physics sequence", [["PHYS161", "PHYS260", "PHYS261", "PHYS270", "PHYS271"], ["PHYS171", "PHYS272", "PHYS273"]]),
       "A strong foundation in basic physics: a physics degree, or another degree with physics education equivalent to a minor in physics (CAMPEP)",
     ),
     cat(
@@ -35,9 +35,8 @@ export const preMedicalPhysics: Track = {
   verified: false,
   reviewNotes: [
     "CAMPEP gives no credit minimums, GPA or GRE; the standard is qualitative (a physics degree, or physics equivalent to a minor with at least three upper-level physics courses). The doc's verdict is a single category; it is split into an intro sequence and three upper-level courses so each half shows separately.",
-    "UMD courses are the research doc's: PHYS161 / PHYS260 / PHYS261 (or PHYS171 / PHYS172) for the sequence, and PHYS401, PHYS404, PHYS411 and PHYS420 for the upper level. Whether the pairing of PHYS161 with PHYS260/261 is one sequence is SuperTerp's reading of the doc's \"PHYS161 / PHYS260/261\".",
+    "Intro sequence: UMD's three-semester calculus-based physics, either PHYS161, PHYS260 + PHYS261 lab, PHYS270 + PHYS271 lab, or the physics majors' PHYS171, PHYS272, PHYS273 (catalog, checked 2026-09-29; the research doc's \"PHYS171 / PHYS172\" was wrong: PHYS172 is a 1-credit \"Succeeding in Physics\" course). Upper level: PHYS401, PHYS404, PHYS411, PHYS420.",
     "The doc also lists math (MATH140, MATH141, MATH241, MATH246) as UMD courses but CAMPEP names no math requirement, so none is encoded.",
-    "PHYS171, PHYS172, PHYS401, PHYS404, PHYS411 and PHYS420 are not in the Spring 2027 schedule fixture; they were added from the research doc alone (titles and credits are placeholders).",
     "Remedial coursework is allowed by CAMPEP, so an unmet category is a gap to close, not a bar.",
   ],
 };

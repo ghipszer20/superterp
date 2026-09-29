@@ -105,7 +105,7 @@ describe("actuarial-vee plans", () => {
 
 describe("pre-medical-physics plans", () => {
   const track = trackOf("pre-medical-physics");
-  const ALL = ["PHYS161", "PHYS260", "PHYS261", "PHYS401", "PHYS404", "PHYS411"].map((id) => course(id, 3));
+  const ALL = ["PHYS161", "PHYS260", "PHYS261", "PHYS270", "PHYS271", "PHYS401", "PHYS404", "PHYS411"].map((id) => course(id, 3));
 
   it("keeps the default science GPA", () => {
     expect(track.usesScienceGpa).toBe(true);
@@ -117,9 +117,19 @@ describe("pre-medical-physics plans", () => {
     for (const [id, status] of Object.entries(statuses)) expect(status, id).toBe("satisfied");
   });
 
-  it("accepts PHYS171/172 as the intro sequence", async () => {
-    const plan = [course("PHYS171", 4), course("PHYS172", 4), ...ALL.slice(3)];
+  it("accepts the physics majors' PHYS171/272/273 as the intro sequence", async () => {
+    const plan = [course("PHYS171", 3), course("PHYS272", 3), course("PHYS273", 3), ...ALL.slice(5)];
     expect((await statusesFor(track, plan))["intro-physics"]).toBe("satisfied");
+  });
+
+  it("doesn't count PHYS172 (Succeeding in Physics, 1 credit) as part of a sequence", async () => {
+    const plan = [course("PHYS171", 3), course("PHYS172", 1), ...ALL.slice(5)];
+    expect((await statusesFor(track, plan))["intro-physics"]).not.toBe("satisfied");
+  });
+
+  it("needs the whole engineering sequence, including PHYS270/271", async () => {
+    const plan = without(ALL, ["PHYS270", "PHYS271"]);
+    expect((await statusesFor(track, plan))["intro-physics"]).not.toBe("satisfied");
   });
 
   it("fails upper-level physics with only two courses", async () => {
