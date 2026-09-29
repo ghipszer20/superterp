@@ -41,8 +41,8 @@ export const infosciUsgMajor: Program = {
     `College of Information Shady Grove page ${DEPARTMENT} (both fetched 2026-09-28)`,
   reviewNotes: [
     "Shady Grove version of the Information Science major. Differences from College Park: benchmark courses with MATH115 'or higher'; the core list names INST301 (College Park: INST201); no cognate areas (15 credits of INST-coded electives only); a 3-credit Professional Writing course and 12 credits of open electives; 20 courses / 60 credits taken at Shady Grove.",
-    "OPEN SLOT: 3 credits of Professional Writing (catalog names no course or department; not encoded).",
-    "OPEN SLOT: 12 credits of open electives (no course, department or range given; not encoded).",
+    "Open slot 'professional-writing' (openSlot requirement): 3 credits of Professional Writing (catalog names no course or department).",
+    "Open slot 'open-electives' (openSlot requirement): 12 credits of open electives (no course, department or range given). A literal any-course rule fails the Shady Grove sample plan (it has no 12 spare credits), so the advisor confirms it.",
     "Catalog says 'Select ten of the following' but lists exactly ten core courses, so all ten are required. INST301 is the source's code for Introduction to Information Science; College Park uses INST201. Check INST301 with the advisor if it does not appear in the course catalog.",
     "MATH115 'or higher' is encoded as any MATH course numbered 115 or above. The catalog footnote says other courses also fulfill the benchmarks; check with the advisor (not encodable).",
     "Manual, not encoded: at least 45 of the 60 program credits must be College of Information courses (no engine form); benchmark courses (C- or better) must be complete before program courses (ordering); cumulative 2.0 GPA and one-semester probation rule; 120-credit degree total; four-semester pre-set schedule for transfer students (associate's degree or 60 credits).",
@@ -57,6 +57,20 @@ export const infosciUsgMajor: Program = {
       name: "Major electives: 15 credits of INST-coded courses",
       credits: 15,
       from: { departments: ["INST"] },
+    },
+    {
+      kind: "openSlot",
+      id: "professional-writing",
+      name: "Professional Writing",
+      credits: 3,
+      note: "One Professional Writing course; the catalog names none, so confirm with your advisor.",
+    },
+    {
+      kind: "openSlot",
+      id: "open-electives",
+      name: "Open electives",
+      credits: 12,
+      note: "12 credits of electives; the catalog gives no course, department or range, so confirm with your advisor.",
     },
   ],
 };

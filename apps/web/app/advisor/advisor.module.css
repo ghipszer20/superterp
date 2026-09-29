@@ -501,6 +501,7 @@
 
 .termHead {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
 }
@@ -525,6 +526,26 @@
 
 .keyDates {
   margin: 0;
+  color: var(--text-2);
+  font: var(--t-foot);
+}
+
+.difficultyBadge {
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  color: var(--text-2);
+  font: var(--t-foot);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.difficultyBadge[data-level="high"] {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.difficultyText {
   color: var(--text-2);
   font: var(--t-foot);
 }

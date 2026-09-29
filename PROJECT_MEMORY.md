@@ -1,7 +1,7 @@
 # SuperTerp — Project Memory
 
 > Single source of truth for project context. Update this file whenever a decision changes.
-> Last updated: 2026-09-28 (5-session plan in docs/project/next-steps-plan.md; CI disabled).
+> Last updated: 2026-09-29 (3-session overtime plan in docs/project/overtime-plan-2026-09-29.md; CI disabled).
 > Read by the main session at the start of every session (builders don't read it; CLAUDE.md), so keep it under ~20 KB (section 18).
 
 ## 1. Vision
@@ -65,7 +65,7 @@ See the package.json files: Next.js web app (apps/web), TypeScript packages, HiG
 - The website gets a desktop layout, not a stretched phone app.
 
 ## 9. Phases and time estimate
-Moved to `docs/project/roadmap.md` (phases 0–6, MVP recommendation, hour and calendar estimates, launch schedule: Jan 2027 Campus tab beta → Mar–Apr 2027 schedule builder → Summer 2027 audit + verification → Nov 2027 first verified colleges → Spring 2028 everything + iOS).
+Moved to `docs/project/roadmap.md` (phases 0–6, MVP recommendation, estimates, launch schedule).
 
 ## 9b. First-draft plan (owner-approved 2026-09-27)
 `docs/project/first-draft-plan.md` is the build order to the first draft: MVP scope (Campus, Schedule, Advisor audit/planner, transcript import, what-if, section recommendations; no reviews, LLM advisor, optimizer or iOS), all ~270 programs encoded, deployed on Vercel + Supabase. Waves: 0 in-flight → 1 program infrastructure → 2 program batches by college → 3 MVP gaps → 4 deployment. Queue follows it.
@@ -96,12 +96,11 @@ Moved to `docs/project/legal.md`. Read it before building the disclaimer, accoun
 ## 14. Current state (replace in place, never append; dated narrative goes in `docs/project/status-log.md`)
 - **Branches:** PR #1 `feat/campus-foundation` (draft); PR #2 `feat/course-data` (draft, stacked on #1) is the working branch everything merges into. No CI (disabled 2026-09-28); the full local suite was green at `83526a4` on 2026-09-28.
 - **Built** (full list in `docs/project/built.md`; all unverified by the owner unless noted): About page; Campus tab (dining, libraries, study rooms, gyms, Transport map + trip planner); Schedule builder linked to the 4-year plan; Advisor tab (disclaimer, setup, credit caps, What-if, AP/IB credit, plan grid, checks, audit, transcript import, grad courses, 14 pre-professional tracks); ~410 programs in the registry (every catalog major, minor and certificate, plus special programs). Logged skips: AI major (unpublished), Individual Studies, Global Studies (umbrella).
-- **Plan: 5 parallel sessions** (owner-approved 2026-09-28, `docs/project/next-steps-plan.md`: shared merge rules, file ownership, builders named). Each session replaces only its own bullet below.
-  - **Session 1 (integration, program gaps, test students, Wave 4 prep):** CI disabled; tip verified; Wave 2 gate run (missing: Video Production minor, CCJS at Shady Grove, Biological Sciences at Shady Grove, plus the minors encoding fixes and the USG college move). Next: program gap builders, test students, prelaunch prep.
-  - **Session 2 (engine: open slots, eligibility gates, N different areas):** not started.
-  - **Session 3 (schedule: section recommendations, .ics, share link, walk/leave-by):** not started.
-  - **Session 4 (grades in the audit, semester difficulty):** step 1 `feat/grades-audit` merged 2026-09-28 (engine `minGpa` + solver grade tie-break, CS ULC 1.7, `belowMinimum` notes, transcript cumulative GPA fills `plan.gpa`, BCPM breakdown on track cards; no screenshots yet). Step 2 `feat/semester-difficulty` next, plan in `C:/Users/24GHi/.claude/plans/velvet-meandering-oasis.md`. GPA rules in other programs deferred (roadmap to-do).
-  - **Session 5 (advising export, academic calendar, registration prep):** plan `C:/Users/24GHi/.claude/plans/resilient-whistling-sprout.md` approved 2026-09-29 (owner: reg prep in the Schedule tab; reminder = .ics with alarms + Today countdown). Order, one builder at a time: `feat/academic-calendar` (merged 2026-09-29; UI awaiting owner approval) → `feat/advising-export` (running) (ExcelJS + jsPDF, lazy-loaded) → `feat/registration-prep`. Calendar fixtures committed in `packages/campus-data/test/fixtures/`. Merges in `.claude/worktrees/merge-s5`.
+- **Done in the 5-session run (2026-09-28/29; detail in the status log):** program gaps (Video minor, CCJS and BSCI at Shady Grove), open slots (`openSlot` kind, ticks in `plan.confirmedSlots` as "<programId>/<reqId>"; new encodings use openSlot, not notes), filter-defined distribution areas, grades in the audit, semester difficulty (data only), `.ics` export, section recommendations, share link, academic calendar.
+- **Plan: overtime run, 3 parallel sessions** (owner-approved 2026-09-29, `docs/project/overtime-plan-2026-09-29.md`; next-steps-plan.md shared rules still apply). Each session replaces only its own bullet below.
+  - **Session A (programs, integration, prelaunch):** not started. Resume `feat/minors-fixes` → `feat/test-students` → `feat/prelaunch` → GPA rules per college (after B's program GPA rule) → final full suite and cleanup list. Merges in `merge-s1`.
+  - **Session B (engine, Advisor data):** running (2026-09-29). Order changed: `feat/program-gpa` first (Sonnet builder running; it unblocks A task 4) → `feat/eligibility-gates` (Opus) → `feat/eligibility-apply` → `feat/grades-data`. Merges in `merge-s2`.
+  - **Session C (schedule, exports, registration):** not started. Resume `feat/walk-leave-by` → resume `feat/advising-export` → `feat/registration-prep` (plan `C:/Users/24GHi/.claude/plans/resilient-whistling-sprout.md` Task 3) → GTFS expiry warning (stretch). Merges in `merge-s5`.
 - **Waiting on the owner:** see `docs/project/owner-review.md` (include it in every progress report; add new items there).
 - **Known to-dos:** see `docs/project/roadmap.md` "Known to-dos" (add new ones there).
 
@@ -141,5 +140,5 @@ Code comments that cite "PROJECT_MEMORY section 17" (e.g. "open question 1") ref
   - **Put these in every brief:** quiet output (only the touched package's tests with `-- --reporter=dot` while iterating, long output through `tail -n 30`, the full test/typecheck/lint/build once at the end, report only pass/fail and failures); at most 2 screenshots, of changed pages only, each taken once; don't re-read unchanged files; navigate with the graphify graph (`graphify query/explain/affected --graph C:/Users/24GHi/Code/SuperTerp/graphify-out/graph.json`), then read only files being changed; don't regenerate course sets or rewrite registry-wide tests (the main session regenerates once after merging).
   - **Resume, don't restart.** Before dispatching, run `git worktree list`; continue an existing worktree or branch for the task, after checking its CLAUDE.md is current (old ones imported all of this file into every request).
   - **Push early:** after the first passing test and at each green step, so a stopped builder leaves recoverable work.
-  - **Measure the fixed starting cost once (queue item 2):** dispatch a builder whose whole task is "reply DONE" and record its reported tokens in the status log. If it's over about 30k, trim what builders load (plugins, skills, instructions).
+  - **Fixed starting cost:** measured 2026-09-28 at 44.5k tokens per builder (status log).
 - **Keep this file small (owner, 2026-09-26).** The main session carries it in every request. Keep it under ~20 KB: section 14 is replaced in place, never appended to; dated history goes to `docs/project/status-log.md`; feature rulings to `docs/project/rulings.md`; detail to `docs/project/`. If it grows past ~20 KB, move content out before continuing.

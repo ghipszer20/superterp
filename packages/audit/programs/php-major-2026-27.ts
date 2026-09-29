@@ -35,7 +35,7 @@ export const phpMajor: Program = {
     "The department page (SPH Four Year Plans and Benchmarks) lists only benchmarks and links to a plan not in the sources; its benchmarks match the catalog table (BSCI170/171, SPHL100, HLTH124, HLTH140, HLTH200, EPIB301, 'HLTH212 or BSCI201'). No disagreement found.",
     "Grade floor: 'C-' or higher in all Public Health Practice major-required coursework; applied as the program-level minimum.",
     "'BSCI180 or BSCI171' (biology lab) and 'HLTH212 or BSCI201' (anatomy and physiology) are each one row with either option.",
-    "OPEN SLOT: 12 credits of health electives ('a pre-approved list of 3-credit health elective offerings'; the list is not in the sources, no department or range given; not encoded).",
+    "Open slot 'php-health-electives' (openSlot requirement): 12 credits of health electives ('a pre-approved list of 3-credit health elective offerings'; the list is not in the sources, so the student confirms with their advisor).",
     "Not enforced (manual): HLTH491 Community Health Internship is taken in the final semester after all other coursework is complete. The optional areas of specialization (Special Populations, Health Communication, Health Risk Behavior) are not listed in the sources and are not encoded.",
     "The sources contain no term-by-term four-year plan (the SPH page links to one); the sample plan is CONSTRUCTED from the catalog table. Health electives are filled with HLTH300, HLTH325, HLTH377 and HLTH424, unconfirmed placeholders taken from other SPH programs' course lists. Flagged in docs/project/owner-review.md.",
   ],
@@ -62,6 +62,13 @@ export const phpMajor: Program = {
     c("php-hlth420", "Effective Strategies for Public Health Practice", "HLTH420"),
     c("php-hlth490", "Professional Preparation in Community Health", "HLTH490"),
     c("php-hlth491", "Community Health Internship", "HLTH491"),
+    {
+      kind: "openSlot",
+      id: "php-health-electives",
+      name: "Health electives",
+      credits: 12,
+      note: "Four 3-credit courses from the pre-approved health elective list; ask your advisor for the list.",
+    },
   ],
 };
 
