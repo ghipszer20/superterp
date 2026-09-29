@@ -115,7 +115,7 @@ export const archRealEstateDevelopmentMinor: Program = {
   verified: false,
   reviewNotes: [
     "Catalog and department page agree on the four core courses; the department page adds no requirement differences.",
-    "OPEN SLOT: 3 credits of one elective from the 'permitted electives' list; the list is on a separate arch.umd.edu page that was not among the sources, and the department page names only subject areas (architecture, sustainability, business, economics, political science).",
+    "Open slot 'permitted-elective' (openSlot requirement): 3 credits of one elective from the 'permitted electives' list; the list is on a separate arch.umd.edu page that was not among the sources, and the department page names only subject areas (architecture, sustainability, business, economics, political science), so the student confirms with their advisor.",
     "ARCH271/RDEV250 is one cross-listed course; either code counts. RDEV270 'can also be met' by BMGT220 or an equivalent accounting course that qualifies for transfer credit (catalog footnote): BMGT220 is accepted, transfer equivalents are a manual check.",
     "Minor grade: all required courses C- or better (catalog), applied as minGrade. Not encoded: UMD GPA of at least 2.0 for the minor; application (department page): ARCH271/RDEV250 completed with C- or better before 60 credits, apply two years before intended graduation, email rdevminor@umd.edu.",
     "Neither source states a sharing cap; none is set.",
@@ -125,6 +125,13 @@ export const archRealEstateDevelopmentMinor: Program = {
     { kind: "course", id: "tax-accounting", name: "Tax and Accounting for Real Estate Development 1 (RDEV270 or BMGT220)", options: ["RDEV270", "BMGT220"] },
     { kind: "course", id: "rdev350", name: "Real Estate Development: Introduction to Principles, Process, and Practice", options: ["RDEV350"] },
     { kind: "course", id: "rdev450", name: "Foundations of Real Estate Finance and Investment", options: ["RDEV450"] },
+    {
+      kind: "openSlot",
+      id: "permitted-elective",
+      name: "Permitted elective",
+      credits: 3,
+      note: "One elective from the permitted electives list on a separate arch.umd.edu page; subject areas named are architecture, sustainability, business, economics and political science.",
+    },
   ],
 };
 
@@ -142,7 +149,7 @@ export const archCreativePlacemakingMinor: Program = {
   reviewNotes: [
     "Cross-listed: the ARCH and ARHU catalog pages carry the same requirement table (verified by diff: only the title suffix and URL differ). Encoded once under college ARCH.",
     "Department-vs-catalog differences: the architecture studio is ARCH409 in the catalog and ARCH408c (6 credits) on the department page; both accepted. Department page offers the art path as ARTT426 + ARTT427 OR two elective courses from different departments; the catalog offers ARTT426 + ARTT427 or ARHU439 (ARHU439C Studio in Creative Placemaking, repeatable to 6 credits). All three catalog paths encoded; ARHU439 is one course code, so the two required sections are a manual check.",
-    "OPEN SLOT: 6 credits of electives (catalog: 'at least 6 credits from the following list'); the list is at art.umd.edu/.../creative-placemaking-minor-electives and was not among the sources. Catalog: no more than 3 elective credits from the same department without director approval (department page: electives from different departments); special topics and independent studies need director permission. Not encoded.",
+    "Open slot 'electives' (openSlot requirement): 6 credits of electives (catalog: 'at least 6 credits from the following list'); the list is at art.umd.edu/.../creative-placemaking-minor-electives and was not among the sources. Catalog: no more than 3 elective credits from the same department without director approval (department page: electives from different departments); special topics and independent studies need director permission; those caps are not encoded.",
     "No grade floor stated by the catalog or department page; C- used to match sibling ARCH minors (owner ruling). Department page: student in good standing (2.0) who completed at least one required minor course with 3.0 or higher; open to sophomores, juniors or seniors; application with statement of purpose and portfolio. Not encoded.",
     "Neither source states a sharing cap; none is set.",
   ],
@@ -153,6 +160,13 @@ export const archCreativePlacemakingMinor: Program = {
       id: "concentration",
       name: "Concentration studio (6 credits): architecture (ARCH408/ARCH409), visual arts (ARTT426 and ARTT427) or ARHU439",
       options: [["ARCH409"], ["ARCH408"], ["ARTT426", "ARTT427"], ["ARHU439"]],
+    },
+    {
+      kind: "openSlot",
+      id: "electives",
+      name: "Creative Placemaking electives",
+      credits: 6,
+      note: "At least 6 credits from the list at art.umd.edu (creative-placemaking-minor-electives); no more than 3 from one department without director approval; special topics and independent studies need director permission.",
     },
   ],
 };
