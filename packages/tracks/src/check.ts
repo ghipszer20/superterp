@@ -71,7 +71,8 @@ function requirementMentions(req: Requirement, courseId: string): boolean {
     case "distribution":
       return req.areas.some((a) => a.courses.includes(courseId));
     case "concentration":
-      return false; // no track category uses this kind
+    case "openSlot":
+      return false; // no track category uses these kinds
   }
 }
 

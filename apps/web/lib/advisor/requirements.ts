@@ -84,5 +84,7 @@ export function describeGap(req: Requirement, result: RequirementResult, ctx: Ga
       const others = req.options.length > 1 ? " (or another listed set)" : "";
       return { need: `Finish a set: ${listing(best.set.map(memberText), "and")}${others}.`, suggestions: best.missing };
     }
+    case "openSlot":
+      return { need: "Confirm with your advisor, then tick it below.", suggestions: [] };
   }
 }

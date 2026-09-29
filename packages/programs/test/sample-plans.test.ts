@@ -37,7 +37,7 @@ describe("sample plans", () => {
       expect(v.mutants.filter((m) => !m.broke || m.fillerCounted)).toEqual([]);
       // A program whose source names no courses (every slot an OPEN SLOT reviewNote) has no
       // requirements to mutate.
-      const openSlotsOnly = (await entry.load()).requirements.length === 0;
+      const openSlotsOnly = (await entry.load()).requirements.every((r) => r.kind === "openSlot");
       if (!openSlotsOnly) expect(v.mutants.length).toBeGreaterThan(0);
     });
   });

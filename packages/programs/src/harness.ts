@@ -3,7 +3,7 @@
 // Each program with a sample plan (sample-plans/<program-id>.json) gets both checks from
 // test/sample-plans.test.ts; nothing else to write per program.
 
-import { auditProgram, type Program, type StudentCourse } from "@superterp/audit";
+import { auditProgram, slotKey, type AuditOptions, type Program, type StudentCourse } from "@superterp/audit";
 
 /** A program's sample plan, as published (placeholders like "Math 4**" filled in `notes`). */
 export type SamplePlan = {
@@ -53,12 +53,17 @@ const isFiller = (id: string) => id.startsWith("FILLER-");
 /** How many rounds of removal before a requirement counts as unbreakable. */
 const MAX_ROUNDS = 12;
 
+/** A sample plan can't show an Open Slot's courses, so validation takes every one as confirmed. */
+const allSlotsConfirmed = (program: Program): AuditOptions => ({
+  confirmed: program.requirements.filter((r) => r.kind === "openSlot").map((r) => slotKey(program.id, r.id)),
+});
+
 async function mutate(program: Program, base: StudentCourse[], requirement: string, kind: Mutant["kind"]): Promise<Mutant> {
   let courses = base;
   const removed: string[] = [];
   let fillers = 0;
   for (let round = 0; round < MAX_ROUNDS; round++) {
-    const result = (await auditProgram(program, courses)).requirements.find((r) => r.id === requirement)!;
+    const result = (await auditProgram(program, courses, allSlotsConfirmed(program))).requirements.find((r) => r.id === requirement)!;
     const fillerCounted = result.assigned.some(isFiller);
     if (result.status !== "satisfied" || fillerCounted) {
       return { kind, requirement, removed: base.map((c) => c.id).filter((id) => removed.includes(id)), broke: result.status !== "satisfied", fillerCounted };
@@ -75,11 +80,13 @@ async function mutate(program: Program, base: StudentCourse[], requirement: stri
 
 export async function validateSamplePlan(program: Program, plan: SamplePlan): Promise<Validation> {
   const courses = planCourses(plan);
-  const result = await auditProgram(program, courses);
+  const result = await auditProgram(program, courses, allSlotsConfirmed(program));
+  const slots = new Set(program.requirements.filter((r) => r.kind === "openSlot").map((r) => r.id));
   const unsatisfied = result.requirements.filter((r) => r.status !== "satisfied").map((r) => r.id);
   const mutants: Mutant[] = [];
   for (const r of result.requirements) {
-    if (r.status !== "satisfied") continue;
+    // An Open Slot holds no courses, so there's nothing to drop or replace.
+    if (r.status !== "satisfied" || slots.has(r.id)) continue;
     for (const kind of ["drop", "replace"] as const) mutants.push(await mutate(program, courses, r.id, kind));
   }
   return { unsatisfied, mutants };

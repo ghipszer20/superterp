@@ -573,3 +573,33 @@ describe("auditProgram", () => {
     });
   });
 });
+
+describe("open slots (from an approved list that isn't published)", () => {
+  const program: Program = {
+    id: "pw",
+    name: "Writing Minor",
+    requirements: [
+      { kind: "course", id: "core", name: "Core", options: ["ENGL101"] },
+      { kind: "openSlot", id: "approved", name: "Approved courses", credits: 12, note: "From the department's approved list." },
+    ],
+  };
+  const other: Program = { ...program, id: "other" };
+
+  it("is missing until the student confirms it, and takes no courses", async () => {
+    const result = await auditProgram(program, took("ENGL101", "ENGL391"));
+    expect(result.requirements[1]).toEqual({ id: "approved", name: "Approved courses", status: "missing", assigned: [] });
+    expect(result.unused).toEqual(["ENGL391"]);
+  });
+
+  it("is satisfied once confirmed by its programId/requirementId key", async () => {
+    const result = await auditProgram(program, took("ENGL101"), { confirmed: ["pw/approved"] });
+    expect(result.requirements[1]).toEqual({ id: "approved", name: "Approved courses", status: "satisfied", assigned: [] });
+  });
+
+  it("keeps the program incomplete until ticked, keyed per program", async () => {
+    const [a, b] = await auditPrograms([program, other], took("ENGL101"), { confirmed: ["pw/approved"] });
+    expect(a!.requirements.every((r) => r.status === "satisfied")).toBe(true);
+    expect(b!.requirements.every((r) => r.status === "satisfied")).toBe(false);
+    expect(b!.requirements[1]!.status).toBe("missing");
+  });
+});

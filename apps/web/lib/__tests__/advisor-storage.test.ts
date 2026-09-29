@@ -116,3 +116,23 @@ describe("plan storage", () => {
     expect(parsePlan(JSON.stringify(raw))).not.toHaveProperty("mastersCredits");
   });
 });
+
+describe("confirmed open slots", () => {
+  it("round-trips confirmedSlots and drops non-string entries", () => {
+    const p = { ...plan(), confirmedSlots: ["pwrt-minor/approved"] };
+    expect(parsePlan(serializePlan(p))?.confirmedSlots).toEqual(["pwrt-minor/approved"]);
+    const raw = JSON.parse(serializePlan(p));
+    raw.confirmedSlots = ["a/b", 3, null];
+    expect(parsePlan(JSON.stringify(raw))?.confirmedSlots).toEqual(["a/b"]);
+  });
+
+  it("toggles a slot on and off", () => {
+    const on = planReducer(plan(), { type: "toggle-slot", key: "pwrt-minor/approved" });
+    expect(on.confirmedSlots).toEqual(["pwrt-minor/approved"]);
+    expect(planReducer(on, { type: "toggle-slot", key: "pwrt-minor/approved" })).not.toHaveProperty("confirmedSlots");
+  });
+
+  it("leaves confirmedSlots out when there are none", () => {
+    expect(parsePlan(serializePlan(plan()))).not.toHaveProperty("confirmedSlots");
+  });
+});

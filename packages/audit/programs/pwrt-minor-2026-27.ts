@@ -16,13 +16,20 @@ export const pwrtMinor: Program = {
   verified: false,
   reviewNotes: [
     "Department page not checked: the fetched english.umd.edu page is just the department homepage with no minor requirements (the catalog points to english.umd.edu/minor-pw, not fetched). Encoded from the catalog alone.",
-    "OPEN SLOT: 12 credits of approved courses (at least 9 credits at 3xx/4xx-level, at least 3 credits at 4xx-level); the approved-course list is a link (english.umd.edu/minor-pw) not in the source, and the catalog names no department, so the slot is left out of requirements rather than narrowed.",
+    "Open slot 'approved-courses' (openSlot requirement): 12 credits of approved courses (at least 9 credits at 3xx/4xx-level, at least 3 credits at 4xx-level); the approved-course list is a link (english.umd.edu/minor-pw) not in the source, and the catalog names no department, so the student confirms it with their advisor rather than the audit narrowing it.",
     "Not encoded (manual): electronic writing portfolio submitted in the final semester; 'ENGL281 or ENGL384, not both'; the PWP course used for the Gen Ed Professional Writing requirement can't count; up to 3 credits of the 9 upper-level credits may come from an approved writing-intensive internship; acceptance into the minor by the start of the semester before graduation; overall minor GPA of 2.0.",
     "Sharing: 'English majors may count two Professional Writing minor courses toward both the major and the minor' is a permission for English majors, not a cap on others; the catalog states no general cap, so no maxSharedWith is set.",
     "All courses must be passed with C- or better (minGrade).",
   ],
   requirements: [
     { kind: "course", id: "workplace-writing", name: "Research and Writing in the Workplace", options: ["ENGL297"] },
+    {
+      kind: "openSlot",
+      id: "approved-courses",
+      name: "Approved courses",
+      credits: 12,
+      note: "From the English department's approved list (english.umd.edu/minor-pw): at least 9 credits at the 300–400 level, at least 3 at the 400 level.",
+    },
   ],
 };
 

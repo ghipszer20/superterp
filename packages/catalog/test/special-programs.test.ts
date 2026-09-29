@@ -32,6 +32,8 @@ function codes(r: Requirement): { courses: string[]; departments: string[] } {
         departments: filters.flatMap((f) => f.departments),
       };
     }
+    case "openSlot":
+      return { courses: [], departments: [] };
   }
 }
 

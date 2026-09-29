@@ -89,9 +89,9 @@ export async function runAnalysis(input: { plan: AdvisorPlan; catalog: PlanCatal
   const [solveResults, notices, degrees] = await Promise.all([
     // With two or more majors, checkDegrees below already solves every program (with degree
     // groups and the 18-unique goal); reuse its audits instead of a second, disagreeing solve.
-    mode ? null : auditPrograms(programs, courses),
+    mode ? null : auditPrograms(programs, courses, { confirmed: input.plan.confirmedSlots ?? [] }),
     programNotices(plan, input.catalog, candidates, mode),
-    mode ? studentDegrees(input.plan.programs, mode).then((d) => checkDegrees(plan, input.catalog, d, AUTOMATIC_PROGRAMS, { today: new Date() })) : null,
+    mode ? studentDegrees(input.plan.programs, mode).then((d) => checkDegrees(plan, input.catalog, d, AUTOMATIC_PROGRAMS, { today: new Date(), confirmed: input.plan.confirmedSlots ?? [] })) : null,
   ]);
   // Match by program id, not position: checkDegrees' own entries are laid out layers-first
   // (Gen Ed, university, then each degree's programs), while the Audit tab expects chosen

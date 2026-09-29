@@ -50,6 +50,13 @@ describe("seedFromUrl", () => {
     expect(seedFromUrl("?seed=owner&degree=nope", dev)!.plan).not.toHaveProperty("degreeMode");
   });
 
+  it("adds programs and confirmed open slots from the URL", () => {
+    const seed = seedFromUrl("?seed=owner&add=pwrt-minor&slots=pwrt-minor/approved-courses", dev)!;
+    expect(seed.plan!.programs).toEqual(["math-major-applied", "cmsc-major", "pwrt-minor"]);
+    expect(seed.plan!.confirmedSlots).toEqual(["pwrt-minor/approved-courses"]);
+    expect(seedFromUrl("?seed=owner", dev)!.plan).not.toHaveProperty("confirmedSlots");
+  });
+
   it("leaves the owner seed's plan without a tracks field when none are given", () => {
     const seed = seedFromUrl("?seed=owner", dev)!;
     expect(seed.plan).not.toHaveProperty("tracks");
