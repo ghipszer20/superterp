@@ -67,9 +67,8 @@ describe("registrationChecklist", () => {
     s = setOwnSection(s, "CMSC351", "0201");
     const r = ready(registrationChecklist({ ...base, saved: s, courses: ["CMSC351", "STAT400"], sections }));
     expect(r.courses[0]!.chosen?.id).toBe("0201");
-    expect(r.courses[0]!.seat.kind).toBe("waitlist");
-    expect(r.courses[0]!.seat.note).toMatch(/waitlist automatically/i);
-    expect(r.courses[0]!.seat.note).toMatch(/check in daily/i);
+    expect(r.courses[0]!.seat).toMatchObject({ kind: "waitlist", note: expect.stringMatching(/waitlist automatically/i) });
+    expect(r.courses[0]!.seat).toMatchObject({ note: expect.stringMatching(/check in daily/i) });
     expect(r.courses[1]!.chosen?.id).toBe("0101");
     expect(r.asOf).toBe("2026-10-05T09:00:00Z");
   });

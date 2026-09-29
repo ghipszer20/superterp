@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { useSearchParams } from "next/navigation";
+import type { AcademicEvent } from "@superterp/campus-data";
 import type { Section } from "@superterp/course-data/schedules";
 import { dispatchPlan, useAdvisorStore } from "@/app/advisor/store";
 import { Segmented } from "@/components/Segmented";
@@ -40,6 +41,7 @@ import { useLayouts } from "@/lib/schedule/use-layouts";
 import { useScheduleData } from "@/lib/schedule/use-schedule-data";
 import { CoursePicker } from "./CoursePicker";
 import { Gallery } from "./Gallery";
+import { RegistrationPanel } from "./RegistrationPanel";
 import { WeekEditor } from "./WeekEditor";
 import { WeekFilters } from "./WeekFilters";
 import styles from "./builder.module.css";
@@ -53,7 +55,7 @@ declare global {
   }
 }
 
-export function ScheduleBuilder() {
+export function ScheduleBuilder({ events = [] }: { events?: AcademicEvent[] }) {
   const params = useSearchParams();
   const [view, setView] = useState<View>(() => (params.get("view") === "own" ? { kind: "own" } : { kind: "gallery" }));
   const [plan, setPlan] = useState<PlanId>("A");
@@ -507,6 +509,18 @@ export function ScheduleBuilder() {
           )}
         </>
       )}
+      {term ? (
+        <RegistrationPanel
+          saved={saved}
+          courses={courses}
+          term={term}
+          termName={planTermName(term) ?? term}
+          sections={data.sections}
+          events={events}
+          asOf={data.indexState.index.generatedAt}
+          titles={data.titles}
+        />
+      ) : null}
     </div>
   );
 }
