@@ -1,11 +1,13 @@
 "use client";
 
+import type { AcademicEvent } from "@superterp/campus-data";
 import type { PlanIssue } from "@superterp/plan/check";
 import { isGraduateCourse } from "@superterp/plan/grad-courses";
 import { useMemo, useState } from "react";
 import { courseKey, type IssueGroups, type Severity } from "@/lib/advisor/issues";
 import type { AdvisorPlan, PlanTermState } from "@/lib/advisor/plan-state";
 import type { PriorCreditResult } from "@/lib/advisor/prior-credit";
+import { formatKeyDates, termKeyDates } from "@/lib/calendar";
 import { searchCourses } from "@/lib/advisor/search";
 import { academicYears, parseTerm } from "@/lib/advisor/terms";
 import type { AnalysisState, OpenCourse } from "./AdvisorApp";
@@ -22,6 +24,7 @@ export function PlanView({
   checked,
   analysis,
   prior,
+  calendar,
   onOpenCourse,
 }: {
   plan: AdvisorPlan;
@@ -29,6 +32,7 @@ export function PlanView({
   checked: Checked;
   analysis: AnalysisState;
   prior: PriorCreditResult;
+  calendar: AcademicEvent[];
   onOpenCourse: (c: OpenCourse) => void;
 }) {
   const years = academicYears(plan.terms.map((t) => t.name));
@@ -69,6 +73,7 @@ export function PlanView({
                   catalog={catalog}
                   groups={checked?.groups ?? null}
                   creditsOf={creditsOf}
+                  keyDates={formatKeyDates(termKeyDates(calendar, name, name === lastTerm))}
                   onOpenCourse={onOpenCourse}
                 />
               ))}
@@ -120,12 +125,14 @@ function TermColumn({
   catalog,
   groups,
   creditsOf,
+  keyDates,
   onOpenCourse,
 }: {
   term: PlanTermState;
   catalog: CatalogState;
   groups: IssueGroups | null;
   creditsOf: (id: string, own?: number) => number | null;
+  keyDates: string;
   onOpenCourse: (c: OpenCourse) => void;
 }) {
   const [over, setOver] = useState(false);
@@ -180,6 +187,7 @@ function TermColumn({
           </button>
         ) : null}
       </div>
+      {keyDates ? <p className={styles.keyDates}>Key dates: {keyDates}</p> : null}
       {termIssues.map((issue, i) => (
         <p key={i} className={styles.inlineIssue} data-severity={issue.severity}>
           {issue.message}

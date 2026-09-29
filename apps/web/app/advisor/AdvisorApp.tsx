@@ -16,6 +16,7 @@ import { CourseSheet } from "./CourseSheet";
 import { useCatalog, type CatalogState } from "./data";
 import { DisclaimerGate } from "./DisclaimerGate";
 import { ImportTranscriptView } from "./ImportTranscriptView";
+import type { AcademicEvent } from "@superterp/campus-data";
 import { PlanView } from "./PlanView";
 import { PriorCreditView } from "./PriorCreditView";
 import { SetupView } from "./SetupView";
@@ -35,7 +36,7 @@ const ANALYSIS_DELAY_MS = 350;
 
 export type OpenCourse = { id: string; term: string | null };
 
-export function AdvisorApp() {
+export function AdvisorApp({ calendar = [] }: { calendar?: AcademicEvent[] }) {
   const store = useAdvisorStore();
   const catalog = useCatalog();
 
@@ -108,7 +109,7 @@ function Planner({ plan, catalog, signedBy, signedAt }: { plan: AdvisorPlan; cat
       ) : null}
 
       {view === "plan" ? (
-        <PlanView plan={plan} catalog={catalog} checked={checked} analysis={analysis} prior={prior} onOpenCourse={setOpen} />
+        <PlanView plan={plan} catalog={catalog} checked={checked} analysis={analysis} prior={prior} calendar={calendar} onOpenCourse={setOpen} />
       ) : null}
       {view === "credit" ? <PriorCreditView plan={plan} prior={prior} catalog={catalog} /> : null}
       {view === "audit" ? <AuditView plan={plan} analysis={analysis} onOpenCourse={setOpen} /> : null}
