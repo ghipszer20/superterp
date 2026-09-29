@@ -58,7 +58,7 @@ export async function buildPdf(t: Takeout) {
   );
   body.push(cols.map((c) => ({ content: `${byName.get(c.name)?.credits ?? 0} credits`, styles: { fontStyle: "bold" } })) as never);
   table({
-    head: [cols.map((c) => c.year), cols.map((c) => c.name)],
+    head: [years.map((yr) => ({ content: yr.label, colSpan: yr.terms.length })), cols.map((c) => c.name)],
     body,
     theme: "grid",
   });
@@ -67,12 +67,14 @@ export async function buildPdf(t: Takeout) {
 
   // Audit
   heading("Degree audit (with catalog rule)");
+  // The catalog rule is per program, so it is cited once above that program's requirements.
   for (const p of t.audit) {
+    line(`Catalog rule: ${p.citation}`);
     table({
-      head: [[p.program, "Status", "Would satisfy", "Catalog rule"]],
-      body: p.requirements.map((r) => [r.name, STATUS_TEXT[r.status], r.satisfiedBy.join(", "), r.citation]),
+      head: [[p.program, "Status", "Would satisfy"]],
+      body: p.requirements.map((r) => [r.name, STATUS_TEXT[r.status], r.satisfiedBy.join(", ")]),
       theme: "striped",
-      columnStyles: { 0: { cellWidth: 220 }, 1: { cellWidth: 60 }, 3: { cellWidth: 200 } },
+      columnStyles: { 0: { cellWidth: 260 }, 1: { cellWidth: 70 } },
     });
   }
 

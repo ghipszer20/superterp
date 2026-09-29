@@ -12,7 +12,10 @@ const takeout: Takeout = {
     {
       program: "Computer Science",
       citation: "Computer Science, 2026-27 catalog (UMD catalog)",
-      requirements: [{ name: "Core", status: "partial", citation: "Computer Science, 2026-27 catalog (UMD catalog)", assigned: ["CMSC131"], need: "1 more", satisfiedBy: ["CMSC216"] }],
+      requirements: [
+        { name: "Core", status: "partial", citation: "Computer Science, 2026-27 catalog (UMD catalog)", assigned: ["CMSC131"], need: "1 more", satisfiedBy: ["CMSC216"] },
+        { name: "Calculus", status: "satisfied", citation: "Computer Science, 2026-27 catalog (UMD catalog)", assigned: ["MATH140"], need: "", satisfiedBy: [] },
+      ],
     },
   ],
   flags: [{ title: "Prerequisites and order", items: [{ severity: "error", term: "Fall 2026", course: "CMSC132", message: "Needs CMSC131 first." }] }],
@@ -29,5 +32,11 @@ describe("buildPdf", () => {
     expect(out).toContain("Computer Science");
     expect(out).toContain(FOOTER);
     expect(out).toContain("Page 1 of");
+  }, 60000);
+
+  it("cites each program's catalog rule once, above its requirements, and spans each year over its terms", async () => {
+    const out = (await buildPdf(takeout)).output();
+    expect(out.split("Computer Science, 2026-27 catalog").length - 1).toBe(1);
+    expect(out.split("(2026").length - 1).toBe(1);
   }, 60000);
 });
