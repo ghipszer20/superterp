@@ -1,5 +1,28 @@
 // Table test: graduation GPA rules encoded as Program.minGpa.
 import { describe, expect, it } from "vitest";
+import { agnrCert } from "../programs/agnr-cert-2026-27.ts";
+import { arecGlobalPovertyMinor } from "../programs/arec-global-poverty-minor-2026-27.ts";
+import { enspSustainabilityStudiesMinor } from "../programs/ensp-sustainability-studies-minor-2026-27.ts";
+import { larcMajor } from "../programs/larc-major-2026-27.ts";
+import { archConstructionProjectManagementMinor, archRealEstateDevelopmentMinor } from "../programs/arch-minors-2026-27.ts";
+import { plcyMinorPublicLeadership, plcyMinorNonprofitLeadership } from "../programs/plcy-minors-2026-27.ts";
+import { anscMajorAnimalCareManagement } from "../programs/ansc-major-animal-care-management-2026-27.ts";
+import { anscMajorScienceProfessional } from "../programs/ansc-major-science-professional-2026-27.ts";
+import { arecMajorAgResourceEcon } from "../programs/arec-major-ag-resource-econ-2026-27.ts";
+import { arecMajorAgribusiness } from "../programs/arec-major-agribusiness-2026-27.ts";
+import { arecMajorEnvironmentalResourceEcon } from "../programs/arec-major-environmental-resource-econ-2026-27.ts";
+import { enstMajorAppliedEcologyNaturalResources } from "../programs/enst-major-applied-ecology-natural-resources-2026-27.ts";
+import { enstMajorEcologicalTechnologyDesign } from "../programs/enst-major-ecological-technology-design-2026-27.ts";
+import { enstMajorEcosystemHealth } from "../programs/enst-major-ecosystem-health-2026-27.ts";
+import { enstMajorSoilWatershedScience } from "../programs/enst-major-soil-watershed-science-2026-27.ts";
+import { acctMajor } from "../programs/acct-major-2026-27.ts";
+import { finMajor } from "../programs/fin-major-2026-27.ts";
+import { infsMajor } from "../programs/infs-major-2026-27.ts";
+import { intbMajor } from "../programs/intb-major-2026-27.ts";
+import { mgmtMajor } from "../programs/mgmt-major-2026-27.ts";
+import { mktgMajor } from "../programs/mktg-major-2026-27.ts";
+import { ombaMajor } from "../programs/omba-major-2026-27.ts";
+import { scmMajor } from "../programs/scm-major-2026-27.ts";
 import { amstMajor } from "../programs/amst-major-2026-27.ts";
 import { arabMinor } from "../programs/arab-minor-2026-27.ts";
 import { arthMajor } from "../programs/arth-major-2026-27.ts";
@@ -261,6 +284,44 @@ describe("program GPA rules (ENGR)", () => {
         ["aero-major-astronautical", 2.0],
         ["biocomp-major", 2.0],
         ["engr-minor-quantum-science-engineering", 2.0],
+      ].sort(),
+    );
+  });
+});
+
+const otherPrograms = [
+  agnrCert, arecGlobalPovertyMinor, enspSustainabilityStudiesMinor, larcMajor, archConstructionProjectManagementMinor, archRealEstateDevelopmentMinor, plcyMinorPublicLeadership, plcyMinorNonprofitLeadership, anscMajorAnimalCareManagement, anscMajorScienceProfessional, arecMajorAgResourceEcon, arecMajorAgribusiness, arecMajorEnvironmentalResourceEcon, enstMajorAppliedEcologyNaturalResources, enstMajorEcologicalTechnologyDesign, enstMajorEcosystemHealth, enstMajorSoilWatershedScience, acctMajor, finMajor, infsMajor, intbMajor, mgmtMajor, mktgMajor, ombaMajor, scmMajor,
+];
+
+describe("program GPA rules (other colleges)", () => {
+  it("encodes the stated graduation GPA per program", () => {
+    expect(otherPrograms.map((p) => [p.id, p.minGpa]).sort()).toEqual(
+      [
+        ["agnr-cert", 2.0],
+        ["arec-global-poverty-minor", 2.0],
+        ["ensp-sustainability-studies-minor", 2.0],
+        ["larc-major", 2.0],
+        ["arch-construction-project-management-minor", 2.0],
+        ["arch-real-estate-development-minor", 2.0],
+        ["plcy-minor-public-leadership", 2.0],
+        ["plcy-minor-nonprofit-leadership", 2.0],
+        ["ansc-major-animal-care-management", 2.0],
+        ["ansc-major-science-professional", 2.0],
+        ["arec-major-ag-resource-econ", 2.0],
+        ["arec-major-agribusiness", 2.0],
+        ["arec-major-environmental-resource-econ", 2.0],
+        ["enst-major-applied-ecology-natural-resources", 2.0],
+        ["enst-major-ecological-technology-design", 2.0],
+        ["enst-major-ecosystem-health", 2.0],
+        ["enst-major-soil-watershed-science", 2.0],
+        ["acct-major", 2.0],
+        ["fin-major", 2.0],
+        ["infs-major", 2.0],
+        ["intb-major", 2.0],
+        ["mgmt-major", 2.0],
+        ["mktg-major", 2.0],
+        ["omba-major", 2.0],
+        ["scm-major", 2.0],
       ].sort(),
     );
   });

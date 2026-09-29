@@ -13,6 +13,7 @@ export const larcMajor: Program = {
   source:
     "UMD Academic Catalog 2026-27, Landscape Architecture Major, https://academiccatalog.umd.edu/undergraduate/colleges-schools/agriculture-natural-resources/plant-sciences-landscape-architecture/landscape-architecture-major/ (fetched 2026-09-28); department page https://larch.umd.edu/ (fetched 2026-09-28) lists no requirements",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Department page (larch.umd.edu) is a homepage with no requirements; encoded from the catalog alone. Department page not checked for requirements.",
@@ -21,7 +22,7 @@ export const larcMajor: Program = {
     "PLSC110 & PLSC111, and LARC265 & LARC266, are each a lecture-plus-lab pair in one catalog row; both courses of each pair are required, encoded as separate requirements.",
     "LARC389 'or Approved Study Abroad': the approved study-abroad course is not named, so only LARC389 is encoded; a student using study abroad needs a manual override.",
     "LARC Upper Level Restricted Electives (6 credits) is encoded as 2 courses from the six listed (LARC451, 452, 453, 454, 461, 470), assuming 3 credits each; credit values are not given in the catalog.",
-    "Not encoded (engine gap): cumulative 2.0 GPA and 2.0 GPA in major requirements; 87-credit total. The C- rule is applied as the program minGrade to every requirement, including the supporting MATH and PLSC courses as the catalog states. The catalog's four-year-plan section only links the college's general roadmap page, so the sample plan is CONSTRUCTED (official: false).",
+    "Program GPA 2.0 encoded as minGpa. Not encoded (engine gap): the university-wide cumulative 2.0 GPA; 87-credit total. The C- rule is applied as the program minGrade to every requirement, including the supporting MATH and PLSC courses as the catalog states. The catalog's four-year-plan section only links the college's general roadmap page, so the sample plan is CONSTRUCTED (official: false).",
   ],
   requirements: [
     { kind: "choose", id: "math", name: "College Algebra and Trigonometry or a higher level math course (MATH113 or higher)", count: 1, from: { departments: ["MATH"], minNumber: 113 } },

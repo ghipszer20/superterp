@@ -83,6 +83,7 @@ export const plcyMinorPublicLeadership: Program = {
     `(${CATALOG}public-leadership-minor/); School of Public Policy Minors page, ` +
     "https://spp.umd.edu/your-education/undergraduate/minors (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
@@ -90,7 +91,7 @@ export const plcyMinorPublicLeadership: Program = {
     "PLCY201 and PLCY302 are also accepted in the 12-credit pool (a second core-list course can fill a signature slot); the sources don't say either way. Cross-listed codes on the page (SOCY425/WMST425) are both accepted.",
     "Catalog: 'at least 9 of the 15 credits at 300 or 400 level' encoded as an overlay over the 300+ courses of the core and list. The department page says the same.",
     "An approved credit-bearing experiential-learning option (internship, study abroad, research project) linked to public leadership and approved in advance can count in the 12 credits: manual approval, not encoded (PLCY309 internship is on the list).",
-    "'No more than 6 credits may overlap between your major and the minor, unless approved by your major' -> maxSharedWith [{ credits: 6 }] (applies to all other programs; the stricter 'no course may count for more than one minor' is not separately encoded). Minimum C (2.00) GPA across minor courses is manual. Apply one year before graduation; mandatory advising.",
+    "'No more than 6 credits may overlap between your major and the minor, unless approved by your major' -> maxSharedWith [{ credits: 6 }] (applies to all other programs; the stricter 'no course may count for more than one minor' is not separately encoded). Program GPA 2.0 encoded as minGpa. Apply one year before graduation; mandatory advising.",
   ],
   requirements: [
     { kind: "course", id: "core", name: "Core course (PLCY201 or PLCY302)", options: PL_CORE },
@@ -138,10 +139,11 @@ export const plcyMinorNonprofitLeadership: Program = {
     `(${CATALOG}nonprofit-leadership-and-social-innovation-minor/); School of Public Policy Minors page, ` +
     "https://spp.umd.edu/your-education/undergraduate/minors (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
-    "Department-vs-catalog differences (department page wins; both accepted where one lists more): the department page also lists ENES467 with ENME467 ('ENME/ENES467'), and names BSOS388B and HONR348D where the catalog says BSOS388/HONR348 with those sections in parentheses; the catalog's electives are 'see website', the department page prints the full list (used). The department page adds a minimum C (2.00) GPA across minor courses (manual).",
+    "Department-vs-catalog differences (department page wins; both accepted where one lists more): the department page also lists ENES467 with ENME467 ('ENME/ENES467'), and names BSOS388B and HONR348D where the catalog says BSOS388/HONR348 with those sections in parentheses; the catalog's electives are 'see website', the department page prints the full list (used). The department page adds a minimum C (2.00) GPA across minor courses. Program GPA 2.0 encoded as minGpa.",
     "Catalog: 'one of PLCY214, PLCY359 (PLCY359I), PLCY388 (PLCY388G), HONR349 is allowed and encouraged as an elective, but no more than one counts' -> those four are in the elective pool with an 'or' group so only one counts. The department page lists only PLCY214 and HONR349 of them; union taken.",
     "Catalog: 'other electives are being added and students may propose other courses' and 3 credits of study abroad or of a director-approved nonprofit internship count as an elective. Not encoded; other courses may count with director approval.",
     "Catalog: at least 9 credits at 300-400 level, encoded as an overlay over the 300+ courses of the required and elective lists.",

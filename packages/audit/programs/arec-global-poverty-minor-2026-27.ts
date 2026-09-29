@@ -34,6 +34,7 @@ export const arecGlobalPovertyMinor: Program = {
     "UMD Academic Catalog 2026-27, Global Poverty Minor; Department of Agricultural and Resource Economics, " +
     "https://arec.umd.edu/ (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Department page not checked: the fetched arec.umd.edu page is the homepage only (it names the minor but publishes no requirements). Encoded from the catalog.",
@@ -42,7 +43,7 @@ export const arecGlobalPovertyMinor: Program = {
     "'At least 9 credits must be at the 300-400 level' -> overlay choose of 9 credits from the 300+ courses the minor accepts.",
     "'Up to 3 elective credits can be from study abroad, internship or experiential learning related to poverty (optional, pending advisor approval)' is not encodable; such credit does not count on the audit. Manual check.",
     "'No course may be used to satisfy the requirements of more than one minor' -- cannot be expressed without naming every other minor; not encoded (manual). The catalog states no cap on overlap with the major, so none is set.",
-    "Minimum C (2.00) cumulative GPA across the minor's courses is a manual check; per-course C- is minGrade.",
+    "Program GPA 2.0 encoded as minGpa. Per-course C- is minGrade.",
     "Sample plan is constructed (no published plan for minors).",
   ],
   requirements: [
