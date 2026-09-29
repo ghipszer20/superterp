@@ -4,6 +4,7 @@
 // import() when it's audited (runAnalysis, runWhatIf), so the picker never bundles them.
 
 import type { Program } from "@superterp/audit";
+import { collegeIntro } from "@superterp/audit/programs/college-intro.ts";
 import { genEd, university } from "@superterp/audit/programs/gen-ed-2026-27.ts";
 import type { College } from "@superterp/plan/credit-caps";
 import type { Degree } from "@superterp/plan/degrees";
@@ -56,6 +57,14 @@ export function majorPrograms(selected: string[]): Promise<Program[]> {
 /** The chosen programs, then Gen Ed and the university rules. */
 export async function auditedPrograms(selected: string[]): Promise<Program[]> {
   return [...(await majorPrograms(selected)), ...AUTOMATIC_PROGRAMS];
+}
+
+/** The college requirement layer(s) for a plan: the college's intro course, for freshman entrants
+ * only. The college is the plan's, or the one derived from its programs. */
+export function collegeLayers(plan: { programs: string[]; college?: College; entry?: "freshman" | "transfer" }): Program[] {
+  const college = plan.college ?? collegeOf(plan.programs);
+  const layer = college ? collegeIntro(college, plan.entry) : null;
+  return layer ? [layer] : [];
 }
 
 /** An undeclared major only clears the double-major notice pre-filter when at least this share of

@@ -26,7 +26,7 @@ import {
 } from "@superterp/tracks";
 import { checkerPlan } from "./checker";
 import type { AdvisorPlan } from "./plan-state";
-import { AUTOMATIC_PROGRAMS, auditedPrograms, degreeModeOf, noticeCandidates, studentDegrees } from "./programs";
+import { AUTOMATIC_PROGRAMS, auditedPrograms, collegeLayers, degreeModeOf, noticeCandidates, studentDegrees } from "./programs";
 import { describeGap, type Gap } from "./requirements";
 import { matriculationTermId } from "./terms";
 import { resolvedPlan } from "./track-plan";
@@ -82,8 +82,9 @@ export async function runAnalysis(input: { plan: AdvisorPlan; catalog: PlanCatal
   const t = performance.now();
   const plan = checkerPlan(input.plan, input.priorCourses);
   const courses = planCourses(plan, input.catalog);
+  const layers = collegeLayers(input.plan);
   const [programs, candidates] = await Promise.all([
-    auditedPrograms(input.plan.programs),
+    auditedPrograms(input.plan.programs).then((ps) => [...ps, ...layers]),
     noticeCandidates(
       input.plan.programs,
       courses.map((c) => c.id),
@@ -95,7 +96,7 @@ export async function runAnalysis(input: { plan: AdvisorPlan; catalog: PlanCatal
     // groups and the 18-unique goal); reuse its audits instead of a second, disagreeing solve.
     mode ? null : auditPrograms(programs, courses, { confirmed: input.plan.confirmedSlots ?? [] }),
     programNotices(plan, input.catalog, candidates, mode),
-    mode ? studentDegrees(input.plan.programs, mode).then((d) => checkDegrees(plan, input.catalog, d, AUTOMATIC_PROGRAMS, { today: new Date(), confirmed: input.plan.confirmedSlots ?? [] })) : null,
+    mode ? studentDegrees(input.plan.programs, mode).then((d) => checkDegrees(plan, input.catalog, d, [...AUTOMATIC_PROGRAMS, ...layers], { today: new Date(), confirmed: input.plan.confirmedSlots ?? [] })) : null,
   ]);
   // Match by program id, not position: checkDegrees' own entries are laid out layers-first
   // (Gen Ed, university, then each degree's programs), while the Audit tab expects chosen
