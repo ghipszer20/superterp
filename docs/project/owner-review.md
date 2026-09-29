@@ -523,3 +523,7 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 ## `feat/sphl-fmsc` (2026-09-28): major Family Health (`fmsc-major`, SPHL); plan constructed, `official: false`
 - Family Health: no term-by-term plan is published and the SPH department page has no requirements; plan constructed from the catalog. It uses FMSC420 as an unconfirmed placeholder for the second 300-400 elective (FMSC190, FMSC290 and FMSC460 are real).
 - Family Health: "two 100-200 level" and "two 300-400 level" FMSC electives are encoded as FMSC 100-299 and 300-499 ranges; FMSC290 counts toward the economics pick-one and can also fill a lower elective when ECON200/201 is used instead. A program-level "C-" is applied, per the catalog.
+
+## `feat/educ-d` (2026-09-28): major Secondary Education - Mathematics (`mathed-major`, EDUC); plan constructed, `official: false`
+- Secondary Math Education: the catalog table lists only education/pre-professional courses (39-44 credits) and no mathematics content courses, so the math content is not encoded; no readable four-year plan, so the sample plan is constructed from the catalog. Department pages have no undergraduate requirements.
+- Secondary Math Education: the catalog lists BSCI348 (Cell Biology special topics) in the professional block, which looks stale; encoded as listed and recorded in KNOWN_FAILURES (left out of the plan). TLPL488 appears twice (pre-professional topic and 488B); encoded as two enrollments of TLPL488.
