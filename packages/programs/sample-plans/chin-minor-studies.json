@@ -8,7 +8,7 @@
   ],
   "credits": { "CHIN206": 4, "CHIN207": 4 },
   "terms": [
-    { "term": "Term 1", "courses": ["CHIN206"] },
+    { "term": "Term 1", "courses": ["CHIN206", "ARHU158"] },
     { "term": "Term 2", "courses": ["CHIN207"] },
     { "term": "Term 3", "courses": ["CHIN307", "CHIN315"] },
     { "term": "Term 4", "courses": ["CHIN441"] }

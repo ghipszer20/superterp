@@ -8,7 +8,7 @@
     "ARTH 300-400 level (6 credits, no list in the source) filled with ARTH305 and ARTH351, both real ARTH courses named in other art sources. Printmaking filled with ARTT341."
   ],
   "terms": [
-    { "term": "Freshman Fall", "courses": ["ARTT100", "ARTT110", "ARTH200"] },
+    { "term": "Freshman Fall", "courses": ["ARTT100", "ARTT110", "ARTH200", "UNIV100"] },
     { "term": "Freshman Spring", "courses": ["ARTT150", "ARTT210", "ARTH201"] },
     { "term": "Sophomore Fall", "courses": ["ARTT200", "ARTT320", "TLPL250"] },
     { "term": "Sophomore Spring", "courses": ["ARTT341", "ARTH305", "EDHD413"] },
@@ -16,5 +16,6 @@
     { "term": "Junior Spring", "courses": ["ARTT428", "TLPL437", "TLPL435", "EDSP470"] },
     { "term": "Senior Fall", "courses": ["TLPL433", "TLPL479", "TLPL478"] },
     { "term": "Senior Spring", "courses": ["TLPL447", "TLPL478", "TLPL489"] }
-  ]
+  ],
+  "credits": { "UNIV100": 1 }
 }

@@ -11,65 +11,15 @@
     "Communication & Society's Leadership & Social Change pick filled with COMM422; Diversity & Inclusion pick filled with COMM324.",
     "Applied (COMM331, COMM386) and the four Specialization Electives (COMM351, COMM353, COMM483, COMM476) are all named, required courses for this track -- no slots to fill."
   ],
-  "credits": {
-    "COMM130": 1
-  },
+  "credits": { "COMM130": 1 },
   "terms": [
-    {
-      "term": "Year 1 Fall",
-      "courses": [
-        "COMM200",
-        "COMM130"
-      ]
-    },
-    {
-      "term": "Year 1 Spring",
-      "courses": [
-        "COMM250",
-        "BMGT230"
-      ]
-    },
-    {
-      "term": "Year 2 Fall",
-      "courses": [
-        "COMM201",
-        "COMM303"
-      ]
-    },
-    {
-      "term": "Year 2 Spring",
-      "courses": [
-        "COMM304",
-        "COMM307"
-      ]
-    },
-    {
-      "term": "Year 3 Fall",
-      "courses": [
-        "COMM422",
-        "COMM324"
-      ]
-    },
-    {
-      "term": "Year 3 Spring",
-      "courses": [
-        "COMM331",
-        "COMM386"
-      ]
-    },
-    {
-      "term": "Year 4 Fall",
-      "courses": [
-        "COMM351",
-        "COMM353"
-      ]
-    },
-    {
-      "term": "Year 4 Spring",
-      "courses": [
-        "COMM483",
-        "COMM476"
-      ]
-    }
+    { "term": "Year 1 Fall", "courses": ["COMM200", "COMM130", "ARHU158"] },
+    { "term": "Year 1 Spring", "courses": ["COMM250", "BMGT230"] },
+    { "term": "Year 2 Fall", "courses": ["COMM201", "COMM303"] },
+    { "term": "Year 2 Spring", "courses": ["COMM304", "COMM307"] },
+    { "term": "Year 3 Fall", "courses": ["COMM422", "COMM324"] },
+    { "term": "Year 3 Spring", "courses": ["COMM331", "COMM386"] },
+    { "term": "Year 4 Fall", "courses": ["COMM351", "COMM353"] },
+    { "term": "Year 4 Spring", "courses": ["COMM483", "COMM476"] }
   ]
 }

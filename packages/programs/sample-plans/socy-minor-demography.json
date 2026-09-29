@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the requirements: SOCY201 (4 credits), SOCY410, SOCY411, and three electives (SOCY412, SOCY413, plus ANTH265 from outside Sociology). Flagged in docs/project/owner-review.md."
   ],
-  "credits": { "SOCY201": 4 },
+  "credits": { "SOCY201": 4, "UNIV100": 1 },
   "terms": [
-    { "term": "Term 1", "courses": ["SOCY201", "SOCY410"] },
+    { "term": "Term 1", "courses": ["SOCY201", "SOCY410", "UNIV100"] },
     { "term": "Term 2", "courses": ["SOCY411", "SOCY412"] },
     { "term": "Term 3", "courses": ["SOCY413", "ANTH265"] }
   ]

@@ -7,8 +7,9 @@
     "UMD publishes no sample plan for this minor. Built from the catalog: AREC345 (poverty signature), GVPT354 (global perspectives signature), electives ECON315, ECON416, GEOG130. Flagged in docs/project/owner-review.md."
   ],
   "terms": [
-    { "term": "Term 1", "courses": ["AREC345", "GEOG130"] },
+    { "term": "Term 1", "courses": ["AREC345", "GEOG130", "UNIV100"] },
     { "term": "Term 2", "courses": ["GVPT354", "ECON315"] },
     { "term": "Term 3", "courses": ["ECON416"] }
-  ]
+  ],
+  "credits": { "UNIV100": 1 }
 }

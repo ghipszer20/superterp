@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the requirements: DATA110, DATA120, DATA200, DATA250, DATA320, DATA350, DATA400 (the un-substituted course taken for each requirement). Flagged in docs/project/owner-review.md."
   ],
-  "credits": { "DATA110": 1, "DATA120": 1, "DATA250": 4 },
+  "credits": { "DATA110": 1, "DATA120": 1, "DATA250": 4, "CMNS100": 1 },
   "terms": [
-    { "term": "Term 1", "courses": ["DATA110", "DATA120", "DATA200"] },
+    { "term": "Term 1", "courses": ["DATA110", "DATA120", "DATA200", "CMNS100"] },
     { "term": "Term 2", "courses": ["DATA250", "DATA320"] },
     { "term": "Term 3", "courses": ["DATA350", "DATA400"] }
   ]

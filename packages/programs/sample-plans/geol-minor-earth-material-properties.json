@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the requirements: GEOL322 for the foundation course (the single-course option), plus three electives (GEOL341, GEOL423, GEOL443). Flagged in docs/project/owner-review.md."
   ],
-  "credits": { "GEOL322": 4 },
+  "credits": { "GEOL322": 4, "CMNS100": 1 },
   "terms": [
-    { "term": "Term 1", "courses": ["GEOL322"] },
+    { "term": "Term 1", "courses": ["GEOL322", "CMNS100"] },
     { "term": "Term 2", "courses": ["GEOL341", "GEOL423"] },
     { "term": "Term 3", "courses": ["GEOL443"] }
   ]

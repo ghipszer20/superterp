@@ -8,76 +8,14 @@
     "Fills (no course lists in the source): regional HIST electives HIST284 and HIST111; gateways GEOG301, GEOG303, GEOG372 (GEOG306 is its own row); upper electives GEOG330, GEOG331, GEOG358, GEOG421, GEOG422; all real catalog courses used by the Geography major's plans. Economics: ECON200."
   ],
   "terms": [
-    {
-      "term": "Freshman Fall",
-      "courses": [
-        "GEOG201",
-        "GEOG211",
-        "GEOG202",
-        "GEOG212"
-      ]
-    },
-    {
-      "term": "Freshman Spring",
-      "courses": [
-        "HIST200",
-        "GVPT170",
-        "SOCY100",
-        "TLPL250"
-      ]
-    },
-    {
-      "term": "Sophomore Fall",
-      "courses": [
-        "HIST208",
-        "ECON200",
-        "GEOG306",
-        "EDHD413"
-      ]
-    },
-    {
-      "term": "Sophomore Spring",
-      "courses": [
-        "HIST284",
-        "HIST111",
-        "GEOG301",
-        "TLPL300"
-      ]
-    },
-    {
-      "term": "Junior Fall",
-      "courses": [
-        "GEOG303",
-        "GEOG372",
-        "EDHD426",
-        "TLPL481",
-        "TLPL488",
-        "TLPL470"
-      ]
-    },
-    {
-      "term": "Junior Spring",
-      "courses": [
-        "GEOG330",
-        "GEOG331"
-      ]
-    },
-    {
-      "term": "Senior Fall",
-      "courses": [
-        "GEOG358",
-        "GEOG421",
-        "TLPL471",
-        "TLPL479"
-      ]
-    },
-    {
-      "term": "Senior Spring",
-      "courses": [
-        "GEOG422",
-        "TLPL478",
-        "TLPL489"
-      ]
-    }
-  ]
+    { "term": "Freshman Fall", "courses": ["GEOG201", "GEOG211", "GEOG202", "GEOG212", "UNIV100"] },
+    { "term": "Freshman Spring", "courses": ["HIST200", "GVPT170", "SOCY100", "TLPL250"] },
+    { "term": "Sophomore Fall", "courses": ["HIST208", "ECON200", "GEOG306", "EDHD413"] },
+    { "term": "Sophomore Spring", "courses": ["HIST284", "HIST111", "GEOG301", "TLPL300"] },
+    { "term": "Junior Fall", "courses": ["GEOG303", "GEOG372", "EDHD426", "TLPL481", "TLPL488", "TLPL470"] },
+    { "term": "Junior Spring", "courses": ["GEOG330", "GEOG331"] },
+    { "term": "Senior Fall", "courses": ["GEOG358", "GEOG421", "TLPL471", "TLPL479"] },
+    { "term": "Senior Spring", "courses": ["GEOG422", "TLPL478", "TLPL489"] }
+  ],
+  "credits": { "UNIV100": 1 }
 }

@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the requirements: BSCI337 required, BSCI467 for the Advanced Entomology choice, and two area electives (PLSC205 from Plant Sciences, ENST233 from Environmental Sciences). Flagged in docs/project/owner-review.md."
   ],
-  "credits": { "BSCI337": 4, "BSCI467": 4 },
+  "credits": { "BSCI337": 4, "BSCI467": 4, "CMNS100": 1 },
   "terms": [
-    { "term": "Term 1", "courses": ["BSCI337"] },
+    { "term": "Term 1", "courses": ["BSCI337", "CMNS100"] },
     { "term": "Term 2", "courses": ["BSCI467", "PLSC205"] },
     { "term": "Term 3", "courses": ["ENST233"] }
   ]

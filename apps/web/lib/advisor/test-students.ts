@@ -12,7 +12,7 @@ import { defaultTerms } from "./terms";
 
 /** The terms of packages/plan/test/fixtures/owner-plan.ts (Math Applied + CS). */
 export const OWNER_TERMS: [string, string[]][] = [
-  ["Fall 2026", ["CMSC131", "MATH240", "ENGL101", "UNIV100", "HIST200"]],
+  ["Fall 2026", ["CMSC131", "MATH240", "ENGL101", "CMNS100", "HIST200"]],
   ["Spring 2027", ["CMSC132", "MATH241", "COMM107", "PHIL140", "CHEM131", "CHEM132"]],
   ["Fall 2027", ["CMSC216", "CMSC250", "MATH246", "MATH310"]],
   ["Spring 2028", ["CMSC330", "CMSC351", "STAT410", "ARTH200", "AAAS100"]],

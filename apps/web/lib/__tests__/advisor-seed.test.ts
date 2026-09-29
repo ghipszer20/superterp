@@ -29,7 +29,7 @@ describe("seedFromUrl", () => {
     expect(seed.plan!.programs).toEqual(["math-major-applied", "cmsc-major"]);
     expect(seed.plan!.prior.ap).toEqual([{ key: "seed-ap-1", exam: "Calculus BC", score: 5 }]);
     expect(seed.plan!.terms).toHaveLength(8);
-    expect(seed.plan!.terms[0]!.courses.map((c) => c.id)).toEqual(["CMSC131", "MATH240", "ENGL101", "UNIV100", "HIST200"]);
+    expect(seed.plan!.terms[0]!.courses.map((c) => c.id)).toEqual(["CMSC131", "MATH240", "ENGL101", "CMNS100", "HIST200"]);
     expect(parsePlan(serializePlan(seed.plan!))).toEqual(seed.plan);
     expect(hasConsent(seed.consent)).toBe(true);
   });

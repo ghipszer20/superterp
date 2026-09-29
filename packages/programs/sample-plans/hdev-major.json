@@ -8,9 +8,9 @@
     "Core picks EDHD411, EDHD413 and EDHD460; electives are EDHD221, EDHD230, EDHD310 and EDHD420. These are catalog-plausible fills, not sourced choices.",
     "Placement follows the catalog's 'gateway courses first' ordering and 'internship in the final year'; otherwise term placement is constructed."
   ],
-  "credits": { "EDHD390": 1, "EDHD398": 6 },
+  "credits": { "EDHD390": 1, "EDHD398": 6, "UNIV100": 1 },
   "terms": [
-    { "term": "Freshman Fall", "courses": ["EDHD200", "EDHD201"] },
+    { "term": "Freshman Fall", "courses": ["EDHD200", "EDHD201", "UNIV100"] },
     { "term": "Freshman Spring", "courses": ["QMMS251", "EDHD221"] },
     { "term": "Sophomore Fall", "courses": ["EDHD320", "EDHD230"] },
     { "term": "Sophomore Spring", "courses": ["EDHD306", "EDHD310"] },

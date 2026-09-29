@@ -12,7 +12,7 @@
     "The Restricted Electives (choose at least 6 courses, 3 per Area) line is not in this plan because it is not encoded in the Program (see reviewNotes and docs/project/owner-review.md): the catalog names no course or department for either Area."
   ],
   "terms": [
-    { "term": "Freshman Fall", "courses": ["ENSP101", "MATH140", "CHEM131"] },
+    { "term": "Freshman Fall", "courses": ["ENSP101", "MATH140", "CHEM131", "UNIV100"] },
     { "term": "Freshman Spring", "courses": ["ENSP102", "CHEM132", "PHYS121"] },
     { "term": "Sophomore Fall", "courses": ["BSCI170", "BSCI171", "CHEM231"] },
     { "term": "Sophomore Spring", "courses": ["CHEM232", "BSCI222", "ENST200"] },
@@ -20,5 +20,6 @@
     { "term": "Junior Spring", "courses": ["BSCI361", "AREC240", "GEOG306"] },
     { "term": "Senior Fall", "courses": ["ENST460", "ENSP305", "ENSP330"] },
     { "term": "Senior Spring", "courses": ["ENSP386", "ENSP400"] }
-  ]
+  ],
+  "credits": { "UNIV100": 1 }
 }

@@ -53,7 +53,7 @@ describe("runAnalysis", () => {
 
   it("agrees with Checks: the Audit tab uses checkDegrees' own solve, not a second one, for a double degree", async () => {
     const a = await runAnalysis({ plan: { ...plan, degreeMode: "double-degree" }, catalog, priorCourses: prior.courses });
-    expect(a.audits.map((x) => x.program.id)).toEqual(["math-major-applied", "cmsc-major", "gen-ed", "university"]);
+    expect(a.audits.map((x) => x.program.id)).toEqual(["math-major-applied", "cmsc-major", "gen-ed", "university", "college-intro-cmns"]);
     for (const programAudit of a.audits) {
       const degreeAudit = a.degrees!.audits.find((x) => x.program.id === programAudit.program.id)!;
       programAudit.requirements.forEach((req, r) => {
@@ -64,7 +64,7 @@ describe("runAnalysis", () => {
 
   it("also uses checkDegrees' own solve for the Audit tab under the default double-major mode", async () => {
     const a = await runAnalysis({ plan, catalog, priorCourses: prior.courses });
-    expect(a.audits.map((x) => x.program.id)).toEqual(["math-major-applied", "cmsc-major", "gen-ed", "university"]);
+    expect(a.audits.map((x) => x.program.id)).toEqual(["math-major-applied", "cmsc-major", "gen-ed", "university", "college-intro-cmns"]);
     for (const programAudit of a.audits) {
       const degreeAudit = a.degrees!.audits.find((x) => x.program.id === programAudit.program.id)!;
       programAudit.requirements.forEach((req, r) => {
@@ -83,7 +83,7 @@ describe("runAnalysis", () => {
     expect(a.notices.map((n) => n.message)).toContain(
       "Your plan completes both the Mathematics Major (Applied Mathematics Track) and the Computer Science Major: a double major.",
     );
-    expect(a.audits.map((x) => x.program.id)).toEqual(["math-major-applied", "cmsc-major", "gen-ed", "university"]);
+    expect(a.audits.map((x) => x.program.id)).toEqual(["math-major-applied", "cmsc-major", "gen-ed", "university", "college-intro-cmns"]);
     const cs = a.audits.find((x) => x.program.id === "cmsc-major")!;
     expect(cs.requirements.every((r) => r.result.status === "satisfied")).toBe(true);
     expect(a.gateway?.rule.name).toBe("fall-2024-or-later");
@@ -164,5 +164,27 @@ describe("runAnalysis: tracks", () => {
     const a = await runAnalysis({ plan: withGrades, catalog, priorCourses: [] });
     expect(a.scienceGpa.gpa).not.toBeNull();
     expect(a.scienceGpa.byCategory.chemistry.gpa).toBe(4.0);
+  });
+
+  describe("college intro course layer", () => {
+    const collegeAudit = (a: Awaited<ReturnType<typeof runAnalysis>>) => a.audits.find((x) => x.program.layer === "college");
+    const noIntro = { ...plan, terms: plan.terms.map((t) => ({ ...t, courses: t.courses.filter((c) => c.id !== "CMNS100") })) };
+
+    it("adds an unmet CMNS layer when the plan has no CMNS100 or UNIV100, and a met one with it", async () => {
+      const a = await runAnalysis({ plan: noIntro, catalog, priorCourses: prior.courses });
+      expect(collegeAudit(a)?.requirements[0]?.result.status).not.toBe("satisfied");
+      const b = await runAnalysis({ plan, catalog, priorCourses: prior.courses });
+      expect(collegeAudit(b)?.requirements[0]?.result.status).toBe("satisfied");
+    });
+
+    it("skips the layer for a transfer student", async () => {
+      const a = await runAnalysis({ plan: { ...noIntro, entry: "transfer" }, catalog, priorCourses: prior.courses });
+      expect(collegeAudit(a)).toBeUndefined();
+    });
+
+    it("also applies to a double degree", async () => {
+      const a = await runAnalysis({ plan: { ...noIntro, degreeMode: "double-degree" }, catalog, priorCourses: prior.courses });
+      expect(collegeAudit(a)?.requirements[0]?.result.status).not.toBe("satisfied");
+    });
   });
 });

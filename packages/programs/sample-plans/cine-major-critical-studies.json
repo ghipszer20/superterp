@@ -10,7 +10,7 @@
     "Four Cinema and Media Studies Electives filled with CINE280 and CINE282 (the plan's two 200-level picks, allowed by footnote 4) plus CINE337 and CINE341."
   ],
   "terms": [
-    { "term": "Year 1 Fall", "courses": ["CINE245"] },
+    { "term": "Year 1 Fall", "courses": ["CINE245", "ARHU158"] },
     { "term": "Year 1 Spring", "courses": ["CINE301", "CINE302"] },
     { "term": "Year 2 Fall", "courses": ["CINE329", "CINE331"] },
     { "term": "Year 2 Spring", "courses": ["CINE332", "CINE334"] },

@@ -10,14 +10,9 @@
     "Capstone filled with DANC485 (Seminar in Dance).",
     "Production electives (9 credits) filled with THET116, DANC310, and DANC410 (real courses named directly in the source; THET116 is footnoted 'permission required', not enforced -- see reviewNotes)."
   ],
-  "credits": {
-    "DANC179": 2,
-    "TDPS479": 1,
-    "DANC138": 2,
-    "DANC228": 2
-  },
+  "credits": { "DANC179": 2, "TDPS479": 1, "DANC138": 2, "DANC228": 2 },
   "terms": [
-    { "term": "Year 1 Fall", "courses": ["DANC109", "DANC218", "TDPS201"] },
+    { "term": "Year 1 Fall", "courses": ["DANC109", "DANC218", "TDPS201", "ARHU158"] },
     { "term": "Year 1 Spring", "courses": ["DANC179", "DANC219", "DANC138"] },
     { "term": "Year 2 Fall", "courses": ["DANC207", "DANC318", "DANC228", "TDPS479"] },
     { "term": "Year 2 Spring", "courses": ["DANC304", "DANC319", "TDPS479"] },
