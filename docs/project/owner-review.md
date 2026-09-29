@@ -589,4 +589,3 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Communication (Shady Grove): COMM420/421/436/454/455 have no titles in the source; kept in pools, not used in the plan.
 - Communication (Shady Grove): "only 3 credits of COMM386 may count" is an at-most cap, manual note (Applied's overlapping picks are one `sets` requirement so one course fills only one).
 - Communication (Shady Grove): no four-year plan in the source; plan constructed. Elective fills COMM340/341/351/365 are placeholders. Undergraduate Director substitutions, admission, 2.0 GPA not encoded.
-## `feat/usg-usmsm-reexports` (2026-09-28): majors Accounting, Management, Marketing at Shady Grove (`acct-usg-major`, `mgmt-usg-major`, `mktg-usg-major`, USG); Electrical Engineering, Mechanical Engineering at Southern Maryland (`ee-usmsm-major`, `me-usmsm-major`, ENGR); plans mirror the College Park plans (constructed unless the College Park plan is official)
