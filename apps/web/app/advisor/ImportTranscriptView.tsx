@@ -148,6 +148,8 @@ function ReviewStage({
   const matchedAp = apSelection.matched;
   const infoAp = apSelection.info;
   const unmatchedAp = apSelection.unmatched;
+  const gpaFound = parsed.cumulativeGpa;
+  const [gpaChecked, setGpaChecked] = useState(true);
   const [apChecked, setApChecked] = useState<boolean[]>(() => matchedAp.map(() => true));
 
   const termGroups = useMemo(() => {
@@ -163,7 +165,7 @@ function ReviewStage({
     return order.map((term) => ({ term, rows: byTerm.get(term)! }));
   }, [parsed.courses]);
 
-  const anyChecked = courseChecked.some(Boolean) || apChecked.some(Boolean);
+  const anyChecked = courseChecked.some(Boolean) || apChecked.some(Boolean) || (gpaFound !== null && gpaChecked);
 
   const confirm = () => {
     const courses: SelectedCourse[] = parsed.courses
@@ -176,7 +178,7 @@ function ReviewStage({
         status: c.status,
       }));
     const ap: SelectedAp[] = matchedAp.filter((_, i) => apChecked[i]).map((a) => ({ exam: a.exam, score: a.score }));
-    onDone(applyTranscriptImport(plan, { courses, ap }));
+    onDone(applyTranscriptImport(plan, { courses, ap, gpa: gpaFound && gpaChecked ? gpaFound.value : null }));
   };
 
   const toggle = (arr: boolean[], set: (v: boolean[]) => void, i: number) => set(arr.map((v, j) => (i === j ? !v : v)));
@@ -229,6 +231,23 @@ function ReviewStage({
           </ul>
         </section>
       ))}
+
+      {gpaFound ? (
+        <section className={styles.card}>
+          <h2 className={styles.cardTitle}>Cumulative GPA</h2>
+          <label className={styles.checkRow}>
+            <input type="checkbox" checked={gpaChecked} onChange={() => setGpaChecked(!gpaChecked)} />
+            <div className={styles.entryHead}>
+              <span className={styles.entrySource}>{gpaFound.value.toFixed(2)} (from your transcript)</span>
+              {gpaFound.flagged ? (
+                <span className={styles.issueSeverity} data-severity="confirm">
+                  Check this
+                </span>
+              ) : null}
+            </div>
+          </label>
+        </section>
+      ) : null}
 
       {matchedAp.length > 0 ? (
         <section className={styles.card}>

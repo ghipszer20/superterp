@@ -58,6 +58,7 @@ export function AuditView({
                     {REQ_STATUS[result.status]}
                   </span>
                 </div>
+                <GradeNotes result={result} />
                 {result.assigned.length > 0 ? (
                   <p className={styles.reqAssigned}>
                     Counted: <CourseChips ids={result.assigned} onOpenCourse={onOpenCourse} />
@@ -104,7 +105,7 @@ export function AuditView({
             ))}
           </ul>
           <label className={styles.field}>
-            <span className={styles.fieldLabel}>Cumulative UMD GPA</span>
+            <span className={styles.fieldLabel}>Cumulative UMD GPA (a transcript import fills this in from your transcript; you can edit it)</span>
             <input
               className={styles.input}
               type="number"
@@ -159,6 +160,7 @@ export function AuditView({
                               {REQ_STATUS[result.status]}
                             </span>
                           </div>
+                          <GradeNotes result={result} />
                           {result.assigned.length > 0 ? (
                             <p className={styles.reqAssigned}>
                               Counted: <CourseChips ids={result.assigned} onOpenCourse={onOpenCourse} />
@@ -189,6 +191,13 @@ export function AuditView({
                 {showsScienceGpa(track) && scienceGpa.gpa !== null ? (
                   <p className={styles.cardNote}>
                     Science GPA (BCPM): {scienceGpa.gpa.toFixed(2)} ({scienceGpa.credits} credits)
+                  </p>
+                ) : null}
+                {showsScienceGpa(track) && scienceGpa.gpa !== null ? (
+                  <p className={styles.cardNote}>
+                    {BCPM_CATEGORIES.filter((k) => scienceGpa.byCategory[k].gpa !== null)
+                      .map((k) => `${BCPM_LABEL[k]} ${scienceGpa.byCategory[k].gpa!.toFixed(2)}`)
+                      .join(" · ")}
                   </p>
                 ) : null}
 
@@ -241,6 +250,28 @@ function milestoneBuckets(milestones: MilestoneTiming[], termOrder: string[]): {
   if (other.length) buckets.unshift({ label: "Not on a planned term", items: other.sort((a, b) => a.year - b.year) });
   if (after.length) buckets.push({ label: "After your last planned term", items: after.sort((a, b) => a.year - b.year) });
   return buckets;
+}
+
+const BCPM_CATEGORIES = ["biology", "chemistry", "physics", "math"] as const;
+const BCPM_LABEL = { biology: "Biology", chemistry: "Chemistry", physics: "Physics", math: "Math" };
+
+/** Grade notes on a requirement: completed courses that miss its minimum grade, and its minimum-GPA check. */
+function GradeNotes({ result }: { result: RequirementResult }) {
+  return (
+    <>
+      {result.belowMinimum?.map((b) => (
+        <p key={b.course} className={styles.reqGap}>
+          {b.course} ({b.grade}) doesn&apos;t count: this requirement needs {b.minGrade} or better.
+        </p>
+      ))}
+      {result.gpa ? (
+        <p className={styles.reqGap} data-severity={result.gpa.value < result.gpa.min ? "warning" : undefined}>
+          GPA in these courses: {result.gpa.value.toFixed(2)} (needs {result.gpa.min.toFixed(1)} or higher).
+          {result.gpa.atRisk ? " Below the minimum so far: the courses you still have planned need to raise it." : ""}
+        </p>
+      ) : null}
+    </>
+  );
 }
 
 function CourseChips({ ids, onOpenCourse }: { ids: string[]; onOpenCourse: (c: OpenCourse) => void }) {
