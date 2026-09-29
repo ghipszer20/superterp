@@ -35,8 +35,8 @@ export function foldLine(line: string): string {
   return parts.join("\r\n ");
 }
 
-const p2 = (n: number) => String(n).padStart(2, "0");
-const ymd = (d: Date) => `${d.getUTCFullYear()}${p2(d.getUTCMonth() + 1)}${p2(d.getUTCDate())}`;
+export const p2 = (n: number) => String(n).padStart(2, "0");
+export const ymd = (d: Date) => `${d.getUTCFullYear()}${p2(d.getUTCMonth() + 1)}${p2(d.getUTCDate())}`;
 const hms = (min: number) => `${p2(Math.floor(min / 60))}${p2(min % 60)}00`;
 const parseDay = (iso: string) => new Date(`${iso}T00:00:00Z`);
 
@@ -51,9 +51,9 @@ function endOfDayUtc(d: Date): string {
   return `${ymd(utc)}T${p2(utc.getUTCHours())}${p2(utc.getUTCMinutes())}${p2(utc.getUTCSeconds())}Z`;
 }
 
-const stampOf = (d: Date) => `${ymd(d)}T${p2(d.getUTCHours())}${p2(d.getUTCMinutes())}${p2(d.getUTCSeconds())}Z`;
+export const stampOf = (d: Date) => `${ymd(d)}T${p2(d.getUTCHours())}${p2(d.getUTCMinutes())}${p2(d.getUTCSeconds())}Z`;
 
-const VTIMEZONE = [
+export const VTIMEZONE = [
   "BEGIN:VTIMEZONE",
   `TZID:${TZID}`,
   "BEGIN:DAYLIGHT",
