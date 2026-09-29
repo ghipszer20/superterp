@@ -636,3 +636,9 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - minGrade C- applied from the College of Education's general statement; the catalog gives no grade rule for this major. Confirm.
 - Electives pool accepts every course in the 16 "Other Possible Electives" departments (the catalog says advisor-approved, not encodable) plus the core courses (catalog footnote). The 6-credit internship substitute (400-level electives) covers named 400-level courses only; 400-level courses from the other departments are not in that pool (filter cannot combine named courses with a level-limited department range).
 - Not encoded: double-major substitutions (FMSC302, PSYC300, PSYC200), EDHD489/498 substitution, 43-credit total.
+
+## `feat/ocr-b` (2026-09-28): OCR re-check of Global Culture and Thought, HCAI (7 tracks), Immersive Media Design; all plans kept constructed
+- Global Culture and Thought (`glbc-major.json`): kept constructed. The OCR text is a generic template with wildcard slots (GLBC elective 3xx, Electives 1xx/2xx) and garbled rows; no readable term-by-term course list.
+- HCAI (all 7 `hcai-major-*.json`): kept constructed. The OCR text is unreadable (mostly noise characters); only fragments like "HCAI121 and HEAL200" and the specialization note survive, so nothing can be transcribed reliably.
+- Immersive Media Design Emerging Creatives (`imdm-major-emerging-creatives.json`): kept constructed. The OCR text has a few fragments (ARTT, DANC, MUSC-like codes) but rows and terms cannot be reconstructed. The Computing plan is untouched (its source has no OCR section).
+- No program files changed. These plans need a manual read of the PDFs if an official plan is wanted.
