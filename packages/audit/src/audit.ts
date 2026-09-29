@@ -156,6 +156,10 @@ export type ProgramMeta = {
    * e.g. "astr"); `colleges` means every major that college owns; `reason` is one plain sentence
    * from the source. */
   notOpenTo?: NotOpenTo;
+  /** The inverse gate: the program is open ONLY to students with a declared major matching this
+   * (same shape and matching as `notOpenTo`). A student with no declared major isn't blocked
+   * (they may still be heading into an eligible major). */
+  onlyOpenTo?: NotOpenTo;
 };
 
 export type NotOpenTo = { programs?: string[]; colleges?: ProgramMeta["college"][]; reason: string };

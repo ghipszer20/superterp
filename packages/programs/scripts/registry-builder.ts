@@ -18,6 +18,7 @@ export type BuiltEntry = {
   track?: string;
   sources: { catalog?: string; department?: string };
   notOpenTo?: { programs?: string[]; colleges?: string[]; reason: string };
+  onlyOpenTo?: { programs?: string[]; colleges?: string[]; reason: string };
   /** The literal specifier the generated file's `import()` must use, so the bundler can still
    * split this program into its own chunk -- e.g. "@superterp/audit/programs/foo-2026-27.ts". */
   importPath: string;
@@ -64,6 +65,7 @@ async function collectEntries(): Promise<BuiltEntry[]> {
           track: meta.track as string | undefined,
           sources: meta.sources as { catalog?: string; department?: string },
           ...(meta.notOpenTo !== undefined ? { notOpenTo: meta.notOpenTo as BuiltEntry["notOpenTo"] } : {}),
+          ...(meta.onlyOpenTo !== undefined ? { onlyOpenTo: meta.onlyOpenTo as BuiltEntry["onlyOpenTo"] } : {}),
           importPath: `${importPrefix}${file}`,
           exportName: programKey,
         });

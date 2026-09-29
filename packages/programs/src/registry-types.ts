@@ -30,5 +30,7 @@ export type ProgramEntry = {
   sources: { catalog?: string; department?: string };
   /** Majors this program is closed to (ProgramMeta.notOpenTo); see src/eligibility.ts. */
   notOpenTo?: NotOpenTo;
+  /** Majors this program is open only to (ProgramMeta.onlyOpenTo); see src/eligibility.ts. */
+  onlyOpenTo?: NotOpenTo;
   load: () => Promise<Program>;
 };

@@ -2,6 +2,7 @@
 // source says it isn't open to certain majors is blocked for students who have declared one.
 // The gate itself lives in the program file's ProgramMeta.notOpenTo (packages/audit/src/audit.ts).
 
+import type { NotOpenTo } from "@superterp/audit";
 import type { ProgramEntry } from "./registry-types.ts";
 import { PROGRAMS } from "./registry.generated.ts";
 
@@ -18,14 +19,16 @@ export function blockedReason(
   declaredIds: readonly string[],
   lookup: (id: string) => ProgramEntry | undefined = registryLookup,
 ): string | undefined {
-  const gate = entry.notOpenTo;
-  if (!gate) return undefined;
+  const majors = declaredIds.map(lookup).filter((m): m is ProgramEntry => m?.kind === "major");
+  const { notOpenTo, onlyOpenTo } = entry;
+  if (notOpenTo && majors.some((m) => matches(notOpenTo, m))) return notOpenTo.reason;
+  // Undeclared students aren't blocked by an allow-list: they may still be heading into an eligible major.
+  if (onlyOpenTo && majors.length > 0 && !majors.some((m) => matches(onlyOpenTo, m))) return onlyOpenTo.reason;
+  return undefined;
+}
+
+function matches(gate: NotOpenTo, major: ProgramEntry): boolean {
   const programs = gate.programs ?? [];
   const colleges: readonly string[] = gate.colleges ?? [];
-  for (const id of declaredIds) {
-    const major = lookup(id);
-    if (!major || major.kind !== "major") continue;
-    if (programs.includes(major.id) || programs.includes(major.major ?? major.id) || colleges.includes(major.college)) return gate.reason;
-  }
-  return undefined;
+  return programs.includes(major.id) || programs.includes(major.major ?? major.id) || colleges.includes(major.college);
 }

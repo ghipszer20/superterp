@@ -41,6 +41,7 @@ async function main() {
         `verified: ${tsLiteral(e.verified)}`,
         `sources: ${sourcesLiteral(e.sources)}`,
         ...(e.notOpenTo !== undefined ? [`notOpenTo: ${notOpenToLiteral(e.notOpenTo)}`] : []),
+        ...(e.onlyOpenTo !== undefined ? [`onlyOpenTo: ${notOpenToLiteral(e.onlyOpenTo)}`] : []),
         `load: () => import(${tsLiteral(e.importPath)}).then((m) => m.${e.exportName})`,
       ];
       return `  { ${fields.join(", ")} },`;
