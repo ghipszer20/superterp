@@ -12,7 +12,7 @@
 // Kept separate from audit.ts. The major's program uses a single C- minimum,
 // while the gateway minimum depends on when the student matriculated.
 
-import type { StudentCourse } from "./audit.ts";
+import { gradePoints, type StudentCourse } from "./audit.ts";
 
 /** Which rule applies, based on the matriculation term. */
 export type GatewayRule =
@@ -30,9 +30,6 @@ const GATEWAY_COURSES = [
   { id: "CMSC132", name: "Object-Oriented Programming II", options: ["CMSC132", "CMSC142"] },
 ];
 
-// UMD letter grades, lowest to highest (same order as audit.ts, which doesn't export it).
-const GRADE_ORDER = ["F", "D-", "D", "D+", "C-", "C", "C+", "B-", "B", "B+", "A-", "A", "A+"];
-const gradeRank = (g: string) => GRADE_ORDER.indexOf(g.trim().toUpperCase());
 
 /**
  * RULING (owner, 2026-09-26, verbatim: "it absolutely counts towards the gateway - this is true
@@ -82,7 +79,8 @@ const MAX_REPEATED_GATEWAYS = 1;
 function meetsGatewayGrade(c: StudentCourse, minRank: number): boolean {
   if (c.status !== "completed") return false;
   if (c.grade === undefined) return NO_GRADE_CREDIT_MEETS_GATEWAY;
-  return gradeRank(c.grade) >= 0 && gradeRank(c.grade) >= minRank;
+  const points = gradePoints(c.grade);
+  return points !== undefined && points >= minRank;
 }
 
 /**
@@ -170,7 +168,7 @@ export function checkCsGateway(input: GatewayInput): GatewayResult {
     throw new Error(`Invalid matriculation term id "${input.matriculationTerm}": expected YYYYMM with MM 01, 05, 08 or 12`);
   }
   const rule = Number(input.matriculationTerm) >= NEW_RULE_FROM_TERM ? NEW_RULE : OLD_RULE;
-  const minRank = gradeRank(rule.minGrade);
+  const minRank = gradePoints(rule.minGrade)!;
 
   const courses = GATEWAY_COURSES.map((g): GatewayCourseResult => {
     const matching = input.courses.filter((c) => g.options.includes(c.id));

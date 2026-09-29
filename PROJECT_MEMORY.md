@@ -100,7 +100,7 @@ Moved to `docs/project/legal.md`. Read it before building the disclaimer, accoun
   - **Session 1 (integration, program gaps, test students, Wave 4 prep):** CI disabled; tip verified; Wave 2 gate run (missing: Video Production minor, CCJS at Shady Grove, Biological Sciences at Shady Grove, plus the minors encoding fixes and the USG college move). Next: program gap builders, test students, prelaunch prep.
   - **Session 2 (engine: open slots, eligibility gates, N different areas):** not started.
   - **Session 3 (schedule: section recommendations, .ics, share link, walk/leave-by):** not started.
-  - **Session 4 (grades in the audit, semester difficulty):** not started.
+  - **Session 4 (grades in the audit, semester difficulty):** step 1 `feat/grades-audit` merged 2026-09-28 (engine `minGpa` + solver grade tie-break, CS ULC 1.7, `belowMinimum` notes, transcript cumulative GPA fills `plan.gpa`, BCPM breakdown on track cards; no screenshots yet). Step 2 `feat/semester-difficulty` next, plan in `C:/Users/24GHi/.claude/plans/velvet-meandering-oasis.md`. GPA rules in other programs deferred (roadmap to-do).
   - **Session 5 (advising export, academic calendar, registration prep):** not started.
 - **Waiting on the owner:** see `docs/project/owner-review.md` (include it in every progress report; add new items there).
 - **Known to-dos:** see `docs/project/roadmap.md` "Known to-dos" (add new ones there).
