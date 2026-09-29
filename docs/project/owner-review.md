@@ -501,3 +501,10 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Kinesiology: the catalog states a "C-" only for option-course prerequisites (KNES core) and the SPH benchmarks; a program-level "C-" is applied to every requirement. Please confirm it is not too strict.
 - Kinesiology: the option list (15 credits) and activity list (4 courses) live in a handbook not in the sources; encoded as KNES 300-499 and 100-199. Plan uses KNES101-103 as unconfirmed placeholders for real activity courses. "MATH/STAT Statistics Course" is encoded as any STAT or MATH course 100-499.
 - SPHL shared core: only SPHL100, BSCI170, BSCI180/171, BSCI201/202 and EPIB301 are shared; statistics is not. Global Health and Public Health Practice catalog tables were not read, so their uses are marked "confirm" in the file header.
+
+## `feat/agnr-enst` (2026-09-28): major Environmental Science and Technology (`enst-major-*`, 4 concentration tracks, AGNR, shared `enst-shared-2026-27.ts`); all four plans constructed, `official: false`
+- Department page (enst.umd.edu) is a homepage with no requirements; encoded from the catalog alone. No official four-year plan, so all four sample plans are constructed.
+- Default track is Ecological Technology Design (first-listed). Which three of five rows count for its Depth - Design is not specified in the catalog; any three count.
+- Technical electives are encoded as one credit `choose` over each concentration's blocks (the catalog says any combination may be taken). "ENSP330 or GVPT273" is not an alternatives group because GVPT273 is also listed alone in Wildlife and Habitats.
+- Soil and Watershed Science: ENST411's credits are not given; 4 assumed from the "at least 13 credits" total. Credits for ENST301/302/303/309 are not given either.
+- The WPIT (wetlands) and Soil Certification Exam footnotes are advising notes, not encoded. The 2.0 major GPA and 120-credit total are manual.
