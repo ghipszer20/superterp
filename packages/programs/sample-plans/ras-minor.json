@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the requirements: the four required courses (ENME480, ENAE450, ENEE467, CMSC477), MATH240 as the supporting math course, and CMSC421+CMSC426 as the two electives. Flagged in docs/project/owner-review.md."
   ],
-  "credits": { "MATH240": 4, "CMNS100": 1 },
+  "credits": { "MATH240": 4 },
   "terms": [
-    { "term": "Term 1", "courses": ["ENME480", "MATH240", "CMNS100"] },
+    { "term": "Term 1", "courses": ["ENME480", "MATH240"] },
     { "term": "Term 2", "courses": ["ENAE450"] },
     { "term": "Term 3", "courses": ["ENEE467", "CMSC421"] },
     { "term": "Term 4", "courses": ["CMSC477", "CMSC426"] }

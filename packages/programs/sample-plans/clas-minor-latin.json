@@ -8,7 +8,7 @@
   ],
   "credits": { "LATN101": 4, "LATN102": 4, "LATN201": 4 },
   "terms": [
-    { "term": "Term 1", "courses": ["LATN101", "ARHU158"] },
+    { "term": "Term 1", "courses": ["LATN101"] },
     { "term": "Term 2", "courses": ["LATN102"] },
     { "term": "Term 3", "courses": ["LATN201"] },
     { "term": "Term 4", "courses": ["LATN301", "LATN302"] },

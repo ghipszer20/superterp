@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the requirements: GVPT354, GVPT355, GVPT356 and GVPT357 (1 credit). The global perspectives elective and methods slots are not encoded (no approved list on the catalog page). Flagged in docs/project/owner-review.md."
   ],
-  "credits": { "GVPT357": 1, "UNIV100": 1 },
+  "credits": { "GVPT357": 1 },
   "terms": [
-    { "term": "Term 1", "courses": ["GVPT354", "UNIV100"] },
+    { "term": "Term 1", "courses": ["GVPT354"] },
     { "term": "Term 2", "courses": ["GVPT355", "GVPT357"] },
     { "term": "Term 3", "courses": ["GVPT356"] }
   ]

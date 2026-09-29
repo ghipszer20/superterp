@@ -7,9 +7,8 @@
     "UMD publishes no sample plan for this minor. Built from the requirements: AOSC123 and AOSC365 required, plus three electives (AOSC200, AOSC247, AOSC360). Flagged in docs/project/owner-review.md (no department page found for this minor specifically)."
   ],
   "terms": [
-    { "term": "Term 1", "courses": ["AOSC123", "AOSC200", "CMNS100"] },
+    { "term": "Term 1", "courses": ["AOSC123", "AOSC200"] },
     { "term": "Term 2", "courses": ["AOSC365", "AOSC247"] },
     { "term": "Term 3", "courses": ["AOSC360"] }
-  ],
-  "credits": { "CMNS100": 1 }
+  ]
 }

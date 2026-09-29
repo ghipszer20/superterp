@@ -8,7 +8,7 @@
   ],
   "credits": { "JAPN301": 6 },
   "terms": [
-    { "term": "Term 1", "courses": ["JAPN301", "ARHU158"] },
+    { "term": "Term 1", "courses": ["JAPN301"] },
     { "term": "Term 2", "courses": ["JAPN421", "JAPN314"] },
     { "term": "Term 3", "courses": ["JAPN401"] }
   ]

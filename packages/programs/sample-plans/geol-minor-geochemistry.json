@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the requirements: GEOL322 for the foundation course, GEOL444 for the core course, plus two electives (GEOL435, GEOL436, both distinct from the core pick). Flagged in docs/project/owner-review.md."
   ],
-  "credits": { "GEOL322": 4, "GEOL444": 4, "CMNS100": 1 },
+  "credits": { "GEOL322": 4, "GEOL444": 4 },
   "terms": [
-    { "term": "Term 1", "courses": ["GEOL322", "CMNS100"] },
+    { "term": "Term 1", "courses": ["GEOL322"] },
     { "term": "Term 2", "courses": ["GEOL444", "GEOL435"] },
     { "term": "Term 3", "courses": ["GEOL436"] }
   ]

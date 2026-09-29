@@ -1,5 +1,7 @@
 // Puts each college's intro course (docs/project/college-intro-courses.md) into the first fall
-// term of every sample plan that lacks it (owner ruling 2026-09-29). Idempotent.
+// term of every major's sample plan that lacks it (owner ruling 2026-09-29). Idempotent. Minor,
+// certificate and special-program plans hold only that program's courses and may belong to a
+// student in any college, so they're left alone.
 //
 // Run `npx tsx scripts/add-college-intro.ts [--dry]` from packages/programs. A plan whose first
 // term isn't a first-year fall, or whose first fall would go over the college's credit cap, is
@@ -53,6 +55,7 @@ const skipped: string[] = [];
 let already = 0;
 
 for (const entry of PROGRAMS) {
+  if (entry.kind !== "major") continue;
   const path = fileURLToPath(new URL(`../sample-plans/${entry.id}.json`, import.meta.url));
   let raw: string;
   try {

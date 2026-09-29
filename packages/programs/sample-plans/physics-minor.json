@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the current catalog's requirements (see the program file's reviewNotes for why the catalog is used over the department's outdated Declaration of Minor form): PHYS174 for the lab, PHYS265 for scientific programming, PHYS272 for electricity and magnetism, PHYS273 for waves, and PHYS401+PHYS410+PHYS431 as the three upper-level electives. Flagged in docs/project/owner-review.md."
   ],
-  "credits": { "PHYS174": 1, "CMNS100": 1 },
+  "credits": { "PHYS174": 1 },
   "terms": [
-    { "term": "Term 1", "courses": ["PHYS174", "PHYS265", "CMNS100"] },
+    { "term": "Term 1", "courses": ["PHYS174", "PHYS265"] },
     { "term": "Term 2", "courses": ["PHYS272", "PHYS273"] },
     { "term": "Term 3", "courses": ["PHYS401", "PHYS410"] },
     { "term": "Term 4", "courses": ["PHYS431"] }

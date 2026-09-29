@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from ARCH350 and the architecture studio ARCH409; the 6 elective credits are an open slot with no published list, so none is planned. Flagged in docs/project/owner-review.md."
   ],
-  "credits": { "UNIV100": 1 },
+  "credits": {},
   "terms": [
-    { "term": "Term 1", "courses": ["ARCH350", "UNIV100"] },
+    { "term": "Term 1", "courses": ["ARCH350"] },
     { "term": "Term 2", "courses": ["ARCH409"] }
   ]
 }

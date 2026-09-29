@@ -7,7 +7,7 @@
     "UMD publishes no sample plan for this minor. Built from the requirements: ARAB101, 102, 201, 202, plus 9 credits of 300-level and above ARAB courses (ARAB301, ARAB302, ARAB317). Flagged in docs/project/owner-review.md."
   ],
   "terms": [
-    { "term": "Term 1", "courses": ["ARAB101", "ARHU158"] },
+    { "term": "Term 1", "courses": ["ARAB101"] },
     { "term": "Term 2", "courses": ["ARAB102"] },
     { "term": "Term 3", "courses": ["ARAB201"] },
     { "term": "Term 4", "courses": ["ARAB202"] },

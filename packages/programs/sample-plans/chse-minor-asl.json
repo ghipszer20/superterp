@@ -7,9 +7,8 @@
     "UMD publishes no sample plan for this minor. Built from the requirements: the four core courses plus LING200 as the elective. Flagged in docs/project/owner-review.md."
   ],
   "terms": [
-    { "term": "Term 1", "courses": ["CHSE376", "CHSE476", "UNIV100"] },
+    { "term": "Term 1", "courses": ["CHSE376", "CHSE476"] },
     { "term": "Term 2", "courses": ["CHSE477", "CHSE480"] },
     { "term": "Term 3", "courses": ["LING200"] }
-  ],
-  "credits": { "UNIV100": 1 }
+  ]
 }

@@ -7,9 +7,8 @@
     "UMD publishes no sample plan for this minor. Built from the requirements: AOSC123+AOSC200 as the two general electives, AOSC400+AOSC401 required, and GEOL437 as the additional elective. Flagged in docs/project/owner-review.md."
   ],
   "terms": [
-    { "term": "Term 1", "courses": ["AOSC123", "AOSC200", "CMNS100"] },
+    { "term": "Term 1", "courses": ["AOSC123", "AOSC200"] },
     { "term": "Term 2", "courses": ["AOSC400", "AOSC401"] },
     { "term": "Term 3", "courses": ["GEOL437"] }
-  ],
-  "credits": { "CMNS100": 1 }
+  ]
 }

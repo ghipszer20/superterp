@@ -6,9 +6,9 @@
   "notes": [
     "UMD publishes no sample plan for this minor. Built from the requirements: MATH241, MATH240 (linear algebra), MATH310, one theoretical course (MATH410), one algebra course (MATH401, distinct from the theoretical pick), one analysis course (MATH416, distinct from the theoretical pick), one probability course (STAT410). Flagged in docs/project/owner-review.md."
   ],
-  "credits": { "MATH241": 4, "MATH240": 4, "CMNS100": 1 },
+  "credits": { "MATH241": 4, "MATH240": 4 },
   "terms": [
-    { "term": "Term 1", "courses": ["MATH241", "MATH240", "CMNS100"] },
+    { "term": "Term 1", "courses": ["MATH241", "MATH240"] },
     { "term": "Term 2", "courses": ["MATH310"] },
     { "term": "Term 3", "courses": ["MATH410", "MATH401"] },
     { "term": "Term 4", "courses": ["MATH416", "STAT410"] }
