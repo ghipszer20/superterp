@@ -18,7 +18,7 @@ const c = (id: string, name: string, course: string): Requirement => ({
 export const ecseSharedReviewNotes: string[] = [
   ...educSharedReviewNotes,
   "Department page: the College of Education 'Major Four Year Plans' page (education.umd.edu/.../major-four) lists programs and general College policy only, with no requirements that differ from the catalog, so there is no disagreement to resolve.",
-  "OPEN SLOT: Biological Science with lab, 4 credits (also a Gen Ed double count). The catalog names no course or department.",
+  "Biological Science with lab, 4 credits (also a Gen Ed double count), is now an openSlot requirement ('ecse-biological-science'). The catalog names no course or department.",
   "Physical Science with lab (4 credits): the catalog names ASTR, CHEM, GEOL and PHYS 'with Lab'; encoded as one course from those four departments. The lab component is not checked.",
   "Social Science (3 credits): one course from ANTH, ECON, GEOG, GVPT, HIST or SOCY. HIST200 is its own row.",
   "Creative Art (2-3 credits): the catalog lists THET120, MUED155, TLPL202, TLPL331, ARTT100 or ARTT110, and ARTH221; encoded as one-of. TLPL331 has no title in the catalog.",
@@ -76,4 +76,11 @@ export const ecseRequirements: Requirement[] = [
   c("ecse-edhd444", "Action Research in EC/ECSE", "EDHD444"),
   c("ecse-edhd437", "EC/ECSE Teachers as Researchers and Reflective Practitioners", "EDHD437"),
   c("ecse-edhd432", "Internship in EC/ECSE", "EDHD432"),
+  {
+    kind: "openSlot",
+    id: "ecse-biological-science",
+    name: "Biological science with lab",
+    credits: 4,
+    note: "The catalog names no course or department (also counts toward Gen Ed). Confirm with your advisor.",
+  },
 ];
