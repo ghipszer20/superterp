@@ -542,3 +542,8 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Global Health: no term-by-term plan is published (SPH page has only benchmarks) and sph.umd.edu/gbhl-ug returned 404; encoded from the catalog, plan constructed.
 - Global Health: OPEN SLOTs (not encoded, no course list in the sources): world language 6-12 credits, one advisor-approved experiential learning course (3 credits), and 12 credits of Global Health Options. Approved lists are on sph.umd.edu/gbhl-bs.
 - Global Health: no course grade minimum stated in the source; program-level "C-" applied from the SPH benchmark policy. BSCI213 row also accepts BSCI223 (allied-health substitution). The shared SPHL pieces (SPHL100, BSCI170, BSCI180/171) were confirmed against the catalog table.
+
+## feat/agnr-plsc (2026-09-28): major Plant Sciences (3 specializations); plans constructed
+- Plant Sciences: no official four-year plan (catalog links only the college roadmap page), so all three sample plans are constructed (official: false) from the catalog table.
+- Plant Sciences: department page has no course requirements; encoded from the catalog alone. Several catalog rows lost their course titles in the source (PLSC202, PLSC361, PLSC403, PLSC456, PLSC474), encoded by id.
+- Plant Sciences: the "C-" rule is encoded per requirement on the all-areas courses except ENGL101 and ENGL393; specialization courses carry no grade rule. Urban Forestry suggested electives are advisory and not encoded.
