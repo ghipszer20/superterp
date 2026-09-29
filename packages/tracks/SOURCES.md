@@ -38,6 +38,15 @@ Fetched on 2026-09-25 (US Eastern; the servers' `Date` header reads 2026-09-26 U
 
 `https://hpao.umd.edu/` does not exist (DNS lookup failed); HPAO lives at `prehealth.umd.edu`.
 
+## Accreditor and professional-body sources (new tracks, batch A)
+
+From `docs/project/new-tracks-research.md` (2026-09-29, read through a summarizing fetch tool; nothing here is signed off by the owner). UMD course codes there were checked against `academiccatalog.umd.edu/undergraduate/approved-courses/<prefix>/` on 2026-09-29.
+
+| What | URL | What it says | Date / edition |
+|---|---|---|---|
+| ASHA: 2020 SLP Certification Standards | https://www.asha.org/certification/2020-slp-certification-standards/ | Standard I: a master's, doctoral or other post-baccalaureate degree; graduate program of at least 36 semester credit hours. Standard IV-A prerequisite areas, no credit minimums: biological sciences; chemistry or physics; social/behavioral sciences; statistics (research methodology does not count). No exam or GPA stated; programs set GRE and GPA; many apply through CSDCAS. Used by `tracks/pre-slp.ts`. | 2020 standards |
+| AATA: Becoming an art therapist | https://arttherapy.org/becoming-art-therapist/ | A master's degree is necessary for entry-level practice; foundational studio art (drawing, painting, digital art, clay or sculpture) and prerequisite courses in developmental and abnormal psychology. Standards are set by ACATE/CAAHEP. The figures about 18 semester hours of studio art and about 12 of psychology are **(S)**: search summaries of program sources, not AATA text. Used by `tracks/pre-art-therapy.ts`. | Current site |
+
 ## Non-UMD sources (for the science GPA)
 
 | What | URL | What it says |

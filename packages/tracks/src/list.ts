@@ -8,11 +8,13 @@ import { preAnesthesiologistAssistant } from "../tracks/pre-anesthesiologist-ass
 import { preDental } from "../tracks/pre-dental.ts";
 import { preDentalHygiene } from "../tracks/pre-dental-hygiene.ts";
 import { preGeneticCounseling } from "../tracks/pre-genetic-counseling.ts";
+import { preArtTherapy } from "../tracks/pre-art-therapy.ts";
 import { preLaw } from "../tracks/pre-law.ts";
 import { preMed } from "../tracks/pre-med.ts";
 import { preNursing } from "../tracks/pre-nursing.ts";
 import { preOptometry } from "../tracks/pre-optometry.ts";
 import { preOt } from "../tracks/pre-ot.ts";
+import { preSlp } from "../tracks/pre-slp.ts";
 import { prePa } from "../tracks/pre-pa.ts";
 import { prePharmacy } from "../tracks/pre-pharmacy.ts";
 import { prePodiatry } from "../tracks/pre-podiatry.ts";
@@ -37,6 +39,8 @@ export const TRACKS: Track[] = [
   preAnesthesiologistAssistant,
   preDentalHygiene,
   preGeneticCounseling,
+  preSlp,
+  preArtTherapy,
 ];
 
 /**

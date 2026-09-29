@@ -14,17 +14,17 @@ function num(id: string): SetMember {
 }
 
 /** All of the courses in one of the options, e.g. [["CHEM131", "CHEM132"], ["CHEM135", "CHEM136"]]. */
-function sets(id: string, name: string, options: string[][]): Requirement {
+export function sets(id: string, name: string, options: string[][]): Requirement {
   return { kind: "sets", id, name, options: options.map((o) => o.map(num)) };
 }
 
 /** One course from a list. */
-function oneOf(id: string, name: string, courses: string[]): Requirement {
+export function oneOf(id: string, name: string, courses: string[]): Requirement {
   return sets(id, name, courses.map((c) => [c]));
 }
 
-type Extra = Omit<TrackCategory, "requirement" | "source">;
-const cat = (requirement: Requirement, source: string, extra: Extra = {}): TrackCategory => ({ requirement, source, ...extra });
+export type Extra = Omit<TrackCategory, "requirement" | "source">;
+export const cat = (requirement: Requirement, source: string, extra: Extra = {}): TrackCategory => ({ requirement, source, ...extra });
 
 // --- Chemistry -------------------------------------------------------------------------------
 // UMD's general chemistry is split around organic chemistry: CHEM131/132 (Chemistry I and lab)

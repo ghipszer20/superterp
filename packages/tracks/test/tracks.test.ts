@@ -52,6 +52,8 @@ const EXPECTED = [
   "pre-anesthesiologist-assistant",
   "pre-dental-hygiene",
   "pre-genetic-counseling",
+  "pre-slp",
+  "pre-art-therapy",
 ];
 
 describe("track definitions", () => {
@@ -61,10 +63,10 @@ describe("track definitions", () => {
 
   // Owner ruling (Tracks, 2026-09-27): pre-law ignores science GPA (BCPM) -- only health tracks
   // show it. Flagged per track (`usesScienceGpa`), not by a hard-coded id check in the UI.
-  it("flags science GPA (BCPM) for health tracks only, not pre-law", () => {
-    const preLaw = TRACKS.find((t) => t.id === "pre-law")!;
-    expect(preLaw.usesScienceGpa).not.toBe(true);
-    for (const track of TRACKS.filter((t) => t.id !== "pre-law")) {
+  it("flags science GPA (BCPM) for health tracks only, not pre-law or pre-art-therapy", () => {
+    const noScienceGpa = ["pre-law", "pre-art-therapy"];
+    for (const id of noScienceGpa) expect(TRACKS.find((t) => t.id === id)!.usesScienceGpa, id).not.toBe(true);
+    for (const track of TRACKS.filter((t) => !noScienceGpa.includes(t.id))) {
       expect(track.usesScienceGpa, track.id).toBe(true);
     }
   });
