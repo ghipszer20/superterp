@@ -1,6 +1,6 @@
 // iCalendar (RFC 5545) export of a set of sections. Pure: (term, sections) -> string.
 
-import type { Meeting, Section } from "@superterp/course-data/soc";
+import type { Meeting, Section } from "@superterp/course-data/schedules";
 import { termDates } from "./term-dates";
 
 const DAY_INDEX: Record<string, number> = { Su: 0, M: 1, Tu: 2, W: 3, Th: 4, F: 5, Sa: 6 };

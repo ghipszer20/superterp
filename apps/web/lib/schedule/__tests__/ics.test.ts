@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { Section } from "@superterp/course-data/soc";
+import type { Section } from "@superterp/course-data/schedules";
 import { buildIcs, escapeText, foldLine } from "../ics";
 import { termDates } from "../term-dates";
 
@@ -82,7 +82,9 @@ describe("buildIcs", () => {
   });
 
   it("does not exclude break days on other weekdays", () => {
-    expect(ics([sec({}, [mtg({ days: ["F"] })])])).not.toContain("EXDATE");
+    const out = ics([sec({}, [mtg({ days: ["Tu"] })])]);
+    expect(out.match(/EXDATE/g)).toHaveLength(1); // only Fall Break Tuesday, not Labor Day or Thanksgiving
+    expect(out).toContain("EXDATE;TZID=America/New_York:20261013T093000");
   });
 
   it("skips online/TBA meetings (start null)", () => {
