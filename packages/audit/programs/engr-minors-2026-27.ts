@@ -139,6 +139,7 @@ export const engrMinorQuantum: Program = {
   source:
     "UMD Academic Catalog 2026-27, Quantum Science and Engineering Minor; ece.umd.edu/undergraduate/degrees/minor-quantum-science-and-engineering (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
@@ -146,7 +147,8 @@ export const engrMinorQuantum: Program = {
     "Union of lists: the catalog lists ENMA434 as an Introduction to Quantum option (the department page omits it) and ENEE489 (489C, 489W) as electives; the department page names ENEE435 (formerly 489C), ENEE439G, ENEE469Q and ENEE489W. Encoded as the union of both, keeping ENEE489C for students who took it under the old number.",
     "'Another course from the Core or Laboratory categories' may replace the elective (both sources); encoded by letting the elective slot accept any Core or Lab course as well (a course still counts once, so the student needs a second, different course).",
     "Cross-listed courses (PHYS467/ENEE492, PHYS457/CMSC457) are encoded by each id; the catalog writes 'PHYS/CMSC457'.",
-    "Not encoded (manual): minimum 2.0 GPA in minor courses; the recommended Math -> Intro -> Core -> Lab sequence; admission requirements (MATH141 with B- or higher, cumulative 3.0 GPA at UMD, 30 credits not counting AP/IB, applying at least a year before graduation).",
+    "Program GPA 2.0 encoded as minGpa.",
+    "Not encoded (manual): the recommended Math -> Intro -> Core -> Lab sequence; admission requirements (MATH141 with B- or higher, cumulative 3.0 GPA at UMD, 30 credits not counting AP/IB, applying at least a year before graduation).",
     "Eligibility restriction (manual, flag): students in the Computer Science major Quantum Information specialization (0701G) may not enroll in this minor.",
   ],
   requirements: [

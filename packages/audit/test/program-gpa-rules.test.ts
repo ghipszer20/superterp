@@ -82,6 +82,10 @@ import { mathMajorTraditional } from "../programs/math-major-2026-27.ts";
 import { mathMajorApplied } from "../programs/math-major-applied-2026-27.ts";
 import { mathMinor, mathMinorActuarial, statisticsMinor } from "../programs/math-minors-2026-27.ts";
 import { rasMinor } from "../programs/ras-minor-2026-27.ts";
+import { aeroMajorAeronautical } from "../programs/aero-major-aeronautical-2026-27.ts";
+import { aeroMajorAstronautical } from "../programs/aero-major-astronautical-2026-27.ts";
+import { biocompMajor } from "../programs/biocomp-major-2026-27.ts";
+import { engrMinorQuantum } from "../programs/engr-minors-2026-27.ts";
 
 const programs = [
   amstMajor, arabMinor, arthMajor, arthMinor, arttMajorAdvancedSpecialization, arttMajorGraphicDesign,
@@ -242,6 +246,21 @@ describe("program GPA rules (CMNS)", () => {
         ["math-minor-actuarial", 2.0],
         ["stat-minor", 2.0],
         ["ras-minor", 2.0],
+      ].sort(),
+    );
+  });
+});
+
+const engrPrograms = [aeroMajorAeronautical, aeroMajorAstronautical, biocompMajor, engrMinorQuantum];
+
+describe("program GPA rules (ENGR)", () => {
+  it("encodes the stated graduation GPA per program", () => {
+    expect(engrPrograms.map((p) => [p.id, p.minGpa]).sort()).toEqual(
+      [
+        ["aero-major-aeronautical", 2.0],
+        ["aero-major-astronautical", 2.0],
+        ["biocomp-major", 2.0],
+        ["engr-minor-quantum-science-engineering", 2.0],
       ].sort(),
     );
   });
