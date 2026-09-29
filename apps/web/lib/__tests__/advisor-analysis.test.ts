@@ -108,8 +108,8 @@ describe("runAnalysis", () => {
     const aaas = a.audits.find((x) => x.program.id === "aaas-major-general")!;
     expect(aaas.gpa?.id).toBe("program-gpa");
     expect(aaas.total).toBe(aaas.program.requirements.length + 1);
-    const math = await runAnalysis({ plan: { ...plan, programs: ["math-major-applied"] }, catalog, priorCourses: prior.courses });
-    const m = math.audits.find((x) => x.program.id === "math-major-applied")!;
+    const math = await runAnalysis({ plan: { ...plan, programs: ["phys-major"] }, catalog, priorCourses: prior.courses });
+    const m = math.audits.find((x) => x.program.id === "phys-major")!;
     expect(m.gpa).toBeNull();
     expect(m.total).toBe(m.program.requirements.length);
   });
