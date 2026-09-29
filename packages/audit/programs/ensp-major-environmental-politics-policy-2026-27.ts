@@ -18,7 +18,7 @@ export const enspMajorEnvironmentalPoliticsPolicy: Program = {
   reviewNotes: [
     ...enspCommonReviewNotes,
     "Official four-year plan (agnr.umd.edu PDF) transcribed; placeholders filled with real catalog courses (each fill is in the sample plan's notes). The plan's Restricted Elective, Techniques & Methods and similar unnamed slots are left out of the sample plan because they are not encoded.",
-    "OPEN SLOT: Restricted Electives (6 courses) (18 credits) names no courses or department in the catalog (only 'See ENSP website for list of approved electives', no web access); not encoded, so the audit cannot check it.",
+    "Open slot 'restricted-electives-pol' (openSlot requirement): restricted electives, 18 credits; the catalog only says 'See ENSP website for list of approved electives' (no list available to us), so the student confirms it with their advisor.",
     "ENSP330 is required directly and is also a Core Applied Science and Policy option (footnote 3 forbids double-counting it); the plan fills a Restricted Elective with ENSP340 for the Core.",
     "'GVPT course of choice, 200/300/400-level with advisor approval' is encoded as any GVPT course numbered 200-499 (advisor approval not encodable), different from the GVPT courses required by name.",
   ],
@@ -32,6 +32,7 @@ export const enspMajorEnvironmentalPoliticsPolicy: Program = {
     { kind: "course", id: "gvpt417-pol", name: "Seminar in Advanced Topics in Environmental Policy Analysis (GVPT417)", options: ["GVPT417"] },
     { kind: "course", id: "ensp330-pol", name: "Introduction to Environmental Law (ENSP330)", options: ["ENSP330"] },
     { kind: "choose", id: "gvpt-choice-pol", name: "GVPT course of choice (200-400 level)", count: 1, from: { departments: ["GVPT"], minNumber: 200, maxNumber: 499 } },
+    { kind: "openSlot", id: "restricted-electives-pol", name: "Restricted electives", credits: 18, note: "6 courses from the approved list on the ENSP website." },
   ],
 };
 

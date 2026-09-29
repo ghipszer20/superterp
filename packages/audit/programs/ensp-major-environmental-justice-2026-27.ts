@@ -18,7 +18,7 @@ export const enspMajorEnvironmentalJustice: Program = {
   reviewNotes: [
     ...enspCommonReviewNotes,
     "No official four-year plan was gathered for this concentration; the sample plan is CONSTRUCTED from the catalog rows (docs/project/owner-review.md flags this).",
-    "OPEN SLOT: Restricted Electives (12 credits) names no courses or department in the catalog (only 'See ENSP website for list of approved electives', no web access); not encoded, so the audit cannot check it.",
+    "Open slot 'restricted-electives-ej' (openSlot requirement): restricted electives, 12 credits; the catalog only says 'See ENSP website for list of approved electives' (no list available to us), so the student confirms it with their advisor.",
     "ENSP330 and ENSP370 are required directly and are also Core Applied Science and Policy options (footnote 3: not double-counted); the sample plan uses ENSP340 for the Core.",
   ],
   requirements: [
@@ -35,6 +35,7 @@ export const enspMajorEnvironmentalJustice: Program = {
     { kind: "course", id: "mieh331-ej", name: "The Built Environment, Sustainability, and Public Health (MIEH331)", options: ["MIEH331"] },
     { kind: "course", id: "sphl100-ej", name: "Foundations of Public Health (SPHL100)", options: ["SPHL100"] },
     { kind: "course", id: "ursp250-ej", name: "The Sustainable City (URSP250)", options: ["URSP250"] },
+    { kind: "openSlot", id: "restricted-electives-ej", name: "Restricted electives", credits: 12, note: "Approved list on the ensp website." },
   ],
 };
 

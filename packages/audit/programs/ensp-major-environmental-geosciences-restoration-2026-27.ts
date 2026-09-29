@@ -18,7 +18,7 @@ export const enspMajorEnvironmentalGeosciences: Program = {
   reviewNotes: [
     ...enspCommonReviewNotes,
     "Official four-year plan (agnr.umd.edu PDF) transcribed; placeholders filled with real catalog courses (each fill is in the sample plan's notes). The plan's Restricted Elective, Techniques & Methods and similar unnamed slots are left out of the sample plan because they are not encoded.",
-    "OPEN SLOT: Areas of Depth (at least 5 classes; 6 credits from each of two Areas or 9 credits in one Area) (15 credits) names no courses or department in the catalog (only 'See ENSP website for list of approved electives', no web access); not encoded, so the audit cannot check it.",
+    "Open slot 'areas-of-depth-egr' (openSlot requirement): areas of depth, 15 credits; the catalog only says 'See ENSP website for list of approved electives' (no list available to us), so the student confirms it with their advisor.",
     "The official plan lacks a fourth Core group (its Year 1 box says 'ENSP Econ'); the sample plan fills a FREE ELECTIVE with AREC240.",
   ],
   requirements: [
@@ -31,6 +31,7 @@ export const enspMajorEnvironmentalGeosciences: Program = {
     { kind: "choose", id: "hydro-egr", name: "Groundwater or Watershed and Wetland Hydrology (GEOL451 or GEOL452)", count: 1, from: { courses: ["GEOL451", "GEOL452"] } },
     { kind: "course", id: "geol453-egr", name: "Ecosystem Restoration (GEOL453)", options: ["GEOL453"] },
     { kind: "course", id: "ensp386-egr", name: "Internship (ENSP386)", options: ["ENSP386"] },
+    { kind: "openSlot", id: "areas-of-depth-egr", name: "Areas of depth", credits: 15, note: "At least 5 classes: 6 credits from each of two Areas or 9 credits in one Area; approved list on the ENSP website." },
   ],
 };
 
