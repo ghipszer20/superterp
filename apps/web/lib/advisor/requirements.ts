@@ -1,7 +1,7 @@
 // What would satisfy an unmet Requirement (a Gap), in words, with example courses. Used by the
 // audit view, which loads with the solver, so importing @superterp/audit here is fine.
 
-import { earnsCredit, matchesFilter, type Requirement, type RequirementResult, type SetMember, type StudentCourse } from "@superterp/audit";
+import { earnsCredit, inArea, matchesFilter, type Area, type Requirement, type RequirementResult, type SetMember, type StudentCourse } from "@superterp/audit";
 import { filterText, listing } from "./words";
 
 export { filterText, genEdName, prerequisiteText } from "./words";
@@ -50,10 +50,10 @@ export function describeGap(req: Requirement, result: RequirementResult, ctx: Ga
     }
     case "distribution": {
       const n = Math.max(1, req.count - result.assigned.length);
-      const used = (area: { courses: string[] }) => area.courses.filter((id) => result.assigned.includes(id)).length;
+      const used = (area: Area) => result.assigned.filter((id) => inArea(area, { id })).length;
       const open = req.areas.filter((a) => used(a) < req.maxPerArea).sort((a, b) => used(a) - used(b));
       const inCatalog = new Set(ctx.catalog.map((c) => c.id));
-      const lists = open.map((a) => a.courses.filter((id) => !have.has(id) && inCatalog.has(id)));
+      const lists = open.map((a) => (a.courses ?? []).filter((id) => !have.has(id) && inCatalog.has(id)));
       const suggestions: string[] = [];
       for (let i = 0; suggestions.length < MAX_SUGGESTIONS && lists.some((l) => l.length > i); i++) {
         for (const l of lists) if (l[i] && suggestions.length < MAX_SUGGESTIONS) suggestions.push(l[i]!);

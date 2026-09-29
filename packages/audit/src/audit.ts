@@ -19,7 +19,8 @@ export type CourseFilter = {
   anyCourse?: boolean;
 };
 
-export type Area = { name: string; courses: string[] };
+/** A distribution area: a course list, a course filter (a department, a level range), or both. */
+export type Area = { name: string; courses?: string[]; from?: CourseFilter };
 
 /** One member of a course set: a specific course, or `count` courses matching a filter ("two 400-level AOSC courses"). */
 export type SetMember = string | { count: number; from: CourseFilter };
@@ -146,7 +147,7 @@ export type StudentCourse = {
 function requirementCourseIds(req: RequirementRule): string[] {
   if (req.kind === "course") return req.options;
   if (req.kind === "choose") return [...(req.from.courses ?? []), ...(req.alternatives?.flat() ?? [])];
-  if (req.kind === "distribution") return req.areas.flatMap((a) => a.courses);
+  if (req.kind === "distribution") return req.areas.flatMap((a) => a.courses ?? []);
   if (req.kind === "concentration") return [];
   return req.options.flat().flatMap((m) => (typeof m === "string" ? [m] : (m.from.courses ?? [])));
 }
@@ -216,6 +217,11 @@ export function matchesFilter(filter: CourseFilter, course: Pick<StudentCourse, 
   return n >= (filter.minNumber ?? 0) && n <= (filter.maxNumber ?? 999);
 }
 
+/** Whether a course belongs to a distribution area: it is in the area's list or matches its filter. */
+export function inArea(area: Area, course: Pick<StudentCourse, "id" | "genEd">): boolean {
+  return (area.courses?.includes(course.id) ?? false) || (area.from ? matchesFilter(area.from, course) : false);
+}
+
 /** How many courses completing a set takes. */
 const setSize = (option: SetMember[]) => option.reduce((t, m) => t + (typeof m === "string" ? 1 : m.count), 0);
 
@@ -274,7 +280,7 @@ function pairsFor(req: Requirement, p: number, r: number, course: StudentCourse,
     );
   }
   return req.areas.flatMap((area, a) =>
-    area.courses.includes(course.id)
+    inArea(area, course)
       ? [{ p, c, r, area: a, department: null, name: `${base}_${a}`, weight: 1 }]
       : [],
   );
