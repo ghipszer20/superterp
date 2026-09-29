@@ -3,7 +3,7 @@
 // Each program with a sample plan (sample-plans/<program-id>.json) gets both checks from
 // test/sample-plans.test.ts; nothing else to write per program.
 
-import { auditProgram, inArea, slotKey, type AuditOptions, type Program, type StudentCourse } from "@superterp/audit";
+import { auditProgram, inArea, PROGRAM_GPA_ID, slotKey, type AuditOptions, type Program, type StudentCourse } from "@superterp/audit";
 
 /** A program's sample plan, as published (placeholders like "Math 4**" filled in `notes`). */
 export type SamplePlan = {
@@ -117,7 +117,7 @@ export async function validateSamplePlan(program: Program, plan: SamplePlan): Pr
   const mutants: Mutant[] = [];
   for (const r of result.requirements) {
     // An Open Slot holds no courses, so there's nothing to drop or replace.
-    if (r.status !== "satisfied" || slots.has(r.id)) continue;
+    if (r.status !== "satisfied" || slots.has(r.id) || r.id === PROGRAM_GPA_ID) continue;
     for (const kind of ["drop", "replace"] as const) mutants.push(await mutate(program, courses, r.id, kind));
     const spreadMutant = await spread(program, courses, r.id);
     if (spreadMutant) mutants.push(spreadMutant);
