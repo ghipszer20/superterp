@@ -538,3 +538,7 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Technical electives are encoded as one credit `choose` over each concentration's blocks (the catalog says any combination may be taken). "ENSP330 or GVPT273" is not an alternatives group because GVPT273 is also listed alone in Wildlife and Habitats.
 - Soil and Watershed Science: ENST411's credits are not given; 4 assumed from the "at least 13 credits" total. Credits for ENST301/302/303/309 are not given either.
 - The WPIT (wetlands) and Soil Certification Exam footnotes are advising notes, not encoded. The 2.0 major GPA and 120-credit total are manual.
+## `feat/sphl-glob` (2026-09-28): major Global Health (`glob-major`, SPHL); plan constructed, `official: false`
+- Global Health: no term-by-term plan is published (SPH page has only benchmarks) and sph.umd.edu/gbhl-ug returned 404; encoded from the catalog, plan constructed.
+- Global Health: OPEN SLOTs (not encoded, no course list in the sources): world language 6-12 credits, one advisor-approved experiential learning course (3 credits), and 12 credits of Global Health Options. Approved lists are on sph.umd.edu/gbhl-bs.
+- Global Health: no course grade minimum stated in the source; program-level "C-" applied from the SPH benchmark policy. BSCI213 row also accepts BSCI223 (allied-health substitution). The shared SPHL pieces (SPHL100, BSCI170, BSCI180/171) were confirmed against the catalog table.
