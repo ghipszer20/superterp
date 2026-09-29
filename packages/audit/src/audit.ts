@@ -32,6 +32,13 @@ export type Requirement = RequirementRule & {
   overlay?: boolean;
   /** Lowest grade a completed course needs for this requirement only, e.g. Academic Writing's "C-". */
   minGrade?: string;
+  /**
+   * Lowest credit-weighted GPA (UMD 4.0 scale) over the completed letter-graded courses assigned
+   * to this requirement, e.g. the CS Upper Level Concentration's 1.7. Below it with nothing
+   * planned for the requirement, a satisfied requirement drops to partial; with planned courses
+   * assigned it is only flagged at risk. The solver prefers higher-graded courses (a tie-break).
+   */
+  minGpa?: number;
 };
 
 export type RequirementRule =
@@ -161,6 +168,13 @@ export function programCourseIds(program: Program): string[] {
 // UMD letter grades, lowest to highest.
 const GRADE_ORDER = ["F", "D-", "D", "D+", "C-", "C", "C+", "B-", "B", "B+", "A-", "A", "A+"];
 const gradeRank = (g: string) => GRADE_ORDER.indexOf(g.trim().toUpperCase());
+const GRADE_POINTS = [0, 0.7, 1, 1.3, 1.7, 2, 2.3, 2.7, 3, 3.3, 3.7, 4, 4];
+
+/** Grade points on UMD's 4.0 scale (A+ = 4.0), or undefined for a non-letter grade (P, S, W...). */
+export function gradePoints(grade: string | undefined): number | undefined {
+  const rank = grade === undefined ? -1 : gradeRank(grade);
+  return rank < 0 ? undefined : GRADE_POINTS[rank];
+}
 
 /**
  * A completed course graded F or W earns no credit (UMD grading; owner ruling: a course may be
@@ -189,6 +203,10 @@ export type RequirementResult = {
   status: "satisfied" | "partial" | "missing";
   /** Courses the Assignment put toward this requirement. */
   assigned: string[];
+  /** Only with a minGpa and at least one graded course assigned: the GPA of those completed courses. */
+  gpa?: { value: number; min: number; atRisk?: boolean };
+  /** Completed courses that would count toward this requirement if not for their grade. */
+  belowMinimum?: { course: string; grade: string; minGrade: string }[];
 };
 
 export type AuditResult = {
@@ -278,6 +296,20 @@ function pairsFor(req: Requirement, p: number, r: number, course: StudentCourse,
       ? [{ p, c, r, area: a, department: null, name: `${base}_${a}`, weight: 1 }]
       : [],
   );
+}
+
+/** Completed courses that would pair with the requirement but for the program's or requirement's minimum grade. */
+function belowMinimumFor(program: Program, req: Requirement, p: number, r: number, courses: StudentCourse[], assigned: Pair[]) {
+  const found: NonNullable<RequirementResult["belowMinimum"]> = [];
+  courses.forEach((course, c) => {
+    if (course.status !== "completed" || !course.grade || !earnsCredit(course) || found.some((f) => f.course === course.id)) return;
+    const minGrade = [program.minGrade, req.minGrade].find((m) => m !== undefined && !meetsGrade(course, m));
+    if (!minGrade) return;
+    // A retake that does count (same course, passing grade) makes the failed attempt irrelevant.
+    if (assigned.some((q) => courses[q.c]!.id === course.id)) return;
+    if (pairsFor(req, p, r, course, c).length > 0) found.push({ course: course.id, grade: course.grade.trim().toUpperCase(), minGrade });
+  });
+  return found;
 }
 
 const sum = (ps: Pair[]) => ps.map((q) => `${q.weight} ${q.name}`).join(" + ");
@@ -517,13 +549,22 @@ export async function auditStudent(
   const objective = [
     ...programs.flatMap((pr, p) => pr.requirements.map((_, r) => `1000 ${y(p, r)}`)),
     ...pairs.map((q) => `1 ${q.name}`),
+    // A tie-break far below one course-use: among equally good assignments, prefer higher grades for a minGpa requirement.
+    ...pairs.flatMap((q) => {
+      const points = programs[q.p]!.requirements[q.r]!.minGpa === undefined ? undefined : gradePoints(courses[q.c]!.grade);
+      return points === undefined || courses[q.c]!.status !== "completed" ? [] : [`${(points * 0.01).toFixed(4)} ${q.name}`];
+    }),
     // Below a requirement (1000), above any course-use tie-break: never give up a requirement for it.
     ...uniqueGoal.map((u) => `500 ${u}`),
   ].join(" + ");
   const model = ["Maximize", ` obj: ${objective || "0 y_0_0"}`, "Subject To", ...constraints, "Binary", ` ${binaries.join(" ")}`, "End"];
 
   const highs = await getSolver();
-  const solution = highs.solve(model.join("\n"), { output_flag: false });
+  const solution = highs.solve(model.join("\n"), {
+    output_flag: false,
+    // The grade tie-break is far below the default relative gap on the 1000-point requirement terms.
+    ...(programs.some((pr) => pr.requirements.some((req) => req.minGpa !== undefined)) ? { mip_rel_gap: 0 } : {}),
+  });
   if (solution.Status !== "Optimal") throw new Error(`Audit solver ended with status ${solution.Status}`);
   const chosen = (name: string) => (solution.Columns[name]?.Primal ?? 0) > 0.5;
 
@@ -533,12 +574,28 @@ export async function auditStudent(
       const assigned = pairs.filter((q) => q.p === p && q.r === r && chosen(q.name));
       assigned.forEach((q) => used.add(q.c));
       const progress = assigned.reduce((t, q) => t + q.weight, 0);
-      const satisfied = chosen(y(p, r)) && progress >= need(req);
+      let satisfied = chosen(y(p, r)) && progress >= need(req);
+      let gpa: RequirementResult["gpa"];
+      if (req.minGpa !== undefined) {
+        const graded = assigned.filter((q) => courses[q.c]!.status === "completed" && gradePoints(courses[q.c]!.grade) !== undefined);
+        const credits = graded.reduce((t, q) => t + courses[q.c]!.credits, 0);
+        if (credits > 0) {
+          const points = graded.reduce((t, q) => t + gradePoints(courses[q.c]!.grade)! * courses[q.c]!.credits, 0);
+          gpa = { value: Math.round((points / credits) * 100) / 100, min: req.minGpa };
+          if (gpa.value < req.minGpa) {
+            if (assigned.some((q) => courses[q.c]!.status === "planned")) gpa.atRisk = true;
+            else satisfied = false;
+          }
+        }
+      }
+      const belowMinimum = belowMinimumFor(program, req, p, r, courses, assigned);
       return {
         id: req.id,
         name: req.name,
         status: satisfied ? "satisfied" : progress > 0 ? "partial" : "missing",
         assigned: assigned.map((q) => courses[q.c]!.id),
+        ...(gpa ? { gpa } : {}),
+        ...(belowMinimum.length > 0 ? { belowMinimum } : {}),
       };
     });
     return { requirements, unused: courses.filter((_, c) => !used.has(c)).map((c) => c.id) };
