@@ -501,3 +501,8 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Kinesiology: the catalog states a "C-" only for option-course prerequisites (KNES core) and the SPH benchmarks; a program-level "C-" is applied to every requirement. Please confirm it is not too strict.
 - Kinesiology: the option list (15 credits) and activity list (4 courses) live in a handbook not in the sources; encoded as KNES 300-499 and 100-199. Plan uses KNES101-103 as unconfirmed placeholders for real activity courses. "MATH/STAT Statistics Course" is encoded as any STAT or MATH course 100-499.
 - SPHL shared core: only SPHL100, BSCI170, BSCI180/171, BSCI201/202 and EPIB301 are shared; statistics is not. Global Health and Public Health Practice catalog tables were not read, so their uses are marked "confirm" in the file header.
+
+## feat/agnr-plsc (2026-09-28): major Plant Sciences (3 specializations); plans constructed
+- Plant Sciences: no official four-year plan (catalog links only the college roadmap page), so all three sample plans are constructed (official: false) from the catalog table.
+- Plant Sciences: department page has no course requirements; encoded from the catalog alone. Several catalog rows lost their course titles in the source (PLSC202, PLSC361, PLSC403, PLSC456, PLSC474), encoded by id.
+- Plant Sciences: the "C-" rule is encoded per requirement on the all-areas courses except ENGL101 and ENGL393; specialization courses carry no grade rule. Urban Forestry suggested electives are advisory and not encoded.
