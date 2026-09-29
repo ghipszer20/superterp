@@ -523,6 +523,12 @@
   font-weight: 600;
 }
 
+.keyDates {
+  margin: 0;
+  color: var(--text-2);
+  font: var(--t-foot);
+}
+
 .inlineIssue {
   padding: 6px 8px;
   border-radius: var(--r-sm);

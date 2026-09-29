@@ -5,6 +5,7 @@ import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { parseAcademicCalendar } from "../src/calendar.ts";
 import { parseDiningMenu, type DiningMenu } from "../src/dining.ts";
 import { parseLibCalHours, type LibCalHoursFeed } from "../src/libraries.ts";
 import { parseRecWellTab } from "../src/recwell.ts";
@@ -43,6 +44,7 @@ function fakeSources(fail: Partial<Record<keyof CampusSources, boolean>> = {}) {
     recWellAreas: 0,
     shuttleGtfs: 0,
     buildings: 0,
+    academicCalendar: 0,
   };
   const roomsHtml = fixture("rooms-stem.html");
   const run = <T,>(name: keyof CampusSources, value: () => T): Promise<T> => {
@@ -63,6 +65,7 @@ function fakeSources(fail: Partial<Record<keyof CampusSources, boolean>> = {}) {
     libraryHours: () => run("libraryHours", () => parseLibCalHours(JSON.parse(fixture("libcal-hours.json")) as LibCalHoursFeed)),
     recWellAreas: () => run("recWellAreas", () => parseRecWellTab(fixture("recwell-eppley.csv"), "indoor")),
     shuttleGtfs: () => run("shuttleGtfs", () => ({ ...GTFS })),
+    academicCalendar: () => run("academicCalendar", () => parseAcademicCalendar(fixture("academic-calendar-447.html"), "Spring 2027")),
     buildings: () =>
       run("buildings", () => [
         { id: "432", name: "Brendan Iribe Center", lat: 38.9891607057353, lon: -76.9364438800535 },
@@ -97,6 +100,7 @@ describe("buildSnapshots", () => {
       "recwell/areas",
       "buses/gtfs",
       "buildings",
+      "calendar/academic",
     ];
     for (const key of keys) {
       expect((await store.get(key))?.updatedAt, key).toBe("2026-09-25T13:00:00.000Z");
@@ -279,6 +283,7 @@ describe("pruneSnapshots", () => {
       snapshotKeys.recWellAreas,
       snapshotKeys.shuttleGtfs,
       snapshotKeys.buildings,
+      snapshotKeys.academicCalendar,
     ];
     for (const key of undated) await store.put(key, { updatedAt: NOW.toISOString(), data: 1 });
 
@@ -297,5 +302,15 @@ describe("pruneSnapshots", () => {
 
     await pruneSnapshots(store, NOW, { keepDays: 1 });
     expect(await store.get(key)).toBeNull();
+  });
+});
+
+describe("academic calendar snapshot", () => {
+  it("keeps the last good calendar when the registrar is down", async () => {
+    await buildSnapshots(store, NOW, fakeSources().sources);
+    const before = await store.get("calendar/academic");
+    const report = await buildSnapshots(store, minutesAfter(60), fakeSources({ academicCalendar: true }).sources);
+    expect(report.results.find((r) => r.key === "calendar/academic")).toMatchObject({ ok: false });
+    expect(await store.get("calendar/academic")).toEqual(before);
   });
 });
