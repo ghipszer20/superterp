@@ -20,6 +20,7 @@ Owner request: split the next steps into **5 sessions that run in parallel**.
   - union any doc conflicts;
   - regenerate the registry and course sets if programs changed;
   - run the **full local verification** (tests, typecheck, lint and build), because CI can't cover it;
+  - if the push then loses a race: merge the new `origin/feat/course-data` (already verified by its session), regenerate the registry if programs changed, run the programs tests and typecheck, and push at once (added 2026-09-29, since a full run takes about 10 minutes and nearly always loses the race);
   - push `HEAD:feat/course-data`, retrying on races;
   - run `graphify update .`.
 - **Builders:**
