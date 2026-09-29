@@ -673,3 +673,10 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Footnote 2 (General Chemistry II lab may substitute for CHEM272) has no course code, so it is a manual note; CHEM272 stays required.
 - Advanced-program 11-credit pool uses the Shady Grove list (special topics by base course number, statistics one-course cap and section topics not enforced); no lab minimum is stated, so College Park's at-least-one-lab rule is dropped.
 - The 22 elective credits, the 96-credit total and General Education are not encoded. Sample plan is constructed, not official.
+
+## `feat/minors-fixes` (2026-09-29): minors rulings applied (unions, C- floors, Project Management either-set, advisor notes)
+- Resolved by ruling: MATH340/MATH341 accepted on `math-minor`, `math-minor-actuarial`, `stat-minor`; ASTR498 accepted on `astr-minor`; ENCE420 was already accepted on the Construction Project Management minor (note updated).
+- Resolved by ruling: C- floor on `aosc-minor-climate-fluency` and `cmsc-minor-computational-finance` (`arts-leadership-minor` already had it; note updated).
+- Resolved by ruling: `project-management-minor` accepts either the catalog set or the department set.
+- Resolved by ruling: advisor-confirmation notes on `socy-minor-demography` (SOCY201 equivalent), `rotc-minor-naval-science` (cultural courses) and the `aosc-minor-*` outside electives.
+- Still manual: the astronomy minor's open-ended "department-approved alternative course".

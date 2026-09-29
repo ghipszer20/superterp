@@ -80,7 +80,7 @@ export const rotcMinorNavalScience: Program = {
     "MANUAL: the NAVY courses are Naval ROTC courses; NROTC enrollment or commissioning conditions are an eligibility gate, not encoded.",
     "The catalog states no minimum grade, GPA, residency or sharing cap for this minor; none is set.",
     "Naval Science Core is '18 credits selected from' the ten NAVY courses; encoded as an 18-credit choose over those ten courses.",
-    "Cultural/Regional Studies: the catalog says 'courses are not limited to the examples listed' (one course on cultural and/or regional studies of developing nations) but names no department or range. Encoded as the five listed examples (GEOG130, HIST120, HIST284, HIST285, PERS251), which is narrower than the source; other approved courses are a manual check.",
+    "Cultural/Regional Studies: the catalog says 'courses are not limited to the examples listed' (one course on cultural and/or regional studies of developing nations) but names no department or range. Encoded as the five listed examples (GEOG130, HIST120, HIST284, HIST285, PERS251), which is narrower than the source; other approved courses are a manual check: the student confirms any other cultural/regional course with their advisor.",
     "National Security/Military History is one course from HIST224 or HIST225.",
   ],
   requirements: [

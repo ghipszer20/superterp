@@ -20,7 +20,7 @@ export const artsLeadershipMinor: Program = {
     "'ARHU386 (ARHU386A or approved equivalent Professional Internship)': only ARHU386 is accepted; other internship codes need advisor approval (manual).",
     "BMGT355 is listed without a title in the catalog; encoded as printed.",
     "Last slot ('3 credits from one prefix at 300/400 level with approval of a minor advisor') accepts every 300-499 course in the nine listed prefixes (ARHU, ARTH, ARTT, BMGT, DANC, MUSC, PLCY, TDPS, THET); the advisor approval and the 'one prefix' wording are manual.",
-    "The catalog gives no minimum grade, GPA or sharing cap; C- is the standard minor grade floor used across these minors and no sharing cap is set. Flag: confirm the C- floor.",
+    "C- per owner ruling (rulings.md). The catalog gives no GPA or sharing cap; none is set.",
   ],
   requirements: [
     { kind: "course", id: "arts-orgs", name: "Arts Organizations and Audiences in the United States", options: ["ARHU240", "TDPS240"] },

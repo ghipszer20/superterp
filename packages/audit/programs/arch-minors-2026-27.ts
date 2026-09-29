@@ -42,7 +42,7 @@ export const archConstructionProjectManagementMinor: Program = {
   verified: false,
   reviewNotes: [
     "Cross-listed: the ARCH and ENGR (Civil and Environmental Engineering) catalog pages carry the same requirement table (verified by diff: only the title suffix and URL differ). Encoded once under college ARCH.",
-    "Department-vs-catalog difference: the department page's elective list is ARCH430, ARCH462, ARCH467, ENCE421, ENCE422 and omits ENCE420 (Selection and Utilization of Construction Equipment), which the catalog lists. Kept ENCE420 (accepting the larger catalog list, never narrower); the owner may decide.",
+    "Department-vs-catalog difference: the department page's elective list is ARCH430, ARCH462, ARCH467, ENCE421, ENCE422 and omits ENCE420 (Selection and Utilization of Construction Equipment), which the catalog lists. Kept ENCE420 (owner ruling in rulings.md: accept both lists).",
     "Both sources agree on the core: ENCE325, ENCE423, ENCE424, and ENCE426 or ARCH472.",
     "Not encoded: minimum 2.0 GPA for the minor (catalog); a construction-industry internship (both sources; the department page says summer after junior year); eligibility from the department page (Clark School of Engineering or School of Architecture, Planning & Preservation students with at least 60 credits and a 3.0 GPA or higher).",
     "Neither source states a sharing cap, so none is set. The separate Project Management Minor (project-management-minor) is a different minor.",
