@@ -11,12 +11,13 @@
     "The two Restricted Electives blocks (inside and outside Economics) are not in this plan because they are not encoded in the Program (see reviewNotes and docs/project/owner-review.md): the catalog names no course, department or area-specific course for either block."
   ],
   "terms": [
-    { "term": "Freshman Fall", "courses": ["ENSP101", "MATH140", "CHEM131"] },
+    { "term": "Freshman Fall", "courses": ["ENSP101", "MATH140", "CHEM131", "UNIV100"] },
     { "term": "Freshman Spring", "courses": ["ENSP102", "CHEM132", "ECON201"] },
     { "term": "Sophomore Fall", "courses": ["BSCI160", "BSCI180", "ENST200"] },
     { "term": "Sophomore Spring", "courses": ["GEOG130", "ECON230", "MATH121"] },
     { "term": "Junior Fall", "courses": ["AREC326", "GEOG306"] },
     { "term": "Junior Spring", "courses": ["ENSP330"] },
     { "term": "Senior Fall", "courses": ["ENSP400"] }
-  ]
+  ],
+  "credits": { "UNIV100": 1 }
 }

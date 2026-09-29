@@ -2,13 +2,12 @@
 // Sheets. ExcelJS is lazy-loaded: it must never be imported at top level.
 
 import { academicYears } from "../terms";
-import { CATEGORY_COLORS, CATEGORY_LABELS, type Category, type Takeout } from "./takeout";
+import { CATEGORY_COLORS, CATEGORY_LABELS, type Category, type PlanExport } from "./plan-export";
 
 const fillOf = (hex: string) => ({ type: "pattern" as const, pattern: "solid" as const, fgColor: { argb: `FF${hex}` } });
-const STATUS_TEXT = { satisfied: "Satisfied", partial: "Partial", missing: "Missing" } as const;
 
 /** Returns the workbook bytes. */
-export async function buildXlsx(t: Takeout): Promise<ArrayBuffer> {
+export async function buildXlsx(t: PlanExport): Promise<ArrayBuffer> {
   const ExcelJS = (await import("exceljs")).default;
   const wb = new ExcelJS.Workbook();
   wb.creator = "SuperTerp";
@@ -16,9 +15,7 @@ export async function buildXlsx(t: Takeout): Promise<ArrayBuffer> {
 
   const bold = { bold: true };
   ws.addRow(["SuperTerp 4-year plan"]).font = { bold: true, size: 14 };
-  ws.addRow(["Programs", t.header.programs.join(", ")]);
-  ws.addRow(["Catalog year", t.header.catalogYear]);
-  ws.addRow(["Expected graduation", t.header.expectedGraduation]);
+  if (t.header.name) ws.addRow(["Name", t.header.name]);
   ws.addRow(["Date", t.header.date]);
   ws.addRow([t.header.disclaimer]).font = { italic: true };
   ws.addRow([]);
@@ -54,15 +51,6 @@ export async function buildXlsx(t: Takeout): Promise<ArrayBuffer> {
     cell.fill = fillOf(CATEGORY_COLORS[cat]);
   }
   ws.columns.forEach((c) => (c.width = 26));
-
-  const au = wb.addWorksheet("Audit");
-  au.addRow(["Program", "Requirement", "Status", "Courses that would satisfy", "Catalog rule"]).font = bold;
-  for (const p of t.audit) {
-    for (const r of p.requirements) {
-      au.addRow([p.program, r.name, STATUS_TEXT[r.status], r.satisfiedBy.join(", "), r.citation]);
-    }
-  }
-  au.columns = [{ width: 28 }, { width: 40 }, { width: 12 }, { width: 40 }, { width: 50 }];
 
   return (await wb.xlsx.writeBuffer()) as ArrayBuffer;
 }

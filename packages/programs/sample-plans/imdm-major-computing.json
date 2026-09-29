@@ -11,7 +11,7 @@
   ],
   "credits": { "MATH140": 4, "MATH141": 4, "CMSC131": 4, "CMSC132": 4, "CMSC216": 4, "CMSC250": 4 },
   "terms": [
-    { "term": "Year 1 Fall", "courses": ["MATH140", "CMSC131", "ARTT100", "IMDM101"] },
+    { "term": "Year 1 Fall", "courses": ["MATH140", "CMSC131", "ARTT100", "IMDM101", "ARHU158"] },
     { "term": "Year 1 Spring", "courses": ["MATH141", "CMSC132", "ARTT200", "IMDM150"] },
     { "term": "Year 2 Fall", "courses": ["CMSC216", "ENGL143", "ARTT255", "IMDM227"] },
     { "term": "Year 2 Spring", "courses": ["CMSC250", "ARTT370", "IMDM290"] },

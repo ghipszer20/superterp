@@ -109,6 +109,7 @@ export function parsePlan(raw: string | null): AdvisorPlan | null {
   const c = college(data.college);
   if (c) plan.college = c;
   if (DEGREE_CHOICES.includes(data.degreeMode as DegreeChoice)) plan.degreeMode = data.degreeMode as DegreeChoice;
+  if (data.entry === "transfer") plan.entry = "transfer";
   const t = tracks(data.tracks);
   if (t) plan.tracks = t;
   const et = examTerms(data.examTerms);

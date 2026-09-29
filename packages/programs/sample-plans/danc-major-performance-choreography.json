@@ -10,14 +10,9 @@
     "Capstone filled with DANC485 (Seminar in Dance), the catalog's second named option (DANC488 is the other).",
     "Performance and Choreography electives (5 credits) filled with DANC466 and DANC371 (6 credits, both from the area's own named list), since no explicit sub-5-credit combination is given in the source."
   ],
-  "credits": {
-    "DANC179": 2,
-    "TDPS479": 1,
-    "DANC138": 2,
-    "DANC228": 2
-  },
+  "credits": { "DANC179": 2, "TDPS479": 1, "DANC138": 2, "DANC228": 2 },
   "terms": [
-    { "term": "Year 1 Fall", "courses": ["DANC109", "DANC218", "TDPS201"] },
+    { "term": "Year 1 Fall", "courses": ["DANC109", "DANC218", "TDPS201", "ARHU158"] },
     { "term": "Year 1 Spring", "courses": ["DANC179", "DANC219", "DANC138"] },
     { "term": "Year 2 Fall", "courses": ["DANC207", "DANC318", "DANC228"] },
     { "term": "Year 2 Spring", "courses": ["DANC304", "DANC319", "TDPS479"] },

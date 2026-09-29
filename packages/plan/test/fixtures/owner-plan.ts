@@ -13,7 +13,7 @@ export function ownerPlan(): Plan {
   return {
     priorCredit: AP_CALCULUS_BC,
     terms: [
-      { name: "Fall 2026", courses: planned("CMSC131", "MATH240", "ENGL101", "UNIV100", "HIST200") },
+      { name: "Fall 2026", courses: planned("CMSC131", "MATH240", "ENGL101", "CMNS100", "HIST200") },
       { name: "Spring 2027", courses: planned("CMSC132", "MATH241", "COMM107", "PHIL140", "CHEM131", "CHEM132") },
       { name: "Fall 2027", courses: planned("CMSC216", "CMSC250", "MATH246", "MATH310") },
       { name: "Spring 2028", courses: planned("CMSC330", "CMSC351", "STAT410", "ARTH200", "AAAS100") },

@@ -8,7 +8,7 @@
     "Major electives (18 credits) filled with INST311, INST352, INST366, INST401, INST402 and INST405 from the catalog's approved list. INST380 chosen over PLCY380."
   ],
   "terms": [
-    { "term": "Freshman Fall", "courses": ["INST104", "INST126", "IDEA258"] },
+    { "term": "Freshman Fall", "courses": ["INST104", "INST126", "IDEA258", "INST101"] },
     { "term": "Freshman Spring", "courses": ["INST201", "SOCY105", "STAT100"] },
     { "term": "Sophomore Fall", "courses": ["INST204", "INST311", "INST352"] },
     { "term": "Sophomore Spring", "courses": ["INST367", "INST380"] },
@@ -16,5 +16,6 @@
     { "term": "Junior Spring", "courses": ["INST454", "INST402", "INST405"] },
     { "term": "Senior Fall", "courses": ["INST466"] },
     { "term": "Senior Spring", "courses": ["INST491"] }
-  ]
+  ],
+  "credits": { "INST101": 1 }
 }

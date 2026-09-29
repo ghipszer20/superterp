@@ -56,6 +56,11 @@ export type AdvisorPlan = {
    */
   college?: College;
   /**
+   * How the student entered UMD. Omitted means a freshman; "transfer" skips the college intro
+   * course requirement (packages/audit/programs/college-intro.ts).
+   */
+  entry?: "freshman" | "transfer";
+  /**
    * With two majors: one degree with both (a double major) or two degrees (a double degree),
    * chosen in setup. Omitted means a double major (see degreeModeOf in programs.ts).
    */
@@ -102,6 +107,8 @@ export type PlanAction =
       college?: College;
       /** Omitted: leaves the plan's existing choice untouched. */
       degreeMode?: DegreeChoice;
+      /** Omitted: leaves the plan's existing entry untouched; "freshman" clears it. */
+      entry?: "freshman" | "transfer";
     }
   | { type: "add-course"; term: string; id: string; credits?: number }
   | { type: "remove-course"; term: string; id: string }
@@ -210,6 +217,8 @@ export function planReducer(plan: AdvisorPlan, action: PlanAction): AdvisorPlan 
       const next: AdvisorPlan = { ...plan, programs: action.programs, catalogYear: action.catalogYear };
       if (action.college !== undefined) next.college = action.college;
       if (action.degreeMode !== undefined) next.degreeMode = action.degreeMode;
+      if (action.entry === "transfer") next.entry = "transfer";
+      else if (action.entry === "freshman") delete next.entry;
       if (action.tracks.length) next.tracks = action.tracks;
       else delete next.tracks;
       if (Object.keys(action.examTerms).length) next.examTerms = action.examTerms;

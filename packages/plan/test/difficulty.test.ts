@@ -67,7 +67,7 @@ describe("termDifficulty", () => {
     expect(p.sentence).toMatch(/strong STAT record makes STAT410 easier for you/);
   });
   it("raises the score for a weak record", () => {
-    const term = [course("CMSC420", 2.8), course("CMSC451", 2.8), course("MATH241", 2.8)];
+    const term = [course("CMSC420", 2.8, 4), course("CMSC451", 2.8, 4), course("MATH241", 2.8, 4), course("STAT400", 2.8, 4)];
     const weak: DifficultyHistory[] = [
       { id: "CMSC131", grade: "C", courseAverageGpa: 3.2 },
       { id: "CMSC132", grade: "C-", courseAverageGpa: 3.0 },
@@ -78,16 +78,16 @@ describe("termDifficulty", () => {
   it("ignores history entries with a non-letter grade", () => {
     expect(termDifficulty(mid(3), [{ id: "MATH140", grade: "P", courseAverageGpa: 3 }]).personalized).toBe(false);
   });
-  it("scores upper-level courses with ordinary real averages as mid-low, not hard", () => {
-    // Real PlanetTerp stats: CMSC420 3.197 (5.3% W+F), CMSC421 3.292 (5.0%), ENGL101 3.4.
+  it("scores upper-level courses with ordinary real averages as low, not hard", () => {
+    // Real PlanetTerp stats: CMSC420 3.197 (5.3% W+F), CMSC421 3.292 (5.0%), ENGL101 3.4. Only 9 credits.
     const term = [
       course("CMSC420", 3.197, 3, { wRate: 0.038, fRate: 0.015 }),
       course("CMSC421", 3.292, 3, { wRate: 0.036, fRate: 0.014 }),
       course("ENGL101", 3.4),
     ];
     const r = termDifficulty(term, []);
-    expect(r.score).toBeGreaterThanOrEqual(3);
-    expect(r.score).toBeLessThanOrEqual(5);
+    expect(r.score).toBeGreaterThanOrEqual(2);
+    expect(r.score).toBeLessThanOrEqual(4);
     expect(r.sentence).not.toMatch(/harder|hardest|toughest/i);
   });
   it("does not max out a typical 15-credit term with two hard courses", () => {
@@ -107,6 +107,40 @@ describe("termDifficulty", () => {
       { id: "ENGL100", grade: "A", courseAverageGpa: 3.0 },
     ];
     expect(termDifficulty(term, hist).sentence).not.toMatch(/MATH140 easier|ENGL101 easier/);
+  });
+  describe("workload calibration (real PlanetTerp stats)", () => {
+    const r = (id: string, gpa: number, w: number, f: number, cr: number) => course(id, gpa, cr, { wRate: w, fRate: f });
+    const MATH141 = r("MATH141", 2.55, 0.084, 0.075, 4);
+    const CMSC131 = r("CMSC131", 2.75, 0.098, 0.089, 4);
+    const ENGL101 = r("ENGL101", 3.34, 0.036, 0.031, 3);
+    const COMM107 = r("COMM107", 3.55, 0.028, 0.012, 3);
+    const CMSC216 = r("CMSC216", 2.73, 0.067, 0.051, 4);
+    const CMSC250 = r("CMSC250", 2.82, 0.043, 0.033, 4);
+    const MATH241 = r("MATH241", 2.87, 0.059, 0.046, 4);
+    const CMSC420 = r("CMSC420", 3.2, 0.039, 0.015, 3);
+    const CMSC421 = r("CMSC421", 3.29, 0.037, 0.014, 3);
+    const freshman = [MATH141, CMSC131, ENGL101, COMM107];
+
+    it("scores two hard courses alone well below 8 and calls the load light", () => {
+      const t = termDifficulty([MATH141, CMSC131], []);
+      expect(t.score).toBeLessThanOrEqual(4);
+      expect(t.sentence).toMatch(/8-credit load is light/);
+    });
+    it("scores the full freshman term about 5", () => {
+      const t = termDifficulty(freshman, []);
+      expect(t.score).toBeGreaterThanOrEqual(4);
+      expect(t.score).toBeLessThanOrEqual(6);
+    });
+    it("scores a 20-credit hard term at 8 or more", () => {
+      expect(termDifficulty([CMSC216, CMSC250, MATH241, MATH141, CMSC131], []).score).toBeGreaterThanOrEqual(8);
+    });
+    it("scores 12 credits of easy courses at 3 or less", () => {
+      const easy = Array.from({ length: 4 }, (_, i) => r(`ART${100 + i}`, 3.8, 0.01, 0.005, 3));
+      expect(termDifficulty(easy, []).score).toBeLessThanOrEqual(3);
+    });
+    it("scores a light upper-level term below the freshman term", () => {
+      expect(termDifficulty([CMSC420, CMSC421, ENGL101], []).score).toBeLessThan(termDifficulty(freshman, []).score);
+    });
   });
   it("clamps to 1-10", () => {
     const brutal = Array.from({ length: 8 }, (_, i) => course(`CMSC4${i}0`, 1.5, 4, { wRate: 0.4, fRate: 0.3 }));

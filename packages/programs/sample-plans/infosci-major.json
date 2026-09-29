@@ -8,7 +8,7 @@
     "Major electives (15 credits of INST) filled with INST364, INST366, INST414, INST447 and INST462, real INST courses not otherwise required."
   ],
   "terms": [
-    { "term": "Freshman Fall", "courses": ["MATH115", "INST126", "INST201"] },
+    { "term": "Freshman Fall", "courses": ["MATH115", "INST126", "INST201", "INST101"] },
     { "term": "Freshman Spring", "courses": ["PSYC100", "STAT100"] },
     { "term": "Sophomore Fall", "courses": ["INST311", "INST314", "INST326"] },
     { "term": "Sophomore Spring", "courses": ["INST327", "INST352"] },
@@ -16,5 +16,6 @@
     { "term": "Junior Spring", "courses": ["INST362", "INST366", "INST414"] },
     { "term": "Senior Fall", "courses": ["INST447", "INST462"] },
     { "term": "Senior Spring", "courses": ["INST490"] }
-  ]
+  ],
+  "credits": { "INST101": 1 }
 }
