@@ -144,7 +144,15 @@ export type ProgramMeta = {
   defaultTrack?: true;
   /** The catalog page and the department's own page (the department page wins where they differ). */
   sources: { catalog?: string; department?: string };
+  /** Eligibility gate (owner ruling, docs/project/rulings.md "Minors"): the majors this minor or
+   * certificate is closed to; the Advisor blocks it for students who have declared one.
+   * `programs` holds program ids (one track, e.g. "bsci-major-phnb") or major keys (every track,
+   * e.g. "astr"); `colleges` means every major that college owns; `reason` is one plain sentence
+   * from the source. */
+  notOpenTo?: NotOpenTo;
 };
+
+export type NotOpenTo = { programs?: string[]; colleges?: ProgramMeta["college"][]; reason: string };
 
 export type StudentCourse = {
   id: string;

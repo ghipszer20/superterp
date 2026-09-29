@@ -131,7 +131,7 @@ export const bmgtMinorGeneralBusiness: Program = {
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
     ...SHARED_NOTES,
-    "ELIGIBILITY: department page says 'the general business minor is not open to declared business majors'. Not enforced (no declared-major concept; engine feature queued); flagged for the owner.",
+    "ELIGIBILITY: department page says 'the general business minor is not open to declared business majors'. Enforced via notOpenTo (every major the Smith School (BMGT) owns).",
     "Substitutes from the catalog: BMGT340 for BMIN345, BMGT350 for BMIN355, BMGT364 for BMIN395, BMGT372 for BMIN375, BMGT301 for BMIN305, and BMGT220 plus BMGT221 together for BMIN210. Department page's transfer table (BMGT210/345/355/395 foundation courses and their Smith alternatives) is a transfer-credit rule, not encoded. Department page: GPA 2.0 to declare, at least 12 UMD credits and two semesters remaining are admission rules; F-1/J-1 online-course limit is manual.",
     "Department page says the minor has 'four required courses and one approved elective' -- matches the catalog.",
   ],
@@ -155,4 +155,5 @@ export const bmgtMinorGeneralBusinessMeta: ProgramMeta = {
   college: "BMGT",
   short: "General Business Minor",
   sources: { catalog: `${CATALOG}/general-business-minor/`, department: DEPT },
+  notOpenTo: { colleges: ["BMGT"], reason: "Not open to declared business majors." },
 };
