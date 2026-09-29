@@ -15,6 +15,7 @@ import { AuditView } from "./AuditView";
 import { CourseSheet } from "./CourseSheet";
 import { useCatalog, type CatalogState } from "./data";
 import { DisclaimerGate } from "./DisclaimerGate";
+import { ExportMenu } from "./ExportMenu";
 import { ImportTranscriptView } from "./ImportTranscriptView";
 import type { AcademicEvent } from "@superterp/campus-data";
 import { PlanView } from "./PlanView";
@@ -95,6 +96,7 @@ function Planner({ plan, catalog, signedBy, signedAt, calendar }: { plan: Adviso
         <button type="button" className={styles.ghostButton} onClick={() => setEditing(true)}>
           Edit setup
         </button>
+        <ExportMenu plan={plan} analysis={analysis} issues={checked?.issues ?? []} prior={prior} catalog={ready?.catalog ?? null} />
       </header>
 
       <div className={styles.tabs}>

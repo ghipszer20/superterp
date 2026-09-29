@@ -1,0 +1,91 @@
+"use client";
+
+import { useState } from "react";
+import type { AnalysisState } from "./AdvisorApp";
+import type { PlanCatalog } from "@superterp/plan/catalog";
+import type { PlanIssue } from "@superterp/plan/check";
+import type { AdvisorPlan } from "@/lib/advisor/plan-state";
+import type { PriorCreditResult } from "@/lib/advisor/prior-credit";
+import { PROGRAM_OPTIONS } from "@/lib/advisor/programs";
+import styles from "./advisor.module.css";
+
+function download(blob: Blob, name: string) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 10_000);
+}
+
+/** Export button + menu: plan spreadsheet and advising takeout. The renderers (ExcelJS, jsPDF)
+ * load only when a download is clicked. */
+export function ExportMenu({ plan, analysis, issues, prior, catalog }: { plan: AdvisorPlan; analysis: AnalysisState; issues: PlanIssue[]; prior: PriorCreditResult; catalog: PlanCatalog | null }) {
+  const [open, setOpen] = useState(false);
+  const [hideGrades, setHideGrades] = useState(false);
+  const [busy, setBusy] = useState<"xlsx" | "pdf" | null>(null);
+  const [error, setError] = useState(false);
+  const result = analysis.result;
+  const ready = analysis.status === "ready" && result !== null && catalog !== null;
+
+  async function run(kind: "xlsx" | "pdf") {
+    if (!result || !catalog) return;
+    setBusy(kind);
+    setError(false);
+    try {
+      const today = new Date();
+      const { buildTakeout } = await import("@/lib/advisor/export/takeout");
+      const takeout = buildTakeout({
+        plan,
+        analysis: result,
+        issues,
+        prior,
+        catalog,
+        programKinds: Object.fromEntries(PROGRAM_OPTIONS.map((p) => [p.id, p.kind])),
+        today,
+        hideGrades,
+      });
+      const day = takeout.header.date;
+      if (kind === "xlsx") {
+        const { buildXlsx } = await import("@/lib/advisor/export/xlsx");
+        const bytes = await buildXlsx(takeout);
+        download(new Blob([bytes], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" }), `superterp-plan-${day}.xlsx`);
+      } else {
+        const { buildPdf } = await import("@/lib/advisor/export/pdf");
+        const doc = await buildPdf(takeout);
+        download(doc.output("blob"), `superterp-advising-takeout-${day}.pdf`);
+      }
+      setOpen(false);
+    } catch {
+      setError(true);
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  return (
+    <div className={styles.exportWrap}>
+      <button type="button" className={styles.ghostButton} aria-haspopup="menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
+        Export
+      </button>
+      {open ? (
+        <div className={styles.exportMenu} role="menu" aria-label="Export">
+          {!ready ? <p className={styles.exportHint}>Available once the audit finishes.</p> : null}
+          <button type="button" role="menuitem" className={styles.ghostButton} disabled={!ready || busy !== null} onClick={() => run("xlsx")}>
+            {busy === "xlsx" ? "Preparing…" : "Plan spreadsheet (.xlsx)"}
+          </button>
+          <button type="button" role="menuitem" className={styles.primaryButton} disabled={!ready || busy !== null} onClick={() => run("pdf")}>
+            {busy === "pdf" ? "Preparing…" : "Advising takeout (PDF)"}
+          </button>
+          <label className={styles.exportSwitch}>
+            <input type="checkbox" role="switch" checked={hideGrades} onChange={(e) => setHideGrades(e.target.checked)} />
+            Hide grades
+          </label>
+          {error ? <p className={styles.exportHint}>Export failed. Try again.</p> : null}
+        </div>
+      ) : null}
+    </div>
+  );
+}
