@@ -20,6 +20,9 @@ const WF_WEIGHT = 10; // W+F share (0-1) times this is added, so 20% W+F adds 2
 const NEUTRAL_BY_LEVEL = [3.5, 4.5, 5.5, 6.5]; // 1xx-4xx courses with no data
 const SHRINK_K = 2; // department record weight n / (n + K)
 const PERSONAL_SCALE = 2.5; // difficulty points per grade point above/below course averages
+const PERSONAL_CAP = 1.5; // largest personal adjustment to one course, either way
+const PERSONAL_NAME_MIN = 5; // a course must be at least this hard to be named in the personal clause
+const LIGHT_DISCOUNT = 0.5; // load adjustment below LIGHT_CREDITS; 12-15 credits adds nothing
 const PERSONAL_MIN = 0.25; // smallest record gap (grade points) worth mentioning
 const HARD_COURSE = 7; // difficulty at or above this counts as "hard"
 const HEAVY_CREDITS = 17;
@@ -73,14 +76,20 @@ export function termDifficulty(courses: DifficultyCourse[], history: DifficultyH
 
   const rows = courses.map((c) => {
     const delta = gap(c.id);
-    return { id: c.id, credits: c.credits, delta, difficulty: clamp(courseDifficulty(c) - delta * PERSONAL_SCALE, 0, 10) };
+    const adjust = clamp(delta * PERSONAL_SCALE, -PERSONAL_CAP, PERSONAL_CAP);
+    return { id: c.id, credits: c.credits, delta, difficulty: clamp(courseDifficulty(c) - adjust, 0, 10) };
   });
   const credits = rows.reduce((t, r) => t + r.credits, 0);
   const weight = (r: { credits: number }) => (credits > 0 ? r.credits : 1);
   const totalWeight = rows.reduce((t, r) => t + weight(r), 0);
-  const mean = totalWeight > 0 ? rows.reduce((t, r) => t + r.difficulty * weight(r), 0) / totalWeight : 0;
-  const hard = rows.filter((r) => r.difficulty >= HARD_COURSE).sort((a, b) => b.difficulty - a.difficulty);
-  const load = clamp((credits - LOAD_BASE) * LOAD_PER_CREDIT, -1.5, 3);
+  const weighted = totalWeight > 0 ? rows.reduce((t, r) => t + r.difficulty * weight(r), 0) / totalWeight : 0;
+  // Easy courses must not average hard ones away: blend with the hardest one or two.
+  const byHardness = [...rows].sort((a, b) => b.difficulty - a.difficulty);
+  const top = byHardness.slice(0, 2);
+  const topMean = top.length ? top.reduce((t, r) => t + r.difficulty, 0) / top.length : 0;
+  const mean = 0.5 * weighted + 0.5 * topMean;
+  const hard = byHardness.filter((r) => r.difficulty >= HARD_COURSE);
+  const load = credits > LOAD_BASE ? Math.min(3, (credits - LOAD_BASE) * LOAD_PER_CREDIT) : credits > 0 && credits < LIGHT_CREDITS ? -LIGHT_DISCOUNT : 0;
   const bump = hard.length >= 2 ? Math.min(1.5, 0.5 * (hard.length - 1)) : 0;
   const score = Math.round(clamp(mean + load + bump, 1, 10));
 
@@ -90,12 +99,15 @@ export function termDifficulty(courses: DifficultyCourse[], history: DifficultyH
   let base: string;
   if (hard.length >= 1) {
     const ids = hard.slice(0, 2).map((r) => r.id);
-    base = ids.length === 2 ? `${list(ids)} are the hardest courses here` : `${ids[0]} is the toughest course here`;
+    base = ids.length === 2 ? `${list(ids)} are two of the harder courses here` : `${ids[0]} is the toughest course here`;
   } else if (heavy) base = `A heavy ${credits}-credit load`;
   else if (mean < 4) base = "Mostly lighter courses at a manageable load";
   else base = "A fairly typical mix of courses";
 
-  const strongest = personalized ? rows.reduce((best, r) => (Math.abs(r.delta) > Math.abs(best.delta) ? r : best), rows[0]!) : undefined;
+  // The personal clause only names a course worth mentioning that isn't a retake of a completed one.
+  const done = new Set(usable.map((h) => h.id));
+  const nameable = rows.filter((r) => r.difficulty >= PERSONAL_NAME_MIN && !done.has(r.id));
+  const strongest = personalized && nameable.length ? nameable.reduce((best, r) => (Math.abs(r.delta) > Math.abs(best.delta) ? r : best)) : undefined;
   let extra = "";
   if (strongest && Math.abs(strongest.delta) >= PERSONAL_MIN) {
     extra =

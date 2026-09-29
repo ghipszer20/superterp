@@ -46,7 +46,7 @@ describe("termDifficulty", () => {
     const r = termDifficulty([course("CMSC451", 2.4), course("CMSC420", 2.5), course("ART100", 3.8)], []);
     expect(r.sentence).toContain("CMSC451");
     expect(r.sentence).toContain("CMSC420");
-    expect(r.sentence).toMatch(/hardest|toughest/i);
+    expect(r.sentence).toMatch(/harder|hardest|toughest/i);
   });
   it("handles courses with no data", () => {
     const r = termDifficulty([course("CMSC412", null), course("MATH141", null)], []);
@@ -77,6 +77,25 @@ describe("termDifficulty", () => {
   });
   it("ignores history entries with a non-letter grade", () => {
     expect(termDifficulty(mid(3), [{ id: "MATH140", grade: "P", courseAverageGpa: 3 }]).personalized).toBe(false);
+  });
+  it("keeps two hard upper-level courses hard next to an easy one", () => {
+    const term = [course("CMSC420", 2.5, 3, { wRate: 0.07, fRate: 0.05 }), course("CMSC421", 2.6, 3, { wRate: 0.06, fRate: 0.04 }), course("ENGL101", 3.4)];
+    expect(termDifficulty(term, []).score).toBeGreaterThanOrEqual(6);
+    expect(termDifficulty(term, []).sentence).toMatch(/CMSC420 and CMSC421 are two of the harder courses/);
+    const strong: DifficultyHistory[] = [
+      { id: "CMSC131", grade: "A", courseAverageGpa: 3.0 },
+      { id: "CMSC132", grade: "A", courseAverageGpa: 2.9 },
+      { id: "MATH140", grade: "A", courseAverageGpa: 2.8 },
+    ];
+    expect(termDifficulty(term, strong).score).toBeGreaterThanOrEqual(5);
+  });
+  it("does not name a repeat of a completed course or an easy course in the personal clause", () => {
+    const term = [course("MATH140", 2.0), course("ENGL101", 3.6)];
+    const hist: DifficultyHistory[] = [
+      { id: "MATH140", grade: "A", courseAverageGpa: 2.8 },
+      { id: "ENGL100", grade: "A", courseAverageGpa: 3.0 },
+    ];
+    expect(termDifficulty(term, hist).sentence).not.toMatch(/MATH140 easier|ENGL101 easier/);
   });
   it("clamps to 1-10", () => {
     const brutal = Array.from({ length: 8 }, (_, i) => course(`CMSC4${i}0`, 1.5, 4, { wRate: 0.4, fRate: 0.3 }));
