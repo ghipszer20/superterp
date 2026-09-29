@@ -531,3 +531,10 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 ## `feat/sphl-fmsc` (2026-09-28): major Family Health (`fmsc-major`, SPHL); plan constructed, `official: false`
 - Family Health: no term-by-term plan is published and the SPH department page has no requirements; plan constructed from the catalog. It uses FMSC420 as an unconfirmed placeholder for the second 300-400 elective (FMSC190, FMSC290 and FMSC460 are real).
 - Family Health: "two 100-200 level" and "two 300-400 level" FMSC electives are encoded as FMSC 100-299 and 300-499 ranges; FMSC290 counts toward the economics pick-one and can also fill a lower elective when ECON200/201 is used instead. A program-level "C-" is applied, per the catalog.
+
+## `feat/agnr-enst` (2026-09-28): major Environmental Science and Technology (`enst-major-*`, 4 concentration tracks, AGNR, shared `enst-shared-2026-27.ts`); all four plans constructed, `official: false`
+- Department page (enst.umd.edu) is a homepage with no requirements; encoded from the catalog alone. No official four-year plan, so all four sample plans are constructed.
+- Default track is Ecological Technology Design (first-listed). Which three of five rows count for its Depth - Design is not specified in the catalog; any three count.
+- Technical electives are encoded as one credit `choose` over each concentration's blocks (the catalog says any combination may be taken). "ENSP330 or GVPT273" is not an alternatives group because GVPT273 is also listed alone in Wildlife and Habitats.
+- Soil and Watershed Science: ENST411's credits are not given; 4 assumed from the "at least 13 credits" total. Credits for ENST301/302/303/309 are not given either.
+- The WPIT (wetlands) and Soil Certification Exam footnotes are advising notes, not encoded. The 2.0 major GPA and 120-credit total are manual.
