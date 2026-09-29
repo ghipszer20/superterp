@@ -582,3 +582,7 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 
 ## Half 1 main session (2026-09-28): major Fermentation Science at Shady Grove (`ferm-usg-major`, USG); plan constructed, `official: false`
 - Catalog requirement table is identical to College Park's, so the program re-uses `ferm-major`'s requirements (and inherits its flags: AGST/NFSC topic rows as ranges, constructed plan). No Shady Grove department page in the sources.
+## `feat/info-tid` (2026-09-28): major Technology & Information Design (`tid-major`), INFO; plan constructed, `official: false`
+- Elective credits conflict: department page says 45-credit major with 15 elective credits (also "six additional elective" courses); catalog says 55 credits with 18 elective credits. Catalog encoded (18 credits from the 10 named courses); confirm with the advisor.
+- Elective list can grow by program-committee approval; not encodable. Department page does not list electives.
+- No term-by-term plan in the sources; plan constructed from the catalog. Benchmark semester timelines not encoded.
