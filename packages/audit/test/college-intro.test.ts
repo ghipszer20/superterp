@@ -23,6 +23,9 @@ describe("collegeIntro", () => {
   it("ARHU needs ARHU158 and SPHL needs UNIV100", async () => {
     expect(await status("ARHU", [c("UNIV100")])).not.toBe("satisfied");
     expect(await status("ARHU", [c("ARHU158")])).toBe("satisfied");
+    expect(await status("ARHU", [c("ARHU158A")])).toBe("satisfied");
+    expect(await status("ARHU", [c("ARHU158V")])).toBe("satisfied");
+    expect(await status("ARHU", [c("ARHU159")])).not.toBe("satisfied");
     expect(await status("SPHL", [c("UNIV100")])).toBe("satisfied");
   });
 
