@@ -73,6 +73,15 @@ export function ImportTranscriptView({ plan, onDone, onCancel }: { plan: Advisor
       </header>
 
       <section className={styles.panel}>
+        <h2 className={styles.panelTitle}>Why import?</h2>
+        <p className={styles.panelNote}>
+          Optional. Your past courses and grades let SuperTerp personalize its feedback on your 4-year plan and class schedule --
+          for example, how hard each upcoming semester is likely to feel for you -- and they fill in what you&apos;ve already
+          taken, so your audit starts out accurate.
+        </p>
+      </section>
+
+      <section className={styles.panel}>
         <h2 className={styles.panelTitle}>From a Testudo unofficial transcript</h2>
         <p className={styles.panelNote}>
           Everything here happens on this device -- the file is never uploaded anywhere. Upload the PDF Testudo gives you, or

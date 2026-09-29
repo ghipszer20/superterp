@@ -17,14 +17,22 @@
 
 .header {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-between;
   gap: 12px;
   margin-bottom: 16px;
 }
 
+/* Phones: the program line and title get their own row; the buttons wrap below them. */
 .headerText {
+  flex: 1 1 100%;
   min-width: 0;
+}
+
+@media (min-width: 700px) {
+  .headerText {
+    flex: 1 1 0;
+  }
 }
 
 .eyebrow {

@@ -123,3 +123,8 @@ export function labelFit(height: number, metrics: { line: number; pad: number })
   if (height >= metrics.line + metrics.pad) return "one";
   return "none";
 }
+
+/** Label lines for a block on a calendar of this size: the gallery's mini calendars show only color (owner, 2026-09-29). */
+export function blockLines(size: "mini" | "zoom" | "large", height: number, metrics: { line: number; pad: number }): "two" | "one" | "none" {
+  return size === "mini" ? "none" : labelFit(height, metrics);
+}

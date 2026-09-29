@@ -1,7 +1,7 @@
 "use client";
 
 import type { Weekday } from "@superterp/course-data/schedules";
-import { DAY_SHORT, dayBlocks, hourLabel, labelFit, pct, WEEKDAYS, type BlockInput, type TimeScale } from "@/lib/schedule/calendar";
+import { blockLines, DAY_SHORT, dayBlocks, hourLabel, pct, WEEKDAYS, type BlockInput, type TimeScale } from "@/lib/schedule/calendar";
 import type { BlockLabel } from "@/lib/schedule/block-items";
 import type { FilterState } from "@/lib/schedule/filters";
 import styles from "./calendar.module.css";
@@ -70,8 +70,7 @@ export function WeekCalendar({
               ))}
               {byDay[d].map((b) => {
                 const px = (b.height / 100) * height;
-                const fit = labelFit(px, metrics);
-                const lines = size === "mini" && fit === "two" ? "one" : fit;
+                const lines = blockLines(size, px, metrics);
                 const data = b.data!;
                 const clickable = onBlockClick && !b.ghost;
                 return (
