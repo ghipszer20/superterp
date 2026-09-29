@@ -37,9 +37,9 @@ export const globMajor: Program = {
     "Grade floor: the source does not state a course grade minimum for the major; 'C-' is applied because the SPH benchmarks require 'C-' or better. Confirm with the owner.",
     "'BSCI213 (or BSCI223 for students considering allied health, not both)' is one row accepting either course.",
     "'GVPT200 or GVPT282' is one row. If a student completes both, the other counts toward the Global Health Options (catalog footnote); Options are not encoded, so this is manual.",
-    "OPEN SLOT: 6-12 credits, two levels of one world language (no course, department or range given; the approved list and exceptions are on sph.umd.edu/gbhl-bs, not in the sources). 'At least 2 courses in the same language' is not encoded.",
-    "OPEN SLOT: 3 credits, one global health experiential learning course subject to advisor approval (internship, research, independent study, global classroom, field experience or study abroad). GBHL386 is encoded as the other experiential course (3-6 credits). Catalog footnote: the two must be different courses with prior approval.",
-    "OPEN SLOT: 12 credits, four Global Health Options courses of 3 credits (two at 100-400 level, two at 300-400 level; approved menu on sph.umd.edu/gbhl-bs, not in the sources). A single course cannot count as both an Option and Experiential Learning (manual).",
+    "Open slot 'glob-world-language' (openSlot requirement): the catalog lists 6-12 credits, two levels of one world language, but the range is not explained in the sources, so the minimum of 6 is used (a student who needs more should confirm with their advisor). The approved list and exceptions are on sph.umd.edu/gbhl-bs. 'At least 2 courses in the same language' is not encoded.",
+    "Open slot 'glob-experiential' (openSlot requirement): 3 credits, one global health experiential learning course subject to advisor approval (internship, research, independent study, global classroom, field experience or study abroad). GBHL386 is encoded as the other experiential course (3-6 credits). Catalog footnote: the two must be different courses with prior approval.",
+    "Open slot 'glob-options' (openSlot requirement): 12 credits, four Global Health Options courses of 3 credits (two at 100-400 level, two at 300-400 level; approved menu on sph.umd.edu/gbhl-bs). A single course cannot count as both an Option and Experiential Learning (manual).",
     "Math eligibility of MATH120 or higher is a prerequisite for the supporting courses (manual, not encoded). Credit ranges (77-86 total) depend on the language and experiential choices; total credits are manual.",
     "The catalog lists no term-by-term four-year plan for Global Health (it links to the SPH roadmaps page, which has only benchmarks); the sample plan is CONSTRUCTED from the catalog table. Flagged in docs/project/owner-review.md.",
   ],
@@ -77,6 +77,27 @@ export const globMajor: Program = {
     c("glob-gbhl497", "Global Health Capstone", "GBHL497"),
     // Experiential learning
     c("glob-gbhl386", "Global Health Experiential Learning", "GBHL386"),
+    {
+      kind: "openSlot",
+      id: "glob-world-language",
+      name: "World language (two levels of one language)",
+      credits: 6,
+      note: "Two levels of one world language, at least 2 courses in the same language; the catalog says 6-12 credits. Approved list and exceptions: sph.umd.edu/gbhl-bs.",
+    },
+    {
+      kind: "openSlot",
+      id: "glob-experiential",
+      name: "Global health experiential learning (advisor-approved)",
+      credits: 3,
+      note: "One experiential learning course (internship, research, independent study, global classroom, field experience or study abroad) with prior advisor approval, different from GBHL386. See sph.umd.edu/gbhl-bs.",
+    },
+    {
+      kind: "openSlot",
+      id: "glob-options",
+      name: "Global Health options",
+      credits: 12,
+      note: "Four 3-credit Global Health Options courses: two at 100-400 level and two at 300-400 level. Approved menu: sph.umd.edu/gbhl-bs.",
+    },
   ],
 };
 
