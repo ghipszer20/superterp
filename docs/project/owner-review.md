@@ -574,6 +574,11 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 - Information Science: department page says "upper-level" electives, catalog says "INST-coded"; encoded the wider catalog rule, not narrowed.
 - Information Science: no official four-year plan in the sources; sample plan constructed (official: false).
 
+## `feat/usg-infosci` (2026-09-28): major Information Science at Shady Grove; plan constructed
+- Information Science (Shady Grove): the Shady Grove catalog names INST301 for Introduction to Information Science where College Park has INST201; encoded as written. Confirm INST301 is a real code.
+- Information Science (Shady Grove): Professional Writing (3 credits) and open electives (12 credits) name no courses; OPEN SLOTs, not encoded. "At least 45 of 60 credits from the College of Information", benchmarks-before-program ordering and GPA/probation are manual.
+- Information Science (Shady Grove): MATH115 "or higher" encoded as any MATH course numbered 115+. No official plan in the sources; sample plan constructed (official: false), benchmarks in years 1-2.
+
 ## `feat/sphl-ph` (2026-09-28): majors Public Health Practice (`php-major`), Public Health Science (`phsc-major`), SPHL; plans constructed, `official: false`
 - Public Health Practice: 12 credits of health electives come from a "pre-approved list" not in the sources; OPEN SLOT, not encoded. Optional areas of specialization (Special Populations, Health Communication, Health Risk Behavior) not encoded (no course lists in the sources).
 - Public Health Practice: no term-by-term plan in the sources (SPH page has benchmarks only); plan constructed. Elective fills HLTH300, HLTH325, HLTH377, HLTH424 are unconfirmed placeholders.
@@ -582,6 +587,7 @@ Items for the owner to review or decide, listed in progress reports. Remove an i
 
 ## Half 1 main session (2026-09-28): major Fermentation Science at Shady Grove (`ferm-usg-major`, USG); plan constructed, `official: false`
 - Catalog requirement table is identical to College Park's, so the program re-uses `ferm-major`'s requirements (and inherits its flags: AGST/NFSC topic rows as ranges, constructed plan). No Shady Grove department page in the sources.
+
 ## `feat/info-tid` (2026-09-28): major Technology & Information Design (`tid-major`), INFO; plan constructed, `official: false`
 - Elective credits conflict: department page says 45-credit major with 15 elective credits (also "six additional elective" courses); catalog says 55 credits with 18 elective credits. Catalog encoded (18 credits from the 10 named courses); confirm with the advisor.
 - Elective list can grow by program-committee approval; not encodable. Department page does not list electives.
