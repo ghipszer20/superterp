@@ -21,6 +21,7 @@ export const rasMinor: Program = {
     "UMD Academic Catalog 2026–27, Robotics and Autonomous Systems Minor (CMSC); " +
     "Maryland Robotics Center, https://robotics.umd.edu/minor (fetched 2026-09-27)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ courses: 2 }],
   reviewNotes: [
@@ -31,7 +32,7 @@ export const rasMinor: Program = {
     "Prerequisites (MATH246 or ENES221, plus one of CMSC131/ENME202/ENAE202/ENEE150) are a declaration gate, not minor requirements themselves; not encoded (matches how the CS minor's gateway courses are kept separate from its core requirements) -- except that unlike the CS minor's gateway, these aren't restated as the minor's own Requirements here since the catalog cleanly separates 'Prerequisites' from 'Requirements' (no ambiguity to resolve).",
     "'Students may waive the supporting math course if they complete it for another minor or major' isn't encoded (the requirement itself still needs a qualifying course on the transcript; the waiver is an advising/paperwork exception).",
     "'Open only to students majoring in Aerospace Engineering, Electrical and Computer Engineering, Mechanical Engineering, or Computer Science' [manual]: an eligibility-by-major gate, not enforced (no declared-major concept in the engine).",
-    "Department page's declaration gates (sophomore standing / 30 credits, 3.0 GPA, at least four semesters remaining before graduation) [manual]: admission conditions, not modeled. The department page separately states 'a minimum of 2.0 GPA and C- or better in all courses required for the minor' [manual]: the C- floor is the Program's minGrade; the 2.0 minor GPA is a manual check (no GPA-average concept).",
+    "Department page's declaration gates (sophomore standing / 30 credits, 3.0 GPA, at least four semesters remaining before graduation) [manual]: admission conditions, not modeled. The department page separately states 'a minimum of 2.0 GPA and C- or better in all courses required for the minor' [manual]: the C- floor is the Program's minGrade; Program GPA 2.0 encoded as minGpa.",
     "'A maximum of 2 courses may be used to satisfy the requirements of both a major and a minor' -> maxSharedWith: [{ courses: 2 }].",
   ],
   requirements: [

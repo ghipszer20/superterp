@@ -70,6 +70,19 @@ import { psycMajorBa } from "../programs/psyc-major-ba-2026-27.ts";
 import { socyMajor } from "../programs/socy-major-2026-27.ts";
 import { survMinor } from "../programs/surv-minor-2026-27.ts";
 
+import { bsciMajorCebg } from "../programs/bsci-major-cebg-2026-27.ts";
+import { bsciMajorEcev } from "../programs/bsci-major-ecev-2026-27.ts";
+import { bsciMajorGenb } from "../programs/bsci-major-genb-2026-27.ts";
+import { bsciMajorMicb } from "../programs/bsci-major-micb-2026-27.ts";
+import { bsciMajorPhnb } from "../programs/bsci-major-phnb-2026-27.ts";
+import { chemMajorBa } from "../programs/chem-major-ba-2026-27.ts";
+import { chemMajorBs } from "../programs/chem-major-bs-2026-27.ts";
+import { geolMinorGeophysics, geolMinorHydrology, geolMinorSurficialGeology, paleobiologyMinor, planetarySciencesMinor } from "../programs/geol-minors-2-2026-27.ts";
+import { mathMajorTraditional } from "../programs/math-major-2026-27.ts";
+import { mathMajorApplied } from "../programs/math-major-applied-2026-27.ts";
+import { mathMinor, mathMinorActuarial, statisticsMinor } from "../programs/math-minors-2026-27.ts";
+import { rasMinor } from "../programs/ras-minor-2026-27.ts";
+
 const programs = [
   amstMajor, arabMinor, arthMajor, arthMinor, arttMajorAdvancedSpecialization, arttMajorGraphicDesign,
   arttMajorStudio, chinStudiesMinor, clasMajorHumanities, clasMajorLatin, clasMajorLatinGreek,
@@ -196,6 +209,39 @@ describe("program GPA rules (BSOS)", () => {
         ["psyc-major-ba", 1.7],
         ["socy-major", 2.0],
         ["surv-minor", 2.0],
+      ].sort(),
+    );
+  });
+});
+
+const cmnsPrograms = [
+  bsciMajorCebg, bsciMajorEcev, bsciMajorGenb, bsciMajorMicb, bsciMajorPhnb, chemMajorBa, chemMajorBs,
+  geolMinorGeophysics, geolMinorHydrology, geolMinorSurficialGeology, paleobiologyMinor, planetarySciencesMinor,
+  mathMajorTraditional, mathMajorApplied, mathMinor, mathMinorActuarial, statisticsMinor, rasMinor,
+];
+
+describe("program GPA rules (CMNS)", () => {
+  it("encodes the stated graduation GPA per program", () => {
+    expect(cmnsPrograms.map((p) => [p.id, p.minGpa]).sort()).toEqual(
+      [
+        ["bsci-major-cebg", 2.0],
+        ["bsci-major-ecev", 2.0],
+        ["bsci-major-genb", 2.0],
+        ["bsci-major-micb", 2.0],
+        ["bsci-major-phnb", 2.0],
+        ["chem-major-ba", 2.0],
+        ["chem-major-bs", 2.0],
+        ["geol-minor-geophysics", 2.0],
+        ["geol-minor-hydrology", 2.0],
+        ["geol-minor-surficial-geology", 2.0],
+        ["paleobiology-minor", 2.0],
+        ["planetary-sciences-minor", 2.0],
+        ["math-major-traditional", 2.0],
+        ["math-major-applied", 2.0],
+        ["math-minor", 2.0],
+        ["math-minor-actuarial", 2.0],
+        ["stat-minor", 2.0],
+        ["ras-minor", 2.0],
       ].sort(),
     );
   });
