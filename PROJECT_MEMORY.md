@@ -1,7 +1,7 @@
 # SuperTerp — Project Memory
 
 > Single source of truth for project context. Update this file whenever a decision changes.
-> Last updated: 2026-09-29 (3-session overtime plan in docs/project/overtime-plan-2026-09-29.md; CI disabled).
+> Last updated: 2026-09-29 (owner-notes session: UI review folder, owner fixes, new tracks).
 > Read by the main session at the start of every session (builders don't read it; CLAUDE.md), so keep it under ~20 KB (section 18).
 
 ## 1. Vision
@@ -94,10 +94,10 @@ Moved to `docs/project/legal.md`. Read it before building the disclaimer, accoun
 - **Tooling on the owner's PC:** git, gh (logged in as ghipszer20), Node 24, npm, Python 3.13 via `py` (no `python` or `python3` on PATH), no Docker (so use hosted Supabase, not local).
 
 ## 14. Current state (replace in place, never append; dated narrative goes in `docs/project/status-log.md`)
-- **Branches:** PR #1 `feat/campus-foundation` (draft); PR #2 `feat/course-data` (draft, stacked on #1) is the working branch everything merges into. No CI (disabled 2026-09-28); the full local suite was green at `83526a4` on 2026-09-28.
-- **Built** (full list in `docs/project/built.md`; all unverified by the owner unless noted): About page; Campus tab (dining, libraries, study rooms, gyms, Transport map + trip planner); Schedule builder linked to the 4-year plan; Advisor tab (disclaimer, setup, credit caps, What-if, AP/IB credit, plan grid, checks, audit, transcript import, grad courses, 14 pre-professional tracks); ~410 programs in the registry (every catalog major, minor and certificate, plus special programs). Logged skips: AI major (unpublished), Individual Studies, Global Studies (umbrella).
-- **Done (5-session run 2026-09-28/29, then the 3-session overtime run of 2026-09-29, `overtime-plan-2026-09-29.md`; detail in the status log):** program gaps; open slots (`openSlot`, ticks in `plan.confirmedSlots` as "<programId>/<reqId>"; new encodings use openSlot, not notes); filter-defined distribution areas; grades in the audit; semester difficulty (data only); `.ics`, section recommendations, share link, walk/leave-by; academic calendar, advising export, registration prep, GTFS expiry warning; minors fixes; 7 test students (`?seed=student&id=`); /terms and /privacy; program GPA (`Program.minGpa`, about 117 programs); eligibility gates (`ProgramMeta.notOpenTo`/`onlyOpenTo`, 18 minors). Full suite green at the tip; no builders running.
-- **Next:** Wave 4 (deployment) once the owner creates the Vercel and Supabase accounts; meanwhile roadmap "Known to-dos" (e.g. the student-facing "advisor may approve" note). Reuse `.claude/worktrees/merge-s1` for merges.
+- **Branches:** PRs #1 and #2 were merged into main on 2026-09-25; `feat/course-data` is the working branch (420+ commits ahead of main, no open PR). No CI; the full local suite was green at the owner-notes merge on 2026-09-29.
+- **Built** (full list in `docs/project/built.md`; all unverified by the owner unless noted): About page; Campus tab (dining, libraries, study rooms, gyms, Transport map + trip planner); Schedule builder linked to the 4-year plan; Advisor tab (disclaimer, setup, credit caps, What-if, AP/IB credit, plan grid, checks, audit, transcript import, grad courses, 14 pre-professional tracks, college intro layer, 4-year plan export PDF/Excel); ~417 programs in the registry. Logged skips: AI major (unpublished), Individual Studies, Global Studies (umbrella).
+- **Done 2026-09-29 (owner-notes session; detail in the status log):** UI review folder (`npm run ui-gallery -w @superterp/web` → gitignored `ui-review/`); workload-based semester difficulty; takeout replaced by a plain plan export; overlaps block saving (no conflict styling); color-only gallery blocks + gallery walk line; phone Advisor header; "Why import?" note; college intro courses (audit layer for CMNS/ARHU/SPHL, first fall of major plans, `entry` + transfer checkbox); new-tracks research (`docs/project/new-tracks-research.md`).
+- **Next:** new tracks, batches A (`feat/tracks-batch-a`: pre-slp, pre-art-therapy) and B (`feat/tracks-batch-b`: pre-chiropractic, pre-naturopathic, pre-mls) running; then C (cpa-maryland, actuarial-vee) and D (pre-medical-physics). Then Wave 4 (deployment) once the owner creates Vercel and Supabase accounts. Reuse `.claude/worktrees/merge-s1` for merges.
 - **Waiting on the owner:** see `docs/project/owner-review.md` (include it in every progress report; add new items there).
 - **Known to-dos:** see `docs/project/roadmap.md` "Known to-dos" (add new ones there).
 
