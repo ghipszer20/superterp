@@ -16,6 +16,7 @@ export const isrlMinor: Program = {
     "UMD Academic Catalog 2026–27, Israel Studies Minor; Jewish Studies, " +
     "https://jewishstudies.umd.edu/academic-programs/undergraduate/is-minor (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ courses: 2 }],
   reviewNotes: [
@@ -24,7 +25,7 @@ export const isrlMinor: Program = {
     "The catalog also lists ISRL448 (Seminar, sections A/B) as an elective row; it is already the required core course, and a course counts once, so it isn't repeated in the elective list.",
     "Middle East Studies slot: HIST120 or HIST491 only. Both sources say the list is not complete, other courses may be substituted with the advisor's approval, and ISRL courses can't count; the substitution is not encoded (manual).",
     "'A student may use a maximum of 6 credits (two courses) to satisfy requirements for both a major and a minor' -> maxSharedWith: [{ courses: 2 }]. The rule that courses for one minor can't count for another minor is stricter than this cap; the cap applies to any other program, and the minor-to-minor ban is manual.",
-    "Not encoded (manual): at least 9 credits at 3xx/4xx level (6 taken at UMD, including UM Study Abroad); no more than 3 credits of language below the 3xx level; up to 2 courses may be taken elsewhere with advisor approval; minor GPA of 2.0; application rules (30 credits completed, ISRL342 grade of C or higher before applying, admission before the final six credits); other courses by petition.",
+    "Not encoded (manual): at least 9 credits at 3xx/4xx level (6 taken at UMD, including UM Study Abroad); no more than 3 credits of language below the 3xx level; up to 2 courses may be taken elsewhere with advisor approval; application rules (30 credits completed, ISRL342 grade of C or higher before applying, admission before the final six credits); other courses by petition.",
   ],
   requirements: [
     { kind: "course", id: "history", name: "History of Modern Israel", options: ["ISRL342", "HIST376"] },

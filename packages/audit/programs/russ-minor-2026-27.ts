@@ -23,13 +23,14 @@ export const russMinor: Program = {
     "(https://academiccatalog.umd.edu/undergraduate/colleges-schools/arts-humanities/languages-literatures-cultures/russian-language-literature/russian-studies-minor/); " +
     "Russian program, https://russian.umd.edu/ (fetched 2026-09-28, homepage only)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Department page not checked: the fetched russian.umd.edu page is a program homepage with no minor requirements. Encoded from the catalog alone.",
     "Five courses (15 credits) from the catalog's list of courses taught in Russian and courses in English. RUSS201 and RUSS202 are 5 credits each; the catalog says a student who counts them still completes five courses, so the rule is encoded as five courses, not 15 credits.",
     "Minimum six credits in courses taught in Russian: overlay over the catalog's 'Courses taught in Russian' list. Minimum nine credits at 3xx/4xx: overlay over the listed courses numbered 300 and above.",
     "Prerequisite RUSS102 (or equivalent as determined by the department) is not encoded as a requirement.",
-    "Manual, not encoded: study-abroad courses may be applied; transfer credit needs department approval (usually at most six credits); other departmental offerings may be substituted with advisor approval; overall 2.0 GPA in the minor. Every course needs a C- or better (encoded as minGrade).",
+    "Manual, not encoded: study-abroad courses may be applied; transfer credit needs department approval (usually at most six credits); other departmental offerings may be substituted with advisor approval; overall 2.0 GPA in the minor is encoded as minGpa. Every course needs a C- or better (encoded as minGrade).",
     "No sharing cap stated in the catalog; none is set.",
   ],
   requirements: [

@@ -17,12 +17,13 @@ export const japnMinor: Program = {
   source:
     "UMD Academic Catalog 2026–27, Japanese Minor; SLLC Japanese minor page, https://sllc.umd.edu/fields/japanese/minor (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Department-vs-catalog differences: the department page gives only category totals (language acquisition 6, linguistics 3, literature/cultural studies 3; 15 credits) and no course lists, so the catalog's lists are used. It adds an 18-credit prerequisite sequence (JAPN101, JAPN102, JAPN201, 6 credits each) that the catalog does not list among the minor requirements; not encoded as minor requirements, since they are prerequisites. It says 'no more than 6 credits transferred from study abroad'; the catalog says 'no more than 6 credits at an institution other than UMCP'. Both are manual.",
     "The language slot takes 6 credits from the catalog's language list (JAPN202, JAPN301, JAPN302 are 6 credits each). The fourth course is one further course from any of the three lists (the catalog says '3 credit'; the engine cannot filter by credits).",
     "'At least nine of the fifteen credits at 3xx/4xx' is an overlay over JAPN 300-499.",
-    "Manual: prior-experience placement test (FLPT) and advisor consult; minor GPA of 2.0. Neither source states a cap on overlap with the major, so none is set.",
+    "Manual: prior-experience placement test (FLPT) and advisor consult; program GPA 2.0 encoded as minGpa. Neither source states a cap on overlap with the major, so none is set.",
   ],
   requirements: [
     { kind: "choose", id: "language", name: "6 credits of Japanese language courses", credits: 6, from: { courses: LANGUAGE } },

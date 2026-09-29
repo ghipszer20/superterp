@@ -15,6 +15,7 @@ export const hebrMinor: Program = {
     "UMD Academic Catalog 2026–27, Hebrew Studies Minor (cross-listed SLLC and Jewish Studies); " +
     "https://sllc.umd.edu/hebrew (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ courses: 2 }],
   reviewNotes: [
@@ -27,7 +28,7 @@ export const hebrMinor: Program = {
     "The elective list is 'previously offered' courses; 'other relevant courses in Jewish literature, Israeli film, Biblical Hebrew, etc. may be approved by the advisor' names no department or range, so it is not encoded (manual advisor approval). ISRL282 is listed without a title in the catalog.",
     "Nine credits at the 300/400 level: encoded as an overlay over the required and elective courses at that level.",
     "Students placing into the advanced level replace HEBR207 with equivalent credits chosen with the advisor; not encoded (advisor approval).",
-    "Not encoded (engine gaps): no more than one upper-division course in English translation; independent study and Winter/Summer special courses with advisor approval; at most six credits at another institution with all upper-division credits at UMD; 2.0 overall GPA in the minor for graduation (per-course C- minimum is encoded).",
+    "Not encoded (engine gaps): no more than one upper-division course in English translation; independent study and Winter/Summer special courses with advisor approval; at most six credits at another institution with all upper-division credits at UMD; per-course C- minimum is encoded. Program GPA 2.0 encoded as minGpa.",
   ],
   requirements: [
     { kind: "course", id: "hebr207", name: "Intensive Intermediate Hebrew II", options: ["HEBR207"] },

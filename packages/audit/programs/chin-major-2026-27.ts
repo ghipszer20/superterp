@@ -22,6 +22,7 @@ export const chinMajor: Program = {
     "College of Arts and Humanities official four-year academic plan for Chinese, " +
     "fetched 2026-09-28 (https://drive.google.com/uc?export=download&id=1DA9AvJMUDq0Hn4oYY6xIH-u4XFD9C1lg#Chinese)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Department page vs. catalog: OCR re-check (2026-09-28) of the four-year plan (program-sources/chinese-major.md, 'Sample plan' section) found it still too garbled to read the major courses or their term placement (only Gen Ed legend labels and the footnote about WL-placement substitution of higher CHIN courses survive; the term grid has no legible CHIN codes). No department-vs-catalog difference could be established; encoding unchanged. The one legible footnote (higher-level CHIN substitution with advisor approval, total of 17 CHIN language credits) matches the un-encoded placement exception noted below.",
@@ -47,7 +48,7 @@ export const chinMajor: Program = {
       "the 38 credits for the major must be at the upper level (courses numbered 300 or above).' The audit " +
       "engine checks per-requirement course assignment and per-course minGrade, not a credit-level minimum " +
       "spanning every requirement.",
-    "Not encoded (engine gaps): the overall 2.0 cumulative GPA requirement for the major/minor, residency " +
+    "Not encoded (engine gaps): residency " +
       "rules, and the 120-credit graduation minimum.",
   ],
   requirements: [

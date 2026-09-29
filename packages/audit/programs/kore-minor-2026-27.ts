@@ -16,6 +16,7 @@ export const koreMinor: Program = {
   source:
     "UMD Academic Catalog 2026–27, Korean Studies Minor; SLLC Korean program, https://sllc.umd.edu/korean (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
@@ -23,7 +24,7 @@ export const koreMinor: Program = {
     "Korea-related slot: the catalog names seven example courses (some are special-topics sections such as HIST319N, SOCY398K, HIST319C, GVPT359C, recorded by base course) 'from fields such as history, sociology, and art history', and allows other Korea-related courses with Korean Program advisor approval. Encoded as three of the seven listed courses; other advisor-approved courses are manual. This is narrower than the source, so flagged.",
     "Not enforced: at least one Korea-related course with broad East Asian content (HIST284, HIST285, EALL300, ARTH290 and HIST319C are marked); the engine cannot check it. Both language courses must be at the second-year level or above (all listed ones are).",
     "'Three of the five courses at 3xx/4xx' is an overlay over the listed courses numbered 300-499 (KORA311/312/345, HIST319, SOCY398, GVPT359); advisor-approved 3xx/4xx courses are not counted.",
-    "'No more than six credits can overlap with the major' -> maxSharedWith: [{ credits: 6 }]. Manual: no more than six credits off-campus (study abroad, transfer); minor GPA of 2.0; Big10 CIC courseshare courses are considered by the advisor.",
+    "'No more than six credits can overlap with the major' -> maxSharedWith: [{ credits: 6 }]. Manual: no more than six credits off-campus (study abroad, transfer); Big10 CIC courseshare courses are considered by the advisor.",
   ],
   requirements: [
     { kind: "choose", id: "language", name: "Two Korean language or language-related courses (second-year level or above)", count: 2, from: { courses: LANGUAGE } },

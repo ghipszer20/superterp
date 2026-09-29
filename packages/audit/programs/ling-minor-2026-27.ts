@@ -16,13 +16,14 @@ export const lingMinor: Program = {
     "UMD Academic Catalog 2026-27, Linguistics Minor; Department of Linguistics, " +
     "https://linguistics.umd.edu/academic-programs/undergraduate/linguistics-minor (fetched 2026-09-28)",
   minGrade: "C",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
     "Department-vs-catalog difference (grade): the catalog requires 'C-' or better in every minor course; the department page says 'No course with an earned grade below C may count towards a minor'. Department wins: minGrade 'C'.",
     "Department-vs-catalog difference (sharing): only the department page states 'There can only be six credits of overlap between a minor and a major'; the catalog is silent. Encoded as maxSharedWith: [{ credits: 6 }] (applies to every other program).",
     "Both sources agree on the courses: LING200, LING240, LING311, LING321 plus one 3xx/4xx LING elective (catalog: 'a fifth course in linguistics', 15 credits; department: 'at least one upper-level linguistics elective'). Elective encoded as any LING 300-499 course other than LING311/LING321 (already required).",
-    "Not encoded: the elective must be a regular 'classroom' course, not independent study, research assistantship or internship (both sources) -- manual check. Minor GPA of 2.0 (catalog) is a manual note.",
+    "Not encoded: the elective must be a regular 'classroom' course, not independent study, research assistantship or internship (both sources) -- manual check. Minor GPA of 2.0 (catalog) encoded as minGpa.",
   ],
   requirements: [
     { kind: "course", id: "ling200", name: "LING200 Introductory Linguistics", options: ["LING200"] },
