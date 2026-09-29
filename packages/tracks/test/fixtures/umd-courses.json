@@ -1,5 +1,5 @@
 {
-  "source": "Built from packages/course-data/.cache/soc-202701.json (Spring 2027 Schedule of Classes) in the main checkout, the only Schedule of Classes snapshot cached anywhere in this repo (see SOURCES.md and MAPPING_NOTES.fixture). Limited to the course ids @superterp/tracks actually names. A course not being offered that one term doesn't make its number invalid: BSCI161, BSCI171, BSCI330, PHYS141, PHYS142 and PHIL170 aren't in it but are each named directly by another already-fetched UMD page (see their own notes); CHEM146, CHEM177 and CHEM247 aren't in it and have no confirming source either, so their credits/title are this builder's best guess and the owner should verify the numbers themselves before relying on them.",
+  "source": "Built from packages/course-data/.cache/soc-202701.json (Spring 2027 Schedule of Classes) in the main checkout, the only Schedule of Classes snapshot cached anywhere in this repo (see SOURCES.md and MAPPING_NOTES.fixture). Limited to the course ids @superterp/tracks actually names. A course not being offered that one term doesn't make its number invalid: BSCI161, BSCI171, BSCI330, PHYS141, PHYS142 and PHIL170 aren't in it but are each named directly by another already-fetched UMD page (see their own notes); CHEM146, CHEM177 and CHEM247 aren't in it and have no confirming source either, so their credits/title are this builder's best guess and the owner should verify the numbers themselves before relying on them. Batch C added BMGT221, BMGT310, BMGT311, BMGT321, BMGT323, BMGT326, BMGT340, BMGT411, BMGT417, BMGT422, STAT401, STAT410, PHYS171, PHYS172, PHYS401, PHYS404, PHYS411 and PHYS420 from docs/project/new-tracks-research.md alone (not in the Spring 2027 snapshot); placeholder titles/credits where the doc gave none.",
   "courses": {
     "AREC240": {
       "title": "Introduction to Economics and the Environment",
@@ -25,8 +25,48 @@
       "title": "Principles of Accounting I",
       "credits": 3
     },
+    "BMGT221": {
+      "title": "Principles of Accounting II",
+      "credits": 3
+    },
+    "BMGT310": {
+      "title": "Intermediate Accounting I",
+      "credits": 3
+    },
+    "BMGT311": {
+      "title": "Intermediate Accounting II",
+      "credits": 3
+    },
+    "BMGT321": {
+      "title": "Managerial Accounting",
+      "credits": 3
+    },
+    "BMGT323": {
+      "title": "Taxation of Individuals",
+      "credits": 3
+    },
+    "BMGT326": {
+      "title": "Accounting Systems",
+      "credits": 3
+    },
+    "BMGT340": {
+      "title": "Business Finance",
+      "credits": 3
+    },
     "BMGT380": {
       "title": "Business Law I",
+      "credits": 3
+    },
+    "BMGT411": {
+      "title": "Ethics and Professionalism in Accounting",
+      "credits": 3
+    },
+    "BMGT417": {
+      "title": "Taxation of Corporations",
+      "credits": 3
+    },
+    "BMGT422": {
+      "title": "Auditing Theory and Practice",
       "credits": 3
     },
     "BSCI160": {
@@ -314,6 +354,14 @@
       "title": "General Physics: Mechanics and Particle Dynamics",
       "credits": 3
     },
+    "PHYS171": {
+      "title": "(title unconfirmed; code from research doc)",
+      "credits": 4
+    },
+    "PHYS172": {
+      "title": "(title unconfirmed; code from research doc)",
+      "credits": 4
+    },
     "PHYS260": {
       "title": "General Physics: Electricity, Magnetism and Thermodynamics",
       "credits": 3
@@ -325,6 +373,22 @@
     "PHYS271": {
       "title": "General Physics: Electrodynamics, Light, Relativity and Modern Physics (Laboratory)",
       "credits": 1
+    },
+    "PHYS401": {
+      "title": "(title unconfirmed; code from research doc)",
+      "credits": 3
+    },
+    "PHYS404": {
+      "title": "(title unconfirmed; code from research doc)",
+      "credits": 3
+    },
+    "PHYS411": {
+      "title": "(title unconfirmed; code from research doc)",
+      "credits": 3
+    },
+    "PHYS420": {
+      "title": "(title unconfirmed; code from research doc)",
+      "credits": 3
     },
     "PSYC100": {
       "title": "Introduction to Psychology",
@@ -364,6 +428,14 @@
     },
     "STAT400": {
       "title": "Applied Probability and Statistics I",
+      "credits": 3
+    },
+    "STAT401": {
+      "title": "(title unconfirmed; code from research doc)",
+      "credits": 3
+    },
+    "STAT410": {
+      "title": "(title unconfirmed; code from research doc)",
       "credits": 3
     },
     "STAT464": {

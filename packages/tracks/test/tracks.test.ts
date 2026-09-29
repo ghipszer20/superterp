@@ -55,7 +55,13 @@ const EXPECTED = [
   "pre-chiropractic",
   "pre-naturopathic",
   "pre-mls",
+  "cpa-maryland",
+  "actuarial-vee",
+  "pre-medical-physics",
 ];
+
+// Business-school credentials (and pre-law) don't use the health-professions science GPA.
+const NO_SCIENCE_GPA = ["pre-law", "cpa-maryland", "actuarial-vee"];
 
 describe("track definitions", () => {
   it("include every track the owner asked for", () => {
@@ -67,7 +73,8 @@ describe("track definitions", () => {
   it("flags science GPA (BCPM) for health tracks only, not pre-law", () => {
     const preLaw = TRACKS.find((t) => t.id === "pre-law")!;
     expect(preLaw.usesScienceGpa).not.toBe(true);
-    for (const track of TRACKS.filter((t) => t.id !== "pre-law")) {
+    for (const id of NO_SCIENCE_GPA) expect(TRACKS.find((t) => t.id === id)!.usesScienceGpa, id).not.toBe(true);
+    for (const track of TRACKS.filter((t) => !NO_SCIENCE_GPA.includes(t.id))) {
       expect(track.usesScienceGpa, track.id).toBe(true);
     }
   });
