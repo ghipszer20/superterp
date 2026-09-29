@@ -73,7 +73,7 @@ export function AuditView({
             {!audit.program.verified ? <span className={styles.unverified}>Unverified</span> : null}
           </div>
           <p className={styles.cardNote}>
-            {audit.satisfied} of {audit.requirements.length} requirements met
+            {audit.satisfied} of {audit.total} requirements met
           </p>
           <ul className={styles.reqList}>
             {audit.requirements.map(({ requirement, result, gap }) =>
@@ -107,6 +107,17 @@ export function AuditView({
               </li>
               ),
             )}
+            {audit.gpa ? (
+              <li className={styles.reqRow}>
+                <div className={styles.reqHead}>
+                  <span className={styles.reqName}>{audit.gpa.name}</span>
+                  <span className={styles.reqStatus} data-status={audit.gpa.status}>
+                    {REQ_STATUS[audit.gpa.status]}
+                  </span>
+                </div>
+                <GradeNotes result={audit.gpa} />
+              </li>
+            ) : null}
           </ul>
         </section>
       ))}

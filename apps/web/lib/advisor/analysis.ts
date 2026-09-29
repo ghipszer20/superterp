@@ -1,7 +1,7 @@
 // The slower half of the Advisor: the degree audit (HiGHS), double-major / dual-degree notices
 // and the CS gateway. Loaded with import() and run after edits settle, never on every keystroke.
 
-import { auditPrograms, checkCsGateway, type GatewayResult, type Program, type Requirement, type RequirementResult } from "@superterp/audit";
+import { auditPrograms, checkCsGateway, PROGRAM_GPA_ID, type GatewayResult, type Program, type Requirement, type RequirementResult } from "@superterp/audit";
 import type { CreditCourse } from "@superterp/credit";
 import type { PlanCatalog } from "@superterp/plan/catalog";
 import type { Plan } from "@superterp/plan/check";
@@ -34,6 +34,10 @@ import { resolvedPlan } from "./track-plan";
 type ProgramAudit = {
   program: Program;
   requirements: { requirement: Requirement; result: RequirementResult; gap: Gap | null }[];
+  /** The program-wide GPA check (Program.minGpa), shown after the requirements; null without one. */
+  gpa: RequirementResult | null;
+  /** Rows shown: the requirements, plus the GPA check if any. */
+  total: number;
   satisfied: number;
 };
 
@@ -103,7 +107,9 @@ export async function runAnalysis(input: { plan: AdvisorPlan; catalog: PlanCatal
       const result = results[p]!.requirements[r]!;
       return { requirement, result, gap: describeGap(requirement, result, { courses, catalog: catalogList }) };
     });
-    return { program, requirements, satisfied: requirements.filter((x) => x.result.status === "satisfied").length };
+    const gpa = results[p]!.requirements.find((x) => x.id === PROGRAM_GPA_ID) ?? null;
+    const satisfied = requirements.filter((x) => x.result.status === "satisfied").length + (gpa?.status === "satisfied" ? 1 : 0);
+    return { program, requirements, gpa, total: requirements.length + (gpa ? 1 : 0), satisfied };
   });
 
   const term = matriculationTermId(input.plan.startTerm);
