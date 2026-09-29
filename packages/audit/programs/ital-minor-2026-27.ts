@@ -14,12 +14,13 @@ export const italMinor: Program = {
     "UMD Academic Catalog 2026–27, Italian Language and Culture Minor; " +
     "Department page https://sllc.umd.edu/italian (fetched 2026-09-28; homepage only, no requirements)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Department page not checked: the fetched sllc.umd.edu/italian page is only the program homepage with no minor requirements; encoded from the catalog alone.",
     "Prerequisite ITAL203 (Intensive Intermediate Italian) is a prerequisite, not part of the 15 credits, so it isn't a Requirement.",
     "The extra course is 'one additional course taught in Italian at the 3xx or 4xx level': accepted as any ITAL 300-499 course. That it be taught in Italian isn't checkable (no language-of-instruction concept); manual check.",
-    "Not encoded (manual): 2.0 GPA in the minor; at most 6 credits from other institutions (9 for the Study Abroad Program in Italy); native/fluent speakers replace core courses with advisor approval. No sharing cap is stated; none is set.",
+    "Not encoded (manual): program GPA 2.0 is encoded as minGpa; at most 6 credits from other institutions (9 for the Study Abroad Program in Italy); native/fluent speakers replace core courses with advisor approval. No sharing cap is stated; none is set.",
   ],
   requirements: [
     { kind: "course", id: "ital204", name: "Advanced Intermediate Italian", options: ["ITAL204"] },

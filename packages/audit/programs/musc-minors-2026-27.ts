@@ -21,6 +21,7 @@ export const muscMinorCulture: Program = {
     "UMD Academic Catalog 2026-27, Music and Culture Minor; School of Music, " +
     "https://music.umd.edu/academic-programs/music-culture-minor (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
@@ -28,7 +29,7 @@ export const muscMinorCulture: Program = {
     "'Any two 2xx-level courses in Musicology and Ethnomusicology including' MUSC204/210/215/220/289I, and footnote 'In consultation with the Coordinator of Ethnomusicology, other courses may be substituted': encoded as the five listed courses; other courses may count with advisor approval (manual).",
     "'Three 400-level courses, including at least two of the MUSC438 area studies courses': encoded as 3 courses from any MUSC 400-499 (the catalog names MUSC435, MUSC438D/E/K/M/S/X and MUSC448F as examples but not a closed list), plus an overlay requiring 2 of the MUSC438 area studies courses. The MUSC438 letters listed are the catalog's 'recent offerings'; other MUSC438 topics (offered semester to semester) may count with advisor approval.",
     "'Four semesters of World Music Ensembles' (4 credits): encoded as 4 credits from MUSC129G/K/L/Q. Not encoded: ensembles must come from at least two different culture areas; 'other performance courses (including dance) may be substituted case by case' and newly approved World Music Ensembles are added over time (advisor approval).",
-    "Not encoded: minor GPA of 2.0 across the minor's courses; 'No course used to satisfy this minor may be used to satisfy another minor' (engine only caps sharing with named programs or all programs, and minors aren't named here). Catalog: a Music (BA/BM/BME) major may add this minor while the six-credit major overlap cap is followed (encoded as maxSharedWith: [{ credits: 6 }]).",
+    "Not encoded: 'No course used to satisfy this minor may be used to satisfy another minor' (engine only caps sharing with named programs or all programs, and minors aren't named here). Catalog: a Music (BA/BM/BME) major may add this minor while the six-credit major overlap cap is followed (encoded as maxSharedWith: [{ credits: 6 }]).",
   ],
   requirements: [
     {
@@ -72,10 +73,11 @@ export const muscMinorPerformance: Program = {
     "https://music.umd.edu/academic-programs/music-performance-minor and " +
     "https://music.umd.edu/admissions/undergraduate (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Department-vs-catalog: the department page summary (four semesters of applied lessons, four of large ensemble, one music history, one music theory) and the admissions page (MUSP302/303/402/403 with approved large ensembles, MUSC140, one 3-credit musicology elective) agree with the catalog; no difference found.",
-    "Neither source states a cap on overlap with the major or other programs; none is set. The catalog's 'overall GPA of 2.0 in the minor' is a manual note.",
+    "Neither source states a cap on overlap with the major or other programs; none is set. The catalog's 'overall GPA of 2.0 in the minor' is encoded as minGpa.",
     "'Four semesters of ensemble' (4 credits): MUSC129, MUSC229, MUSC329. The admissions page requires them to be 'approved large ensembles' taken concurrently with the lessons; which ensembles are approved is not encoded (manual).",
     "'Any 1xx- or 2xx-level courses in Musicology and Ethnomusicology including' MUSC130/204/205/210/215/220/289I: encoded as the seven listed courses; other 1xx/2xx musicology courses may count with advisor approval (manual).",
     "Not encoded (per owner ruling): the video audition (spring application cycle) and School of Music internal application required to enter the minor; the department also notes music minors are not eligible for music scholarships.",

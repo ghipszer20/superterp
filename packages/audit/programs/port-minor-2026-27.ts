@@ -20,6 +20,7 @@ export const portMinor: Program = {
     "UMD Academic Catalog 2026–27, Portuguese and Brazilian Studies Minor; " +
     "Department page https://sllc.umd.edu/fields/portuguese (fetched 2026-09-28; homepage only, no requirements)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Department page not checked: the fetched sllc.umd.edu/fields/portuguese page is only the program homepage with no minor requirements; encoded from the catalog alone.",
@@ -27,7 +28,7 @@ export const portMinor: Program = {
     "Catalog table is garbled (PORT223 and PORT224 appear without titles; the list is split into two groups with no stated difference). All 22 listed courses are treated as one pool of 15 credits.",
     "'At least 9 credits in upper-level (3xx or 4xx) courses' is an overlay over the upper-level courses in the list (PORT320, 332, 369, 386, 388, 399, 405, 408, 409, 478, 480).",
     "'At least 6 credits taught in Portuguese, above PORT203' isn't encoded (no language-of-instruction concept; PORT228 and PORT478 are conducted in English, others unstated); manual check.",
-    "Not encoded (manual): 2.0 GPA in the minor; at most 6 credits from other institutions and 9 from a UMD Study Abroad program. No sharing cap is stated; none is set.",
+    "Not encoded (manual): at most 6 credits from other institutions and 9 from a UMD Study Abroad program. No sharing cap is stated; none is set.",
   ],
   requirements: [
     {

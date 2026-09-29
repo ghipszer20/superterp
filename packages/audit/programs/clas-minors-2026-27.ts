@@ -27,6 +27,7 @@ export const clasMinorGreek: Program = {
   catalogYear: "2026-27",
   source: SOURCE_HOME,
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
@@ -35,7 +36,7 @@ export const clasMinorGreek: Program = {
     "'At least one language course at the 300 or 400 level' is an overlay: one GREK course numbered 300-499 (so a 300+ language course counts toward both).",
     "Open slot 'greek-culture' (openSlot requirement): 3 credits (the catalog says 3 to 6, so the minimum is used; extra culture credits are manual) of courses taught in English on ancient and/or modern Greek history, literature and culture. No list is published, so the student confirms it with their advisor.",
     "Total of at least 15 credits (9-15 language + 3-6 culture) and 'at least 9 credits of the total at 300/400 level' are not encoded: the culture courses are unnamed, so neither total can be checked. Manual check.",
-    "'A maximum of 6 credits may count toward both the minor and the student's major' -> maxSharedWith: [{ credits: 6 }] (the catalog says 'the student's major', not a named major, so it is not limited to Classics major ids). 'A maximum of six credits earned at other institutions' is a transfer cap, not encoded. Minor GPA of 2.0 is not encoded (no GPA concept); per-course C- minimum is (minGrade).",
+    "'A maximum of 6 credits may count toward both the minor and the student's major' -> maxSharedWith: [{ credits: 6 }] (the catalog says 'the student's major', not a named major, so it is not limited to Classics major ids). 'A maximum of six credits earned at other institutions' is a transfer cap, not encoded. Program GPA 2.0 encoded as minGpa; per-course C- minimum is (minGrade).",
   ],
   requirements: [
     {
@@ -119,11 +120,12 @@ export const clasMinorMythology: Program = {
   catalogYear: "2026-27",
   source: SOURCE_HOME,
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Department page (classics.umd.edu) is only a homepage with no requirements; encoded from the catalog. Department page not checked for requirements.",
     "Catalog: CLAS170 and CLAS470 required, plus three of CLAS320, CLAS330, CLAS331, CLAS374, CLAS419 'two of which must be at the 3xx or 4xx level'. Every course in the list is 3xx or 4xx, so that condition is automatically met and needs no extra rule.",
-    "Minor GPA of 2.0 is not encoded (no GPA concept); per-course C- minimum is (minGrade). Neither the catalog nor the department page states a sharing cap; none is set.",
+    "Program GPA 2.0 encoded as minGpa; per-course C- minimum is (minGrade). Neither the catalog nor the department page states a sharing cap; none is set.",
   ],
   requirements: [
     { kind: "course", id: "clas170", name: "Ancient Myths and Modern Lives", options: ["CLAS170"] },
@@ -175,6 +177,7 @@ export const clasMinorArchaeology: Program = {
     DEPT_ARCH +
     " (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
@@ -184,7 +187,7 @@ export const clasMinorArchaeology: Program = {
     "Structure: 305 (3 credits) + fieldwork (3-6) + supporting (6-9) with a 15-credit minimum. Encoded as 305, 3 fieldwork credits, 6 supporting credits, and 3 further credits from either the fieldwork or supporting lists. The 6-credit fieldwork cap and 9-credit supporting cap are not enforced.",
     "'At least 9 credits overall at the 3xx or 4xx level' is an overlay over the 300-499 courses of the accepted departments (plus the 3xx+ GEOL/GEOG courses on the list).",
     "Study-abroad fieldwork programs need advance approval by a UMCP faculty member: manual. Fieldwork list: ARTH369M, ANTH496, ARCH481, ARCH483, CLAS380, JWST369T/HIST369B; other approved fieldwork ('many options at UMCP') is not named and so is not encoded.",
-    "'A maximum of 6 credits may count toward both the minor and the student's major' -> maxSharedWith: [{ credits: 6 }] (not limited to Classics major ids, since the source says 'the student's major'). Transfer cap (6 credits at other institutions) and minor GPA 2.0 are not encoded; per-course C- minimum is (minGrade).",
+    "'A maximum of 6 credits may count toward both the minor and the student's major' -> maxSharedWith: [{ credits: 6 }] (not limited to Classics major ids, since the source says 'the student's major'). Transfer cap (6 credits at other institutions) are not encoded; program GPA 2.0 encoded as minGpa; per-course C- minimum is (minGrade).",
   ],
   requirements: [
     {

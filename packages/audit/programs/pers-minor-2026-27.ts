@@ -15,11 +15,12 @@ export const persMinor: Program = {
     "https://sllc.umd.edu/persian (fetched 2026-09-28)",
   verified: false,
   minGrade: "C-",
+  minGpa: 2.0,
   reviewNotes: [
     "Department page (sllc.umd.edu/persian) is only a program overview with no requirements, so it neither confirms nor contradicts the catalog; encoded from the catalog. No department-vs-catalog difference found.",
     "Electives: 3 of PERS353, PERS371, PERS385, PERS498 (9 credits), as listed. The catalog also says electives may be substituted in consultation with the Undergraduate Advisor; substitutions are not encoded. 'At least 9 credits upper-level' is met automatically by the listed electives.",
     "Neither source states a cap on overlap with a major; none set. 'Courses may not be used to fulfill the requirements of two minors' is not encoded (no way to name every other minor); manual check.",
-    "Manual notes, not encodable: mandatory placement assessment and substitute courses for students placing out (advisor); up to 6 transfer credits toward language requirements; overall minor GPA of 2.0 required; a lower-level language course may not be taken after a higher one.",
+    "Manual notes, not encodable: mandatory placement assessment and substitute courses for students placing out (advisor); up to 6 transfer credits toward language requirements; overall minor GPA of 2.0 encoded as minGpa; a lower-level language course may not be taken after a higher one.",
   ],
   requirements: [
     { kind: "course", id: "pers103", name: "Beginning Persian I", options: ["PERS103"] },

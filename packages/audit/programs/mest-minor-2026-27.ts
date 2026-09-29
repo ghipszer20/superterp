@@ -14,6 +14,7 @@ export const mestMinor: Program = {
     "UMD Academic Catalog 2026–27, Middle Eastern Studies Minor; Department of History, " +
     "https://history.umd.edu/ (fetched 2026-09-28; homepage only)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ courses: 2 }],
   reviewNotes: [
@@ -23,7 +24,7 @@ export const mestMinor: Program = {
     "Open slot 'me-elective' (openSlot requirement): 3 credits of approved Middle East Studies elective (a language course of 3+ credits qualifies); no list published, so the student confirms it with their advisor.",
     "The catalog names no qualifying courses (only HIST120 as an example), so nothing but the C- minimum grade and the sharing cap is enforced; the 15-18 credit total (5 courses) is manual.",
     "'A maximum of two courses can count towards both the major and the minor' -> maxSharedWith: [{ courses: 2 }]. 'Courses cannot count towards multiple minors' is stricter for minors and is manual.",
-    "Not encoded (manual): at least 3 courses (9 credits) at 3xx/4xx level (6 taken at UMD); no more than 6 credits from another institution; only one 1xx/2xx or grammar-based Arabic, Hebrew, Persian or Turkish course may count; no Pass/Fail; minor GPA of 2.0; other areas of concentration with the director's approval.",
+    "Not encoded (manual): at least 3 courses (9 credits) at 3xx/4xx level (6 taken at UMD); no more than 6 credits from another institution; only one 1xx/2xx or grammar-based Arabic, Hebrew, Persian or Turkish course may count; no Pass/Fail; other areas of concentration with the director's approval.",
   ],
   requirements: [
     {
