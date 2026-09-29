@@ -52,6 +52,9 @@ const EXPECTED = [
   "pre-anesthesiologist-assistant",
   "pre-dental-hygiene",
   "pre-genetic-counseling",
+  "pre-chiropractic",
+  "pre-naturopathic",
+  "pre-mls",
 ];
 
 describe("track definitions", () => {

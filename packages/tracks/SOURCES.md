@@ -38,6 +38,18 @@ Fetched on 2026-09-25 (US Eastern; the servers' `Date` header reads 2026-09-26 U
 
 `https://hpao.umd.edu/` does not exist (DNS lookup failed); HPAO lives at `prehealth.umd.edu`.
 
+## Batch B sources (Chiropractic, Naturopathic, Medical Laboratory Science)
+
+Encoded from `docs/project/new-tracks-research.md` (2026-09-29, sections 3, 9 and 10). The research fetch tool summarized pages, and several official pages 404'd, returned 403 or were unparseable PDFs, so every figure below is **(S)**: from a search-result summary, to be re-verified before any of these tracks is set `verified: true`. Nothing here is signed off by the owner. All course codes are the research doc's or already used by another track.
+
+| What | URL | What it says (S) | Date / edition |
+|---|---|---|---|
+| CCE (Council on Chiropractic Education) | https://www.cce-usa.org/ | 90 semester hours of undergraduate study; at least 24 semester hours in life and physical science, at least half of the courses with a substantive lab. GPA figures conflict (3.0 with a 2.7-2.75 alternative; older 2.75), so none is encoded. Standards PDF 404'd. | Search summary, 2026-09-29 |
+| CNME (naturopathic accreditor) | https://cnme.org/ | Accreditor; handbook PDF unparseable. NPLEX licensing exam follows the ND. | Search summary, 2026-09-29 |
+| AANMC academic prerequisites | https://aanmc.org/academic-prerequisites/ | Baccalaureate; 24 credit hours in life and physical sciences, lecture plus lab; C or higher in all courses; GPA 3.00 (alternative track 2.75-2.99). Page returned 403. | Search summary, 2026-09-29 |
+| NAACLS (MLS accreditor) | https://naacls.org/ | Standards require only "appropriate prerequisite coursework"; 2024 Standards PDF unparseable. | Search summary, 2026-09-29 |
+| ASCP Board of Certification: MLS | https://www.ascp.org/boc/explore-credentials/view-all-credentials/MLS | Baccalaureate with 16 semester hours of biology (including 1 semester of microbiology) and 16 of chemistry (including 1 semester of organic chemistry or biochemistry), plus a NAACLS-accredited MLS program. Page returned 403. | Search summary, 2026-09-29 |
+
 ## Non-UMD sources (for the science GPA)
 
 | What | URL | What it says |

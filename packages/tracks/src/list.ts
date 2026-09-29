@@ -5,7 +5,10 @@
 
 import type { Program } from "@superterp/audit";
 import { preAnesthesiologistAssistant } from "../tracks/pre-anesthesiologist-assistant.ts";
+import { preChiropractic } from "../tracks/pre-chiropractic.ts";
 import { preDental } from "../tracks/pre-dental.ts";
+import { preMls } from "../tracks/pre-mls.ts";
+import { preNaturopathic } from "../tracks/pre-naturopathic.ts";
 import { preDentalHygiene } from "../tracks/pre-dental-hygiene.ts";
 import { preGeneticCounseling } from "../tracks/pre-genetic-counseling.ts";
 import { preLaw } from "../tracks/pre-law.ts";
@@ -37,6 +40,9 @@ export const TRACKS: Track[] = [
   preAnesthesiologistAssistant,
   preDentalHygiene,
   preGeneticCounseling,
+  preChiropractic,
+  preNaturopathic,
+  preMls,
 ];
 
 /**
