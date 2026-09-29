@@ -21,7 +21,7 @@ export const astronomyMinor: Program = {
   reviewNotes: [
     "Department-vs-catalog difference (owner ruling in rulings.md: where the department page lists fewer options than the catalog, accept both lists): the catalog's upper-level list adds 'ASTR498: Special Problems in Astronomy' and 'a department-approved alternative course' to the seven named courses; the department page lists only the seven. ASTR498 is accepted. The open-ended 'department-approved alternative course' names no course, so it is a manual check.",
     "'No course with an earned grade below C- may count toward a minor' (department) matches the catalog's 'C- or better'; encoded as the Program's minGrade.",
-    "Department-vs-catalog difference: the department page adds 'not open to astronomy, physics, or physical sciences majors'; the catalog is silent on eligibility. Not enforced (no declared-major concept in the engine); noted for the owner.",
+    "Department-vs-catalog difference: the department page adds 'not open to astronomy, physics, or physical sciences majors'; the catalog is silent on eligibility. Enforced via notOpenTo (astronomy and physics majors, every track). The Physical Sciences major is not encoded yet; add its id here when it is.",
     "'Must schedule an appointment to register for the minor before completing the final 30 credits' (catalog) is an advising/timing rule, not encoded.",
     "Neither source states a sharing cap with another program; none is set.",
   ],
@@ -38,4 +38,4 @@ export const astronomyMinor: Program = {
   ],
 };
 
-export const astronomyMinorMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/astronomy/astronomy-minor/", department: "https://www.astro.umd.edu/education/undergraduate/astronomy-minor" } };
+export const astronomyMinorMeta: ProgramMeta = { kind: "minor", college: "CMNS", sources: { catalog: "https://academiccatalog.umd.edu/undergraduate/colleges-schools/computer-mathematical-natural-sciences/astronomy/astronomy-minor/", department: "https://www.astro.umd.edu/education/undergraduate/astronomy-minor" }, notOpenTo: { programs: ["astr", "phys"], reason: "Not open to astronomy, physics or physical sciences majors." } };

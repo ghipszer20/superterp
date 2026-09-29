@@ -10,12 +10,20 @@ import type { Degree } from "@superterp/plan/degrees";
 import type { ProgramCandidate } from "@superterp/plan/notices";
 import { MAJOR_COURSE_SETS } from "@superterp/programs/course-sets";
 import type { DegreeChoice } from "./plan-state";
-import { findProgram, loadPrograms, majorKey, PROGRAMS, type ProgramEntry } from "@superterp/programs";
+import { blockedReason, findProgram, loadPrograms, majorKey, PROGRAMS, type ProgramEntry } from "@superterp/programs";
 
 export type ProgramOption = ProgramEntry;
 
 /** Majors, then minors, certificates and special programs, each major's default track first. */
 export const PROGRAM_OPTIONS: ProgramOption[] = PROGRAMS;
+
+/** The Audit's one-line notice for a saved program a chosen major closes (ProgramMeta.notOpenTo;
+ * added before the major, or saved by an older version), so it isn't shown as a normal program. */
+export function blockedNotice(programId: string, selected: readonly string[]): string | undefined {
+  const entry = findProgram(programId);
+  const reason = entry && blockedReason(entry, selected);
+  return reason === undefined ? undefined : `${reason} Remove it in Edit setup.`;
+}
 
 /** Every student is checked against these too. */
 export const AUTOMATIC_PROGRAMS: Program[] = [genEd, university];

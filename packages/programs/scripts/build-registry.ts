@@ -17,6 +17,14 @@ function sourcesLiteral(sources: { catalog?: string; department?: string }): str
   return `{ ${fields.join(", ")} }`;
 }
 
+function notOpenToLiteral(gate: { programs?: string[]; colleges?: string[]; reason: string }): string {
+  const fields: string[] = [];
+  if (gate.programs !== undefined) fields.push(`programs: ${tsLiteral(gate.programs)}`);
+  if (gate.colleges !== undefined) fields.push(`colleges: ${tsLiteral(gate.colleges)}`);
+  fields.push(`reason: ${tsLiteral(gate.reason)}`);
+  return `{ ${fields.join(", ")} }`;
+}
+
 async function main() {
   const entries = await buildProgramEntries();
   const body = entries
@@ -32,6 +40,7 @@ async function main() {
         `catalogYear: ${tsLiteral(e.catalogYear)}`,
         `verified: ${tsLiteral(e.verified)}`,
         `sources: ${sourcesLiteral(e.sources)}`,
+        ...(e.notOpenTo !== undefined ? [`notOpenTo: ${notOpenToLiteral(e.notOpenTo)}`] : []),
         `load: () => import(${tsLiteral(e.importPath)}).then((m) => m.${e.exportName})`,
       ];
       return `  { ${fields.join(", ")} },`;
