@@ -45,8 +45,8 @@ College keys `PLCY` (School of Public Policy) and `USG` (Universities at Shady G
 | 21 | jour | Journalism | default (no specialization) + Broadcast, Investigative, Sports tracks | merged (75k; 4 programs, all plans constructed) |
 | 28 | plcy-pp | Public Policy | college PLCY | merged (71k; STAT row widened by main session) |
 | 29 | plcy-gfp | Global & Foreign Policy | college PLCY; thematic tracks | merged (61k; 3 tracks, elective lists not in source: OPEN SLOT) |
-| 30a | ocr-comm | OCR re-check: Communication (5 plans) | read only the OCR plan section | running (OCR half A session) |
-| 30b | ocr-musc | OCR re-check: Music (Jazz, Perf/Comp) + Composition BM track | | running (OCR half A session) |
-| 30c | ocr-a | OCR re-check: Chinese, Cinema ×2, Dance | | running (OCR half A session) |
+| 30a | ocr-comm | OCR re-check: Communication (5 plans) | read only the OCR plan section | merged (52k; Health & Science plan official, other 4 still illegible) |
+| 30b | ocr-musc | OCR re-check: Music (Jazz, Perf/Comp) + Composition BM track | | merged (29k; both plans still illegible, no Composition or BA Jazz track) |
+| 30c | ocr-a | OCR re-check: Chinese, Cinema ×2, Dance | | merged (44k; all plans still illegible) |
 | 30d | ocr-b | OCR re-check: Global Culture, HCAI, Immersive Media Design | | done (plans kept constructed: OCR unreadable) |
 | 30e | ocr-c | OCR re-check: Theatre, WGSS | | done (plans kept constructed: OCR unreadable) |
