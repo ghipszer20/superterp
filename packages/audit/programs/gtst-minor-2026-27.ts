@@ -14,10 +14,11 @@ export const gtstMinor: Program = {
     "UMD Academic Catalog 2026-27, Global Terrorism Studies Minor; START, " +
     "https://start.umd.edu/education/global-terrorism-studies-minor-program (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Catalog and department page agree on the 17 credits: BSST200, BSST331 or BSST335 (Innovative Ideas), BSST377, BSST386, 6 BSST elective credits, and one Global Perspectives course.",
-    "Not encoded: minimum 2.0 cumulative GPA across the minor's courses; separate application to START (12 earned credits, UMD undergraduates only, deadlines each fall and spring).",
+    "Not encoded: program GPA 2.0 across the minor's courses is encoded as minGpa; separate application to START (12 earned credits, UMD undergraduates only, deadlines each fall and spring).",
     "Electives: 'six credits within BSST' accepts any BSST course; BSST200, 377, 386 and the Innovative Ideas course cannot double-count (each course counts toward one requirement). Taking both BSST331 and BSST335 lets the second count as an elective, per both sources. The catalog footnote that the Director may approve a relevant course outside BSST is a manual substitution, not encoded.",
     "Global Perspectives list: the catalog names ENES316/464/474 without titles and lists GVPT409 as sections GVPT409J and GVPT409K; encoded as those two section ids only (other GVPT409 sections are not on either list). Some catalog and department course titles differ (e.g. AREC345, ENES269); the course ids match, so the difference is only in titles.",
     "Neither source states a cap on overlap with a major or other programs; no sharing limit is set.",

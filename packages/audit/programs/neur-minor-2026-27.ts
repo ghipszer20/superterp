@@ -15,13 +15,14 @@ export const neurMinor: Program = {
     "UMD Academic Catalog 2026–27, Neuroscience Minor; Department of Psychology, " +
     "https://psyc.umd.edu/undergraduate/neuroscience-minor (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ courses: 2 }],
   reviewNotes: [
     "Department page: 'No more than 2 courses can count towards both the minor and your major' -> maxSharedWith: [{ courses: 2 }]. The catalog is silent on sharing.",
     "Eligibility restriction (department page): all majors are eligible EXCEPT students in the Physiology & Neurobiology (PHNB) track of Biological Sciences and the Neuroscience (NEUR) major. Enforced via notOpenTo (bsci-major-phnb, its Shady Grove track bsci-usg-major, and neur-major).",
     "Application prerequisites (both sources): 30 college credits with 15 at UMD, good standing, and C- or better in BSCI170, CHEM131/CHEM132 and NEUR200 or PSYC202. These gate admission and are not among the minor's 21-23 credits, so they are not encoded as requirements; manual check.",
-    "The 2.0 cumulative GPA across minor courses is a GPA-average rule, not encoded (manual check). The C- minimum grade is encoded on the whole program.",
+    "Program GPA 2.0 encoded as minGpa. The C- minimum grade is encoded on the whole program.",
     "Open slot 'neur-electives' (openSlot requirement): 6-8 credits (two elective courses) from the eligible-elective list on the department program website; the list is not published in either fetched source. Set to the 6-credit minimum.",
     "Seniors must apply before the end of fall schedule adjustment because PSYC409 is offered only in the fall; application deadlines are Oct 1, Mar 1 and Jun 1. Timing rules, not encoded.",
   ],

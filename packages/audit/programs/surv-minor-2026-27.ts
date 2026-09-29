@@ -13,12 +13,13 @@ export const survMinor: Program = {
   source:
     "UMD Academic Catalog 2026–27, Survey Methodology Minor; JPSM, https://jpsm.umd.edu/ (fetched 2026-09-28; department page not checked beyond the homepage)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ courses: 2 }],
   reviewNotes: [
     "Department page not checked: jpsm.umd.edu is only a homepage with no minor requirements, so this is encoded from the catalog.",
     "Catalog: 'Apply no more than two courses from the minor to satisfying the requirements of the student's major' -> maxSharedWith: [{ courses: 2 }].",
-    "Minimum grade C- in all minor courses is encoded on the whole program (catalog states it). The 2.0 cumulative GPA across minor courses and the 'no more than two courses at another institution' cap are manual notes, not encoded.",
+    "Minimum grade C- in all minor courses is encoded on the whole program (catalog states it). Program GPA 2.0 encoded as minGpa. The 'no more than two courses at another institution' cap are manual notes, not encoded.",
     "Statistics and research methods: the catalog says similar courses, including ones at other institutions, may be accepted as substitutes; only the listed courses are accepted here, other courses may count with JPSM advisor approval.",
     "Catalog inconsistency: the totals say 16-19 credits, then 'all 16-18 required credits'; SOCY201/SOCY401 are 4-credit courses. Credit totals are not enforced; course slots are.",
     "The 1-2 credit introductory 600-level SURV slot is encoded as any SURV course numbered 600-699 other than SURV621/625/630/632 (the engine cannot filter by credit count), so a 3-credit 600-level SURV course would wrongly count here; manual check of credits.",

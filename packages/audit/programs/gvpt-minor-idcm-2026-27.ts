@@ -16,13 +16,14 @@ export const gvptMinorIdcm: Program = {
     "UMD Academic Catalog 2026–27, International Development and Conflict Management Minor; " +
     "https://idcm.umd.edu/ not checked (homepage only) (fetched 2026-09-28)",
   minGrade: "C-",
+  minGpa: 2.0,
   verified: false,
   maxSharedWith: [{ courses: 2 }],
   reviewNotes: [
     "Department page not checked: https://idcm.umd.edu/ fetched as a marketing homepage with no requirements; encoded from the catalog alone.",
     "The 'Global Perspectives Elective' and 'one research methodology course' slots point to approved lists that the catalog page does not reproduce, so they are NOT encoded (no course range is named to accept). Manual check: 3 credits global perspectives elective + 3 credits research methods from the approved lists.",
     "'Six credits (or two courses) can be double counted for your major and the minor' -> maxSharedWith: [{ courses: 2 }] (same reading as the GEOL minors' 'six credits or two courses').",
-    "'Classes must generally be completed after acceptance into the minor program' (except the elective and methods) is a timing rule, not encoded. The minimum 2.0 cumulative GPA across minor courses has no GPA-average concept in the engine; manual check.",
+    "'Classes must generally be completed after acceptance into the minor program' (except the elective and methods) is a timing rule, not encoded. Program GPA 2.0 encoded as minGpa.",
     "Total is 16 credits (GVPT357 practicum is 1 credit).",
   ],
   requirements: [
