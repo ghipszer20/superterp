@@ -17,8 +17,8 @@ const MINI_COL = 170;
 const ZOOM_COL = 360;
 const HOVER_DELAY = 300; // owner: a short pause before the enlarged preview
 const PRESS_DELAY = 350;
-/** Card height: padding, day heads, the columns, and one 18 px strip row per course. */
-const cardHeight = (courses: number) => 212 + 18 * courses;
+/** Card height: padding, day heads, the columns, and one strip row per course (18 px; 33 px with a Recommended reason line). */
+const cardHeight = (courses: number, reasons = false) => 212 + (reasons ? 33 : 18) * courses;
 
 export type GalleryData = {
   layouts: EncodedLayouts;
@@ -26,6 +26,8 @@ export type GalleryData = {
   sectionByKey: ReadonlyMap<string, Section>;
   ratings: Readonly<Record<string, number>>;
   courseIds: string[];
+  /** Set only for the Recommended sort: the strip then explains each pick. */
+  gpas?: Readonly<Record<string, number>>;
 };
 
 /** The sections a card shows: for each interchangeable group, the best-rated instructor's. */
@@ -50,7 +52,7 @@ const Card = memo(function Card({
   return (
     <>
       <WeekCalendar size={size} scale={data.scale} items={items} height={size === "mini" ? MINI_COL : ZOOM_COL} days={days} />
-      <TeacherStrip picks={picks} groups={groups} courseIds={data.courseIds} ratings={data.ratings} size={size} />
+      <TeacherStrip picks={picks} groups={groups} courseIds={data.courseIds} ratings={data.ratings} gpas={data.gpas} size={size} />
     </>
   );
 });
@@ -80,7 +82,7 @@ export function Gallery({
   const colGap = phone ? 16 : 40;
   const rowGap = phone ? 28 : 44;
   const columns = width ? columnsFor(width, MIN_CARD, colGap) : 1;
-  const rowHeight = cardHeight(data.courseIds.length) + rowGap;
+  const rowHeight = cardHeight(data.courseIds.length, !!data.gpas) + rowGap;
   const rows = Math.ceil(data.layouts.count / columns);
 
   useLayoutEffect(() => {
@@ -149,7 +151,7 @@ export function Gallery({
             <div
               key={i}
               className={styles.card}
-              style={{ height: cardHeight(data.courseIds.length) }}
+              style={{ height: cardHeight(data.courseIds.length, !!data.gpas) }}
               role="button"
               tabIndex={0}
               aria-label={`Layout ${i + 1} of ${data.layouts.count}: open in the editor`}

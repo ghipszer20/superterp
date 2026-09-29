@@ -16,6 +16,7 @@ export const DEFAULT_FILTERS: FilterState = { days: {}, sort: "best" };
 
 export const SORT_OPTIONS: { value: SortKey; label: string }[] = [
   { value: "best", label: "Best first" },
+  { value: "recommended", label: "Recommended" },
   { value: "fewestDays", label: "Fewest days on campus" },
   { value: "latestStart", label: "Latest start" },
   { value: "earliestFinish", label: "Earliest finish" },
