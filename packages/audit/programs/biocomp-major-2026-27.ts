@@ -18,6 +18,7 @@ export const biocompMajor: Program = {
     "Biocomputational Engineering admissions page, https://biocomp.umd.edu/admissions (fetched 2026-09-28); " +
     "official Fall 2026 graduation plan, " +
     "https://eng.umd.edu/sites/clark.umd.edu/files/resource_documents/biocomp_fall_2026_gradplan.pdf (fetched 2026-09-28)",
+  minGpa: 2.0,
   verified: false,
   reviewNotes: [
     "Program structure: the catalog splits requirements into 'Prior Study' (60 credits, admission prerequisites) and 'Required Courses' (60 credits, the ENBC curriculum after transitioning to the Shady Grove campus), summing to the program's 120 credits. Both are encoded as this Program's requirements (the prerequisite courses are still real courses this degree needs), except ENGL101 (Academic Writing) and the Prior Study's generic 25 gen-ed credits, which are left to the Gen Ed layer -- the official graduation plan's own two-column layout places ENGL101 and the generic 'General Ed Requirement' slots under its 'GENERAL EDUCATION REQUIREMENTS' column, separate from its 'Major Requirements @ USG' column, and every gen-ed slot is already covered by gen-ed-2026-27.ts.",
