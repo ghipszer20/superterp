@@ -6,7 +6,10 @@ import { filterText, listing } from "./words";
 
 export { filterText, genEdName, prerequisiteText } from "./words";
 
-export type Gap = { need: string; suggestions: string[] };
+/** `note`: an extra line for the student, e.g. that the requirement's list isn't closed. */
+export type Gap = { need: string; suggestions: string[]; note?: string };
+
+const ADVISOR_NOTE = "Other courses may count with advisor approval.";
 
 export type GapContext = {
   /** The student's courses (prior credit, completed and planned). */
@@ -24,6 +27,11 @@ function memberText(m: SetMember): string {
 
 export function describeGap(req: Requirement, result: RequirementResult, ctx: GapContext): Gap | null {
   if (result.status === "satisfied") return null;
+  const gap = gapFor(req, result, ctx);
+  return req.advisorMayApprove ? { ...gap, note: ADVISOR_NOTE } : gap;
+}
+
+function gapFor(req: Requirement, result: RequirementResult, ctx: GapContext): Gap {
   // A failed/withdrawn attempt earns no credit, so it's never "have" here -- the student still
   // needs a passing attempt of it, and it shouldn't count toward filling a filter member below.
   const have = new Set(ctx.courses.filter(earnsCredit).map((c) => c.id));

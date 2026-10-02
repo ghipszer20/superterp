@@ -40,6 +40,12 @@ export type Requirement = RequirementRule & {
    * assigned it is only flagged at risk. The solver prefers higher-graded courses (a tie-break).
    */
   minGpa?: number;
+  /**
+   * The source's list isn't closed ("or an equivalent", "not limited to these examples", "other
+   * courses may be approved"): the audit accepts only the listed courses, and the Advisor tells the
+   * student that other courses may count with advisor approval (owner ruling, rulings.md "Minors").
+   */
+  advisorMayApprove?: true;
 };
 
 export type RequirementRule =

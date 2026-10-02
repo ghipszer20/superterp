@@ -103,6 +103,7 @@ export function AuditView({
                         For example: <CourseChips ids={gap.suggestions} onOpenCourse={onOpenCourse} />
                       </>
                     ) : null}
+                    {gap.note ? ` ${gap.note}` : null}
                   </p>
                 ) : null}
               </li>
@@ -217,6 +218,7 @@ export function AuditView({
                                   For example: <CourseChips ids={gap.suggestions} onOpenCourse={onOpenCourse} />
                                 </>
                               ) : null}
+                              {gap.note ? ` ${gap.note}` : null}
                             </p>
                           ) : null}
                         </li>

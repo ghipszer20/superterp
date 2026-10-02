@@ -2,6 +2,7 @@
 
 Items for the owner to review or decide, listed in progress reports. Remove an item once the owner answers (record the answer in `docs/project/rulings.md` or PROJECT_MEMORY.md section 17). Moved out of PROJECT_MEMORY.md on 2026-09-26.
 
+- **UI approval (2026-10-02, small):** on the Audit tab, an unmet requirement whose source list isn't closed now ends its "Still needed" line with "Other courses may count with advisor approval." (rulings.md "Minors"). Assumptions: shown only while the requirement is unmet (a satisfied row doesn't need it); there's no way for the student to mark an advisor-approved course as counting, so the row stays "Missing" until they take a listed course. If that matters, the fix is an "advisor approved another course" tick like the Open Slot one. So far only the AGST minor's supporting block is flagged; the other ~47 programs wait on builders.
 - `feat/ocr-a` (2026-09-28): OCR re-check of Chinese, Cinema and Media Studies (both tracks) and Dance; plans remain constructed (`official: false`), no encoding changes.
   - The OCR text of all four plan PDFs is still too garbled for course codes or term placement (only Gen Ed legend labels, rubric labels and footnotes are legible); nothing found contradicts the encodings. A cleaner copy of any of these plans would still be needed for official plans.
 - Minors still open (minors session, 2026-09-28; answered items are in `docs/project/rulings.md` "Minors"):

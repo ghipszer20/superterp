@@ -22,7 +22,7 @@ export const agstMinor: Program = {
     "Catalog: 'maximum of six credits or two courses' may count toward both major and minor -> maxSharedWith courses 2 and credits 6 (both apply, against every program).",
     "Core: PLSC110+111 (Horticulture + lab) or PLSC112+113 (Crop Science + lab); ENST200; PLSC201+206; PLSC389 or PLSC460. Supporting: 6 credits from the listed rows; 'BSCI497 or BSCI337' is one row (at most one counts).",
     "Catalog footnote '6 credits must be from 300+ level or higher' is ambiguous: the supporting block is itself 6 credits, yet it lists 200-level PLSC253/PLSC254. Not enforced (a rule would either make PLSC253/254 unusable or guess at the meaning); manual check. Flagged.",
-    "Catalog: 'Other courses may be approved. Consult with your advisor.' Other courses may count with advisor approval; not encoded.",
+    "Catalog: 'Other courses may be approved. Consult with your advisor.' The supporting block is marked advisorMayApprove (the audit shows 'other courses may count with advisor approval'); only the listed courses count.",
     "Manual, not encoded: prerequisites for matriculation (MATH113 or higher, CHEM131/132), all courses at UMD College Park (residency), mandatory advising twice a year, and the minor GPA.",
   ],
   requirements: [
@@ -50,6 +50,7 @@ export const agstMinor: Program = {
       id: "supporting",
       name: "Supporting courses (6 credits)",
       credits: 6,
+      advisorMayApprove: true,
       from: {
         courses: [
           "AGST333",

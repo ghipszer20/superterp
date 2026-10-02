@@ -167,3 +167,17 @@ describe("prerequisiteText", () => {
     );
   });
 });
+
+describe("describeGap: advisor approval", () => {
+  const listed: Requirement = { kind: "course", id: "leadership-elective", name: "Leadership Elective", options: ["ENES317", "ENES472"] };
+  const ctx = { courses: taken(), catalog: CATALOG };
+
+  it("says other courses may count when the requirement's list isn't closed", () => {
+    const open: Requirement = { ...listed, advisorMayApprove: true };
+    expect(describeGap(open, result(open, "missing"), ctx)!.note).toBe("Other courses may count with advisor approval.");
+  });
+
+  it("says nothing extra for a closed list", () => {
+    expect(describeGap(listed, result(listed, "missing"), ctx)!.note).toBeUndefined();
+  });
+});
