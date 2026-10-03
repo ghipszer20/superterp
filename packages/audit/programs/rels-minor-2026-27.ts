@@ -25,7 +25,7 @@ export const relsMinor: Program = {
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
     "Department page not checked: religious-studies.umd.edu failed to fetch; encoded from the catalog alone.",
-    "18 credits: RELS271, then five more courses of which at least three are 3xx/4xx. The catalog says the five 'can be in any of a variety of subjects, chosen in consultation with an advisor' and 'other courses may be taken with the permission of the minor advisor'; the qualifying list is held by the advisor. Encoded as every RELS course (100-499) plus the catalog's list of regularly-offered courses. Students with advisor-approved courses outside that range will need a manual check.",
+    "18 credits: RELS271, then five more courses of which at least three are 3xx/4xx. The catalog says the five 'can be in any of a variety of subjects, chosen in consultation with an advisor' and 'other courses may be taken with the permission of the minor advisor'; the qualifying list is held by the advisor. Encoded as every RELS course (100-499) plus the catalog's list of regularly-offered courses. Students with advisor-approved courses outside that range will need a manual check; the additional requirement is marked advisorMayApprove.",
     "Breadth requirement (diverse traditions beyond one geographic area, diverse time periods, multiple approaches, one focused-depth course) is not encodable; manual check.",
     "Not encoded: 2.0 minor GPA; at least 6 credits of 3xx/4xx at UMD and at most 6 credits at another institution (residency/transfer caps).",
     "'No more than six credits may also be applied to a major' -> maxSharedWith: [{ credits: 6 }].",
@@ -36,6 +36,7 @@ export const relsMinor: Program = {
     {
       kind: "choose",
       id: "additional",
+      advisorMayApprove: true,
       name: "Five more courses (1xx-4xx) in religion",
       count: 5,
       from: { departments: ["RELS"], minNumber: 100, maxNumber: 499, courses: LISTED, exclude: ["RELS271"] },

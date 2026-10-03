@@ -18,7 +18,7 @@ export const plcyPpMajor: Program = {
   minGrade: "C-",
   verified: false,
   reviewNotes: [
-    "The four policy electives are one pool of four PLCY-department courses. The catalog lists 'Introduction to Public Policy Focus' plus three 'Focus/PLCY Elective' rows with no course ids, and the department page gives areas (sustainability, science and technology, social policy, global and foreign policy, philanthropy and nonprofits) but no course list, so the department is the range: any PLCY course counts. The rule that one of the four be an introductory focus-area course is not enforced (no list published). Non-PLCY electives are allowed with advisor approval and the Using Non-PLCY Courses as Electives Form; not encodable, so a student using them shows a gap here.",
+    "The four policy electives are one pool of four PLCY-department courses. The catalog lists 'Introduction to Public Policy Focus' plus three 'Focus/PLCY Elective' rows with no course ids, and the department page gives areas (sustainability, science and technology, social policy, global and foreign policy, philanthropy and nonprofits) but no course list, so the department is the range: any PLCY course counts. The rule that one of the four be an introductory focus-area course is not enforced (no list published). Non-PLCY electives are allowed with advisor approval and the Using Non-PLCY Courses as Electives Form; not encodable as a list; the plcy-electives requirement is marked advisorMayApprove.",
     "Manual, not encoded: 58-61 total credits; 2.0 average across major courses; benchmark deadlines (PLCY100/101 within two semesters into the major, STAT100 or equivalent and PLCY200 within four); PLCY400/PLCY401 only after 90 credits; prerequisites shown on the department page.",
     "PLCY309 (Policy Internship, 3-6 credits) also satisfies the experiential learning requirement (at least 3 credits of internship, research or study abroad); the department page says research credit or an approved study abroad may stand in, which is not encoded.",
     "STAT100 is listed as 'STAT100 or higher (STAT100 equivalent accepted)' on the department page; encoded as any STAT course numbered 100 or higher (main session, 2026-09-28: STAT100 alone was narrower than the source); non-STAT equivalents are not encoded. Confirm.",
@@ -44,6 +44,7 @@ export const plcyPpMajor: Program = {
     {
       kind: "choose",
       id: "plcy-electives",
+      advisorMayApprove: true,
       name: "Policy electives (four: one introductory focus course plus three, any PLCY course)",
       count: 4,
       from: { departments: ["PLCY"] },
