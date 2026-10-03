@@ -24,9 +24,9 @@ export const engrMinorGlobalEngineeringLeadership: Program = {
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
     "Catalog: 'a maximum of six credits may also count toward the student's major' -> maxSharedWith: [{ credits: 6 }]. The department page states no cap. 'No more than six credits at an institution other than UMD' is a transfer cap, not encoded.",
-    "Department-vs-catalog difference: the catalog's 1-credit dialogue slot is ENES138 or WEID138, WEID139 or CHSE328 (and titles it 'Exploring Engineering Design Through Dialogue'); the department page names ENES138 ('Equity and Inclusion in Engineering Design') 'or other approved intergroup dialogue course'. Encoded as the union of the catalog's four courses; other approved dialogue courses need minor-advisor approval (manual).",
+    "Department-vs-catalog difference: the catalog's 1-credit dialogue slot is ENES138 or WEID138, WEID139 or CHSE328 (and titles it 'Exploring Engineering Design Through Dialogue'); the department page names ENES138 ('Equity and Inclusion in Engineering Design') 'or other approved intergroup dialogue course'. Encoded as the union of the catalog's four courses; the dialogue requirement is marked advisorMayApprove (other approved dialogue courses need minor-advisor approval).",
     "Global Perspectives Elective: the approved list is encoded as printed on the department page. The page's row 'Global Classrooms Signature Courses' points to an external list (globalmaryland.umd.edu/content/global-classrooms) that is not in the source, so those courses are not encoded; 'courses in the other Global Minor Programs' need permission from the named contacts (manual).",
-    "Leadership Elective: the department page says the list is EXAMPLES, 'not exhaustive', and a minor advisor may approve any other leadership course. Encoded as the listed courses; other courses may count with advisor approval (manual). Not encoded: 'a course taken abroad that has connections to leadership', 'other leadership course approved by minor director', and the IDEA courses (a combination such as IDEA247 (2 cr) + IDEA200 (1 cr) can make up the 3 credits; the engine cannot combine partial credits).",
+    "Leadership Elective: the department page says the list is EXAMPLES, 'not exhaustive', and a minor advisor may approve any other leadership course. Encoded as the listed courses; the leadership-elective requirement is marked advisorMayApprove (other courses may count with advisor approval). Not encoded: 'a course taken abroad that has connections to leadership', 'other leadership course approved by minor director', and the IDEA courses (a combination such as IDEA247 (2 cr) + IDEA200 (1 cr) can make up the 3 credits; the engine cannot combine partial credits).",
     "Rows with a slash (BMGT390H/ENED390, BMGT397/ENES397, ENEE200/ENES200, ENES401/ENME401, ENME426/BMGT385) are encoded as each course id; special-topics sections (e.g. ANTH298B, GVPT368A, HESI318A) are recorded by the named section. The study-abroad course CPSP279T/ENES359T/LASC269T is included by its three ids.",
   ],
   requirements: [
@@ -36,6 +36,7 @@ export const engrMinorGlobalEngineeringLeadership: Program = {
     {
       kind: "course",
       id: "dialogue",
+      advisorMayApprove: true,
       name: "Intergroup dialogue course (1 credit)",
       options: ["ENES138", "WEID138", "WEID139", "CHSE328"],
     },
@@ -57,6 +58,7 @@ export const engrMinorGlobalEngineeringLeadership: Program = {
     {
       kind: "choose",
       id: "leadership-elective",
+      advisorMayApprove: true,
       name: "Leadership Elective",
       count: 1,
       from: {

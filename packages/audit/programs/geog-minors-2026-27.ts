@@ -24,7 +24,7 @@ export const geogMinorGis: Program = {
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
     "Department page not checked: https://geog.umd.edu/ fetched as a homepage with no requirements; encoded from the catalog alone.",
-    "'Two courses from the following' lists GEOG416, GEOG473, GEOG475, GEOG476, GEOG498 (GEOG498I Algorithms for Geospatial Computing named) and 'Other similar course'. The five named courses are encoded (GEOG498 accepted as a whole, not only the 498I section); 'Other similar course' is an advisor-approved substitution, not encoded.",
+    "'Two courses from the following' lists GEOG416, GEOG473, GEOG475, GEOG476, GEOG498 (GEOG498I Algorithms for Geospatial Computing named) and 'Other similar course'. The five named courses are encoded (GEOG498 accepted as a whole, not only the 498I section); 'Other similar course' is an advisor-approved substitution, not encoded; the gis-electives requirement is marked advisorMayApprove.",
     "The statistics slot lists GEOG306 or ten courses from other departments (BIOM301, BMGT230, CCJS200, ECON321, GVPT422, INST314, JOUR405, PSYC200, QMMS251, SOCY201); all are accepted. This conflicts with the catalog's 'All credits for the minor must be taken in the Department of Geographical Sciences' and 'Must complete 15 credits in geography'; neither is enforced (residency-style rules), noted for the owner.",
     "'At least nine credits must be at the 300 or 400 level' is not encoded separately: GEOG373 plus the two chosen courses already give nine such credits unless an advisor-approved 'other similar course' is used.",
     "'No more than six credits are to be included in the minor and student's major, supporting courses, and college requirements' -> maxSharedWith: [{ credits: 6 }] (Gen Ed and college layers never count, so the college-requirements part is not enforced).",
@@ -36,6 +36,7 @@ export const geogMinorGis: Program = {
     {
       kind: "choose",
       id: "gis-electives",
+      advisorMayApprove: true,
       name: "Two GIS courses",
       count: 2,
       from: { courses: ["GEOG416", "GEOG473", "GEOG475", "GEOG476", "GEOG498"] },

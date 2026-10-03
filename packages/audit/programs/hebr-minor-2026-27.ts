@@ -25,7 +25,7 @@ export const hebrMinor: Program = {
     "'No more than six credits (two courses) may count toward both the major and the minor' -> maxSharedWith: [{ courses: 2 }].",
     "Prerequisites HEBR106, HEBR107 and HEBR206 (or placement) do not count toward the minor and are not requirements here.",
     "The '16 credits from five courses' total is met by the four required courses (14 credits) plus one elective of 3 or more credits; the elective is encoded as one course from the list.",
-    "The elective list is 'previously offered' courses; 'other relevant courses in Jewish literature, Israeli film, Biblical Hebrew, etc. may be approved by the advisor' names no department or range, so it is not encoded (manual advisor approval). ISRL282 is listed without a title in the catalog.",
+    "The elective list is 'previously offered' courses; 'other relevant courses in Jewish literature, Israeli film, Biblical Hebrew, etc. may be approved by the advisor' names no department or range, so it is not encoded; the electives requirement is marked advisorMayApprove (advisor approval). ISRL282 is listed without a title in the catalog.",
     "Nine credits at the 300/400 level: encoded as an overlay over the required and elective courses at that level.",
     "Students placing into the advanced level replace HEBR207 with equivalent credits chosen with the advisor; not encoded (advisor approval).",
     "Not encoded (engine gaps): no more than one upper-division course in English translation; independent study and Winter/Summer special courses with advisor approval; at most six credits at another institution with all upper-division credits at UMD; per-course C- minimum is encoded. Program GPA 2.0 encoded as minGpa.",
@@ -38,6 +38,7 @@ export const hebrMinor: Program = {
     {
       kind: "choose",
       id: "electives",
+      advisorMayApprove: true,
       name: "One elective (3 or more credits)",
       count: 1,
       from: {
