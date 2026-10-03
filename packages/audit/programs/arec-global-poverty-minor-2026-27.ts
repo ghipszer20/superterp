@@ -41,7 +41,7 @@ export const arecGlobalPovertyMinor: Program = {
     "Catalog lists several courses without titles or as bare suffix rows (GVPT289A, GVPT289J, GVPT289 with 'GVPT289L' as its example; ENES316/464/474; BSST330; NFSC425; MIEH400; GEOG423). Encoded exactly as listed; GVPT289L is accepted as the named example of the GVPT289 row. HONR228 rows are encoded as HONR228N and HONR228R (the named sections).",
     "Catalog: 'a course taken to satisfy either signature requirement cannot be used as an elective' -- the audit's default (one course counts toward one requirement). Courses on both lists (e.g. AREC345, GEOG330) can serve either slot, not both.",
     "'At least 9 credits must be at the 300-400 level' -> overlay choose of 9 credits from the 300+ courses the minor accepts.",
-    "'Up to 3 elective credits can be from study abroad, internship or experiential learning related to poverty (optional, pending advisor approval)' is not encodable; such credit does not count on the audit. Manual check.",
+    "'Up to 3 elective credits can be from study abroad, internship or experiential learning related to poverty (optional, pending advisor approval)' is not encodable; such credit does not count on the audit. Manual check. Marked advisorMayApprove (electives): other courses may count with advisor approval; only the listed courses count.",
     "'No course may be used to satisfy the requirements of more than one minor' -- cannot be expressed without naming every other minor; not encoded (manual). The catalog states no cap on overlap with the major, so none is set.",
     "Program GPA 2.0 encoded as minGpa. Per-course C- is minGrade.",
     "Sample plan is constructed (no published plan for minors).",
@@ -61,7 +61,7 @@ export const arecGlobalPovertyMinor: Program = {
       count: 1,
       from: { courses: SIGNATURE_GLOBAL },
     },
-    { kind: "choose", id: "electives", name: "Three electives", count: 3, from: { courses: ELECTIVES } },
+    { kind: "choose", id: "electives", name: "Three electives", count: 3, from: { courses: ELECTIVES }, advisorMayApprove: true },
     {
       kind: "choose",
       id: "upper-level",

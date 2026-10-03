@@ -118,13 +118,13 @@ export const archRealEstateDevelopmentMinor: Program = {
   reviewNotes: [
     "Catalog and department page agree on the four core courses; the department page adds no requirement differences.",
     "Open slot 'permitted-elective' (openSlot requirement): 3 credits of one elective from the 'permitted electives' list; the list is on a separate arch.umd.edu page that was not among the sources, and the department page names only subject areas (architecture, sustainability, business, economics, political science), so the student confirms with their advisor.",
-    "ARCH271/RDEV250 is one cross-listed course; either code counts. RDEV270 'can also be met' by BMGT220 or an equivalent accounting course that qualifies for transfer credit (catalog footnote): BMGT220 is accepted, transfer equivalents are a manual check.",
+    "ARCH271/RDEV250 is one cross-listed course; either code counts. RDEV270 'can also be met' by BMGT220 or an equivalent accounting course that qualifies for transfer credit (catalog footnote): BMGT220 is accepted, transfer equivalents are a manual check. Marked advisorMayApprove (tax-accounting): other courses may count with advisor approval; only the listed courses count.",
     "Minor grade: all required courses C- or better (catalog), applied as minGrade. Program GPA 2.0 encoded as minGpa. Not encoded: application (department page): ARCH271/RDEV250 completed with C- or better before 60 credits, apply two years before intended graduation, email rdevminor@umd.edu.",
     "Neither source states a sharing cap; none is set.",
   ],
   requirements: [
     { kind: "course", id: "people-planet-profit", name: "People, Planet, and Profit: Building Sustainable Places (ARCH271/RDEV250)", options: ["ARCH271", "RDEV250"] },
-    { kind: "course", id: "tax-accounting", name: "Tax and Accounting for Real Estate Development 1 (RDEV270 or BMGT220)", options: ["RDEV270", "BMGT220"] },
+    { kind: "course", id: "tax-accounting", name: "Tax and Accounting for Real Estate Development 1 (RDEV270 or BMGT220)", options: ["RDEV270", "BMGT220"], advisorMayApprove: true },
     { kind: "course", id: "rdev350", name: "Real Estate Development: Introduction to Principles, Process, and Practice", options: ["RDEV350"] },
     { kind: "course", id: "rdev450", name: "Foundations of Real Estate Finance and Investment", options: ["RDEV450"] },
     {

@@ -18,16 +18,17 @@ export const chinStudiesMinor: Program = {
   reviewNotes: [
     "Department page not checked: https://sllc.umd.edu/chinese carries no requirements (it mentions 'two Chinese minors' -- this one and the Chinese Language Minor). Encoded from the catalog.",
     "17 credits: CHIN206 + CHIN207 (4 credits each) and all three foundation topic courses (CHIN307, CHIN315, CHIN441; 17 - 8 = 9 credits).",
-    "Not encoded (advisor approval): CHIN207 may be replaced by one 3-credit upper-level CHIN course plus 1 credit of CHIN386/CHIN499; other China-topic courses may replace the foundation courses when those are not offered.",
+    "Not encoded (advisor approval): CHIN207 may be replaced by one 3-credit upper-level CHIN course plus 1 credit of CHIN386/CHIN499; other China-topic courses may replace the foundation courses when those are not offered. Marked advisorMayApprove (chin207, foundation-topics): other courses may count with advisor approval; only the listed courses count.",
     "'9 of the 17 credits at 300/400 level' is encoded as an overlay over CHIN 300-499 (the three foundation courses already meet it).",
     "Manual: no more than 6 of the 17 credits at another institution. The catalog states no cap on overlap with the major, so none is set. Program GPA 2.0 encoded as minGpa.",
   ],
   requirements: [
     { kind: "course", id: "chin206", name: "Intermediate Chinese I", options: ["CHIN206"] },
-    { kind: "course", id: "chin207", name: "Intermediate Chinese II", options: ["CHIN207"] },
+    { kind: "course", id: "chin207", name: "Intermediate Chinese II", options: ["CHIN207"], advisorMayApprove: true },
     {
       kind: "choose",
       id: "foundation-topics",
+      advisorMayApprove: true,
       name: "Foundation topics courses (CHIN307, CHIN315, CHIN441)",
       count: 3,
       from: { courses: ["CHIN307", "CHIN315", "CHIN441"] },

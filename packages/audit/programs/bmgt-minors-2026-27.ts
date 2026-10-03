@@ -38,14 +38,14 @@ export const bmgtMinorBusinessAnalytics: Program = {
   reviewNotes: [
     ...SHARED_NOTES,
     "Department page requires C- in all minor courses; the catalog says nothing. The department page's 3.0 GPA to apply, 45 credits earned and four semesters remaining are admission rules, not encoded. The department page says 'three required courses and two approved electives' and gives no course lists beyond the prerequisites, so the catalog lists are used.",
-    "Prerequisites (BMGT110, BMGT230 with B-, MATH120 or MATH140) are encoded as requirements: the department page says they must be complete to graduate with the minor (BMGT110 may follow application). 'Or equivalent' for BMGT230 and MATH120: only the listed courses are accepted; other courses may count with advisor approval.",
+    "Prerequisites (BMGT110, BMGT230 with B-, MATH120 or MATH140) are encoded as requirements: the department page says they must be complete to graduate with the minor (BMGT110 may follow application). 'Or equivalent' for BMGT230 and MATH120: only the listed courses are accepted; other courses may count with advisor approval. Marked advisorMayApprove (bmgt230, calculus): other courses may count with advisor approval; only the listed courses count.",
     "Catalog footnote substitutes are accepted: CMSC424 or INST327 for BMGT402; ECON422 or ECON424 for BMGT430 (Economics majors only); CMSC132 or INST326 for BMGT302; CMSC320 for BMGT404 (Computer Science majors only). The major restrictions (also CMSC422 CS-only, ECON414 Economics-only, ENCE402 Civil and Environmental Engineering-only, ENEE436 ECE-only, INST414 Information Science-only) are eligibility gates, not enforced (no declared-major check); flagged.",
     "Electives: 6 credits, 'minimum 3-6 credits' from the first list and 'maximum 3 credits' from the second. Encoded as two courses from both lists plus an overlay requiring at least one from the first list (so at most one comes from the second). BMGT447 has no title in the source; kept as listed.",
   ],
   requirements: [
     { kind: "course", id: "bmgt110", name: "Introduction to the Business Value Chain", options: ["BMGT110"] },
-    { kind: "course", id: "bmgt230", name: "Business Statistics (minimum B-)", options: ["BMGT230"], minGrade: "B-" },
-    { kind: "course", id: "calculus", name: "Elementary Calculus I or Calculus I", options: ["MATH120", "MATH140"] },
+    { kind: "course", id: "bmgt230", name: "Business Statistics (minimum B-)", options: ["BMGT230"], minGrade: "B-", advisorMayApprove: true },
+    { kind: "course", id: "calculus", name: "Elementary Calculus I or Calculus I", options: ["MATH120", "MATH140"], advisorMayApprove: true },
     { kind: "course", id: "bmgt402", name: "AI Augmented Database Systems", options: ["BMGT402", "CMSC424", "INST327"] },
     { kind: "course", id: "bmgt430", name: "Data Modeling in Business", options: ["BMGT430", "ECON422", "ECON424"] },
     { kind: "course", id: "bmgt431", name: "Data Analytics and AI for Business", options: ["BMGT431"] },

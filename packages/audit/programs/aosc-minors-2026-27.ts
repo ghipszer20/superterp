@@ -65,7 +65,7 @@ export const aoscMinorSciences: Program = {
   verified: false,
   reviewNotes: [
     "Both sources agree exactly on shape and named courses: AOSC431 + AOSC432 required; 2 electives from AOSC123/AOSC200/AOSC400; 1 additional elective from other 400-level AOSC or approved Geology/Geography courses.",
-    "The additional-elective outside-department examples (catalog: GEOL437, GEOL452, GEOG472) are used since the department page is only vaguer ('related Geology/Geography courses'), not in conflict; encoded as those three named courses plus any 400-level AOSC course. Other approved Geology/Geography courses need advisor approval: the student confirms them with their advisor.",
+    "The additional-elective outside-department examples (catalog: GEOL437, GEOL452, GEOG472) are used since the department page is only vaguer ('related Geology/Geography courses'), not in conflict; encoded as those three named courses plus any 400-level AOSC course. Other approved Geology/Geography courses need advisor approval: the student confirms them with their advisor. The additional-elective requirement is marked advisorMayApprove (other courses may count with advisor approval).",
     "Prerequisites (MATH240/461, PHYS270/271, CHEM135/131) are background expected before the minor's own courses, not minor requirements themselves; not encoded.",
     "'Not open to Atmospheric and Oceanic Sciences majors': Enforced via notOpenTo.",
     "Neither source states a sharing cap with another program; none is set.",
@@ -85,6 +85,7 @@ export const aoscMinorSciences: Program = {
       id: "additional",
       name: "Additional elective",
       count: 1,
+      advisorMayApprove: true,
       from: { courses: ["GEOL437", "GEOL452", "GEOG472"], departments: ["AOSC"], minNumber: 400, maxNumber: 499 },
     },
   ],
@@ -148,7 +149,7 @@ export const aoscMinorMeteorology: Program = {
   minGrade: "C-",
   verified: false,
   reviewNotes: [
-    "Both sources agree exactly: 2 electives (AOSC123, AOSC200, or any 400-level AOSC course), AOSC400 + AOSC401 required, 1 additional elective from any 400-level AOSC course or GEOL437/GEOL452/GEOG472. Any other outside-department elective needs advisor approval: the student confirms it with their advisor.",
+    "Both sources agree exactly: 2 electives (AOSC123, AOSC200, or any 400-level AOSC course), AOSC400 + AOSC401 required, 1 additional elective from any 400-level AOSC course or GEOL437/GEOL452/GEOG472. Any other outside-department elective needs advisor approval: the student confirms it with their advisor. The additional-elective requirement is marked advisorMayApprove (other courses may count with advisor approval).",
     "The department's general minor page adds two more ineligible groups beyond the catalog's 'not open to AOSC majors' -- 'physical sciences majors with a concentration in meteorology' and 'physics majors with a concentration in meteorology physics' [manual]: the AOSC-major gate is enforced via notOpenTo; the two concentration-level groups are not enforced (the engine has no concentration concept, and the Physical Sciences concentration cannot be told apart from the Physical Sciences major).",
     "Neither source states a sharing cap with another program; none is set.",
   ],
@@ -167,6 +168,7 @@ export const aoscMinorMeteorology: Program = {
       id: "additional",
       name: "Additional elective",
       count: 1,
+      advisorMayApprove: true,
       from: { courses: ["GEOL437", "GEOL452", "GEOG472"], departments: ["AOSC"], minNumber: 400, maxNumber: 499 },
     },
   ],

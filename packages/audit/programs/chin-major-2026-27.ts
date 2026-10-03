@@ -38,7 +38,7 @@ export const chinMajor: Program = {
       "Government & Politics, or other-department courses taught in English, 'with the approval of the " +
       "Chinese Undergraduate Advisor,' plus approved language courses and independent study. The Electives " +
       "requirement below is encoded with only the catalog's own named scope (any 300/400-level CHIN course, " +
-      "or SLLC286).",
+      "or SLLC286). Marked advisorMayApprove (elective-upper, elective-remaining, history-culture-1, history-culture-2): other courses may count with advisor approval; only the listed courses count.",
     "Footnote 3 (EALL284/HIST284 and EALL285/HIST285 are interchangeable, whichever is offered) is encoded " +
       "directly: each History and Culture slot accepts either course.",
     "Not encoded (approval-based, no list given): 'Special Topics' and 'Colloquium' courses (variable " +
@@ -70,12 +70,14 @@ export const chinMajor: Program = {
     {
       kind: "course",
       id: "history-culture-1",
+      advisorMayApprove: true,
       name: "East Asian Cultures I (or East Asian Civilization I)",
       options: ["EALL284", "HIST284"],
     },
     {
       kind: "course",
       id: "history-culture-2",
+      advisorMayApprove: true,
       name: "East Asian Cultures II (or East Asian Civilization II)",
       options: ["EALL285", "HIST285"],
     },
@@ -85,6 +87,7 @@ export const chinMajor: Program = {
     {
       kind: "choose",
       id: "elective-upper",
+      advisorMayApprove: true,
       name: "Electives, upper-level (at least 3 of the 6 elective credits at the 300/400 level)",
       credits: 3,
       from: { departments: ["CHIN"], minNumber: 300, maxNumber: 499, exclude: REQUIRED_CHIN_COURSES },
@@ -92,6 +95,7 @@ export const chinMajor: Program = {
     {
       kind: "choose",
       id: "elective-remaining",
+      advisorMayApprove: true,
       name: "Electives, remaining 3 credits (any 300/400-level CHIN course, or SLLC286; at most 3 of the " +
         "6 elective credits may be at the 200 level)",
       credits: 3,
