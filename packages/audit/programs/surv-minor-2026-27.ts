@@ -20,7 +20,7 @@ export const survMinor: Program = {
     "Department page not checked: jpsm.umd.edu is only a homepage with no minor requirements, so this is encoded from the catalog.",
     "Catalog: 'Apply no more than two courses from the minor to satisfying the requirements of the student's major' -> maxSharedWith: [{ courses: 2 }].",
     "Minimum grade C- in all minor courses is encoded on the whole program (catalog states it). Program GPA 2.0 encoded as minGpa. The 'no more than two courses at another institution' cap are manual notes, not encoded.",
-    "Statistics and research methods: the catalog says similar courses, including ones at other institutions, may be accepted as substitutes; only the listed courses are accepted here, other courses may count with JPSM advisor approval.",
+    "Statistics and research methods: the catalog says similar courses, including ones at other institutions, may be accepted as substitutes; only the listed courses are accepted here, other courses may count with JPSM advisor approval (stats1 and stats2 are marked advisorMayApprove).",
     "Catalog inconsistency: the totals say 16-19 credits, then 'all 16-18 required credits'; SOCY201/SOCY401 are 4-credit courses. Credit totals are not enforced; course slots are.",
     "The 1-2 credit introductory 600-level SURV slot is encoded as any SURV course numbered 600-699 other than SURV621/625/630/632 (the engine cannot filter by credit count), so a 3-credit 600-level SURV course would wrongly count here; manual check of credits.",
     "Catalog names the core course 'Fundamentals of Survey and Data Science' in the table and 'Fundamentals of Survey Design' in the text; both are SURV400.",
@@ -30,12 +30,14 @@ export const survMinor: Program = {
     {
       kind: "course",
       id: "stats1",
+      advisorMayApprove: true,
       name: "Statistics",
       options: ["BIOM301", "CCJS200", "ECON230", "ECON321", "GVPT422", "PSYC200", "QMMS251", "SOCY201", "STAT400", "STAT410"],
     },
     {
       kind: "course",
       id: "stats2",
+      advisorMayApprove: true,
       name: "Second statistics or research methods course",
       options: ["AREC422", "ECON422", "ECON424", "SOCY401", "STAT401", "PSYC300", "STAT420"],
     },

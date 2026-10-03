@@ -43,7 +43,7 @@ export const rotcMinorMilitaryStudies: Program = {
     "MANUAL: the ARSC courses are Air Force ROTC courses and the catalog says coursework outside the listed courses must be approved by the Air Force ROTC advisor and ROTC Advisory Committee, so this minor is effectively for Air Force ROTC cadets; enrollment is an eligibility gate, not encoded.",
     "MANUAL: 'Courses completed in one minor may not be used to satisfy the requirements in another minor' can't be limited to minors (maxSharedWith would also restrict majors), so it is not encoded.",
     "MANUAL: residency rules (no more than six required credits, or two courses, at another institution; at least six upper-division credits at UMD College Park) are not encoded.",
-    "'Other courses may be substituted with approval of the minor advisor and Advisory Committee' for the two elective slots is an advisor approval, not encoded; the named lists are accepted as printed.",
+    "'Other courses may be substituted with approval of the minor advisor and Advisory Committee' for the two elective slots is an advisor approval; the global-affairs and military-affairs requirements are marked advisorMayApprove and the named lists are accepted as printed.",
     "GVPT289L, GVPT360, HIST240, SOCY464 and SOCY869 print without titles in the catalog table; encoded by course code as printed. The Military Affairs slot's heading reads 'Select on of the following' (typo in source) and is encoded as one course.",
   ],
   requirements: [
@@ -54,6 +54,7 @@ export const rotcMinorMilitaryStudies: Program = {
     {
       kind: "course",
       id: "global-affairs",
+      advisorMayApprove: true,
       name: "Global Affairs elective",
       options: [
         "GVPT200", "GVPT280", "GVPT289L", "GVPT354", "GVPT360", "GVPT456",
@@ -63,6 +64,7 @@ export const rotcMinorMilitaryStudies: Program = {
     {
       kind: "course",
       id: "military-affairs",
+      advisorMayApprove: true,
       name: "Military Affairs elective",
       options: ["BMGT360", "BMGT364", "JOUR283", "SOCY120", "SOCY464", "SOCY465", "SOCY869", "BSST334"],
     },
@@ -80,7 +82,7 @@ export const rotcMinorNavalScience: Program = {
     "MANUAL: the NAVY courses are Naval ROTC courses; NROTC enrollment or commissioning conditions are an eligibility gate, not encoded.",
     "The catalog states no minimum grade, GPA, residency or sharing cap for this minor; none is set.",
     "Naval Science Core is '18 credits selected from' the ten NAVY courses; encoded as an 18-credit choose over those ten courses.",
-    "Cultural/Regional Studies: the catalog says 'courses are not limited to the examples listed' (one course on cultural and/or regional studies of developing nations) but names no department or range. Encoded as the five listed examples (GEOG130, HIST120, HIST284, HIST285, PERS251), which is narrower than the source; other approved courses are a manual check: the student confirms any other cultural/regional course with their advisor.",
+    "Cultural/Regional Studies: the catalog says 'courses are not limited to the examples listed' (one course on cultural and/or regional studies of developing nations) but names no department or range. Encoded as the five listed examples (GEOG130, HIST120, HIST284, HIST285, PERS251), which is narrower than the source; other approved courses may count with advisor approval (the requirement is marked advisorMayApprove).",
     "National Security/Military History is one course from HIST224 or HIST225.",
   ],
   requirements: [
@@ -100,6 +102,7 @@ export const rotcMinorNavalScience: Program = {
     {
       kind: "course",
       id: "cultural-regional",
+      advisorMayApprove: true,
       name: "Cultural/Regional Studies",
       options: ["GEOG130", "HIST120", "HIST284", "HIST285", "PERS251"],
     },

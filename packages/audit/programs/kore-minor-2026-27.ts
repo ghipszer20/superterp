@@ -21,14 +21,14 @@ export const koreMinor: Program = {
   maxSharedWith: [{ credits: 6 }],
   reviewNotes: [
     "Department page not checked: https://sllc.umd.edu/korean carries no requirements. Encoded from the catalog.",
-    "Korea-related slot: the catalog names seven example courses (some are special-topics sections such as HIST319N, SOCY398K, HIST319C, GVPT359C, recorded by base course) 'from fields such as history, sociology, and art history', and allows other Korea-related courses with Korean Program advisor approval. Encoded as three of the seven listed courses; other advisor-approved courses are manual. This is narrower than the source, so flagged.",
+    "Korea-related slot: the catalog names seven example courses (some are special-topics sections such as HIST319N, SOCY398K, HIST319C, GVPT359C, recorded by base course) 'from fields such as history, sociology, and art history', and allows other Korea-related courses with Korean Program advisor approval. Encoded as three of the seven listed courses; other Korea-related courses may count with advisor approval (the korea-related requirement is marked advisorMayApprove). This is narrower than the source, so flagged.",
     "Not enforced: at least one Korea-related course with broad East Asian content (HIST284, HIST285, EALL300, ARTH290 and HIST319C are marked); the engine cannot check it. Both language courses must be at the second-year level or above (all listed ones are).",
     "'Three of the five courses at 3xx/4xx' is an overlay over the listed courses numbered 300-499 (KORA311/312/345, HIST319, SOCY398, GVPT359); advisor-approved 3xx/4xx courses are not counted.",
     "'No more than six credits can overlap with the major' -> maxSharedWith: [{ credits: 6 }]. Manual: no more than six credits off-campus (study abroad, transfer); Big10 CIC courseshare courses are considered by the advisor.",
   ],
   requirements: [
     { kind: "choose", id: "language", name: "Two Korean language or language-related courses (second-year level or above)", count: 2, from: { courses: LANGUAGE } },
-    { kind: "choose", id: "korea-related", name: "Three Korea-related courses", count: 3, from: { courses: KOREA_RELATED } },
+    { kind: "choose", id: "korea-related", advisorMayApprove: true, name: "Three Korea-related courses", count: 3, from: { courses: KOREA_RELATED } },
     {
       kind: "choose",
       id: "upper-level",

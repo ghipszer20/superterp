@@ -26,7 +26,7 @@ export const tlplMinorSecondaryEducation: Program = {
     "Catalog only; department page not checked. Five slots: adolescent development, TLPL481, one foundation option, one elective, one introductory methods course; 15 credits. The certificate is out of scope and not encoded.",
     "Terrapin Teacher substitutions are accepted for everyone: TLPL414 for EDHD413, and MATH274 alongside TLPL415 as a foundation option (the catalog limits both to Terrapin Teacher students; program membership is not checked). TLPL401 is likewise listed among the methods options.",
     "Foundation option TLPL101 & TLPL102 must be taken together (a set of two courses).",
-    "The elective list ends with 'Other courses may be approved. Consult with your advisor', which has no named range; not encoded (manual check). AAST222 has no title in the catalog.",
+    "The elective list ends with 'Other courses may be approved. Consult with your advisor', which has no named range; the elective requirement is marked advisorMayApprove. AAST222 has no title in the catalog.",
     "Cumulative GPA of 2.75 for enrollment in the methods courses, and 'no more than six credits (two courses) at an institution other than UMD College Park', are not encoded (GPA and transfer rules). Catalog states no sharing cap; none is set.",
   ],
   requirements: [
@@ -41,6 +41,7 @@ export const tlplMinorSecondaryEducation: Program = {
     {
       kind: "choose",
       id: "elective",
+      advisorMayApprove: true,
       name: "Elective (cultural/identity studies or special interest area; choose one)",
       count: 1,
       from: {
@@ -97,7 +98,7 @@ export const tlplMinorEducationPolicyEquityJustice: Program = {
     "Cross-listed: the catalog lists this minor under both EDUC (TLPL) and PLCY with an identical requirement table and the same department page, so it is encoded once (college: EDUC).",
     "Department-vs-catalog difference (owner ruling: follow the department page): the catalog says the two electives must be at the 300 or 400 level; the department page says at least 9 of the 15 credits must be 300- or 400-level. Encoded per the department: a 9-credit 300+ overlay. Since PLCY354 and TLPL360 are already 300-level, that requires one 300+ elective, not two.",
     "Department page names the third core course PLCY388A ('354 in 2025/2026'); the catalog says PLCY354. Both codes are accepted.",
-    "Electives: 'a wide variety of courses offered by the College of Education and School of Public Policy, or propose courses that align with your major' has no named list. Encoded as any 100+ course in the College of Education departments (CHSE, EDCP, EDHD, EDHI, EDMS, EDSP, EDUC, TLPL) or PLCY (whole range, flagged); proposed courses from other departments need advisor approval (manual check).",
+    "Electives: 'a wide variety of courses offered by the College of Education and School of Public Policy, or propose courses that align with your major' has no named list. Encoded as any 100+ course in the College of Education departments (CHSE, EDCP, EDHD, EDHI, EDMS, EDSP, EDUC, TLPL) or PLCY (whole range, flagged); proposed courses from other departments need advisor approval (the electives requirement is marked advisorMayApprove).",
     "Application (with major and GPA) is required to join; not encoded. Catalog states no sharing cap; none is set.",
   ],
   requirements: [
@@ -107,6 +108,7 @@ export const tlplMinorEducationPolicyEquityJustice: Program = {
     {
       kind: "choose",
       id: "electives",
+      advisorMayApprove: true,
       name: "Two electives (College of Education or School of Public Policy)",
       count: 2,
       from: {
